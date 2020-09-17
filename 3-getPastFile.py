@@ -1,4 +1,4 @@
-from setting import PATH_OF_GITLOGCSV, PATH_OF_PASTFILE, PATH_OF_GITCLONE
+from setting import PATH_OF_GITLOGCSV, PATH_OF_PASTFILE, PATH_OF_GITCLONE, PATH_OF_ERROR_NOT_EXISTS_PASTFILE
 from tqdm import tqdm
 import subprocess
 import os
@@ -51,30 +51,23 @@ def notAlreadyExist(savefilename, savePath):
     return True
 
 
-def CheckoutCatTxt(revision, cloneDirName, filename):
+def ShowPastFile(revision, cloneDirName, filename):
     cwd = f"{PATH_OF_GITCLONE}/{cloneDirName}"
-    command = f"git checkout {revision} -- {filename}"
+    command = f"git show {revision}:{filename}"
 
-    # checkout revision
+    # show revision
     tmp = subprocess.run(list(command.split()), cwd=cwd, encoding='utf-8', stdout=subprocess.PIPE, errors="ignore")
 
+    if tmp.stdout == "":
+        with open(PATH_OF_ERROR_NOT_EXISTS_PASTFILE, 'a+') as f:
+            msg = f"fatal: Path '{filename}' does not exist in '{revision}'"
+            f.seek(0)
+            if not msg in f.read():
+                f.write(f"{msg}\n")
 
-def CheckoutMaster(revision, cloneDirName, filename):
-    cwd = f"{PATH_OF_GITCLONE}/{cloneDirName}"
-    command = f"git checkout master -- {filename}"
-
-    # checkout revision
-    tmp = subprocess.run(list(command.split()), cwd=cwd, encoding='utf-8', stdout=subprocess.PIPE, errors="ignore")
-
-
-
-def CatToTxt(savePath, savefilename, revision, cloneDirName, filename):
-    cwd = f"./{savePath}/"
-    checkoutedPath = f"./{PATH_OF_GITCLONE}/{cloneDirName}/{filename}"
-
-    command = f"cat {checkoutedPath} > {savefilename}"
-    tmp = subprocess.run(list(command.split()), cwd=cwd, encoding='utf-8', stdout=subprocess.PIPE, errors="ignore")
-
+            return False
+        
+    return tmp.stdout
 
 
 def CheckoutSaveTXT(row, csvfile):
@@ -97,9 +90,14 @@ def CheckoutSaveTXT(row, csvfile):
         if not notAlreadyExist(savefilename, savePath):
             continue
 
-        CheckoutCatTxt(revision, cloneDirName, filename)
-        CatToTxt(savePath, savefilename, revision, cloneDirName, filename)
-        CheckoutMaster(revision, cloneDirName, filename)
+        txt = ShowPastFile(revision, cloneDirName, filename)
+        
+        if not txt:
+            continue
+
+        with open(f"{savePath}/{savefilename}", "w") as f:
+            f.write(txt)
+
 
 
 

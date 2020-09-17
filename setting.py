@@ -13,3 +13,4 @@ PATH_OF_ERROR_GITLOG = "./2-error-gitlogs.txt"
 # 3 get past file
 PATH_OF_GITLOGCSV = "./2-gitlogsCSV"
 PATH_OF_PASTFILE = "./3-pastfiles"
+PATH_OF_ERROR_NOT_EXISTS_PASTFILE = "./3-error-filenotExists.txt"
