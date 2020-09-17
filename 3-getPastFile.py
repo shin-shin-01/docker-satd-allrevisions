@@ -81,7 +81,7 @@ def CheckoutSaveTXT(row, csvfile):
         status = statuses[i]
         filename = filenames[i]
 
-        if status == "D":
+        if status == "D" or status == "R":
             continue
         
         savefilename = createSaveFileName(revision, filename)
@@ -91,7 +91,7 @@ def CheckoutSaveTXT(row, csvfile):
             continue
 
         txt = ShowPastFile(revision, cloneDirName, filename)
-        
+
         if not txt:
             continue
 

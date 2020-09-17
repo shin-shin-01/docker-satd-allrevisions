@@ -86,8 +86,12 @@ def RevisonsHaveDocker(trepository, txtGitFileStatus):
 
         elif ("Dockerfile" in txt) or ("dockerfile" in txt):
             if txt[0] != " ":
-                tmp["Status"] += f"{txt[0]}\n"
-                tmp["Dockerfiles"] += f"{txt.split()[1]}\n"
+                if txt[0] == "R":
+                    tmp["Status"] += f"{txt[0]}\n"
+                    tmp["Dockerfiles"] += f"{txt.split()[1]}  {txt.split()[2]}\n"
+                else:
+                    tmp["Status"] += f"{txt[0]}\n"
+                    tmp["Dockerfiles"] += f"{txt.split()[1]}\n"
 
     result, tmp = appendToResult(result, tmp)
     result = pd.DataFrame.from_dict(result)

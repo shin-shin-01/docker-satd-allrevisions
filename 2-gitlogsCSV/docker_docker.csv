@@ -433,7 +433,7 @@ M
 297,0154dc7a23730a679d6e41df7fa27d851719b0fc,Mon,,
 298,4cabad6bae9c2bd5eec14156368f3ee804a3da8b,Mon,,
 299,6bc112abdec7dd0a0d7d397dfd08624d53c8cc89,Mon,,
-300,ebd025b63a1af13092da9cea3731f2ec892128bb,Mon,"integration/build/testdata/Dockerfile.testBuildPreserveOwnership
+300,ebd025b63a1af13092da9cea3731f2ec892128bb,Mon,"integration/build/testdata/Dockerfile.testBuildPreserveOwnership  integration/build/testdata/Dockerfile.TestBuildPreserveOwnership
 ","R
 "
 301,84748c7d4e626edf2dc2c6984ffd306c35865d21,Sat,,
@@ -5074,19 +5074,19 @@ builder/dockerfile/parser/testfiles/znc/result
 builder/dockerfile/shell/envVarTest
 builder/dockerfile/shell/lex_test.go
 builder/dockerfile/shell/wordsTest
-builder/dockerfile/command/command.go
-builder/dockerfile/instructions/bflag.go
-builder/dockerfile/instructions/commands.go
-builder/dockerfile/instructions/errors_unix.go
-builder/dockerfile/instructions/errors_windows.go
-builder/dockerfile/instructions/parse.go
-builder/dockerfile/instructions/support.go
-builder/dockerfile/parser/line_parsers.go
-builder/dockerfile/parser/parser.go
-builder/dockerfile/parser/split_command.go
-builder/dockerfile/shell/equal_env_unix.go
-builder/dockerfile/shell/equal_env_windows.go
-builder/dockerfile/shell/lex.go
+builder/dockerfile/command/command.go  vendor/github.com/moby/buildkit/frontend/dockerfile/command/command.go
+builder/dockerfile/instructions/bflag.go  vendor/github.com/moby/buildkit/frontend/dockerfile/instructions/bflag.go
+builder/dockerfile/instructions/commands.go  vendor/github.com/moby/buildkit/frontend/dockerfile/instructions/commands.go
+builder/dockerfile/instructions/errors_unix.go  vendor/github.com/moby/buildkit/frontend/dockerfile/instructions/errors_unix.go
+builder/dockerfile/instructions/errors_windows.go  vendor/github.com/moby/buildkit/frontend/dockerfile/instructions/errors_windows.go
+builder/dockerfile/instructions/parse.go  vendor/github.com/moby/buildkit/frontend/dockerfile/instructions/parse.go
+builder/dockerfile/instructions/support.go  vendor/github.com/moby/buildkit/frontend/dockerfile/instructions/support.go
+builder/dockerfile/parser/line_parsers.go  vendor/github.com/moby/buildkit/frontend/dockerfile/parser/line_parsers.go
+builder/dockerfile/parser/parser.go  vendor/github.com/moby/buildkit/frontend/dockerfile/parser/parser.go
+builder/dockerfile/parser/split_command.go  vendor/github.com/moby/buildkit/frontend/dockerfile/parser/split_command.go
+builder/dockerfile/shell/equal_env_unix.go  vendor/github.com/moby/buildkit/frontend/dockerfile/shell/equal_env_unix.go
+builder/dockerfile/shell/equal_env_windows.go  vendor/github.com/moby/buildkit/frontend/dockerfile/shell/equal_env_windows.go
+builder/dockerfile/shell/lex.go  vendor/github.com/moby/buildkit/frontend/dockerfile/shell/lex.go
 ","M
 M
 M
@@ -6765,12 +6765,12 @@ builder/dockerfile/dispatchers_test.go
 builder/dockerfile/dispatchers_unix.go
 builder/dockerfile/dispatchers_windows.go
 builder/dockerfile/evaluator.go
-builder/dockerfile/envVarTest
+builder/dockerfile/envVarTest  builder/dockerfile/shell/envVarTest
 builder/dockerfile/shell/equal_env_unix.go
 builder/dockerfile/shell/equal_env_windows.go
-builder/dockerfile/shell_parser.go
-builder/dockerfile/shell_parser_test.go
-builder/dockerfile/wordsTest
+builder/dockerfile/shell_parser.go  builder/dockerfile/shell/lex.go
+builder/dockerfile/shell_parser_test.go  builder/dockerfile/shell/lex_test.go
+builder/dockerfile/wordsTest  builder/dockerfile/shell/wordsTest
 ","M
 M
 M
@@ -8285,15 +8285,15 @@ builder/dockerfile/evaluator_test.go
 builder/dockerfile/evaluator_unix.go
 builder/dockerfile/evaluator_windows.go
 builder/dockerfile/imagecontext.go
-builder/dockerfile/bflag.go
-builder/dockerfile/bflag_test.go
+builder/dockerfile/bflag.go  builder/dockerfile/instructions/bflag.go
+builder/dockerfile/bflag_test.go  builder/dockerfile/instructions/bflag_test.go
 builder/dockerfile/instructions/commands.go
 builder/dockerfile/instructions/errors_unix.go
 builder/dockerfile/instructions/errors_windows.go
 builder/dockerfile/instructions/parse.go
 builder/dockerfile/instructions/parse_test.go
-builder/dockerfile/support.go
-builder/dockerfile/support_test.go
+builder/dockerfile/support.go  builder/dockerfile/instructions/support.go
+builder/dockerfile/support_test.go  builder/dockerfile/instructions/support_test.go
 builder/dockerfile/internals.go
 ","M
 M
@@ -11510,7 +11510,7 @@ M
 A
 "
 7354,d7807c73169469c50e551704cc1957f798868f71,Fri,"builder/dockerfile/parser/parser.go
-builder/dockerfile/parser/utils.go
+builder/dockerfile/parser/utils.go  builder/dockerfile/parser/split_command.go
 ","M
 R
 "
@@ -23681,19 +23681,19 @@ M
 17119,f746cf04406105bdd2ff213cd16e62e09c279b69,Thu,,
 17120,9642c8170aa979050a81451378aa4c7917e9df28,Thu,,
 17121,f3df50d115c81c13349835a15f5bad0f2c15dfe4,Tue,,
-17122,7b31ed432ee2fa95938d64dc76c982e52cd00330,Mon,"contrib/builder/deb/debian-jessie/Dockerfile
-contrib/builder/deb/debian-stretch/Dockerfile
-contrib/builder/deb/debian-wheezy/Dockerfile
-contrib/builder/deb/ubuntu-precise/Dockerfile
-contrib/builder/deb/ubuntu-trusty/Dockerfile
-contrib/builder/deb/ubuntu-wily/Dockerfile
+17122,7b31ed432ee2fa95938d64dc76c982e52cd00330,Mon,"contrib/builder/deb/debian-jessie/Dockerfile  contrib/builder/deb/amd64/debian-jessie/Dockerfile
+contrib/builder/deb/debian-stretch/Dockerfile  contrib/builder/deb/amd64/debian-stretch/Dockerfile
+contrib/builder/deb/debian-wheezy/Dockerfile  contrib/builder/deb/amd64/debian-wheezy/Dockerfile
+contrib/builder/deb/ubuntu-precise/Dockerfile  contrib/builder/deb/amd64/ubuntu-precise/Dockerfile
+contrib/builder/deb/ubuntu-trusty/Dockerfile  contrib/builder/deb/amd64/ubuntu-trusty/Dockerfile
+contrib/builder/deb/ubuntu-wily/Dockerfile  contrib/builder/deb/amd64/ubuntu-wily/Dockerfile
 contrib/builder/deb/armhf/debian-jessie/Dockerfile
-contrib/builder/rpm/centos-7/Dockerfile
-contrib/builder/rpm/fedora-22/Dockerfile
-contrib/builder/rpm/fedora-23/Dockerfile
-contrib/builder/rpm/opensuse-13.2/Dockerfile
-contrib/builder/rpm/oraclelinux-6/Dockerfile
-contrib/builder/rpm/oraclelinux-7/Dockerfile
+contrib/builder/rpm/centos-7/Dockerfile  contrib/builder/rpm/amd64/centos-7/Dockerfile
+contrib/builder/rpm/fedora-22/Dockerfile  contrib/builder/rpm/amd64/fedora-22/Dockerfile
+contrib/builder/rpm/fedora-23/Dockerfile  contrib/builder/rpm/amd64/fedora-23/Dockerfile
+contrib/builder/rpm/opensuse-13.2/Dockerfile  contrib/builder/rpm/amd64/opensuse-13.2/Dockerfile
+contrib/builder/rpm/oraclelinux-6/Dockerfile  contrib/builder/rpm/amd64/oraclelinux-6/Dockerfile
+contrib/builder/rpm/oraclelinux-7/Dockerfile  contrib/builder/rpm/amd64/oraclelinux-7/Dockerfile
 ","R
 R
 R
@@ -23807,7 +23807,7 @@ M
 17199,6807582cdce133afe84e408a5692f8598a3d6685,Tue,,
 17200,eb729a0cb0be1f2d2ba5c616fcd4e585289f6dfc,Tue,,
 17201,d0cb7e599ed63fb6a29080d929ff7e7620a1fc1f,Tue,,
-17202,e310d070f498a2ac494c6d3fde0ec5d6e4479e14,Sat,"docs/articles/dockerfile_best-practices.md
+17202,e310d070f498a2ac494c6d3fde0ec5d6e4479e14,Sat,"docs/articles/dockerfile_best-practices.md  docs/userguide/eng-image/dockerfile_best-practices.md
 ","R
 "
 17203,e23ea05e113ea5069f8bea3e75046b9429ca2e75,Tue,,
@@ -23967,7 +23967,7 @@ M
 17339,081bffc1e1ff869a8215b9b8b439d4cb9f6a144a,Sat,,
 17340,74fafa5dd202f9134989f3880aec17665b652da7,Fri,,
 17341,6d1455e74b388faeae0f90379b8aa908afed0bf7,Fri,,
-17342,4c76c665b73dbd0beb0cb465caa921cbeb1cf61f,Wed,"docs/articles/https/Dockerfile
+17342,4c76c665b73dbd0beb0cb465caa921cbeb1cf61f,Wed,"docs/articles/https/Dockerfile  docs/security/https/Dockerfile
 ","R
 "
 17343,feca36b3791f23112d80c330db3e0ceca6cdc3cc,Fri,,
@@ -24240,8 +24240,8 @@ M
 17558,bca9415b526d413778fb271be4f5c0208915a027,Fri,,
 17559,8ce8813cdca852b3f0c6ed69fa896023e6fd5bc2,Fri,,
 17560,dd7436c832a5dd777d0276c3e3b1819062b86ebc,Thu,"Dockerfile
-vendor/src/github.com/docker/notary/Dockerfile.server
-vendor/src/github.com/docker/notary/Dockerfile.signer
+vendor/src/github.com/docker/notary/Dockerfile.server  vendor/src/github.com/docker/notary/server.Dockerfile
+vendor/src/github.com/docker/notary/Dockerfile.signer  vendor/src/github.com/docker/notary/signer.Dockerfile
 ","M
 R
 R
@@ -24791,7 +24791,7 @@ D
 17973,024eead82f4739d028052b8138c3505d9e157a34,Wed,,
 17974,1cb9b0745c225433758397606a5ccd8404cb575e,Wed,,
 17975,dc38061bee468ebfbfa3c89f0bb5b2edb5fd5147,Wed,"Dockerfile
-Dockerfile.arm
+Dockerfile.arm  Dockerfile.armhf
 ","M
 R
 "
@@ -26282,7 +26282,7 @@ M
 19170,143f3579b0553b50b03438aef76d908a5d327863,Mon,,
 19171,58b270c338e831ac6668a29788c72d202f9fc251,Mon,,
 19172,3a1200f9f11a016abd75588fa3812fb5505b2c3a,Mon,,
-19173,6990f8c6162b5b05118ab54f155eb5d86c85f2d4,Sat,"builder/dockerfile/words
+19173,6990f8c6162b5b05118ab54f155eb5d86c85f2d4,Sat,"builder/dockerfile/words  builder/dockerfile/envVarTest
 builder/dockerfile/evaluator.go
 builder/dockerfile/shell_parser.go
 builder/dockerfile/shell_parser_test.go
@@ -27469,7 +27469,7 @@ builder/dockerfile/internals_windows.go
 builder/dockerfile/job.go
 builder/dockerfile/support.go
 builder/dockerfile/support_test.go
-builder/dockerfile/job_test.go
+builder/dockerfile/job_test.go  builder/remote_test.go
 ","A
 M
 M
@@ -27507,79 +27507,79 @@ R
 20215,6a45bed9bfe66dc17a6aa04591d8c5ae39ba531a,Mon,,
 20216,7db08b4e62555055031ad6228221dc8c11ebe6a2,Mon,,
 20217,e1d3cb89f16c90a3ec6777e34c769cc2a35d123e,Mon,,
-20218,f41230b93a77ca7f4d84718f39a4847b6117f694,Sat,"builder/bflag.go
-builder/bflag_test.go
-builder/command/command.go
-builder/dispatchers.go
-builder/evaluator.go
-builder/internals.go
-builder/internals_unix.go
-builder/internals_windows.go
-builder/job.go
-builder/job_test.go
-builder/parser/dumper/main.go
-builder/parser/json_test.go
-builder/parser/line_parsers.go
-builder/parser/parser.go
-builder/parser/parser_test.go
-builder/parser/testfiles-negative/env_no_value/Dockerfile
-builder/parser/testfiles-negative/shykes-nested-json/Dockerfile
-builder/parser/testfiles/ADD-COPY-with-JSON/Dockerfile
-builder/parser/testfiles/ADD-COPY-with-JSON/result
-builder/parser/testfiles/brimstone-consuldock/Dockerfile
-builder/parser/testfiles/brimstone-consuldock/result
-builder/parser/testfiles/brimstone-docker-consul/Dockerfile
-builder/parser/testfiles/brimstone-docker-consul/result
-builder/parser/testfiles/continueIndent/Dockerfile
-builder/parser/testfiles/continueIndent/result
-builder/parser/testfiles/cpuguy83-nagios/Dockerfile
-builder/parser/testfiles/cpuguy83-nagios/result
-builder/parser/testfiles/docker/Dockerfile
-builder/parser/testfiles/docker/result
-builder/parser/testfiles/env/Dockerfile
-builder/parser/testfiles/env/result
-builder/parser/testfiles/escapes/Dockerfile
-builder/parser/testfiles/escapes/result
-builder/parser/testfiles/flags/Dockerfile
-builder/parser/testfiles/flags/result
-builder/parser/testfiles/influxdb/Dockerfile
-builder/parser/testfiles/influxdb/result
-builder/parser/testfiles/jeztah-invalid-json-json-inside-string-double/Dockerfile
-builder/parser/testfiles/jeztah-invalid-json-json-inside-string-double/result
-builder/parser/testfiles/jeztah-invalid-json-json-inside-string/Dockerfile
-builder/parser/testfiles/jeztah-invalid-json-json-inside-string/result
-builder/parser/testfiles/jeztah-invalid-json-single-quotes/Dockerfile
-builder/parser/testfiles/jeztah-invalid-json-single-quotes/result
-builder/parser/testfiles/jeztah-invalid-json-unterminated-bracket/Dockerfile
-builder/parser/testfiles/jeztah-invalid-json-unterminated-bracket/result
-builder/parser/testfiles/jeztah-invalid-json-unterminated-string/Dockerfile
-builder/parser/testfiles/jeztah-invalid-json-unterminated-string/result
-builder/parser/testfiles/json/Dockerfile
-builder/parser/testfiles/json/result
-builder/parser/testfiles/kartar-entrypoint-oddities/Dockerfile
-builder/parser/testfiles/kartar-entrypoint-oddities/result
-builder/parser/testfiles/lk4d4-the-edge-case-generator/Dockerfile
-builder/parser/testfiles/lk4d4-the-edge-case-generator/result
-builder/parser/testfiles/mail/Dockerfile
-builder/parser/testfiles/mail/result
-builder/parser/testfiles/multiple-volumes/Dockerfile
-builder/parser/testfiles/multiple-volumes/result
-builder/parser/testfiles/mumble/Dockerfile
-builder/parser/testfiles/mumble/result
-builder/parser/testfiles/nginx/Dockerfile
-builder/parser/testfiles/nginx/result
-builder/parser/testfiles/tf2/Dockerfile
-builder/parser/testfiles/tf2/result
-builder/parser/testfiles/weechat/Dockerfile
-builder/parser/testfiles/weechat/result
-builder/parser/testfiles/znc/Dockerfile
-builder/parser/testfiles/znc/result
-builder/parser/utils.go
-builder/shell_parser.go
-builder/shell_parser_test.go
-builder/support.go
-builder/support_test.go
-builder/words
+20218,f41230b93a77ca7f4d84718f39a4847b6117f694,Sat,"builder/bflag.go  builder/dockerfile/bflag.go
+builder/bflag_test.go  builder/dockerfile/bflag_test.go
+builder/command/command.go  builder/dockerfile/command/command.go
+builder/dispatchers.go  builder/dockerfile/dispatchers.go
+builder/evaluator.go  builder/dockerfile/evaluator.go
+builder/internals.go  builder/dockerfile/internals.go
+builder/internals_unix.go  builder/dockerfile/internals_unix.go
+builder/internals_windows.go  builder/dockerfile/internals_windows.go
+builder/job.go  builder/dockerfile/job.go
+builder/job_test.go  builder/dockerfile/job_test.go
+builder/parser/dumper/main.go  builder/dockerfile/parser/dumper/main.go
+builder/parser/json_test.go  builder/dockerfile/parser/json_test.go
+builder/parser/line_parsers.go  builder/dockerfile/parser/line_parsers.go
+builder/parser/parser.go  builder/dockerfile/parser/parser.go
+builder/parser/parser_test.go  builder/dockerfile/parser/parser_test.go
+builder/parser/testfiles-negative/env_no_value/Dockerfile  builder/dockerfile/parser/testfiles-negative/env_no_value/Dockerfile
+builder/parser/testfiles-negative/shykes-nested-json/Dockerfile  builder/dockerfile/parser/testfiles-negative/shykes-nested-json/Dockerfile
+builder/parser/testfiles/ADD-COPY-with-JSON/Dockerfile  builder/dockerfile/parser/testfiles/ADD-COPY-with-JSON/Dockerfile
+builder/parser/testfiles/ADD-COPY-with-JSON/result  builder/dockerfile/parser/testfiles/ADD-COPY-with-JSON/result
+builder/parser/testfiles/brimstone-consuldock/Dockerfile  builder/dockerfile/parser/testfiles/brimstone-consuldock/Dockerfile
+builder/parser/testfiles/brimstone-consuldock/result  builder/dockerfile/parser/testfiles/brimstone-consuldock/result
+builder/parser/testfiles/brimstone-docker-consul/Dockerfile  builder/dockerfile/parser/testfiles/brimstone-docker-consul/Dockerfile
+builder/parser/testfiles/brimstone-docker-consul/result  builder/dockerfile/parser/testfiles/brimstone-docker-consul/result
+builder/parser/testfiles/continueIndent/Dockerfile  builder/dockerfile/parser/testfiles/continueIndent/Dockerfile
+builder/parser/testfiles/continueIndent/result  builder/dockerfile/parser/testfiles/continueIndent/result
+builder/parser/testfiles/cpuguy83-nagios/Dockerfile  builder/dockerfile/parser/testfiles/cpuguy83-nagios/Dockerfile
+builder/parser/testfiles/cpuguy83-nagios/result  builder/dockerfile/parser/testfiles/cpuguy83-nagios/result
+builder/parser/testfiles/docker/Dockerfile  builder/dockerfile/parser/testfiles/docker/Dockerfile
+builder/parser/testfiles/docker/result  builder/dockerfile/parser/testfiles/docker/result
+builder/parser/testfiles/env/Dockerfile  builder/dockerfile/parser/testfiles/env/Dockerfile
+builder/parser/testfiles/env/result  builder/dockerfile/parser/testfiles/env/result
+builder/parser/testfiles/escapes/Dockerfile  builder/dockerfile/parser/testfiles/escapes/Dockerfile
+builder/parser/testfiles/escapes/result  builder/dockerfile/parser/testfiles/escapes/result
+builder/parser/testfiles/flags/Dockerfile  builder/dockerfile/parser/testfiles/flags/Dockerfile
+builder/parser/testfiles/flags/result  builder/dockerfile/parser/testfiles/flags/result
+builder/parser/testfiles/influxdb/Dockerfile  builder/dockerfile/parser/testfiles/influxdb/Dockerfile
+builder/parser/testfiles/influxdb/result  builder/dockerfile/parser/testfiles/influxdb/result
+builder/parser/testfiles/jeztah-invalid-json-json-inside-string-double/Dockerfile  builder/dockerfile/parser/testfiles/jeztah-invalid-json-json-inside-string-double/Dockerfile
+builder/parser/testfiles/jeztah-invalid-json-json-inside-string-double/result  builder/dockerfile/parser/testfiles/jeztah-invalid-json-json-inside-string-double/result
+builder/parser/testfiles/jeztah-invalid-json-json-inside-string/Dockerfile  builder/dockerfile/parser/testfiles/jeztah-invalid-json-json-inside-string/Dockerfile
+builder/parser/testfiles/jeztah-invalid-json-json-inside-string/result  builder/dockerfile/parser/testfiles/jeztah-invalid-json-json-inside-string/result
+builder/parser/testfiles/jeztah-invalid-json-single-quotes/Dockerfile  builder/dockerfile/parser/testfiles/jeztah-invalid-json-single-quotes/Dockerfile
+builder/parser/testfiles/jeztah-invalid-json-single-quotes/result  builder/dockerfile/parser/testfiles/jeztah-invalid-json-single-quotes/result
+builder/parser/testfiles/jeztah-invalid-json-unterminated-bracket/Dockerfile  builder/dockerfile/parser/testfiles/jeztah-invalid-json-unterminated-bracket/Dockerfile
+builder/parser/testfiles/jeztah-invalid-json-unterminated-bracket/result  builder/dockerfile/parser/testfiles/jeztah-invalid-json-unterminated-bracket/result
+builder/parser/testfiles/jeztah-invalid-json-unterminated-string/Dockerfile  builder/dockerfile/parser/testfiles/jeztah-invalid-json-unterminated-string/Dockerfile
+builder/parser/testfiles/jeztah-invalid-json-unterminated-string/result  builder/dockerfile/parser/testfiles/jeztah-invalid-json-unterminated-string/result
+builder/parser/testfiles/json/Dockerfile  builder/dockerfile/parser/testfiles/json/Dockerfile
+builder/parser/testfiles/json/result  builder/dockerfile/parser/testfiles/json/result
+builder/parser/testfiles/kartar-entrypoint-oddities/Dockerfile  builder/dockerfile/parser/testfiles/kartar-entrypoint-oddities/Dockerfile
+builder/parser/testfiles/kartar-entrypoint-oddities/result  builder/dockerfile/parser/testfiles/kartar-entrypoint-oddities/result
+builder/parser/testfiles/lk4d4-the-edge-case-generator/Dockerfile  builder/dockerfile/parser/testfiles/lk4d4-the-edge-case-generator/Dockerfile
+builder/parser/testfiles/lk4d4-the-edge-case-generator/result  builder/dockerfile/parser/testfiles/lk4d4-the-edge-case-generator/result
+builder/parser/testfiles/mail/Dockerfile  builder/dockerfile/parser/testfiles/mail/Dockerfile
+builder/parser/testfiles/mail/result  builder/dockerfile/parser/testfiles/mail/result
+builder/parser/testfiles/multiple-volumes/Dockerfile  builder/dockerfile/parser/testfiles/multiple-volumes/Dockerfile
+builder/parser/testfiles/multiple-volumes/result  builder/dockerfile/parser/testfiles/multiple-volumes/result
+builder/parser/testfiles/mumble/Dockerfile  builder/dockerfile/parser/testfiles/mumble/Dockerfile
+builder/parser/testfiles/mumble/result  builder/dockerfile/parser/testfiles/mumble/result
+builder/parser/testfiles/nginx/Dockerfile  builder/dockerfile/parser/testfiles/nginx/Dockerfile
+builder/parser/testfiles/nginx/result  builder/dockerfile/parser/testfiles/nginx/result
+builder/parser/testfiles/tf2/Dockerfile  builder/dockerfile/parser/testfiles/tf2/Dockerfile
+builder/parser/testfiles/tf2/result  builder/dockerfile/parser/testfiles/tf2/result
+builder/parser/testfiles/weechat/Dockerfile  builder/dockerfile/parser/testfiles/weechat/Dockerfile
+builder/parser/testfiles/weechat/result  builder/dockerfile/parser/testfiles/weechat/result
+builder/parser/testfiles/znc/Dockerfile  builder/dockerfile/parser/testfiles/znc/Dockerfile
+builder/parser/testfiles/znc/result  builder/dockerfile/parser/testfiles/znc/result
+builder/parser/utils.go  builder/dockerfile/parser/utils.go
+builder/shell_parser.go  builder/dockerfile/shell_parser.go
+builder/shell_parser_test.go  builder/dockerfile/shell_parser_test.go
+builder/support.go  builder/dockerfile/support.go
+builder/support_test.go  builder/dockerfile/support_test.go
+builder/words  builder/dockerfile/words
 ","R
 R
 R
@@ -28335,10 +28335,10 @@ M
 20863,6c56f917d3facec1438d03712f8a26d929fbe5ea,Tue,,
 20864,7f8954cb79c3126f1c099e260f6b420946dcba23,Tue,,
 20865,3111aa7293f49f550b56652c622b0f4d194aae6f,Tue,,
-20866,a5eec723f8509c8fe588e3a57d14d6c9df6aa87b,Tue,"contrib/builder/deb/ubuntu-debootstrap-precise/Dockerfile
-contrib/builder/deb/ubuntu-debootstrap-vivid/Dockerfile
-contrib/builder/deb/ubuntu-debootstrap-trusty/Dockerfile
-contrib/builder/deb/ubuntu-debootstrap-wily/Dockerfile
+20866,a5eec723f8509c8fe588e3a57d14d6c9df6aa87b,Tue,"contrib/builder/deb/ubuntu-debootstrap-precise/Dockerfile  contrib/builder/deb/ubuntu-precise/Dockerfile
+contrib/builder/deb/ubuntu-debootstrap-vivid/Dockerfile  contrib/builder/deb/ubuntu-trusty/Dockerfile
+contrib/builder/deb/ubuntu-debootstrap-trusty/Dockerfile  contrib/builder/deb/ubuntu-vivid/Dockerfile
+contrib/builder/deb/ubuntu-debootstrap-wily/Dockerfile  contrib/builder/deb/ubuntu-wily/Dockerfile
 ","R
 R
 R
@@ -30290,13 +30290,13 @@ A
 22700,b3b04fd85a5a44182c872a2765e6732bf9f05a39,Mon,,
 22701,d409b05970e686993e343d226fae5b463d872082,Mon,,
 22702,f93fee5f48cc92df8668380e4edc2b7bbd6c62c6,Sun,"docs/Dockerfile
-docs/sources/articles/dockerfile_best-practices.md
-docs/sources/articles/https/Dockerfile
-docs/sources/examples/apt-cacher-ng.Dockerfile
-docs/sources/examples/mongodb/Dockerfile
-docs/sources/examples/postgresql_service.Dockerfile
-docs/sources/examples/running_riak_service.Dockerfile
-docs/sources/examples/running_ssh_service.Dockerfile
+docs/sources/articles/dockerfile_best-practices.md  docs/articles/dockerfile_best-practices.md
+docs/sources/articles/https/Dockerfile  docs/articles/https/Dockerfile
+docs/sources/examples/apt-cacher-ng.Dockerfile  docs/examples/apt-cacher-ng.Dockerfile
+docs/sources/examples/mongodb/Dockerfile  docs/examples/mongodb/Dockerfile
+docs/sources/examples/postgresql_service.Dockerfile  docs/examples/postgresql_service.Dockerfile
+docs/sources/examples/running_riak_service.Dockerfile  docs/examples/running_riak_service.Dockerfile
+docs/sources/examples/running_ssh_service.Dockerfile  docs/examples/running_ssh_service.Dockerfile
 ","M
 R
 R
@@ -30394,8 +30394,8 @@ M
 22776,141cd2a1f26f3455a1daf20420ca1efb5a9e1a16,Wed,,
 22777,b6049b5c4963bb1b82ba381cdce69d1083bcf59e,Wed,,
 22778,9da65ed84f9fc285fa2d122c8341a897e5d0eb29,Wed,,
-22779,eacae64bd89ccc95a6db7bda76d36014e71e70ac,Mon,"docs/man/Dockerfile
-docs/man/Dockerfile.5.md
+22779,eacae64bd89ccc95a6db7bda76d36014e71e70ac,Mon,"docs/man/Dockerfile  man/Dockerfile
+docs/man/Dockerfile.5.md  man/Dockerfile.5.md
 ","R
 R
 "
@@ -35141,7 +35141,7 @@ M
 27173,998b591a71094b3f0112dac9b0c35a93745ac28f,Thu,,
 27174,2bceaae42399ce33e8c724d1ac435eca6759637b,Fri,,
 27175,bce9ed0e4c56b85c8a4a5ba2b1af45035deec9dd,Thu,,
-27176,1314e1586f8cd6201c16161eb960a743c727946b,Thu,"builder/parser/testfiles-negative/env_equals_env/Dockerfile
+27176,1314e1586f8cd6201c16161eb960a743c727946b,Thu,"builder/parser/testfiles-negative/env_equals_env/Dockerfile  builder/parser/testfiles-negative/env_no_value/Dockerfile
 builder/parser/testfiles/env/Dockerfile
 ","R
 A
@@ -38089,8 +38089,8 @@ M
 29837,21e258d7328e56fd451e6ed0324cff094ec70798,Tue,,
 29838,87d522a5576125515274022d0b49e7bdc2942d18,Tue,,
 29839,c7a1bdf6c039c41877c007ab44902f084860ede0,Tue,,
-29840,42be6f2957c945e070079ec773e29b356a9f9452,Tue,"contrib/man/md/Dockerfile
-contrib/man/md/Dockerfile.5.md
+29840,42be6f2957c945e070079ec773e29b356a9f9452,Tue,"contrib/man/md/Dockerfile  docs/man/Dockerfile
+contrib/man/md/Dockerfile.5.md  docs/man/Dockerfile.5.md
 ","R
 R
 "
@@ -41254,8 +41254,8 @@ A
 32804,36aafeb0b49b096df6967b7681a7676b36abbc3b,Fri,,
 32805,f787bec4a6853b46b1ba755d4f8a2ee07d9cbd3e,Fri,,
 32806,ac06646b1fb7172937c52d5f1217dcac5a86f0f9,Fri,,
-32807,f289b3a19e03b99a6618009320abaec2c0cf1ec1,Fri,"contrib/syntax/textmate/Dockerfile.tmPreferences
-contrib/syntax/textmate/Dockerfile.tmLanguage
+32807,f289b3a19e03b99a6618009320abaec2c0cf1ec1,Fri,"contrib/syntax/textmate/Dockerfile.tmPreferences  contrib/syntax/textmate/Docker.tmbundle/Preferences/Dockerfile.tmPreferences
+contrib/syntax/textmate/Dockerfile.tmLanguage  contrib/syntax/textmate/Docker.tmbundle/Syntaxes/Dockerfile.tmLanguage
 ","R
 R
 "
@@ -42099,13 +42099,13 @@ M
 33609,83d631b6a455d3041b7cb31e1c7eb45a16715c43,Sun,,
 33610,8b82b0dfe74684b5ea30b7487475f7ca4abcc58e,Sat,,
 33611,e93b7b464733470a08a46b9937678fbfdff0abb0,Sun,,
-33612,06a818616bfce86e90152aeaffaf9394a085c356,Sun,"contrib/Dockerfile.tmLanguage/Dockerfile.YAML-tmLanguage
-contrib/Dockerfile.tmLanguage/Dockerfile.tmLanguage
-contrib/Dockerfile.tmLanguage/MAINTAINERS
-contrib/Dockerfile.tmLanguage/README.md
-contrib/vim-syntax/doc/dockerfile.txt
-contrib/vim-syntax/ftdetect/dockerfile.vim
-contrib/vim-syntax/syntax/dockerfile.vim
+33612,06a818616bfce86e90152aeaffaf9394a085c356,Sun,"contrib/Dockerfile.tmLanguage/Dockerfile.YAML-tmLanguage  contrib/syntax/textmate/Dockerfile.YAML-tmLanguage
+contrib/Dockerfile.tmLanguage/Dockerfile.tmLanguage  contrib/syntax/textmate/Dockerfile.tmLanguage
+contrib/Dockerfile.tmLanguage/MAINTAINERS  contrib/syntax/textmate/MAINTAINERS
+contrib/Dockerfile.tmLanguage/README.md  contrib/syntax/textmate/README.md
+contrib/vim-syntax/doc/dockerfile.txt  contrib/syntax/vim/doc/dockerfile.txt
+contrib/vim-syntax/ftdetect/dockerfile.vim  contrib/syntax/vim/ftdetect/dockerfile.vim
+contrib/vim-syntax/syntax/dockerfile.vim  contrib/syntax/vim/syntax/dockerfile.vim
 ","R
 R
 R
@@ -43665,8 +43665,8 @@ M
 35093,8cf0f2dbe54e5ff5175a830af30ba428f8b1f526,Wed,,
 35094,3e014aa6624bdc3411bb6f5bc2c297e45a47ad68,Tue,,
 35095,333bc23f21e8423d3085632db99a6d1df227c5f1,Tue,,
-35096,7cf1877098edb7d4874509a338f663d550ef0ede,Fri,"contrib/host_integration/Dockerfile.dev
-contrib/host_integration/Dockerfile.min
+35096,7cf1877098edb7d4874509a338f663d550ef0ede,Fri,"contrib/host_integration/Dockerfile.dev  contrib/host-integration/Dockerfile.dev
+contrib/host_integration/Dockerfile.min  contrib/host-integration/Dockerfile.min
 ","R
 R
 "
@@ -43856,7 +43856,7 @@ A
 35264,f15cd71bb8a60473318a97564bd4b061d8b9cf6d,Thu,,
 35265,94bf5b00112890ed84c38b9840802fa0142b507b,Fri,,
 35266,d542318d63b847e4494a2688b091baeb5dbde1e1,Thu,"hack/infrastructure/docker-ci/Dockerfile
-testing/nightlyrelease/Dockerfile
+testing/nightlyrelease/Dockerfile  hack/infrastructure/docker-ci/nightlyrelease/Dockerfile
 ","A
 R
 "
