@@ -1,0 +1,443 @@
+,CommitID,Dockerfiles,Comments
+0,d4f07d6e129eec35a4edec314fb973bfca1617c0,/Dockerfile,"# https://github.com/opencontainers/runc/releases
+"
+1,d4f07d6e129eec35a4edec314fb973bfca1617c0,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+2,d4f07d6e129eec35a4edec314fb973bfca1617c0,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+3,d4f07d6e129eec35a4edec314fb973bfca1617c0,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -eux; \
+#	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
+#	file /go/bin/gosu-armhf
+"
+4,6172d3fa75c718ead3402f1c9c838a384bc5d0bf,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+5,6172d3fa75c718ead3402f1c9c838a384bc5d0bf,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+6,6172d3fa75c718ead3402f1c9c838a384bc5d0bf,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+7,52cf1c4b223dba4e9d878cb195242adbcdc6e795,/Dockerfile.test,"# add ""nobody"" to ALL groups (makes testing edge cases more interesting)
+"
+8,52cf1c4b223dba4e9d878cb195242adbcdc6e795,/Dockerfile.test,"#!/bin/sh'; \
+"
+9,52cf1c4b223dba4e9d878cb195242adbcdc6e795,/Dockerfile.test,"		# have to ""|| true"" this one because of ""id: unknown ID 1000"" (rightfully) having a nonzero exit code
+"
+10,52cf1c4b223dba4e9d878cb195242adbcdc6e795,/Dockerfile.test,"# adjust users so we can make sure the tests are interesting
+"
+11,52cf1c4b223dba4e9d878cb195242adbcdc6e795,/Dockerfile.test,"# now we should be nobody, ALL groups, and have a bogus useless HOME value
+
+"
+12,52cf1c4b223dba4e9d878cb195242adbcdc6e795,/Dockerfile.test,"# make sure we error out properly in unexpected cases like an invalid username
+"
+13,52cf1c4b223dba4e9d878cb195242adbcdc6e795,/Dockerfile.test,"# something missing?  some other functionality we could test easily?  PR! :D
+"
+14,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+15,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+16,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -eux; \
+#	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
+#	file /go/bin/gosu-armhf
+"
+17,4aa139519069ab49fe24fde4a47e206054d363b9,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
+
+"
+18,4aa139519069ab49fe24fde4a47e206054d363b9,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+19,4aa139519069ab49fe24fde4a47e206054d363b9,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+20,4aa139519069ab49fe24fde4a47e206054d363b9,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -x \
+#	&& eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" \
+#	&& file /go/bin/gosu-armhf
+"
+21,91dbde2f5a538616d462788ab6f98370b409b0bb,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
+
+"
+22,91dbde2f5a538616d462788ab6f98370b409b0bb,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+23,91dbde2f5a538616d462788ab6f98370b409b0bb,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+24,91dbde2f5a538616d462788ab6f98370b409b0bb,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -x \
+#	&& eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" \
+#	&& file /go/bin/gosu-armhf
+"
+25,5cbd5c064ab954f0ecca8d39d3b9f0ce3aa81497,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+26,5cbd5c064ab954f0ecca8d39d3b9f0ce3aa81497,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+27,5cbd5c064ab954f0ecca8d39d3b9f0ce3aa81497,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+28,df4db204a3fa3f08f4a50b347d3eb98b89589028,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+29,df4db204a3fa3f08f4a50b347d3eb98b89589028,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+30,df4db204a3fa3f08f4a50b347d3eb98b89589028,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -eux; \
+#	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
+#	file /go/bin/gosu-armhf
+"
+31,56c451355f181d4e88eac5f61fca56a39f173b0c,/Dockerfile,"# https://github.com/opencontainers/runc/releases
+"
+32,56c451355f181d4e88eac5f61fca56a39f173b0c,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+33,56c451355f181d4e88eac5f61fca56a39f173b0c,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+34,56c451355f181d4e88eac5f61fca56a39f173b0c,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -eux; \
+#	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
+#	file /go/bin/gosu-armhf
+"
+35,0506cbfff296eef2098f90130b1adb2e43252d00,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+36,0506cbfff296eef2098f90130b1adb2e43252d00,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+37,0506cbfff296eef2098f90130b1adb2e43252d00,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+38,87d70a11c7541a0bc8d0eb2cd659141e49edae0c,/Dockerfile.test,"# add ""nobody"" to ALL groups (makes testing edge cases more interesting)
+"
+39,87d70a11c7541a0bc8d0eb2cd659141e49edae0c,/Dockerfile.test,"#!/bin/sh'; \
+"
+40,87d70a11c7541a0bc8d0eb2cd659141e49edae0c,/Dockerfile.test,"		# have to ""|| true"" this one because of ""id: unknown ID 1000"" (rightfully) having a nonzero exit code
+"
+41,87d70a11c7541a0bc8d0eb2cd659141e49edae0c,/Dockerfile.test,"# adjust users so we can make sure the tests are interesting
+"
+42,87d70a11c7541a0bc8d0eb2cd659141e49edae0c,/Dockerfile.test,"# now we should be nobody, ALL groups, and have a bogus useless HOME value
+
+"
+43,06a8066255bc28e5a6632599bcf2360bb0da28b5,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+44,06a8066255bc28e5a6632599bcf2360bb0da28b5,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+45,06a8066255bc28e5a6632599bcf2360bb0da28b5,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+46,2344d0524f255dc0532cdce096509b07fb3d697e,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+47,2344d0524f255dc0532cdce096509b07fb3d697e,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+48,2344d0524f255dc0532cdce096509b07fb3d697e,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -eux; \
+#	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
+#	file /go/bin/gosu-armhf
+"
+49,7dc4bb6e4fb1c21bd83f36348c2c4b5c0cadf621,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+50,7dc4bb6e4fb1c21bd83f36348c2c4b5c0cadf621,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+51,7dc4bb6e4fb1c21bd83f36348c2c4b5c0cadf621,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+52,164af4d48cfa860320fb19d84663373ddd0fbdc5,/Dockerfile,"# cache-fill
+"
+53,51692217017d57791389df0fb6ada2ecb4176ccd,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+54,51692217017d57791389df0fb6ada2ecb4176ccd,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+55,51692217017d57791389df0fb6ada2ecb4176ccd,/Dockerfile,"# boo Raspberry Pi, making life hard (armhf-is-v7 vs armhf-is-v6 ...)
+#RUN set -eux; \
+#	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
+#	file /go/bin/gosu-armhf
+
+"
+56,5b9cb4a88740660218fa452f0b8e850fbf2dbb73,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+57,5b9cb4a88740660218fa452f0b8e850fbf2dbb73,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+58,5b9cb4a88740660218fa452f0b8e850fbf2dbb73,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+59,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile.test,"# add ""nobody"" to ALL groups (makes testing edge cases more interesting)
+"
+60,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile.test,"#!/bin/sh'; \
+"
+61,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile.test,"		# have to ""|| true"" this one because of ""id: unknown ID 1000"" (rightfully) having a nonzero exit code
+"
+62,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile.test,"# adjust users so we can make sure the tests are interesting
+"
+63,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile.test,"# now we should be nobody, ALL groups, and have a bogus useless HOME value
+
+"
+64,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile.test,"# something missing?  some other functionality we could test easily?  PR! :D
+"
+65,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile.test-alpine,"# add ""nobody"" to ALL groups (makes testing edge cases more interesting)
+"
+66,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile.test-alpine,"#!/bin/sh'; \
+"
+67,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile.test-alpine,"		# have to ""|| true"" this one because of ""id: unknown ID 1000"" (rightfully) having a nonzero exit code
+"
+68,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile.test-alpine,"# adjust users so we can make sure the tests are interesting
+"
+69,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile.test-alpine,"# now we should be nobody, ALL groups, and have a bogus useless HOME value
+
+"
+70,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile.test-alpine,"# make sure we error out properly in unexpected cases like an invalid username
+"
+71,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile.test-alpine,"# something missing?  some other functionality we could test easily?  PR! :D
+"
+72,c1becc66ed4c10fee594fff24d912f4e43e08543,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+73,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile,"# https://github.com/opencontainers/runc/releases
+"
+74,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+75,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+76,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -eux; \
+#	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
+#	file /go/bin/gosu-armhf
+"
+77,df5c1d81c7873b43f0bffb2979ded27b4b30c29d,/Dockerfile,"# cache-fill
+"
+78,764a32e813e3a665863687001511eaff01a68533,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+79,764a32e813e3a665863687001511eaff01a68533,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+80,764a32e813e3a665863687001511eaff01a68533,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+81,3414434bef8c804b9c042db48fbb1c6323f5c831,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
+
+"
+82,3414434bef8c804b9c042db48fbb1c6323f5c831,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+83,3414434bef8c804b9c042db48fbb1c6323f5c831,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+84,3414434bef8c804b9c042db48fbb1c6323f5c831,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -x \
+#	&& eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" \
+#	&& file /go/bin/gosu-armhf
+"
+85,083d4e3b05ecc087ac7408abe197011a09a9c95d,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
+
+"
+86,083d4e3b05ecc087ac7408abe197011a09a9c95d,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+87,083d4e3b05ecc087ac7408abe197011a09a9c95d,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+88,083d4e3b05ecc087ac7408abe197011a09a9c95d,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -x \
+#	&& eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" \
+#	&& file /go/bin/gosu-armhf
+"
+89,4b7414ad43bf1ba9579bc7226a0b2e1ea1a33240,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+90,4b7414ad43bf1ba9579bc7226a0b2e1ea1a33240,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+91,4b7414ad43bf1ba9579bc7226a0b2e1ea1a33240,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+92,57bff5bb553b6155bc23accb8a3e1d3178f01fa7,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
+
+"
+93,57bff5bb553b6155bc23accb8a3e1d3178f01fa7,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+94,57bff5bb553b6155bc23accb8a3e1d3178f01fa7,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+95,57bff5bb553b6155bc23accb8a3e1d3178f01fa7,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -x \
+#	&& eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" \
+#	&& file /go/bin/gosu-armhf
+"
+96,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile.test,"# add ""nobody"" to ALL groups (makes testing edge cases more interesting)
+"
+97,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile.test,"#!/bin/sh'; \
+"
+98,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile.test,"		# have to ""|| true"" this one because of ""id: unknown ID 1000"" (rightfully) having a nonzero exit code
+"
+99,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile.test,"# adjust users so we can make sure the tests are interesting
+"
+100,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile.test,"# now we should be nobody, ALL groups, and have a bogus useless HOME value
+
+"
+101,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile.test,"# make sure we error out properly in unexpected cases like an invalid username
+"
+102,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile.test,"# something missing?  some other functionality we could test easily?  PR! :D
+"
+103,5c2681b0987fd7bfe34c3093a8ba7dd4749726c7,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+104,5c2681b0987fd7bfe34c3093a8ba7dd4749726c7,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+105,5c2681b0987fd7bfe34c3093a8ba7dd4749726c7,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -eux; \
+#	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
+#	file /go/bin/gosu-armhf
+"
+106,2fdacb8304a76b15339e10c290056dc33b9eb115,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+107,2fdacb8304a76b15339e10c290056dc33b9eb115,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+108,2fdacb8304a76b15339e10c290056dc33b9eb115,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
+#		go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+109,1cd812660509c88866db7a8be45e94bfd703ac65,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
+
+"
+110,1cd812660509c88866db7a8be45e94bfd703ac65,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+111,1cd812660509c88866db7a8be45e94bfd703ac65,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+112,1cd812660509c88866db7a8be45e94bfd703ac65,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
+#		eval ""go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" # boo Raspberry Pi, making life hard
+"
+113,b1f8a83b55c42838a4eb24b8ad3304dca79df24f,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
+
+"
+114,b1f8a83b55c42838a4eb24b8ad3304dca79df24f,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+115,b1f8a83b55c42838a4eb24b8ad3304dca79df24f,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+116,b1f8a83b55c42838a4eb24b8ad3304dca79df24f,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
+#		eval ""go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" # boo Raspberry Pi, making life hard
+"
+117,a7d68068240aace53835ac4c2dea304df4e75848,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+118,a7d68068240aace53835ac4c2dea304df4e75848,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+119,a7d68068240aace53835ac4c2dea304df4e75848,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -eux; \
+#	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
+#	file /go/bin/gosu-armhf
+"
+120,5fb235fb1f30d3fbbacd516033b1546dd246fef5,/Dockerfile,"# TODO pin specific commit
+
+# cache-fill
+"
+121,b304eab5a681e46ed538cea7966abac02887839d,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+122,b4266e274d6f36ec4a3ae7823a1bd1880d0da810,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
+
+"
+123,b4266e274d6f36ec4a3ae7823a1bd1880d0da810,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+124,b4266e274d6f36ec4a3ae7823a1bd1880d0da810,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+125,b4266e274d6f36ec4a3ae7823a1bd1880d0da810,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
+#		eval ""go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" # boo Raspberry Pi, making life hard
+"
+126,26e9585d65e80def2612bf171b837644cff66009,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+127,26e9585d65e80def2612bf171b837644cff66009,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+128,26e9585d65e80def2612bf171b837644cff66009,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+129,fb71463c1ee94c6cc3d79808c01161401daa3e85,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+130,fb71463c1ee94c6cc3d79808c01161401daa3e85,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+131,fb71463c1ee94c6cc3d79808c01161401daa3e85,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+132,4c79b78815115b076bf398387e09dc73ba517e4a,/Dockerfile,"# cache-fill
+"
+133,1dfc492427f214a31dc7eac63008372206b0cd4b,/Dockerfile.test,"# add ""nobody"" to ALL groups (makes testing edge cases more interesting)
+"
+134,1dfc492427f214a31dc7eac63008372206b0cd4b,/Dockerfile.test,"#!/bin/sh'; \
+"
+135,1dfc492427f214a31dc7eac63008372206b0cd4b,/Dockerfile.test,"		# have to ""|| true"" this one because of ""id: unknown ID 1000"" (rightfully) having a nonzero exit code
+"
+136,1dfc492427f214a31dc7eac63008372206b0cd4b,/Dockerfile.test,"# adjust users so we can make sure the tests are interesting
+"
+137,1dfc492427f214a31dc7eac63008372206b0cd4b,/Dockerfile.test,"# now we should be nobody, ALL groups, and have a bogus useless HOME value
+
+"
+138,1dfc492427f214a31dc7eac63008372206b0cd4b,/Dockerfile.test,"# something missing?  some other functionality we could test easily?  PR! :D
+"
+139,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+140,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+141,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile,"# boo Raspberry Pi, making life hard
+#RUN set -eux; \
+#	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
+#	file /go/bin/gosu-armhf
+"
+142,a9280b27e9844a88c5a3ce1948dbc8b3e5dbadae,/Dockerfile,"# cache-fill
+"
+143,dcbc21a5a2f805f1b102daa8fd4bd2a8d2d9dab8,/Dockerfile.test,"# add ""nobody"" to ALL groups (makes testing edge cases more interesting)
+"
+144,dcbc21a5a2f805f1b102daa8fd4bd2a8d2d9dab8,/Dockerfile.test,"#!/bin/sh'; \
+"
+145,dcbc21a5a2f805f1b102daa8fd4bd2a8d2d9dab8,/Dockerfile.test,"		# have to ""|| true"" this one because of ""id: unknown ID 1000"" (rightfully) having a nonzero exit code
+"
+146,dcbc21a5a2f805f1b102daa8fd4bd2a8d2d9dab8,/Dockerfile.test,"# adjust users so we can make sure the tests are interesting
+"
+147,dcbc21a5a2f805f1b102daa8fd4bd2a8d2d9dab8,/Dockerfile.test,"# now we should be nobody, ALL groups, and have a bogus useless HOME value
+
+"
+148,82e807086c35abf41685cc3e9913d3c121ed14d1,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+149,82e807086c35abf41685cc3e9913d3c121ed14d1,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+150,82e807086c35abf41685cc3e9913d3c121ed14d1,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+151,d88cab3d9ddb838618668d83d8a39f27a2192e57,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
+
+"
+152,d88cab3d9ddb838618668d83d8a39f27a2192e57,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+153,d88cab3d9ddb838618668d83d8a39f27a2192e57,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+154,d88cab3d9ddb838618668d83d8a39f27a2192e57,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
+#		go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+155,566f41b779331aa72f76daa833657b78a14c7588,/Dockerfile.test-debian,"# add ""nobody"" to ALL groups (makes testing edge cases more interesting)
+"
+156,566f41b779331aa72f76daa833657b78a14c7588,/Dockerfile.test-debian,"# emulate Alpine's ""games"" user (which is part of the ""users"" group)
+"
+157,566f41b779331aa72f76daa833657b78a14c7588,/Dockerfile.test-debian,"#!/bin/sh'; \
+"
+158,566f41b779331aa72f76daa833657b78a14c7588,/Dockerfile.test-debian,"		# have to ""|| true"" this one because of ""id: unknown ID 1000"" (rightfully) having a nonzero exit code
+"
+159,566f41b779331aa72f76daa833657b78a14c7588,/Dockerfile.test-debian,"# adjust users so we can make sure the tests are interesting
+"
+160,566f41b779331aa72f76daa833657b78a14c7588,/Dockerfile.test-debian,"# now we should be nobody, ALL groups, and have a bogus useless HOME value
+
+"
+161,566f41b779331aa72f76daa833657b78a14c7588,/Dockerfile.test-debian,"# make sure we error out properly in unexpected cases like an invalid username
+"
+162,566f41b779331aa72f76daa833657b78a14c7588,/Dockerfile.test-debian,"# something missing?  some other functionality we could test easily?  PR! :D
+"
+163,f87df69c868e19f7258b4facb7c2472d76d98dda,/Dockerfile.test,"# add ""nobody"" to ALL groups (makes testing edge cases more interesting)
+"
+164,f87df69c868e19f7258b4facb7c2472d76d98dda,/Dockerfile.test,"#!/bin/sh'; \
+"
+165,f87df69c868e19f7258b4facb7c2472d76d98dda,/Dockerfile.test,"		# have to ""|| true"" this one because of ""id: unknown ID 1000"" (rightfully) having a nonzero exit code
+"
+166,f87df69c868e19f7258b4facb7c2472d76d98dda,/Dockerfile.test,"# adjust users so we can make sure the tests are interesting
+"
+167,f87df69c868e19f7258b4facb7c2472d76d98dda,/Dockerfile.test,"# now we should be nobody, ALL groups, and have a bogus useless HOME value
+
+"
+168,f87df69c868e19f7258b4facb7c2472d76d98dda,/Dockerfile.test,"# make sure we error out properly in unexpected cases like an invalid username
+"
+169,f87df69c868e19f7258b4facb7c2472d76d98dda,/Dockerfile.test,"# something missing?  some other functionality we could test easily?  PR! :D
+"
+170,c4e0b3073e0b20a163a1b373e86a2e342a538acd,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+171,c4e0b3073e0b20a163a1b373e86a2e342a538acd,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+172,c4e0b3073e0b20a163a1b373e86a2e342a538acd,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
+#		go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
+"
+173,ee543c08761798e7c6b7d67b1bd5e789091161c9,/Dockerfile,"# cache-fill
+"
+174,f20b057ec4e2f9d9782111e29201e2e839510dfc,/Dockerfile,"# https://github.com/opencontainers/runc/releases
+"
+175,f20b057ec4e2f9d9782111e29201e2e839510dfc,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+176,f20b057ec4e2f9d9782111e29201e2e839510dfc,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+177,f20b057ec4e2f9d9782111e29201e2e839510dfc,/Dockerfile,"# boo Raspberry Pi, making life hard (armhf-is-v7 vs armhf-is-v6 ...)
+#RUN set -eux; \
+#	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
+#	file /go/bin/gosu-armhf
+
+"
+178,84bd68d4a39ae379829fed50936277014f30c6d2,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
+
+"
+179,84bd68d4a39ae379829fed50936277014f30c6d2,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
+"
+180,84bd68d4a39ae379829fed50936277014f30c6d2,/Dockerfile,"# gosu-$(dpkg --print-architecture)
+"
+181,84bd68d4a39ae379829fed50936277014f30c6d2,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
+#		eval ""go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" # boo Raspberry Pi, making life hard
+"

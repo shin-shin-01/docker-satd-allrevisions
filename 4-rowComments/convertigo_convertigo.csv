@@ -1,0 +1,3077 @@
+,CommitID,Dockerfiles,Comments
+0,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/alpine/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+1,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/alpine/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+2,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/alpine/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+3,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/alpine/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+4,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/alpine/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+5,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/default/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+6,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+7,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+8,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+9,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+10,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+11,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+12,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/openj9/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+13,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/openj9/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+14,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/openj9/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+15,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/openj9/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+16,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/openj9/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+17,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/openj9/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+18,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/openj9/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+19,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/Dockerfile.tpl,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+20,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/Dockerfile.tpl,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+21,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/Dockerfile.tpl,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+22,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/Dockerfile.tpl,"## create a 'convertigo' user and fix some rights
+
+"
+23,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/Dockerfile.tpl,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+24,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/Dockerfile.tpl,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+25,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/Dockerfile.tpl,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+26,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile_chunk,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+27,671e961749021193d2010a62b0b9302833900184,/docker/slim/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+28,671e961749021193d2010a62b0b9302833900184,/docker/slim/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+29,671e961749021193d2010a62b0b9302833900184,/docker/slim/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+30,671e961749021193d2010a62b0b9302833900184,/docker/slim/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+31,671e961749021193d2010a62b0b9302833900184,/docker/slim/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+32,671e961749021193d2010a62b0b9302833900184,/docker/slim/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+33,671e961749021193d2010a62b0b9302833900184,/docker/slim/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+34,f820cb5deb7174b304b73ea46d2bc342d4be3a4e,/docker/alpine/Dockerfile_base,"# Copyright (c) 2001-2018 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+35,f820cb5deb7174b304b73ea46d2bc342d4be3a4e,/docker/alpine/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+"
+36,f820cb5deb7174b304b73ea46d2bc342d4be3a4e,/docker/alpine/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+37,f820cb5deb7174b304b73ea46d2bc342d4be3a4e,/docker/alpine/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+38,f820cb5deb7174b304b73ea46d2bc342d4be3a4e,/docker/alpine/Dockerfile_base,"## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+39,c56614a329fad2056aba602b2c385e6d9cecb917,/docker/alpine/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+40,c56614a329fad2056aba602b2c385e6d9cecb917,/docker/alpine/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+41,c56614a329fad2056aba602b2c385e6d9cecb917,/docker/alpine/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+42,c56614a329fad2056aba602b2c385e6d9cecb917,/docker/alpine/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+43,c56614a329fad2056aba602b2c385e6d9cecb917,/docker/alpine/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+44,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/aks/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+45,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/aks/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+46,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/aks/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+47,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/aks/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+48,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/aks/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+49,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/aks/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+50,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/aks/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+51,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/default/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+52,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+53,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+54,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+55,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+56,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+57,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+58,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/Dockerfile.tpl,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+59,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/Dockerfile.tpl,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+60,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/Dockerfile.tpl,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+61,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/Dockerfile.tpl,"## create a 'convertigo' user and fix some rights
+
+"
+62,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/Dockerfile.tpl,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+63,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/Dockerfile.tpl,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+64,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/Dockerfile.tpl,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+65,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+66,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/Dockerfile_base,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+67,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+68,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+69,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+70,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+71,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+72,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile_base,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+73,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+74,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+75,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+76,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+77,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/aks/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+78,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/aks/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+79,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/aks/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+80,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/aks/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+81,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/aks/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+82,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/aks/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+83,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/aks/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+84,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/aks/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+85,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/aks/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+86,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/aks/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+87,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/aks/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+88,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/aks/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+89,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/aks/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+90,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/aks/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+91,2a669ad9c9cd64b5c12ddbffb4761efd8dfd9bf6,/docker/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+92,2a669ad9c9cd64b5c12ddbffb4761efd8dfd9bf6,/docker/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+93,2a669ad9c9cd64b5c12ddbffb4761efd8dfd9bf6,/docker/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+94,2a669ad9c9cd64b5c12ddbffb4761efd8dfd9bf6,/docker/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+95,2a669ad9c9cd64b5c12ddbffb4761efd8dfd9bf6,/docker/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+96,2a669ad9c9cd64b5c12ddbffb4761efd8dfd9bf6,/docker/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+97,2a669ad9c9cd64b5c12ddbffb4761efd8dfd9bf6,/docker/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+98,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/Dockerfile.tpl,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+99,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/Dockerfile.tpl,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+100,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/Dockerfile.tpl,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+101,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/Dockerfile.tpl,"## create a 'convertigo' user and fix some rights
+
+"
+102,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/Dockerfile.tpl,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+103,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/Dockerfile.tpl,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+104,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/Dockerfile.tpl,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+105,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/Dockerfile.tpl,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+106,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/Dockerfile.tpl,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+107,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/Dockerfile.tpl,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+108,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/Dockerfile.tpl,"## create a 'convertigo' user and fix some rights
+
+"
+109,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/Dockerfile.tpl,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+110,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/Dockerfile.tpl,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+111,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/Dockerfile.tpl,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+112,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/alpine/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+113,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/alpine/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+114,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/alpine/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+115,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+116,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/alpine/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+117,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/alpine/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+118,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/slim/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+119,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/slim/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+120,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/slim/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+121,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/slim/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+122,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/slim/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+123,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/slim/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+124,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/slim/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+125,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+126,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+127,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+128,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+129,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+130,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+131,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+132,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/alpine/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+133,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/alpine/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+134,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/alpine/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+135,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/alpine/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+136,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/alpine/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+137,745fe5f0e28b669ee5f8a310835ea5a92115a858,/docker/Dockerfile.tpl,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+138,745fe5f0e28b669ee5f8a310835ea5a92115a858,/docker/Dockerfile.tpl,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+139,745fe5f0e28b669ee5f8a310835ea5a92115a858,/docker/Dockerfile.tpl,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+140,745fe5f0e28b669ee5f8a310835ea5a92115a858,/docker/Dockerfile.tpl,"## create a 'convertigo' user and fix some rights
+
+"
+141,745fe5f0e28b669ee5f8a310835ea5a92115a858,/docker/Dockerfile.tpl,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+142,745fe5f0e28b669ee5f8a310835ea5a92115a858,/docker/Dockerfile.tpl,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+143,745fe5f0e28b669ee5f8a310835ea5a92115a858,/docker/Dockerfile.tpl,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+144,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/alpine/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+145,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/alpine/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+146,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/alpine/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+147,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/alpine/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+148,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/alpine/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+149,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+150,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+151,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+152,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+153,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+154,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+155,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+156,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+157,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/Dockerfile_base,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+158,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+159,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+160,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+161,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+162,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/Dockerfile.tpl,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+163,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/Dockerfile.tpl,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+164,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/Dockerfile.tpl,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+165,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/Dockerfile.tpl,"## create a 'convertigo' user and fix some rights
+
+"
+166,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/Dockerfile.tpl,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+167,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/Dockerfile.tpl,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+168,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/Dockerfile.tpl,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+169,671e961749021193d2010a62b0b9302833900184,/docker/openj9/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+170,671e961749021193d2010a62b0b9302833900184,/docker/openj9/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+171,671e961749021193d2010a62b0b9302833900184,/docker/openj9/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+172,671e961749021193d2010a62b0b9302833900184,/docker/openj9/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+173,671e961749021193d2010a62b0b9302833900184,/docker/openj9/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+174,671e961749021193d2010a62b0b9302833900184,/docker/openj9/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+175,671e961749021193d2010a62b0b9302833900184,/docker/openj9/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+176,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/slim/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+177,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/slim/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+178,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/slim/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+179,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/slim/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+180,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/slim/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+181,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/slim/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+182,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/slim/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+183,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/slim/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+184,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/slim/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+185,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/slim/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+186,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/slim/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+187,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/slim/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+188,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/slim/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+189,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/slim/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+190,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/default/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+191,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+192,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+193,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+194,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+195,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+196,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+197,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/aks/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+198,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/aks/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+199,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/aks/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+200,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/aks/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+201,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/aks/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+202,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/aks/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+203,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/aks/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+204,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/slim/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+205,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/slim/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+206,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/slim/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+207,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/slim/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+208,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/slim/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+209,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/slim/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+210,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/slim/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+211,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/slim/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+212,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/slim/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+213,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/slim/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+214,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/slim/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+215,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/slim/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+216,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/slim/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+217,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/slim/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+218,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/default/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+219,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+220,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+221,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+222,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+223,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+224,bf8b1f311e12d85f6fe1dec47440abd11b22513f,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+225,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/aks/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+226,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/aks/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+227,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/aks/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+228,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/aks/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+229,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/aks/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+230,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/aks/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+231,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/aks/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+232,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/aks/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+233,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/aks/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+234,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/aks/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+235,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/aks/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+236,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/aks/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+237,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/aks/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+238,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/aks/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+239,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+240,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+241,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+242,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+243,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+244,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+245,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+246,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/openj9/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+247,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/openj9/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+248,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/openj9/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+249,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/openj9/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+250,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/openj9/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+251,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/openj9/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+252,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/openj9/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+253,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/Dockerfile.tpl,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+254,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/Dockerfile.tpl,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+255,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/Dockerfile.tpl,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+256,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/Dockerfile.tpl,"## create a 'convertigo' user and fix some rights
+
+"
+257,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/Dockerfile.tpl,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+258,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/Dockerfile.tpl,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+259,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/Dockerfile.tpl,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+260,b44962f022eda6aef1f3bf5725684fff11ea34bb,/docker/Dockerfile_base,"# Copyright (c) 2001-2018 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+261,b44962f022eda6aef1f3bf5725684fff11ea34bb,/docker/Dockerfile_base,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+262,b44962f022eda6aef1f3bf5725684fff11ea34bb,/docker/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+"
+263,b44962f022eda6aef1f3bf5725684fff11ea34bb,/docker/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+264,b44962f022eda6aef1f3bf5725684fff11ea34bb,/docker/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+265,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/openj9/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+266,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/openj9/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+267,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/openj9/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+268,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/openj9/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+269,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/openj9/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+270,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/openj9/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+271,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/openj9/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+272,671e961749021193d2010a62b0b9302833900184,/docker/default/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+273,671e961749021193d2010a62b0b9302833900184,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+274,671e961749021193d2010a62b0b9302833900184,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+275,671e961749021193d2010a62b0b9302833900184,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+276,671e961749021193d2010a62b0b9302833900184,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+277,671e961749021193d2010a62b0b9302833900184,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+278,671e961749021193d2010a62b0b9302833900184,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+279,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/default/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+280,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+281,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+282,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+283,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+284,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+285,f982deb587d41840af52ff960918dbb9a957d5d6,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+286,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/default/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+287,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+288,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+289,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+290,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+291,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+292,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+293,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/openj9/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+294,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/openj9/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+295,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/openj9/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+296,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/openj9/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+297,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/openj9/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+298,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/openj9/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+299,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/openj9/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+300,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/default/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+301,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+302,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+303,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+304,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+305,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+306,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+307,c56614a329fad2056aba602b2c385e6d9cecb917,/docker/alpine/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+308,c56614a329fad2056aba602b2c385e6d9cecb917,/docker/alpine/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+309,c56614a329fad2056aba602b2c385e6d9cecb917,/docker/alpine/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+310,c56614a329fad2056aba602b2c385e6d9cecb917,/docker/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+311,c56614a329fad2056aba602b2c385e6d9cecb917,/docker/alpine/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+312,c56614a329fad2056aba602b2c385e6d9cecb917,/docker/alpine/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+313,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+314,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/Dockerfile_base,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+315,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+316,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+317,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+318,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+319,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/default/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+320,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+321,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+322,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+323,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+324,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+325,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+326,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/slim/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+327,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/slim/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+328,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/slim/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+329,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/slim/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+330,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/slim/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+331,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/slim/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+332,07a11022f77726359eafaeabbcfd1ba52b516f7c,/docker/slim/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+333,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+334,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/Dockerfile_base,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+335,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+336,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+337,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+338,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+339,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/default/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+340,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+341,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+342,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+343,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+344,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+345,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+346,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/alpine/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+347,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/alpine/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+348,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/alpine/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+349,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+350,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/alpine/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+351,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/alpine/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+352,237009771ae33ba02e737b3c99d8d5340a072c80,/docker/aks/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+353,237009771ae33ba02e737b3c99d8d5340a072c80,/docker/aks/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+354,237009771ae33ba02e737b3c99d8d5340a072c80,/docker/aks/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+355,237009771ae33ba02e737b3c99d8d5340a072c80,/docker/aks/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+356,237009771ae33ba02e737b3c99d8d5340a072c80,/docker/aks/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+357,237009771ae33ba02e737b3c99d8d5340a072c80,/docker/aks/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+358,237009771ae33ba02e737b3c99d8d5340a072c80,/docker/aks/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+359,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/default/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+360,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+361,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+362,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+363,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+364,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+365,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+366,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/alpine/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+367,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/alpine/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+368,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/alpine/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+369,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+370,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/alpine/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+371,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/alpine/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+372,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/openj9/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+373,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/openj9/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+374,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/openj9/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+375,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/openj9/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+376,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/openj9/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+377,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/openj9/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+378,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/openj9/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+379,2a669ad9c9cd64b5c12ddbffb4761efd8dfd9bf6,/docker/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+380,2a669ad9c9cd64b5c12ddbffb4761efd8dfd9bf6,/docker/Dockerfile_base,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+381,2a669ad9c9cd64b5c12ddbffb4761efd8dfd9bf6,/docker/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+382,2a669ad9c9cd64b5c12ddbffb4761efd8dfd9bf6,/docker/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+383,2a669ad9c9cd64b5c12ddbffb4761efd8dfd9bf6,/docker/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+384,2a669ad9c9cd64b5c12ddbffb4761efd8dfd9bf6,/docker/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+385,b44962f022eda6aef1f3bf5725684fff11ea34bb,/docker/alpine/Dockerfile_base,"# Copyright (c) 2001-2018 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+386,b44962f022eda6aef1f3bf5725684fff11ea34bb,/docker/alpine/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+"
+387,b44962f022eda6aef1f3bf5725684fff11ea34bb,/docker/alpine/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+388,b44962f022eda6aef1f3bf5725684fff11ea34bb,/docker/alpine/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+389,b44962f022eda6aef1f3bf5725684fff11ea34bb,/docker/alpine/Dockerfile_base,"## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+390,490c2141383b7785ad34ef45a18d84254705e423,/docker/Dockerfile.tpl,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+391,490c2141383b7785ad34ef45a18d84254705e423,/docker/Dockerfile.tpl,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+392,490c2141383b7785ad34ef45a18d84254705e423,/docker/Dockerfile.tpl,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+393,490c2141383b7785ad34ef45a18d84254705e423,/docker/Dockerfile.tpl,"## create a 'convertigo' user and fix some rights
+
+"
+394,490c2141383b7785ad34ef45a18d84254705e423,/docker/Dockerfile.tpl,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+395,490c2141383b7785ad34ef45a18d84254705e423,/docker/Dockerfile.tpl,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+396,490c2141383b7785ad34ef45a18d84254705e423,/docker/Dockerfile.tpl,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+397,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/default/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+398,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+399,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+400,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+401,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+402,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+403,a851063567bcbe09b10bd38c2975ca69a20dddd1,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+404,f820cb5deb7174b304b73ea46d2bc342d4be3a4e,/docker/Dockerfile_base,"# Copyright (c) 2001-2018 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+405,f820cb5deb7174b304b73ea46d2bc342d4be3a4e,/docker/Dockerfile_base,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+406,f820cb5deb7174b304b73ea46d2bc342d4be3a4e,/docker/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+"
+407,f820cb5deb7174b304b73ea46d2bc342d4be3a4e,/docker/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+408,f820cb5deb7174b304b73ea46d2bc342d4be3a4e,/docker/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+409,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/Dockerfile.tpl,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+410,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/Dockerfile.tpl,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+411,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/Dockerfile.tpl,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+412,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/Dockerfile.tpl,"## create a 'convertigo' user and fix some rights
+
+"
+413,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/Dockerfile.tpl,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+414,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/Dockerfile.tpl,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+415,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/Dockerfile.tpl,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+416,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/Dockerfile.tpl,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+417,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/Dockerfile.tpl,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+418,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/Dockerfile.tpl,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+419,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/Dockerfile.tpl,"## create a 'convertigo' user and fix some rights
+
+"
+420,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/Dockerfile.tpl,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+421,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/Dockerfile.tpl,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+422,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/Dockerfile.tpl,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+423,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/alpine/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+424,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/alpine/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+425,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/alpine/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+426,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/alpine/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+427,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/alpine/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+428,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/openj9/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+429,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/openj9/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+430,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/openj9/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+431,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/openj9/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+432,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/openj9/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+433,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/openj9/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+434,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/openj9/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+435,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/slim/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+436,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/slim/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+437,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/slim/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+438,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/slim/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+439,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/slim/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+440,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/slim/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+441,3b743f3cf28b26806f8f92aa675f39f88cb3b1a9,/docker/slim/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+442,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/aks/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+443,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/aks/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+444,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/aks/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+445,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/aks/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+446,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/aks/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+447,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/aks/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+448,08cb6af31508fb8cb2b15efc26df1bd816a71c2e,/docker/aks/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+449,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/default/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+450,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+451,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+452,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+453,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+454,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+455,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+456,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/default/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+457,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+458,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+459,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+460,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+461,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+462,00d452d27ba5f8d0c515e05ed238f4241602011b,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+463,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+464,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/Dockerfile_base,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+465,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+466,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+467,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+468,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+469,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/alpine/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+470,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/alpine/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+471,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/alpine/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+472,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/alpine/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+473,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/alpine/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+474,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/alpine/Dockerfile_base,"#ENTRYPOINT [""tini"", ""--"", ""/docker-entrypoint.sh""]
+"
+475,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/aks/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+476,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/aks/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+477,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/aks/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+478,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/aks/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+479,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/aks/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+480,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/aks/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+481,81258646e1248c3a7dfc5571aa2e8622766749a3,/docker/aks/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+482,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/slim/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+483,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/slim/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+484,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/slim/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+485,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/slim/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+486,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/slim/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+487,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/slim/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+488,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/slim/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+489,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/default/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+490,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+491,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+492,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+493,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+494,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+495,a86c36298137eb14212454e1c51ebe1d6c0c92ec,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+496,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/slim/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+497,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/slim/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+498,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/slim/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+499,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/slim/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+500,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/slim/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+501,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/slim/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+502,8457bc0c4ddefd7bbf1d6bc2523fb86434398d7d,/docker/slim/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+503,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/default/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+504,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+505,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+506,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+507,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+508,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+509,fe2d970b7dca44aecb7366f389e573af5011dad4,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+510,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/alpine/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+511,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/alpine/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+512,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/alpine/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+513,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+514,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/alpine/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+515,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/alpine/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+516,a62ce1062a8523cc5e9b48031d00901d15831086,/docker/alpine/Dockerfile,"#ENTRYPOINT [""tini"", ""--"", ""/docker-entrypoint.sh""]
+"
+517,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/openj9/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+518,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/openj9/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+519,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/openj9/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+520,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/openj9/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+521,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/openj9/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+522,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/openj9/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+523,f8cd30280977b0d87f0912c617d01d95a35ebd3c,/docker/openj9/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+524,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/openj9/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+525,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/openj9/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+526,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/openj9/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+527,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/openj9/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+528,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/openj9/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+529,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/openj9/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+530,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/openj9/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+531,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/alpine/Dockerfile_base,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+532,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/alpine/Dockerfile_base,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+533,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/alpine/Dockerfile_base,"## create a 'convertigo' user and fix some rights
+
+"
+534,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/alpine/Dockerfile_base,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+535,dfbb103bee91ba9336e95ba5137f59864f3e9eaf,/docker/alpine/Dockerfile_base,"## CHUNK ##
+
+## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+536,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/openj9/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+537,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/openj9/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+538,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/openj9/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+539,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/openj9/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+540,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/openj9/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+541,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/openj9/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+542,4a4f55e4a2ec3a2ea6d567a6fc595e26e0340c7e,/docker/openj9/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+543,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/alpine/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+544,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/alpine/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+545,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/alpine/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+546,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+547,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/alpine/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+548,adeff8f9902e53edce8977656cd7ef81c940643f,/docker/alpine/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+549,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/slim/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+550,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/slim/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+551,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/slim/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+552,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/slim/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+553,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/slim/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+554,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/slim/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+555,5bc0a67088c2839e278367c08f13f7c5d23257b7,/docker/slim/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+556,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/default/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+557,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+558,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+559,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+560,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+561,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+562,8b9464e9b9e635152162086a5ddf44ad415667e9,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+563,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/openj9/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+564,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/openj9/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+565,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/openj9/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+566,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/openj9/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+567,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/openj9/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+568,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/openj9/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+569,54b15b4c7b4d007340175be7838cebc149e864e8,/docker/openj9/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+570,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/default/Dockerfile,"# Copyright (c) 2001-2020 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+571,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+572,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+573,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+574,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+575,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+576,c0f5d34e230afd5aa9c376dfa1e12ade8c5dad31,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+577,6068b1acac3628824f1c99889d345ebc7a234f68,/docker/alpine/Dockerfile_chunk,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+578,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+579,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+580,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+581,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+582,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+583,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+584,ec8eea0cba12badfa519ea264b9ab8d750723612,/docker/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"
+585,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/alpine/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+586,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/alpine/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+587,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/alpine/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+588,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+589,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/alpine/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+590,ddbf2327e5218b9495e7aa6acdb4c8ff7d6102ef,/docker/alpine/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapps
+
+"
+591,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/default/Dockerfile,"# Copyright (c) 2001-2019 Convertigo SA.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Affero General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see<http://www.gnu.org/licenses/>.
+
+"
+592,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/default/Dockerfile,"## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+"
+593,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/default/Dockerfile,"## grab gosu for easy step-down from root and tini for signal handling
+
+"
+594,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/default/Dockerfile,"## create a 'convertigo' user and fix some rights
+
+"
+595,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/default/Dockerfile,"## disable unused AJP, APR and Jasper features
+## change HTTP port the historic Convertigo port 28080
+
+"
+596,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/default/Dockerfile,"## download and extract the convertigo webapps
+## and remove unnecessary components for the mbaas version
+
+"
+597,5ec12795aea15983818874acac083fd1ad35e3ce,/docker/default/Dockerfile,"## copy the ROOT index that redirect to the 'convertigo' webapp
+
+"

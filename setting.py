@@ -14,3 +14,7 @@ PATH_OF_ERROR_GITLOG = "./2-error-gitlogs.txt"
 PATH_OF_GITLOGCSV = "./2-gitlogsCSV"
 PATH_OF_PASTFILE = "./3-pastfiles"
 PATH_OF_ERROR_NOT_EXISTS_PASTFILE = "./3-error-filenotExists.txt"
+
+# 4 get row comment
+PATH_OF_PASTFILE = "./3-pastfiles"
+PATH_OF_COMMENTFILE = "./4-rowComments"

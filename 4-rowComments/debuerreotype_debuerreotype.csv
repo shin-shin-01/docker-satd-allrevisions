@@ -1,0 +1,520 @@
+,CommitID,Dockerfiles,Comments
+0,dcf3366599fdb116a28a2cf19c9264410b17231f,/Dockerfile,"# docker run --cap-add SYS_ADMIN --cap-drop SETFCAP --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs buster now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-debian-sources-list /tmp/docker-rootfs buster
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:buster-slim
+# alternate:
+#   debootstrap --variant=minbase buster /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:buster-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+1,dcf3366599fdb116a28a2cf19c9264410b17231f,/Dockerfile,"# see "".dockerignore""
+"
+2,dcf3366599fdb116a28a2cf19c9264410b17231f,/Dockerfile,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   14206d5b9b2991e98f5214c3d310e4fa
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   57f98d3636000630080e5ba208508e10
+"
+3,5e04213e9f6ba23d22039931030d6e77544af40f,/Dockerfile.builder,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+"
+4,5e04213e9f6ba23d22039931030d6e77544af40f,/Dockerfile.builder,"# docker-deboot-init stretch 2017-05-08T00:00:00Z test-stretch
+# docker-deboot-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   93db8c96db59bc6023177a845d1c8263
+
+# docker-deboot-init jessie 2017-05-08T00:00:00Z test-jessie
+# docker-deboot-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   9b60134210c0c848f796e7642c1f75f4
+"
+5,8b1a48dd7bd2a70fd1599426011198faa89a6fe2,/Dockerfile,"# docker run --cap-add SYS_ADMIN --cap-drop SETFCAP --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs stretch now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-debian-sources-list /tmp/docker-rootfs stretch
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+6,8b1a48dd7bd2a70fd1599426011198faa89a6fe2,/Dockerfile,"# see "".dockerignore""
+"
+7,8b1a48dd7bd2a70fd1599426011198faa89a6fe2,/Dockerfile,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   14206d5b9b2991e98f5214c3d310e4fa
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   57f98d3636000630080e5ba208508e10
+"
+8,d8f9e2568e622c1e94b81a2e023bf280df6fdc66,/Dockerfile.builder,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+"
+9,d8f9e2568e622c1e94b81a2e023bf280df6fdc66,/Dockerfile.builder,"# docker-deboot-init test-stretch stretch 2017-05-08T00:00:00Z
+# docker-deboot-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   93db8c96db59bc6023177a845d1c8263
+
+# docker-deboot-init test-jessie jessie 2017-05-08T00:00:00Z
+# docker-deboot-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   9b60134210c0c848f796e7642c1f75f4
+"
+10,85c64cf432d4cda25b517600d9495bcd3c3d9fec,/Dockerfile,"# docker run --cap-add SYS_ADMIN --cap-drop SETFCAP --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs stretch now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org/debian-security
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+11,85c64cf432d4cda25b517600d9495bcd3c3d9fec,/Dockerfile,"# see "".dockerignore""
+"
+12,85c64cf432d4cda25b517600d9495bcd3c3d9fec,/Dockerfile,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   14206d5b9b2991e98f5214c3d310e4fa
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   57f98d3636000630080e5ba208508e10
+"
+13,98c713ff81148acde6757b2902f7d7946d9b7e02,/Dockerfile,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs stretch now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org/debian-security
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+14,98c713ff81148acde6757b2902f7d7946d9b7e02,/Dockerfile,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   6f965e84837215ac0aa375e3391392db
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   93ad9886b0e0da17aae584d3a0236d0c
+"
+15,0e55dde2a3d3d79fbcdc0c4123cbf69e91a9f0c7,/Dockerfile,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs stretch now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org/debian-security
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+16,0e55dde2a3d3d79fbcdc0c4123cbf69e91a9f0c7,/Dockerfile,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   6f965e84837215ac0aa375e3391392db
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   93ad9886b0e0da17aae584d3a0236d0c
+"
+17,9f8d7bf6c5d25dcb7c5b4c0807d3ef1ac39f4733,/Dockerfile.builder,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/init.sh /tmp/docker-rootfs stretch now
+#   ./scripts/minimizing-config.sh /tmp/docker-rootfs
+#   ./scripts/gen-sources-list.sh /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org
+#   ./scripts/tar.sh /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+18,9f8d7bf6c5d25dcb7c5b4c0807d3ef1ac39f4733,/Dockerfile.builder,"# a few example md5sum values for amd64:
+
+# docker-deboot-init test-stretch stretch 2017-05-08T00:00:00Z
+# docker-deboot-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   b58e1c32013c9815d83b8bed3db189a4
+
+# docker-deboot-init test-jessie jessie 2017-05-08T00:00:00Z
+# docker-deboot-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   d40354bf29cb69a0359e828f2cb533ba
+"
+19,393827b9177219e7f875f099e757e5023c8d3be4,/Dockerfile.builder,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/docker-deboot-init /tmp/docker-rootfs stretch now
+#   ./scripts/docker-deboot-minimizing-config /tmp/docker-rootfs
+#   ./scripts/docker-deboot-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org
+#   ./scripts/docker-deboot-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+20,393827b9177219e7f875f099e757e5023c8d3be4,/Dockerfile.builder,"# a few example md5sum values for amd64:
+
+# docker-deboot-init test-stretch stretch 2017-05-08T00:00:00Z
+# docker-deboot-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   b58e1c32013c9815d83b8bed3db189a4
+
+# docker-deboot-init test-jessie jessie 2017-05-08T00:00:00Z
+# docker-deboot-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   d40354bf29cb69a0359e828f2cb533ba
+"
+21,8310e4da8117e7d33bb49de8ea5fd9271c4886f3,/Dockerfile.builder,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs stretch now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+22,8310e4da8117e7d33bb49de8ea5fd9271c4886f3,/Dockerfile.builder,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   6f965e84837215ac0aa375e3391392db
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   45624a45af50f60b6b4be7203bf16c86
+"
+23,579c54efc2634844c61bea905eb798194c289dcd,/Dockerfile.builder,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/docker-deboot-init /tmp/docker-rootfs stretch now
+#   ./scripts/docker-deboot-minimizing-config /tmp/docker-rootfs
+#   ./scripts/docker-deboot-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org
+#   ./scripts/docker-deboot-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+24,579c54efc2634844c61bea905eb798194c289dcd,/Dockerfile.builder,"# a few example md5sum values for amd64:
+
+# docker-deboot-init test-stretch stretch 2017-05-08T00:00:00Z
+# docker-deboot-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   2dec6d8fc117f4dde1d1932fa232d1b4
+
+# docker-deboot-init test-jessie jessie 2017-05-08T00:00:00Z
+# docker-deboot-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   d6cd6f4f777bffd3f3d1fafd03a4a422
+"
+25,a28e1d3b42a7eaac50a4046e0dcd5afb4ba072ed,/Dockerfile.builder,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+"
+26,a28e1d3b42a7eaac50a4046e0dcd5afb4ba072ed,/Dockerfile.builder,"# docker-deboot-init test-stretch stretch 2017-05-08T00:00:00Z
+# docker-deboot-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   b58e1c32013c9815d83b8bed3db189a4
+
+# docker-deboot-init test-jessie jessie 2017-05-08T00:00:00Z
+# docker-deboot-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   d40354bf29cb69a0359e828f2cb533ba
+"
+27,e021996fe4427db746c537a276bc325ca0136caf,/Dockerfile,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs stretch now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org/debian-security
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+28,e021996fe4427db746c537a276bc325ca0136caf,/Dockerfile,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   6f965e84837215ac0aa375e3391392db
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   93ad9886b0e0da17aae584d3a0236d0c
+"
+29,de6b759eeb7c944b93102ae1dd23620fecee0696,/Dockerfile.builder,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs stretch now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+30,de6b759eeb7c944b93102ae1dd23620fecee0696,/Dockerfile.builder,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   2dec6d8fc117f4dde1d1932fa232d1b4
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   d6cd6f4f777bffd3f3d1fafd03a4a422
+"
+31,83a7eab1bb38320537e5d40df36dc97c57dc8317,/Dockerfile,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs stretch now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+32,83a7eab1bb38320537e5d40df36dc97c57dc8317,/Dockerfile,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   6f965e84837215ac0aa375e3391392db
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   45624a45af50f60b6b4be7203bf16c86
+"
+33,9dda5077431d5bfce553b3a1e6e2a142865b8531,/Dockerfile.builder,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/init.sh /tmp/docker-rootfs stretch now
+#   ./scripts/minimizing-config.sh /tmp/docker-rootfs
+#   ./scripts/gen-sources-list.sh /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org
+#   ./scripts/tar.sh /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+34,9dda5077431d5bfce553b3a1e6e2a142865b8531,/Dockerfile.builder,"# a few example md5sum values for amd64:
+
+# docker-deboot-init test-stretch stretch 2017-05-08T00:00:00Z
+# docker-deboot-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   b58e1c32013c9815d83b8bed3db189a4
+
+# docker-deboot-init test-jessie jessie 2017-05-08T00:00:00Z
+# docker-deboot-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   d40354bf29cb69a0359e828f2cb533ba
+"
+35,827014ae718a8f897fb004e552d00e100632d358,/Dockerfile,"# docker run --cap-add SYS_ADMIN --cap-drop SETFCAP --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs buster now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-debian-sources-list /tmp/docker-rootfs buster
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:buster-slim
+# alternate:
+#   debootstrap --variant=minbase buster /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:buster-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+36,827014ae718a8f897fb004e552d00e100632d358,/Dockerfile,"# see "".dockerignore""
+"
+37,827014ae718a8f897fb004e552d00e100632d358,/Dockerfile,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   14206d5b9b2991e98f5214c3d310e4fa
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   57f98d3636000630080e5ba208508e10
+"
+38,2319d980534c898b4db8245a26f40b11fe749bad,/Dockerfile,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs stretch now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+39,2319d980534c898b4db8245a26f40b11fe749bad,/Dockerfile,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   6f965e84837215ac0aa375e3391392db
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   93ad9886b0e0da17aae584d3a0236d0c
+"
+40,ef790f238056b0772b459e1f746aad0aaa2015a0,/Dockerfile,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs stretch now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org/debian-security
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+41,ef790f238056b0772b459e1f746aad0aaa2015a0,/Dockerfile,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   6f965e84837215ac0aa375e3391392db
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   93ad9886b0e0da17aae584d3a0236d0c
+"
+42,ed59b69a7b43e7e859ef58a8505df25f71311791,/Dockerfile,"# docker run --cap-add SYS_ADMIN --cap-drop SETFCAP --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs stretch now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org/debian-security
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+43,ed59b69a7b43e7e859ef58a8505df25f71311791,/Dockerfile,"# see "".dockerignore""
+"
+44,ed59b69a7b43e7e859ef58a8505df25f71311791,/Dockerfile,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   983b79e9c4ba158e269ef9964dbab60b
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   93ad9886b0e0da17aae584d3a0236d0c
+"
+45,8105f944f2975f0d3c46f9f84c243bf1ef6e18aa,/Dockerfile,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs stretch now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org/debian-security
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+46,8105f944f2975f0d3c46f9f84c243bf1ef6e18aa,/Dockerfile,"# see "".dockerignore""
+"
+47,8105f944f2975f0d3c46f9f84c243bf1ef6e18aa,/Dockerfile,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   983b79e9c4ba158e269ef9964dbab60b
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   93ad9886b0e0da17aae584d3a0236d0c
+"
+48,843ba868fd022f0a0e3af3ee3e66860a3039d6cf,/Dockerfile.builder,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+"
+49,843ba868fd022f0a0e3af3ee3e66860a3039d6cf,/Dockerfile.builder,"# docker-deboot-init test-stretch stretch 2017-05-08T00:00:00Z
+# docker-deboot-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   93db8c96db59bc6023177a845d1c8263
+
+# docker-deboot-init test-jessie jessie 2017-05-08T00:00:00Z
+# docker-deboot-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   9b60134210c0c848f796e7642c1f75f4
+"
+50,9b1f5fa4cbebe21b7f70fdf14b9214379b46bb77,/Dockerfile,"# docker run --cap-add SYS_ADMIN --tmpfs /tmp:dev,exec,suid,noatime ...
+
+# bootstrapping a new architecture?
+#   ./scripts/debuerreotype-init /tmp/docker-rootfs stretch now
+#   ./scripts/debuerreotype-minimizing-config /tmp/docker-rootfs
+#   ./scripts/debuerreotype-gen-sources-list /tmp/docker-rootfs stretch http://deb.debian.org/debian http://security.debian.org/debian-security
+#   ./scripts/debuerreotype-tar /tmp/docker-rootfs - | docker import - debian:stretch-slim
+# alternate:
+#   debootstrap --variant=minbase stretch /tmp/docker-rootfs
+#   tar -cC /tmp/docker-rootfs . | docker import - debian:stretch-slim
+# (or your own favorite set of ""debootstrap"" commands to create a base image for building this one FROM)
+"
+51,9b1f5fa4cbebe21b7f70fdf14b9214379b46bb77,/Dockerfile,"# see "".dockerignore""
+"
+52,9b1f5fa4cbebe21b7f70fdf14b9214379b46bb77,/Dockerfile,"# a few example md5sum values for amd64:
+
+# debuerreotype-init test-stretch stretch 2017-05-08T00:00:00Z
+# debuerreotype-tar test-stretch test-stretch.tar
+# md5sum test-stretch.tar
+#   6f965e84837215ac0aa375e3391392db
+
+# debuerreotype-init test-jessie jessie 2017-05-08T00:00:00Z
+# debuerreotype-tar test-jessie test-jessie.tar
+# md5sum test-jessie.tar
+#   93ad9886b0e0da17aae584d3a0236d0c
+"

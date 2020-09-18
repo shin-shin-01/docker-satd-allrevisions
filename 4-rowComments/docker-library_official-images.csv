@@ -1,0 +1,267 @@
+,CommitID,Dockerfiles,Comments
+0,4b9063734c3c0a66f6792ce8e9d1a338d1858259,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+1,4b9063734c3c0a66f6792ce8e9d1a338d1858259,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+2,f6cbc219978a8cb48e0735eb0d460125fb0dab4e,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+3,f6cbc219978a8cb48e0735eb0d460125fb0dab4e,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+#ENV MANIFEST_TOOL_GPG_KEY 27F3EA268A97867EAF0BD05C0F386284C03A1162
+# TODO consume Phil's releases again (once he fixes https://github.com/estesp/manifest-tool/issues/47 properly)
+
+"
+4,f6cbc219978a8cb48e0735eb0d460125fb0dab4e,/bashbrew/Dockerfile.release,"# see https://github.com/golang/go/issues/9737#issuecomment-276817652 (and following comments) -- installsuffix is necessary (for now) to keep ARM
+# can remove ""$bashbrewArch"" from ""installsuffix"" in Go 1.10+ (https://github.com/golang/go/commit/1b53f15ebb00dd158af674df410c7941abb2b933)
+"
+5,f6cbc219978a8cb48e0735eb0d460125fb0dab4e,/bashbrew/Dockerfile.release,"	# see https://github.com/golang/go/issues/9737#issuecomment-276817652 (and following comments) -- installsuffix is necessary (for now) to keep ARM
+	# can remove ""$bashbrewArch"" from ""installsuffix"" in Go 1.10+ (https://github.com/golang/go/commit/1b53f15ebb00dd158af674df410c7941abb2b933)
+"
+6,1bc380db2466089514b430974c1f06fb506f9862,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+7,1bc380db2466089514b430974c1f06fb506f9862,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+8,84aa9ed158196e09a9e68f34d6a2a02ce43a0f7e,/bashbrew/put-multiarch/Dockerfile,"# secure by default ♥ (thanks to sri!)
+"
+9,84aa9ed158196e09a9e68f34d6a2a02ce43a0f7e,/bashbrew/put-multiarch/Dockerfile,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+#RUN cpanm Digest::SHA Module::Signature
+# TODO find a way to make --verify work with backpan as well :'(
+#ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify
+
+# reinstall cpanm itself, for good measure
+"
+10,84aa9ed158196e09a9e68f34d6a2a02ce43a0f7e,/bashbrew/put-multiarch/Dockerfile,"# the tests for IO::Socket::SSL like to hang... :(
+"
+11,84aa9ed158196e09a9e68f34d6a2a02ce43a0f7e,/bashbrew/put-multiarch/Dockerfile,"# https://metacpan.org/pod/release/SRI/Mojolicious-7.94/lib/Mojo/IOLoop.pm#DESCRIPTION
+"
+12,84aa9ed158196e09a9e68f34d6a2a02ce43a0f7e,/bashbrew/put-multiarch/Dockerfile,"# epoll (Linux)
+
+"
+13,18b84c17e4bf8e02f867866c5e4e0cbfb3e3432d,/Dockerfile,"# add ""edge"" since Alpine 3.3 only has Go 1.5 and we need 1.6+
+"
+14,18b84c17e4bf8e02f867866c5e4e0cbfb3e3432d,/Dockerfile,"# bash for running scripts
+"
+15,18b84c17e4bf8e02f867866c5e4e0cbfb3e3432d,/Dockerfile,"# go for compiling bashbrew
+"
+16,18b84c17e4bf8e02f867866c5e4e0cbfb3e3432d,/Dockerfile,"# make sure our default cache dir exists and is writable by anyone (similar to /tmp)
+"
+17,18b84c17e4bf8e02f867866c5e4e0cbfb3e3432d,/Dockerfile,"# (this allows us to decide at runtime the exact uid/gid we'd like to run as)
+
+"
+18,5ea61be02a8018550ce5895365d8bc7531b0fa8c,/Dockerfile,"# ssl for downloading files
+"
+19,5ea61be02a8018550ce5895365d8bc7531b0fa8c,/Dockerfile,"# git for cloning source code
+"
+20,5ea61be02a8018550ce5895365d8bc7531b0fa8c,/Dockerfile,"# go for compiling bashbrew (backports to get new enough version and to make it work on s390x)
+"
+21,5ea61be02a8018550ce5895365d8bc7531b0fa8c,/Dockerfile,"# make sure our default cache dir exists and is writable by anyone (similar to /tmp)
+"
+22,5ea61be02a8018550ce5895365d8bc7531b0fa8c,/Dockerfile,"# (this allows us to decide at runtime the exact uid/gid we'd like to run as)
+
+"
+23,31d62561065a096c0062ee0a460929805f2da900,/Dockerfile,"# add ""edge"" since Alpine 3.3 only has Go 1.5 and we need 1.6+
+"
+24,31d62561065a096c0062ee0a460929805f2da900,/Dockerfile,"# bash for running scripts
+"
+25,31d62561065a096c0062ee0a460929805f2da900,/Dockerfile,"# go for compiling bashbrew
+"
+26,3b661c2c61964667e6c8f4ea243e5e832d1fc2c7,/Dockerfile,"# add ""edge"" since Alpine 3.3 only has Go 1.5 and we need 1.6+
+"
+27,3b661c2c61964667e6c8f4ea243e5e832d1fc2c7,/Dockerfile,"# bash for running scripts
+"
+28,3b661c2c61964667e6c8f4ea243e5e832d1fc2c7,/Dockerfile,"# go for compiling bashbrew
+"
+29,75829b5580d017212c0aee8c9fddec94e7623a3e,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+30,75829b5580d017212c0aee8c9fddec94e7623a3e,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+31,2693639e199a302bc90f25a4602c949f4566aa99,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+32,2693639e199a302bc90f25a4602c949f4566aa99,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+33,d441c7811f565870e461fea4ceefd1a8db79f960,/Dockerfile,"# add ""edge"" since Alpine 3.3 only has Go 1.5 and we need 1.6+
+"
+34,d441c7811f565870e461fea4ceefd1a8db79f960,/Dockerfile,"# bash for running scripts
+"
+35,d441c7811f565870e461fea4ceefd1a8db79f960,/Dockerfile,"# go for compiling bashbrew
+"
+36,d441c7811f565870e461fea4ceefd1a8db79f960,/Dockerfile,"# make sure our default cache dir exists and is writable by anyone (similar to /tmp)
+"
+37,d441c7811f565870e461fea4ceefd1a8db79f960,/Dockerfile,"# (this allows us to decide at runtime the exact uid/gid we'd like to run as)
+
+"
+38,e9a3c6d607573ef4a8eaa938cdb4b20ab907d16f,/Dockerfile,"# FYI, this base image is built via test-pr.sh (from https://github.com/docker-library/bashbrew/tree/master/Dockerfile)
+"
+39,e9a3c6d607573ef4a8eaa938cdb4b20ab907d16f,/Dockerfile,"# wget for downloading files (especially in tests, which run in this environment)
+"
+40,e9a3c6d607573ef4a8eaa938cdb4b20ab907d16f,/Dockerfile,"# git for cloning source code
+"
+41,baa10af5a8c77d30d858a456a2ffd2c752fd52e6,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+42,baa10af5a8c77d30d858a456a2ffd2c752fd52e6,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+43,c2163904e11b34018f0789f10da6f20a1d342f69,/Dockerfile,"# bash for running scripts
+"
+44,c2163904e11b34018f0789f10da6f20a1d342f69,/Dockerfile,"# go for compiling bashbrew
+"
+45,c2163904e11b34018f0789f10da6f20a1d342f69,/Dockerfile,"# ssl for downloading files
+"
+46,c2163904e11b34018f0789f10da6f20a1d342f69,/Dockerfile,"# make sure our default cache dir exists and is writable by anyone (similar to /tmp)
+"
+47,c2163904e11b34018f0789f10da6f20a1d342f69,/Dockerfile,"# (this allows us to decide at runtime the exact uid/gid we'd like to run as)
+
+"
+48,dfc5512318d1a5359e554e7b98ca14219c647c27,/Dockerfile,"# add ""edge"" since Alpine 3.3 only has Go 1.5 and we need 1.6+
+"
+49,058fbda764e8273f2bfbeda928e2be84450c04a2,/Dockerfile,"# wget for downloading files (especially in tests, which run in this environment)
+"
+50,058fbda764e8273f2bfbeda928e2be84450c04a2,/Dockerfile,"# git for cloning source code
+"
+51,058fbda764e8273f2bfbeda928e2be84450c04a2,/Dockerfile,"# go for compiling bashbrew (backports to get new enough version and to make it work on s390x)
+"
+52,058fbda764e8273f2bfbeda928e2be84450c04a2,/Dockerfile,"# make sure our default cache dir exists and is writable by anyone (similar to /tmp)
+"
+53,058fbda764e8273f2bfbeda928e2be84450c04a2,/Dockerfile,"# (this allows us to decide at runtime the exact uid/gid we'd like to run as)
+
+"
+54,ed01aafd77da721b5caa37ae3814ebd01cdcd1e6,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+55,ed01aafd77da721b5caa37ae3814ebd01cdcd1e6,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+56,38a906242d522b7bae3c04e4790336eb3dffa1d8,/Dockerfile,"# bash for running scripts
+"
+57,38a906242d522b7bae3c04e4790336eb3dffa1d8,/Dockerfile,"# go for compiling bashbrew
+"
+58,38a906242d522b7bae3c04e4790336eb3dffa1d8,/Dockerfile,"# make sure our default cache dir exists and is writable by anyone (similar to /tmp)
+"
+59,38a906242d522b7bae3c04e4790336eb3dffa1d8,/Dockerfile,"# (this allows us to decide at runtime the exact uid/gid we'd like to run as)
+
+"
+60,058fbda764e8273f2bfbeda928e2be84450c04a2,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+61,058fbda764e8273f2bfbeda928e2be84450c04a2,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+62,447e88b53d1636a4641a6917b1b6c24f8bbf70a4,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+63,447e88b53d1636a4641a6917b1b6c24f8bbf70a4,/bashbrew/Dockerfile.release,"#$os/}""; \
+# TODO GOARM
+"
+64,447e88b53d1636a4641a6917b1b6c24f8bbf70a4,/bashbrew/Dockerfile.release,"# TODO verify GPG signatures for manifest-tool releases
+"
+65,9d7a12f669842a75f7e6f1be66842d5ce78cfed9,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+66,9d7a12f669842a75f7e6f1be66842d5ce78cfed9,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+67,9d7a12f669842a75f7e6f1be66842d5ce78cfed9,/bashbrew/Dockerfile.release,"#${os}-}""; \
+"
+68,9d7a12f669842a75f7e6f1be66842d5ce78cfed9,/bashbrew/Dockerfile.release,"#arm32v}"" ;; \
+# no GOARM for arm64 (yet?) -- https://github.com/golang/go/blob/1e72bf62183ea21b9affffd4450d44d994393899/src/cmd/internal/objabi/util.go#L40
+"
+69,9d7a12f669842a75f7e6f1be66842d5ce78cfed9,/bashbrew/Dockerfile.release,"# see https://github.com/golang/go/issues/9737#issuecomment-276817652 (and following comments) -- installsuffix is necessary (for now) to keep ARM
+# can remove ""$osArch"" from ""installsuffix"" in Go 1.10+ (https://github.com/golang/go/commit/1b53f15ebb00dd158af674df410c7941abb2b933)
+"
+70,9d7a12f669842a75f7e6f1be66842d5ce78cfed9,/bashbrew/Dockerfile.release,"# manifest-tool and GOARM aren't friends yet
+# ... and estesp is probably a big fat ""lololol"" on supporting i386 :D
+"
+71,76e1068df5a4610b6f77c0fdb8874bcc10583a9f,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+72,76e1068df5a4610b6f77c0fdb8874bcc10583a9f,/bashbrew/Dockerfile.release,"#${os}-}""; \
+"
+73,76e1068df5a4610b6f77c0fdb8874bcc10583a9f,/bashbrew/Dockerfile.release,"#arm32v}"" ;; \
+# no GOARM for arm64 (yet?) -- https://github.com/golang/go/blob/1e72bf62183ea21b9affffd4450d44d994393899/src/cmd/internal/objabi/util.go#L40
+"
+74,76e1068df5a4610b6f77c0fdb8874bcc10583a9f,/bashbrew/Dockerfile.release,"# see https://github.com/golang/go/issues/9737#issuecomment-276817652 (and following comments) -- installsuffix is necessary (for now) to keep ARM
+# can remove ""$osArch"" from ""installsuffix"" in Go 1.10+ (https://github.com/golang/go/commit/1b53f15ebb00dd158af674df410c7941abb2b933)
+"
+75,76e1068df5a4610b6f77c0fdb8874bcc10583a9f,/bashbrew/Dockerfile.release,"# manifest-tool and GOARM aren't friends yet
+# ... and estesp is probably a big fat ""lololol"" on supporting i386 :D
+"
+76,76e1068df5a4610b6f77c0fdb8874bcc10583a9f,/bashbrew/Dockerfile.release,"# TODO verify GPG signatures for manifest-tool releases
+"
+77,5270557108533f67d37af3e9bd2d82885b1c4e38,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+78,5270557108533f67d37af3e9bd2d82885b1c4e38,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+79,caa77d44ae0eb21b0963821d6ea0999d5e61bd32,/Dockerfile,"# bash for running scripts
+"
+80,caa77d44ae0eb21b0963821d6ea0999d5e61bd32,/Dockerfile,"# go for compiling bashbrew
+"
+81,caa77d44ae0eb21b0963821d6ea0999d5e61bd32,/Dockerfile,"# make sure our default cache dir exists and is writable by anyone (similar to /tmp)
+"
+82,caa77d44ae0eb21b0963821d6ea0999d5e61bd32,/Dockerfile,"# (this allows us to decide at runtime the exact uid/gid we'd like to run as)
+
+"
+83,2e3ffd28f5db454c9e76a8427e75e53b69fbd5c5,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+84,2e3ffd28f5db454c9e76a8427e75e53b69fbd5c5,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+85,060e0c89704802fdefa91aacd5c1f062a0b179dd,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+86,060e0c89704802fdefa91aacd5c1f062a0b179dd,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+87,01342e45187a88b5ef94e77c89aa73ca01b8bc69,/Dockerfile,"# wget for downloading files (especially in tests, which run in this environment)
+"
+88,01342e45187a88b5ef94e77c89aa73ca01b8bc69,/Dockerfile,"# git for cloning source code
+"
+89,01342e45187a88b5ef94e77c89aa73ca01b8bc69,/Dockerfile,"# go for compiling bashbrew (backports to get new enough version and to make it work on s390x)
+"
+90,01342e45187a88b5ef94e77c89aa73ca01b8bc69,/Dockerfile,"# make sure our default cache dir exists and is writable by anyone (similar to /tmp)
+"
+91,01342e45187a88b5ef94e77c89aa73ca01b8bc69,/Dockerfile,"# (this allows us to decide at runtime the exact uid/gid we'd like to run as)
+
+"
+92,c21ec66e1d610d681ffbb1fa3acb3a62b46f6f0c,/Dockerfile,"# bash for running scripts
+"
+93,c21ec66e1d610d681ffbb1fa3acb3a62b46f6f0c,/Dockerfile,"# go for compiling bashbrew
+"
+94,c21ec66e1d610d681ffbb1fa3acb3a62b46f6f0c,/Dockerfile,"# make sure our default cache dir exists and is writable by anyone (similar to /tmp)
+"
+95,c21ec66e1d610d681ffbb1fa3acb3a62b46f6f0c,/Dockerfile,"# (this allows us to decide at runtime the exact uid/gid we'd like to run as)
+
+"
+96,59f40afac1fe3d7520cd7b6e335c66ebcb08dc7d,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+97,59f40afac1fe3d7520cd7b6e335c66ebcb08dc7d,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+98,1fedec2869e560fdb21faf034fe85f0be103d8ef,/Dockerfile,"# ssl for downloading files
+"
+99,1fedec2869e560fdb21faf034fe85f0be103d8ef,/Dockerfile,"# git for cloning source code
+"
+100,1fedec2869e560fdb21faf034fe85f0be103d8ef,/Dockerfile,"# go for compiling bashbrew (backports to get new enough version and to make it work on s390x)
+"
+101,1fedec2869e560fdb21faf034fe85f0be103d8ef,/Dockerfile,"# make sure our default cache dir exists and is writable by anyone (similar to /tmp)
+"
+102,1fedec2869e560fdb21faf034fe85f0be103d8ef,/Dockerfile,"# (this allows us to decide at runtime the exact uid/gid we'd like to run as)
+
+"
+103,62a1d1e802084dc7c46770cf553476e815254082,/Dockerfile,"# bash for running scripts
+"
+104,62a1d1e802084dc7c46770cf553476e815254082,/Dockerfile,"# go for compiling bashbrew
+"
+105,62a1d1e802084dc7c46770cf553476e815254082,/Dockerfile,"# ssl for downloading files
+"
+106,62a1d1e802084dc7c46770cf553476e815254082,/Dockerfile,"# coreutils for real ""tac"" so it isn't busybox-buggy (where it seems to fail if the pipe is closed prematurely, which defeats the whole purpose of the ""tac|tac"" idiom)
+"
+107,62a1d1e802084dc7c46770cf553476e815254082,/Dockerfile,"# make sure our default cache dir exists and is writable by anyone (similar to /tmp)
+"
+108,62a1d1e802084dc7c46770cf553476e815254082,/Dockerfile,"# (this allows us to decide at runtime the exact uid/gid we'd like to run as)
+
+"
+109,4a3207d0cfc224110702d610168bdcee5e82100f,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+110,4a3207d0cfc224110702d610168bdcee5e82100f,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+111,8975a539ea805fbaeed95d7a066d1803a212cc4d,/bashbrew/Dockerfile.release,"# https://github.com/estesp/manifest-tool/releases
+"
+112,8975a539ea805fbaeed95d7a066d1803a212cc4d,/bashbrew/Dockerfile.release,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+"
+113,8975a539ea805fbaeed95d7a066d1803a212cc4d,/bashbrew/Dockerfile.release,"#${os}-}""; \
+"
+114,8975a539ea805fbaeed95d7a066d1803a212cc4d,/bashbrew/Dockerfile.release,"#arm32v}"" ;; \
+# no GOARM for arm64 (yet?) -- https://github.com/golang/go/blob/1e72bf62183ea21b9affffd4450d44d994393899/src/cmd/internal/objabi/util.go#L40
+"
+115,8975a539ea805fbaeed95d7a066d1803a212cc4d,/bashbrew/Dockerfile.release,"# see https://github.com/golang/go/issues/9737#issuecomment-276817652 (and following comments) -- installsuffix is necessary (for now) to keep ARM
+# can remove ""$osArch"" from ""installsuffix"" in Go 1.10+ (https://github.com/golang/go/commit/1b53f15ebb00dd158af674df410c7941abb2b933)
+"
+116,8975a539ea805fbaeed95d7a066d1803a212cc4d,/bashbrew/Dockerfile.release,"# manifest-tool and GOARM aren't friends yet
+# ... and estesp is probably a big fat ""lololol"" on supporting i386 :D
+"

@@ -1,0 +1,2917 @@
+,CommitID,Dockerfiles,Comments
+0,262c357e3fe763c945c85feeec241a5b407de93c,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+1,a912899428b3c0854a463a30a3d7c5d52a088759,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+2,a912899428b3c0854a463a30a3d7c5d52a088759,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+3,a912899428b3c0854a463a30a3d7c5d52a088759,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+4,a912899428b3c0854a463a30a3d7c5d52a088759,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+5,a912899428b3c0854a463a30a3d7c5d52a088759,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+6,c9aa8eecee3217d3f0497e29c57b8d822a5eea76,/6/Dockerfile,"# Elasticsearch 6.8.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+7,c9aa8eecee3217d3f0497e29c57b8d822a5eea76,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.1/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+8,ffd7a19f1e68329cc310f145c232e83abec09067,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+9,ffd7a19f1e68329cc310f145c232e83abec09067,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+10,ffd7a19f1e68329cc310f145c232e83abec09067,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+11,ffd7a19f1e68329cc310f145c232e83abec09067,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+12,e86bdc93b04fedbf1e6d0754d1f54324707439ed,/6/Dockerfile,"# Elasticsearch 6.8.9
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+13,e86bdc93b04fedbf1e6d0754d1f54324707439ed,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.9/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+14,e11f68aacce2d83dd6df29fe71e06142a2610447,/2.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+15,e11f68aacce2d83dd6df29fe71e06142a2610447,/2.2/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+16,56476e6c40c7ad5715e3c1f696548bac27dae086,/1.7/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+17,56476e6c40c7ad5715e3c1f696548bac27dae086,/1.7/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+18,56476e6c40c7ad5715e3c1f696548bac27dae086,/1.7/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+19,56476e6c40c7ad5715e3c1f696548bac27dae086,/1.7/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+20,56476e6c40c7ad5715e3c1f696548bac27dae086,/1.7/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+21,8267f6c29f06373373b4379473291d3082728cc0,/2.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+22,8267f6c29f06373373b4379473291d3082728cc0,/2.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+23,8a74bd1f706af238e2cb9d8063d5067338e5d388,/2.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+24,8a74bd1f706af238e2cb9d8063d5067338e5d388,/2.1/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+25,1aaead32a1a561fb2b57d8a116e288bb581d9191,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+26,58ca884e21e67128c046ec9293d45c32b46a4d27,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+27,8a74bd1f706af238e2cb9d8063d5067338e5d388,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+28,8a74bd1f706af238e2cb9d8063d5067338e5d388,/1.5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+29,2bfa45254a681e4f667c96c5de13438209e2f0ec,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+30,2bfa45254a681e4f667c96c5de13438209e2f0ec,/Dockerfile.template,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+31,e9c56dda865977051c5eceea99eeb1af9ffa4408,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+32,e9c56dda865977051c5eceea99eeb1af9ffa4408,/1.7/Dockerfile,"# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+33,e9c56dda865977051c5eceea99eeb1af9ffa4408,/1.7/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+34,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+35,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.3/Dockerfile,"# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+36,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+37,ffaaf3283e47dcb732e90288a58757b87a8439a7,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+38,ffaaf3283e47dcb732e90288a58757b87a8439a7,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+39,ffaaf3283e47dcb732e90288a58757b87a8439a7,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+40,ffaaf3283e47dcb732e90288a58757b87a8439a7,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+41,a83e1837684d580e66f31cb01940ac1b99eef3aa,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+42,a83e1837684d580e66f31cb01940ac1b99eef3aa,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+43,a83e1837684d580e66f31cb01940ac1b99eef3aa,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+44,a83e1837684d580e66f31cb01940ac1b99eef3aa,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+45,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+46,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/1.7/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+47,e3b9b5c27ce4ea5fbdbfac57280a98e54bf7528f,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+48,e3b9b5c27ce4ea5fbdbfac57280a98e54bf7528f,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+49,e3b9b5c27ce4ea5fbdbfac57280a98e54bf7528f,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+50,e3b9b5c27ce4ea5fbdbfac57280a98e54bf7528f,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+51,e3b9b5c27ce4ea5fbdbfac57280a98e54bf7528f,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+52,8f00ad520c1c33b879a715700905d3c25c526331,/2.4/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+53,8f00ad520c1c33b879a715700905d3c25c526331,/2.4/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+54,8f00ad520c1c33b879a715700905d3c25c526331,/2.4/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+55,8f00ad520c1c33b879a715700905d3c25c526331,/2.4/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+56,621b02788fba0220b7c47a21a24d360f99fd8555,/6/Dockerfile,"# Elasticsearch 6.5.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+57,621b02788fba0220b7c47a21a24d360f99fd8555,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.5.2
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+58,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/2.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+59,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/2.4/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+60,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/2.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+61,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/2.4/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+62,95b84a6e29f056d0f9608e5e1bb2129067852e6b,/2.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+63,95b84a6e29f056d0f9608e5e1bb2129067852e6b,/2.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+64,e9d0fcae535ef0f0c1b3612e805d326f464f32b2,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+65,5f77876bff63a699806e21e7ce3b23f264caf86e,/7/Dockerfile,"# Elasticsearch 7.8.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+66,5f77876bff63a699806e21e7ce3b23f264caf86e,/7/Dockerfile,"# Supported Bashbrew Architectures: amd64 arm64v8
+
+# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.8.1/elasticsearch
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v7.8.1:elasticsearch'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+67,48be16b576157d74b38202f40ffbab04f02d668f,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+68,7b3badaa502c496462ebad7f45eac45a8fb44030,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+69,2bfa45254a681e4f667c96c5de13438209e2f0ec,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+70,2bfa45254a681e4f667c96c5de13438209e2f0ec,/1.5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+71,2bfa45254a681e4f667c96c5de13438209e2f0ec,/2.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+72,2bfa45254a681e4f667c96c5de13438209e2f0ec,/2.1/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+73,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+74,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/1.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+75,e9c56dda865977051c5eceea99eeb1af9ffa4408,/5.0-rc/Dockerfile,"# grab gosu for easy step-down from root
+"
+76,e9c56dda865977051c5eceea99eeb1af9ffa4408,/5.0-rc/Dockerfile,"# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+77,e9c56dda865977051c5eceea99eeb1af9ffa4408,/5.0-rc/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+78,bb12cc0808cdcd5c77757b96f8516f2138972728,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+79,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+80,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/2.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+81,55b733c0817fe269791d31bf73ec9feabb725712,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+82,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+83,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.2/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+84,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.2/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+85,a307d268b244992f796b73ea51d9e25db0f8acb1,/6/Dockerfile,"# Elasticsearch 6.8.11
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+86,a307d268b244992f796b73ea51d9e25db0f8acb1,/6/Dockerfile,"# Supported Bashbrew Architectures: amd64
+
+# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.11/elasticsearch
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v6.8.11:elasticsearch'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+87,8347a4697d32878dbacd7086b34f76a9e19113ae,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+88,8347a4697d32878dbacd7086b34f76a9e19113ae,/1.6/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+89,8347a4697d32878dbacd7086b34f76a9e19113ae,/1.6/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+90,e31caa41f494770b9029063f02df6be532c6a248,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+91,e31caa41f494770b9029063f02df6be532c6a248,/5.0/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+92,e31caa41f494770b9029063f02df6be532c6a248,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+93,e31caa41f494770b9029063f02df6be532c6a248,/5.0/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+94,56476e6c40c7ad5715e3c1f696548bac27dae086,/2.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+95,56476e6c40c7ad5715e3c1f696548bac27dae086,/2.4/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+96,56476e6c40c7ad5715e3c1f696548bac27dae086,/2.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+97,56476e6c40c7ad5715e3c1f696548bac27dae086,/2.4/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+98,e31caa41f494770b9029063f02df6be532c6a248,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+99,e31caa41f494770b9029063f02df6be532c6a248,/1.6/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+100,e31caa41f494770b9029063f02df6be532c6a248,/1.6/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+101,e31caa41f494770b9029063f02df6be532c6a248,/1.6/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+102,e31caa41f494770b9029063f02df6be532c6a248,/2.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+103,e31caa41f494770b9029063f02df6be532c6a248,/2.2/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+104,e31caa41f494770b9029063f02df6be532c6a248,/2.2/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+105,e31caa41f494770b9029063f02df6be532c6a248,/2.2/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+106,0d458a654cf9f7b7199f4faf4a838e6928ee954e,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+107,d8244424114ad7e68fe74fa4822580c756ea6180,/7/Dockerfile,"# Elasticsearch 7.3.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+108,d8244424114ad7e68fe74fa4822580c756ea6180,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.3.2/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+109,551cff2cb19d99d2c76a8717d7d3007bb23c3a7a,/7/Dockerfile,"# Elasticsearch 7.8.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+110,551cff2cb19d99d2c76a8717d7d3007bb23c3a7a,/7/Dockerfile,"# Supported Bashbrew Architectures: amd64 arm64v8
+
+# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.8.0/elasticsearch
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v7.8.0:elasticsearch'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+111,58763440dff0d7c5fad5a6c99d6bc103ab24c275,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+112,5727443ead111be19b55bfe5412dae5133cab8b1,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+113,5727443ead111be19b55bfe5412dae5133cab8b1,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+114,5727443ead111be19b55bfe5412dae5133cab8b1,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+115,5727443ead111be19b55bfe5412dae5133cab8b1,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+116,5727443ead111be19b55bfe5412dae5133cab8b1,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+117,e0d91f112e9b145a36bcaeff866e25853f5e965c,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+118,e0d91f112e9b145a36bcaeff866e25853f5e965c,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+119,e0d91f112e9b145a36bcaeff866e25853f5e965c,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+120,e0d91f112e9b145a36bcaeff866e25853f5e965c,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+121,35d99e915d909688807c507a59a2c06039ac92b2,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+122,35d99e915d909688807c507a59a2c06039ac92b2,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+123,35d99e915d909688807c507a59a2c06039ac92b2,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+124,35d99e915d909688807c507a59a2c06039ac92b2,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+125,35d99e915d909688807c507a59a2c06039ac92b2,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+126,4da4e5e485e78c150b018364585d07434b704d95,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+127,4da4e5e485e78c150b018364585d07434b704d95,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+128,4da4e5e485e78c150b018364585d07434b704d95,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+129,4da4e5e485e78c150b018364585d07434b704d95,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+130,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/2.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+131,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/2.2/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+132,55b577cc7bb23dde1dadc8bb84d2fe9a7f0007e0,/Dockerfile-upstream.template,"# Elasticsearch %%ELASTICSEARCH_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+133,55b577cc7bb23dde1dadc8bb84d2fe9a7f0007e0,/Dockerfile-upstream.template,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/%%ELASTICSEARCH_VERSION%%
+"
+134,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+135,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/1.6/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+136,5ec742a5a4551b52df74f3a2adfa1821c8cc7eba,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+137,5ec742a5a4551b52df74f3a2adfa1821c8cc7eba,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+138,5ec742a5a4551b52df74f3a2adfa1821c8cc7eba,/5.0/Dockerfile,"# add support for method of driver https
+"
+139,730ed65afd6f61ffc39c3b4832458e378b49312a,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+140,986deb99c036fe21dcd0899c429008552de9a5b3,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+141,986deb99c036fe21dcd0899c429008552de9a5b3,/Dockerfile.template,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+142,986deb99c036fe21dcd0899c429008552de9a5b3,/Dockerfile.template,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+143,48be16b576157d74b38202f40ffbab04f02d668f,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+144,56476e6c40c7ad5715e3c1f696548bac27dae086,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+145,56476e6c40c7ad5715e3c1f696548bac27dae086,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+146,56476e6c40c7ad5715e3c1f696548bac27dae086,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+147,56476e6c40c7ad5715e3c1f696548bac27dae086,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+148,9a765c385f3b18e890e50eb21ff60465208726cf,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+149,9a765c385f3b18e890e50eb21ff60465208726cf,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+150,9a765c385f3b18e890e50eb21ff60465208726cf,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+151,9a765c385f3b18e890e50eb21ff60465208726cf,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+152,7b3badaa502c496462ebad7f45eac45a8fb44030,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+153,eb0f9ee6627079d45ca9a64cc30cff0f6dfe07a1,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+154,391a5a9ba2836175f68c9c2d3655825300e4585e,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+155,391a5a9ba2836175f68c9c2d3655825300e4585e,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+156,391a5a9ba2836175f68c9c2d3655825300e4585e,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+157,391a5a9ba2836175f68c9c2d3655825300e4585e,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+158,df8f5be4d87dc5a4a16b81a9a53fdb581703be4d,/7/Dockerfile,"# Elasticsearch 7.2.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+159,df8f5be4d87dc5a4a16b81a9a53fdb581703be4d,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.2.1/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+160,6854914f0b890840c75b6db9eeaefbc26177df9c,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+161,6854914f0b890840c75b6db9eeaefbc26177df9c,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+162,6854914f0b890840c75b6db9eeaefbc26177df9c,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+163,6854914f0b890840c75b6db9eeaefbc26177df9c,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+164,b0b17111269c1f3c6553e46de46dfc359c96b2de,/7/Dockerfile,"# Elasticsearch 7.3.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+165,b0b17111269c1f3c6553e46de46dfc359c96b2de,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.3.0/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+166,41ec004d537b2d5d1a4bdd5664fbee018f8cb98e,/6.4.1/Dockerfile,"# Elasticsearch 6.4.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+167,41ec004d537b2d5d1a4bdd5664fbee018f8cb98e,/6.4.1/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.4.1
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+"
+168,258e9b89c3fe675b966a49deb0c26727c7d20551,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+169,a83e1837684d580e66f31cb01940ac1b99eef3aa,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+170,a83e1837684d580e66f31cb01940ac1b99eef3aa,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+171,a83e1837684d580e66f31cb01940ac1b99eef3aa,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+172,a83e1837684d580e66f31cb01940ac1b99eef3aa,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+173,a83e1837684d580e66f31cb01940ac1b99eef3aa,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+174,546a3d48ac776256ab4b78a7136cc57ef0e8ddab,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+175,346fdca88ba3201d04115b9eeff10a621f05f400,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+176,71cfc2cf6a383e8667954b88283cf07de64c8013,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+177,71cfc2cf6a383e8667954b88283cf07de64c8013,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+178,71cfc2cf6a383e8667954b88283cf07de64c8013,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+179,71cfc2cf6a383e8667954b88283cf07de64c8013,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+180,1aaead32a1a561fb2b57d8a116e288bb581d9191,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+181,58ca884e21e67128c046ec9293d45c32b46a4d27,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+182,2536978b4ef8b58866e933f7e6918ba7161802ac,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+183,2536978b4ef8b58866e933f7e6918ba7161802ac,/1.7/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+184,9a07fe301328cb6dfc6cc6aeed784bdc51c31eca,/7/Dockerfile,"# Elasticsearch 7.7.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+185,9a07fe301328cb6dfc6cc6aeed784bdc51c31eca,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.7.0/elasticsearch
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v7.7.0:elasticsearch'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+186,2536978b4ef8b58866e933f7e6918ba7161802ac,/2.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+187,2536978b4ef8b58866e933f7e6918ba7161802ac,/2.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+188,094b4b6bff8626a2391404413a2e338c48ef7a26,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+189,094b4b6bff8626a2391404413a2e338c48ef7a26,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+190,094b4b6bff8626a2391404413a2e338c48ef7a26,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+191,094b4b6bff8626a2391404413a2e338c48ef7a26,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+192,84437b816ee67bfdc10bd826dc21f0dbaf4db3d9,/7/Dockerfile,"# Elasticsearch 7.5.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+193,84437b816ee67bfdc10bd826dc21f0dbaf4db3d9,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.5.2/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+194,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+195,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/1.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+196,4b7bf0553c99232f27fe8d7e87a2e708849cbdbd,/6/Dockerfile,"# Elasticsearch 6.8.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+197,4b7bf0553c99232f27fe8d7e87a2e708849cbdbd,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.0/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+198,e74f9ba98e26221af4a3103d65ff519621e989d2,/2.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+199,e74f9ba98e26221af4a3103d65ff519621e989d2,/2.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+200,89b551ff13755e2eca3a13c74260775f8477163f,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+201,b5e42fc46e6e0fd3a77f26fd12e2f747d6d70aff,/6/Dockerfile,"# Elasticsearch 6.8.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+202,b5e42fc46e6e0fd3a77f26fd12e2f747d6d70aff,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.2/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+203,18527ddda24e2f765c18c925f8970b5570882a3c,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+204,e7bc23dc00f0ddbaa57cb8c035f08955d9d9e680,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+205,e7bc23dc00f0ddbaa57cb8c035f08955d9d9e680,/1.7/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+206,e7bc23dc00f0ddbaa57cb8c035f08955d9d9e680,/1.7/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+207,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+208,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+209,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+210,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+211,ca669a81afb503dedac6ba1bb8bef2abc158f081,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+212,ca669a81afb503dedac6ba1bb8bef2abc158f081,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+213,ca669a81afb503dedac6ba1bb8bef2abc158f081,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+214,ca669a81afb503dedac6ba1bb8bef2abc158f081,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+215,ca669a81afb503dedac6ba1bb8bef2abc158f081,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+216,5816ba1a6fe1545fb7e54c914fe1a3a9cfcfe977,/7/Dockerfile,"# Elasticsearch 7.4.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+217,5816ba1a6fe1545fb7e54c914fe1a3a9cfcfe977,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.4.1/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+218,c0cc86cddec0de3bd8fa01bcca5ef0c36fc7d255,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+219,55b577cc7bb23dde1dadc8bb84d2fe9a7f0007e0,/6/Dockerfile,"# Elasticsearch 6.4.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+220,55b577cc7bb23dde1dadc8bb84d2fe9a7f0007e0,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.4.0
+"
+221,5727443ead111be19b55bfe5412dae5133cab8b1,/2.4/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+222,5727443ead111be19b55bfe5412dae5133cab8b1,/2.4/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+223,5727443ead111be19b55bfe5412dae5133cab8b1,/2.4/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+224,5727443ead111be19b55bfe5412dae5133cab8b1,/2.4/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+225,5727443ead111be19b55bfe5412dae5133cab8b1,/2.4/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+226,89b551ff13755e2eca3a13c74260775f8477163f,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+227,2536978b4ef8b58866e933f7e6918ba7161802ac,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+228,2536978b4ef8b58866e933f7e6918ba7161802ac,/Dockerfile.template,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+229,e0d91f112e9b145a36bcaeff866e25853f5e965c,/Dockerfile-alpine.template,"# ensure elasticsearch user exists
+"
+230,e0d91f112e9b145a36bcaeff866e25853f5e965c,/Dockerfile-alpine.template,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+231,e0d91f112e9b145a36bcaeff866e25853f5e965c,/Dockerfile-alpine.template,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+232,e0d91f112e9b145a36bcaeff866e25853f5e965c,/Dockerfile-alpine.template,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+233,7d08b8e82fb8ca19745dab75ee32ba5a746ac999,/2.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+234,094b4b6bff8626a2391404413a2e338c48ef7a26,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+235,094b4b6bff8626a2391404413a2e338c48ef7a26,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+236,094b4b6bff8626a2391404413a2e338c48ef7a26,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+237,094b4b6bff8626a2391404413a2e338c48ef7a26,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+238,094b4b6bff8626a2391404413a2e338c48ef7a26,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+239,5727443ead111be19b55bfe5412dae5133cab8b1,/Dockerfile-alpine.template,"# ensure elasticsearch user exists
+"
+240,5727443ead111be19b55bfe5412dae5133cab8b1,/Dockerfile-alpine.template,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+241,5727443ead111be19b55bfe5412dae5133cab8b1,/Dockerfile-alpine.template,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+242,5727443ead111be19b55bfe5412dae5133cab8b1,/Dockerfile-alpine.template,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+243,5727443ead111be19b55bfe5412dae5133cab8b1,/Dockerfile-alpine.template,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+244,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/6/Dockerfile,"# Elasticsearch 6.4.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+245,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.4.1
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/6.4.1/docker.html
+"
+246,e3b9b5c27ce4ea5fbdbfac57280a98e54bf7528f,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+247,e3b9b5c27ce4ea5fbdbfac57280a98e54bf7528f,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+248,e3b9b5c27ce4ea5fbdbfac57280a98e54bf7528f,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+249,e3b9b5c27ce4ea5fbdbfac57280a98e54bf7528f,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+250,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/2.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+251,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/2.2/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+252,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+253,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/1.6/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+254,b30b4e51e77c6289be522b1d5c3d64918b9d77d9,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+255,b30b4e51e77c6289be522b1d5c3d64918b9d77d9,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+256,b30b4e51e77c6289be522b1d5c3d64918b9d77d9,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+257,b30b4e51e77c6289be522b1d5c3d64918b9d77d9,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+258,0e42c8b41dbbbf4158f03f2af61812729c52662b,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+259,0e42c8b41dbbbf4158f03f2af61812729c52662b,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+260,0e42c8b41dbbbf4158f03f2af61812729c52662b,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+261,0e42c8b41dbbbf4158f03f2af61812729c52662b,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+262,546a3d48ac776256ab4b78a7136cc57ef0e8ddab,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+263,e9c56dda865977051c5eceea99eeb1af9ffa4408,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+264,e9c56dda865977051c5eceea99eeb1af9ffa4408,/1.6/Dockerfile,"# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+265,e9c56dda865977051c5eceea99eeb1af9ffa4408,/1.6/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+266,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+267,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.2/Dockerfile,"# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+268,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.2/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+269,8a74bd1f706af238e2cb9d8063d5067338e5d388,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+270,8a74bd1f706af238e2cb9d8063d5067338e5d388,/2.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+271,1aaead32a1a561fb2b57d8a116e288bb581d9191,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+272,8a74bd1f706af238e2cb9d8063d5067338e5d388,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+273,8a74bd1f706af238e2cb9d8063d5067338e5d388,/1.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+274,deabc2adbaa9251213071e5b46c6742ab781dc84,/6/Dockerfile,"# Elasticsearch 6.5.4
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+275,deabc2adbaa9251213071e5b46c6742ab781dc84,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.5.4
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+276,c0cc86cddec0de3bd8fa01bcca5ef0c36fc7d255,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+277,d1765774a1effc5436f3d1f4ad6826dd9ed2186f,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+278,d1765774a1effc5436f3d1f4ad6826dd9ed2186f,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+279,d1765774a1effc5436f3d1f4ad6826dd9ed2186f,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+280,d1765774a1effc5436f3d1f4ad6826dd9ed2186f,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+281,9f14d95917805470ce1303d61add6ae195d24c70,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+282,9f14d95917805470ce1303d61add6ae195d24c70,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+283,9f14d95917805470ce1303d61add6ae195d24c70,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+284,9f14d95917805470ce1303d61add6ae195d24c70,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+285,9f14d95917805470ce1303d61add6ae195d24c70,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+286,56476e6c40c7ad5715e3c1f696548bac27dae086,/2.4/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+287,56476e6c40c7ad5715e3c1f696548bac27dae086,/2.4/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+288,56476e6c40c7ad5715e3c1f696548bac27dae086,/2.4/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+289,56476e6c40c7ad5715e3c1f696548bac27dae086,/2.4/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+290,56476e6c40c7ad5715e3c1f696548bac27dae086,/2.4/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+291,cf05f1ec8584b955d539d47fb42711cbae4ffe37,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+292,cf05f1ec8584b955d539d47fb42711cbae4ffe37,/2.0/Dockerfile,"# network.host:.*/network.host: 0.0.0.0/"" /etc/elasticsearch/elasticsearch.yml \
+"
+293,d57b695dde58c23e2f20fc6daf711580db07b2fe,/7/Dockerfile,"# Elasticsearch 7.4.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+294,d57b695dde58c23e2f20fc6daf711580db07b2fe,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.4.0/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+295,936f5c437c1509a8ee090868b030ca2f89cc0021,/6.4.0/Dockerfile,"# Elasticsearch 6.4.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+296,936f5c437c1509a8ee090868b030ca2f89cc0021,/6.4.0/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.4.0
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+"
+297,10d43840f3f90f6aa76f0e598f2c42295ca865a3,/6/Dockerfile,"# Elasticsearch 6.7.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+298,10d43840f3f90f6aa76f0e598f2c42295ca865a3,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.7.1/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+299,7b3badaa502c496462ebad7f45eac45a8fb44030,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+300,fa6c64be71b522d7553898dfafb173447c813c09,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+301,fa6c64be71b522d7553898dfafb173447c813c09,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+302,fa6c64be71b522d7553898dfafb173447c813c09,/5.0/Dockerfile,"# add support for method of driver https
+"
+303,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/6.4.0/Dockerfile,"# Elasticsearch 6.4.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+304,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/6.4.0/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.4.0
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/6.4.0/docker.html
+"
+305,551cff2cb19d99d2c76a8717d7d3007bb23c3a7a,/6/Dockerfile,"# Elasticsearch 6.8.10
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+306,551cff2cb19d99d2c76a8717d7d3007bb23c3a7a,/6/Dockerfile,"# Supported Bashbrew Architectures: amd64
+
+# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.10/elasticsearch
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v6.8.10:elasticsearch'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+307,5b69bc2cf03614d2afafa1f6a85ed15e1c20a423,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+308,e31caa41f494770b9029063f02df6be532c6a248,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+309,e31caa41f494770b9029063f02df6be532c6a248,/1.7/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+310,e31caa41f494770b9029063f02df6be532c6a248,/1.7/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+311,e31caa41f494770b9029063f02df6be532c6a248,/1.7/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+312,b6f135ff5d0a61b899993a8aa3e725f1b0b3058a,/6/Dockerfile,"# Elasticsearch 6.6.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+313,b6f135ff5d0a61b899993a8aa3e725f1b0b3058a,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.6.1/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+314,35d99e915d909688807c507a59a2c06039ac92b2,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+315,35d99e915d909688807c507a59a2c06039ac92b2,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+316,35d99e915d909688807c507a59a2c06039ac92b2,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+317,35d99e915d909688807c507a59a2c06039ac92b2,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+318,e31caa41f494770b9029063f02df6be532c6a248,/2.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+319,e31caa41f494770b9029063f02df6be532c6a248,/2.3/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+320,e31caa41f494770b9029063f02df6be532c6a248,/2.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+321,e31caa41f494770b9029063f02df6be532c6a248,/2.3/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+322,ea76a1f9e5589a1b9a9bcab1022df7953af81b87,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+323,ea76a1f9e5589a1b9a9bcab1022df7953af81b87,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+324,ea76a1f9e5589a1b9a9bcab1022df7953af81b87,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+325,ea76a1f9e5589a1b9a9bcab1022df7953af81b87,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+326,ea76a1f9e5589a1b9a9bcab1022df7953af81b87,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+327,fd766b8dc9d5df21c3417a80be62a90b4fac1736,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+328,fd766b8dc9d5df21c3417a80be62a90b4fac1736,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+329,fd766b8dc9d5df21c3417a80be62a90b4fac1736,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+330,fd766b8dc9d5df21c3417a80be62a90b4fac1736,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+331,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+332,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/1.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+333,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+334,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.3/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+335,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+336,8347a4697d32878dbacd7086b34f76a9e19113ae,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+337,8347a4697d32878dbacd7086b34f76a9e19113ae,/1.7/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+338,8347a4697d32878dbacd7086b34f76a9e19113ae,/1.7/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+339,546a3d48ac776256ab4b78a7136cc57ef0e8ddab,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+340,367769da361526411ffac12dae5fa19bb87c3f6c,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+341,367769da361526411ffac12dae5fa19bb87c3f6c,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+342,367769da361526411ffac12dae5fa19bb87c3f6c,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+343,367769da361526411ffac12dae5fa19bb87c3f6c,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+344,8c96c0367902a5fa9abdcc977f933255dd2e582f,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+345,8c96c0367902a5fa9abdcc977f933255dd2e582f,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+346,8c96c0367902a5fa9abdcc977f933255dd2e582f,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+347,8c96c0367902a5fa9abdcc977f933255dd2e582f,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+348,f37f98c251bd4bc92573df82c3af70d819f052bb,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+349,99c825a40d4214e9605cc8566e0dcac7468552fb,/Dockerfile-upstream.template,"# Elasticsearch %%ELASTICSEARCH_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+350,99c825a40d4214e9605cc8566e0dcac7468552fb,/Dockerfile-upstream.template,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v%%ELASTICSEARCH_VERSION%%/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+351,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+352,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/1.5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+353,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/2.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+354,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/2.1/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+355,be1eb53a6a62a57d0ed17e4287d3fc51a7409a9f,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+356,be1eb53a6a62a57d0ed17e4287d3fc51a7409a9f,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+357,be1eb53a6a62a57d0ed17e4287d3fc51a7409a9f,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+358,be1eb53a6a62a57d0ed17e4287d3fc51a7409a9f,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+359,be1eb53a6a62a57d0ed17e4287d3fc51a7409a9f,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+360,7b3badaa502c496462ebad7f45eac45a8fb44030,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+361,4cb8fc9d672f2b43feaf1e9178755fa0def4cff0,/6/Dockerfile,"# Elasticsearch 6.4.3
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+362,4cb8fc9d672f2b43feaf1e9178755fa0def4cff0,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.4.3
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+363,2bfa45254a681e4f667c96c5de13438209e2f0ec,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+364,2bfa45254a681e4f667c96c5de13438209e2f0ec,/2.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+365,323a9028774ff18e1e3b1d0304bdd55edc88ab80,/7/Dockerfile,"# Elasticsearch 7.6.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+366,323a9028774ff18e1e3b1d0304bdd55edc88ab80,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.6.2/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+367,f6c7bea6ff0e4008e531ac6b97aa3f593872e73a,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+368,f6c7bea6ff0e4008e531ac6b97aa3f593872e73a,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+369,f6c7bea6ff0e4008e531ac6b97aa3f593872e73a,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+370,f6c7bea6ff0e4008e531ac6b97aa3f593872e73a,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+371,258e9b89c3fe675b966a49deb0c26727c7d20551,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+372,859c4b22df4b8cec2cc589e0253bfff46d54af9f,/6/Dockerfile,"# Elasticsearch 6.8.10
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+373,859c4b22df4b8cec2cc589e0253bfff46d54af9f,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.10/elasticsearch
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v6.8.10:elasticsearch'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+374,f5abb68ac066bfedae3822f43894cfbdbc99f4c2,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+375,f5abb68ac066bfedae3822f43894cfbdbc99f4c2,/Dockerfile.template,"# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+376,f5abb68ac066bfedae3822f43894cfbdbc99f4c2,/Dockerfile.template,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+377,e31caa41f494770b9029063f02df6be532c6a248,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+378,e31caa41f494770b9029063f02df6be532c6a248,/Dockerfile.template,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+379,e31caa41f494770b9029063f02df6be532c6a248,/Dockerfile.template,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+380,e31caa41f494770b9029063f02df6be532c6a248,/Dockerfile.template,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+381,77a24ba41ba04771ebffb070e815338c68bd7f1c,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+382,77a24ba41ba04771ebffb070e815338c68bd7f1c,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+383,77a24ba41ba04771ebffb070e815338c68bd7f1c,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+384,77a24ba41ba04771ebffb070e815338c68bd7f1c,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+385,eb0f9ee6627079d45ca9a64cc30cff0f6dfe07a1,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+386,ffd7a19f1e68329cc310f145c232e83abec09067,/Dockerfile-debian.template,"# grab gosu for easy step-down from root
+"
+387,ffd7a19f1e68329cc310f145c232e83abec09067,/Dockerfile-debian.template,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+388,ffd7a19f1e68329cc310f145c232e83abec09067,/Dockerfile-debian.template,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+389,ffd7a19f1e68329cc310f145c232e83abec09067,/Dockerfile-debian.template,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+390,0d393d9a0a2e24fca022a89ad10c7050b2925292,/2.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+391,551cff2cb19d99d2c76a8717d7d3007bb23c3a7a,/Dockerfile.template,"# Elasticsearch %%VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+392,551cff2cb19d99d2c76a8717d7d3007bb23c3a7a,/Dockerfile.template,"# Supported Bashbrew Architectures: %%UPSTREAM_IMAGE_ARCHITECTURES%%
+
+# The upstream image was built by:
+#   %%UPSTREAM_DOCKERFILE_LINK%%
+
+# The build can be reproduced locally via:
+#   docker build '%%UPSTREAM_DOCKER_BUILD%%'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+393,7a502275158cac1affa4372eab937a21913cd3e0,/2.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+394,7a502275158cac1affa4372eab937a21913cd3e0,/2.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+395,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+396,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/Dockerfile.template,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+397,f2e19796b765e2e448d0e8c651d51be992b56d08,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+398,f2e19796b765e2e448d0e8c651d51be992b56d08,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+399,f2e19796b765e2e448d0e8c651d51be992b56d08,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+400,f2e19796b765e2e448d0e8c651d51be992b56d08,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+401,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+402,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/1.7/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+403,caa1d539d66bbc6b9aec0c821460ae924197198c,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+404,4da4e5e485e78c150b018364585d07434b704d95,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+405,4da4e5e485e78c150b018364585d07434b704d95,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+406,4da4e5e485e78c150b018364585d07434b704d95,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+407,4da4e5e485e78c150b018364585d07434b704d95,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+408,4da4e5e485e78c150b018364585d07434b704d95,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+409,3fd5624019e3fe0550c09211f0443c2653119223,/6/Dockerfile,"# Elasticsearch 6.8.3
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+410,3fd5624019e3fe0550c09211f0443c2653119223,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.3/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+411,1a539d229073ccde66f94487889d17d939f9689c,/2.4/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+412,1a539d229073ccde66f94487889d17d939f9689c,/2.4/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+413,1a539d229073ccde66f94487889d17d939f9689c,/2.4/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+414,1a539d229073ccde66f94487889d17d939f9689c,/2.4/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+415,7fddea5aa3cda29d7e0cbc9693b8d9490ed597bf,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+416,7fddea5aa3cda29d7e0cbc9693b8d9490ed597bf,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+417,995cfd3dfd4dacad09ad343bbb40fbdb6f1a846d,/7/Dockerfile,"# Elasticsearch 7.0.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+418,995cfd3dfd4dacad09ad343bbb40fbdb6f1a846d,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.0.1/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+419,202ae28cd26ff2f0f4394150412377ce0f40189f,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+420,202ae28cd26ff2f0f4394150412377ce0f40189f,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+421,202ae28cd26ff2f0f4394150412377ce0f40189f,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+422,202ae28cd26ff2f0f4394150412377ce0f40189f,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+423,5b2bf54e2c17a8e2e1b062ea0d071eae600bfec2,/2.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+424,ee9ba02f90f6b34ca33c20140ecff2b6db7c0c90,/2.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+425,ee9ba02f90f6b34ca33c20140ecff2b6db7c0c90,/2.4/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+426,ee9ba02f90f6b34ca33c20140ecff2b6db7c0c90,/2.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+427,ee9ba02f90f6b34ca33c20140ecff2b6db7c0c90,/2.4/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+428,c0cc86cddec0de3bd8fa01bcca5ef0c36fc7d255,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+429,5727443ead111be19b55bfe5412dae5133cab8b1,/1.7/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+430,5727443ead111be19b55bfe5412dae5133cab8b1,/1.7/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+431,5727443ead111be19b55bfe5412dae5133cab8b1,/1.7/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+432,5727443ead111be19b55bfe5412dae5133cab8b1,/1.7/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+433,5727443ead111be19b55bfe5412dae5133cab8b1,/1.7/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+434,99c825a40d4214e9605cc8566e0dcac7468552fb,/6/Dockerfile,"# Elasticsearch 6.6.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+435,99c825a40d4214e9605cc8566e0dcac7468552fb,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.6.0/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+436,89b551ff13755e2eca3a13c74260775f8477163f,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+437,ffaaf3283e47dcb732e90288a58757b87a8439a7,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+438,ffaaf3283e47dcb732e90288a58757b87a8439a7,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+439,ffaaf3283e47dcb732e90288a58757b87a8439a7,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+440,ffaaf3283e47dcb732e90288a58757b87a8439a7,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+441,56476e6c40c7ad5715e3c1f696548bac27dae086,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+442,56476e6c40c7ad5715e3c1f696548bac27dae086,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+443,56476e6c40c7ad5715e3c1f696548bac27dae086,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+444,56476e6c40c7ad5715e3c1f696548bac27dae086,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+445,56476e6c40c7ad5715e3c1f696548bac27dae086,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+446,99f4e9224b542a9810394c8628977795754c70c3,/7/Dockerfile,"# Elasticsearch 7.1.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+447,99f4e9224b542a9810394c8628977795754c70c3,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.1.1/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+448,2536978b4ef8b58866e933f7e6918ba7161802ac,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+449,2536978b4ef8b58866e933f7e6918ba7161802ac,/1.6/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+450,2536978b4ef8b58866e933f7e6918ba7161802ac,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+451,2536978b4ef8b58866e933f7e6918ba7161802ac,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+452,2536978b4ef8b58866e933f7e6918ba7161802ac,/2.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+453,2536978b4ef8b58866e933f7e6918ba7161802ac,/2.2/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+454,936f5c437c1509a8ee090868b030ca2f89cc0021,/Dockerfile-upstream.template,"# Elasticsearch %%ELASTICSEARCH_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+455,936f5c437c1509a8ee090868b030ca2f89cc0021,/Dockerfile-upstream.template,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/%%ELASTICSEARCH_VERSION%%
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+"
+456,9a07fe301328cb6dfc6cc6aeed784bdc51c31eca,/6/Dockerfile,"# Elasticsearch 6.8.9
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+457,9a07fe301328cb6dfc6cc6aeed784bdc51c31eca,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.9/elasticsearch
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v6.8.9:elasticsearch'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+458,acc3930d1e51d02a24ffe124276635e7b5e2ead7,/7/Dockerfile,"# Elasticsearch 7.8.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+459,acc3930d1e51d02a24ffe124276635e7b5e2ead7,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.8.0/elasticsearch
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v7.8.0:elasticsearch'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+460,ffd7a19f1e68329cc310f145c232e83abec09067,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+461,ffd7a19f1e68329cc310f145c232e83abec09067,/1.7/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+462,ffd7a19f1e68329cc310f145c232e83abec09067,/1.7/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+463,ffd7a19f1e68329cc310f145c232e83abec09067,/1.7/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+464,58ca884e21e67128c046ec9293d45c32b46a4d27,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+465,546a3d48ac776256ab4b78a7136cc57ef0e8ddab,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+466,f9b79ebc2e8fd42372b8f302321585c4d09f9ccc,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+467,f9b79ebc2e8fd42372b8f302321585c4d09f9ccc,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+468,f9b79ebc2e8fd42372b8f302321585c4d09f9ccc,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+469,f9b79ebc2e8fd42372b8f302321585c4d09f9ccc,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+470,f9b79ebc2e8fd42372b8f302321585c4d09f9ccc,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+471,7d09a4ec10b02fa8ec5d396436209e4ab885aa87,/6/Dockerfile,"# Elasticsearch 6.5.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+472,7d09a4ec10b02fa8ec5d396436209e4ab885aa87,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.5.0
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+473,3ee0cc9aaf25ebb7fba9e9e1c8f4f94b77f85366,/7/Dockerfile,"# Elasticsearch 7.6.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+474,3ee0cc9aaf25ebb7fba9e9e1c8f4f94b77f85366,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.6.0/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+475,730f0c999dd2bfaf95a9d368b936ffeacb2f0300,/Dockerfile-upstream.template,"# Elasticsearch %%ELASTICSEARCH_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+476,730f0c999dd2bfaf95a9d368b936ffeacb2f0300,/Dockerfile-upstream.template,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/%%ELASTICSEARCH_VERSION%%
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+477,9f14d95917805470ce1303d61add6ae195d24c70,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+478,9f14d95917805470ce1303d61add6ae195d24c70,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+479,9f14d95917805470ce1303d61add6ae195d24c70,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+480,9f14d95917805470ce1303d61add6ae195d24c70,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+481,975540dfe859a4defd8f4936bfb1ca132d909b0a,/6/Dockerfile,"# Elasticsearch 6.6.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+482,975540dfe859a4defd8f4936bfb1ca132d909b0a,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.6.2/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+483,d1765774a1effc5436f3d1f4ad6826dd9ed2186f,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+484,d1765774a1effc5436f3d1f4ad6826dd9ed2186f,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+485,d1765774a1effc5436f3d1f4ad6826dd9ed2186f,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+486,d1765774a1effc5436f3d1f4ad6826dd9ed2186f,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+487,ea76a1f9e5589a1b9a9bcab1022df7953af81b87,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+488,ea76a1f9e5589a1b9a9bcab1022df7953af81b87,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+489,ea76a1f9e5589a1b9a9bcab1022df7953af81b87,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+490,ea76a1f9e5589a1b9a9bcab1022df7953af81b87,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+491,2b7cab01397ff37510c8970827fa4c399c87d23a,/6/Dockerfile,"# Elasticsearch 6.6.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+492,2b7cab01397ff37510c8970827fa4c399c87d23a,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.6.2/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+493,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+494,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.0/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+495,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+496,e31caa41f494770b9029063f02df6be532c6a248,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+497,e31caa41f494770b9029063f02df6be532c6a248,/2.0/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+498,e31caa41f494770b9029063f02df6be532c6a248,/2.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+499,e31caa41f494770b9029063f02df6be532c6a248,/2.0/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+500,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/2.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+501,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/2.2/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+502,258e9b89c3fe675b966a49deb0c26727c7d20551,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+503,bb12cc0808cdcd5c77757b96f8516f2138972728,/2.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+504,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+505,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/1.6/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+506,71454903d8d33c7050d7725b825fb8c6a65007e4,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+507,71454903d8d33c7050d7725b825fb8c6a65007e4,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+508,71454903d8d33c7050d7725b825fb8c6a65007e4,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+509,71454903d8d33c7050d7725b825fb8c6a65007e4,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+510,56476e6c40c7ad5715e3c1f696548bac27dae086,/Dockerfile-alpine.template,"# ensure elasticsearch user exists
+"
+511,56476e6c40c7ad5715e3c1f696548bac27dae086,/Dockerfile-alpine.template,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+512,56476e6c40c7ad5715e3c1f696548bac27dae086,/Dockerfile-alpine.template,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+513,56476e6c40c7ad5715e3c1f696548bac27dae086,/Dockerfile-alpine.template,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+514,56476e6c40c7ad5715e3c1f696548bac27dae086,/Dockerfile-alpine.template,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+515,936f86660d169f41457c235d7282e446b0174654,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+516,936f86660d169f41457c235d7282e446b0174654,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+517,936f86660d169f41457c235d7282e446b0174654,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+518,936f86660d169f41457c235d7282e446b0174654,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+519,be1eb53a6a62a57d0ed17e4287d3fc51a7409a9f,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+520,be1eb53a6a62a57d0ed17e4287d3fc51a7409a9f,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+521,be1eb53a6a62a57d0ed17e4287d3fc51a7409a9f,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+522,be1eb53a6a62a57d0ed17e4287d3fc51a7409a9f,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+523,b30b4e51e77c6289be522b1d5c3d64918b9d77d9,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+524,b30b4e51e77c6289be522b1d5c3d64918b9d77d9,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+525,b30b4e51e77c6289be522b1d5c3d64918b9d77d9,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+526,b30b4e51e77c6289be522b1d5c3d64918b9d77d9,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+527,b30b4e51e77c6289be522b1d5c3d64918b9d77d9,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+528,6854914f0b890840c75b6db9eeaefbc26177df9c,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+529,6854914f0b890840c75b6db9eeaefbc26177df9c,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+530,6854914f0b890840c75b6db9eeaefbc26177df9c,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+531,6854914f0b890840c75b6db9eeaefbc26177df9c,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+532,6854914f0b890840c75b6db9eeaefbc26177df9c,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+533,190ea87fad5f126918020111da4e1723e741e6b7,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+534,9a765c385f3b18e890e50eb21ff60465208726cf,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+535,9a765c385f3b18e890e50eb21ff60465208726cf,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+536,9a765c385f3b18e890e50eb21ff60465208726cf,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+537,9a765c385f3b18e890e50eb21ff60465208726cf,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+538,9a765c385f3b18e890e50eb21ff60465208726cf,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+539,2bfa45254a681e4f667c96c5de13438209e2f0ec,/2.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+540,2bfa45254a681e4f667c96c5de13438209e2f0ec,/2.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+541,c0d76b639100772a683dcca7112965812e8cae70,/6/Dockerfile,"# Elasticsearch 6.8.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+542,c0d76b639100772a683dcca7112965812e8cae70,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.2/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+543,2bfa45254a681e4f667c96c5de13438209e2f0ec,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+544,2bfa45254a681e4f667c96c5de13438209e2f0ec,/1.7/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+545,eb0f9ee6627079d45ca9a64cc30cff0f6dfe07a1,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+546,7b3badaa502c496462ebad7f45eac45a8fb44030,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+547,e309ccfb55a07ca50617d42c49202f1b58e65aae,/6/Dockerfile,"# Elasticsearch 6.8.4
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+548,e309ccfb55a07ca50617d42c49202f1b58e65aae,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.4/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+549,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+550,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/1.5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+551,97739a4b07d856d2cf861e5e4e7bb2bc8cded7f7,/2.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+552,97739a4b07d856d2cf861e5e4e7bb2bc8cded7f7,/2.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+553,f2e19796b765e2e448d0e8c651d51be992b56d08,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+554,f2e19796b765e2e448d0e8c651d51be992b56d08,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+555,f2e19796b765e2e448d0e8c651d51be992b56d08,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+556,f2e19796b765e2e448d0e8c651d51be992b56d08,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+557,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/2.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+558,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/2.1/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+559,8a74bd1f706af238e2cb9d8063d5067338e5d388,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+560,8a74bd1f706af238e2cb9d8063d5067338e5d388,/1.7/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+561,e7ccd59cec2328020c005d94010d91b95ee7f291,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+562,e7ccd59cec2328020c005d94010d91b95ee7f291,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+563,e7ccd59cec2328020c005d94010d91b95ee7f291,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+564,e7ccd59cec2328020c005d94010d91b95ee7f291,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+565,e7ccd59cec2328020c005d94010d91b95ee7f291,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+566,1aaead32a1a561fb2b57d8a116e288bb581d9191,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+567,ffd7a19f1e68329cc310f145c232e83abec09067,/2.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+568,ffd7a19f1e68329cc310f145c232e83abec09067,/2.4/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+569,ffd7a19f1e68329cc310f145c232e83abec09067,/2.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+570,ffd7a19f1e68329cc310f145c232e83abec09067,/2.4/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+571,258e9b89c3fe675b966a49deb0c26727c7d20551,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+572,d2a9208235faa0165bd03dad612e897bdbcf09fc,/7/Dockerfile,"# Elasticsearch 7.4.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+573,d2a9208235faa0165bd03dad612e897bdbcf09fc,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.4.2/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+574,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+575,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.1/Dockerfile,"# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+576,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.1/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+577,e9c56dda865977051c5eceea99eeb1af9ffa4408,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+578,e9c56dda865977051c5eceea99eeb1af9ffa4408,/1.5/Dockerfile,"# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+579,e9c56dda865977051c5eceea99eeb1af9ffa4408,/1.5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+580,e0d91f112e9b145a36bcaeff866e25853f5e965c,/2.4/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+581,e0d91f112e9b145a36bcaeff866e25853f5e965c,/2.4/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+582,e0d91f112e9b145a36bcaeff866e25853f5e965c,/2.4/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+583,e0d91f112e9b145a36bcaeff866e25853f5e965c,/2.4/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+584,eb0f9ee6627079d45ca9a64cc30cff0f6dfe07a1,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+585,83fdaa617fc15a6363f08935190a7edd55ab35c0,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+586,12a84c5948d598a1a44014d4a0b2408947120c20,/7/Dockerfile,"# Elasticsearch 7.1.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+587,12a84c5948d598a1a44014d4a0b2408947120c20,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.1.0/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+588,ea4c976edb44a00de9ef45f1a4bff50d6aa31e4a,/6/Dockerfile,"# Elasticsearch 6.5.3
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+589,ea4c976edb44a00de9ef45f1a4bff50d6aa31e4a,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.5.3
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+590,c0cc86cddec0de3bd8fa01bcca5ef0c36fc7d255,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+591,aafce2f970e14dcbc782761a4ddf4b56a997939e,/6/Dockerfile,"# Elasticsearch 6.8.7
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+592,aafce2f970e14dcbc782761a4ddf4b56a997939e,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.7/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+593,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+594,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/Dockerfile.template,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+595,c0cc86cddec0de3bd8fa01bcca5ef0c36fc7d255,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+596,ede8ed5799832e0941d852937e87cd74ae4999fe,/Dockerfile,"#The real thing - disabled for quick iteration
+#RUN apt-get update \
+#	&& apt-get install elasticsearch \
+#	&& rm -rf /var/lib/apt/lists/*
+
+"
+597,391a5a9ba2836175f68c9c2d3655825300e4585e,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+598,391a5a9ba2836175f68c9c2d3655825300e4585e,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+599,391a5a9ba2836175f68c9c2d3655825300e4585e,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+600,391a5a9ba2836175f68c9c2d3655825300e4585e,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+601,30af4a027561ede1295621039ebc4ae6c656ea2a,/2.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+602,30af4a027561ede1295621039ebc4ae6c656ea2a,/2.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+603,2536978b4ef8b58866e933f7e6918ba7161802ac,/2.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+604,2536978b4ef8b58866e933f7e6918ba7161802ac,/2.1/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+605,6e38c9184a91b0b554459e2e52b4ad05413c6107,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+606,6e38c9184a91b0b554459e2e52b4ad05413c6107,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+607,6e38c9184a91b0b554459e2e52b4ad05413c6107,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+608,6e38c9184a91b0b554459e2e52b4ad05413c6107,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+609,a1a331cbea5676d959fc796d140228d38d691e3d,/6/Dockerfile,"# Elasticsearch 6.7.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+610,a1a331cbea5676d959fc796d140228d38d691e3d,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.7.0/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+611,2536978b4ef8b58866e933f7e6918ba7161802ac,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+612,2536978b4ef8b58866e933f7e6918ba7161802ac,/1.5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+613,4369e593bab8b19ea5dc06d70cc2039c3460af46,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+614,4369e593bab8b19ea5dc06d70cc2039c3460af46,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+615,4369e593bab8b19ea5dc06d70cc2039c3460af46,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+616,4369e593bab8b19ea5dc06d70cc2039c3460af46,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+617,4369e593bab8b19ea5dc06d70cc2039c3460af46,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+618,546a3d48ac776256ab4b78a7136cc57ef0e8ddab,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+619,aa618bbdc2b5d8ab37ccc763b1e727c4eb7be3ee,/2.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+620,aa618bbdc2b5d8ab37ccc763b1e727c4eb7be3ee,/2.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+621,936f5c437c1509a8ee090868b030ca2f89cc0021,/6/Dockerfile,"# Elasticsearch 6.4.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+622,936f5c437c1509a8ee090868b030ca2f89cc0021,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.4.1
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+"
+623,cf9cba0a1590cfd894d51bc7998d9d36b2d47afd,/6.4.0/Dockerfile,"# Elasticsearch 6.4.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+624,cf9cba0a1590cfd894d51bc7998d9d36b2d47afd,/6.4.0/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.4.0
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+625,58ca884e21e67128c046ec9293d45c32b46a4d27,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+626,7e5d336cf3dc472756dd0e19c1d2cf62a011bcf4,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+627,7e5d336cf3dc472756dd0e19c1d2cf62a011bcf4,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+628,7e5d336cf3dc472756dd0e19c1d2cf62a011bcf4,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+629,7e5d336cf3dc472756dd0e19c1d2cf62a011bcf4,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+630,7e5d336cf3dc472756dd0e19c1d2cf62a011bcf4,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+631,a912899428b3c0854a463a30a3d7c5d52a088759,/Dockerfile-alpine.template,"# ensure elasticsearch user exists
+"
+632,a912899428b3c0854a463a30a3d7c5d52a088759,/Dockerfile-alpine.template,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+633,a912899428b3c0854a463a30a3d7c5d52a088759,/Dockerfile-alpine.template,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+634,a912899428b3c0854a463a30a3d7c5d52a088759,/Dockerfile-alpine.template,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+635,a912899428b3c0854a463a30a3d7c5d52a088759,/Dockerfile-alpine.template,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+636,8a74bd1f706af238e2cb9d8063d5067338e5d388,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+637,8a74bd1f706af238e2cb9d8063d5067338e5d388,/1.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+638,dce83166a2636abfac110a4555cdf17fd554ae91,/2.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+639,dce83166a2636abfac110a4555cdf17fd554ae91,/2.2/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+640,a912899428b3c0854a463a30a3d7c5d52a088759,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+641,a912899428b3c0854a463a30a3d7c5d52a088759,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+642,a912899428b3c0854a463a30a3d7c5d52a088759,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+643,a912899428b3c0854a463a30a3d7c5d52a088759,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+644,0d458a654cf9f7b7199f4faf4a838e6928ee954e,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+645,eadf0f946fa72f70ade605178f1152e3b6d1bd5f,/6/Dockerfile,"# Elasticsearch 6.6.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+646,eadf0f946fa72f70ade605178f1152e3b6d1bd5f,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.6.1/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+647,258e9b89c3fe675b966a49deb0c26727c7d20551,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+648,f6c7bea6ff0e4008e531ac6b97aa3f593872e73a,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+649,f6c7bea6ff0e4008e531ac6b97aa3f593872e73a,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+650,f6c7bea6ff0e4008e531ac6b97aa3f593872e73a,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+651,f6c7bea6ff0e4008e531ac6b97aa3f593872e73a,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+652,f6c7bea6ff0e4008e531ac6b97aa3f593872e73a,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+653,71454903d8d33c7050d7725b825fb8c6a65007e4,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+654,71454903d8d33c7050d7725b825fb8c6a65007e4,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+655,71454903d8d33c7050d7725b825fb8c6a65007e4,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+656,71454903d8d33c7050d7725b825fb8c6a65007e4,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+657,71454903d8d33c7050d7725b825fb8c6a65007e4,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+658,79420fbf8e7f263bc25b4ff7c592240129ecb180,/6/Dockerfile,"# Elasticsearch 6.8.8
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+659,79420fbf8e7f263bc25b4ff7c592240129ecb180,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.8/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+660,6c720380ca68c5fe74484ff0c56403e20fe8dbab,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+661,a96386022c9f76299e592e32965d167a2480c866,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+662,58ca884e21e67128c046ec9293d45c32b46a4d27,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+663,2a510a7bf6b01f9e0df561a5618c1e081f56b38f,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+664,4093013f00696225cd9e316d5f892ae8f98b7888,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+665,4093013f00696225cd9e316d5f892ae8f98b7888,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+666,6e38c9184a91b0b554459e2e52b4ad05413c6107,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+667,6e38c9184a91b0b554459e2e52b4ad05413c6107,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+668,6e38c9184a91b0b554459e2e52b4ad05413c6107,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+669,6e38c9184a91b0b554459e2e52b4ad05413c6107,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+670,6e38c9184a91b0b554459e2e52b4ad05413c6107,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+671,0d458a654cf9f7b7199f4faf4a838e6928ee954e,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+672,98f29d4ab35e95bfd3fcc1997cc739a1e4301ccc,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+673,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+674,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/Dockerfile.template,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+675,ee9ba02f90f6b34ca33c20140ecff2b6db7c0c90,/2.4/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+676,ee9ba02f90f6b34ca33c20140ecff2b6db7c0c90,/2.4/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+677,ee9ba02f90f6b34ca33c20140ecff2b6db7c0c90,/2.4/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+678,ee9ba02f90f6b34ca33c20140ecff2b6db7c0c90,/2.4/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+679,ee9ba02f90f6b34ca33c20140ecff2b6db7c0c90,/2.4/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+680,e31caa41f494770b9029063f02df6be532c6a248,/2.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+681,e31caa41f494770b9029063f02df6be532c6a248,/2.4/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+682,e31caa41f494770b9029063f02df6be532c6a248,/2.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+683,e31caa41f494770b9029063f02df6be532c6a248,/2.4/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+684,006a50f920465d4792283a79d0a793378afaba69,/7/Dockerfile,"# Elasticsearch 7.0.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+685,006a50f920465d4792283a79d0a793378afaba69,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.0.0/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+686,4c04ee848e9183d70c6109e9325d6a40520d334d,/6/Dockerfile,"# Elasticsearch 6.8.6
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+687,4c04ee848e9183d70c6109e9325d6a40520d334d,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.6/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+688,77a24ba41ba04771ebffb070e815338c68bd7f1c,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+689,77a24ba41ba04771ebffb070e815338c68bd7f1c,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+690,77a24ba41ba04771ebffb070e815338c68bd7f1c,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+691,77a24ba41ba04771ebffb070e815338c68bd7f1c,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+692,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+693,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/1.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+694,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+695,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.4/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+696,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+697,8f00ad520c1c33b879a715700905d3c25c526331,/2.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+698,8f00ad520c1c33b879a715700905d3c25c526331,/2.4/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+699,8f00ad520c1c33b879a715700905d3c25c526331,/2.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+700,8f00ad520c1c33b879a715700905d3c25c526331,/2.4/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+701,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+702,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/2.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+703,c0d76b639100772a683dcca7112965812e8cae70,/7/Dockerfile,"# Elasticsearch 7.3.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+704,c0d76b639100772a683dcca7112965812e8cae70,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.3.0/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+705,2bfa45254a681e4f667c96c5de13438209e2f0ec,/2.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+706,2bfa45254a681e4f667c96c5de13438209e2f0ec,/2.2/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+707,7b3badaa502c496462ebad7f45eac45a8fb44030,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+708,7b3badaa502c496462ebad7f45eac45a8fb44030,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+709,2bfa45254a681e4f667c96c5de13438209e2f0ec,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+710,2bfa45254a681e4f667c96c5de13438209e2f0ec,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+711,2bfa45254a681e4f667c96c5de13438209e2f0ec,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+712,2bfa45254a681e4f667c96c5de13438209e2f0ec,/1.6/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+713,d74baa147f5ed54c2d048bae79a49018c1eae61f,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+714,605ca406cbd254f70872af0df8fecf524d126c53,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+715,605ca406cbd254f70872af0df8fecf524d126c53,/5.0/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+716,605ca406cbd254f70872af0df8fecf524d126c53,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+717,10047d93c8692803a369a5306c9663dbefab9701,/6/Dockerfile,"# Elasticsearch 6.7.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+718,10047d93c8692803a369a5306c9663dbefab9701,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.7.2/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+719,8e87587ac5d6b44a8382a229162c88e65618c30a,/2.4/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+720,8e87587ac5d6b44a8382a229162c88e65618c30a,/2.4/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+721,8e87587ac5d6b44a8382a229162c88e65618c30a,/2.4/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+722,8e87587ac5d6b44a8382a229162c88e65618c30a,/2.4/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+723,8e87587ac5d6b44a8382a229162c88e65618c30a,/2.4/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+724,202ae28cd26ff2f0f4394150412377ce0f40189f,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+725,202ae28cd26ff2f0f4394150412377ce0f40189f,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+726,202ae28cd26ff2f0f4394150412377ce0f40189f,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+727,202ae28cd26ff2f0f4394150412377ce0f40189f,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+728,202ae28cd26ff2f0f4394150412377ce0f40189f,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+729,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+730,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+731,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+732,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+733,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/1.7/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+734,e31caa41f494770b9029063f02df6be532c6a248,/2.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+735,e31caa41f494770b9029063f02df6be532c6a248,/2.1/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+736,e31caa41f494770b9029063f02df6be532c6a248,/2.1/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+737,e31caa41f494770b9029063f02df6be532c6a248,/2.1/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+738,0f90651d2bb17829fc69a497888ad7eac89b3edc,/7/Dockerfile,"# Elasticsearch 7.2.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+739,0f90651d2bb17829fc69a497888ad7eac89b3edc,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.2.0/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+740,e7ccd59cec2328020c005d94010d91b95ee7f291,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+741,e7ccd59cec2328020c005d94010d91b95ee7f291,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+742,e7ccd59cec2328020c005d94010d91b95ee7f291,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+743,e7ccd59cec2328020c005d94010d91b95ee7f291,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+744,8347a4697d32878dbacd7086b34f76a9e19113ae,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+745,8347a4697d32878dbacd7086b34f76a9e19113ae,/1.5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+746,8347a4697d32878dbacd7086b34f76a9e19113ae,/1.5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+747,cec506d931f75619876292a47b9f9e8edd4ddc47,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+748,7e5d336cf3dc472756dd0e19c1d2cf62a011bcf4,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+749,7e5d336cf3dc472756dd0e19c1d2cf62a011bcf4,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+750,7e5d336cf3dc472756dd0e19c1d2cf62a011bcf4,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+751,7e5d336cf3dc472756dd0e19c1d2cf62a011bcf4,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+752,a912899428b3c0854a463a30a3d7c5d52a088759,/Dockerfile-debian.template,"# grab gosu for easy step-down from root
+"
+753,a912899428b3c0854a463a30a3d7c5d52a088759,/Dockerfile-debian.template,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+754,a912899428b3c0854a463a30a3d7c5d52a088759,/Dockerfile-debian.template,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+755,a912899428b3c0854a463a30a3d7c5d52a088759,/Dockerfile-debian.template,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+756,a8ea23aba9acaba5a3a4953a267cec4c62ace4d9,/6/Dockerfile,"# Elasticsearch 6.6.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+757,a8ea23aba9acaba5a3a4953a267cec4c62ace4d9,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.6.0
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+758,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+759,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.1/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+760,8347a4697d32878dbacd7086b34f76a9e19113ae,/2.1/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+761,95f585fbba9baa25ac3acea6ae5fb938f09a7f67,/7/Dockerfile,"# Elasticsearch 7.9.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+762,95f585fbba9baa25ac3acea6ae5fb938f09a7f67,/7/Dockerfile,"# Supported Bashbrew Architectures: amd64 arm64v8
+
+# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.9.0/elasticsearch
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v7.9.0:elasticsearch'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+763,eadf0f946fa72f70ade605178f1152e3b6d1bd5f,/Dockerfile-upstream.template,"# Elasticsearch %%ELASTICSEARCH_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+764,eadf0f946fa72f70ade605178f1152e3b6d1bd5f,/Dockerfile-upstream.template,"# The upstream image was built by:
+#   %%UPSTREAM_DOCKERFILE_LINK%%
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+765,89b551ff13755e2eca3a13c74260775f8477163f,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+766,83fdaa617fc15a6363f08935190a7edd55ab35c0,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+767,1a539d229073ccde66f94487889d17d939f9689c,/2.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+768,1a539d229073ccde66f94487889d17d939f9689c,/2.4/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+769,1a539d229073ccde66f94487889d17d939f9689c,/2.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+770,1a539d229073ccde66f94487889d17d939f9689c,/2.4/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+771,ca669a81afb503dedac6ba1bb8bef2abc158f081,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+772,ca669a81afb503dedac6ba1bb8bef2abc158f081,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+773,ca669a81afb503dedac6ba1bb8bef2abc158f081,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+774,ca669a81afb503dedac6ba1bb8bef2abc158f081,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+775,0451c5123e01d43e23f9e755e02e79d0e730803f,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+776,1fd8daec87672bf61b5b38f00a565220e3370c49,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+777,1fd8daec87672bf61b5b38f00a565220e3370c49,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+778,e2982f617a25c891a50192fb26b48c7c3b367e81,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+779,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+780,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.0/Dockerfile,"# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+781,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+782,4369e593bab8b19ea5dc06d70cc2039c3460af46,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+783,4369e593bab8b19ea5dc06d70cc2039c3460af46,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+784,4369e593bab8b19ea5dc06d70cc2039c3460af46,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+785,4369e593bab8b19ea5dc06d70cc2039c3460af46,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+786,1e62c7d84cc549883e3404d79356d3fadfdf6c3d,/2.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+787,1e62c7d84cc549883e3404d79356d3fadfdf6c3d,/2.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+788,e773fb6d9c79d65310a0d6d41f9bf4f2cc336521,/7/Dockerfile,"# Elasticsearch 7.9.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+789,e773fb6d9c79d65310a0d6d41f9bf4f2cc336521,/7/Dockerfile,"# Supported Bashbrew Architectures: amd64 arm64v8
+
+# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.9.1/elasticsearch
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v7.9.1:elasticsearch'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+790,56315cbb71d3f04e6da05989ace7a5ecd4f2bfed,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+791,56315cbb71d3f04e6da05989ace7a5ecd4f2bfed,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+792,8a74bd1f706af238e2cb9d8063d5067338e5d388,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+793,8a74bd1f706af238e2cb9d8063d5067338e5d388,/1.6/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+794,8a74bd1f706af238e2cb9d8063d5067338e5d388,/2.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+795,8a74bd1f706af238e2cb9d8063d5067338e5d388,/2.2/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+796,1aaead32a1a561fb2b57d8a116e288bb581d9191,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+797,8e87587ac5d6b44a8382a229162c88e65618c30a,/2.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+798,8e87587ac5d6b44a8382a229162c88e65618c30a,/2.4/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+799,8e87587ac5d6b44a8382a229162c88e65618c30a,/2.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+800,8e87587ac5d6b44a8382a229162c88e65618c30a,/2.4/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+801,41ec004d537b2d5d1a4bdd5664fbee018f8cb98e,/6/Dockerfile,"# Elasticsearch 6.4.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+802,41ec004d537b2d5d1a4bdd5664fbee018f8cb98e,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.4.2
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+"
+803,649743f29f4f3e9b54959cced3e059c5c4aaa444,/6/Dockerfile,"# Elasticsearch 6.5.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+804,649743f29f4f3e9b54959cced3e059c5c4aaa444,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.5.1
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+805,8a74bd1f706af238e2cb9d8063d5067338e5d388,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+806,8a74bd1f706af238e2cb9d8063d5067338e5d388,/Dockerfile.template,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+807,1aaead32a1a561fb2b57d8a116e288bb581d9191,/Dockerfile.template,"# grab gosu for easy step-down from root
+"
+808,97739a4b07d856d2cf861e5e4e7bb2bc8cded7f7,/2.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+809,97739a4b07d856d2cf861e5e4e7bb2bc8cded7f7,/2.2/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+810,e0d91f112e9b145a36bcaeff866e25853f5e965c,/1.7/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+811,e0d91f112e9b145a36bcaeff866e25853f5e965c,/1.7/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+812,e0d91f112e9b145a36bcaeff866e25853f5e965c,/1.7/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+813,e0d91f112e9b145a36bcaeff866e25853f5e965c,/1.7/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+814,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+815,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/1.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+816,cf9cba0a1590cfd894d51bc7998d9d36b2d47afd,/6/Dockerfile,"# Elasticsearch 6.4.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+817,cf9cba0a1590cfd894d51bc7998d9d36b2d47afd,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.4.2
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+818,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+819,2ceaacde5b9dcc3e15f5daa4b1a282bf0f190d2b,/2.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+820,d8dcb6409e70fbd4749ffb06b15d32c8c1b0824a,/6/Dockerfile,"# Elasticsearch 6.8.12
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+821,d8dcb6409e70fbd4749ffb06b15d32c8c1b0824a,/6/Dockerfile,"# Supported Bashbrew Architectures: amd64
+
+# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.12/elasticsearch
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v6.8.12:elasticsearch'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+822,367769da361526411ffac12dae5fa19bb87c3f6c,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+823,367769da361526411ffac12dae5fa19bb87c3f6c,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+824,367769da361526411ffac12dae5fa19bb87c3f6c,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+825,367769da361526411ffac12dae5fa19bb87c3f6c,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+826,367769da361526411ffac12dae5fa19bb87c3f6c,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+827,58ca884e21e67128c046ec9293d45c32b46a4d27,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+828,c0d76b639100772a683dcca7112965812e8cae70,/Dockerfile.template,"# Elasticsearch %%ELASTICSEARCH_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+829,c0d76b639100772a683dcca7112965812e8cae70,/Dockerfile.template,"# The upstream image was built by:
+#   %%UPSTREAM_DOCKERFILE_LINK%%
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+830,546a3d48ac776256ab4b78a7136cc57ef0e8ddab,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+831,936f86660d169f41457c235d7282e446b0174654,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+832,936f86660d169f41457c235d7282e446b0174654,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+833,936f86660d169f41457c235d7282e446b0174654,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+834,936f86660d169f41457c235d7282e446b0174654,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+835,936f86660d169f41457c235d7282e446b0174654,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+836,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+837,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.4/Dockerfile,"# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+838,e9c56dda865977051c5eceea99eeb1af9ffa4408,/2.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+839,cf9cba0a1590cfd894d51bc7998d9d36b2d47afd,/6.4.1/Dockerfile,"# Elasticsearch 6.4.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+840,cf9cba0a1590cfd894d51bc7998d9d36b2d47afd,/6.4.1/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/6.4.1
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+841,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+842,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/1.7/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+843,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/1.7/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+844,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/1.7/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+845,2536978b4ef8b58866e933f7e6918ba7161802ac,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+846,2536978b4ef8b58866e933f7e6918ba7161802ac,/2.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+847,d91235c08a5a03073b918d996c125185427b25c4,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+848,d91235c08a5a03073b918d996c125185427b25c4,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+849,d91235c08a5a03073b918d996c125185427b25c4,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+850,d91235c08a5a03073b918d996c125185427b25c4,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+851,d21750c638a53b365fe4eef9db11410c88963ce4,/Dockerfile,"#The real thing - disabled for quick iteration
+#RUN apt-get update \
+#	&& apt-get install elasticsearch \
+#	&& rm -rf /var/lib/apt/lists/*
+
+"
+852,fb24d2b5bdbc212787c066480d818851f4da8f86,/6/Dockerfile,"# Elasticsearch 6.8.5
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+853,fb24d2b5bdbc212787c066480d818851f4da8f86,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.5/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+854,474535936a32ff1a04aefa197d7ee11e77cd2e21,/7/Dockerfile,"# Elasticsearch 7.7.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+855,474535936a32ff1a04aefa197d7ee11e77cd2e21,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.7.1/elasticsearch
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v7.7.1:elasticsearch'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+856,0e42c8b41dbbbf4158f03f2af61812729c52662b,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+857,0e42c8b41dbbbf4158f03f2af61812729c52662b,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+858,0e42c8b41dbbbf4158f03f2af61812729c52662b,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+859,0e42c8b41dbbbf4158f03f2af61812729c52662b,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+860,0e42c8b41dbbbf4158f03f2af61812729c52662b,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+861,bb9aa9f209ded2eb8c30d0e5e2f0dc5db2f611d2,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+862,bb9aa9f209ded2eb8c30d0e5e2f0dc5db2f611d2,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+863,bb9aa9f209ded2eb8c30d0e5e2f0dc5db2f611d2,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+864,bb9aa9f209ded2eb8c30d0e5e2f0dc5db2f611d2,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+865,9a07fe301328cb6dfc6cc6aeed784bdc51c31eca,/Dockerfile.template,"# Elasticsearch %%VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+866,9a07fe301328cb6dfc6cc6aeed784bdc51c31eca,/Dockerfile.template,"# The upstream image was built by:
+#   %%UPSTREAM_DOCKERFILE_LINK%%
+
+# The build can be reproduced locally via:
+#   docker build '%%UPSTREAM_DOCKER_BUILD%%'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+867,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+868,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+869,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+870,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+871,16f62d5b2574546247f1f933599f09ee2f528dbc,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+872,d91235c08a5a03073b918d996c125185427b25c4,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+873,d91235c08a5a03073b918d996c125185427b25c4,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+874,d91235c08a5a03073b918d996c125185427b25c4,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+875,d91235c08a5a03073b918d996c125185427b25c4,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+876,d91235c08a5a03073b918d996c125185427b25c4,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+877,b8cd81aa48870e31970acbca7ec376953810d522,/7/Dockerfile,"# Elasticsearch 7.7.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+878,b8cd81aa48870e31970acbca7ec376953810d522,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.7.0/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+879,c0cc86cddec0de3bd8fa01bcca5ef0c36fc7d255,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+880,56476e6c40c7ad5715e3c1f696548bac27dae086,/Dockerfile-debian.template,"# grab gosu for easy step-down from root
+"
+881,56476e6c40c7ad5715e3c1f696548bac27dae086,/Dockerfile-debian.template,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+882,56476e6c40c7ad5715e3c1f696548bac27dae086,/Dockerfile-debian.template,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+883,56476e6c40c7ad5715e3c1f696548bac27dae086,/Dockerfile-debian.template,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+884,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/1.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+885,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/1.5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+886,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/2.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+887,a20f860d625378b9670f4510b1a45cf74a7ce9ec,/2.1/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+888,7df831cbf637cb1f90721749413a049b0e0274e6,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+889,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+890,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+891,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+892,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+893,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+894,56476e6c40c7ad5715e3c1f696548bac27dae086,/1.7/Dockerfile,"# grab gosu for easy step-down from root
+"
+895,56476e6c40c7ad5715e3c1f696548bac27dae086,/1.7/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+896,56476e6c40c7ad5715e3c1f696548bac27dae086,/1.7/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+897,56476e6c40c7ad5715e3c1f696548bac27dae086,/1.7/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+898,0d458a654cf9f7b7199f4faf4a838e6928ee954e,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+899,f9b79ebc2e8fd42372b8f302321585c4d09f9ccc,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+900,f9b79ebc2e8fd42372b8f302321585c4d09f9ccc,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+901,f9b79ebc2e8fd42372b8f302321585c4d09f9ccc,/5/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+902,f9b79ebc2e8fd42372b8f302321585c4d09f9ccc,/5/Dockerfile,"# don't allow the package to install its sysctl file (causes the install to fail)
+# Failed to write '262144' to '/proc/sys/vm/max_map_count': Read-only file system
+"
+903,aa8b2a8d888300006579e386d5afae8c7b0b2bf6,/Dockerfile,"#RUN curl https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-$ELASTICSEARCH_VERSION.tar.gz | tar xz -C /usr/local \
+#	&& find /usr/local/elasticsearch-$ELASTICSEARCH_VERSION/bin -executable -type f | xargs -i ln -s ""{}"" ""/usr/local/bin/""
+
+"
+904,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/Dockerfile-upstream.template,"# Elasticsearch %%ELASTICSEARCH_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+905,d22dc8b36939ab325763fa92e4e6ee3059aaea59,/Dockerfile-upstream.template,"# The upstream image was built by:
+#   https://github.com/elastic/elasticsearch-docker/tree/%%ELASTICSEARCH_VERSION%%
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/%%ELASTICSEARCH_VERSION%%/docker.html
+"
+906,dc045380f272db31d5a9993501bc410f667946cc,/2.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+907,dc045380f272db31d5a9993501bc410f667946cc,/2.4/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+908,dc045380f272db31d5a9993501bc410f667946cc,/2.4/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.0/deb.html
+"
+909,c2f5a0165f9a3b6e071dfd413ea16fcca8522ff1,/7/Dockerfile,"# Elasticsearch 7.5.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+910,c2f5a0165f9a3b6e071dfd413ea16fcca8522ff1,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.5.1/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+911,bb9aa9f209ded2eb8c30d0e5e2f0dc5db2f611d2,/5/alpine/Dockerfile,"# ensure elasticsearch user exists
+"
+912,bb9aa9f209ded2eb8c30d0e5e2f0dc5db2f611d2,/5/alpine/Dockerfile,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+913,bb9aa9f209ded2eb8c30d0e5e2f0dc5db2f611d2,/5/alpine/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+914,bb9aa9f209ded2eb8c30d0e5e2f0dc5db2f611d2,/5/alpine/Dockerfile,"# we shouldn't need much RAM to test --version (default is 2gb, which gets Jenkins in trouble sometimes)
+"
+915,bb9aa9f209ded2eb8c30d0e5e2f0dc5db2f611d2,/5/alpine/Dockerfile,"# elasticsearch 1.x doesn't support --version
+# but in 5.x, ""-v"" is verbose (and ""-V"" is --version)
+"
+916,4c895ab3753726b22c25f03b17155d84c14d8931,/7/Dockerfile,"# Elasticsearch 7.3.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+917,4c895ab3753726b22c25f03b17155d84c14d8931,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.3.1/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+918,48be16b576157d74b38202f40ffbab04f02d668f,/1.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+919,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/1.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+920,c3d6d0417654c4e19b4e9e3308dddca321325cd2,/1.3/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+921,cc94e7445ece47fe876e7ff70a2997d4ae2c5022,/7/Dockerfile,"# Elasticsearch 7.5.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+922,cc94e7445ece47fe876e7ff70a2997d4ae2c5022,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.5.0/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+923,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/Dockerfile-alpine.template,"# ensure elasticsearch user exists
+"
+924,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/Dockerfile-alpine.template,"# grab su-exec for easy step-down from root
+# and bash for ""bin/elasticsearch"" among others
+"
+925,4e4394f9563a109180289d8eb2ff3bc6c1e2dcb2,/Dockerfile-alpine.template,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+926,258e9b89c3fe675b966a49deb0c26727c7d20551,/1.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+927,c6ae6abfc71a4fed1edcec58fafb9aca2cb3449c,/2.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+928,82ace8b3760e3a8ddbadf90a645c99c7940ce250,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+929,82ace8b3760e3a8ddbadf90a645c99c7940ce250,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+930,6f143ea97464bbc7c848cf14403efad568b08e67,/7/Dockerfile,"# Elasticsearch 7.6.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+931,6f143ea97464bbc7c848cf14403efad568b08e67,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.6.1/elasticsearch
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4916 for more details.
+"
+932,9d394dd3c4c9fcef8c7180f7f5207dc5e99a18e7,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+933,9d394dd3c4c9fcef8c7180f7f5207dc5e99a18e7,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"

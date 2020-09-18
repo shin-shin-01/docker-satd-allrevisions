@@ -1,0 +1,1449 @@
+,CommitID,Dockerfiles,Comments
+0,9ee73936cbac121abacd0f1ee71561d94a618684,/8.0/Dockerfile,"## Dockerfile for a haskell environment
+"
+1,9ee73936cbac121abacd0f1ee71561d94a618684,/8.0/Dockerfile,"## ensure locale is set during build
+"
+2,9ee73936cbac121abacd0f1ee71561d94a618684,/8.0/Dockerfile,"    # hvr keys
+"
+3,9ee73936cbac121abacd0f1ee71561d94a618684,/8.0/Dockerfile,"    # fpco keys
+"
+4,9ee73936cbac121abacd0f1ee71561d94a618684,/8.0/Dockerfile,"## run ghci by default unless a command is specified
+"
+5,33ab939e44d162ce4cfb8c20ec5a5a82387d3922,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+6,33ab939e44d162ce4cfb8c20ec5a5a82387d3922,/Dockerfile,"## disable prompts from apt
+"
+7,33ab939e44d162ce4cfb8c20ec5a5a82387d3922,/Dockerfile,"## ensure locale is set during build
+"
+8,33ab939e44d162ce4cfb8c20ec5a5a82387d3922,/Dockerfile,"## ensure locale is set during init
+"
+9,33ab939e44d162ce4cfb8c20ec5a5a82387d3922,/Dockerfile,"## ensure locale is set for new logins
+"
+10,33ab939e44d162ce4cfb8c20ec5a5a82387d3922,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## add ppa for ubuntu trusty haskell packages
+"
+11,33ab939e44d162ce4cfb8c20ec5a5a82387d3922,/Dockerfile,"## update the package database
+"
+12,33ab939e44d162ce4cfb8c20ec5a5a82387d3922,/Dockerfile,"## install llvm for the ghc backend
+"
+13,33ab939e44d162ce4cfb8c20ec5a5a82387d3922,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+14,33ab939e44d162ce4cfb8c20ec5a5a82387d3922,/Dockerfile,"## install minimal set of haskell packages
+"
+15,33ab939e44d162ce4cfb8c20ec5a5a82387d3922,/Dockerfile,"## set the PATH for login shells
+"
+16,33ab939e44d162ce4cfb8c20ec5a5a82387d3922,/Dockerfile,"## cleanup
+"
+17,00bcc79e07af4aea50621425aa110072afc4e802,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+18,00bcc79e07af4aea50621425aa110072afc4e802,/7.8/Dockerfile,"## custom apt-get install options
+"
+19,00bcc79e07af4aea50621425aa110072afc4e802,/7.8/Dockerfile,"## ensure locale is set during build
+"
+20,00bcc79e07af4aea50621425aa110072afc4e802,/7.8/Dockerfile,"## configure apt to use the haskell repository
+# gpg: key 4E3AC105: public key ""deb.haskell.org repository key"" imported
+"
+21,00bcc79e07af4aea50621425aa110072afc4e802,/7.8/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+22,00bcc79e07af4aea50621425aa110072afc4e802,/7.8/Dockerfile,"## install ghc
+"
+23,00bcc79e07af4aea50621425aa110072afc4e802,/7.8/Dockerfile,"## set upstream package versions (major-level) for remaining haskell packages
+"
+24,00bcc79e07af4aea50621425aa110072afc4e802,/7.8/Dockerfile,"## set upstream package versions (minor-level) for remaining haskell packages
+"
+25,00bcc79e07af4aea50621425aa110072afc4e802,/7.8/Dockerfile,"## set deb revisions for remaining haskell packages
+"
+26,00bcc79e07af4aea50621425aa110072afc4e802,/7.8/Dockerfile,"## install minimal set of haskell packages
+"
+27,00bcc79e07af4aea50621425aa110072afc4e802,/7.8/Dockerfile,"## set PATH for tools not installed to /usr/{bin,/local/bin}
+"
+28,00bcc79e07af4aea50621425aa110072afc4e802,/7.8/Dockerfile,"## install additional libs typically needed by hackage packages
+"
+29,00bcc79e07af4aea50621425aa110072afc4e802,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+30,31fbcd8bf3d1962f248d3a53c62f45858516c20c,/8.6/Dockerfile,"## Dockerfile for a haskell environment
+"
+31,31fbcd8bf3d1962f248d3a53c62f45858516c20c,/8.6/Dockerfile,"## ensure locale is set during build
+"
+32,31fbcd8bf3d1962f248d3a53c62f45858516c20c,/8.6/Dockerfile,"## run ghci by default unless a command is specified
+"
+33,a5ddcdd90f4db30246c6996516bba4367975e81a,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+34,a5ddcdd90f4db30246c6996516bba4367975e81a,/7.8/Dockerfile,"## custom apt-get install options
+"
+35,a5ddcdd90f4db30246c6996516bba4367975e81a,/7.8/Dockerfile,"## ensure locale is set during build
+"
+36,a5ddcdd90f4db30246c6996516bba4367975e81a,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+37,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+38,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## disable prompts from apt
+"
+39,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## custom apt-get install options
+"
+40,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## ensure locale is set during build
+"
+41,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## ensure locale is set for new logins
+"
+42,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## configure apt to use the haskell repository
+"
+43,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+44,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## install ghc
+"
+45,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## set upstream package versions for remaining haskell packages
+"
+46,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## set deb revisions for remaining haskell packages
+"
+47,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## install minimal set of haskell packages
+"
+48,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## install additional libs typically needed by hackage packages
+"
+49,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## link binaries into /usr/local/bin
+"
+50,ced15f9e787dde6d7559819896bf322ef9a9fa17,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+51,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+52,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## disable prompts from apt
+"
+53,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## custom apt-get install options
+"
+54,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## ensure locale is set during build
+"
+55,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## configure apt to use the haskell repository
+"
+56,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+57,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## install ghc
+"
+58,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## set upstream package versions (major-level) for remaining haskell packages
+"
+59,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## set upstream package versions (minor-level) for remaining haskell packages
+"
+60,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## set deb revisions for remaining haskell packages
+"
+61,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## install minimal set of haskell packages
+"
+62,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## set PATH for tools not installed to /usr/{bin,/local/bin}
+"
+63,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## install additional libs typically needed by hackage packages
+"
+64,1cba114f0e65c5149e2a4757a58c2d9066065c2c,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+65,cc2b09024f8bfc663e5414f2eba99181c7768c30,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+66,cc2b09024f8bfc663e5414f2eba99181c7768c30,/Dockerfile,"## set the correct environment variables
+"
+67,cc2b09024f8bfc663e5414f2eba99181c7768c30,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## add ppa for ubuntu trusty haskell packages
+"
+68,cc2b09024f8bfc663e5414f2eba99181c7768c30,/Dockerfile,"## install ubuntu trusty haskell packages
+"
+69,cc2b09024f8bfc663e5414f2eba99181c7768c30,/Dockerfile,"## set the PATH for login shells
+"
+70,cc2b09024f8bfc663e5414f2eba99181c7768c30,/Dockerfile,"## cleanup
+"
+71,3190a187d6c0d4bdd1f2ac814b09a9517767084d,/7.10/Dockerfile,"## Dockerfile for a haskell environment
+"
+72,3190a187d6c0d4bdd1f2ac814b09a9517767084d,/7.10/Dockerfile,"## ensure locale is set during build
+"
+73,3190a187d6c0d4bdd1f2ac814b09a9517767084d,/7.10/Dockerfile,"## run ghci by default unless a command is specified
+"
+74,af83447feb6ebeabbc0cbad27adb3895e6262951,/8.2/Dockerfile,"## Dockerfile for a haskell environment
+"
+75,af83447feb6ebeabbc0cbad27adb3895e6262951,/8.2/Dockerfile,"## ensure locale is set during build
+"
+76,af83447feb6ebeabbc0cbad27adb3895e6262951,/8.2/Dockerfile,"## run ghci by default unless a command is specified
+"
+77,6dedc4dba8f01d9b189eb1fb1bf7dd4d1741a8c1,/8.6/Dockerfile,"## Dockerfile for a haskell environment
+"
+78,6dedc4dba8f01d9b189eb1fb1bf7dd4d1741a8c1,/8.6/Dockerfile,"## ensure locale is set during build
+"
+79,6dedc4dba8f01d9b189eb1fb1bf7dd4d1741a8c1,/8.6/Dockerfile,"## run ghci by default unless a command is specified
+"
+80,4f0d357e232e64d7fb9b8476ddadca837e0964b7,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+81,4f0d357e232e64d7fb9b8476ddadca837e0964b7,/7.8/Dockerfile,"## ensure locale is set during build
+"
+82,4f0d357e232e64d7fb9b8476ddadca837e0964b7,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+83,11b7cf142a0033f8e337a096c65a907cf7190aef,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+84,11b7cf142a0033f8e337a096c65a907cf7190aef,/Dockerfile,"## disable prompts from apt
+"
+85,11b7cf142a0033f8e337a096c65a907cf7190aef,/Dockerfile,"## ensure locale is set during build
+"
+86,11b7cf142a0033f8e337a096c65a907cf7190aef,/Dockerfile,"## ensure locale is set during init
+"
+87,11b7cf142a0033f8e337a096c65a907cf7190aef,/Dockerfile,"## ensure locale is set for new logins
+"
+88,11b7cf142a0033f8e337a096c65a907cf7190aef,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## add ppa for ubuntu trusty haskell packages
+"
+89,11b7cf142a0033f8e337a096c65a907cf7190aef,/Dockerfile,"## update the package database
+"
+90,11b7cf142a0033f8e337a096c65a907cf7190aef,/Dockerfile,"## install llvm for the ghc backend
+"
+91,11b7cf142a0033f8e337a096c65a907cf7190aef,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+92,11b7cf142a0033f8e337a096c65a907cf7190aef,/Dockerfile,"## install minimal set of haskell packages
+"
+93,11b7cf142a0033f8e337a096c65a907cf7190aef,/Dockerfile,"## set the PATH for login shells
+"
+94,11b7cf142a0033f8e337a096c65a907cf7190aef,/Dockerfile,"## cleanup
+"
+95,410e6aeb1020d665f7cea84b8833f5c14175ce1c,/examples/7.8.3/snap/Dockerfile,"# Add .cabal file
+"
+96,410e6aeb1020d665f7cea84b8833f5c14175ce1c,/examples/7.8.3/snap/Dockerfile,"# Docker will cache this command as a layer, freeing us up to
+# modify source code without re-installing dependencies
+"
+97,410e6aeb1020d665f7cea84b8833f5c14175ce1c,/examples/7.8.3/snap/Dockerfile,"# Add and Install Application Code
+"
+98,410e6aeb1020d665f7cea84b8833f5c14175ce1c,/examples/7.8.3/snap/Dockerfile,"# Initialize JSON users file
+"
+99,410e6aeb1020d665f7cea84b8833f5c14175ce1c,/examples/7.8.3/snap/Dockerfile,"# Add installed cabal executables to PATH
+"
+100,410e6aeb1020d665f7cea84b8833f5c14175ce1c,/examples/7.8.3/snap/Dockerfile,"# Default Command for Container
+"
+101,d5eaa396d90bbb0fd6f9b43561882f253202e50e,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+102,d5eaa396d90bbb0fd6f9b43561882f253202e50e,/Dockerfile,"## set the correct environment variables
+"
+103,d5eaa396d90bbb0fd6f9b43561882f253202e50e,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## add ppa for ubuntu trusty haskell packages
+"
+104,d5eaa396d90bbb0fd6f9b43561882f253202e50e,/Dockerfile,"## install ubuntu trusty haskell packages
+"
+105,d5eaa396d90bbb0fd6f9b43561882f253202e50e,/Dockerfile,"## set the PATH for login shells
+"
+106,d5eaa396d90bbb0fd6f9b43561882f253202e50e,/Dockerfile,"## cleanup
+"
+107,03467e1a14543d83d33833e669249a3c42f7b7c8,/8.6/Dockerfile,"## Dockerfile for a haskell environment
+"
+108,03467e1a14543d83d33833e669249a3c42f7b7c8,/8.6/Dockerfile,"## ensure locale is set during build
+"
+109,03467e1a14543d83d33833e669249a3c42f7b7c8,/8.6/Dockerfile,"## run ghci by default unless a command is specified
+"
+110,148696ed70c5d7fa6ec3873bc9117253351a16b3,/examples/7.8.3/snap/Dockerfile,"# Add .cabal file
+"
+111,148696ed70c5d7fa6ec3873bc9117253351a16b3,/examples/7.8.3/snap/Dockerfile,"# Docker will cache this command as a layer, freeing us up to
+# modify source code without re-installing dependencies
+"
+112,148696ed70c5d7fa6ec3873bc9117253351a16b3,/examples/7.8.3/snap/Dockerfile,"# Add and Install Application Code
+"
+113,148696ed70c5d7fa6ec3873bc9117253351a16b3,/examples/7.8.3/snap/Dockerfile,"# Add installed cabal executables to PATH
+"
+114,148696ed70c5d7fa6ec3873bc9117253351a16b3,/examples/7.8.3/snap/Dockerfile,"# Default Command for Container
+"
+115,d3f05cf94f476870faba1151f33400b3ed42985e,/7.10/Dockerfile,"## Dockerfile for a haskell environment
+"
+116,d3f05cf94f476870faba1151f33400b3ed42985e,/7.10/Dockerfile,"## custom apt-get install options
+"
+117,d3f05cf94f476870faba1151f33400b3ed42985e,/7.10/Dockerfile,"## ensure locale is set during build
+"
+118,d3f05cf94f476870faba1151f33400b3ed42985e,/7.10/Dockerfile,"## run ghci by default unless a command is specified
+"
+119,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+120,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## disable prompts from apt
+"
+121,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## custom apt-get install options
+"
+122,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## ensure locale is set during build
+"
+123,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## ensure locale is set during init
+"
+124,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## ensure locale is set for new logins
+"
+125,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## add ppa for ubuntu trusty haskell packages
+"
+126,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## support apt-get mirror method
+# RUN sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security  main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-backports main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates   main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty           main restricted universe multiverse' /etc/apt/sources.list
+
+## install ghc dependencies
+"
+127,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## install llvm for the ghc backend
+"
+128,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+129,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## install minimal set of haskell packages
+"
+130,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+131,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## install ghc
+"
+132,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## set the PATH for login shells
+"
+133,6abb561342b5043452a1c7cc46616f21182e5cbd,/Dockerfile,"## run ghci by default unless a command is specified
+"
+134,a5ddcdd90f4db30246c6996516bba4367975e81a,/7.10/Dockerfile,"## Dockerfile for a haskell environment
+"
+135,a5ddcdd90f4db30246c6996516bba4367975e81a,/7.10/Dockerfile,"## custom apt-get install options
+"
+136,a5ddcdd90f4db30246c6996516bba4367975e81a,/7.10/Dockerfile,"## ensure locale is set during build
+"
+137,a5ddcdd90f4db30246c6996516bba4367975e81a,/7.10/Dockerfile,"## run ghci by default unless a command is specified
+"
+138,db8b669e6d8bcb75b278f967ae7dadbdfeb0cd2e,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+139,db8b669e6d8bcb75b278f967ae7dadbdfeb0cd2e,/Dockerfile,"## disable prompts from apt
+"
+140,db8b669e6d8bcb75b278f967ae7dadbdfeb0cd2e,/Dockerfile,"## ensure locale is set during build
+"
+141,db8b669e6d8bcb75b278f967ae7dadbdfeb0cd2e,/Dockerfile,"## ensure locale is set during init
+"
+142,db8b669e6d8bcb75b278f967ae7dadbdfeb0cd2e,/Dockerfile,"## ensure locale is set for new logins
+"
+143,db8b669e6d8bcb75b278f967ae7dadbdfeb0cd2e,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## add ppa for ubuntu trusty haskell packages
+"
+144,db8b669e6d8bcb75b278f967ae7dadbdfeb0cd2e,/Dockerfile,"## update the package database
+"
+145,db8b669e6d8bcb75b278f967ae7dadbdfeb0cd2e,/Dockerfile,"## install llvm for the ghc backend
+"
+146,db8b669e6d8bcb75b278f967ae7dadbdfeb0cd2e,/Dockerfile,"## install minimal set of haskell packages
+"
+147,db8b669e6d8bcb75b278f967ae7dadbdfeb0cd2e,/Dockerfile,"## set the PATH for login shells
+"
+148,db8b669e6d8bcb75b278f967ae7dadbdfeb0cd2e,/Dockerfile,"## cleanup
+"
+149,b2c8b20740764315551415596e9b6115e3859380,/Dockerfile,"## Dockerfile for a haskell environment
+"
+150,b2c8b20740764315551415596e9b6115e3859380,/Dockerfile,"## disable prompts from apt
+"
+151,b2c8b20740764315551415596e9b6115e3859380,/Dockerfile,"## custom apt-get install options
+"
+152,b2c8b20740764315551415596e9b6115e3859380,/Dockerfile,"## ensure locale is set during build
+"
+153,b2c8b20740764315551415596e9b6115e3859380,/Dockerfile,"## ensure locale is set for new logins
+"
+154,b2c8b20740764315551415596e9b6115e3859380,/Dockerfile,"## configure apt to use the haskell repository
+"
+155,b2c8b20740764315551415596e9b6115e3859380,/Dockerfile,"## set haskell upstream package versions
+"
+156,b2c8b20740764315551415596e9b6115e3859380,/Dockerfile,"## set haskell deb revisions
+"
+157,b2c8b20740764315551415596e9b6115e3859380,/Dockerfile,"## install minimal set of haskell packages
+"
+158,b2c8b20740764315551415596e9b6115e3859380,/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+159,b2c8b20740764315551415596e9b6115e3859380,/Dockerfile,"## install ghc
+"
+160,b2c8b20740764315551415596e9b6115e3859380,/Dockerfile,"## link the binaries into /usr/local/bin
+"
+161,b2c8b20740764315551415596e9b6115e3859380,/Dockerfile,"## run ghci by default unless a command is specified
+"
+162,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+163,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## disable prompts from apt
+"
+164,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## custom apt-get install options
+"
+165,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## ensure locale is set during build
+"
+166,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## ensure locale is set for new logins
+"
+167,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## configure apt to use the haskell repository
+"
+168,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+169,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## install ghc
+"
+170,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## set upstream package versions for remaining haskell packages
+"
+171,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## set deb revisions for remaining haskell packages
+"
+172,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## install minimal set of haskell packages
+"
+173,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## Development Niceties
+"
+174,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## link binaries into /usr/local/bin
+"
+175,4961ab6c6bcd670b5d5f48aa5cfc4241a09ef8e0,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+176,da915d2dd59b7a9817606a2bb5d32d1d305bc1da,/7.10/Dockerfile,"## Dockerfile for a haskell environment
+"
+177,da915d2dd59b7a9817606a2bb5d32d1d305bc1da,/7.10/Dockerfile,"## ensure locale is set during build
+"
+178,da915d2dd59b7a9817606a2bb5d32d1d305bc1da,/7.10/Dockerfile,"## run ghci by default unless a command is specified
+"
+179,73b5f5b59b0daa04e3099bcbe1d28fce22fdd5f1,/8.0/Dockerfile,"## Dockerfile for a haskell environment
+"
+180,73b5f5b59b0daa04e3099bcbe1d28fce22fdd5f1,/8.0/Dockerfile,"## ensure locale is set during build
+"
+181,73b5f5b59b0daa04e3099bcbe1d28fce22fdd5f1,/8.0/Dockerfile,"    # hvr keys
+"
+182,73b5f5b59b0daa04e3099bcbe1d28fce22fdd5f1,/8.0/Dockerfile,"## run ghci by default unless a command is specified
+"
+183,e77e7380d337521414cf761e6e533692ff3a52ec,/8.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+184,e77e7380d337521414cf761e6e533692ff3a52ec,/8.8/Dockerfile,"## ensure locale is set during build
+"
+185,e77e7380d337521414cf761e6e533692ff3a52ec,/8.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+186,2cd1a2ad243ff27098b9329d1333a4cf1cc4eca2,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+187,2cd1a2ad243ff27098b9329d1333a4cf1cc4eca2,/Dockerfile,"## set the correct environment variables
+"
+188,2cd1a2ad243ff27098b9329d1333a4cf1cc4eca2,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## support apt-get mirror method
+# RUN echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty           main restricted universe multiverse' >> /etc/apt/sources.list\
+#  && echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates   main restricted universe multiverse' >> /etc/apt/sources.list\
+#  && echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-backports main restricted universe multiverse' >> /etc/apt/sources.list\
+#  && echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security  main restricted universe multiverse' >> /etc/apt/sources.list
+
+## add ppa for ubuntu trusty haskell packages
+"
+189,2cd1a2ad243ff27098b9329d1333a4cf1cc4eca2,/Dockerfile,"## install ubuntu trusty haskell packages
+"
+190,9f7ae5d940f9bbf448e78b062787bc8eba891f94,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+191,9f7ae5d940f9bbf448e78b062787bc8eba891f94,/Dockerfile,"## set the correct environment variables
+"
+192,9f7ae5d940f9bbf448e78b062787bc8eba891f94,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## add ppa for ubuntu trusty haskell packages
+"
+193,9f7ae5d940f9bbf448e78b062787bc8eba891f94,/Dockerfile,"## install ubuntu trusty haskell packages
+"
+194,9f7ae5d940f9bbf448e78b062787bc8eba891f94,/Dockerfile,"## set the PATH for login shells
+"
+195,9f7ae5d940f9bbf448e78b062787bc8eba891f94,/Dockerfile,"## cleanup
+"
+196,5f2dbfa303f62b4d513fcee9a2a1f639b10a6f44,/examples/7.10/snap/Dockerfile,"# Add just the .cabal file to capture dependencies
+"
+197,5f2dbfa303f62b4d513fcee9a2a1f639b10a6f44,/examples/7.10/snap/Dockerfile,"# Docker will cache this command as a layer, freeing us up to
+# modify source code without re-installing dependencies
+# (unless the .cabal file changes!)
+"
+198,5f2dbfa303f62b4d513fcee9a2a1f639b10a6f44,/examples/7.10/snap/Dockerfile,"# Add and Install Application Code
+"
+199,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+200,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## disable prompts from apt
+"
+201,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## custom apt-get install options
+"
+202,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## ensure locale is set during build
+"
+203,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## ensure locale is set during init
+"
+204,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## ensure locale is set for new logins
+"
+205,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## add ppa for ubuntu trusty haskell packages
+"
+206,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## install ghc dependencies
+"
+207,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## install llvm for the ghc backend
+"
+208,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+209,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## install minimal set of haskell packages
+"
+210,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## set the PATH for login shells
+"
+211,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+212,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## install ghc
+"
+213,a578a965d5dbdfeac8a930e6ea73c8ff31ea734e,/Dockerfile,"## set the PATH for login shells
+"
+214,a0717e73e778e362001faad4a6c6567e7e42693c,/examples/stack/snap/Dockerfile,"# Add just the .cabal file to capture dependencies
+"
+215,a0717e73e778e362001faad4a6c6567e7e42693c,/examples/stack/snap/Dockerfile,"# Docker will cache this command as a layer, freeing us up to
+# modify source code without re-installing dependencies
+# (unless the .cabal file changes!)
+"
+216,a0717e73e778e362001faad4a6c6567e7e42693c,/examples/stack/snap/Dockerfile,"# Add and Install Application Code
+"
+217,1f174921a0b0462074faee70d3fc9e2ca0fd2a25,/7.8.3/onbuild/Dockerfile,"## Dockerfile for a haskell environment with cabal-install onbuild triggers
+"
+218,1f174921a0b0462074faee70d3fc9e2ca0fd2a25,/7.8.3/onbuild/Dockerfile,"## create and enter app directory
+"
+219,2a2584ea8edb91065217e3f2a8d99e64e991445b,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+220,2a2584ea8edb91065217e3f2a8d99e64e991445b,/Dockerfile,"## disable prompts from apt
+"
+221,2a2584ea8edb91065217e3f2a8d99e64e991445b,/Dockerfile,"## ensure locale is set during build
+"
+222,2a2584ea8edb91065217e3f2a8d99e64e991445b,/Dockerfile,"## ensure locale is set during init
+"
+223,2a2584ea8edb91065217e3f2a8d99e64e991445b,/Dockerfile,"## ensure locale is set for new logins
+"
+224,2a2584ea8edb91065217e3f2a8d99e64e991445b,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## add ppa for ubuntu trusty haskell packages
+"
+225,2a2584ea8edb91065217e3f2a8d99e64e991445b,/Dockerfile,"## update the package database
+"
+226,2a2584ea8edb91065217e3f2a8d99e64e991445b,/Dockerfile,"## install llvm for the ghc backend
+"
+227,2a2584ea8edb91065217e3f2a8d99e64e991445b,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+228,2a2584ea8edb91065217e3f2a8d99e64e991445b,/Dockerfile,"## install minimal set of haskell packages
+"
+229,2a2584ea8edb91065217e3f2a8d99e64e991445b,/Dockerfile,"## set the PATH for login shells
+"
+230,2a2584ea8edb91065217e3f2a8d99e64e991445b,/Dockerfile,"## cleanup
+"
+231,74f66ddc7f191b6b92ded39446b71b73a5d48164,/8.0/Dockerfile,"## Dockerfile for a haskell environment
+"
+232,74f66ddc7f191b6b92ded39446b71b73a5d48164,/8.0/Dockerfile,"## ensure locale is set during build
+"
+233,74f66ddc7f191b6b92ded39446b71b73a5d48164,/8.0/Dockerfile,"    # hvr keys
+"
+234,74f66ddc7f191b6b92ded39446b71b73a5d48164,/8.0/Dockerfile,"    # fpco keys
+"
+235,74f66ddc7f191b6b92ded39446b71b73a5d48164,/8.0/Dockerfile,"## run ghci by default unless a command is specified
+"
+236,5362898713c831feb18b57f106385cac2b5daa1a,/8.4/Dockerfile,"## Dockerfile for a haskell environment
+"
+237,5362898713c831feb18b57f106385cac2b5daa1a,/8.4/Dockerfile,"## ensure locale is set during build
+"
+238,5362898713c831feb18b57f106385cac2b5daa1a,/8.4/Dockerfile,"## run ghci by default unless a command is specified
+"
+239,9e13320bcdfd8345dbd5abc2f3aa585ba054263d,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+240,9e13320bcdfd8345dbd5abc2f3aa585ba054263d,/7.8/Dockerfile,"## disable prompts from apt
+"
+241,9e13320bcdfd8345dbd5abc2f3aa585ba054263d,/7.8/Dockerfile,"## custom apt-get install options
+"
+242,9e13320bcdfd8345dbd5abc2f3aa585ba054263d,/7.8/Dockerfile,"## ensure locale is set during build
+"
+243,9e13320bcdfd8345dbd5abc2f3aa585ba054263d,/7.8/Dockerfile,"## configure apt to use the haskell repository
+"
+244,9e13320bcdfd8345dbd5abc2f3aa585ba054263d,/7.8/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+245,9e13320bcdfd8345dbd5abc2f3aa585ba054263d,/7.8/Dockerfile,"## install ghc
+"
+246,9e13320bcdfd8345dbd5abc2f3aa585ba054263d,/7.8/Dockerfile,"## set upstream package versions for remaining haskell packages
+"
+247,9e13320bcdfd8345dbd5abc2f3aa585ba054263d,/7.8/Dockerfile,"## set deb revisions for remaining haskell packages
+"
+248,9e13320bcdfd8345dbd5abc2f3aa585ba054263d,/7.8/Dockerfile,"## install minimal set of haskell packages
+"
+249,9e13320bcdfd8345dbd5abc2f3aa585ba054263d,/7.8/Dockerfile,"## install additional libs typically needed by hackage packages
+"
+250,9e13320bcdfd8345dbd5abc2f3aa585ba054263d,/7.8/Dockerfile,"## link binaries into /usr/local/bin
+"
+251,9e13320bcdfd8345dbd5abc2f3aa585ba054263d,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+252,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+253,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## disable prompts from apt
+"
+254,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## custom apt-get install options
+"
+255,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## ensure locale is set during build
+"
+256,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## ensure locale is set during init
+"
+257,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## ensure locale is set for new logins
+"
+258,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## add ppa for ubuntu trusty haskell packages
+"
+259,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## support apt-get mirror method
+# RUN sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security  main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-backports main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates   main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty           main restricted universe multiverse' /etc/apt/sources.list
+
+## install ghc dependencies
+"
+260,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## install llvm for the ghc backend
+"
+261,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+262,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## install minimal set of haskell packages
+"
+263,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+264,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## install ghc
+"
+265,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## set the VERSION vars and PATH for login shells
+"
+266,405fdf9d7284ac858d9336ff446c58d22350edf7,/Dockerfile,"## run ghci by default unless a command is specified
+"
+267,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+268,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## disable prompts from apt
+"
+269,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## custom apt-get install options
+"
+270,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## ensure locale is set during build
+"
+271,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## ensure locale is set during init
+"
+272,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## ensure locale is set for new logins
+"
+273,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## add ppa for ubuntu trusty haskell packages
+"
+274,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## support apt-get mirror method
+# RUN sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security  main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-backports main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates   main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty           main restricted universe multiverse' /etc/apt/sources.list
+
+## install ghc dependencies
+"
+275,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## install llvm for the ghc backend
+"
+276,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+277,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## install minimal set of haskell packages
+"
+278,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+279,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## install ghc
+"
+280,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## set the VERSION vars and PATH for login shells
+"
+281,c3600896bbc9162224120d07af49832d44595cf0,/Dockerfile,"## run ghci by default unless a command is specified
+"
+282,d3edec208f78806d34ef346f5ec9baffdaab5914,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+283,d3edec208f78806d34ef346f5ec9baffdaab5914,/Dockerfile,"## disable prompts from apt
+"
+284,d3edec208f78806d34ef346f5ec9baffdaab5914,/Dockerfile,"## ensure locale is set during build
+"
+285,d3edec208f78806d34ef346f5ec9baffdaab5914,/Dockerfile,"## ensure locale is set during init
+"
+286,d3edec208f78806d34ef346f5ec9baffdaab5914,/Dockerfile,"## ensure locale is set for new logins
+"
+287,d3edec208f78806d34ef346f5ec9baffdaab5914,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## add ppa for ubuntu trusty haskell packages
+"
+288,d3edec208f78806d34ef346f5ec9baffdaab5914,/Dockerfile,"## update the package database
+"
+289,d3edec208f78806d34ef346f5ec9baffdaab5914,/Dockerfile,"## install llvm for the ghc backend
+"
+290,d3edec208f78806d34ef346f5ec9baffdaab5914,/Dockerfile,"## install minimal set of haskell packages
+"
+291,d3edec208f78806d34ef346f5ec9baffdaab5914,/Dockerfile,"## set the PATH for login shells
+"
+292,d3edec208f78806d34ef346f5ec9baffdaab5914,/Dockerfile,"## cleanup
+"
+293,0479e787630e41ec434cc756983dbe6c32006cbb,/8.0/Dockerfile,"## Dockerfile for a haskell environment
+"
+294,0479e787630e41ec434cc756983dbe6c32006cbb,/8.0/Dockerfile,"## ensure locale is set during build
+"
+295,0479e787630e41ec434cc756983dbe6c32006cbb,/8.0/Dockerfile,"    # hvr keys
+"
+296,0479e787630e41ec434cc756983dbe6c32006cbb,/8.0/Dockerfile,"    # fpco keys
+"
+297,0479e787630e41ec434cc756983dbe6c32006cbb,/8.0/Dockerfile,"## run ghci by default unless a command is specified
+"
+298,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+299,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## disable prompts from apt
+"
+300,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## custom apt-get install options
+"
+301,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## ensure locale is set during build
+"
+302,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## configure apt to use the haskell repository
+"
+303,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+304,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## install ghc
+"
+305,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## set upstream package versions (major-level) for remaining haskell packages
+"
+306,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## set upstream package versions (minor-level) for remaining haskell packages
+"
+307,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## set deb revisions for remaining haskell packages
+"
+308,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## install minimal set of haskell packages
+"
+309,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## install additional libs typically needed by hackage packages
+"
+310,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## set PATH for tools not installed to /usr/{bin,/local/bin}
+"
+311,04e21c62babcf0c506214802479c831d40739e70,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+312,302c5f9b5c566049bd8b48ccaa227923a04ac373,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+313,302c5f9b5c566049bd8b48ccaa227923a04ac373,/7.8/Dockerfile,"## custom apt-get install options
+"
+314,302c5f9b5c566049bd8b48ccaa227923a04ac373,/7.8/Dockerfile,"## ensure locale is set during build
+"
+315,302c5f9b5c566049bd8b48ccaa227923a04ac373,/7.8/Dockerfile,"## configure apt to use the haskell repository
+# gpg: key 4E3AC105: public key ""deb.haskell.org repository key"" imported
+"
+316,302c5f9b5c566049bd8b48ccaa227923a04ac373,/7.8/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+317,302c5f9b5c566049bd8b48ccaa227923a04ac373,/7.8/Dockerfile,"## install ghc
+"
+318,302c5f9b5c566049bd8b48ccaa227923a04ac373,/7.8/Dockerfile,"## set upstream package versions (major-level) for remaining haskell packages
+"
+319,302c5f9b5c566049bd8b48ccaa227923a04ac373,/7.8/Dockerfile,"## set upstream package versions (minor-level) for remaining haskell packages
+"
+320,302c5f9b5c566049bd8b48ccaa227923a04ac373,/7.8/Dockerfile,"## set deb revisions for remaining haskell packages
+"
+321,302c5f9b5c566049bd8b48ccaa227923a04ac373,/7.8/Dockerfile,"## install minimal set of haskell packages
+"
+322,302c5f9b5c566049bd8b48ccaa227923a04ac373,/7.8/Dockerfile,"## set PATH for tools not installed to /usr/{bin,/local/bin}
+"
+323,302c5f9b5c566049bd8b48ccaa227923a04ac373,/7.8/Dockerfile,"## install additional libs typically needed by hackage packages
+"
+324,302c5f9b5c566049bd8b48ccaa227923a04ac373,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+325,0bf008ab7153eb6fc8b60b4baa4390bf9a94a1bb,/8.0/Dockerfile,"## Dockerfile for a haskell environment
+"
+326,0bf008ab7153eb6fc8b60b4baa4390bf9a94a1bb,/8.0/Dockerfile,"## ensure locale is set during build
+"
+327,0bf008ab7153eb6fc8b60b4baa4390bf9a94a1bb,/8.0/Dockerfile,"    # hvr keys
+"
+328,0bf008ab7153eb6fc8b60b4baa4390bf9a94a1bb,/8.0/Dockerfile,"## run ghci by default unless a command is specified
+"
+329,63385860e9c0b25f6cce87e15281684c0741fa3d,/examples/7.8.3/snap-onbuild/Dockerfile,"# Default Command for Container
+"
+330,877410904911a93c84e99cb4264dfcee9017076d,/7.10/Dockerfile,"## Dockerfile for a haskell environment
+"
+331,877410904911a93c84e99cb4264dfcee9017076d,/7.10/Dockerfile,"## ensure locale is set during build
+"
+332,877410904911a93c84e99cb4264dfcee9017076d,/7.10/Dockerfile,"    # hvr keys
+"
+333,877410904911a93c84e99cb4264dfcee9017076d,/7.10/Dockerfile,"    # fpco keys
+"
+334,877410904911a93c84e99cb4264dfcee9017076d,/7.10/Dockerfile,"## run ghci by default unless a command is specified
+"
+335,5538b536f093ad8cfd04871a0f30066123db915a,/8.4/Dockerfile,"## Dockerfile for a haskell environment
+"
+336,5538b536f093ad8cfd04871a0f30066123db915a,/8.4/Dockerfile,"## ensure locale is set during build
+"
+337,5538b536f093ad8cfd04871a0f30066123db915a,/8.4/Dockerfile,"## run ghci by default unless a command is specified
+"
+338,750850fa0d1a30244e6d906d800dbf5fe795f9ba,/8.2/Dockerfile,"## Dockerfile for a haskell environment
+"
+339,750850fa0d1a30244e6d906d800dbf5fe795f9ba,/8.2/Dockerfile,"## ensure locale is set during build
+"
+340,750850fa0d1a30244e6d906d800dbf5fe795f9ba,/8.2/Dockerfile,"## run ghci by default unless a command is specified
+"
+341,aa517c24c51bbd54da5805517acd12120a9340ab,/8.6/Dockerfile,"## Dockerfile for a haskell environment
+"
+342,aa517c24c51bbd54da5805517acd12120a9340ab,/8.6/Dockerfile,"## ensure locale is set during build
+"
+343,aa517c24c51bbd54da5805517acd12120a9340ab,/8.6/Dockerfile,"## run ghci by default unless a command is specified
+"
+344,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+345,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## disable prompts from apt
+"
+346,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## custom apt-get install options
+"
+347,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## ensure locale is set during build
+"
+348,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## ensure locale is set during init
+"
+349,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## ensure locale is set for new logins
+"
+350,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## add ppa for ubuntu trusty haskell packages
+"
+351,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## support apt-get mirror method
+# RUN sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security  main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-backports main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates   main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty           main restricted universe multiverse' /etc/apt/sources.list
+
+## install ghc dependencies
+"
+352,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## install llvm for the ghc backend
+"
+353,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+354,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## install minimal set of haskell packages
+"
+355,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+356,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## install ghc
+"
+357,6631c268234dd5e46f93e930c4072a4d31dd4364,/Dockerfile,"## set the PATH for login shells
+"
+358,f0818a4f2e5d36645943bd71bc6dd2e919a08e5f,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+359,f0818a4f2e5d36645943bd71bc6dd2e919a08e5f,/Dockerfile,"## disable prompts from apt
+"
+360,f0818a4f2e5d36645943bd71bc6dd2e919a08e5f,/Dockerfile,"## ensure locale is set during build
+"
+361,f0818a4f2e5d36645943bd71bc6dd2e919a08e5f,/Dockerfile,"## ensure locale is set during init
+"
+362,f0818a4f2e5d36645943bd71bc6dd2e919a08e5f,/Dockerfile,"## ensure locale is set for new logins
+"
+363,f0818a4f2e5d36645943bd71bc6dd2e919a08e5f,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## add ppa for ubuntu trusty haskell packages
+"
+364,f0818a4f2e5d36645943bd71bc6dd2e919a08e5f,/Dockerfile,"## install ubuntu trusty haskell packages
+"
+365,f0818a4f2e5d36645943bd71bc6dd2e919a08e5f,/Dockerfile,"## set the PATH for login shells
+"
+366,f0818a4f2e5d36645943bd71bc6dd2e919a08e5f,/Dockerfile,"## cleanup
+"
+367,50cf25ae9a6faf49b9bae25e7da4b855f9918455,/8.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+368,50cf25ae9a6faf49b9bae25e7da4b855f9918455,/8.8/Dockerfile,"## ensure locale is set during build
+"
+369,50cf25ae9a6faf49b9bae25e7da4b855f9918455,/8.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+370,cd8c7cb4efb003f5b64d6730781e609d1abff440,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+371,cd8c7cb4efb003f5b64d6730781e609d1abff440,/Dockerfile,"## set the correct environment variables
+"
+372,cd8c7cb4efb003f5b64d6730781e609d1abff440,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## support apt-get mirror method
+# RUN echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty           main restricted universe multiverse' >> /etc/apt/sources.list\
+#  && echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates   main restricted universe multiverse' >> /etc/apt/sources.list\
+#  && echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-backports main restricted universe multiverse' >> /etc/apt/sources.list\
+#  && echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security  main restricted universe multiverse' >> /etc/apt/sources.list
+
+## add ppa for ubuntu trusty haskell packages
+"
+373,cd8c7cb4efb003f5b64d6730781e609d1abff440,/Dockerfile,"## install ubuntu trusty haskell packages
+"
+374,cd8c7cb4efb003f5b64d6730781e609d1abff440,/Dockerfile,"## set the PATH for login shells
+"
+375,cd8c7cb4efb003f5b64d6730781e609d1abff440,/Dockerfile,"## cleanup
+"
+376,edb625b37f26b2eb072f1f3b5fd9f884b04a6c2f,/8.0/Dockerfile,"## Dockerfile for a haskell environment
+"
+377,edb625b37f26b2eb072f1f3b5fd9f884b04a6c2f,/8.0/Dockerfile,"## ensure locale is set during build
+"
+378,edb625b37f26b2eb072f1f3b5fd9f884b04a6c2f,/8.0/Dockerfile,"## run ghci by default unless a command is specified
+"
+379,239cc227052dc8987196ea32777c84b0c6e35781,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+380,239cc227052dc8987196ea32777c84b0c6e35781,/Dockerfile,"## disable prompts from apt
+"
+381,239cc227052dc8987196ea32777c84b0c6e35781,/Dockerfile,"## ensure locale is set during build
+"
+382,239cc227052dc8987196ea32777c84b0c6e35781,/Dockerfile,"## ensure locale is set during init
+"
+383,239cc227052dc8987196ea32777c84b0c6e35781,/Dockerfile,"## ensure locale is set for new logins
+"
+384,239cc227052dc8987196ea32777c84b0c6e35781,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## add ppa for ubuntu trusty haskell packages
+"
+385,239cc227052dc8987196ea32777c84b0c6e35781,/Dockerfile,"## install llvm for the ghc backend
+"
+386,239cc227052dc8987196ea32777c84b0c6e35781,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+387,239cc227052dc8987196ea32777c84b0c6e35781,/Dockerfile,"## install minimal set of haskell packages
+"
+388,239cc227052dc8987196ea32777c84b0c6e35781,/Dockerfile,"## set the PATH for login shells
+"
+389,239cc227052dc8987196ea32777c84b0c6e35781,/Dockerfile,"## cleanup
+"
+390,03467e1a14543d83d33833e669249a3c42f7b7c8,/8.4/Dockerfile,"## Dockerfile for a haskell environment
+"
+391,03467e1a14543d83d33833e669249a3c42f7b7c8,/8.4/Dockerfile,"## ensure locale is set during build
+"
+392,03467e1a14543d83d33833e669249a3c42f7b7c8,/8.4/Dockerfile,"## run ghci by default unless a command is specified
+"
+393,6263bc8a0ecfdc622cd7eed417fa5b4159a4bec2,/7.8.3/Dockerfile,"## Dockerfile for a haskell environment
+"
+394,6263bc8a0ecfdc622cd7eed417fa5b4159a4bec2,/7.8.3/Dockerfile,"## disable prompts from apt
+"
+395,6263bc8a0ecfdc622cd7eed417fa5b4159a4bec2,/7.8.3/Dockerfile,"## custom apt-get install options
+"
+396,6263bc8a0ecfdc622cd7eed417fa5b4159a4bec2,/7.8.3/Dockerfile,"## ensure locale is set during build
+"
+397,6263bc8a0ecfdc622cd7eed417fa5b4159a4bec2,/7.8.3/Dockerfile,"## ensure locale is set for new logins
+"
+398,6263bc8a0ecfdc622cd7eed417fa5b4159a4bec2,/7.8.3/Dockerfile,"## configure apt to use the haskell repository
+"
+399,6263bc8a0ecfdc622cd7eed417fa5b4159a4bec2,/7.8.3/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+400,6263bc8a0ecfdc622cd7eed417fa5b4159a4bec2,/7.8.3/Dockerfile,"## install ghc
+"
+401,6263bc8a0ecfdc622cd7eed417fa5b4159a4bec2,/7.8.3/Dockerfile,"## set upstream package versions for remaining haskell packages
+"
+402,6263bc8a0ecfdc622cd7eed417fa5b4159a4bec2,/7.8.3/Dockerfile,"## set deb revisions for remaining haskell packages
+"
+403,6263bc8a0ecfdc622cd7eed417fa5b4159a4bec2,/7.8.3/Dockerfile,"## install minimal set of haskell packages
+"
+404,6263bc8a0ecfdc622cd7eed417fa5b4159a4bec2,/7.8.3/Dockerfile,"## link binaries into /usr/local/bin
+"
+405,6263bc8a0ecfdc622cd7eed417fa5b4159a4bec2,/7.8.3/Dockerfile,"## run ghci by default unless a command is specified
+"
+406,4afdaa5cd873d75d03ae35821457f25da24af051,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+407,4afdaa5cd873d75d03ae35821457f25da24af051,/Dockerfile,"## set the correct environment variables
+"
+408,4afdaa5cd873d75d03ae35821457f25da24af051,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## support apt-get mirror method
+# RUN echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty           main restricted universe multiverse' >> /etc/apt/sources.list\
+#  && echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates   main restricted universe multiverse' >> /etc/apt/sources.list\
+#  && echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-backports main restricted universe multiverse' >> /etc/apt/sources.list\
+#  && echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security  main restricted universe multiverse' >> /etc/apt/sources.list
+
+## add ppa for ubuntu trusty haskell packages
+"
+409,4afdaa5cd873d75d03ae35821457f25da24af051,/Dockerfile,"## install ubuntu trusty haskell packages
+"
+410,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+411,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## disable prompts from apt
+"
+412,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## custom apt-get install options
+"
+413,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## ensure locale is set during build
+"
+414,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## ensure locale is set during init
+"
+415,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## ensure locale is set for new logins
+"
+416,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## add ppa for ubuntu trusty haskell packages
+"
+417,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## support apt-get mirror method
+# RUN sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security  main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-backports main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates   main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty           main restricted universe multiverse' /etc/apt/sources.list
+
+## install ghc dependencies
+"
+418,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## install llvm for the ghc backend
+"
+419,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+420,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## install minimal set of haskell packages
+"
+421,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+422,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## install ghc
+"
+423,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## set the VERSION vars and PATH for login shells
+"
+424,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## link the binaries into /usr/local/bin
+"
+425,16255096917f02b6bceae05bd0ae75f8588cc920,/Dockerfile,"## run ghci by default unless a command is specified
+"
+426,b41ada21ff857b47fbdd7d8891817ba7ac2d0920,/8.4/Dockerfile,"## Dockerfile for a haskell environment
+"
+427,b41ada21ff857b47fbdd7d8891817ba7ac2d0920,/8.4/Dockerfile,"## ensure locale is set during build
+"
+428,b41ada21ff857b47fbdd7d8891817ba7ac2d0920,/8.4/Dockerfile,"    # https://github.com/haskell/cabal/issues/5516
+"
+429,b41ada21ff857b47fbdd7d8891817ba7ac2d0920,/8.4/Dockerfile,"## run ghci by default unless a command is specified
+"
+430,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+431,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## disable prompts from apt
+"
+432,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## custom apt-get install options
+"
+433,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## ensure locale is set during build
+"
+434,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## configure apt to use the haskell repository
+"
+435,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+436,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## install ghc
+"
+437,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## set upstream package versions for remaining haskell packages
+"
+438,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## set upstream package versions (minor-level) for remaining haskell packages
+"
+439,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## set deb revisions for remaining haskell packages
+"
+440,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## install minimal set of haskell packages
+"
+441,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## install additional libs typically needed by hackage packages
+"
+442,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## set PATH for tools not installed to /usr/{bin,/local/bin}
+"
+443,6ec0b519070be82bc0bf5abe2a54b2c1967e51f4,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+444,95486edc5e6459f3c9106aaf8f7add2ea9d50e38,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+445,95486edc5e6459f3c9106aaf8f7add2ea9d50e38,/Dockerfile,"## disable prompts from apt
+"
+446,95486edc5e6459f3c9106aaf8f7add2ea9d50e38,/Dockerfile,"## custom apt-get install options
+"
+447,95486edc5e6459f3c9106aaf8f7add2ea9d50e38,/Dockerfile,"## ensure locale is set during build
+"
+448,95486edc5e6459f3c9106aaf8f7add2ea9d50e38,/Dockerfile,"## ensure locale is set for new logins
+"
+449,95486edc5e6459f3c9106aaf8f7add2ea9d50e38,/Dockerfile,"## add ppa for ubuntu trusty haskell packages
+"
+450,95486edc5e6459f3c9106aaf8f7add2ea9d50e38,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+451,95486edc5e6459f3c9106aaf8f7add2ea9d50e38,/Dockerfile,"## install minimal set of haskell packages
+"
+452,95486edc5e6459f3c9106aaf8f7add2ea9d50e38,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+453,95486edc5e6459f3c9106aaf8f7add2ea9d50e38,/Dockerfile,"## install ghc
+"
+454,95486edc5e6459f3c9106aaf8f7add2ea9d50e38,/Dockerfile,"## link the binaries into /usr/local/bin
+"
+455,95486edc5e6459f3c9106aaf8f7add2ea9d50e38,/Dockerfile,"## run ghci by default unless a command is specified
+"
+456,4f0d357e232e64d7fb9b8476ddadca837e0964b7,/7.10/Dockerfile,"## Dockerfile for a haskell environment
+"
+457,4f0d357e232e64d7fb9b8476ddadca837e0964b7,/7.10/Dockerfile,"## ensure locale is set during build
+"
+458,4f0d357e232e64d7fb9b8476ddadca837e0964b7,/7.10/Dockerfile,"## run ghci by default unless a command is specified
+"
+459,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+460,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## disable prompts from apt
+"
+461,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## custom apt-get install options
+"
+462,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## ensure locale is set during build
+"
+463,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## ensure locale is set during init
+"
+464,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## ensure locale is set for new logins
+"
+465,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## add ppa for ubuntu trusty haskell packages
+"
+466,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## support apt-get mirror method
+# RUN sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security  main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-backports main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates   main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty           main restricted universe multiverse' /etc/apt/sources.list
+
+## install ghc dependencies
+"
+467,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## install llvm for the ghc backend
+"
+468,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+469,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## install minimal set of haskell packages
+"
+470,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+471,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## install ghc
+"
+472,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## set the VERSION vars and PATH for login shells
+"
+473,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## link the binaries into /usr/local/bin
+"
+474,012c08e40a2a4b5bca43ea037c72a3f3bb037c3f,/Dockerfile,"## run ghci by default unless a command is specified
+"
+475,3190a187d6c0d4bdd1f2ac814b09a9517767084d,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+476,3190a187d6c0d4bdd1f2ac814b09a9517767084d,/7.8/Dockerfile,"## ensure locale is set during build
+"
+477,3190a187d6c0d4bdd1f2ac814b09a9517767084d,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+478,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+479,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## disable prompts from apt
+"
+480,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## custom apt-get install options
+"
+481,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## ensure locale is set during build
+"
+482,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## ensure locale is set during init
+"
+483,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## ensure locale is set for new logins
+"
+484,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## add ppa for ubuntu trusty haskell packages
+"
+485,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## support apt-get mirror method
+# RUN sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security  main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-backports main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates   main restricted universe multiverse' /etc/apt/sources.list\
+#  && sed -i '1ideb mirror://mirrors.ubuntu.com/mirrors.txt trusty           main restricted universe multiverse' /etc/apt/sources.list
+
+## install ghc dependencies
+"
+486,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## install llvm for the ghc backend
+"
+487,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+488,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## install minimal set of haskell packages
+"
+489,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## set the PATH for login shells
+"
+490,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+491,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## install ghc
+"
+492,6c9a32486e5797ac110d51099abf38bf1f81c451,/Dockerfile,"## set the PATH for login shells
+"
+493,3d147020c8d2beb5a52cb3b9ef89712f9e2c1939,/7.10/Dockerfile,"## Dockerfile for a haskell environment
+"
+494,3d147020c8d2beb5a52cb3b9ef89712f9e2c1939,/7.10/Dockerfile,"## custom apt-get install options
+"
+495,3d147020c8d2beb5a52cb3b9ef89712f9e2c1939,/7.10/Dockerfile,"## ensure locale is set during build
+"
+496,3d147020c8d2beb5a52cb3b9ef89712f9e2c1939,/7.10/Dockerfile,"## install additional libs typically needed by hackage packages
+#RUN apt-get update && \
+#    apt-get install ${OPTS_APT} zlib1g-dev libtinfo-dev
+
+## run ghci by default unless a command is specified
+"
+497,d3f05cf94f476870faba1151f33400b3ed42985e,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+498,d3f05cf94f476870faba1151f33400b3ed42985e,/7.8/Dockerfile,"## custom apt-get install options
+"
+499,d3f05cf94f476870faba1151f33400b3ed42985e,/7.8/Dockerfile,"## ensure locale is set during build
+"
+500,d3f05cf94f476870faba1151f33400b3ed42985e,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+501,2b34f1eb00d6849379031b19756d8913cfd196f0,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+502,2b34f1eb00d6849379031b19756d8913cfd196f0,/Dockerfile,"## set the correct environment variables
+"
+503,2b34f1eb00d6849379031b19756d8913cfd196f0,/Dockerfile,"## ensure locale is set during build
+"
+504,2b34f1eb00d6849379031b19756d8913cfd196f0,/Dockerfile,"## ensure locale is set during init
+"
+505,2b34f1eb00d6849379031b19756d8913cfd196f0,/Dockerfile,"## ensure locale is set for new logins
+"
+506,2b34f1eb00d6849379031b19756d8913cfd196f0,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## add ppa for ubuntu trusty haskell packages
+"
+507,2b34f1eb00d6849379031b19756d8913cfd196f0,/Dockerfile,"## install ubuntu trusty haskell packages
+"
+508,2b34f1eb00d6849379031b19756d8913cfd196f0,/Dockerfile,"## set the PATH for login shells
+"
+509,2b34f1eb00d6849379031b19756d8913cfd196f0,/Dockerfile,"## cleanup
+"
+510,c562f2eaa232d9d3e1e7b65c28faab27f2f69ad0,/8.6/Dockerfile,"## Dockerfile for a haskell environment
+"
+511,c562f2eaa232d9d3e1e7b65c28faab27f2f69ad0,/8.6/Dockerfile,"## ensure locale is set during build
+"
+512,c562f2eaa232d9d3e1e7b65c28faab27f2f69ad0,/8.6/Dockerfile,"    # https://github.com/haskell/cabal/issues/5516
+"
+513,c562f2eaa232d9d3e1e7b65c28faab27f2f69ad0,/8.6/Dockerfile,"## run ghci by default unless a command is specified
+"
+514,cf646deeb58fb4373fde34c5a17ea886ae1bf3c8,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+515,cf646deeb58fb4373fde34c5a17ea886ae1bf3c8,/7.8/Dockerfile,"## ensure locale is set during build
+"
+516,cf646deeb58fb4373fde34c5a17ea886ae1bf3c8,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+517,32faeda9e1369582f14f1b3626f1774758e0f926,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+518,32faeda9e1369582f14f1b3626f1774758e0f926,/Dockerfile,"## set the correct environment variables
+"
+519,32faeda9e1369582f14f1b3626f1774758e0f926,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## support apt-get mirror method
+# RUN echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty           main restricted universe multiverse' >> /etc/apt/sources.list\
+#  && echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-updates   main restricted universe multiverse' >> /etc/apt/sources.list\
+#  && echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-backports main restricted universe multiverse' >> /etc/apt/sources.list\
+#  && echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt trusty-security  main restricted universe multiverse' >> /etc/apt/sources.list
+
+## add ppa for ubuntu trusty haskell packages
+"
+520,32faeda9e1369582f14f1b3626f1774758e0f926,/Dockerfile,"## install ubuntu trusty haskell packages
+"
+521,cf646deeb58fb4373fde34c5a17ea886ae1bf3c8,/7.10/Dockerfile,"## Dockerfile for a haskell environment
+"
+522,cf646deeb58fb4373fde34c5a17ea886ae1bf3c8,/7.10/Dockerfile,"## ensure locale is set during build
+"
+523,cf646deeb58fb4373fde34c5a17ea886ae1bf3c8,/7.10/Dockerfile,"## run ghci by default unless a command is specified
+"
+524,0ab58338f4b94c8e63a552f4edb448be3fa84c5d,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+525,0ab58338f4b94c8e63a552f4edb448be3fa84c5d,/7.8/Dockerfile,"## ensure locale is set during build
+"
+526,0ab58338f4b94c8e63a552f4edb448be3fa84c5d,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+527,cbbdc7cdf6de24b5bb19138b8b678c80c7064273,/7.8.3/Dockerfile,"## Dockerfile for a haskell environment
+"
+528,cbbdc7cdf6de24b5bb19138b8b678c80c7064273,/7.8.3/Dockerfile,"## disable prompts from apt
+"
+529,cbbdc7cdf6de24b5bb19138b8b678c80c7064273,/7.8.3/Dockerfile,"## custom apt-get install options
+"
+530,cbbdc7cdf6de24b5bb19138b8b678c80c7064273,/7.8.3/Dockerfile,"## ensure locale is set during build
+"
+531,cbbdc7cdf6de24b5bb19138b8b678c80c7064273,/7.8.3/Dockerfile,"## ensure locale is set for new logins
+"
+532,cbbdc7cdf6de24b5bb19138b8b678c80c7064273,/7.8.3/Dockerfile,"## configure apt to use the haskell repository
+"
+533,cbbdc7cdf6de24b5bb19138b8b678c80c7064273,/7.8.3/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+534,cbbdc7cdf6de24b5bb19138b8b678c80c7064273,/7.8.3/Dockerfile,"## install ghc
+"
+535,cbbdc7cdf6de24b5bb19138b8b678c80c7064273,/7.8.3/Dockerfile,"## set upstream package versions for remaining haskell packages
+"
+536,cbbdc7cdf6de24b5bb19138b8b678c80c7064273,/7.8.3/Dockerfile,"## set deb revisions for remaining haskell packages
+"
+537,cbbdc7cdf6de24b5bb19138b8b678c80c7064273,/7.8.3/Dockerfile,"## install minimal set of haskell packages
+"
+538,cbbdc7cdf6de24b5bb19138b8b678c80c7064273,/7.8.3/Dockerfile,"## link binaries into /usr/local/bin
+"
+539,cbbdc7cdf6de24b5bb19138b8b678c80c7064273,/7.8.3/Dockerfile,"## run ghci by default unless a command is specified
+"
+540,c9fb4745107f6452a5a4063b1e53cfc8904f4ce5,/7.10/Dockerfile,"## Dockerfile for a haskell environment
+"
+541,c9fb4745107f6452a5a4063b1e53cfc8904f4ce5,/7.10/Dockerfile,"## ensure locale is set during build
+"
+542,c9fb4745107f6452a5a4063b1e53cfc8904f4ce5,/7.10/Dockerfile,"    # hvr keys
+"
+543,c9fb4745107f6452a5a4063b1e53cfc8904f4ce5,/7.10/Dockerfile,"    # fpco keys
+"
+544,c9fb4745107f6452a5a4063b1e53cfc8904f4ce5,/7.10/Dockerfile,"## run ghci by default unless a command is specified
+"
+545,3d147020c8d2beb5a52cb3b9ef89712f9e2c1939,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+546,3d147020c8d2beb5a52cb3b9ef89712f9e2c1939,/7.8/Dockerfile,"## custom apt-get install options
+"
+547,3d147020c8d2beb5a52cb3b9ef89712f9e2c1939,/7.8/Dockerfile,"## ensure locale is set during build
+"
+548,3d147020c8d2beb5a52cb3b9ef89712f9e2c1939,/7.8/Dockerfile,"## install additional libs typically needed by hackage packages
+#RUN apt-get update && \
+#    apt-get install ${OPTS_APT} zlib1g-dev libtinfo-dev
+
+## run ghci by default unless a command is specified
+"
+549,7fd359b8dab3bf543832eb1ff34e1a46eef262a7,/8.6/Dockerfile,"## Dockerfile for a haskell environment
+"
+550,7fd359b8dab3bf543832eb1ff34e1a46eef262a7,/8.6/Dockerfile,"## ensure locale is set during build
+"
+551,7fd359b8dab3bf543832eb1ff34e1a46eef262a7,/8.6/Dockerfile,"## run ghci by default unless a command is specified
+"
+552,ef6e72cbe8ee563e478b79b831e1703e5122037f,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+553,ef6e72cbe8ee563e478b79b831e1703e5122037f,/Dockerfile,"## set the correct environment variables
+"
+554,ef6e72cbe8ee563e478b79b831e1703e5122037f,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## add ppa for ubuntu trusty haskell packages
+"
+555,ef6e72cbe8ee563e478b79b831e1703e5122037f,/Dockerfile,"## install ubuntu trusty haskell packages
+"
+556,ef6e72cbe8ee563e478b79b831e1703e5122037f,/Dockerfile,"## set the PATH for login shells
+"
+557,ef6e72cbe8ee563e478b79b831e1703e5122037f,/Dockerfile,"## cleanup
+"
+558,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+559,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## disable prompts from apt
+"
+560,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## custom apt-get install options
+"
+561,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## ensure locale is set during build
+"
+562,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## ensure locale is set for new logins
+"
+563,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## configure apt to use the haskell repository
+"
+564,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+565,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## install ghc
+"
+566,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## set upstream package versions for remaining haskell packages
+"
+567,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## set deb revisions for remaining haskell packages
+"
+568,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## install minimal set of haskell packages
+"
+569,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## Development Niceties
+"
+570,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## link binaries into /usr/local/bin
+"
+571,4bb22eb0d414d65615e920912c710ab8008a94f7,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+572,8ad0891b1e2eebc2948423f8292d69711f7d7ae2,/Dockerfile,"## Dockerfile for a haskell environment
+## https://github.com/darinmorrison/docker-haskell
+"
+573,8ad0891b1e2eebc2948423f8292d69711f7d7ae2,/Dockerfile,"## disable prompts from apt
+"
+574,8ad0891b1e2eebc2948423f8292d69711f7d7ae2,/Dockerfile,"## custom apt-get install options
+"
+575,8ad0891b1e2eebc2948423f8292d69711f7d7ae2,/Dockerfile,"## ensure locale is set during build
+"
+576,8ad0891b1e2eebc2948423f8292d69711f7d7ae2,/Dockerfile,"## ensure locale is set during init
+"
+577,8ad0891b1e2eebc2948423f8292d69711f7d7ae2,/Dockerfile,"## ensure locale is set for new logins
+"
+578,8ad0891b1e2eebc2948423f8292d69711f7d7ae2,/Dockerfile,"## start the init system (e.g., for sshd)
+# CMD [""/sbin/my_init""]
+
+## support apt-cacher-ng
+# RUN echo 'Acquire::http { Proxy ""http://<hostname>:3142""; };' >> /etc/apt/apt.conf.d/01proxy
+
+## add ppa for ubuntu trusty haskell packages
+"
+579,8ad0891b1e2eebc2948423f8292d69711f7d7ae2,/Dockerfile,"## install llvm for the ghc backend
+"
+580,8ad0891b1e2eebc2948423f8292d69711f7d7ae2,/Dockerfile,"## haskell package versions; can be overriden via context hacks
+"
+581,8ad0891b1e2eebc2948423f8292d69711f7d7ae2,/Dockerfile,"## install minimal set of haskell packages
+"
+582,8ad0891b1e2eebc2948423f8292d69711f7d7ae2,/Dockerfile,"## set the PATH for login shells
+"
+583,8ad0891b1e2eebc2948423f8292d69711f7d7ae2,/Dockerfile,"## cleanup
+"
+584,a6e46b15a834d3d70335918adbac954c3a238c2d,/7.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+585,a6e46b15a834d3d70335918adbac954c3a238c2d,/7.8/Dockerfile,"## disable prompts from apt
+"
+586,a6e46b15a834d3d70335918adbac954c3a238c2d,/7.8/Dockerfile,"## custom apt-get install options
+"
+587,a6e46b15a834d3d70335918adbac954c3a238c2d,/7.8/Dockerfile,"## ensure locale is set during build
+"
+588,a6e46b15a834d3d70335918adbac954c3a238c2d,/7.8/Dockerfile,"## configure apt to use the haskell repository
+"
+589,a6e46b15a834d3d70335918adbac954c3a238c2d,/7.8/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+590,a6e46b15a834d3d70335918adbac954c3a238c2d,/7.8/Dockerfile,"## install ghc
+"
+591,a6e46b15a834d3d70335918adbac954c3a238c2d,/7.8/Dockerfile,"## set upstream package versions for remaining haskell packages
+"
+592,a6e46b15a834d3d70335918adbac954c3a238c2d,/7.8/Dockerfile,"## set deb revisions for remaining haskell packages
+"
+593,a6e46b15a834d3d70335918adbac954c3a238c2d,/7.8/Dockerfile,"## install minimal set of haskell packages
+"
+594,a6e46b15a834d3d70335918adbac954c3a238c2d,/7.8/Dockerfile,"## install additional libs typically needed by hackage packages
+"
+595,a6e46b15a834d3d70335918adbac954c3a238c2d,/7.8/Dockerfile,"## link binaries into /usr/local/bin
+"
+596,a6e46b15a834d3d70335918adbac954c3a238c2d,/7.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+597,5362898713c831feb18b57f106385cac2b5daa1a,/8.6/Dockerfile,"## Dockerfile for a haskell environment
+"
+598,5362898713c831feb18b57f106385cac2b5daa1a,/8.6/Dockerfile,"## ensure locale is set during build
+"
+599,5362898713c831feb18b57f106385cac2b5daa1a,/8.6/Dockerfile,"## run ghci by default unless a command is specified
+"
+600,a79342274d80582b6d418aa7088d9d30a554685a,/Dockerfile,"## Dockerfile for a haskell environment
+"
+601,a79342274d80582b6d418aa7088d9d30a554685a,/Dockerfile,"## disable prompts from apt
+"
+602,a79342274d80582b6d418aa7088d9d30a554685a,/Dockerfile,"## custom apt-get install options
+"
+603,a79342274d80582b6d418aa7088d9d30a554685a,/Dockerfile,"## ensure locale is set during build
+"
+604,a79342274d80582b6d418aa7088d9d30a554685a,/Dockerfile,"## ensure locale is set for new logins
+"
+605,a79342274d80582b6d418aa7088d9d30a554685a,/Dockerfile,"## configure apt to use the haskell repository
+"
+606,a79342274d80582b6d418aa7088d9d30a554685a,/Dockerfile,"## set ghc upstream package versions and ghc deb revisions
+"
+607,a79342274d80582b6d418aa7088d9d30a554685a,/Dockerfile,"## install ghc
+"
+608,a79342274d80582b6d418aa7088d9d30a554685a,/Dockerfile,"## set upstream package versions for remaining haskell packages
+"
+609,a79342274d80582b6d418aa7088d9d30a554685a,/Dockerfile,"## set deb revisions for remaining haskell packages
+"
+610,a79342274d80582b6d418aa7088d9d30a554685a,/Dockerfile,"## install minimal set of haskell packages
+"
+611,a79342274d80582b6d418aa7088d9d30a554685a,/Dockerfile,"## link binaries into /usr/local/bin
+"
+612,a79342274d80582b6d418aa7088d9d30a554685a,/Dockerfile,"## run ghci by default unless a command is specified
+"
+613,aa517c24c51bbd54da5805517acd12120a9340ab,/8.8/Dockerfile,"## Dockerfile for a haskell environment
+"
+614,aa517c24c51bbd54da5805517acd12120a9340ab,/8.8/Dockerfile,"## ensure locale is set during build
+"
+615,aa517c24c51bbd54da5805517acd12120a9340ab,/8.8/Dockerfile,"## run ghci by default unless a command is specified
+"
+616,8457afcdf8ccade55e1296d682e5708255a664ea,/8.4/Dockerfile,"## Dockerfile for a haskell environment
+"
+617,8457afcdf8ccade55e1296d682e5708255a664ea,/8.4/Dockerfile,"## ensure locale is set during build
+"
+618,8457afcdf8ccade55e1296d682e5708255a664ea,/8.4/Dockerfile,"## run ghci by default unless a command is specified
+"

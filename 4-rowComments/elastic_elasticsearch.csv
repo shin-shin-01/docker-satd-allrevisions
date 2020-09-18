@@ -1,0 +1,912 @@
+,CommitID,Dockerfiles,Comments
+0,da2b2895bd7ff9d6d76b0d14b11135dd9da20fc3,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+1,da2b2895bd7ff9d6d76b0d14b11135dd9da20fc3,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+2,da2b2895bd7ff9d6d76b0d14b11135dd9da20fc3,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+3,da2b2895bd7ff9d6d76b0d14b11135dd9da20fc3,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+4,da2b2895bd7ff9d6d76b0d14b11135dd9da20fc3,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+5,da2b2895bd7ff9d6d76b0d14b11135dd9da20fc3,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+6,fb86e8d6d67d95a8f2e99a175e3a6d7bbb4b196e,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+7,fb86e8d6d67d95a8f2e99a175e3a6d7bbb4b196e,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+8,fb86e8d6d67d95a8f2e99a175e3a6d7bbb4b196e,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+9,fb86e8d6d67d95a8f2e99a175e3a6d7bbb4b196e,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+10,fb86e8d6d67d95a8f2e99a175e3a6d7bbb4b196e,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+11,fb86e8d6d67d95a8f2e99a175e3a6d7bbb4b196e,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+12,7f649d0016cd7fd2a62fc8fee4760c2b2f0ab4bc,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+13,7f649d0016cd7fd2a62fc8fee4760c2b2f0ab4bc,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+14,7f649d0016cd7fd2a62fc8fee4760c2b2f0ab4bc,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+15,7f649d0016cd7fd2a62fc8fee4760c2b2f0ab4bc,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+16,7f649d0016cd7fd2a62fc8fee4760c2b2f0ab4bc,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+17,7f649d0016cd7fd2a62fc8fee4760c2b2f0ab4bc,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+18,7b601b6fa0281f71408f98a7e71d209ffe945f4b,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+19,7b601b6fa0281f71408f98a7e71d209ffe945f4b,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+20,7b601b6fa0281f71408f98a7e71d209ffe945f4b,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+21,7b601b6fa0281f71408f98a7e71d209ffe945f4b,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+22,7b601b6fa0281f71408f98a7e71d209ffe945f4b,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+23,7b601b6fa0281f71408f98a7e71d209ffe945f4b,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+24,c9f08d85ed0c4ce942a4f20f62c3e476a276c153,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+25,c9f08d85ed0c4ce942a4f20f62c3e476a276c153,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+26,c9f08d85ed0c4ce942a4f20f62c3e476a276c153,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+27,c9f08d85ed0c4ce942a4f20f62c3e476a276c153,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+28,c9f08d85ed0c4ce942a4f20f62c3e476a276c153,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+29,c9f08d85ed0c4ce942a4f20f62c3e476a276c153,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+30,95b8218d5186059b1347e9728e7ee61d10729fb1,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+"
+31,95b8218d5186059b1347e9728e7ee61d10729fb1,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 0 `builder`:
+# Extract Elasticsearch artifact
+################################################################################
+
+"
+32,95b8218d5186059b1347e9728e7ee61d10729fb1,/distribution/docker/src/docker/Dockerfile,"# Install required packages to extract the Elasticsearch distribution
+"
+33,95b8218d5186059b1347e9728e7ee61d10729fb1,/distribution/docker/src/docker/Dockerfile,"# `tini` is a tiny but valid init for containers. This is used to cleanly
+# control how ES and any child processes are shut down.
+#
+# The tini GitHub page gives instructions for verifying the binary using
+# gpg, but the keyservers are slow to return the key and this can fail the
+# build. Instead, we check the binary against the published checksum.
+"
+34,95b8218d5186059b1347e9728e7ee61d10729fb1,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual Elasticsearch image):
+#
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+35,95b8218d5186059b1347e9728e7ee61d10729fb1,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+36,95b8218d5186059b1347e9728e7ee61d10729fb1,/distribution/docker/src/docker/Dockerfile,"# The JDK's directories' permissions don't allow `java` to be executed under a different
+# group to the default. Fix this.
+"
+37,95b8218d5186059b1347e9728e7ee61d10729fb1,/distribution/docker/src/docker/Dockerfile,"# Ensure that there are no files with setuid or setgid, in order to mitigate ""stackclash"" attacks.
+"
+38,95b8218d5186059b1347e9728e7ee61d10729fb1,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+39,95b8218d5186059b1347e9728e7ee61d10729fb1,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+40,c9e811c4fe9df43ecfa6b670d11777655b2239cb,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+"
+41,c9e811c4fe9df43ecfa6b670d11777655b2239cb,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+42,c9e811c4fe9df43ecfa6b670d11777655b2239cb,/distribution/docker/src/docker/Dockerfile,"# `tini` is a tiny but valid init for containers. This is used to cleanly
+# control how ES and any child processes are shut down.
+#
+# The tini GitHub page gives instructions for verifying the binary using
+# gpg, but the keyservers are slow to return the key and this can fail the
+# build. Instead, we check the binary against the published checksum.
+"
+43,c9e811c4fe9df43ecfa6b670d11777655b2239cb,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+44,c9e811c4fe9df43ecfa6b670d11777655b2239cb,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+45,c9e811c4fe9df43ecfa6b670d11777655b2239cb,/distribution/docker/src/docker/Dockerfile,"# Ensure that there are no files with setuid or setgid, in order to mitigate ""stackclash"" attacks.
+"
+46,c9e811c4fe9df43ecfa6b670d11777655b2239cb,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+47,c9e811c4fe9df43ecfa6b670d11777655b2239cb,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+48,e1717df0ac814caa26d3ecba54e8bc95a905628a,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+49,e1717df0ac814caa26d3ecba54e8bc95a905628a,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+50,e1717df0ac814caa26d3ecba54e8bc95a905628a,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+51,e1717df0ac814caa26d3ecba54e8bc95a905628a,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+52,e1717df0ac814caa26d3ecba54e8bc95a905628a,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+53,e1717df0ac814caa26d3ecba54e8bc95a905628a,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+54,119daf72c3677bacd98db0bbf2906cb21b0788e5,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+55,119daf72c3677bacd98db0bbf2906cb21b0788e5,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+56,119daf72c3677bacd98db0bbf2906cb21b0788e5,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+57,119daf72c3677bacd98db0bbf2906cb21b0788e5,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+58,119daf72c3677bacd98db0bbf2906cb21b0788e5,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+59,119daf72c3677bacd98db0bbf2906cb21b0788e5,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+60,40490224762dccd7e48a85c5ea8c51d4bfc09bc4,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+61,40490224762dccd7e48a85c5ea8c51d4bfc09bc4,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+62,40490224762dccd7e48a85c5ea8c51d4bfc09bc4,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+63,40490224762dccd7e48a85c5ea8c51d4bfc09bc4,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+64,40490224762dccd7e48a85c5ea8c51d4bfc09bc4,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+65,40490224762dccd7e48a85c5ea8c51d4bfc09bc4,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+66,1f574bd17a1db1f3e0887ca7eea31fbeecb76ea2,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+67,1f574bd17a1db1f3e0887ca7eea31fbeecb76ea2,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+68,1f574bd17a1db1f3e0887ca7eea31fbeecb76ea2,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+69,1f574bd17a1db1f3e0887ca7eea31fbeecb76ea2,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+70,1f574bd17a1db1f3e0887ca7eea31fbeecb76ea2,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+71,1f574bd17a1db1f3e0887ca7eea31fbeecb76ea2,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+72,30a9a76f393d704c240031e27c0df3f7a86cf910,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+73,30a9a76f393d704c240031e27c0df3f7a86cf910,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+74,30a9a76f393d704c240031e27c0df3f7a86cf910,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+75,30a9a76f393d704c240031e27c0df3f7a86cf910,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+76,30a9a76f393d704c240031e27c0df3f7a86cf910,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+77,30a9a76f393d704c240031e27c0df3f7a86cf910,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+78,749b623de01dfb01e55009b7178248f10298fb79,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+79,749b623de01dfb01e55009b7178248f10298fb79,/distribution/docker/src/docker/Dockerfile,"# `tini` is a tiny but valid init for containers. This is used to cleanly
+# control how ES and any child processes are shut down.
+#
+# The tini GitHub page gives instructions for verifying the binary using
+# gpg, but the keyservers are slow to return the key and this can fail the
+# build. Instead, we check the binary against a checksum that we have
+# computed.
+"
+80,749b623de01dfb01e55009b7178248f10298fb79,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+81,749b623de01dfb01e55009b7178248f10298fb79,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+82,749b623de01dfb01e55009b7178248f10298fb79,/distribution/docker/src/docker/Dockerfile,"# Ensure that there are no files with setuid or setgid, in order to mitigate ""stackclash"" attacks.
+"
+83,749b623de01dfb01e55009b7178248f10298fb79,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+84,749b623de01dfb01e55009b7178248f10298fb79,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+85,4af4eb99e18fdaadac879b1223e986227dd2ee71,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+86,4af4eb99e18fdaadac879b1223e986227dd2ee71,/distribution/docker/src/docker/Dockerfile,"# `tini` is a tiny but valid init for containers. This is used to cleanly
+# control how ES and any child processes are shut down.
+#
+# The tini GitHub page gives instructions for verifying the binary using
+# gpg, but the keyservers are slow to return the key and this can fail the
+# build. Instead, we check the binary against a checksum that we have
+# computed.
+"
+87,4af4eb99e18fdaadac879b1223e986227dd2ee71,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+88,4af4eb99e18fdaadac879b1223e986227dd2ee71,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+89,4af4eb99e18fdaadac879b1223e986227dd2ee71,/distribution/docker/src/docker/Dockerfile,"# Ensure that there are no files with setuid or setgid, in order to mitigate ""stackclash"" attacks.
+"
+90,4af4eb99e18fdaadac879b1223e986227dd2ee71,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+91,4af4eb99e18fdaadac879b1223e986227dd2ee71,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+92,2861d9045dd9cf71ae8405573ac0b1be02d7f81f,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+"
+93,2861d9045dd9cf71ae8405573ac0b1be02d7f81f,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+94,2861d9045dd9cf71ae8405573ac0b1be02d7f81f,/distribution/docker/src/docker/Dockerfile,"# `tini` is a tiny but valid init for containers. This is used to cleanly
+# control how ES and any child processes are shut down.
+#
+# The tini GitHub page gives instructions for verifying the binary using
+# gpg, but the keyservers are slow to return the key and this can fail the
+# build. Instead, we check the binary against the published checksum.
+"
+95,2861d9045dd9cf71ae8405573ac0b1be02d7f81f,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+96,2861d9045dd9cf71ae8405573ac0b1be02d7f81f,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+97,2861d9045dd9cf71ae8405573ac0b1be02d7f81f,/distribution/docker/src/docker/Dockerfile,"# Ensure that there are no files with setuid or setgid, in order to mitigate ""stackclash"" attacks.
+"
+98,2861d9045dd9cf71ae8405573ac0b1be02d7f81f,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+99,2861d9045dd9cf71ae8405573ac0b1be02d7f81f,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+100,f7e705dc337b4049981f58f9d0fca30e9f1c230d,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+101,f7e705dc337b4049981f58f9d0fca30e9f1c230d,/distribution/docker/src/docker/Dockerfile,"# `tini` is a tiny but valid init for containers. This is used to cleanly
+# control how ES and any child processes are shut down.
+#
+# The tini GitHub page gives instructions for verifying the binary using
+# gpg, but the keyservers are slow to return the key and this can fail the
+# build. Instead, we check the binary against a checksum that they provide.
+"
+102,f7e705dc337b4049981f58f9d0fca30e9f1c230d,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+103,f7e705dc337b4049981f58f9d0fca30e9f1c230d,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+104,f7e705dc337b4049981f58f9d0fca30e9f1c230d,/distribution/docker/src/docker/Dockerfile,"# Ensure that there are no files with setuid or setgid, in order to mitigate ""stackclash"" attacks.
+"
+105,f7e705dc337b4049981f58f9d0fca30e9f1c230d,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+106,f7e705dc337b4049981f58f9d0fca30e9f1c230d,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+107,e4ec51879e68997b5428bba87457f84aaa52baa7,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+108,e4ec51879e68997b5428bba87457f84aaa52baa7,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+109,e4ec51879e68997b5428bba87457f84aaa52baa7,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+110,e4ec51879e68997b5428bba87457f84aaa52baa7,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+111,e4ec51879e68997b5428bba87457f84aaa52baa7,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+112,e4ec51879e68997b5428bba87457f84aaa52baa7,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+113,9f069f795ce86bb1424ea97be3b2f2e887632bf2,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+114,9f069f795ce86bb1424ea97be3b2f2e887632bf2,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+115,9f069f795ce86bb1424ea97be3b2f2e887632bf2,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+116,9f069f795ce86bb1424ea97be3b2f2e887632bf2,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+117,9f069f795ce86bb1424ea97be3b2f2e887632bf2,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+118,9f069f795ce86bb1424ea97be3b2f2e887632bf2,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+119,2e3ed6171e06c9f487a0bd3c5b0f2423efd45d21,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+"
+120,2e3ed6171e06c9f487a0bd3c5b0f2423efd45d21,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 0 `builder`:
+# Extract Elasticsearch artifact
+################################################################################
+
+"
+121,2e3ed6171e06c9f487a0bd3c5b0f2423efd45d21,/distribution/docker/src/docker/Dockerfile,"# Install required packages to extract the Elasticsearch distribution
+"
+122,2e3ed6171e06c9f487a0bd3c5b0f2423efd45d21,/distribution/docker/src/docker/Dockerfile,"# `tini` is a tiny but valid init for containers. This is used to cleanly
+# control how ES and any child processes are shut down.
+#
+# The tini GitHub page gives instructions for verifying the binary using
+# gpg, but the keyservers are slow to return the key and this can fail the
+# build. Instead, we check the binary against the published checksum.
+"
+123,2e3ed6171e06c9f487a0bd3c5b0f2423efd45d21,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual Elasticsearch image):
+#
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+124,2e3ed6171e06c9f487a0bd3c5b0f2423efd45d21,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+125,2e3ed6171e06c9f487a0bd3c5b0f2423efd45d21,/distribution/docker/src/docker/Dockerfile,"# Ensure that there are no files with setuid or setgid, in order to mitigate ""stackclash"" attacks.
+"
+126,2e3ed6171e06c9f487a0bd3c5b0f2423efd45d21,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+127,2e3ed6171e06c9f487a0bd3c5b0f2423efd45d21,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+128,613ccd5262ed8df839ead2779e2ecbcbe4940899,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+129,613ccd5262ed8df839ead2779e2ecbcbe4940899,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+130,613ccd5262ed8df839ead2779e2ecbcbe4940899,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+131,613ccd5262ed8df839ead2779e2ecbcbe4940899,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+132,613ccd5262ed8df839ead2779e2ecbcbe4940899,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+133,613ccd5262ed8df839ead2779e2ecbcbe4940899,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+134,11dd412ec6ccfab9b99201ebd85f80e06eefd7ad,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+135,11dd412ec6ccfab9b99201ebd85f80e06eefd7ad,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+136,11dd412ec6ccfab9b99201ebd85f80e06eefd7ad,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+137,11dd412ec6ccfab9b99201ebd85f80e06eefd7ad,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+138,11dd412ec6ccfab9b99201ebd85f80e06eefd7ad,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+139,11dd412ec6ccfab9b99201ebd85f80e06eefd7ad,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+140,8a6d68b17319d58ee8bb6bed0312cb9bdc3d9b51,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+141,8a6d68b17319d58ee8bb6bed0312cb9bdc3d9b51,/distribution/docker/src/docker/Dockerfile,"# `tini` is a tiny but valid init for containers. This is used to cleanly
+# control how ES and any child processes are shut down.
+#
+# The tini GitHub page gives instructions for verifying the binary using
+# gpg, but the keyservers are slow to return the key and this can fail the
+# build. Instead, we check the binary against a checksum that we have
+# computed.
+"
+142,8a6d68b17319d58ee8bb6bed0312cb9bdc3d9b51,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+143,8a6d68b17319d58ee8bb6bed0312cb9bdc3d9b51,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+144,8a6d68b17319d58ee8bb6bed0312cb9bdc3d9b51,/distribution/docker/src/docker/Dockerfile,"# Ensure that there are no files with setuid or setgid, in order to mitigate ""stackclash"" attacks.
+"
+145,8a6d68b17319d58ee8bb6bed0312cb9bdc3d9b51,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+146,8a6d68b17319d58ee8bb6bed0312cb9bdc3d9b51,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+147,7f2e177bd2b1d5d20ee27f94c2e65793044f7dbb,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+148,7f2e177bd2b1d5d20ee27f94c2e65793044f7dbb,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+149,7f2e177bd2b1d5d20ee27f94c2e65793044f7dbb,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+150,7f2e177bd2b1d5d20ee27f94c2e65793044f7dbb,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+151,7f2e177bd2b1d5d20ee27f94c2e65793044f7dbb,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+152,7f2e177bd2b1d5d20ee27f94c2e65793044f7dbb,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+153,8bd95cd52f5ce6b5da0d7df57a4cbba4e10065df,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+"
+154,8bd95cd52f5ce6b5da0d7df57a4cbba4e10065df,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 0 `builder`:
+# Extract Elasticsearch artifact
+################################################################################
+
+"
+155,8bd95cd52f5ce6b5da0d7df57a4cbba4e10065df,/distribution/docker/src/docker/Dockerfile,"# Install required packages to extract the Elasticsearch distribution
+"
+156,8bd95cd52f5ce6b5da0d7df57a4cbba4e10065df,/distribution/docker/src/docker/Dockerfile,"# `tini` is a tiny but valid init for containers. This is used to cleanly
+# control how ES and any child processes are shut down.
+#
+# The tini GitHub page gives instructions for verifying the binary using
+# gpg, but the keyservers are slow to return the key and this can fail the
+# build. Instead, we check the binary against the published checksum.
+"
+157,8bd95cd52f5ce6b5da0d7df57a4cbba4e10065df,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual Elasticsearch image):
+#
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+158,8bd95cd52f5ce6b5da0d7df57a4cbba4e10065df,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+159,8bd95cd52f5ce6b5da0d7df57a4cbba4e10065df,/distribution/docker/src/docker/Dockerfile,"# Ensure that there are no files with setuid or setgid, in order to mitigate ""stackclash"" attacks.
+"
+160,8bd95cd52f5ce6b5da0d7df57a4cbba4e10065df,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+161,8bd95cd52f5ce6b5da0d7df57a4cbba4e10065df,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"
+162,bd623bfd966c036909face93fe72cb747c9937d4,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# This Dockerfile was generated from the template at distribution/src/docker/Dockerfile
+#
+# Beginning of multi stage Dockerfile
+################################################################################
+
+################################################################################
+# Build stage 0 `builder`:
+# Extract elasticsearch artifact
+# Install required plugins
+# Set gid=0 and make group perms==owner perms
+################################################################################
+
+"
+163,bd623bfd966c036909face93fe72cb747c9937d4,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# Build stage 1 (the actual elasticsearch image):
+# Copy elasticsearch from stage 0
+# Add entrypoint
+################################################################################
+
+"
+164,bd623bfd966c036909face93fe72cb747c9937d4,/distribution/docker/src/docker/Dockerfile,"# Replace OpenJDK's built-in CA certificate keystore with the one from the OS
+# vendor. The latter is superior in several ways.
+# REF: https://github.com/elastic/elasticsearch-docker/issues/171
+"
+165,bd623bfd966c036909face93fe72cb747c9937d4,/distribution/docker/src/docker/Dockerfile,"# Openshift overrides USER and uses ones with randomly uid>1024 and gid=0
+# Allow ENTRYPOINT (and ES) to run even with a different user
+"
+166,bd623bfd966c036909face93fe72cb747c9937d4,/distribution/docker/src/docker/Dockerfile,"# Dummy overridable parameter parsed by entrypoint
+"
+167,bd623bfd966c036909face93fe72cb747c9937d4,/distribution/docker/src/docker/Dockerfile,"################################################################################
+# End of multi-stage Dockerfile
+################################################################################
+"

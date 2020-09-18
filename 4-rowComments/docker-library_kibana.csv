@@ -1,0 +1,2472 @@
+,CommitID,Dockerfiles,Comments
+0,c05e1e821fcda0ca1908653c00adae04eeb95548,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+1,c05e1e821fcda0ca1908653c00adae04eeb95548,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+2,c9410307facd43e43278d103b32ff1c88df46c28,/7/Dockerfile,"# Kibana 7.0.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+3,c9410307facd43e43278d103b32ff1c88df46c28,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.0.1/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+4,c6966787dbfaae201ddd3826b33298165e26f416,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+5,c6966787dbfaae201ddd3826b33298165e26f416,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+6,c6966787dbfaae201ddd3826b33298165e26f416,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+7,c6966787dbfaae201ddd3826b33298165e26f416,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+8,c6966787dbfaae201ddd3826b33298165e26f416,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+9,c6966787dbfaae201ddd3826b33298165e26f416,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+10,c6966787dbfaae201ddd3826b33298165e26f416,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+11,c6966787dbfaae201ddd3826b33298165e26f416,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+12,c6966787dbfaae201ddd3826b33298165e26f416,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+13,c6966787dbfaae201ddd3826b33298165e26f416,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+14,d3a6f0e6f78544f7be8ef2b39b74810058920746,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+15,d3a6f0e6f78544f7be8ef2b39b74810058920746,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+16,d3a6f0e6f78544f7be8ef2b39b74810058920746,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+17,d3a6f0e6f78544f7be8ef2b39b74810058920746,/4.1/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+18,d3a6f0e6f78544f7be8ef2b39b74810058920746,/4.1/Dockerfile,"#\s*)?(elasticsearch_url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+19,0ffeed9bb61036fca3f23fa4f9208b90a484f150,/4.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+20,0ffeed9bb61036fca3f23fa4f9208b90a484f150,/4.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+21,7ce21f8aa1e58443c3031fdbdf83a08ce34e49a4,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+22,7ce21f8aa1e58443c3031fdbdf83a08ce34e49a4,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+23,7ce21f8aa1e58443c3031fdbdf83a08ce34e49a4,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+24,7ce21f8aa1e58443c3031fdbdf83a08ce34e49a4,/4.1/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+25,7ce21f8aa1e58443c3031fdbdf83a08ce34e49a4,/4.1/Dockerfile,"#\s*)?(elasticsearch_url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+26,f378b797af3efc417647cde6e1965f74d156cc2e,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+27,f378b797af3efc417647cde6e1965f74d156cc2e,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+28,f378b797af3efc417647cde6e1965f74d156cc2e,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+29,f378b797af3efc417647cde6e1965f74d156cc2e,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+30,f378b797af3efc417647cde6e1965f74d156cc2e,/5.0/Dockerfile,"#RUN echo ""deb http://packages.elastic.co/kibana/${KIBANA_MAJOR}/debian stable main"" > /etc/apt/sources.list.d/kibana.list
+"
+31,f378b797af3efc417647cde6e1965f74d156cc2e,/5.0/Dockerfile,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+
+"
+32,f378b797af3efc417647cde6e1965f74d156cc2e,/5.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+33,f378b797af3efc417647cde6e1965f74d156cc2e,/5.0/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+34,17280c315c2865d0e6bb6dfacd0ed7eead881ca7,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+35,17280c315c2865d0e6bb6dfacd0ed7eead881ca7,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+36,17280c315c2865d0e6bb6dfacd0ed7eead881ca7,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+37,17280c315c2865d0e6bb6dfacd0ed7eead881ca7,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+38,17280c315c2865d0e6bb6dfacd0ed7eead881ca7,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+39,17280c315c2865d0e6bb6dfacd0ed7eead881ca7,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+40,17280c315c2865d0e6bb6dfacd0ed7eead881ca7,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+41,17280c315c2865d0e6bb6dfacd0ed7eead881ca7,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+42,17280c315c2865d0e6bb6dfacd0ed7eead881ca7,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+43,17280c315c2865d0e6bb6dfacd0ed7eead881ca7,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+44,d73d06c827383cad1cedc2a3236390f47fab63cd,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+45,d73d06c827383cad1cedc2a3236390f47fab63cd,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+46,d73d06c827383cad1cedc2a3236390f47fab63cd,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+47,d73d06c827383cad1cedc2a3236390f47fab63cd,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+48,d73d06c827383cad1cedc2a3236390f47fab63cd,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+49,d73d06c827383cad1cedc2a3236390f47fab63cd,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+50,d73d06c827383cad1cedc2a3236390f47fab63cd,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+51,d73d06c827383cad1cedc2a3236390f47fab63cd,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+52,d73d06c827383cad1cedc2a3236390f47fab63cd,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+53,d73d06c827383cad1cedc2a3236390f47fab63cd,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+54,2be51ab76c570ab8661dad97a8e915b23eeebe2f,/Dockerfile-upstream.template,"# Kibana %%KIBANAe_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+55,2be51ab76c570ab8661dad97a8e915b23eeebe2f,/Dockerfile-upstream.template,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/%%KIBANA_VERSION%%
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html"
+56,cc92280939a05c80282bc33e85e8a24e14f08def,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+57,cc92280939a05c80282bc33e85e8a24e14f08def,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+58,cc92280939a05c80282bc33e85e8a24e14f08def,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+59,cc92280939a05c80282bc33e85e8a24e14f08def,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+60,cc92280939a05c80282bc33e85e8a24e14f08def,/5.0/Dockerfile,"#RUN echo ""deb http://packages.elastic.co/kibana/${KIBANA_MAJOR}/debian stable main"" > /etc/apt/sources.list.d/kibana.list
+"
+61,cc92280939a05c80282bc33e85e8a24e14f08def,/5.0/Dockerfile,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+
+"
+62,7be8ebdf58a2a392cc81978f41ec82459df1ed94,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+63,7be8ebdf58a2a392cc81978f41ec82459df1ed94,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+64,7be8ebdf58a2a392cc81978f41ec82459df1ed94,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+65,7be8ebdf58a2a392cc81978f41ec82459df1ed94,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+66,7be8ebdf58a2a392cc81978f41ec82459df1ed94,/5.0/Dockerfile,"#RUN echo ""deb http://packages.elastic.co/kibana/${KIBANA_MAJOR}/debian stable main"" > /etc/apt/sources.list.d/kibana.list
+"
+67,7be8ebdf58a2a392cc81978f41ec82459df1ed94,/5.0/Dockerfile,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+
+"
+68,960d3f8e41828a75585dbabc528d5e226b1adc3c,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+69,960d3f8e41828a75585dbabc528d5e226b1adc3c,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+70,960d3f8e41828a75585dbabc528d5e226b1adc3c,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+71,960d3f8e41828a75585dbabc528d5e226b1adc3c,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+72,960d3f8e41828a75585dbabc528d5e226b1adc3c,/5.0/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+73,960d3f8e41828a75585dbabc528d5e226b1adc3c,/5.0/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+74,960d3f8e41828a75585dbabc528d5e226b1adc3c,/5.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+75,960d3f8e41828a75585dbabc528d5e226b1adc3c,/5.0/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+76,3e7b051630e6c765f5e9630e3f7f8948557093ef,/4.2/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+77,3e7b051630e6c765f5e9630e3f7f8948557093ef,/4.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+78,43644e6ae40c53c05d94165506094035f0463ea6,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+79,43644e6ae40c53c05d94165506094035f0463ea6,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+80,43644e6ae40c53c05d94165506094035f0463ea6,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+81,43644e6ae40c53c05d94165506094035f0463ea6,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+82,43644e6ae40c53c05d94165506094035f0463ea6,/5.0/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+83,43644e6ae40c53c05d94165506094035f0463ea6,/5.0/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+84,43644e6ae40c53c05d94165506094035f0463ea6,/5.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+85,43644e6ae40c53c05d94165506094035f0463ea6,/5.0/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+86,b6711c0af6435630493ac92be1de5c319ae835cf,/6/Dockerfile,"# Kibana 6.4.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+87,b6711c0af6435630493ac92be1de5c319ae835cf,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.4.2
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html"
+88,539ce0a816f7a80b4aac8df4c8805b330991484b,/6/Dockerfile,"# Kibana 6.8.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+89,539ce0a816f7a80b4aac8df4c8805b330991484b,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.1/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+90,bb6902febff54be94c50dbadc1d2d0ffa5cd53bf,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+91,bb6902febff54be94c50dbadc1d2d0ffa5cd53bf,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+92,d7dff7c685a19c7fb47b28ea41d5174792c3447b,/7/Dockerfile,"# Kibana 7.8.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+93,d7dff7c685a19c7fb47b28ea41d5174792c3447b,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.8.0/kibana
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v7.8.0:kibana'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+94,e0201e3144cf3bce9a4afd6aa1d6d3ef676b4635,/6/Dockerfile,"# Kibana 6.6.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+95,e0201e3144cf3bce9a4afd6aa1d6d3ef676b4635,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.6.2
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+96,912e443dcc59e658c4c1eff0976e6054087f87fb,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+97,912e443dcc59e658c4c1eff0976e6054087f87fb,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+98,912e443dcc59e658c4c1eff0976e6054087f87fb,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+99,912e443dcc59e658c4c1eff0976e6054087f87fb,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+100,912e443dcc59e658c4c1eff0976e6054087f87fb,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+101,912e443dcc59e658c4c1eff0976e6054087f87fb,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+102,912e443dcc59e658c4c1eff0976e6054087f87fb,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+103,912e443dcc59e658c4c1eff0976e6054087f87fb,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+104,912e443dcc59e658c4c1eff0976e6054087f87fb,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+105,912e443dcc59e658c4c1eff0976e6054087f87fb,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+106,9ee82ac70fba3b88550e5109e820164d6a7ffdfe,/6/Dockerfile,"# Kibana %%KIBANA_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+107,9ee82ac70fba3b88550e5109e820164d6a7ffdfe,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/%%KIBANA_VERSION%%
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html"
+108,9fc787378f38bc25616d7118741a74b42402d344,/4.3/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+109,9fc787378f38bc25616d7118741a74b42402d344,/4.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+110,9fc787378f38bc25616d7118741a74b42402d344,/4.3/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+111,9fc787378f38bc25616d7118741a74b42402d344,/4.3/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+112,9fc787378f38bc25616d7118741a74b42402d344,/4.3/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+113,541a035374494d9386c23d58ddcf5a52a0f6078e,/4.4/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+114,541a035374494d9386c23d58ddcf5a52a0f6078e,/4.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+115,541a035374494d9386c23d58ddcf5a52a0f6078e,/4.4/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+116,541a035374494d9386c23d58ddcf5a52a0f6078e,/4.4/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+117,45eba9b796b823688b8a95c05c38bd59f7dbd744,/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+118,45eba9b796b823688b8a95c05c38bd59f7dbd744,/Dockerfile,"# grab gosu for easy step-down from root
+"
+119,b606ae998472df66e0c8e769ed070129edad12be,/4.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+120,b606ae998472df66e0c8e769ed070129edad12be,/4.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+121,b606ae998472df66e0c8e769ed070129edad12be,/4.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+122,8a791a6db074dec988aad1e1f6ac645b50ee6702,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+123,8a791a6db074dec988aad1e1f6ac645b50ee6702,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+124,8a791a6db074dec988aad1e1f6ac645b50ee6702,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+125,8a791a6db074dec988aad1e1f6ac645b50ee6702,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+126,8a791a6db074dec988aad1e1f6ac645b50ee6702,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+127,8a791a6db074dec988aad1e1f6ac645b50ee6702,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+128,8a791a6db074dec988aad1e1f6ac645b50ee6702,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+129,8a791a6db074dec988aad1e1f6ac645b50ee6702,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+130,8a791a6db074dec988aad1e1f6ac645b50ee6702,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+131,8a791a6db074dec988aad1e1f6ac645b50ee6702,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+132,19237835b8922f570fafad7cdc0576330d6f1a91,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+133,19237835b8922f570fafad7cdc0576330d6f1a91,/4.1/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+134,19237835b8922f570fafad7cdc0576330d6f1a91,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+135,19237835b8922f570fafad7cdc0576330d6f1a91,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+136,19237835b8922f570fafad7cdc0576330d6f1a91,/4.1/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+137,19237835b8922f570fafad7cdc0576330d6f1a91,/4.1/Dockerfile,"#\s*)?(elasticsearch_url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+138,e39420bcf5bb76cd4a11180532a44978d04cb485,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+139,e39420bcf5bb76cd4a11180532a44978d04cb485,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+140,9fc787378f38bc25616d7118741a74b42402d344,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+141,9fc787378f38bc25616d7118741a74b42402d344,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+142,9fc787378f38bc25616d7118741a74b42402d344,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+143,9fc787378f38bc25616d7118741a74b42402d344,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+144,9fc787378f38bc25616d7118741a74b42402d344,/5.0/Dockerfile,"#RUN echo ""deb http://packages.elastic.co/kibana/${KIBANA_MAJOR}/debian stable main"" > /etc/apt/sources.list.d/kibana.list
+"
+145,9fc787378f38bc25616d7118741a74b42402d344,/5.0/Dockerfile,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+
+"
+146,9fc787378f38bc25616d7118741a74b42402d344,/5.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+147,9fc787378f38bc25616d7118741a74b42402d344,/5.0/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+148,f660339999bbb4afe519ea748a32f948a997f3e6,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+149,f660339999bbb4afe519ea748a32f948a997f3e6,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+150,f660339999bbb4afe519ea748a32f948a997f3e6,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+151,f660339999bbb4afe519ea748a32f948a997f3e6,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+152,f660339999bbb4afe519ea748a32f948a997f3e6,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+153,f660339999bbb4afe519ea748a32f948a997f3e6,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+154,f660339999bbb4afe519ea748a32f948a997f3e6,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+155,f660339999bbb4afe519ea748a32f948a997f3e6,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+156,f660339999bbb4afe519ea748a32f948a997f3e6,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+157,f660339999bbb4afe519ea748a32f948a997f3e6,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+158,f3512f90b2c0be7c3547095a0bd1e607e18e9af3,/Dockerfile.template,"# Kibana %%VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+159,f3512f90b2c0be7c3547095a0bd1e607e18e9af3,/Dockerfile.template,"# The upstream image was built by:
+#   %%UPSTREAM_DOCKERFILE_LINK%%
+
+# The build can be reproduced locally via:
+#   docker build '%%UPSTREAM_DOCKER_BUILD%%'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+160,d22fd0db711dbe593f7a6b2673c44b9e699fcdd6,/6/Dockerfile,"# Kibana 6.8.3
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+161,d22fd0db711dbe593f7a6b2673c44b9e699fcdd6,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.3/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+162,63d41b40afc169c437fd44f2efc6048d2931e7e4,/4.2/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+163,63d41b40afc169c437fd44f2efc6048d2931e7e4,/4.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+164,90abf46493103a3c6a7061b400d76f109c4104e7,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+165,90abf46493103a3c6a7061b400d76f109c4104e7,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+166,90abf46493103a3c6a7061b400d76f109c4104e7,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+167,90abf46493103a3c6a7061b400d76f109c4104e7,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+168,90abf46493103a3c6a7061b400d76f109c4104e7,/5.0/Dockerfile,"#RUN echo ""deb http://packages.elastic.co/kibana/${KIBANA_MAJOR}/debian stable main"" > /etc/apt/sources.list.d/kibana.list
+"
+169,90abf46493103a3c6a7061b400d76f109c4104e7,/5.0/Dockerfile,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+
+"
+170,90abf46493103a3c6a7061b400d76f109c4104e7,/5.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+171,90abf46493103a3c6a7061b400d76f109c4104e7,/5.0/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+172,b606ae998472df66e0c8e769ed070129edad12be,/4.4/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+173,b606ae998472df66e0c8e769ed070129edad12be,/4.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+174,b606ae998472df66e0c8e769ed070129edad12be,/4.4/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+175,b606ae998472df66e0c8e769ed070129edad12be,/4.4/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+176,36faeebe8ec7636c02ee060700eb9ec6cd5ed36c,/7/Dockerfile,"# Kibana 7.5.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+177,36faeebe8ec7636c02ee060700eb9ec6cd5ed36c,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.5.0/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+178,649eaa8423334d8780c80d7eb4dc7b5325a72361,/7/Dockerfile,"# Kibana 7.3.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+179,649eaa8423334d8780c80d7eb4dc7b5325a72361,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.3.0/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+180,18976f0d8fdf2e53299c61b56ad8a040dff133fc,/4.3/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+181,18976f0d8fdf2e53299c61b56ad8a040dff133fc,/4.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+182,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+183,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/4.1/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+184,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+185,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+186,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/4.1/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+187,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/4.1/Dockerfile,"#\s*)?(elasticsearch_url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+188,1873a075ac7df4439de535c6c85b6d3e3467579a,/4.6/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+189,1873a075ac7df4439de535c6c85b6d3e3467579a,/4.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+190,1873a075ac7df4439de535c6c85b6d3e3467579a,/4.6/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+191,1873a075ac7df4439de535c6c85b6d3e3467579a,/4.6/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+192,1873a075ac7df4439de535c6c85b6d3e3467579a,/4.6/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+193,1873a075ac7df4439de535c6c85b6d3e3467579a,/4.6/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+194,75cfa3c5b20eb24a319937c0f7754ad06057d843,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+195,75cfa3c5b20eb24a319937c0f7754ad06057d843,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+196,75cfa3c5b20eb24a319937c0f7754ad06057d843,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+197,75cfa3c5b20eb24a319937c0f7754ad06057d843,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+198,75cfa3c5b20eb24a319937c0f7754ad06057d843,/5.0/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+199,75cfa3c5b20eb24a319937c0f7754ad06057d843,/5.0/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+200,75cfa3c5b20eb24a319937c0f7754ad06057d843,/5.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+201,75cfa3c5b20eb24a319937c0f7754ad06057d843,/5.0/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+202,649eaa8423334d8780c80d7eb4dc7b5325a72361,/Dockerfile.template,"# Kibana %%KIBANA_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+203,649eaa8423334d8780c80d7eb4dc7b5325a72361,/Dockerfile.template,"# The upstream image was built by:
+#   %%UPSTREAM_DOCKERFILE_LINK%%
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+204,f59b7cc2287c2ad6d23ebe77e8409ac56ec453ca,/6/Dockerfile,"# Kibana 6.8.4
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+205,f59b7cc2287c2ad6d23ebe77e8409ac56ec453ca,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.4/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+206,581e38e19e48fcae9ef2bf58afb20ffebe9da082,/6/Dockerfile,"# Kibana 6.8.6
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+207,581e38e19e48fcae9ef2bf58afb20ffebe9da082,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.6/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+208,20989a12aa396608c028bec5c7f331ad37fb937b,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+209,20989a12aa396608c028bec5c7f331ad37fb937b,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+210,20989a12aa396608c028bec5c7f331ad37fb937b,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+211,20989a12aa396608c028bec5c7f331ad37fb937b,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+212,20989a12aa396608c028bec5c7f331ad37fb937b,/5.0/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+213,20989a12aa396608c028bec5c7f331ad37fb937b,/5.0/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+214,20989a12aa396608c028bec5c7f331ad37fb937b,/5.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+215,20989a12aa396608c028bec5c7f331ad37fb937b,/5.0/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+216,958ce4b1abe560d2cbbe6a74168d13031cb1e106,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+217,958ce4b1abe560d2cbbe6a74168d13031cb1e106,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+218,958ce4b1abe560d2cbbe6a74168d13031cb1e106,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+219,958ce4b1abe560d2cbbe6a74168d13031cb1e106,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+220,958ce4b1abe560d2cbbe6a74168d13031cb1e106,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+221,958ce4b1abe560d2cbbe6a74168d13031cb1e106,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+222,958ce4b1abe560d2cbbe6a74168d13031cb1e106,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+223,958ce4b1abe560d2cbbe6a74168d13031cb1e106,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+224,958ce4b1abe560d2cbbe6a74168d13031cb1e106,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+225,958ce4b1abe560d2cbbe6a74168d13031cb1e106,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+226,ae7ac749f927d0afe82c44571e019be677fc3b15,/6/Dockerfile,"# Kibana 6.5.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+227,ae7ac749f927d0afe82c44571e019be677fc3b15,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.5.0
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+228,cc8525104d855645462ad1a2b502b5f589eeec19,/4.2/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+229,cc8525104d855645462ad1a2b502b5f589eeec19,/4.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+230,cc8525104d855645462ad1a2b502b5f589eeec19,/4.2/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+231,279f41998ff62b33fc5ce2b348fe297b4231854b,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+232,279f41998ff62b33fc5ce2b348fe297b4231854b,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+233,279f41998ff62b33fc5ce2b348fe297b4231854b,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+234,7d664ca170976c354d12287ffcf44384be06f286,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+235,7d664ca170976c354d12287ffcf44384be06f286,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+236,7d664ca170976c354d12287ffcf44384be06f286,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+237,7d664ca170976c354d12287ffcf44384be06f286,/4.1/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+238,7d664ca170976c354d12287ffcf44384be06f286,/4.1/Dockerfile,"#\s*)?(elasticsearch_url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+239,dd8f0a5007fbbc7009a6598c313e4ea8af38b98a,/7/Dockerfile,"# Kibana 7.3.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+240,dd8f0a5007fbbc7009a6598c313e4ea8af38b98a,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.3.2/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+241,d3a6f0e6f78544f7be8ef2b39b74810058920746,/4.5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+242,d3a6f0e6f78544f7be8ef2b39b74810058920746,/4.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+243,d3a6f0e6f78544f7be8ef2b39b74810058920746,/4.5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+244,d3a6f0e6f78544f7be8ef2b39b74810058920746,/4.5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+245,d3a6f0e6f78544f7be8ef2b39b74810058920746,/4.5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+246,d3a6f0e6f78544f7be8ef2b39b74810058920746,/4.5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+247,e085150e59f3a1c292e417c7adbc97fbb5cd9f1b,/6/Dockerfile,"# Kibana 6.7.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+248,e085150e59f3a1c292e417c7adbc97fbb5cd9f1b,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.7.0/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+249,0beddcb3e86d1b623ada81d423aaa98e8500657f,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+250,0beddcb3e86d1b623ada81d423aaa98e8500657f,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+251,0beddcb3e86d1b623ada81d423aaa98e8500657f,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+252,0beddcb3e86d1b623ada81d423aaa98e8500657f,/4.1/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+253,0beddcb3e86d1b623ada81d423aaa98e8500657f,/4.1/Dockerfile,"#\s*)?(elasticsearch_url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+254,014d49e819ccf947882b6c9c809f62896f534dae,/6/Dockerfile,"# Kibana 6.7.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+255,014d49e819ccf947882b6c9c809f62896f534dae,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.7.1/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+256,7728998a85333ed87f14fc224db081f6c10602f9,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+257,7728998a85333ed87f14fc224db081f6c10602f9,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+258,7728998a85333ed87f14fc224db081f6c10602f9,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+259,7728998a85333ed87f14fc224db081f6c10602f9,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+260,7728998a85333ed87f14fc224db081f6c10602f9,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+261,7728998a85333ed87f14fc224db081f6c10602f9,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+262,7728998a85333ed87f14fc224db081f6c10602f9,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+263,7728998a85333ed87f14fc224db081f6c10602f9,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+264,7728998a85333ed87f14fc224db081f6c10602f9,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+265,7728998a85333ed87f14fc224db081f6c10602f9,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+266,119c1cde627beeb27df8181f313900788399442b,/6/Dockerfile,"# Kibana 6.8.8
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+267,119c1cde627beeb27df8181f313900788399442b,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.8/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+268,7ce21f8aa1e58443c3031fdbdf83a08ce34e49a4,/4.5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+269,7ce21f8aa1e58443c3031fdbdf83a08ce34e49a4,/4.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+270,7ce21f8aa1e58443c3031fdbdf83a08ce34e49a4,/4.5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+271,7ce21f8aa1e58443c3031fdbdf83a08ce34e49a4,/4.5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+272,7ce21f8aa1e58443c3031fdbdf83a08ce34e49a4,/4.5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+273,7ce21f8aa1e58443c3031fdbdf83a08ce34e49a4,/4.5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+274,279f41998ff62b33fc5ce2b348fe297b4231854b,/4.4/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+275,279f41998ff62b33fc5ce2b348fe297b4231854b,/4.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+276,279f41998ff62b33fc5ce2b348fe297b4231854b,/4.4/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+277,279f41998ff62b33fc5ce2b348fe297b4231854b,/4.4/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+278,43644e6ae40c53c05d94165506094035f0463ea6,/4.6/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+279,43644e6ae40c53c05d94165506094035f0463ea6,/4.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+280,43644e6ae40c53c05d94165506094035f0463ea6,/4.6/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+281,43644e6ae40c53c05d94165506094035f0463ea6,/4.6/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+282,43644e6ae40c53c05d94165506094035f0463ea6,/4.6/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+283,43644e6ae40c53c05d94165506094035f0463ea6,/4.6/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+284,c0ffb14efc60264a76cff7413f93f261a8352f18,/7/Dockerfile,"# Kibana 7.6.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+285,c0ffb14efc60264a76cff7413f93f261a8352f18,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.6.1/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+286,e0201e3144cf3bce9a4afd6aa1d6d3ef676b4635,/Dockerfile-upstream.template,"# Kibana %%KIBANA_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+287,e0201e3144cf3bce9a4afd6aa1d6d3ef676b4635,/Dockerfile-upstream.template,"# The upstream image was built by:
+#   %%UPSTREAM_DOCKERFILE_LINK%%
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+288,52bb5b8b2f675befe52e370153dda288c83d09e9,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+289,52bb5b8b2f675befe52e370153dda288c83d09e9,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+290,52bb5b8b2f675befe52e370153dda288c83d09e9,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+291,52bb5b8b2f675befe52e370153dda288c83d09e9,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+292,52bb5b8b2f675befe52e370153dda288c83d09e9,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+293,52bb5b8b2f675befe52e370153dda288c83d09e9,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+294,52bb5b8b2f675befe52e370153dda288c83d09e9,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+295,52bb5b8b2f675befe52e370153dda288c83d09e9,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+296,52bb5b8b2f675befe52e370153dda288c83d09e9,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+297,52bb5b8b2f675befe52e370153dda288c83d09e9,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+298,f01982e6fd068565a79822b1ff0e82d2f3d0a4f4,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+299,f01982e6fd068565a79822b1ff0e82d2f3d0a4f4,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+300,f01982e6fd068565a79822b1ff0e82d2f3d0a4f4,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+301,f01982e6fd068565a79822b1ff0e82d2f3d0a4f4,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+302,f01982e6fd068565a79822b1ff0e82d2f3d0a4f4,/5.0/Dockerfile,"#RUN echo ""deb http://packages.elastic.co/kibana/${KIBANA_MAJOR}/debian stable main"" > /etc/apt/sources.list.d/kibana.list
+"
+303,f01982e6fd068565a79822b1ff0e82d2f3d0a4f4,/5.0/Dockerfile,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+
+"
+304,f01982e6fd068565a79822b1ff0e82d2f3d0a4f4,/5.0/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+305,f01982e6fd068565a79822b1ff0e82d2f3d0a4f4,/5.0/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+306,f01982e6fd068565a79822b1ff0e82d2f3d0a4f4,/5.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+307,f01982e6fd068565a79822b1ff0e82d2f3d0a4f4,/5.0/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+308,55152fe14d9059af0f1b62e04c00b9ec7b2239db,/6/Dockerfile,"# Kibana 6.8.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+309,55152fe14d9059af0f1b62e04c00b9ec7b2239db,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.2/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+310,ff12294eaa9dfddb854c2ba989308beb993bf69c,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+311,ff12294eaa9dfddb854c2ba989308beb993bf69c,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+312,ff12294eaa9dfddb854c2ba989308beb993bf69c,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+313,ff12294eaa9dfddb854c2ba989308beb993bf69c,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+314,ff12294eaa9dfddb854c2ba989308beb993bf69c,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+315,ff12294eaa9dfddb854c2ba989308beb993bf69c,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+316,ff12294eaa9dfddb854c2ba989308beb993bf69c,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+317,ff12294eaa9dfddb854c2ba989308beb993bf69c,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+318,ff12294eaa9dfddb854c2ba989308beb993bf69c,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+319,ff12294eaa9dfddb854c2ba989308beb993bf69c,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+320,61bad5d829e42486fecfdf297a34692557e9f3bd,/7/Dockerfile,"# Kibana 7.3.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+321,61bad5d829e42486fecfdf297a34692557e9f3bd,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.3.0/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+322,eef820b7b3f13fe82dadd0381ed1ca880cb6c90c,/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+323,eef820b7b3f13fe82dadd0381ed1ca880cb6c90c,/Dockerfile,"# grab gosu for easy step-down from root
+"
+324,96976f5b4fabedc3fdf052ecdab323d2a08337e9,/6/Dockerfile,"# Kibana 6.8.10
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+325,96976f5b4fabedc3fdf052ecdab323d2a08337e9,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.10/kibana
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v6.8.10:kibana'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+326,c9410307facd43e43278d103b32ff1c88df46c28,/Dockerfile.template,"# Kibana %%KIBANA_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+327,c9410307facd43e43278d103b32ff1c88df46c28,/Dockerfile.template,"# The upstream image was built by:
+#   %%UPSTREAM_DOCKERFILE_LINK%%
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+328,2015c601bab8b77f0d13475f901c9b85e6014bdb,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+329,2015c601bab8b77f0d13475f901c9b85e6014bdb,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+330,2015c601bab8b77f0d13475f901c9b85e6014bdb,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+331,2015c601bab8b77f0d13475f901c9b85e6014bdb,/4.1/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+332,2015c601bab8b77f0d13475f901c9b85e6014bdb,/4.1/Dockerfile,"#\s*)?(elasticsearch_url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+333,c9410307facd43e43278d103b32ff1c88df46c28,/6/Dockerfile,"# Kibana 6.7.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+334,c9410307facd43e43278d103b32ff1c88df46c28,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.7.1/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+335,44ae7362882b993059936a78518bb7952b11f140,/6/Dockerfile,"# Kibana 6.7.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+336,44ae7362882b993059936a78518bb7952b11f140,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.7.2/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+337,b606ae998472df66e0c8e769ed070129edad12be,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+338,b606ae998472df66e0c8e769ed070129edad12be,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+339,b606ae998472df66e0c8e769ed070129edad12be,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+340,7b1d6e90f134740291a149e0cf10ca2e93dde188,/6/Dockerfile,"# Kibana 6.6.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+341,7b1d6e90f134740291a149e0cf10ca2e93dde188,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.6.0
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+342,9fc787378f38bc25616d7118741a74b42402d344,/4.2/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+343,9fc787378f38bc25616d7118741a74b42402d344,/4.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+344,9fc787378f38bc25616d7118741a74b42402d344,/4.2/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+345,9fc787378f38bc25616d7118741a74b42402d344,/4.2/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+346,9fc787378f38bc25616d7118741a74b42402d344,/4.2/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+347,013505006cf267437f19ebf7ab5f022aebdb5da8,/4.5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+348,013505006cf267437f19ebf7ab5f022aebdb5da8,/4.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+349,013505006cf267437f19ebf7ab5f022aebdb5da8,/4.5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+350,013505006cf267437f19ebf7ab5f022aebdb5da8,/4.5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+351,a3e887da7532af076dbf414de431a508462f6f55,/6/Dockerfile,"# Kibana 6.7.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+352,a3e887da7532af076dbf414de431a508462f6f55,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.7.1/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+353,275e20c257a4369dd59b4a403e8b1b577468a53f,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+354,275e20c257a4369dd59b4a403e8b1b577468a53f,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+355,275e20c257a4369dd59b4a403e8b1b577468a53f,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+356,275e20c257a4369dd59b4a403e8b1b577468a53f,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+357,275e20c257a4369dd59b4a403e8b1b577468a53f,/5.0/Dockerfile,"#RUN echo ""deb http://packages.elastic.co/kibana/${KIBANA_MAJOR}/debian stable main"" > /etc/apt/sources.list.d/kibana.list
+"
+358,275e20c257a4369dd59b4a403e8b1b577468a53f,/5.0/Dockerfile,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+
+"
+359,275e20c257a4369dd59b4a403e8b1b577468a53f,/5.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+360,275e20c257a4369dd59b4a403e8b1b577468a53f,/5.0/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+361,a747babc86c0235f94dc7b65d23743f4cbfd7bca,/4.3/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+362,a747babc86c0235f94dc7b65d23743f4cbfd7bca,/4.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+363,bb6902febff54be94c50dbadc1d2d0ffa5cd53bf,/4.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+364,bb6902febff54be94c50dbadc1d2d0ffa5cd53bf,/4.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+365,e4e44e6e91f1708d859f5275aad189fdb50dfd7a,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+366,e4e44e6e91f1708d859f5275aad189fdb50dfd7a,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+367,649eaa8423334d8780c80d7eb4dc7b5325a72361,/6/Dockerfile,"# Kibana 6.8.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+368,649eaa8423334d8780c80d7eb4dc7b5325a72361,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.2/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+369,b23a82f955b089af00ea239a1020ee095f7e5557,/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+370,b23a82f955b089af00ea239a1020ee095f7e5557,/Dockerfile,"# grab gosu for easy step-down from root
+"
+371,15b2cb7335feb719ebcd725558557033479ee837,/7/Dockerfile,"# Kibana 7.1.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+372,15b2cb7335feb719ebcd725558557033479ee837,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.1.0/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+373,efb58738202ae0b107dd0114e227d87f59323f80,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+374,efb58738202ae0b107dd0114e227d87f59323f80,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+375,efb58738202ae0b107dd0114e227d87f59323f80,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+376,efb58738202ae0b107dd0114e227d87f59323f80,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+377,efb58738202ae0b107dd0114e227d87f59323f80,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+378,efb58738202ae0b107dd0114e227d87f59323f80,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+379,efb58738202ae0b107dd0114e227d87f59323f80,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+380,efb58738202ae0b107dd0114e227d87f59323f80,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+381,efb58738202ae0b107dd0114e227d87f59323f80,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+382,efb58738202ae0b107dd0114e227d87f59323f80,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+383,249795079412622520b290ce2a93eae360db3b68,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+384,249795079412622520b290ce2a93eae360db3b68,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+385,249795079412622520b290ce2a93eae360db3b68,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+386,249795079412622520b290ce2a93eae360db3b68,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+387,249795079412622520b290ce2a93eae360db3b68,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+388,249795079412622520b290ce2a93eae360db3b68,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+389,249795079412622520b290ce2a93eae360db3b68,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+390,249795079412622520b290ce2a93eae360db3b68,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+391,249795079412622520b290ce2a93eae360db3b68,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+392,249795079412622520b290ce2a93eae360db3b68,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+393,541a035374494d9386c23d58ddcf5a52a0f6078e,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+394,541a035374494d9386c23d58ddcf5a52a0f6078e,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+395,541a035374494d9386c23d58ddcf5a52a0f6078e,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+396,bd52317f514e1f50d5e8aed9dd581fad7e0648dc,/7/Dockerfile,"# Kibana 7.6.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+397,bd52317f514e1f50d5e8aed9dd581fad7e0648dc,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.6.0/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+398,2137f27f7c73233a80ac2a34e591ff2685e37d76,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+399,2137f27f7c73233a80ac2a34e591ff2685e37d76,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+400,2137f27f7c73233a80ac2a34e591ff2685e37d76,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+401,2137f27f7c73233a80ac2a34e591ff2685e37d76,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+402,2137f27f7c73233a80ac2a34e591ff2685e37d76,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+403,2137f27f7c73233a80ac2a34e591ff2685e37d76,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+404,2137f27f7c73233a80ac2a34e591ff2685e37d76,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+405,2137f27f7c73233a80ac2a34e591ff2685e37d76,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+406,2137f27f7c73233a80ac2a34e591ff2685e37d76,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+407,2137f27f7c73233a80ac2a34e591ff2685e37d76,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+408,2015c601bab8b77f0d13475f901c9b85e6014bdb,/4.5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+409,2015c601bab8b77f0d13475f901c9b85e6014bdb,/4.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+410,2015c601bab8b77f0d13475f901c9b85e6014bdb,/4.5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+411,2015c601bab8b77f0d13475f901c9b85e6014bdb,/4.5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+412,2015c601bab8b77f0d13475f901c9b85e6014bdb,/4.5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+413,2015c601bab8b77f0d13475f901c9b85e6014bdb,/4.5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+414,0a3b4fcab39b5a59591645fddc933f1a1b06e1be,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+415,0a3b4fcab39b5a59591645fddc933f1a1b06e1be,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+416,0a3b4fcab39b5a59591645fddc933f1a1b06e1be,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+417,0a3b4fcab39b5a59591645fddc933f1a1b06e1be,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+418,0a3b4fcab39b5a59591645fddc933f1a1b06e1be,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+419,0a3b4fcab39b5a59591645fddc933f1a1b06e1be,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+420,0a3b4fcab39b5a59591645fddc933f1a1b06e1be,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+421,0a3b4fcab39b5a59591645fddc933f1a1b06e1be,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+422,0a3b4fcab39b5a59591645fddc933f1a1b06e1be,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+423,0a3b4fcab39b5a59591645fddc933f1a1b06e1be,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+424,01633e0abe24d669e08bd547e04983e6cd95e551,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+425,01633e0abe24d669e08bd547e04983e6cd95e551,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+426,01633e0abe24d669e08bd547e04983e6cd95e551,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+427,01633e0abe24d669e08bd547e04983e6cd95e551,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+428,01633e0abe24d669e08bd547e04983e6cd95e551,/5.0/Dockerfile,"#RUN echo ""deb http://packages.elastic.co/kibana/${KIBANA_MAJOR}/debian stable main"" > /etc/apt/sources.list.d/kibana.list
+"
+429,01633e0abe24d669e08bd547e04983e6cd95e551,/5.0/Dockerfile,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+
+"
+430,01633e0abe24d669e08bd547e04983e6cd95e551,/5.0/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+431,01633e0abe24d669e08bd547e04983e6cd95e551,/5.0/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+432,01633e0abe24d669e08bd547e04983e6cd95e551,/5.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+433,01633e0abe24d669e08bd547e04983e6cd95e551,/5.0/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+434,dae0e567b76def26c7681bd916886a86c6278d91,/Dockerfile-upstream.template,"# Kibana %%KIBANA_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+435,dae0e567b76def26c7681bd916886a86c6278d91,/Dockerfile-upstream.template,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/%%KIBANA_VERSION%%
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+436,3ecc671447bc810f0d81751fd1c104a94657a5e5,/7/Dockerfile,"# Kibana 7.2.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+437,3ecc671447bc810f0d81751fd1c104a94657a5e5,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.2.0/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+438,cc8525104d855645462ad1a2b502b5f589eeec19,/4.3/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+439,cc8525104d855645462ad1a2b502b5f589eeec19,/4.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+440,cc8525104d855645462ad1a2b502b5f589eeec19,/4.3/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+441,b606ae998472df66e0c8e769ed070129edad12be,/4.2/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+442,b606ae998472df66e0c8e769ed070129edad12be,/4.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+443,b606ae998472df66e0c8e769ed070129edad12be,/4.2/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+444,f6ea089ffdd329921f5aaf97d49288c9e1e411c7,/7/Dockerfile,"# Kibana 7.5.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+445,f6ea089ffdd329921f5aaf97d49288c9e1e411c7,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.5.1/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+446,2c445b458203865fb91650fec78d116ad4638c17,/7/Dockerfile,"# Kibana 7.2.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+447,2c445b458203865fb91650fec78d116ad4638c17,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.2.1/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+448,09f59b3a0fe8771b12797be6158f99dec0be654e,/6/Dockerfile,"# Kibana 6.5.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+449,09f59b3a0fe8771b12797be6158f99dec0be654e,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.5.1
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+450,c6a6b5a2d71b8f99a4292307bfcc9417843efadc,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+451,c6a6b5a2d71b8f99a4292307bfcc9417843efadc,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+452,c6a6b5a2d71b8f99a4292307bfcc9417843efadc,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+453,c6a6b5a2d71b8f99a4292307bfcc9417843efadc,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+454,c6a6b5a2d71b8f99a4292307bfcc9417843efadc,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+455,c6a6b5a2d71b8f99a4292307bfcc9417843efadc,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+456,c6a6b5a2d71b8f99a4292307bfcc9417843efadc,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+457,c6a6b5a2d71b8f99a4292307bfcc9417843efadc,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+458,c6a6b5a2d71b8f99a4292307bfcc9417843efadc,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+459,c6a6b5a2d71b8f99a4292307bfcc9417843efadc,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+460,d919877a1420ac42a95a398bbf035deeb0b171f4,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+461,d919877a1420ac42a95a398bbf035deeb0b171f4,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+462,d919877a1420ac42a95a398bbf035deeb0b171f4,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+463,d919877a1420ac42a95a398bbf035deeb0b171f4,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+464,d919877a1420ac42a95a398bbf035deeb0b171f4,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+465,d919877a1420ac42a95a398bbf035deeb0b171f4,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+466,d919877a1420ac42a95a398bbf035deeb0b171f4,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+467,d919877a1420ac42a95a398bbf035deeb0b171f4,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+468,d919877a1420ac42a95a398bbf035deeb0b171f4,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+469,d919877a1420ac42a95a398bbf035deeb0b171f4,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+470,9fc787378f38bc25616d7118741a74b42402d344,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+471,9fc787378f38bc25616d7118741a74b42402d344,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+472,9fc787378f38bc25616d7118741a74b42402d344,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+473,9fc787378f38bc25616d7118741a74b42402d344,/4.1/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+474,9fc787378f38bc25616d7118741a74b42402d344,/4.1/Dockerfile,"#\s*)?(elasticsearch_url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+475,b044e432f4621cc5be5fbe520c76b81df1f28c62,/4.2/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+476,b044e432f4621cc5be5fbe520c76b81df1f28c62,/4.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+477,9d0cec0583a090d8db4d5b1b0df9c43f1ff19a47,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+478,9d0cec0583a090d8db4d5b1b0df9c43f1ff19a47,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+479,9d0cec0583a090d8db4d5b1b0df9c43f1ff19a47,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+480,9d0cec0583a090d8db4d5b1b0df9c43f1ff19a47,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+481,9d0cec0583a090d8db4d5b1b0df9c43f1ff19a47,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+482,9d0cec0583a090d8db4d5b1b0df9c43f1ff19a47,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+483,9d0cec0583a090d8db4d5b1b0df9c43f1ff19a47,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+484,9d0cec0583a090d8db4d5b1b0df9c43f1ff19a47,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+485,9d0cec0583a090d8db4d5b1b0df9c43f1ff19a47,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+486,9d0cec0583a090d8db4d5b1b0df9c43f1ff19a47,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+487,bef796815f512f4fe33440897c3efe1bfa2f3a0a,/4.4/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+488,bef796815f512f4fe33440897c3efe1bfa2f3a0a,/4.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+489,f3512f90b2c0be7c3547095a0bd1e607e18e9af3,/7/Dockerfile,"# Kibana 7.7.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+490,f3512f90b2c0be7c3547095a0bd1e607e18e9af3,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.7.0/kibana
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v7.7.0:kibana'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+491,b5c76d50bbeb4986e943e267edaaa4d75175e742,/7/Dockerfile,"# Kibana 7.4.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+492,b5c76d50bbeb4986e943e267edaaa4d75175e742,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.4.1/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+493,b6711c0af6435630493ac92be1de5c319ae835cf,/6.4.1/Dockerfile,"# Kibana 6.4.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+494,b6711c0af6435630493ac92be1de5c319ae835cf,/6.4.1/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.4.1
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html"
+495,9ee82ac70fba3b88550e5109e820164d6a7ffdfe,/Dockerfile-upstream.template,"# Kibana %%KIBANA_VERSION%%
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+496,9ee82ac70fba3b88550e5109e820164d6a7ffdfe,/Dockerfile-upstream.template,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/%%KIBANA_VERSION%%
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html"
+497,6328ebb12009f2b8bee76c22e7ba4e11c1c9175e,/4.5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+498,6328ebb12009f2b8bee76c22e7ba4e11c1c9175e,/4.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+499,6328ebb12009f2b8bee76c22e7ba4e11c1c9175e,/4.5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+500,6328ebb12009f2b8bee76c22e7ba4e11c1c9175e,/4.5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+501,6328ebb12009f2b8bee76c22e7ba4e11c1c9175e,/4.5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+502,6328ebb12009f2b8bee76c22e7ba4e11c1c9175e,/4.5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+503,902581f626cba60693e32ca54f91f487b6be7e98,/4.6/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+504,902581f626cba60693e32ca54f91f487b6be7e98,/4.6/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+505,902581f626cba60693e32ca54f91f487b6be7e98,/4.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+506,902581f626cba60693e32ca54f91f487b6be7e98,/4.6/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+507,902581f626cba60693e32ca54f91f487b6be7e98,/4.6/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+508,902581f626cba60693e32ca54f91f487b6be7e98,/4.6/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+"
+509,902581f626cba60693e32ca54f91f487b6be7e98,/4.6/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+510,902581f626cba60693e32ca54f91f487b6be7e98,/4.6/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+511,cee19912df82209e21583b7db91e0fc4e0a786db,/7/Dockerfile,"# Kibana 7.9.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+512,cee19912df82209e21583b7db91e0fc4e0a786db,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.9.0/kibana
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v7.9.0:kibana'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+513,712060cfe4782cf8c0abdadb641cd038277e8541,/4.6/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+514,712060cfe4782cf8c0abdadb641cd038277e8541,/4.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+515,712060cfe4782cf8c0abdadb641cd038277e8541,/4.6/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+516,712060cfe4782cf8c0abdadb641cd038277e8541,/4.6/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+517,712060cfe4782cf8c0abdadb641cd038277e8541,/4.6/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+518,712060cfe4782cf8c0abdadb641cd038277e8541,/4.6/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+519,b8eac6fd9374fdb607b226603c13f180d4040588,/6.4.0/Dockerfile,"# Kibana 6.4.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+520,b8eac6fd9374fdb607b226603c13f180d4040588,/6.4.0/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.4.0
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+521,2adb45495b617c5f966c714f55fb3eb3d7d1c853,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+522,2adb45495b617c5f966c714f55fb3eb3d7d1c853,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+523,2adb45495b617c5f966c714f55fb3eb3d7d1c853,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+524,2adb45495b617c5f966c714f55fb3eb3d7d1c853,/4.1/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+525,2adb45495b617c5f966c714f55fb3eb3d7d1c853,/4.1/Dockerfile,"#\s*)?(elasticsearch_url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+526,0beddcb3e86d1b623ada81d423aaa98e8500657f,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+527,0beddcb3e86d1b623ada81d423aaa98e8500657f,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+528,0beddcb3e86d1b623ada81d423aaa98e8500657f,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+529,0beddcb3e86d1b623ada81d423aaa98e8500657f,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+530,0beddcb3e86d1b623ada81d423aaa98e8500657f,/5.0/Dockerfile,"#RUN echo ""deb http://packages.elastic.co/kibana/${KIBANA_MAJOR}/debian stable main"" > /etc/apt/sources.list.d/kibana.list
+"
+531,0beddcb3e86d1b623ada81d423aaa98e8500657f,/5.0/Dockerfile,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+
+"
+532,0beddcb3e86d1b623ada81d423aaa98e8500657f,/5.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+533,0beddcb3e86d1b623ada81d423aaa98e8500657f,/5.0/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+534,b08b63345e3142cb59a8b6e3cd427ce889f26f3c,/6/Dockerfile,"# Kibana 6.4.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+535,b08b63345e3142cb59a8b6e3cd427ce889f26f3c,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.4.1
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html"
+536,353679916e672ab24a8b75342a18be96bf32d1ae,/6/Dockerfile,"# Kibana 6.8.7
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+537,353679916e672ab24a8b75342a18be96bf32d1ae,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.7/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+538,6390aacfcb9454bf6e3bcd2a78fed7fe78f1bda2,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+539,6390aacfcb9454bf6e3bcd2a78fed7fe78f1bda2,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+540,6390aacfcb9454bf6e3bcd2a78fed7fe78f1bda2,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+541,6390aacfcb9454bf6e3bcd2a78fed7fe78f1bda2,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+542,6390aacfcb9454bf6e3bcd2a78fed7fe78f1bda2,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+543,6390aacfcb9454bf6e3bcd2a78fed7fe78f1bda2,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+544,6390aacfcb9454bf6e3bcd2a78fed7fe78f1bda2,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+545,6390aacfcb9454bf6e3bcd2a78fed7fe78f1bda2,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+546,6390aacfcb9454bf6e3bcd2a78fed7fe78f1bda2,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+547,6390aacfcb9454bf6e3bcd2a78fed7fe78f1bda2,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+548,493a24c88deff8080aa781f0596deab8b33e5992,/4.6/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+549,493a24c88deff8080aa781f0596deab8b33e5992,/4.6/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+550,493a24c88deff8080aa781f0596deab8b33e5992,/4.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+551,493a24c88deff8080aa781f0596deab8b33e5992,/4.6/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+552,493a24c88deff8080aa781f0596deab8b33e5992,/4.6/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+553,493a24c88deff8080aa781f0596deab8b33e5992,/4.6/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+"
+554,493a24c88deff8080aa781f0596deab8b33e5992,/4.6/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+555,493a24c88deff8080aa781f0596deab8b33e5992,/4.6/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+556,8533a0adbbcf829e6d069fa033339d9212fb986b,/7/Dockerfile,"# Kibana 7.4.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+557,8533a0adbbcf829e6d069fa033339d9212fb986b,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.4.2/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+558,8951190befd71bc72c11eb13e6b7e778de38c950,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+559,8951190befd71bc72c11eb13e6b7e778de38c950,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+560,8951190befd71bc72c11eb13e6b7e778de38c950,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+561,8951190befd71bc72c11eb13e6b7e778de38c950,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+562,8951190befd71bc72c11eb13e6b7e778de38c950,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+563,8951190befd71bc72c11eb13e6b7e778de38c950,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+564,8951190befd71bc72c11eb13e6b7e778de38c950,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+565,8951190befd71bc72c11eb13e6b7e778de38c950,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+566,8951190befd71bc72c11eb13e6b7e778de38c950,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+567,8951190befd71bc72c11eb13e6b7e778de38c950,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+568,2adb45495b617c5f966c714f55fb3eb3d7d1c853,/4.5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+569,2adb45495b617c5f966c714f55fb3eb3d7d1c853,/4.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+570,2adb45495b617c5f966c714f55fb3eb3d7d1c853,/4.5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+571,2adb45495b617c5f966c714f55fb3eb3d7d1c853,/4.5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+572,2adb45495b617c5f966c714f55fb3eb3d7d1c853,/4.5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+573,2adb45495b617c5f966c714f55fb3eb3d7d1c853,/4.5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+574,644633fee0f4c15e9bbbd2c1cdb00e5c1a8f7ffc,/7/Dockerfile,"# Kibana 7.3.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+575,644633fee0f4c15e9bbbd2c1cdb00e5c1a8f7ffc,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.3.1/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+576,090ae9080dd0bf75597a8f27a314854d06b50cb1,/6/Dockerfile,"# Kibana 6.8.5
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+577,090ae9080dd0bf75597a8f27a314854d06b50cb1,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.5/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+578,b922235278db729dd1e865c4df02637fd589c541,/7/Dockerfile,"# Kibana 7.8.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+579,b922235278db729dd1e865c4df02637fd589c541,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.8.1/kibana
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v7.8.1:kibana'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+580,279f41998ff62b33fc5ce2b348fe297b4231854b,/4.3/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+581,279f41998ff62b33fc5ce2b348fe297b4231854b,/4.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+582,279f41998ff62b33fc5ce2b348fe297b4231854b,/4.3/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+583,cc8525104d855645462ad1a2b502b5f589eeec19,/4.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+584,cc8525104d855645462ad1a2b502b5f589eeec19,/4.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+585,cc8525104d855645462ad1a2b502b5f589eeec19,/4.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+586,559199ccb087316815bb65283841e6f42ce221a6,/4.4/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+587,559199ccb087316815bb65283841e6f42ce221a6,/4.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+588,559199ccb087316815bb65283841e6f42ce221a6,/4.4/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+589,559199ccb087316815bb65283841e6f42ce221a6,/4.4/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+590,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+591,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+592,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+593,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+594,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+595,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+596,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+597,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+598,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+599,485ab7ab0bbee658a9d7d291ccc0aaf585c3c4ac,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+600,485ab7ab0bbee658a9d7d291ccc0aaf585c3c4ac,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+601,485ab7ab0bbee658a9d7d291ccc0aaf585c3c4ac,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+602,485ab7ab0bbee658a9d7d291ccc0aaf585c3c4ac,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+603,485ab7ab0bbee658a9d7d291ccc0aaf585c3c4ac,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+604,485ab7ab0bbee658a9d7d291ccc0aaf585c3c4ac,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+605,485ab7ab0bbee658a9d7d291ccc0aaf585c3c4ac,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+606,485ab7ab0bbee658a9d7d291ccc0aaf585c3c4ac,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+607,485ab7ab0bbee658a9d7d291ccc0aaf585c3c4ac,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+608,485ab7ab0bbee658a9d7d291ccc0aaf585c3c4ac,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+609,353e125bf1d11c16f31966fc7fef8355e7d272b3,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+610,353e125bf1d11c16f31966fc7fef8355e7d272b3,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+611,353e125bf1d11c16f31966fc7fef8355e7d272b3,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+612,353e125bf1d11c16f31966fc7fef8355e7d272b3,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+613,353e125bf1d11c16f31966fc7fef8355e7d272b3,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+614,353e125bf1d11c16f31966fc7fef8355e7d272b3,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+615,353e125bf1d11c16f31966fc7fef8355e7d272b3,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+616,353e125bf1d11c16f31966fc7fef8355e7d272b3,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+617,353e125bf1d11c16f31966fc7fef8355e7d272b3,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+618,353e125bf1d11c16f31966fc7fef8355e7d272b3,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+619,6328ebb12009f2b8bee76c22e7ba4e11c1c9175e,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+620,6328ebb12009f2b8bee76c22e7ba4e11c1c9175e,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+621,6328ebb12009f2b8bee76c22e7ba4e11c1c9175e,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+622,6328ebb12009f2b8bee76c22e7ba4e11c1c9175e,/4.1/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+623,6328ebb12009f2b8bee76c22e7ba4e11c1c9175e,/4.1/Dockerfile,"#\s*)?(elasticsearch_url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+624,f08b40166a6d60129ac393bfd412c989e23393ac,/6/Dockerfile,"# Kibana 6.5.3
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+625,f08b40166a6d60129ac393bfd412c989e23393ac,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.5.3
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+626,bc26b5669948efedd267a9c60e1dc34ee8fbb5f0,/6/Dockerfile,"# Kibana 6.6.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+627,bc26b5669948efedd267a9c60e1dc34ee8fbb5f0,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.6.2
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+628,c7f35a7103f04d289ae93427eafb24a6fa28aa78,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+629,c7f35a7103f04d289ae93427eafb24a6fa28aa78,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+630,c7f35a7103f04d289ae93427eafb24a6fa28aa78,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+631,c7f35a7103f04d289ae93427eafb24a6fa28aa78,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+632,c7f35a7103f04d289ae93427eafb24a6fa28aa78,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+633,c7f35a7103f04d289ae93427eafb24a6fa28aa78,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+634,c7f35a7103f04d289ae93427eafb24a6fa28aa78,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+635,c7f35a7103f04d289ae93427eafb24a6fa28aa78,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+636,c7f35a7103f04d289ae93427eafb24a6fa28aa78,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+637,c7f35a7103f04d289ae93427eafb24a6fa28aa78,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+638,8e76f488b77dda7824e531450ddc08b33aae18bc,/7/Dockerfile,"# Kibana 7.6.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+639,8e76f488b77dda7824e531450ddc08b33aae18bc,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.6.2/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+640,109800eec04e10f96c4db311863e202cdb95f0e7,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+641,109800eec04e10f96c4db311863e202cdb95f0e7,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+642,109800eec04e10f96c4db311863e202cdb95f0e7,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+643,109800eec04e10f96c4db311863e202cdb95f0e7,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+644,109800eec04e10f96c4db311863e202cdb95f0e7,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+645,109800eec04e10f96c4db311863e202cdb95f0e7,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+646,109800eec04e10f96c4db311863e202cdb95f0e7,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+647,109800eec04e10f96c4db311863e202cdb95f0e7,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+648,109800eec04e10f96c4db311863e202cdb95f0e7,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+649,109800eec04e10f96c4db311863e202cdb95f0e7,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+650,57a6a9708ee050e740ffac635acfaf520c8f2f4b,/7/Dockerfile,"# Kibana 7.9.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+651,57a6a9708ee050e740ffac635acfaf520c8f2f4b,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.9.1/kibana
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v7.9.1:kibana'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+652,9fc787378f38bc25616d7118741a74b42402d344,/4.5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+653,9fc787378f38bc25616d7118741a74b42402d344,/4.5/Dockerfile,"# grab gosu for easy step-down from root
+"
+654,9fc787378f38bc25616d7118741a74b42402d344,/4.5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+655,9fc787378f38bc25616d7118741a74b42402d344,/4.5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+656,9fc787378f38bc25616d7118741a74b42402d344,/4.5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+657,9fc787378f38bc25616d7118741a74b42402d344,/4.5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+658,6721854df0e23db4bc4ca6ce2d8efa33738ad934,/6/Dockerfile,"# Kibana 6.8.11
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+659,6721854df0e23db4bc4ca6ce2d8efa33738ad934,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.11/kibana
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v6.8.11:kibana'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+660,553c4b9f339683cc17e099cb4d40552735c2f24e,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+661,553c4b9f339683cc17e099cb4d40552735c2f24e,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+662,553c4b9f339683cc17e099cb4d40552735c2f24e,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+663,553c4b9f339683cc17e099cb4d40552735c2f24e,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+664,553c4b9f339683cc17e099cb4d40552735c2f24e,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+665,553c4b9f339683cc17e099cb4d40552735c2f24e,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+666,553c4b9f339683cc17e099cb4d40552735c2f24e,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+667,553c4b9f339683cc17e099cb4d40552735c2f24e,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+668,8b5427a374fe93fe87f31e1249f0d64a09c02307,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+669,8b5427a374fe93fe87f31e1249f0d64a09c02307,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+670,8b5427a374fe93fe87f31e1249f0d64a09c02307,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+671,8b5427a374fe93fe87f31e1249f0d64a09c02307,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+672,8b5427a374fe93fe87f31e1249f0d64a09c02307,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+673,8b5427a374fe93fe87f31e1249f0d64a09c02307,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+674,8b5427a374fe93fe87f31e1249f0d64a09c02307,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+675,8b5427a374fe93fe87f31e1249f0d64a09c02307,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+676,8b5427a374fe93fe87f31e1249f0d64a09c02307,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+677,8b5427a374fe93fe87f31e1249f0d64a09c02307,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+678,81e9bbcc91fdc1e42021bdd5597b418ecece7e62,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+679,81e9bbcc91fdc1e42021bdd5597b418ecece7e62,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+680,81e9bbcc91fdc1e42021bdd5597b418ecece7e62,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+681,81e9bbcc91fdc1e42021bdd5597b418ecece7e62,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+682,81e9bbcc91fdc1e42021bdd5597b418ecece7e62,/5.0/Dockerfile,"#RUN echo ""deb http://packages.elastic.co/kibana/${KIBANA_MAJOR}/debian stable main"" > /etc/apt/sources.list.d/kibana.list
+"
+683,81e9bbcc91fdc1e42021bdd5597b418ecece7e62,/5.0/Dockerfile,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+
+"
+684,81e9bbcc91fdc1e42021bdd5597b418ecece7e62,/5.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+685,81e9bbcc91fdc1e42021bdd5597b418ecece7e62,/5.0/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+686,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/4.6/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+687,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/4.6/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+688,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/4.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+689,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/4.6/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+690,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/4.6/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+691,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/4.6/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+692,144fccdd6a2c8c05fc79c27d3eb62a90b274f19b,/4.6/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+693,bc610048989693a2a668b65363e707d737c8536c,/6/Dockerfile,"# Kibana 6.5.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+694,bc610048989693a2a668b65363e707d737c8536c,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.5.2
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+695,f660339999bbb4afe519ea748a32f948a997f3e6,/4.6/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+696,f660339999bbb4afe519ea748a32f948a997f3e6,/4.6/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+697,f660339999bbb4afe519ea748a32f948a997f3e6,/4.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+698,f660339999bbb4afe519ea748a32f948a997f3e6,/4.6/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+699,f660339999bbb4afe519ea748a32f948a997f3e6,/4.6/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+700,f660339999bbb4afe519ea748a32f948a997f3e6,/4.6/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+"
+701,f660339999bbb4afe519ea748a32f948a997f3e6,/4.6/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+702,f660339999bbb4afe519ea748a32f948a997f3e6,/4.6/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+703,f3512f90b2c0be7c3547095a0bd1e607e18e9af3,/6/Dockerfile,"# Kibana 6.8.9
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+704,f3512f90b2c0be7c3547095a0bd1e607e18e9af3,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.9/kibana
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v6.8.9:kibana'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+705,672eff5126aa9f5ec73635d41a19032fade90083,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+706,672eff5126aa9f5ec73635d41a19032fade90083,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+707,672eff5126aa9f5ec73635d41a19032fade90083,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+708,672eff5126aa9f5ec73635d41a19032fade90083,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+709,672eff5126aa9f5ec73635d41a19032fade90083,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+710,672eff5126aa9f5ec73635d41a19032fade90083,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+711,672eff5126aa9f5ec73635d41a19032fade90083,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+712,672eff5126aa9f5ec73635d41a19032fade90083,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+713,672eff5126aa9f5ec73635d41a19032fade90083,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+714,672eff5126aa9f5ec73635d41a19032fade90083,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+715,9fc787378f38bc25616d7118741a74b42402d344,/4.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+716,9fc787378f38bc25616d7118741a74b42402d344,/4.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+717,9fc787378f38bc25616d7118741a74b42402d344,/4.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+718,9fc787378f38bc25616d7118741a74b42402d344,/4.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+719,9fc787378f38bc25616d7118741a74b42402d344,/4.0/Dockerfile,"#\s*)?(elasticsearch_url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+720,febc4b766dabfc5a30f04373337cd0a0ec997bb2,/4.6/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+721,febc4b766dabfc5a30f04373337cd0a0ec997bb2,/4.6/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+722,febc4b766dabfc5a30f04373337cd0a0ec997bb2,/4.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+723,febc4b766dabfc5a30f04373337cd0a0ec997bb2,/4.6/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+724,febc4b766dabfc5a30f04373337cd0a0ec997bb2,/4.6/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+725,febc4b766dabfc5a30f04373337cd0a0ec997bb2,/4.6/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+"
+726,febc4b766dabfc5a30f04373337cd0a0ec997bb2,/4.6/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+727,febc4b766dabfc5a30f04373337cd0a0ec997bb2,/4.6/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+728,9267a8b724579791a9ad4a20fd816f03f64e9b64,/7/Dockerfile,"# Kibana 7.1.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+729,9267a8b724579791a9ad4a20fd816f03f64e9b64,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.1.1/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+730,bb6221dd1b069ea4bae608b608807fd5e28a4972,/6/Dockerfile,"# Kibana 6.7.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+731,bb6221dd1b069ea4bae608b608807fd5e28a4972,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.7.0
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+732,b606ae998472df66e0c8e769ed070129edad12be,/4.3/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+733,b606ae998472df66e0c8e769ed070129edad12be,/4.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+734,b606ae998472df66e0c8e769ed070129edad12be,/4.3/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+735,6447404cba714e9415a1f9f4e438fdc7c7682eff,/4.2/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+736,6447404cba714e9415a1f9f4e438fdc7c7682eff,/4.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+737,c270e29af071b816ea293c5f0ad4c827ef7c32a2,/6/Dockerfile,"# Kibana 6.7.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+738,c270e29af071b816ea293c5f0ad4c827ef7c32a2,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.7.0/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+739,b8eac6fd9374fdb607b226603c13f180d4040588,/6.4.1/Dockerfile,"# Kibana 6.4.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+740,b8eac6fd9374fdb607b226603c13f180d4040588,/6.4.1/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.4.1
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+741,93ddd7c813613a4609987c2643646a208639965d,/6/Dockerfile,"# Kibana 6.8.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+742,93ddd7c813613a4609987c2643646a208639965d,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.0/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+743,293a582c8ec9a78ec4c137ddb77d37c6312c97f3,/7/Dockerfile,"# Kibana 7.7.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+744,293a582c8ec9a78ec4c137ddb77d37c6312c97f3,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.7.1/kibana
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v7.7.1:kibana'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+745,9c61015ec5a8f9a7da32a9a3e28f9a0caf29fc8b,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+746,9c61015ec5a8f9a7da32a9a3e28f9a0caf29fc8b,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+747,a6fbdf946ff71deb4bdbf86f1faf5242c758857b,/7/Dockerfile,"# Kibana 7.0.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+748,a6fbdf946ff71deb4bdbf86f1faf5242c758857b,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.0.0/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+749,e6b11543037b0c0ff88ea935ddddc0d3ec7d22cc,/6/Dockerfile,"# Kibana 6.5.4
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+750,e6b11543037b0c0ff88ea935ddddc0d3ec7d22cc,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.5.4
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+751,b6711c0af6435630493ac92be1de5c319ae835cf,/6.4.0/Dockerfile,"# Kibana 6.4.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+752,b6711c0af6435630493ac92be1de5c319ae835cf,/6.4.0/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.4.0
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html"
+753,69daf8cf674823df85e2d48489d5c26f1c2f7d8a,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+754,69daf8cf674823df85e2d48489d5c26f1c2f7d8a,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+755,69daf8cf674823df85e2d48489d5c26f1c2f7d8a,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+756,69daf8cf674823df85e2d48489d5c26f1c2f7d8a,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+757,69daf8cf674823df85e2d48489d5c26f1c2f7d8a,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+758,69daf8cf674823df85e2d48489d5c26f1c2f7d8a,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+759,69daf8cf674823df85e2d48489d5c26f1c2f7d8a,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+760,69daf8cf674823df85e2d48489d5c26f1c2f7d8a,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+761,69daf8cf674823df85e2d48489d5c26f1c2f7d8a,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+762,69daf8cf674823df85e2d48489d5c26f1c2f7d8a,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+763,c334b2d83a17100180f1f1dff9f6778243397a80,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+764,c334b2d83a17100180f1f1dff9f6778243397a80,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+765,c334b2d83a17100180f1f1dff9f6778243397a80,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+766,c334b2d83a17100180f1f1dff9f6778243397a80,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+767,c334b2d83a17100180f1f1dff9f6778243397a80,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+768,c334b2d83a17100180f1f1dff9f6778243397a80,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+769,c334b2d83a17100180f1f1dff9f6778243397a80,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+770,c334b2d83a17100180f1f1dff9f6778243397a80,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+771,c334b2d83a17100180f1f1dff9f6778243397a80,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+772,c334b2d83a17100180f1f1dff9f6778243397a80,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+773,19237835b8922f570fafad7cdc0576330d6f1a91,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+774,19237835b8922f570fafad7cdc0576330d6f1a91,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+775,19237835b8922f570fafad7cdc0576330d6f1a91,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+776,19237835b8922f570fafad7cdc0576330d6f1a91,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+777,19237835b8922f570fafad7cdc0576330d6f1a91,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+778,19237835b8922f570fafad7cdc0576330d6f1a91,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+779,19237835b8922f570fafad7cdc0576330d6f1a91,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+780,19237835b8922f570fafad7cdc0576330d6f1a91,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+781,19237835b8922f570fafad7cdc0576330d6f1a91,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+782,19237835b8922f570fafad7cdc0576330d6f1a91,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+783,beb960fe04ec8cf2b32b114ddbbf41cebc0271b0,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+784,beb960fe04ec8cf2b32b114ddbbf41cebc0271b0,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+785,beb960fe04ec8cf2b32b114ddbbf41cebc0271b0,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+786,beb960fe04ec8cf2b32b114ddbbf41cebc0271b0,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+787,beb960fe04ec8cf2b32b114ddbbf41cebc0271b0,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+788,beb960fe04ec8cf2b32b114ddbbf41cebc0271b0,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+789,beb960fe04ec8cf2b32b114ddbbf41cebc0271b0,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+790,beb960fe04ec8cf2b32b114ddbbf41cebc0271b0,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+791,beb960fe04ec8cf2b32b114ddbbf41cebc0271b0,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+792,beb960fe04ec8cf2b32b114ddbbf41cebc0271b0,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+793,c2adec80068e184472f6b61f7bee2895a80cfb26,/7/Dockerfile,"# Kibana 7.4.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+794,c2adec80068e184472f6b61f7bee2895a80cfb26,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.4.0/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+795,c59bd9585cbe6d62e1bd56c7975d2eb350dc11fb,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+796,c59bd9585cbe6d62e1bd56c7975d2eb350dc11fb,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+797,c59bd9585cbe6d62e1bd56c7975d2eb350dc11fb,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+798,c59bd9585cbe6d62e1bd56c7975d2eb350dc11fb,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+799,c59bd9585cbe6d62e1bd56c7975d2eb350dc11fb,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+800,c59bd9585cbe6d62e1bd56c7975d2eb350dc11fb,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+801,c59bd9585cbe6d62e1bd56c7975d2eb350dc11fb,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+802,c59bd9585cbe6d62e1bd56c7975d2eb350dc11fb,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+803,c59bd9585cbe6d62e1bd56c7975d2eb350dc11fb,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+804,c59bd9585cbe6d62e1bd56c7975d2eb350dc11fb,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+805,cc8525104d855645462ad1a2b502b5f589eeec19,/4.1/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+806,cc8525104d855645462ad1a2b502b5f589eeec19,/4.1/Dockerfile,"# grab gosu for easy step-down from root
+"
+807,cc8525104d855645462ad1a2b502b5f589eeec19,/4.1/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+808,df4d4cad6dfa5a5edd9dc8682e4bb21e95ca4cf7,/6/Dockerfile,"# Kibana 6.4.3
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+809,df4d4cad6dfa5a5edd9dc8682e4bb21e95ca4cf7,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.4.3
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+810,e930401355dc9b268b3e7d036794263a8e0f7a82,/4.6/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+811,e930401355dc9b268b3e7d036794263a8e0f7a82,/4.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+812,e930401355dc9b268b3e7d036794263a8e0f7a82,/4.6/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+813,e930401355dc9b268b3e7d036794263a8e0f7a82,/4.6/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+814,e930401355dc9b268b3e7d036794263a8e0f7a82,/4.6/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+815,e930401355dc9b268b3e7d036794263a8e0f7a82,/4.6/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+816,39e433266cc29368b70fd04a84271fe2d3fbb2cb,/4.2/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+817,39e433266cc29368b70fd04a84271fe2d3fbb2cb,/4.2/Dockerfile,"# grab gosu for easy step-down from root
+"
+818,0ebcdf78ff61cd1f293732350c4654365363b148,/6/Dockerfile,"# Kibana 6.8.12
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+819,0ebcdf78ff61cd1f293732350c4654365363b148,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.12/kibana
+
+# The build can be reproduced locally via:
+#   docker build 'https://github.com/elastic/dockerfiles.git#v6.8.12:kibana'
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+820,e3426d2c1ba645d6e19eb0ac66d7a400fa5f3fdf,/7/Dockerfile,"# Kibana 7.7.0
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+821,e3426d2c1ba645d6e19eb0ac66d7a400fa5f3fdf,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.7.0/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+822,9fc787378f38bc25616d7118741a74b42402d344,/4.4/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+823,9fc787378f38bc25616d7118741a74b42402d344,/4.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+824,9fc787378f38bc25616d7118741a74b42402d344,/4.4/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+825,9fc787378f38bc25616d7118741a74b42402d344,/4.4/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+826,9fc787378f38bc25616d7118741a74b42402d344,/4.4/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+827,9fc787378f38bc25616d7118741a74b42402d344,/4.4/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+828,541a035374494d9386c23d58ddcf5a52a0f6078e,/4.3/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+829,541a035374494d9386c23d58ddcf5a52a0f6078e,/4.3/Dockerfile,"# grab gosu for easy step-down from root
+"
+830,541a035374494d9386c23d58ddcf5a52a0f6078e,/4.3/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+831,4eef267ab6d1e6a655f4e44dabe9aef7915e4b99,/7/Dockerfile,"# Kibana 7.5.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+832,4eef267ab6d1e6a655f4e44dabe9aef7915e4b99,/7/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v7.5.2/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+833,f1e01a0c5d64b1eea3c9d90a2cba93d9f3924bd0,/5.0/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+834,f1e01a0c5d64b1eea3c9d90a2cba93d9f3924bd0,/5.0/Dockerfile,"# grab gosu for easy step-down from root
+"
+835,f1e01a0c5d64b1eea3c9d90a2cba93d9f3924bd0,/5.0/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+836,f1e01a0c5d64b1eea3c9d90a2cba93d9f3924bd0,/5.0/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+837,f1e01a0c5d64b1eea3c9d90a2cba93d9f3924bd0,/5.0/Dockerfile,"#RUN echo ""deb http://packages.elastic.co/kibana/${KIBANA_MAJOR}/debian stable main"" > /etc/apt/sources.list.d/kibana.list
+"
+838,f1e01a0c5d64b1eea3c9d90a2cba93d9f3924bd0,/5.0/Dockerfile,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+
+"
+839,f1e01a0c5d64b1eea3c9d90a2cba93d9f3924bd0,/5.0/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+840,f1e01a0c5d64b1eea3c9d90a2cba93d9f3924bd0,/5.0/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+841,19237835b8922f570fafad7cdc0576330d6f1a91,/4.6/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+842,19237835b8922f570fafad7cdc0576330d6f1a91,/4.6/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+843,19237835b8922f570fafad7cdc0576330d6f1a91,/4.6/Dockerfile,"# grab gosu for easy step-down from root
+"
+844,19237835b8922f570fafad7cdc0576330d6f1a91,/4.6/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+845,19237835b8922f570fafad7cdc0576330d6f1a91,/4.6/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+846,19237835b8922f570fafad7cdc0576330d6f1a91,/4.6/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+"
+847,19237835b8922f570fafad7cdc0576330d6f1a91,/4.6/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+848,19237835b8922f570fafad7cdc0576330d6f1a91,/4.6/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /opt/kibana/config/kibana.yml \
+"
+849,4888e0caa9e4f9eb783fd05cec9b82c7f657e1e6,/4.4/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+850,4888e0caa9e4f9eb783fd05cec9b82c7f657e1e6,/4.4/Dockerfile,"# grab gosu for easy step-down from root
+"
+851,4888e0caa9e4f9eb783fd05cec9b82c7f657e1e6,/4.4/Dockerfile,"# https://www.elastic.co/guide/en/kibana/4.4/setup.html#kibana-apt
+# https://packages.elasticsearch.org/GPG-KEY-elasticsearch
+"
+852,b8eac6fd9374fdb607b226603c13f180d4040588,/6/Dockerfile,"# Kibana 6.4.2
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+853,b8eac6fd9374fdb607b226603c13f180d4040588,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.4.2
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+854,0b0f9abbd2f17b4625d1210f5224bd1e32c09b4a,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+855,0b0f9abbd2f17b4625d1210f5224bd1e32c09b4a,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+856,0b0f9abbd2f17b4625d1210f5224bd1e32c09b4a,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+857,0b0f9abbd2f17b4625d1210f5224bd1e32c09b4a,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+858,0b0f9abbd2f17b4625d1210f5224bd1e32c09b4a,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+859,0b0f9abbd2f17b4625d1210f5224bd1e32c09b4a,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+860,0b0f9abbd2f17b4625d1210f5224bd1e32c09b4a,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+861,0b0f9abbd2f17b4625d1210f5224bd1e32c09b4a,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+862,0b0f9abbd2f17b4625d1210f5224bd1e32c09b4a,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+863,0b0f9abbd2f17b4625d1210f5224bd1e32c09b4a,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+864,ad6a8d3f912d148e4ceb6eae5eb28eacfc9d9e45,/6/Dockerfile,"# Kibana 6.6.1
+
+# This image re-bundles the Docker image from the upstream provider, Elastic. 
+"
+865,ad6a8d3f912d148e4ceb6eae5eb28eacfc9d9e45,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/kibana-docker/tree/6.6.1
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For Elasticsearch documentation visit https://www.elastic.co/guide/en/kibana/reference/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"
+866,d87da97dff0d4510a841b866f8f4bddd8e0f5811,/5/Dockerfile,"# add our user and group first to make sure their IDs get assigned consistently
+"
+867,d87da97dff0d4510a841b866f8f4bddd8e0f5811,/5/Dockerfile,"# generating PDFs requires libfontconfig and libfreetype6
+"
+868,d87da97dff0d4510a841b866f8f4bddd8e0f5811,/5/Dockerfile,"# grab gosu for easy step-down from root
+"
+869,d87da97dff0d4510a841b866f8f4bddd8e0f5811,/5/Dockerfile,"# grab tini for signal processing and zombie killing
+"
+870,d87da97dff0d4510a841b866f8f4bddd8e0f5811,/5/Dockerfile,"# https://artifacts.elastic.co/GPG-KEY-elasticsearch
+"
+871,d87da97dff0d4510a841b866f8f4bddd8e0f5811,/5/Dockerfile,"# https://www.elastic.co/guide/en/kibana/5.0/deb.html
+"
+872,d87da97dff0d4510a841b866f8f4bddd8e0f5811,/5/Dockerfile,"# the default ""server.host"" is ""localhost"" in 5+
+"
+873,d87da97dff0d4510a841b866f8f4bddd8e0f5811,/5/Dockerfile,"#\s*)?(server\.host:).*!\2 '0.0.0.0'!"" /etc/kibana/kibana.yml \
+"
+874,d87da97dff0d4510a841b866f8f4bddd8e0f5811,/5/Dockerfile,"# ensure the default configuration is useful when using --link
+"
+875,d87da97dff0d4510a841b866f8f4bddd8e0f5811,/5/Dockerfile,"#\s*)?(elasticsearch\.url:).*!\2 'http://elasticsearch:9200'!"" /etc/kibana/kibana.yml \
+"
+876,5e0efc4e8d90e20f0f7faefa145b9b2aebcb2c5a,/6/Dockerfile,"# Kibana 6.8.9
+
+# This image re-bundles the Docker image from the upstream provider, Elastic.
+"
+877,5e0efc4e8d90e20f0f7faefa145b9b2aebcb2c5a,/6/Dockerfile,"# The upstream image was built by:
+#   https://github.com/elastic/dockerfiles/tree/v6.8.9/kibana
+
+# For a full list of supported images and tags visit https://www.docker.elastic.co
+
+# For documentation visit https://www.elastic.co/guide/en/kibana/current/docker.html
+
+# See https://github.com/docker-library/official-images/pull/4917 for more details.
+"

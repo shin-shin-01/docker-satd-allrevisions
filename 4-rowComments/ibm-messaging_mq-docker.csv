@@ -1,0 +1,2458 @@
+,CommitID,Dockerfiles,Comments
+0,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+1,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+2,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"# The MQ packages to install
+"
+3,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+4,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Download and extract the MQ installation files
+"
+5,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Recommended: Remove packages only needed by this script
+"
+6,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Recommended: Remove any orphaned packages
+"
+7,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+8,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Find directory containing .deb files
+"
+9,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Find location of mqlicense.sh
+"
+10,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Accept the MQ license
+"
+11,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Install MQ using the DEB packages
+"
+12,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+13,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+14,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+15,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Clean up all the downloaded files
+"
+16,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+  # End of bug fixes
+"
+17,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+18,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+19,41847ef9c1f108bd4d59b83f6532ea463fb8dd02,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+20,a8d8920abfeea5a8dbe9c72a45bf15776a16c119,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+21,a8d8920abfeea5a8dbe9c72a45bf15776a16c119,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+22,a8d8920abfeea5a8dbe9c72a45bf15776a16c119,/Dockerfile,"# The MQ packages to install
+"
+23,a8d8920abfeea5a8dbe9c72a45bf15776a16c119,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+24,a8d8920abfeea5a8dbe9c72a45bf15776a16c119,/Dockerfile,"  # Download and extract the MQ installation files
+"
+25,a8d8920abfeea5a8dbe9c72a45bf15776a16c119,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+26,a8d8920abfeea5a8dbe9c72a45bf15776a16c119,/Dockerfile,"  # Accept the MQ license
+"
+27,a8d8920abfeea5a8dbe9c72a45bf15776a16c119,/Dockerfile,"  # Install MQ using the RPM packages
+"
+28,a8d8920abfeea5a8dbe9c72a45bf15776a16c119,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+29,a8d8920abfeea5a8dbe9c72a45bf15776a16c119,/Dockerfile,"  # Clean up all the downloaded files
+"
+30,a8d8920abfeea5a8dbe9c72a45bf15776a16c119,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+31,a8d8920abfeea5a8dbe9c72a45bf15776a16c119,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+32,5617a6a201637a2bf148fef1dc3fc52a29e79f93,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+33,5617a6a201637a2bf148fef1dc3fc52a29e79f93,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+34,5617a6a201637a2bf148fef1dc3fc52a29e79f93,/Dockerfile,"# The MQ packages to install
+"
+35,5617a6a201637a2bf148fef1dc3fc52a29e79f93,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+36,5617a6a201637a2bf148fef1dc3fc52a29e79f93,/Dockerfile,"  # Download and extract the MQ installation files
+"
+37,5617a6a201637a2bf148fef1dc3fc52a29e79f93,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+38,5617a6a201637a2bf148fef1dc3fc52a29e79f93,/Dockerfile,"  # Accept the MQ license
+"
+39,5617a6a201637a2bf148fef1dc3fc52a29e79f93,/Dockerfile,"  # Install MQ using the DEB packages
+"
+40,5617a6a201637a2bf148fef1dc3fc52a29e79f93,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+41,5617a6a201637a2bf148fef1dc3fc52a29e79f93,/Dockerfile,"  # Clean up all the downloaded files
+"
+42,5617a6a201637a2bf148fef1dc3fc52a29e79f93,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+43,5617a6a201637a2bf148fef1dc3fc52a29e79f93,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+44,5617a6a201637a2bf148fef1dc3fc52a29e79f93,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+45,d2d35ed04e0f15452e306aab83c3e6cbb89b0ac1,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+46,d2d35ed04e0f15452e306aab83c3e6cbb89b0ac1,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+47,d2d35ed04e0f15452e306aab83c3e6cbb89b0ac1,/Dockerfile,"# The MQ packages to install
+"
+48,d2d35ed04e0f15452e306aab83c3e6cbb89b0ac1,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+49,d2d35ed04e0f15452e306aab83c3e6cbb89b0ac1,/Dockerfile,"  # Download and extract the MQ installation files
+"
+50,d2d35ed04e0f15452e306aab83c3e6cbb89b0ac1,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+51,d2d35ed04e0f15452e306aab83c3e6cbb89b0ac1,/Dockerfile,"  # Accept the MQ license
+"
+52,d2d35ed04e0f15452e306aab83c3e6cbb89b0ac1,/Dockerfile,"  # Install MQ using the RPM packages
+"
+53,d2d35ed04e0f15452e306aab83c3e6cbb89b0ac1,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+54,d2d35ed04e0f15452e306aab83c3e6cbb89b0ac1,/Dockerfile,"  # Clean up all the downloaded files
+"
+55,d2d35ed04e0f15452e306aab83c3e6cbb89b0ac1,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+56,d2d35ed04e0f15452e306aab83c3e6cbb89b0ac1,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+57,d2d35ed04e0f15452e306aab83c3e6cbb89b0ac1,/Dockerfile,"# Always put the MQ data directory in a Docker volume
+"
+58,dc1053531ef2331b6e680e206cb1edf1936531d9,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+59,dc1053531ef2331b6e680e206cb1edf1936531d9,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+60,dc1053531ef2331b6e680e206cb1edf1936531d9,/Dockerfile,"# The MQ packages to install
+"
+61,dc1053531ef2331b6e680e206cb1edf1936531d9,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+62,dc1053531ef2331b6e680e206cb1edf1936531d9,/Dockerfile,"  # Download and extract the MQ installation files
+"
+63,dc1053531ef2331b6e680e206cb1edf1936531d9,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+64,dc1053531ef2331b6e680e206cb1edf1936531d9,/Dockerfile,"  # Accept the MQ license
+"
+65,dc1053531ef2331b6e680e206cb1edf1936531d9,/Dockerfile,"  # Install MQ using the RPM packages
+"
+66,dc1053531ef2331b6e680e206cb1edf1936531d9,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+67,dc1053531ef2331b6e680e206cb1edf1936531d9,/Dockerfile,"  # Clean up all the downloaded files
+"
+68,dc1053531ef2331b6e680e206cb1edf1936531d9,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+69,dc1053531ef2331b6e680e206cb1edf1936531d9,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+70,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile-mq9-lts,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+71,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile-mq9-lts,"# The URL to download the MQ installer from in tar.gz format
+"
+72,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile-mq9-lts,"# The MQ packages to install
+"
+73,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile-mq9-lts,"  # Optional: Update the command prompt
+"
+74,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile-mq9-lts,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+75,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile-mq9-lts,"  # Download and extract the MQ installation files
+"
+76,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile-mq9-lts,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+77,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile-mq9-lts,"  # Accept the MQ license
+"
+78,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile-mq9-lts,"  # Install MQ using the RPM packages
+"
+79,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile-mq9-lts,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+80,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile-mq9-lts,"  # Clean up all the downloaded files
+"
+81,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile-mq9-lts,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+82,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile-mq9-lts,"# Always put the MQ data directory in a Docker volume
+"
+83,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+84,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+85,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"# The MQ packages to install
+"
+86,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+87,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Download and extract the MQ installation files
+"
+88,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Recommended: Remove packages only needed by this script
+"
+89,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Recommended: Remove any orphaned packages
+"
+90,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+91,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Find directory containing .deb files
+"
+92,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Find location of mqlicense.sh
+"
+93,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Accept the MQ license
+"
+94,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Install MQ using the DEB packages
+"
+95,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+96,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+97,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+98,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Clean up all the downloaded files
+"
+99,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+100,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # End of bug fixes
+"
+101,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+102,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+103,ceec934a526f2c6f88df45c68acb1b5940791b49,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+104,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+105,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+106,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"# The MQ packages to install
+"
+107,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+108,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"  # Download and extract the MQ installation files
+"
+109,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+110,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"  # Accept the MQ license
+"
+111,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"  # Install MQ using the DEB packages
+"
+112,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+113,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+114,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+115,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"  # Clean up all the downloaded files
+"
+116,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+117,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"  # End of bug fixes
+"
+118,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+119,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+120,06bad7e984b7f7689374dfdec04badcf59c622c5,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+121,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+122,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"  # The URL to download the MQ installer from in tar.gz format
+"
+123,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"  # The MQ packages to install
+"
+124,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"  # Optional: Update the command prompt
+"
+125,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"  # Install additional packages required by this install process and the runtime scripts
+"
+126,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"  # Download and extract the MQ installation files
+"
+127,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+128,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"  # Accept the MQ license
+"
+129,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"  # Install MQ using the RPM packages
+"
+130,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+131,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"  # Clean up all the downloaded files
+"
+132,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"# Support the latest functional cmdlevel by default
+"
+133,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+134,78be5263f8b2cb11719a8caed277dd0c73fa5d19,/8.0.0/Dockerfile,"# Always put the MQ data directory is in a Docker volume
+"
+135,6fae3d730a69f9962f93e9b17d06b8ab068e0956,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+136,6fae3d730a69f9962f93e9b17d06b8ab068e0956,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+137,6fae3d730a69f9962f93e9b17d06b8ab068e0956,/Dockerfile,"# The MQ packages to install
+"
+138,6fae3d730a69f9962f93e9b17d06b8ab068e0956,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+139,6fae3d730a69f9962f93e9b17d06b8ab068e0956,/Dockerfile,"  # Download and extract the MQ installation files
+"
+140,6fae3d730a69f9962f93e9b17d06b8ab068e0956,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+141,6fae3d730a69f9962f93e9b17d06b8ab068e0956,/Dockerfile,"  # Accept the MQ license
+"
+142,6fae3d730a69f9962f93e9b17d06b8ab068e0956,/Dockerfile,"  # Install MQ using the RPM packages
+"
+143,6fae3d730a69f9962f93e9b17d06b8ab068e0956,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+144,6fae3d730a69f9962f93e9b17d06b8ab068e0956,/Dockerfile,"  # Clean up all the downloaded files
+"
+145,6fae3d730a69f9962f93e9b17d06b8ab068e0956,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+146,6fae3d730a69f9962f93e9b17d06b8ab068e0956,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+147,6fae3d730a69f9962f93e9b17d06b8ab068e0956,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+148,88bbafc4ca87625b27adb870edc2d6b99a1cccb1,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+149,88bbafc4ca87625b27adb870edc2d6b99a1cccb1,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+150,88bbafc4ca87625b27adb870edc2d6b99a1cccb1,/Dockerfile,"# The MQ packages to install
+"
+151,88bbafc4ca87625b27adb870edc2d6b99a1cccb1,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+152,88bbafc4ca87625b27adb870edc2d6b99a1cccb1,/Dockerfile,"  # Download and extract the MQ installation files
+"
+153,88bbafc4ca87625b27adb870edc2d6b99a1cccb1,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+154,88bbafc4ca87625b27adb870edc2d6b99a1cccb1,/Dockerfile,"  # Accept the MQ license
+"
+155,88bbafc4ca87625b27adb870edc2d6b99a1cccb1,/Dockerfile,"  # Install MQ using the RPM packages
+"
+156,88bbafc4ca87625b27adb870edc2d6b99a1cccb1,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+157,88bbafc4ca87625b27adb870edc2d6b99a1cccb1,/Dockerfile,"  # Clean up all the downloaded files
+"
+158,88bbafc4ca87625b27adb870edc2d6b99a1cccb1,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+159,88bbafc4ca87625b27adb870edc2d6b99a1cccb1,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+160,88bbafc4ca87625b27adb870edc2d6b99a1cccb1,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+161,6bc9cc569a4bf1af83dae4436e5cec229f1e5c6a,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+162,6bc9cc569a4bf1af83dae4436e5cec229f1e5c6a,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+163,6bc9cc569a4bf1af83dae4436e5cec229f1e5c6a,/Dockerfile,"# The MQ packages to install
+"
+164,6bc9cc569a4bf1af83dae4436e5cec229f1e5c6a,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+165,6bc9cc569a4bf1af83dae4436e5cec229f1e5c6a,/Dockerfile,"  # Download and extract the MQ installation files
+"
+166,6bc9cc569a4bf1af83dae4436e5cec229f1e5c6a,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+167,6bc9cc569a4bf1af83dae4436e5cec229f1e5c6a,/Dockerfile,"  # Accept the MQ license
+"
+168,6bc9cc569a4bf1af83dae4436e5cec229f1e5c6a,/Dockerfile,"  # Install MQ using the RPM packages
+"
+169,6bc9cc569a4bf1af83dae4436e5cec229f1e5c6a,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+170,6bc9cc569a4bf1af83dae4436e5cec229f1e5c6a,/Dockerfile,"  # Clean up all the downloaded files
+"
+171,6bc9cc569a4bf1af83dae4436e5cec229f1e5c6a,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+172,6bc9cc569a4bf1af83dae4436e5cec229f1e5c6a,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+173,e5facaa8d5852d7cb2d0eaa7d2ae7a86c19b924a,/test/Dockerfile,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+174,bd8ebeea98431b17932a3e568b20c19b714d1c2b,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+175,bd8ebeea98431b17932a3e568b20c19b714d1c2b,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+176,bd8ebeea98431b17932a3e568b20c19b714d1c2b,/Dockerfile,"# The MQ packages to install
+"
+177,bd8ebeea98431b17932a3e568b20c19b714d1c2b,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+178,bd8ebeea98431b17932a3e568b20c19b714d1c2b,/Dockerfile,"  # Download and extract the MQ installation files
+"
+179,bd8ebeea98431b17932a3e568b20c19b714d1c2b,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+180,bd8ebeea98431b17932a3e568b20c19b714d1c2b,/Dockerfile,"  # Accept the MQ license
+"
+181,bd8ebeea98431b17932a3e568b20c19b714d1c2b,/Dockerfile,"  # Install MQ using the RPM packages
+"
+182,bd8ebeea98431b17932a3e568b20c19b714d1c2b,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+183,bd8ebeea98431b17932a3e568b20c19b714d1c2b,/Dockerfile,"  # Clean up all the downloaded files
+"
+184,bd8ebeea98431b17932a3e568b20c19b714d1c2b,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+185,bd8ebeea98431b17932a3e568b20c19b714d1c2b,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+186,bd8ebeea98431b17932a3e568b20c19b714d1c2b,/Dockerfile,"# Always put the MQ data directory in a Docker volume
+"
+187,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+188,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+189,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"# The MQ packages to install
+"
+190,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+191,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"  # Download and extract the MQ installation files
+"
+192,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+193,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"  # Accept the MQ license
+"
+194,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"  # Install MQ using the DEB packages
+"
+195,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+196,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+197,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+198,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"  # Clean up all the downloaded files
+"
+199,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+200,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"  # End of bug fixes
+"
+201,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+202,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+203,987d6e38179f2cf57e4f7deeca8a39a1f1e1ab87,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+204,faaced542cbe782051dfbe5cc683901629f116e7,/test/Dockerfile,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+205,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+206,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"  # The URL to download the MQ installer from in tar.gz format
+"
+207,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"  # The MQ packages to install
+"
+208,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"  # Optional: Update the command prompt
+"
+209,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"  # Install additional packages required by this install process and the runtime scripts
+"
+210,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"  # Download and extract the MQ installation files
+"
+211,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+212,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"  # Accept the MQ license
+"
+213,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"  # Install MQ using the RPM packages
+"
+214,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+215,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"  # Clean up all the downloaded files
+"
+216,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"# Support the latest functional cmdlevel by default
+"
+217,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+218,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile-mq8,"# Always put the MQ data directory in a Docker volume
+"
+219,fabc4b7966d04024c98ec9508ef9e3a6f1919d0f,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+
+"
+220,fabc4b7966d04024c98ec9508ef9e3a6f1919d0f,/8.0.0/Dockerfile,"	# Bypass defect in the ""mqconfig"" script
+"
+221,fabc4b7966d04024c98ec9508ef9e3a6f1919d0f,/8.0.0/Dockerfile,"#CheckShellDefaultOptions;g"" /opt/mqm/bin/mqconfig
+
+"
+222,fabc4b7966d04024c98ec9508ef9e3a6f1919d0f,/8.0.0/Dockerfile,"# Make sure the MQ environment is available for ""docker exec"" under non-interactive Bash
+"
+223,fabc4b7966d04024c98ec9508ef9e3a6f1919d0f,/8.0.0/Dockerfile,"# Support the latest functional cmdlevel by default
+"
+224,38e036d5456b268245be68ad40df0221bf87eea9,/server/Dockerfile,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+225,38e036d5456b268245be68ad40df0221bf87eea9,/server/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+226,38e036d5456b268245be68ad40df0221bf87eea9,/server/Dockerfile,"# The MQ packages to install
+"
+227,38e036d5456b268245be68ad40df0221bf87eea9,/server/Dockerfile,"  # Optional: Update the command prompt
+"
+228,38e036d5456b268245be68ad40df0221bf87eea9,/server/Dockerfile,"  # Install additional packages required by this install process and the runtime scripts
+"
+229,38e036d5456b268245be68ad40df0221bf87eea9,/server/Dockerfile,"  # Download and extract the MQ installation files
+"
+230,38e036d5456b268245be68ad40df0221bf87eea9,/server/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+231,38e036d5456b268245be68ad40df0221bf87eea9,/server/Dockerfile,"  # Accept the MQ license
+"
+232,38e036d5456b268245be68ad40df0221bf87eea9,/server/Dockerfile,"  # Install MQ using the RPM packages
+"
+233,38e036d5456b268245be68ad40df0221bf87eea9,/server/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+234,38e036d5456b268245be68ad40df0221bf87eea9,/server/Dockerfile,"  # Clean up all the downloaded files
+"
+235,38e036d5456b268245be68ad40df0221bf87eea9,/server/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+236,38e036d5456b268245be68ad40df0221bf87eea9,/server/Dockerfile,"# Always put the MQ data directory in a Docker volume
+"
+237,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+238,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+239,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"# The MQ packages to install
+"
+240,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+241,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"  # Download and extract the MQ installation files
+"
+242,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+243,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"  # Accept the MQ license
+"
+244,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"  # Install MQ using the DEB packages
+"
+245,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+246,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+247,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+248,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"  # Clean up all the downloaded files
+"
+249,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+250,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"  # End of bug fixes
+"
+251,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+252,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+253,e2c086383324eb78981a78239df91e04ee5b9ab1,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+254,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+255,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+256,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"# The MQ packages to install
+"
+257,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+258,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"  # Download and extract the MQ installation files
+"
+259,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+260,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"  # Accept the MQ license
+"
+261,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"  # Install MQ using the RPM packages
+"
+262,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+263,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"  # Clean up all the downloaded files
+"
+264,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+265,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"  # End of bug fixes
+"
+266,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+267,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+268,797b195b6631268ccf5b9cd4f3dd6af814b92de5,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+269,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+270,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+271,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"# The MQ packages to install
+"
+272,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+273,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Download and extract the MQ installation files
+"
+274,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Recommended: Remove packages only needed by this script
+"
+275,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Recommended: Remove any orphaned packages
+"
+276,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+277,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Find directory containing .deb files
+"
+278,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Find location of mqlicense.sh
+"
+279,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Accept the MQ license
+"
+280,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Install MQ using the DEB packages
+"
+281,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+282,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+283,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+284,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Clean up all the downloaded files
+"
+285,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+286,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # End of bug fixes
+"
+287,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+288,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+289,62d4287a9f3686685b7a03b44516951b2f1d8b18,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+290,5d0571f3fe142af5a728c91301232b6c199fe662,/server/Dockerfile,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+291,5d0571f3fe142af5a728c91301232b6c199fe662,/server/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+292,5d0571f3fe142af5a728c91301232b6c199fe662,/server/Dockerfile,"# The MQ packages to install
+"
+293,5d0571f3fe142af5a728c91301232b6c199fe662,/server/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+294,5d0571f3fe142af5a728c91301232b6c199fe662,/server/Dockerfile,"  # Download and extract the MQ installation files
+"
+295,5d0571f3fe142af5a728c91301232b6c199fe662,/server/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+296,5d0571f3fe142af5a728c91301232b6c199fe662,/server/Dockerfile,"  # Accept the MQ license
+"
+297,5d0571f3fe142af5a728c91301232b6c199fe662,/server/Dockerfile,"  # Install MQ using the RPM packages
+"
+298,5d0571f3fe142af5a728c91301232b6c199fe662,/server/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+299,5d0571f3fe142af5a728c91301232b6c199fe662,/server/Dockerfile,"  # Clean up all the downloaded files
+"
+300,5d0571f3fe142af5a728c91301232b6c199fe662,/server/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+301,5d0571f3fe142af5a728c91301232b6c199fe662,/server/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+302,5d0571f3fe142af5a728c91301232b6c199fe662,/server/Dockerfile,"# Always put the MQ data directory in a Docker volume
+"
+303,36e58004c5c828a0987186faebcf5804bda4de8f,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+
+"
+304,36e58004c5c828a0987186faebcf5804bda4de8f,/8.0.0/Dockerfile,"	# Bypass defect in the ""mqconfig"" script
+"
+305,36e58004c5c828a0987186faebcf5804bda4de8f,/8.0.0/Dockerfile,"#CheckShellDefaultOptions;g"" /opt/mqm/bin/mqconfig
+
+"
+306,36e58004c5c828a0987186faebcf5804bda4de8f,/8.0.0/Dockerfile,"# Make sure the MQ environment is available for ""docker exec"" under non-interactive Bash
+"
+307,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+
+"
+308,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"  # The URL to download the MQ installer from in tar.gz format
+"
+309,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"  # The MQ packages to install
+"
+310,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"  # Optional: Update the command prompt
+"
+311,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"  # Install additional packages required by this install process and the runtime scripts
+"
+312,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"  # Download and extract the MQ installation files
+"
+313,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+314,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"  # Accept the MQ license
+"
+315,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"  # Install MQ using the RPM packages
+"
+316,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+317,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"  # Clean up all the downloaded files
+"
+318,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"  # Bypass defect in the ""mqconfig"" script
+"
+319,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"#CheckShellDefaultOptions;g"" /opt/mqm/bin/mqconfig
+
+"
+320,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"# Support the latest functional cmdlevel by default
+"
+321,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+322,4e9848ea86289456c575f8afbd926e5fb110cd74,/8.0.0/Dockerfile,"# Always put the MQ data directory is in a Docker volume
+"
+323,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+324,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+325,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"# The MQ packages to install
+"
+326,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+327,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"  # Download and extract the MQ installation files
+"
+328,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+329,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"  # Accept the MQ license
+"
+330,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"  # Install MQ using the RPM packages
+"
+331,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+332,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"  # Clean up all the downloaded files
+"
+333,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+334,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+335,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"# Always put the MQ data directory in a Docker volume
+"
+336,884e8076e9dd137afd75c846ce882062e75ce6d2,/server/Dockerfile,"#ENV LANG=C.UTF-8
+"
+337,3ab13abd14171a36b7a4e594f43c2875a98e49bd,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+338,3ab13abd14171a36b7a4e594f43c2875a98e49bd,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+339,3ab13abd14171a36b7a4e594f43c2875a98e49bd,/Dockerfile,"# The MQ packages to install
+"
+340,3ab13abd14171a36b7a4e594f43c2875a98e49bd,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+341,3ab13abd14171a36b7a4e594f43c2875a98e49bd,/Dockerfile,"  # Download and extract the MQ installation files
+"
+342,3ab13abd14171a36b7a4e594f43c2875a98e49bd,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+343,3ab13abd14171a36b7a4e594f43c2875a98e49bd,/Dockerfile,"  # Accept the MQ license
+"
+344,3ab13abd14171a36b7a4e594f43c2875a98e49bd,/Dockerfile,"  # Install MQ using the RPM packages
+"
+345,3ab13abd14171a36b7a4e594f43c2875a98e49bd,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+346,3ab13abd14171a36b7a4e594f43c2875a98e49bd,/Dockerfile,"  # Clean up all the downloaded files
+"
+347,3ab13abd14171a36b7a4e594f43c2875a98e49bd,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+348,3ab13abd14171a36b7a4e594f43c2875a98e49bd,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+349,3ab13abd14171a36b7a4e594f43c2875a98e49bd,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+350,aac7d2113b123236e8ddf55dad9d40181d06ff3b,/test/Dockerfile,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+351,9928128d741f01fde55d72b686e6713f01d18a6a,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+352,9928128d741f01fde55d72b686e6713f01d18a6a,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+353,9928128d741f01fde55d72b686e6713f01d18a6a,/Dockerfile,"# The MQ packages to install
+"
+354,9928128d741f01fde55d72b686e6713f01d18a6a,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+355,9928128d741f01fde55d72b686e6713f01d18a6a,/Dockerfile,"  # Download and extract the MQ installation files
+"
+356,9928128d741f01fde55d72b686e6713f01d18a6a,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+357,9928128d741f01fde55d72b686e6713f01d18a6a,/Dockerfile,"  # Accept the MQ license
+"
+358,9928128d741f01fde55d72b686e6713f01d18a6a,/Dockerfile,"  # Install MQ using the RPM packages
+"
+359,9928128d741f01fde55d72b686e6713f01d18a6a,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+360,9928128d741f01fde55d72b686e6713f01d18a6a,/Dockerfile,"  # Clean up all the downloaded files
+"
+361,9928128d741f01fde55d72b686e6713f01d18a6a,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+362,9928128d741f01fde55d72b686e6713f01d18a6a,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+363,9928128d741f01fde55d72b686e6713f01d18a6a,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+364,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+365,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+366,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"# The MQ packages to install
+"
+367,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+368,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"  # Download and extract the MQ installation files
+"
+369,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+370,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"  # Accept the MQ license
+"
+371,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"  # Install MQ using the DEB packages
+"
+372,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+373,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+374,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+375,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"  # Clean up all the downloaded files
+"
+376,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+377,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"  # End of bug fixes
+"
+378,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+379,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+380,638feff82885e25c4bd4b3cb5ab4a5a41b185e4f,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+381,45011879e0a0d9925d9d9bd15e5ebbbdac867c9d,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+382,45011879e0a0d9925d9d9bd15e5ebbbdac867c9d,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+383,45011879e0a0d9925d9d9bd15e5ebbbdac867c9d,/Dockerfile,"# The MQ packages to install
+"
+384,45011879e0a0d9925d9d9bd15e5ebbbdac867c9d,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+385,45011879e0a0d9925d9d9bd15e5ebbbdac867c9d,/Dockerfile,"  # Download and extract the MQ installation files
+"
+386,45011879e0a0d9925d9d9bd15e5ebbbdac867c9d,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+387,45011879e0a0d9925d9d9bd15e5ebbbdac867c9d,/Dockerfile,"  # Accept the MQ license
+"
+388,45011879e0a0d9925d9d9bd15e5ebbbdac867c9d,/Dockerfile,"  # Install MQ using the RPM packages
+"
+389,45011879e0a0d9925d9d9bd15e5ebbbdac867c9d,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+390,45011879e0a0d9925d9d9bd15e5ebbbdac867c9d,/Dockerfile,"  # Clean up all the downloaded files
+"
+391,45011879e0a0d9925d9d9bd15e5ebbbdac867c9d,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+392,45011879e0a0d9925d9d9bd15e5ebbbdac867c9d,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+393,45011879e0a0d9925d9d9bd15e5ebbbdac867c9d,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+394,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+395,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+396,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"# The MQ packages to install
+"
+397,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+398,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"  # Download and extract the MQ installation files
+"
+399,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+400,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"  # Accept the MQ license
+"
+401,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"  # Install MQ using the DEB packages
+"
+402,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+403,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+404,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+405,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"  # Clean up all the downloaded files
+"
+406,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+407,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"  # End of bug fixes
+"
+408,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+409,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+410,5706926981620d2cd08585c5859c50fe5b1b4052,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+411,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+
+"
+412,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"  # The URL to download the MQ installer from in tar.gz format
+"
+413,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"  # The MQ packages to install
+"
+414,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"  # Optional: Update the command prompt
+"
+415,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"  # Install additional packages required by this install process and the runtime scripts
+"
+416,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"  # Download and extract the MQ installation files
+"
+417,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+418,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"  # Accept the MQ license
+"
+419,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"  # Install MQ using the RPM packages
+"
+420,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+421,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"  # Clean up all the downloaded files
+"
+422,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"  # Bypass defect in the ""mqconfig"" script
+"
+423,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"#CheckShellDefaultOptions;g"" /opt/mqm/bin/mqconfig
+
+"
+424,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"# Support the latest functional cmdlevel by default
+"
+425,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+426,bb9c06e7a3d1dfc26bf766e9f6031264d24b2e33,/8.0.0/Dockerfile,"# Always put the MQ data directory is in a Docker volume
+"
+427,1aa074a9998167f78cef3ee2534ba3f93da3537a,/server/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+428,1aa074a9998167f78cef3ee2534ba3f93da3537a,/server/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+429,1aa074a9998167f78cef3ee2534ba3f93da3537a,/server/Dockerfile,"# The MQ packages to install
+"
+430,1aa074a9998167f78cef3ee2534ba3f93da3537a,/server/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+431,1aa074a9998167f78cef3ee2534ba3f93da3537a,/server/Dockerfile,"  # Download and extract the MQ installation files
+"
+432,1aa074a9998167f78cef3ee2534ba3f93da3537a,/server/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+433,1aa074a9998167f78cef3ee2534ba3f93da3537a,/server/Dockerfile,"  # Accept the MQ license
+"
+434,1aa074a9998167f78cef3ee2534ba3f93da3537a,/server/Dockerfile,"  # Install MQ using the RPM packages
+"
+435,1aa074a9998167f78cef3ee2534ba3f93da3537a,/server/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+436,1aa074a9998167f78cef3ee2534ba3f93da3537a,/server/Dockerfile,"  # Clean up all the downloaded files
+"
+437,1aa074a9998167f78cef3ee2534ba3f93da3537a,/server/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+438,1aa074a9998167f78cef3ee2534ba3f93da3537a,/server/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+439,1aa074a9998167f78cef3ee2534ba3f93da3537a,/server/Dockerfile,"# Always put the MQ data directory in a Docker volume
+"
+440,476eda608c8dc4caed7de4ae8181d257b73bf49c,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+441,476eda608c8dc4caed7de4ae8181d257b73bf49c,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+442,476eda608c8dc4caed7de4ae8181d257b73bf49c,/Dockerfile,"# The MQ packages to install
+"
+443,476eda608c8dc4caed7de4ae8181d257b73bf49c,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+444,476eda608c8dc4caed7de4ae8181d257b73bf49c,/Dockerfile,"  # Download and extract the MQ installation files
+"
+445,476eda608c8dc4caed7de4ae8181d257b73bf49c,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+446,476eda608c8dc4caed7de4ae8181d257b73bf49c,/Dockerfile,"  # Accept the MQ license
+"
+447,476eda608c8dc4caed7de4ae8181d257b73bf49c,/Dockerfile,"  # Install MQ using the RPM packages
+"
+448,476eda608c8dc4caed7de4ae8181d257b73bf49c,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+449,476eda608c8dc4caed7de4ae8181d257b73bf49c,/Dockerfile,"  # Clean up all the downloaded files
+"
+450,476eda608c8dc4caed7de4ae8181d257b73bf49c,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+451,476eda608c8dc4caed7de4ae8181d257b73bf49c,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+452,476eda608c8dc4caed7de4ae8181d257b73bf49c,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+453,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+454,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+455,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"# The MQ packages to install
+"
+456,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+457,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"  # Download and extract the MQ installation files
+"
+458,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+459,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"  # Accept the MQ license
+"
+460,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"  # Install MQ using the RPM packages
+"
+461,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+462,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"  # Clean up all the downloaded files
+"
+463,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+464,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"  # End of bug fixes
+"
+465,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+466,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+467,081b795bdb671b24b6b2d805ef541f3109e3fbdc,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+468,e41f4b5616d1dd664b16f767b467d15221ce4549,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+
+"
+469,e41f4b5616d1dd664b16f767b467d15221ce4549,/8.0.0/Dockerfile,"  # Bypass defect in the ""mqconfig"" script
+"
+470,e41f4b5616d1dd664b16f767b467d15221ce4549,/8.0.0/Dockerfile,"#CheckShellDefaultOptions;g"" /opt/mqm/bin/mqconfig
+
+"
+471,e41f4b5616d1dd664b16f767b467d15221ce4549,/8.0.0/Dockerfile,"# Support the latest functional cmdlevel by default
+"
+472,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+473,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+474,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"# The MQ packages to install
+"
+475,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+476,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Download and extract the MQ installation files
+"
+477,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+478,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Find directory containing .deb files
+"
+479,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Find location of mqlicense.sh
+"
+480,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Accept the MQ license
+"
+481,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Install MQ using the DEB packages
+"
+482,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+483,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+484,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+485,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Clean up all the downloaded files
+"
+486,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+487,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # End of bug fixes
+"
+488,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+489,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+490,54c4ed809058026f80e03dcd4a184018048fdba1,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+491,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+492,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+493,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"# The MQ packages to install
+"
+494,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+495,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"  # Download and extract the MQ installation files
+"
+496,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+497,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"  # Accept the MQ license
+"
+498,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"  # Install MQ using the DEB packages
+"
+499,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+500,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"  # Clean up all the downloaded files
+"
+501,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+502,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"  # End of bug fixes
+"
+503,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+504,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+505,473263b14124d36b810104a5941e8597636e2bae,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+506,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+507,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+508,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"# The MQ packages to install
+"
+509,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+510,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"  # Download and extract the MQ installation files
+"
+511,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+512,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"  # Accept the MQ license
+"
+513,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"  # Install MQ using the RPM packages
+"
+514,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+515,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"  # Clean up all the downloaded files
+"
+516,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+517,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+518,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"  # We should do this to make sure we have the latest fixes.
+"
+519,914c40d30fa23ea20e8676679df54344d1355e11,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+520,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+521,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+522,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"# The MQ packages to install
+"
+523,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+524,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"  # Download and extract the MQ installation files
+"
+525,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+526,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"  # Accept the MQ license
+"
+527,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"  # Install MQ using the DEB packages
+"
+528,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+529,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+530,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+531,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"  # Clean up all the downloaded files
+"
+532,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+533,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"  # End of bug fixes
+"
+534,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+535,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+536,d2e279e8bb36912ea0b6b6ae51675ff40cbb5979,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+537,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+538,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+539,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"# The MQ packages to install
+"
+540,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+541,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"  # Download and extract the MQ installation files
+"
+542,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+543,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"  # Accept the MQ license
+"
+544,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"  # Install MQ using the DEB packages
+"
+545,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+546,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+547,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+548,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"  # Clean up all the downloaded files
+"
+549,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+550,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"  # End of bug fixes
+"
+551,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+552,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+553,74aba3e53cdc7badeb21382be2b04d61bbe9208d,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+554,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+
+"
+555,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"  # The URL to download the MQ installer from in tar.gz format
+"
+556,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"  # The MQ packages to install
+"
+557,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"  # Optional: Update the command prompt
+"
+558,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"  # Install additional packages required by this install process and the runtime scripts
+"
+559,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"  # Download and extract the MQ installation files
+"
+560,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+561,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"  # Accept the MQ license
+"
+562,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"  # Install MQ using the RPM packages
+"
+563,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+564,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"  # Clean up all the downloaded files
+"
+565,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"# Support the latest functional cmdlevel by default
+"
+566,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+567,601dc122129b4a97413a74deee1365ea0dac6e08,/8.0.0/Dockerfile,"# Always put the MQ data directory is in a Docker volume
+"
+568,e09df817ab7f513608991774afbd9b74cb47b5fd,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+569,e09df817ab7f513608991774afbd9b74cb47b5fd,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+570,e09df817ab7f513608991774afbd9b74cb47b5fd,/Dockerfile,"# The MQ packages to install
+"
+571,e09df817ab7f513608991774afbd9b74cb47b5fd,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+572,e09df817ab7f513608991774afbd9b74cb47b5fd,/Dockerfile,"  # Download and extract the MQ installation files
+"
+573,e09df817ab7f513608991774afbd9b74cb47b5fd,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+574,e09df817ab7f513608991774afbd9b74cb47b5fd,/Dockerfile,"  # Accept the MQ license
+"
+575,e09df817ab7f513608991774afbd9b74cb47b5fd,/Dockerfile,"  # Install MQ using the RPM packages
+"
+576,e09df817ab7f513608991774afbd9b74cb47b5fd,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+577,e09df817ab7f513608991774afbd9b74cb47b5fd,/Dockerfile,"  # Clean up all the downloaded files
+"
+578,e09df817ab7f513608991774afbd9b74cb47b5fd,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+579,e09df817ab7f513608991774afbd9b74cb47b5fd,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+580,e09df817ab7f513608991774afbd9b74cb47b5fd,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+581,431d961e7313d877fa4ac51f452d204623a1b312,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+
+"
+582,431d961e7313d877fa4ac51f452d204623a1b312,/8.0.0/Dockerfile,"	# Bypass defect in the ""mqconfig"" script
+"
+583,431d961e7313d877fa4ac51f452d204623a1b312,/8.0.0/Dockerfile,"#CheckShellDefaultOptions;g"" /opt/mqm/bin/mqconfig
+
+"
+584,431d961e7313d877fa4ac51f452d204623a1b312,/8.0.0/Dockerfile,"# Make sure the MQ environment is available for ""docker exec"" under non-interactive Bash
+"
+585,431d961e7313d877fa4ac51f452d204623a1b312,/8.0.0/Dockerfile,"# Support the latest functional cmdlevel by default
+"
+586,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+587,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"  # The URL to download the MQ installer from in tar.gz format
+"
+588,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"  # The MQ packages to install
+"
+589,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"  # Optional: Update the command prompt
+"
+590,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"  # Install additional packages required by this install process and the runtime scripts
+"
+591,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"  # Download and extract the MQ installation files
+"
+592,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+593,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"  # Accept the MQ license
+"
+594,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"  # Install MQ using the RPM packages
+"
+595,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+596,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"  # Clean up all the downloaded files
+"
+597,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+598,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"# Always put the MQ data directory in a Docker volume
+"
+599,19cf5e76ece622c8e6400076b8cb30e19e826f79,/server/Dockerfile,"# Run MQ and health-checking script as the ""mqm"" user
+"
+600,9042afcbadca47da56b710cff9c563c0404b62c5,/test/Dockerfile,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+601,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+602,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+603,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"# The MQ packages to install
+"
+604,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+605,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Download and extract the MQ installation files
+"
+606,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+607,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Find directory containing .deb files
+"
+608,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Find location of mqlicense.sh
+"
+609,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Accept the MQ license
+"
+610,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Install MQ using the DEB packages
+"
+611,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+612,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+613,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+614,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Clean up all the downloaded files
+"
+615,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+616,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # End of bug fixes
+"
+617,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+618,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+619,35ec516b80c803a6d26d58c602bc7f828629e3fb,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+620,fc59d36a500f18c7e4608a38ec38c784de3ad580,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+621,fc59d36a500f18c7e4608a38ec38c784de3ad580,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+622,fc59d36a500f18c7e4608a38ec38c784de3ad580,/Dockerfile,"# The MQ packages to install
+"
+623,fc59d36a500f18c7e4608a38ec38c784de3ad580,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+624,fc59d36a500f18c7e4608a38ec38c784de3ad580,/Dockerfile,"  # Download and extract the MQ installation files
+"
+625,fc59d36a500f18c7e4608a38ec38c784de3ad580,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+626,fc59d36a500f18c7e4608a38ec38c784de3ad580,/Dockerfile,"  # Accept the MQ license
+"
+627,fc59d36a500f18c7e4608a38ec38c784de3ad580,/Dockerfile,"  # Install MQ using the RPM packages
+"
+628,fc59d36a500f18c7e4608a38ec38c784de3ad580,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+629,fc59d36a500f18c7e4608a38ec38c784de3ad580,/Dockerfile,"  # Clean up all the downloaded files
+"
+630,fc59d36a500f18c7e4608a38ec38c784de3ad580,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+631,fc59d36a500f18c7e4608a38ec38c784de3ad580,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+632,fc59d36a500f18c7e4608a38ec38c784de3ad580,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+633,a587e381aaed75a8fa7368b0ae7793fb5e0cd819,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+
+"
+634,a587e381aaed75a8fa7368b0ae7793fb5e0cd819,/8.0.0/Dockerfile,"	# Bypass defect in the ""mqconfig"" script
+"
+635,a587e381aaed75a8fa7368b0ae7793fb5e0cd819,/8.0.0/Dockerfile,"#CheckShellDefaultOptions;g"" /opt/mqm/bin/mqconfig
+
+"
+636,a587e381aaed75a8fa7368b0ae7793fb5e0cd819,/8.0.0/Dockerfile,"# Make sure the MQ environment is available for ""docker exec"" under non-interactive Bash
+"
+637,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+638,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"  # The URL to download the MQ installer from in tar.gz format
+"
+639,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"  # The MQ packages to install
+"
+640,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"  # Optional: Update the command prompt
+"
+641,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"  # Install additional packages required by this install process and the runtime scripts
+"
+642,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"  # Download and extract the MQ installation files
+"
+643,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+644,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"  # Accept the MQ license
+"
+645,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"  # Install MQ using the RPM packages
+"
+646,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+647,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"  # Clean up all the downloaded files
+"
+648,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"# Support the latest functional cmdlevel by default
+"
+649,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+650,0a3be9c0dac51e1344094ed8259d0dc0553c2e85,/8.0.0/Dockerfile,"# Always put the MQ data directory in a Docker volume
+"
+651,8ae8510a5b83a201c0232b65b5781f63aeb127bd,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+
+"
+652,8ae8510a5b83a201c0232b65b5781f63aeb127bd,/8.0.0/Dockerfile,"  # Bypass defect in the ""mqconfig"" script
+"
+653,8ae8510a5b83a201c0232b65b5781f63aeb127bd,/8.0.0/Dockerfile,"#CheckShellDefaultOptions;g"" /opt/mqm/bin/mqconfig
+
+"
+654,8ae8510a5b83a201c0232b65b5781f63aeb127bd,/8.0.0/Dockerfile,"# Make sure the MQ environment is available for ""docker exec"" under non-interactive Bash
+"
+655,8ae8510a5b83a201c0232b65b5781f63aeb127bd,/8.0.0/Dockerfile,"# Support the latest functional cmdlevel by default
+"
+656,8143f7307665b8bc487e6b2e62c97e3164d6eb87,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+
+"
+657,8143f7307665b8bc487e6b2e62c97e3164d6eb87,/8.0.0/Dockerfile,"	# Bypass defect in the ""mqconfig"" script
+"
+658,8143f7307665b8bc487e6b2e62c97e3164d6eb87,/8.0.0/Dockerfile,"#CheckShellDefaultOptions;g"" /opt/mqm/bin/mqconfig
+
+"
+659,8143f7307665b8bc487e6b2e62c97e3164d6eb87,/8.0.0/Dockerfile,"# Make sure the MQ environment is available for ""docker exec"" under non-interactive Bash
+"
+660,44a65eb5787aabc403e20a822cae87c973fcf7f4,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+
+"
+661,44a65eb5787aabc403e20a822cae87c973fcf7f4,/8.0.0/Dockerfile,"  # Bypass defect in the ""mqconfig"" script
+"
+662,44a65eb5787aabc403e20a822cae87c973fcf7f4,/8.0.0/Dockerfile,"#CheckShellDefaultOptions;g"" /opt/mqm/bin/mqconfig
+
+"
+663,44a65eb5787aabc403e20a822cae87c973fcf7f4,/8.0.0/Dockerfile,"# Support the latest functional cmdlevel by default
+"
+664,fc6518ae1369fe051fe561552572d01491cfc6d3,/8.0.0/Dockerfile,"# © Copyright IBM Corporation 2015.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+
+"
+665,fc6518ae1369fe051fe561552572d01491cfc6d3,/8.0.0/Dockerfile,"	# Bypass defect in the ""mqconfig"" script
+"
+666,fc6518ae1369fe051fe561552572d01491cfc6d3,/8.0.0/Dockerfile,"#CheckShellDefaultOptions;g"" /opt/mqm/bin/mqconfig
+
+"
+667,fc6518ae1369fe051fe561552572d01491cfc6d3,/8.0.0/Dockerfile,"# Make sure the MQ environment is available for ""docker exec"" under non-interactive Bash
+"
+668,8e7393a8023d120a32d6c78e877d2e2624b88fe6,/server/Dockerfile,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+669,8e7393a8023d120a32d6c78e877d2e2624b88fe6,/server/Dockerfile,"  # The URL to download the MQ installer from in tar.gz format
+"
+670,8e7393a8023d120a32d6c78e877d2e2624b88fe6,/server/Dockerfile,"  # The MQ packages to install
+"
+671,8e7393a8023d120a32d6c78e877d2e2624b88fe6,/server/Dockerfile,"  # Optional: Update the command prompt
+"
+672,8e7393a8023d120a32d6c78e877d2e2624b88fe6,/server/Dockerfile,"  # Install additional packages required by this install process and the runtime scripts
+"
+673,8e7393a8023d120a32d6c78e877d2e2624b88fe6,/server/Dockerfile,"  # Download and extract the MQ installation files
+"
+674,8e7393a8023d120a32d6c78e877d2e2624b88fe6,/server/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+675,8e7393a8023d120a32d6c78e877d2e2624b88fe6,/server/Dockerfile,"  # Accept the MQ license
+"
+676,8e7393a8023d120a32d6c78e877d2e2624b88fe6,/server/Dockerfile,"  # Install MQ using the RPM packages
+"
+677,8e7393a8023d120a32d6c78e877d2e2624b88fe6,/server/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+678,8e7393a8023d120a32d6c78e877d2e2624b88fe6,/server/Dockerfile,"  # Clean up all the downloaded files
+"
+679,8e7393a8023d120a32d6c78e877d2e2624b88fe6,/server/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+680,8e7393a8023d120a32d6c78e877d2e2624b88fe6,/server/Dockerfile,"# Always put the MQ data directory in a Docker volume
+"
+681,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+682,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"  # The URL to download the MQ installer from in tar.gz format
+"
+683,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"  # The MQ packages to install
+"
+684,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"  # Optional: Update the command prompt
+"
+685,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"  # Install additional packages required by this install process and the runtime scripts
+"
+686,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"  # Download and extract the MQ installation files
+"
+687,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+688,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"  # Accept the MQ license
+"
+689,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"  # Install MQ using the RPM packages
+"
+690,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+691,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"  # Clean up all the downloaded files
+"
+692,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+693,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"# Always put the MQ data directory in a Docker volume
+"
+694,2bf6f038868b0170e0a20eb7380b1f486f9ea31f,/server/Dockerfile,"# Run MQ and health-checking script as the ""mqm"" user
+"
+695,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+696,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+697,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"# The MQ packages to install
+"
+698,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+699,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Download and extract the MQ installation files
+"
+700,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Recommended: Remove packages only needed by this script
+"
+701,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Recommended: Remove any orphaned packages
+"
+702,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+703,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Find directory containing .deb files
+"
+704,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Find location of mqlicense.sh
+"
+705,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Accept the MQ license
+"
+706,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Install MQ using the DEB packages
+"
+707,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+708,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+709,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+710,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Clean up all the downloaded files
+"
+711,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+712,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # End of bug fixes
+"
+713,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+714,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+715,bf3099a503bb1a5e62e66c118acc698d0b4dc957,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+716,d1492b00e82e311c1471c595cb79b7dbf1a5366c,/MQ-for-Developers/Dockerfile,"# © Copyright IBM Corporation 2015.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+
+"
+717,d1492b00e82e311c1471c595cb79b7dbf1a5366c,/MQ-for-Developers/Dockerfile,"	# Bypass defect in the ""mqconfig"" script
+"
+718,d1492b00e82e311c1471c595cb79b7dbf1a5366c,/MQ-for-Developers/Dockerfile,"#CheckShellDefaultOptions;g"" /opt/mqm/bin/mqconfig
+
+"
+719,d1492b00e82e311c1471c595cb79b7dbf1a5366c,/MQ-for-Developers/Dockerfile,"# Make sure the MQ environment is available for ""docker exec"" under non-interactive Bash
+"
+720,d1492b00e82e311c1471c595cb79b7dbf1a5366c,/MQ-for-Developers/Dockerfile,"# Support the latest functional cmdlevel by default
+"
+721,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+722,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+723,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"# The MQ packages to install
+"
+724,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+725,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"  # Download and extract the MQ installation files
+"
+726,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+727,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"  # Accept the MQ license
+"
+728,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"  # Install MQ using the DEB packages
+"
+729,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+730,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+731,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+732,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"  # Clean up all the downloaded files
+"
+733,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+734,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"  # End of bug fixes
+"
+735,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+736,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+737,8ba0d5a994667f62ab97b75009c45b5110aabf47,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+738,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+739,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+740,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"# The MQ packages to install
+"
+741,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+742,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"  # Download and extract the MQ installation files
+"
+743,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+744,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"  # Accept the MQ license
+"
+745,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"  # Install MQ using the DEB packages
+"
+746,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+747,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+748,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+749,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"  # Clean up all the downloaded files
+"
+750,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+751,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+752,f2b7cd9541519f8f2d1a05573370d4f91f9bbbbc,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+753,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+754,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+755,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"# The MQ packages to install
+"
+756,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+757,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Download and extract the MQ installation files
+"
+758,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Recommended: Remove packages only needed by this script
+"
+759,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Recommended: Remove any orphaned packages
+"
+760,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+761,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Find directory containing .deb files
+"
+762,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Find location of mqlicense.sh
+"
+763,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Accept the MQ license
+"
+764,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Install MQ using the DEB packages
+"
+765,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+766,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+767,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+768,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Clean up all the downloaded files
+"
+769,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+770,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # End of bug fixes
+"
+771,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+772,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+773,b4549f638e929d8c11ff2af9aab70c26712ffbee,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+774,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+775,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+776,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"# The MQ packages to install
+"
+777,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+778,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"  # Download and extract the MQ installation files
+"
+779,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+780,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"  # Accept the MQ license
+"
+781,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"  # Install MQ using the DEB packages
+"
+782,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"  # Remove 32-bit libraries from 64-bit container
+"
+783,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"  # Remove tar.gz files unpacked by RPM postinst scripts
+"
+784,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+785,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"  # Clean up all the downloaded files
+"
+786,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+787,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+788,8abf2a81342442feb31810d5d60c24d94b180768,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"
+789,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile,"# © Copyright IBM Corporation 2015, 2016
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+790,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+791,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile,"# The MQ packages to install
+"
+792,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile,"  # Optional: Update the command prompt
+"
+793,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+794,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile,"  # Download and extract the MQ installation files
+"
+795,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+796,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile,"  # Accept the MQ license
+"
+797,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile,"  # Install MQ using the RPM packages
+"
+798,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+799,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile,"  # Clean up all the downloaded files
+"
+800,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+"
+801,c53735755b36e623210974efd7ea7646ff6c41d7,/server/Dockerfile,"# Always put the MQ data directory in a Docker volume
+"
+802,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"# © Copyright IBM Corporation 2015, 2017
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+803,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"# The URL to download the MQ installer from in tar.gz format
+"
+804,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"# The MQ packages to install
+"
+805,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"  # Install additional packages required by MQ, this install process and the runtime scripts
+"
+806,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"  # Download and extract the MQ installation files
+"
+807,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"  # Recommended: Create the mqm user ID with a fixed UID and group, so that the file permissions work between different images
+"
+808,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"  # Accept the MQ license
+"
+809,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"  # Install MQ using the DEB packages
+"
+810,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"  # Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+"
+811,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"  # Clean up all the downloaded files
+"
+812,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"  # Apply any bug fixes not included in base Ubuntu or MQ image.
+  # Don't upgrade everything based on Docker best practices https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#run
+"
+813,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"  # End of bug fixes
+"
+814,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"  # Optional: Update the command prompt with the MQ version
+"
+815,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"  # Optional: Set these values for the Bluemix Vulnerability Report
+"
+816,26799fd8257e668d8ff21aa9970cad580b53888d,/Dockerfile,"# Always use port 1414 (the Docker administrator can re-map ports at runtime)
+# Expose port 9443 for the web console
+"

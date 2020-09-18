@@ -1,0 +1,1203 @@
+,CommitID,Dockerfiles,Comments
+0,ecb791c663883936dcb948d8ef175a0fb394cb56,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+1,ecb791c663883936dcb948d8ef175a0fb394cb56,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+2,497bbb241052c6352a05e451e54207a66348028a,/docs/Dockerfile,"# To get the git info for this repo
+"
+3,a4f12fd812d3861460e28bfef9d392472d6b2a33,/signer.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+4,a4f12fd812d3861460e28bfef9d392472d6b2a33,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+5,a4f12fd812d3861460e28bfef9d392472d6b2a33,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+6,a4f12fd812d3861460e28bfef9d392472d6b2a33,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+7,a4f12fd812d3861460e28bfef9d392472d6b2a33,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+8,5e8fb41d7c54d4776946ac14ef8dde39b7121042,/signer.Dockerfile,"# Install SQL DB migration tool
+"
+9,5e8fb41d7c54d4776946ac14ef8dde39b7121042,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+10,5e8fb41d7c54d4776946ac14ef8dde39b7121042,/signer.Dockerfile,"# Install notary-signer
+"
+11,95e971244bc97b169c920d532b4410e6861a6cc7,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+12,95e971244bc97b169c920d532b4410e6861a6cc7,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+13,95e971244bc97b169c920d532b4410e6861a6cc7,/signer.Dockerfile,"# Install notary-signer
+"
+14,9822c6d9be407b55e157d2a438c51cebedb67f30,/Dockerfile.signer,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+15,9822c6d9be407b55e157d2a438c51cebedb67f30,/Dockerfile.signer,"# Install openSC and dependencies
+"
+16,9822c6d9be407b55e157d2a438c51cebedb67f30,/Dockerfile.signer,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+17,9822c6d9be407b55e157d2a438c51cebedb67f30,/Dockerfile.signer,"# Copy the local repo to the expected go path
+"
+18,9822c6d9be407b55e157d2a438c51cebedb67f30,/Dockerfile.signer,"# Install notary-signer
+"
+19,a021d16392aeafe324ef070cff7818e1c6b3fb4b,/signer.Dockerfile,"# Install DB migration tool
+"
+20,a021d16392aeafe324ef070cff7818e1c6b3fb4b,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+21,a021d16392aeafe324ef070cff7818e1c6b3fb4b,/signer.Dockerfile,"# Install notary-signer
+"
+22,8e602b91243196949037b54f451a220c8a8cc600,/server.Dockerfile,"# Install SQL DB migration tool
+"
+23,8e602b91243196949037b54f451a220c8a8cc600,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+24,8e602b91243196949037b54f451a220c8a8cc600,/server.Dockerfile,"# Install notary-server
+"
+25,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+26,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+27,3aa9cdea1752a8fa72cf55fd13393b1eca639a80,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+28,3aa9cdea1752a8fa72cf55fd13393b1eca639a80,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+29,3aa9cdea1752a8fa72cf55fd13393b1eca639a80,/server.Dockerfile,"# Install notary-server
+"
+30,a7eda270ea6ab53d4b167dac9530230e9d35f066,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+31,a7eda270ea6ab53d4b167dac9530230e9d35f066,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+32,a7eda270ea6ab53d4b167dac9530230e9d35f066,/server.Dockerfile,"# Install notary-server
+"
+33,00c667a5b1bf5971fcb33e897d6d2a8d7a24a8d4,/signer.Dockerfile,"# Install DB migration tool
+"
+34,00c667a5b1bf5971fcb33e897d6d2a8d7a24a8d4,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+35,00c667a5b1bf5971fcb33e897d6d2a8d7a24a8d4,/signer.Dockerfile,"# Install notary-signer
+"
+36,ca096f12dc089b3591b9465362e916f081f734c0,/server.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+37,ca096f12dc089b3591b9465362e916f081f734c0,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+38,ca096f12dc089b3591b9465362e916f081f734c0,/server.minimal.Dockerfile,"# Build notary-server
+"
+39,ca096f12dc089b3591b9465362e916f081f734c0,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+40,ca096f12dc089b3591b9465362e916f081f734c0,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+41,868ccd54e1646662f7beec92f3841443b53215dd,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+42,868ccd54e1646662f7beec92f3841443b53215dd,/escrow.Dockerfile,"# Install escrow
+"
+43,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/server.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+44,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+45,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/server.minimal.Dockerfile,"# Build notary-server
+"
+46,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+47,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+48,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+49,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/escrow.Dockerfile,"# Install escrow
+"
+50,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/server.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+51,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+52,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/server.minimal.Dockerfile,"# Build notary-server
+"
+53,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+54,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+55,e5d77f164d8fc7903fd92d71daad85ee632ad952,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+56,e5d77f164d8fc7903fd92d71daad85ee632ad952,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+57,e5d77f164d8fc7903fd92d71daad85ee632ad952,/server.Dockerfile,"# Install notary-server
+"
+58,5867409a460e778030d0f33ec63eba115f8588c8,/docs/Dockerfile,"# To get the git info for this repo
+"
+59,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+60,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/server.minimal.Dockerfile,"# Build notary-server
+"
+61,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+62,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+63,38c931cdf4b5ea00489f8da7da3de33a7092c80a,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+64,698539ce00b6899d19b3cb3bf9f8265794579d55,/signer.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+65,698539ce00b6899d19b3cb3bf9f8265794579d55,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+66,698539ce00b6899d19b3cb3bf9f8265794579d55,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+67,698539ce00b6899d19b3cb3bf9f8265794579d55,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+68,698539ce00b6899d19b3cb3bf9f8265794579d55,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+69,4301c3f402c8c056e9522bc06f0e27f4a6958cb4,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+70,4301c3f402c8c056e9522bc06f0e27f4a6958cb4,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+71,c7da5dc03bf56fdd1cb428d20ae68189a26d90ce,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"#
+# This Dockerfile builds a recent curl with HTTP/2 client support, using
+# a recent nghttp2 build.
+#
+# See the Makefile for how to tag it. If Docker and that image is found, the
+# Go tests use this curl binary for integration tests.
+#
+
+"
+72,c7da5dc03bf56fdd1cb428d20ae68189a26d90ce,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+"
+73,9f2e3e3d0f5f59b4e9c8604c36e1a2466a4aa96c,/notary-signer-Dockerfile,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+74,9f2e3e3d0f5f59b4e9c8604c36e1a2466a4aa96c,/notary-signer-Dockerfile,"# Install openSC and dependencies
+"
+75,9f2e3e3d0f5f59b4e9c8604c36e1a2466a4aa96c,/notary-signer-Dockerfile,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+76,9f2e3e3d0f5f59b4e9c8604c36e1a2466a4aa96c,/notary-signer-Dockerfile,"# Copy the local repo to the expected go path
+"
+77,9f2e3e3d0f5f59b4e9c8604c36e1a2466a4aa96c,/notary-signer-Dockerfile,"# Install notary-signer
+"
+78,1826beae4462476938e8a1e221f1c0c782baa2f3,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+79,1826beae4462476938e8a1e221f1c0c782baa2f3,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+80,1826beae4462476938e8a1e221f1c0c782baa2f3,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+81,1826beae4462476938e8a1e221f1c0c782baa2f3,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+82,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+83,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+84,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/signer.Dockerfile,"# Install notary-signer
+"
+85,1da673b542e53a09946c809e87dc226700b6d022,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+86,1da673b542e53a09946c809e87dc226700b6d022,/server.minimal.Dockerfile,"# Build notary-server
+"
+87,1da673b542e53a09946c809e87dc226700b6d022,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+88,1da673b542e53a09946c809e87dc226700b6d022,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+89,0b704b74555ab0b3ded4442f86be600d99bdb6ec,/signer.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+90,0b704b74555ab0b3ded4442f86be600d99bdb6ec,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+91,0b704b74555ab0b3ded4442f86be600d99bdb6ec,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+92,0b704b74555ab0b3ded4442f86be600d99bdb6ec,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+93,0b704b74555ab0b3ded4442f86be600d99bdb6ec,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+94,3e6ba6dd27bedbc324e4edc5fc7bc5d9a27ddb90,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+95,3e6ba6dd27bedbc324e4edc5fc7bc5d9a27ddb90,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+96,a8dd437d49fe8ccc51dbe65319136693135ef8a2,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+97,a8dd437d49fe8ccc51dbe65319136693135ef8a2,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+98,a8dd437d49fe8ccc51dbe65319136693135ef8a2,/server.Dockerfile,"# Install notary-server
+"
+99,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/signer.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+100,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+101,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+102,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+103,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+104,a8dd437d49fe8ccc51dbe65319136693135ef8a2,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+105,a8dd437d49fe8ccc51dbe65319136693135ef8a2,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+106,ea26073e9c6249f73c249d14df3aef31cb8f5452,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+107,ea26073e9c6249f73c249d14df3aef31cb8f5452,/escrow.Dockerfile,"# Install escrow
+"
+108,1479c20bc2a0024c2e3e837713240858362b8281,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+109,70f9f3277add9839c32054e0a8c992350b8c7ce7,/notary-signer-Dockerfile,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+110,70f9f3277add9839c32054e0a8c992350b8c7ce7,/notary-signer-Dockerfile,"# Install openSC and dependencies
+"
+111,70f9f3277add9839c32054e0a8c992350b8c7ce7,/notary-signer-Dockerfile,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+112,70f9f3277add9839c32054e0a8c992350b8c7ce7,/notary-signer-Dockerfile,"# Copy the local repo to the expected go path
+"
+113,70f9f3277add9839c32054e0a8c992350b8c7ce7,/notary-signer-Dockerfile,"# Install notary-signer
+"
+114,6d6394b7e6c8ab596231b6eff20ff9a6e8328b88,/server.Dockerfile,"# Install SQL DB migration tool
+"
+115,6d6394b7e6c8ab596231b6eff20ff9a6e8328b88,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+116,6d6394b7e6c8ab596231b6eff20ff9a6e8328b88,/server.Dockerfile,"# Install notary-server
+"
+117,d743dfac6e2bf6381632aa7b4f6528ef75f6b74a,/notary-signer-Dockerfile,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+118,d743dfac6e2bf6381632aa7b4f6528ef75f6b74a,/notary-signer-Dockerfile,"# Install openSC and dependencies
+"
+119,d743dfac6e2bf6381632aa7b4f6528ef75f6b74a,/notary-signer-Dockerfile,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+120,d743dfac6e2bf6381632aa7b4f6528ef75f6b74a,/notary-signer-Dockerfile,"# Copy the local repo to the expected go path
+"
+121,d743dfac6e2bf6381632aa7b4f6528ef75f6b74a,/notary-signer-Dockerfile,"# Install notary-signer
+"
+122,d743dfac6e2bf6381632aa7b4f6528ef75f6b74a,/notary-signer-Dockerfile,"#ENTRYPOINT notary-signer -cert /go/src/github.com/docker/notary/fixtures/notary-signer.pem -key /go/src/github.com/docker/notary/fixtures/notary-signer.key -debug -pkcs11 /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so -pin 123456
+"
+123,868ccd54e1646662f7beec92f3841443b53215dd,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+124,868ccd54e1646662f7beec92f3841443b53215dd,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+125,868ccd54e1646662f7beec92f3841443b53215dd,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+126,868ccd54e1646662f7beec92f3841443b53215dd,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+127,698539ce00b6899d19b3cb3bf9f8265794579d55,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+128,698539ce00b6899d19b3cb3bf9f8265794579d55,/escrow.Dockerfile,"# Install escrow
+"
+129,5d6bd65786a7f437f8f9bcb6eb1e53edaabd4acf,/signer.Dockerfile,"# Install SQL DB migration tool
+"
+130,5d6bd65786a7f437f8f9bcb6eb1e53edaabd4acf,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+131,5d6bd65786a7f437f8f9bcb6eb1e53edaabd4acf,/signer.Dockerfile,"# Install notary-signer
+"
+132,e5d77f164d8fc7903fd92d71daad85ee632ad952,/server.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+133,e5d77f164d8fc7903fd92d71daad85ee632ad952,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+134,e5d77f164d8fc7903fd92d71daad85ee632ad952,/server.minimal.Dockerfile,"# Build notary-server
+"
+135,e5d77f164d8fc7903fd92d71daad85ee632ad952,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+136,e5d77f164d8fc7903fd92d71daad85ee632ad952,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+137,ef3c42b60714a3fc6c501358bd76974b6a1596db,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+138,ef3c42b60714a3fc6c501358bd76974b6a1596db,/escrow.Dockerfile,"# Install escrow
+"
+139,fd8eb8e99dc734093ac68a8a06074fb62be97704,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+140,fd8eb8e99dc734093ac68a8a06074fb62be97704,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+141,fd8eb8e99dc734093ac68a8a06074fb62be97704,/signer.Dockerfile,"# Install notary-signer
+"
+142,8ab3937e9f8719717dfcb12ec658d420f561d1eb,/docs/Dockerfile,"# To get the git info for this repo
+"
+143,c5e3580189775dcb8bf72c8245aa91327a563045,/signer/Dockerfile,"# Default locations for the SoftHSM2 configuration and PKCS11 bindings
+"
+144,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+145,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+146,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/signer.Dockerfile,"# Install notary-signer
+"
+147,f37142e9f1228d91bb021a239d88e2ee61213cca,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+148,07ae5854851e34942963a0184bd4dc49ed2a4002,/Dockerfile.signer,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+149,07ae5854851e34942963a0184bd4dc49ed2a4002,/Dockerfile.signer,"# Install openSC and dependencies
+"
+150,07ae5854851e34942963a0184bd4dc49ed2a4002,/Dockerfile.signer,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+151,07ae5854851e34942963a0184bd4dc49ed2a4002,/Dockerfile.signer,"# Copy the local repo to the expected go path
+"
+152,07ae5854851e34942963a0184bd4dc49ed2a4002,/Dockerfile.signer,"# Install notary-signer
+"
+153,5617ee4720155a975bf61de6e42e5e0167f83dc3,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+154,5617ee4720155a975bf61de6e42e5e0167f83dc3,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+155,1da673b542e53a09946c809e87dc226700b6d022,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+156,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/signer.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+157,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+158,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+159,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+160,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+161,84b1210bf7db7fc5b6ce33228e87bf6e43fa1f26,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+162,84b1210bf7db7fc5b6ce33228e87bf6e43fa1f26,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+163,f48f292a5944c02f9fbec968c418a09f751bab23,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+164,f48f292a5944c02f9fbec968c418a09f751bab23,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+165,a3e24e9b44857e01ae14004b2eda05d8a7e02f40,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+166,a3e24e9b44857e01ae14004b2eda05d8a7e02f40,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+167,a3e24e9b44857e01ae14004b2eda05d8a7e02f40,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+168,a3e24e9b44857e01ae14004b2eda05d8a7e02f40,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+169,ca096f12dc089b3591b9465362e916f081f734c0,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+170,ca096f12dc089b3591b9465362e916f081f734c0,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+171,ca096f12dc089b3591b9465362e916f081f734c0,/server.Dockerfile,"# Install notary-server
+"
+172,19c00b0b95e91852479c88ea99c1ea069111a0f1,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+173,19c00b0b95e91852479c88ea99c1ea069111a0f1,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+174,0d3394ef6efc87c66825e7499bd241f98a6dd6ca,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+175,0d3394ef6efc87c66825e7499bd241f98a6dd6ca,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+176,ef07f200876b6c467250d2a324232c1aa3ee522c,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+177,ef07f200876b6c467250d2a324232c1aa3ee522c,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+178,ef07f200876b6c467250d2a324232c1aa3ee522c,/signer.Dockerfile,"# Install notary-signer
+"
+179,ef3c42b60714a3fc6c501358bd76974b6a1596db,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+180,ef3c42b60714a3fc6c501358bd76974b6a1596db,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+181,ef3c42b60714a3fc6c501358bd76974b6a1596db,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+182,ef3c42b60714a3fc6c501358bd76974b6a1596db,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+183,ca096f12dc089b3591b9465362e916f081f734c0,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+184,ca096f12dc089b3591b9465362e916f081f734c0,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+185,55436e6348688506f27442427f3b3de37e07e31b,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+186,55436e6348688506f27442427f3b3de37e07e31b,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+187,af1bf0c1d5bbebf97517cd1357a3a763af3e5c20,/Dockerfile.signer,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+188,af1bf0c1d5bbebf97517cd1357a3a763af3e5c20,/Dockerfile.signer,"# Install openSC and dependencies
+"
+189,af1bf0c1d5bbebf97517cd1357a3a763af3e5c20,/Dockerfile.signer,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+190,af1bf0c1d5bbebf97517cd1357a3a763af3e5c20,/Dockerfile.signer,"# Copy the local repo to the expected go path
+"
+191,af1bf0c1d5bbebf97517cd1357a3a763af3e5c20,/Dockerfile.signer,"# Install notary-signer
+"
+192,19c00b0b95e91852479c88ea99c1ea069111a0f1,/signer.Dockerfile,"# Install SQL DB migration tool
+"
+193,19c00b0b95e91852479c88ea99c1ea069111a0f1,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+194,19c00b0b95e91852479c88ea99c1ea069111a0f1,/signer.Dockerfile,"# Install notary-signer
+"
+195,868ccd54e1646662f7beec92f3841443b53215dd,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+196,868ccd54e1646662f7beec92f3841443b53215dd,/signer.Dockerfile,"# Install notary-signer
+"
+197,3cf25b9bbbf2998adfec39525019e41e6123328c,/signer.Dockerfile,"# Install DB migration tool
+"
+198,3cf25b9bbbf2998adfec39525019e41e6123328c,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+199,3cf25b9bbbf2998adfec39525019e41e6123328c,/signer.Dockerfile,"# Install notary-signer
+"
+200,332094e0c1c45a46b4c3be9fe239672d900a2fea,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+201,332094e0c1c45a46b4c3be9fe239672d900a2fea,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+202,332094e0c1c45a46b4c3be9fe239672d900a2fea,/server.Dockerfile,"# Install notary-server
+"
+203,a3e24e9b44857e01ae14004b2eda05d8a7e02f40,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+204,a3e24e9b44857e01ae14004b2eda05d8a7e02f40,/signer.Dockerfile,"# Install notary-signer
+"
+205,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+206,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+207,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/signer.Dockerfile,"# Install notary-signer
+"
+208,321b15559677169cdb073772057a8db25880bfa1,/signer/Dockerfile,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+209,321b15559677169cdb073772057a8db25880bfa1,/signer/Dockerfile,"# Install openSC and dependencies
+"
+210,321b15559677169cdb073772057a8db25880bfa1,/signer/Dockerfile,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+211,321b15559677169cdb073772057a8db25880bfa1,/signer/Dockerfile,"# Copy the local repo to the expected go path
+"
+212,321b15559677169cdb073772057a8db25880bfa1,/signer/Dockerfile,"# Install notary-signer
+"
+213,321b15559677169cdb073772057a8db25880bfa1,/signer/Dockerfile,"#ENTRYPOINT rufus -cert /go/src/github.com/docker/notary/fixtures/rufus.pem -key /go/src/github.com/docker/notary/fixtures/rufus.key -debug -pkcs11 /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so -pin 123456
+"
+214,fb1735b3b20effc9ab8f0b9ca0697069d0e3e60e,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+215,fb1735b3b20effc9ab8f0b9ca0697069d0e3e60e,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+216,fb1735b3b20effc9ab8f0b9ca0697069d0e3e60e,/signer.Dockerfile,"# Install notary-signer
+"
+217,7a588ab223d464cf66ea3c93f132743cad2e3f3b,/notary-signer-Dockerfile,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+218,7a588ab223d464cf66ea3c93f132743cad2e3f3b,/notary-signer-Dockerfile,"# Install openSC and dependencies
+"
+219,7a588ab223d464cf66ea3c93f132743cad2e3f3b,/notary-signer-Dockerfile,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+220,7a588ab223d464cf66ea3c93f132743cad2e3f3b,/notary-signer-Dockerfile,"# Copy the local repo to the expected go path
+"
+221,7a588ab223d464cf66ea3c93f132743cad2e3f3b,/notary-signer-Dockerfile,"# Install notary-signer
+"
+222,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+223,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+224,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/server.Dockerfile,"# Install notary-server
+"
+225,a3e24e9b44857e01ae14004b2eda05d8a7e02f40,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+226,ef3c42b60714a3fc6c501358bd76974b6a1596db,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+227,acb275a6c50cb174bdec83907b6571549e511232,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+228,acb275a6c50cb174bdec83907b6571549e511232,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+229,acb275a6c50cb174bdec83907b6571549e511232,/server.Dockerfile,"# Install notary-server
+"
+230,20711a412806a8ba355f89a6001bbd25d6341259,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+231,20711a412806a8ba355f89a6001bbd25d6341259,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+232,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+233,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/escrow.Dockerfile,"# Install escrow
+"
+234,541920c770f492e60ce43533218d88347dab4400,/notary-signer-Dockerfile,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+235,541920c770f492e60ce43533218d88347dab4400,/notary-signer-Dockerfile,"# Install openSC and dependencies
+"
+236,541920c770f492e60ce43533218d88347dab4400,/notary-signer-Dockerfile,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+237,541920c770f492e60ce43533218d88347dab4400,/notary-signer-Dockerfile,"# Copy the local repo to the expected go path
+"
+238,541920c770f492e60ce43533218d88347dab4400,/notary-signer-Dockerfile,"# Install notary-signer
+"
+239,541920c770f492e60ce43533218d88347dab4400,/notary-signer-Dockerfile,"#ENTRYPOINT notary-signer -cert /go/src/github.com/docker/notary/fixtures/notary-signer.crt -key /go/src/github.com/docker/notary/fixtures/notary-signer.key -debug -pkcs11 /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so -pin 123456
+"
+240,e640479b88df239c995eea1f017dff403f1ee31c,/server.Dockerfile,"# Pin to the specific v1 version
+"
+241,e640479b88df239c995eea1f017dff403f1ee31c,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+242,e640479b88df239c995eea1f017dff403f1ee31c,/server.Dockerfile,"# Install notary-server
+"
+243,93730582d7f39abd2b8bbb7a15bda036b633095d,/signer.Dockerfile,"# Note that -ldflags ""-extldflags -fno-PIC"" and the ""-extldflags -fno-PIC"" below
+# are to get around https://github.com/golang/go/issues/14851#issuecomment-200915770
+# Once the golang alpine image updates, since it's been patched, we can
+# remove the flags
+
+# Install DB migration tool
+"
+244,93730582d7f39abd2b8bbb7a15bda036b633095d,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+245,93730582d7f39abd2b8bbb7a15bda036b633095d,/signer.Dockerfile,"# Install notary-signer
+"
+246,562492eaf008023c2e13d7041bc101673213615e,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+247,562492eaf008023c2e13d7041bc101673213615e,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+248,3e6ba6dd27bedbc324e4edc5fc7bc5d9a27ddb90,/signer.Dockerfile,"# Install SQL DB migration tool
+"
+249,3e6ba6dd27bedbc324e4edc5fc7bc5d9a27ddb90,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+250,3e6ba6dd27bedbc324e4edc5fc7bc5d9a27ddb90,/signer.Dockerfile,"# Install notary-signer
+"
+251,84b1210bf7db7fc5b6ce33228e87bf6e43fa1f26,/server.Dockerfile,"# Install SQL DB migration tool
+"
+252,84b1210bf7db7fc5b6ce33228e87bf6e43fa1f26,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+253,84b1210bf7db7fc5b6ce33228e87bf6e43fa1f26,/server.Dockerfile,"# Install notary-server
+"
+254,1efd3bc6c4929c780c80412fc380606515442176,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+255,1efd3bc6c4929c780c80412fc380606515442176,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+256,1efd3bc6c4929c780c80412fc380606515442176,/signer.Dockerfile,"# Install notary-signer
+"
+257,84b5a13f303598aa559e440f43ea04223337b640,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+258,84b5a13f303598aa559e440f43ea04223337b640,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+259,fd8eb8e99dc734093ac68a8a06074fb62be97704,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+260,fd8eb8e99dc734093ac68a8a06074fb62be97704,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+261,698539ce00b6899d19b3cb3bf9f8265794579d55,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+262,698539ce00b6899d19b3cb3bf9f8265794579d55,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+263,698539ce00b6899d19b3cb3bf9f8265794579d55,/signer.Dockerfile,"# Install notary-signer
+"
+264,9371c49b59f3917f2184dad3f94938e8f708e5ac,/signer.Dockerfile,"# Install SQL DB migration tool
+"
+265,9371c49b59f3917f2184dad3f94938e8f708e5ac,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+266,9371c49b59f3917f2184dad3f94938e8f708e5ac,/signer.Dockerfile,"# Install notary-signer
+"
+267,ef3c42b60714a3fc6c501358bd76974b6a1596db,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+268,ef3c42b60714a3fc6c501358bd76974b6a1596db,/signer.Dockerfile,"# Install notary-signer
+"
+269,e891420d53ca439a6ca1d4852450f0f48c0f1f56,/signer.Dockerfile,"# Install DB migration tool
+"
+270,e891420d53ca439a6ca1d4852450f0f48c0f1f56,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+271,e891420d53ca439a6ca1d4852450f0f48c0f1f56,/signer.Dockerfile,"# Install notary-signer
+"
+272,bd142d9401e64bb2eaefa1b079d9e7d866883280,/server.Dockerfile,"# Install SQL DB migration tool
+"
+273,bd142d9401e64bb2eaefa1b079d9e7d866883280,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+274,bd142d9401e64bb2eaefa1b079d9e7d866883280,/server.Dockerfile,"# Install notary-server
+"
+275,fd8eb8e99dc734093ac68a8a06074fb62be97704,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+276,fd8eb8e99dc734093ac68a8a06074fb62be97704,/escrow.Dockerfile,"# Install escrow
+"
+277,698539ce00b6899d19b3cb3bf9f8265794579d55,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+278,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+279,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/escrow.Dockerfile,"# Install escrow
+"
+280,1826beae4462476938e8a1e221f1c0c782baa2f3,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+281,1826beae4462476938e8a1e221f1c0c782baa2f3,/signer.Dockerfile,"# Install notary-signer
+"
+282,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+283,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/server.Dockerfile,"# Install notary-server
+"
+284,a4f12fd812d3861460e28bfef9d392472d6b2a33,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+285,a4f12fd812d3861460e28bfef9d392472d6b2a33,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+286,a4f12fd812d3861460e28bfef9d392472d6b2a33,/server.Dockerfile,"# Install notary-server
+"
+287,85e57315bc96b65f93a8474bc5998e33165572c9,/Godeps/_workspace/src/github.com/endophage/go-tuf/client/testdata/generate/Dockerfile,"# Use the develop branch of tuf for the following fix:
+# https://github.com/theupdateframework/tuf/commit/38005fe
+"
+288,1da673b542e53a09946c809e87dc226700b6d022,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+289,1da673b542e53a09946c809e87dc226700b6d022,/server.Dockerfile,"# Install notary-server
+"
+290,868ccd54e1646662f7beec92f3841443b53215dd,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+291,6d6394b7e6c8ab596231b6eff20ff9a6e8328b88,/signer.Dockerfile,"# Install SQL DB migration tool
+"
+292,6d6394b7e6c8ab596231b6eff20ff9a6e8328b88,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+293,6d6394b7e6c8ab596231b6eff20ff9a6e8328b88,/signer.Dockerfile,"# Install notary-signer
+"
+294,844daf465cdbb5bbc5533d77784c7ac20958d696,/docs/Dockerfile,"# To get the git info for this repo
+"
+295,c5e3580189775dcb8bf72c8245aa91327a563045,/notary-signer-Dockerfile,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+296,c5e3580189775dcb8bf72c8245aa91327a563045,/notary-signer-Dockerfile,"# Install openSC and dependencies
+"
+297,c5e3580189775dcb8bf72c8245aa91327a563045,/notary-signer-Dockerfile,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+298,c5e3580189775dcb8bf72c8245aa91327a563045,/notary-signer-Dockerfile,"# Copy the local repo to the expected go path
+"
+299,c5e3580189775dcb8bf72c8245aa91327a563045,/notary-signer-Dockerfile,"# Install notary-signer
+"
+300,ddfcd504718376e51e28daa8a290b9333b259a7b,/notary-signer-Dockerfile,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+301,ddfcd504718376e51e28daa8a290b9333b259a7b,/notary-signer-Dockerfile,"# Install openSC and dependencies
+"
+302,ddfcd504718376e51e28daa8a290b9333b259a7b,/notary-signer-Dockerfile,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+303,ddfcd504718376e51e28daa8a290b9333b259a7b,/notary-signer-Dockerfile,"# Copy the local repo to the expected go path
+"
+304,ddfcd504718376e51e28daa8a290b9333b259a7b,/notary-signer-Dockerfile,"# Install notary-signer
+"
+305,ddfcd504718376e51e28daa8a290b9333b259a7b,/notary-signer-Dockerfile,"#ENTRYPOINT notary-signer -cert /go/src/github.com/docker/notary/fixtures/notary-signer.crt -key /go/src/github.com/docker/notary/fixtures/notary-signer.key -debug -pkcs11 /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so -pin 123456
+"
+306,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+307,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+308,332094e0c1c45a46b4c3be9fe239672d900a2fea,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+309,332094e0c1c45a46b4c3be9fe239672d900a2fea,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+310,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+311,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+312,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/server.Dockerfile,"# Install notary-server
+"
+313,1da673b542e53a09946c809e87dc226700b6d022,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+314,1da673b542e53a09946c809e87dc226700b6d022,/escrow.Dockerfile,"# Install escrow
+"
+315,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+316,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/escrow.Dockerfile,"# Install escrow
+"
+317,a4f12fd812d3861460e28bfef9d392472d6b2a33,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+318,a4f12fd812d3861460e28bfef9d392472d6b2a33,/escrow.Dockerfile,"# Install escrow
+"
+319,c7fd4d8fd38f175d56023c52909343dc45e9ea51,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+320,c7fd4d8fd38f175d56023c52909343dc45e9ea51,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+321,6e80fc10e4f575426d5548275867ea0fdd5498ad,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+322,6e80fc10e4f575426d5548275867ea0fdd5498ad,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+323,701374dc5c6ee5715e954467bff3f792b0d09ee4,/docs/Dockerfile,"# To get the git info for this repo
+"
+324,701374dc5c6ee5715e954467bff3f792b0d09ee4,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
+"
+325,fd8eb8e99dc734093ac68a8a06074fb62be97704,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+326,fd8eb8e99dc734093ac68a8a06074fb62be97704,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+327,fd8eb8e99dc734093ac68a8a06074fb62be97704,/server.Dockerfile,"# Install notary-server
+"
+328,8e602b91243196949037b54f451a220c8a8cc600,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+329,8e602b91243196949037b54f451a220c8a8cc600,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+330,00c667a5b1bf5971fcb33e897d6d2a8d7a24a8d4,/server.Dockerfile,"# Install DB migration tool
+"
+331,00c667a5b1bf5971fcb33e897d6d2a8d7a24a8d4,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+332,00c667a5b1bf5971fcb33e897d6d2a8d7a24a8d4,/server.Dockerfile,"# Install notary-server
+"
+333,a7eda270ea6ab53d4b167dac9530230e9d35f066,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+334,a7eda270ea6ab53d4b167dac9530230e9d35f066,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+335,a7eda270ea6ab53d4b167dac9530230e9d35f066,/signer.Dockerfile,"# Install notary-signer
+"
+336,3f33c86d98e3161b067d7f3ffcd35ed175f25c0a,/docs/Dockerfile,"# To get the git info for this repo
+"
+337,3aa9cdea1752a8fa72cf55fd13393b1eca639a80,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+338,3aa9cdea1752a8fa72cf55fd13393b1eca639a80,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+339,3aa9cdea1752a8fa72cf55fd13393b1eca639a80,/signer.Dockerfile,"# Install notary-signer
+"
+340,ef3c42b60714a3fc6c501358bd76974b6a1596db,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+341,ef3c42b60714a3fc6c501358bd76974b6a1596db,/server.minimal.Dockerfile,"# Build notary-server
+"
+342,ef3c42b60714a3fc6c501358bd76974b6a1596db,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+343,ef3c42b60714a3fc6c501358bd76974b6a1596db,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+344,332094e0c1c45a46b4c3be9fe239672d900a2fea,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+345,332094e0c1c45a46b4c3be9fe239672d900a2fea,/escrow.Dockerfile,"# Install escrow
+"
+346,a3e24e9b44857e01ae14004b2eda05d8a7e02f40,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+347,a3e24e9b44857e01ae14004b2eda05d8a7e02f40,/server.minimal.Dockerfile,"# Build notary-server
+"
+348,a3e24e9b44857e01ae14004b2eda05d8a7e02f40,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+349,a3e24e9b44857e01ae14004b2eda05d8a7e02f40,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+350,95e971244bc97b169c920d532b4410e6861a6cc7,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+351,95e971244bc97b169c920d532b4410e6861a6cc7,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+352,95e971244bc97b169c920d532b4410e6861a6cc7,/server.Dockerfile,"# Install notary-server
+"
+353,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+354,5e8fb41d7c54d4776946ac14ef8dde39b7121042,/server.Dockerfile,"# Install SQL DB migration tool
+"
+355,5e8fb41d7c54d4776946ac14ef8dde39b7121042,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+356,5e8fb41d7c54d4776946ac14ef8dde39b7121042,/server.Dockerfile,"# Install notary-server
+"
+357,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/server.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+358,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+359,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/server.minimal.Dockerfile,"# Build notary-server
+"
+360,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+361,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+362,8e602b91243196949037b54f451a220c8a8cc600,/signer.Dockerfile,"# Install SQL DB migration tool
+"
+363,8e602b91243196949037b54f451a220c8a8cc600,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+364,8e602b91243196949037b54f451a220c8a8cc600,/signer.Dockerfile,"# Install notary-signer
+"
+365,a021d16392aeafe324ef070cff7818e1c6b3fb4b,/server.Dockerfile,"# Install DB migration tool
+"
+366,a021d16392aeafe324ef070cff7818e1c6b3fb4b,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+367,a021d16392aeafe324ef070cff7818e1c6b3fb4b,/server.Dockerfile,"# Install notary-server
+"
+368,ca096f12dc089b3591b9465362e916f081f734c0,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+369,ca096f12dc089b3591b9465362e916f081f734c0,/escrow.Dockerfile,"# Install escrow
+"
+370,e93a2ea6623a8457053b825346eb64f73475b88d,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+371,e93a2ea6623a8457053b825346eb64f73475b88d,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+372,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+373,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+374,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/server.Dockerfile,"# Install notary-server
+"
+375,f03626a10e2aa7981701c66a54b9c8a6b1c7c55c,/signer/Dockerfile,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+376,f03626a10e2aa7981701c66a54b9c8a6b1c7c55c,/signer/Dockerfile,"# Install openSC and dependencies
+"
+377,f03626a10e2aa7981701c66a54b9c8a6b1c7c55c,/signer/Dockerfile,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+378,f03626a10e2aa7981701c66a54b9c8a6b1c7c55c,/signer/Dockerfile,"# Copy the local repo to the expected go path
+"
+379,f03626a10e2aa7981701c66a54b9c8a6b1c7c55c,/signer/Dockerfile,"# Install notary-signer
+"
+380,f03626a10e2aa7981701c66a54b9c8a6b1c7c55c,/signer/Dockerfile,"#ENTRYPOINT rufus -cert /go/src/github.com/docker/notary/fixtures/rufus.pem -key /go/src/github.com/docker/notary/fixtures/rufus.key -debug -pkcs11 /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so -pin 123456 -yubikey
+"
+381,a8dd437d49fe8ccc51dbe65319136693135ef8a2,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+382,a8dd437d49fe8ccc51dbe65319136693135ef8a2,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+383,a8dd437d49fe8ccc51dbe65319136693135ef8a2,/signer.Dockerfile,"# Install notary-signer
+"
+384,37bced3efa7ac82b061ca98509deb1e4f9cf0e58,/notary-signer-Dockerfile,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+385,37bced3efa7ac82b061ca98509deb1e4f9cf0e58,/notary-signer-Dockerfile,"# Install openSC and dependencies
+"
+386,37bced3efa7ac82b061ca98509deb1e4f9cf0e58,/notary-signer-Dockerfile,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+387,37bced3efa7ac82b061ca98509deb1e4f9cf0e58,/notary-signer-Dockerfile,"# Copy the local repo to the expected go path
+"
+388,37bced3efa7ac82b061ca98509deb1e4f9cf0e58,/notary-signer-Dockerfile,"# Install notary-signer
+"
+389,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/escrow.Dockerfile,"# Copy the local repo to the expected go path
+"
+390,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/escrow.Dockerfile,"# Install escrow
+"
+391,e5d77f164d8fc7903fd92d71daad85ee632ad952,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+392,e5d77f164d8fc7903fd92d71daad85ee632ad952,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+393,e5d77f164d8fc7903fd92d71daad85ee632ad952,/signer.Dockerfile,"# Install notary-signer
+"
+394,a7eda270ea6ab53d4b167dac9530230e9d35f066,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+395,a7eda270ea6ab53d4b167dac9530230e9d35f066,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+396,698539ce00b6899d19b3cb3bf9f8265794579d55,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+397,698539ce00b6899d19b3cb3bf9f8265794579d55,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+398,698539ce00b6899d19b3cb3bf9f8265794579d55,/server.Dockerfile,"# Install notary-server
+"
+399,868ccd54e1646662f7beec92f3841443b53215dd,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+400,868ccd54e1646662f7beec92f3841443b53215dd,/server.minimal.Dockerfile,"# Build notary-server
+"
+401,868ccd54e1646662f7beec92f3841443b53215dd,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+402,868ccd54e1646662f7beec92f3841443b53215dd,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+403,1efd3bc6c4929c780c80412fc380606515442176,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+404,1efd3bc6c4929c780c80412fc380606515442176,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+405,1efd3bc6c4929c780c80412fc380606515442176,/server.Dockerfile,"# Install notary-server
+"
+406,84b1210bf7db7fc5b6ce33228e87bf6e43fa1f26,/signer.Dockerfile,"# Install SQL DB migration tool
+"
+407,84b1210bf7db7fc5b6ce33228e87bf6e43fa1f26,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+408,84b1210bf7db7fc5b6ce33228e87bf6e43fa1f26,/signer.Dockerfile,"# Install notary-signer
+"
+409,3e6ba6dd27bedbc324e4edc5fc7bc5d9a27ddb90,/server.Dockerfile,"# Install SQL DB migration tool
+"
+410,3e6ba6dd27bedbc324e4edc5fc7bc5d9a27ddb90,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+411,3e6ba6dd27bedbc324e4edc5fc7bc5d9a27ddb90,/server.Dockerfile,"# Install notary-server
+"
+412,56e8d864ce3ca94cd8fe80484835cf7bd9dda0a6,/Dockerfile.signer,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+413,56e8d864ce3ca94cd8fe80484835cf7bd9dda0a6,/Dockerfile.signer,"# Install openSC and dependencies
+"
+414,56e8d864ce3ca94cd8fe80484835cf7bd9dda0a6,/Dockerfile.signer,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+415,56e8d864ce3ca94cd8fe80484835cf7bd9dda0a6,/Dockerfile.signer,"# Copy the local repo to the expected go path
+"
+416,56e8d864ce3ca94cd8fe80484835cf7bd9dda0a6,/Dockerfile.signer,"# Install notary-signer
+"
+417,bd142d9401e64bb2eaefa1b079d9e7d866883280,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+418,bd142d9401e64bb2eaefa1b079d9e7d866883280,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+419,1826beae4462476938e8a1e221f1c0c782baa2f3,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+420,1826beae4462476938e8a1e221f1c0c782baa2f3,/server.Dockerfile,"# Install notary-server
+"
+421,1da673b542e53a09946c809e87dc226700b6d022,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+422,1da673b542e53a09946c809e87dc226700b6d022,/signer.Dockerfile,"# Install notary-signer
+"
+423,95e971244bc97b169c920d532b4410e6861a6cc7,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+424,95e971244bc97b169c920d532b4410e6861a6cc7,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+425,f37142e9f1228d91bb021a239d88e2ee61213cca,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+426,a4f12fd812d3861460e28bfef9d392472d6b2a33,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+427,a4f12fd812d3861460e28bfef9d392472d6b2a33,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+428,a4f12fd812d3861460e28bfef9d392472d6b2a33,/signer.Dockerfile,"# Install notary-signer
+"
+429,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+430,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/signer.Dockerfile,"# Install notary-signer
+"
+431,e8dc2097a18760b39ab2028b5b61d8b16ddd8d9a,/docs/Dockerfile,"# To get the git info for this repo
+"
+432,ef3c42b60714a3fc6c501358bd76974b6a1596db,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+433,ef3c42b60714a3fc6c501358bd76974b6a1596db,/server.Dockerfile,"# Install notary-server
+"
+434,9371c49b59f3917f2184dad3f94938e8f708e5ac,/server.Dockerfile,"# Install SQL DB migration tool
+"
+435,9371c49b59f3917f2184dad3f94938e8f708e5ac,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+436,9371c49b59f3917f2184dad3f94938e8f708e5ac,/server.Dockerfile,"# Install notary-server
+"
+437,bd142d9401e64bb2eaefa1b079d9e7d866883280,/signer.Dockerfile,"# Install SQL DB migration tool
+"
+438,bd142d9401e64bb2eaefa1b079d9e7d866883280,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+439,bd142d9401e64bb2eaefa1b079d9e7d866883280,/signer.Dockerfile,"# Install notary-signer
+"
+440,9a4c2dc74408644aa1ecc4507945ee4c985753ae,/signer/Dockerfile,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+441,9a4c2dc74408644aa1ecc4507945ee4c985753ae,/signer/Dockerfile,"# Install openSC and dependencies
+"
+442,9a4c2dc74408644aa1ecc4507945ee4c985753ae,/signer/Dockerfile,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+443,9a4c2dc74408644aa1ecc4507945ee4c985753ae,/signer/Dockerfile,"# Copy the local repo to the expected go path
+"
+444,9a4c2dc74408644aa1ecc4507945ee4c985753ae,/signer/Dockerfile,"# Install rufus
+"
+445,9a4c2dc74408644aa1ecc4507945ee4c985753ae,/signer/Dockerfile,"#ENTRYPOINT rufus -cert /go/src/github.com/docker/rufus/fixtures/rufus.pem -key /go/src/github.com/docker/rufus/fixtures/rufus.key -debug -pkcs11 /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so -pin 123456 -yubikey
+"
+446,e5d77f164d8fc7903fd92d71daad85ee632ad952,/signer.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+447,e5d77f164d8fc7903fd92d71daad85ee632ad952,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+448,e5d77f164d8fc7903fd92d71daad85ee632ad952,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+449,e5d77f164d8fc7903fd92d71daad85ee632ad952,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+450,e5d77f164d8fc7903fd92d71daad85ee632ad952,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+451,bdcd70eca786964c452f91c4c560d124fd748a87,/notary-signer-Dockerfile,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+452,bdcd70eca786964c452f91c4c560d124fd748a87,/notary-signer-Dockerfile,"# Install openSC and dependencies
+"
+453,bdcd70eca786964c452f91c4c560d124fd748a87,/notary-signer-Dockerfile,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+454,bdcd70eca786964c452f91c4c560d124fd748a87,/notary-signer-Dockerfile,"# Copy the local repo to the expected go path
+"
+455,bdcd70eca786964c452f91c4c560d124fd748a87,/notary-signer-Dockerfile,"# Install notary-signer
+"
+456,e891420d53ca439a6ca1d4852450f0f48c0f1f56,/server.Dockerfile,"# Install DB migration tool
+"
+457,e891420d53ca439a6ca1d4852450f0f48c0f1f56,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+458,e891420d53ca439a6ca1d4852450f0f48c0f1f56,/server.Dockerfile,"# Install notary-server
+"
+459,868ccd54e1646662f7beec92f3841443b53215dd,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+460,868ccd54e1646662f7beec92f3841443b53215dd,/server.Dockerfile,"# Install notary-server
+"
+461,19c00b0b95e91852479c88ea99c1ea069111a0f1,/server.Dockerfile,"# Install SQL DB migration tool
+"
+462,19c00b0b95e91852479c88ea99c1ea069111a0f1,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+463,19c00b0b95e91852479c88ea99c1ea069111a0f1,/server.Dockerfile,"# Install notary-server
+"
+464,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/signer.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+465,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+466,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+467,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+468,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+469,a4f12fd812d3861460e28bfef9d392472d6b2a33,/docs/Dockerfile,"# To get the git info for this repo
+"
+470,fb1735b3b20effc9ab8f0b9ca0697069d0e3e60e,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+471,fb1735b3b20effc9ab8f0b9ca0697069d0e3e60e,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+472,fb1735b3b20effc9ab8f0b9ca0697069d0e3e60e,/server.Dockerfile,"# Install notary-server
+"
+473,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+474,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+475,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/server.Dockerfile,"# Install notary-server
+"
+476,ca096f12dc089b3591b9465362e916f081f734c0,/signer.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+477,ca096f12dc089b3591b9465362e916f081f734c0,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+478,ca096f12dc089b3591b9465362e916f081f734c0,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+479,ca096f12dc089b3591b9465362e916f081f734c0,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+480,ca096f12dc089b3591b9465362e916f081f734c0,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+481,332094e0c1c45a46b4c3be9fe239672d900a2fea,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+482,332094e0c1c45a46b4c3be9fe239672d900a2fea,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+483,332094e0c1c45a46b4c3be9fe239672d900a2fea,/signer.Dockerfile,"# Install notary-signer
+"
+484,a3e24e9b44857e01ae14004b2eda05d8a7e02f40,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+485,a3e24e9b44857e01ae14004b2eda05d8a7e02f40,/server.Dockerfile,"# Install notary-server
+"
+486,3cf25b9bbbf2998adfec39525019e41e6123328c,/server.Dockerfile,"# Install DB migration tool
+"
+487,3cf25b9bbbf2998adfec39525019e41e6123328c,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+488,3cf25b9bbbf2998adfec39525019e41e6123328c,/server.Dockerfile,"# Install notary-server
+"
+489,3aa9cdea1752a8fa72cf55fd13393b1eca639a80,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+490,3aa9cdea1752a8fa72cf55fd13393b1eca639a80,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+491,ef07f200876b6c467250d2a324232c1aa3ee522c,/server.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+492,ef07f200876b6c467250d2a324232c1aa3ee522c,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+493,ef07f200876b6c467250d2a324232c1aa3ee522c,/server.Dockerfile,"# Install notary-server
+"
+494,6d6394b7e6c8ab596231b6eff20ff9a6e8328b88,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+495,6d6394b7e6c8ab596231b6eff20ff9a6e8328b88,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+496,a4f12fd812d3861460e28bfef9d392472d6b2a33,/server.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+497,a4f12fd812d3861460e28bfef9d392472d6b2a33,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+498,a4f12fd812d3861460e28bfef9d392472d6b2a33,/server.minimal.Dockerfile,"# Build notary-server
+"
+499,a4f12fd812d3861460e28bfef9d392472d6b2a33,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+500,a4f12fd812d3861460e28bfef9d392472d6b2a33,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+501,ca096f12dc089b3591b9465362e916f081f734c0,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+502,ca096f12dc089b3591b9465362e916f081f734c0,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+503,ca096f12dc089b3591b9465362e916f081f734c0,/signer.Dockerfile,"# Install notary-signer
+"
+504,0b704b74555ab0b3ded4442f86be600d99bdb6ec,/server.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+505,0b704b74555ab0b3ded4442f86be600d99bdb6ec,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+506,0b704b74555ab0b3ded4442f86be600d99bdb6ec,/server.minimal.Dockerfile,"# Build notary-server
+"
+507,0b704b74555ab0b3ded4442f86be600d99bdb6ec,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+508,0b704b74555ab0b3ded4442f86be600d99bdb6ec,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+509,3a6a0cbc718131c5ecb9d81b0b7750655deb3d12,/vendor/golang.org/x/net/http2/Dockerfile,"#
+# This Dockerfile builds a recent curl with HTTP/2 client support, using
+# a recent nghttp2 build.
+#
+# See the Makefile for how to tag it. If Docker and that image is found, the
+# Go tests use this curl binary for integration tests.
+#
+
+"
+510,3a6a0cbc718131c5ecb9d81b0b7750655deb3d12,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
+"
+511,3a6a0cbc718131c5ecb9d81b0b7750655deb3d12,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+"
+512,5e8fb41d7c54d4776946ac14ef8dde39b7121042,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+513,5e8fb41d7c54d4776946ac14ef8dde39b7121042,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+514,e640479b88df239c995eea1f017dff403f1ee31c,/signer.Dockerfile,"# Pin to the specific v1 version
+"
+515,e640479b88df239c995eea1f017dff403f1ee31c,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+516,e640479b88df239c995eea1f017dff403f1ee31c,/signer.Dockerfile,"# Install notary-signer
+"
+517,b8a8e90f31818b69fc3cc78f89c89f957b9a5e8c,/vendor/golang.org/x/net/http2/Dockerfile,"#
+# This Dockerfile builds a recent curl with HTTP/2 client support, using
+# a recent nghttp2 build.
+#
+# See the Makefile for how to tag it. If Docker and that image is found, the
+# Go tests use this curl binary for integration tests.
+#
+
+"
+518,b8a8e90f31818b69fc3cc78f89c89f957b9a5e8c,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
+"
+519,b8a8e90f31818b69fc3cc78f89c89f957b9a5e8c,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+"
+520,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/server.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+521,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+522,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/server.minimal.Dockerfile,"# Build notary-server
+"
+523,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+524,2d34de3b8e29724e3fb31d84a9047086212dc6f8,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+525,93730582d7f39abd2b8bbb7a15bda036b633095d,/server.Dockerfile,"# Note that -ldflags ""-extldflags -fno-PIC"" and the ""-extldflags -fno-PIC"" below
+# are to get around https://github.com/golang/go/issues/14851#issuecomment-200915770
+# Once the golang alpine image updates, since it's been patched, we can
+# remove the flags
+
+# Install DB migration tool
+"
+526,93730582d7f39abd2b8bbb7a15bda036b633095d,/server.Dockerfile,"# Copy the local repo to the expected go path
+"
+527,93730582d7f39abd2b8bbb7a15bda036b633095d,/server.Dockerfile,"# Install notary-server
+"
+528,1da673b542e53a09946c809e87dc226700b6d022,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+529,1da673b542e53a09946c809e87dc226700b6d022,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+530,1da673b542e53a09946c809e87dc226700b6d022,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+531,1da673b542e53a09946c809e87dc226700b6d022,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+532,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/cross.Dockerfile,"# Configure the container for OSX cross compilation
+"
+533,de0f3e6fc688f310b7a10f5ef53e00ed98bb8c75,/cross.Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+534,0d402de25330e0dfb5fa329119e394a55890bc46,/Dockerfile,"# Configure the container for OSX cross compilation
+"
+535,0d402de25330e0dfb5fa329119e394a55890bc46,/Dockerfile,"# Note this cannot use alpine because of the MacOSX Cross SDK: the cctools there uses sys/cdefs.h and that cannot be used in alpine: http://wiki.musl-libc.org/wiki/FAQ#Q:_I.27m_trying_to_compile_something_against_musl_and_I_get_error_messages_about_sys.2Fcdefs.h
+"
+536,f1bd28caf4efcd475fb57d4e638b1ac9458a835e,/Dockerfile.signer,"# CHANGE-ME: Default values for SoftHSM2 PIN and SOPIN, used to initialize the first token
+"
+537,f1bd28caf4efcd475fb57d4e638b1ac9458a835e,/Dockerfile.signer,"# Install openSC and dependencies
+"
+538,f1bd28caf4efcd475fb57d4e638b1ac9458a835e,/Dockerfile.signer,"# Initialize the SoftHSM2 token on slod 0, using PIN and SOPIN varaibles
+"
+539,f1bd28caf4efcd475fb57d4e638b1ac9458a835e,/Dockerfile.signer,"# Copy the local repo to the expected go path
+"
+540,f1bd28caf4efcd475fb57d4e638b1ac9458a835e,/Dockerfile.signer,"# Install notary-signer
+"
+541,698539ce00b6899d19b3cb3bf9f8265794579d55,/server.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+542,698539ce00b6899d19b3cb3bf9f8265794579d55,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+543,698539ce00b6899d19b3cb3bf9f8265794579d55,/server.minimal.Dockerfile,"# Build notary-server
+"
+544,698539ce00b6899d19b3cb3bf9f8265794579d55,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+545,698539ce00b6899d19b3cb3bf9f8265794579d55,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+546,1826beae4462476938e8a1e221f1c0c782baa2f3,/server.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+547,1826beae4462476938e8a1e221f1c0c782baa2f3,/server.minimal.Dockerfile,"# Build notary-server
+"
+548,1826beae4462476938e8a1e221f1c0c782baa2f3,/server.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+549,1826beae4462476938e8a1e221f1c0c782baa2f3,/server.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+550,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+551,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+552,ad4b39e6613df1d225fa8770fdf9015fe3d9776a,/signer.Dockerfile,"# Install notary-signer
+"
+553,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/signer.minimal.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+554,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+555,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+556,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+557,e9412a4cd33d4ee2c1642f782198cc8a26e77376,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"
+558,acb275a6c50cb174bdec83907b6571549e511232,/signer.Dockerfile,"# Pin to the specific v3.0.0 version
+"
+559,acb275a6c50cb174bdec83907b6571549e511232,/signer.Dockerfile,"# Copy the local repo to the expected go path
+"
+560,acb275a6c50cb174bdec83907b6571549e511232,/signer.Dockerfile,"# Install notary-signer
+"
+561,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/signer.minimal.Dockerfile,"# Copy the local repo to the expected go path
+"
+562,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/signer.minimal.Dockerfile,"# Build notary-signer
+"
+563,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/signer.minimal.Dockerfile,"# the ln is for compatibility with the docker-compose.yml, making these
+# images a straight swap for the those built in the compose file.
+"
+564,7585b5de2a056096b9af8698e6cbb2e5453ca07c,/signer.minimal.Dockerfile,"# SERVICE_NAME needed for migration script
+"

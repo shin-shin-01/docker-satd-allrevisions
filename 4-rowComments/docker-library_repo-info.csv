@@ -1,0 +1,113 @@
+,CommitID,Dockerfiles,Comments
+0,c8624bbce88a5f000496513651a1fc09d2fb27f9,/Dockerfile.local,"# add ""apt-transport-https"" for images whose ""/etc/apt/sources.list"" uses ""https""
+"
+1,bdc1ec69eaeffb190f5543403e25d9424d2e1ef2,/Dockerfile.local,"# add ""apt-transport-https"" for images whose ""/etc/apt/sources.list"" uses ""https""
+"
+2,bdc1ec69eaeffb190f5543403e25d9424d2e1ef2,/Dockerfile.local,"# redhat-based images!
+"
+3,bdc1ec69eaeffb190f5543403e25d9424d2e1ef2,/Dockerfile.local,"# Alpine-based images need ""apk"" for data extraction
+"
+4,bdc1ec69eaeffb190f5543403e25d9424d2e1ef2,/Dockerfile.local,"# https://pkgs.alpinelinux.org/package/v3.9/main/x86_64/apk-tools-static
+"
+5,bdc1ec69eaeffb190f5543403e25d9424d2e1ef2,/Dockerfile.local,"# TODO convert ""dpkg --print-architecture"" to Alpine architecture for downloading the correct architecture binary
+"
+6,562931098bb75b60a7268addbac4c85d91959002,/Dockerfile,"# add ""apt-transport-https"" for images whose ""/etc/apt/sources.list"" uses ""https""
+"
+7,ee22b9996661e2621ce486b0709aaf1d5dc173a7,/Dockerfile.tag-details,"# secure by default ♥ (thanks to sri!)
+"
+8,ee22b9996661e2621ce486b0709aaf1d5dc173a7,/Dockerfile.tag-details,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+"
+9,ee22b9996661e2621ce486b0709aaf1d5dc173a7,/Dockerfile.tag-details,"# TODO find a way to make --verify work with backpan as well :'(
+#ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify
+
+# reinstall cpanm itself, for good measure
+"
+10,ee22b9996661e2621ce486b0709aaf1d5dc173a7,/Dockerfile.tag-details,"# the tests for IO::Socket::SSL like to hang... :(
+
+"
+11,3ac241b30e52c891fc580a0df86dd57654e92ebd,/Dockerfile.remote,"# http://mojolicious.org/perldoc/Mojolicious/Guides/FAQ#What-does-Inactivity-timeout-mean
+"
+12,3ac241b30e52c891fc580a0df86dd57654e92ebd,/Dockerfile.remote,"# The Hub takes a while to respond, and the time it takes to respond increases as we stack up more pending requests. :)
+# (We already set this in Mojo::UserAgent, but this value affects our replies to curl.)
+
+"
+13,e5d491d7be65e68aa067868d22c9ffc1fad2efb7,/Dockerfile.remote,"# secure by default ♥ (thanks to sri!)
+"
+14,e5d491d7be65e68aa067868d22c9ffc1fad2efb7,/Dockerfile.remote,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+"
+15,e5d491d7be65e68aa067868d22c9ffc1fad2efb7,/Dockerfile.remote,"# TODO find a way to make --verify work with backpan as well :'(
+#ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify
+
+# reinstall cpanm itself, for good measure
+"
+16,e5d491d7be65e68aa067868d22c9ffc1fad2efb7,/Dockerfile.remote,"# the tests for IO::Socket::SSL like to hang... :(
+"
+17,e5d491d7be65e68aa067868d22c9ffc1fad2efb7,/Dockerfile.remote,"# https://metacpan.org/pod/release/SRI/Mojolicious-7.94/lib/Mojo/IOLoop.pm#DESCRIPTION
+"
+18,e5d491d7be65e68aa067868d22c9ffc1fad2efb7,/Dockerfile.remote,"# epoll (Linux)
+
+"
+19,e5d491d7be65e68aa067868d22c9ffc1fad2efb7,/Dockerfile.remote,"# http://mojolicious.org/perldoc/Mojolicious/Guides/FAQ#What-does-Inactivity-timeout-mean
+"
+20,e5d491d7be65e68aa067868d22c9ffc1fad2efb7,/Dockerfile.remote,"# The Hub takes a while to respond, and the time it takes to respond increases as we stack up more pending requests. :)
+
+"
+21,d74a52fea18617a5fe8ab48820c21596f3820bc7,/Dockerfile.remote,"# secure by default ♥ (thanks to sri!)
+"
+22,d74a52fea18617a5fe8ab48820c21596f3820bc7,/Dockerfile.remote,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+"
+23,d74a52fea18617a5fe8ab48820c21596f3820bc7,/Dockerfile.remote,"# TODO find a way to make --verify work with backpan as well :'(
+#ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify
+
+# reinstall cpanm itself, for good measure
+"
+24,d74a52fea18617a5fe8ab48820c21596f3820bc7,/Dockerfile.remote,"# the tests for IO::Socket::SSL like to hang... :(
+"
+25,d74a52fea18617a5fe8ab48820c21596f3820bc7,/Dockerfile.remote,"# https://metacpan.org/pod/release/SRI/Mojolicious-7.94/lib/Mojo/IOLoop.pm#DESCRIPTION
+"
+26,d74a52fea18617a5fe8ab48820c21596f3820bc7,/Dockerfile.remote,"# epoll (Linux)
+
+"
+27,d74a52fea18617a5fe8ab48820c21596f3820bc7,/Dockerfile.remote,"# http://mojolicious.org/perldoc/Mojolicious/Guides/FAQ#What-does-Inactivity-timeout-mean
+"
+28,d74a52fea18617a5fe8ab48820c21596f3820bc7,/Dockerfile.remote,"# The Hub takes a while to respond, and the time it takes to respond increases as we stack up more pending requests. :)
+
+"
+29,db217e426ec7229c74f154953dbe2f3e9ad2e157,/Dockerfile.remote,"# secure by default ♥ (thanks to sri!)
+"
+30,db217e426ec7229c74f154953dbe2f3e9ad2e157,/Dockerfile.remote,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+"
+31,db217e426ec7229c74f154953dbe2f3e9ad2e157,/Dockerfile.remote,"# TODO find a way to make --verify work with backpan as well :'(
+#ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify
+
+# reinstall cpanm itself, for good measure
+"
+32,db217e426ec7229c74f154953dbe2f3e9ad2e157,/Dockerfile.remote,"# the tests for IO::Socket::SSL like to hang... :(
+
+"
+33,db217e426ec7229c74f154953dbe2f3e9ad2e157,/Dockerfile.remote,"# http://mojolicious.org/perldoc/Mojolicious/Guides/FAQ#What-does-Inactivity-timeout-mean
+"
+34,db217e426ec7229c74f154953dbe2f3e9ad2e157,/Dockerfile.remote,"# The Hub takes a while to respond, and the time it takes to respond increases as we stack up more pending requests. :)
+
+"
+35,b0c6ece2c866344053e306b6f88cdddf32fbd7ee,/Dockerfile.remote,"# secure by default ♥ (thanks to sri!)
+"
+36,b0c6ece2c866344053e306b6f88cdddf32fbd7ee,/Dockerfile.remote,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+"
+37,b0c6ece2c866344053e306b6f88cdddf32fbd7ee,/Dockerfile.remote,"# TODO find a way to make --verify work with backpan as well :'(
+#ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify
+
+# reinstall cpanm itself, for good measure
+"
+38,b0c6ece2c866344053e306b6f88cdddf32fbd7ee,/Dockerfile.remote,"# the tests for IO::Socket::SSL like to hang... :(
+
+"
+39,b0c6ece2c866344053e306b6f88cdddf32fbd7ee,/Dockerfile.remote,"# http://mojolicious.org/perldoc/Mojolicious/Guides/FAQ#What-does-Inactivity-timeout-mean
+"
+40,b0c6ece2c866344053e306b6f88cdddf32fbd7ee,/Dockerfile.remote,"# The Hub takes a while to respond, and the time it takes to respond increases as we stack up more pending requests. :)
+
+"
+41,46bc1d9ec50697da28220a86880a2600e68d3212,/Dockerfile.local,"# add ""apt-transport-https"" for images whose ""/etc/apt/sources.list"" uses ""https""
+"
+42,46bc1d9ec50697da28220a86880a2600e68d3212,/Dockerfile.local,"# redhat-based images!
+"

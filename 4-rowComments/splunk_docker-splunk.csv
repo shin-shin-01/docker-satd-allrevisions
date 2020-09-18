@@ -1,0 +1,2952 @@
+,CommitID,Dockerfiles,Comments
+0,28f9a73e7e087ea93cf018e6745fb7c891e0fbc1,/py23-image/centos-7/Dockerfile,"# INFRA-15385: manual installation of python 3.7 as default distro version is 3.6
+"
+1,28f9a73e7e087ea93cf018e6745fb7c891e0fbc1,/py23-image/centos-7/Dockerfile,"    #pip version is not automatically ""fixed"", unlike debian-based
+"
+2,947a9b6e48033f5549d2ec7188fd60113d2ec477,/splunk/common-files/Dockerfile,"# Copyright 2018-2020 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+3,947a9b6e48033f5549d2ec7188fd60113d2ec477,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+4,947a9b6e48033f5549d2ec7188fd60113d2ec477,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+5,947a9b6e48033f5549d2ec7188fd60113d2ec477,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+6,947a9b6e48033f5549d2ec7188fd60113d2ec477,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+7,947a9b6e48033f5549d2ec7188fd60113d2ec477,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+8,947a9b6e48033f5549d2ec7188fd60113d2ec477,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+9,947a9b6e48033f5549d2ec7188fd60113d2ec477,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+10,947a9b6e48033f5549d2ec7188fd60113d2ec477,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+11,947a9b6e48033f5549d2ec7188fd60113d2ec477,/base/redhat-8/Dockerfile,"# Copyright 2018-2020 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+12,f8b50620a712c778afe25751a6fef534e6c80db6,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+13,f8b50620a712c778afe25751a6fef534e6c80db6,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+14,f8b50620a712c778afe25751a6fef534e6c80db6,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+15,f8b50620a712c778afe25751a6fef534e6c80db6,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+16,f8b50620a712c778afe25751a6fef534e6c80db6,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+17,f8b50620a712c778afe25751a6fef534e6c80db6,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+18,f8b50620a712c778afe25751a6fef534e6c80db6,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+19,f8b50620a712c778afe25751a6fef534e6c80db6,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+20,f8b50620a712c778afe25751a6fef534e6c80db6,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+21,f8b50620a712c778afe25751a6fef534e6c80db6,/splunk/common-files/Dockerfile,"    # Create the ansible user/group
+"
+22,f8b50620a712c778afe25751a6fef534e6c80db6,/splunk/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+23,60a280858557f477ed2b4e061472d784ab371d63,/splunk/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+24,60a280858557f477ed2b4e061472d784ab371d63,/splunk/centos-7/Dockerfile,"# Setup users and download Splunk
+"
+25,60a280858557f477ed2b4e061472d784ab371d63,/splunk/centos-7/Dockerfile,"    # Set sudo rights
+"
+26,60a280858557f477ed2b4e061472d784ab371d63,/splunk/centos-7/Dockerfile,"    # Create the ansible user/group
+"
+27,60a280858557f477ed2b4e061472d784ab371d63,/splunk/centos-7/Dockerfile,"    # Download our installer and perform a checksum
+"
+28,60a280858557f477ed2b4e061472d784ab371d63,/splunk/centos-7/Dockerfile,"    # Create the Splunk Home directory
+"
+29,60a280858557f477ed2b4e061472d784ab371d63,/splunk/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+30,60a280858557f477ed2b4e061472d784ab371d63,/splunk/centos-7/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+31,3bdc606e1cc092404f52a2e5435f5366f4733710,/base/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+32,1a5cbadc098c2c27857d76e61102f459b17e2d09,/uf/debian-10/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+33,1a5cbadc098c2c27857d76e61102f459b17e2d09,/uf/debian-10/Dockerfile,"# Setup users and download Splunk
+"
+34,1a5cbadc098c2c27857d76e61102f459b17e2d09,/uf/debian-10/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+35,1a5cbadc098c2c27857d76e61102f459b17e2d09,/uf/debian-10/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+36,e387397542416bbbd4d884dfcac793ec8a60f32c,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+#
+# Download and unpack Splunk Enterprise
+#
+"
+37,e387397542416bbbd4d884dfcac793ec8a60f32c,/splunk/debian-9/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+38,e387397542416bbbd4d884dfcac793ec8a60f32c,/splunk/debian-9/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+39,e387397542416bbbd4d884dfcac793ec8a60f32c,/splunk/debian-9/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+40,e387397542416bbbd4d884dfcac793ec8a60f32c,/splunk/debian-9/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+41,e387397542416bbbd4d884dfcac793ec8a60f32c,/splunk/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+42,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+43,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/centos-7/Dockerfile,"# Setup users and download Splunk
+"
+44,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/centos-7/Dockerfile,"    # Set sudo rights
+"
+45,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/centos-7/Dockerfile,"    # Create the ansible user/group
+"
+46,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/centos-7/Dockerfile,"    # Download our installer and perform a checksum
+"
+47,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/centos-7/Dockerfile,"    # Create the Splunk Home directory
+"
+48,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+49,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+50,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/debian-9/Dockerfile,"# Copy ansible playbooks
+"
+51,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/debian-9/Dockerfile,"# Copy scripts
+"
+52,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/debian-9/Dockerfile,"# Copy TA to collect docker logs
+"
+53,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/debian-9/Dockerfile,"# Setup users and groups
+"
+54,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/debian-9/Dockerfile,"    # Set sudo rights
+"
+55,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/debian-9/Dockerfile,"    # Create the ansible user/group
+"
+56,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+57,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/debian-9/Dockerfile,"# Copy files from package
+"
+58,ed463c421de27975ee45b200d3a61829e4ee140a,/base/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+59,70ca3e50e358e606f61c93686240ee03c920c0b5,/uf/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+60,70ca3e50e358e606f61c93686240ee03c920c0b5,/uf/centos-7/Dockerfile,"# Setup users and download Splunk
+"
+61,70ca3e50e358e606f61c93686240ee03c920c0b5,/uf/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+62,d115bba74dfee36d6c0b53c162389f6deea55b8c,/splunk/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Download and unpack Splunk Enterprise
+#
+"
+63,d115bba74dfee36d6c0b53c162389f6deea55b8c,/splunk/centos-7/Dockerfile,"# Copy ansible playbooks
+"
+64,d115bba74dfee36d6c0b53c162389f6deea55b8c,/splunk/centos-7/Dockerfile,"# Copy scripts
+"
+65,d115bba74dfee36d6c0b53c162389f6deea55b8c,/splunk/centos-7/Dockerfile,"# Setup users and directories
+"
+66,d115bba74dfee36d6c0b53c162389f6deea55b8c,/splunk/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+67,d115bba74dfee36d6c0b53c162389f6deea55b8c,/splunk/centos-7/Dockerfile,"# Copy files from package
+"
+68,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+69,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/centos-7/Dockerfile,"# Copy ansible playbooks
+"
+70,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/centos-7/Dockerfile,"# Copy scripts
+"
+71,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/centos-7/Dockerfile,"# Copy TA to collect docker logs
+"
+72,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/centos-7/Dockerfile,"# Setup users and directories
+"
+73,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+74,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/centos-7/Dockerfile,"# Copy files from package
+"
+75,a4adaeff513cf6975f07dfccaf346e4c58b959d4,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+76,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+77,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+78,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/debian-9/Dockerfile,"    # Set sudo rights
+"
+79,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/debian-9/Dockerfile,"    # Create the ansible user/group
+"
+80,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/debian-9/Dockerfile,"    # Download our installer and perform a checksum
+"
+81,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/debian-9/Dockerfile,"    # Create the Splunk Home directory
+"
+82,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+83,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+84,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+#
+# Download and unpack Splunk Enterprise
+#
+"
+85,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/debian-9/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+86,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/debian-9/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+87,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/debian-9/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+88,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/debian-9/Dockerfile,"# Set timezone to use UTC
+"
+89,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/debian-9/Dockerfile,"    # Setup users and groups
+"
+90,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/debian-9/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+91,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/debian-9/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+92,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/debian-9/Dockerfile,"# Set sudo rights
+"
+93,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/debian-9/Dockerfile,"    # Create the ansible user/group
+"
+94,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+95,03089a26601c1ababc5285ec1d5aef8b9a27047b,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+96,3ad1fdaa86ea38c55d1628577c0eba33142e28c9,/splunk/debian-10/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+97,3ad1fdaa86ea38c55d1628577c0eba33142e28c9,/splunk/debian-10/Dockerfile,"# Setup users and download Splunk
+"
+98,3ad1fdaa86ea38c55d1628577c0eba33142e28c9,/splunk/debian-10/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+99,3ad1fdaa86ea38c55d1628577c0eba33142e28c9,/splunk/debian-10/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+100,870ffea9764d66418713f9a77333d42960cca1a1,/uf/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+101,870ffea9764d66418713f9a77333d42960cca1a1,/uf/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+102,fbd907cee3f010f25ad18ee0ce5c23c15dc8e8b9,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+103,fbd907cee3f010f25ad18ee0ce5c23c15dc8e8b9,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+104,fbd907cee3f010f25ad18ee0ce5c23c15dc8e8b9,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+105,fbd907cee3f010f25ad18ee0ce5c23c15dc8e8b9,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+106,fbd907cee3f010f25ad18ee0ce5c23c15dc8e8b9,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+107,fbd907cee3f010f25ad18ee0ce5c23c15dc8e8b9,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+108,fbd907cee3f010f25ad18ee0ce5c23c15dc8e8b9,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+109,fbd907cee3f010f25ad18ee0ce5c23c15dc8e8b9,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+110,fbd907cee3f010f25ad18ee0ce5c23c15dc8e8b9,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+111,fbd907cee3f010f25ad18ee0ce5c23c15dc8e8b9,/splunk/common-files/Dockerfile,"    # Create the ansible user/group
+"
+112,fbd907cee3f010f25ad18ee0ce5c23c15dc8e8b9,/splunk/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+113,2501c9fe51ce3a6c8af15c86b721d3f24c64dc2a,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+114,2501c9fe51ce3a6c8af15c86b721d3f24c64dc2a,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+115,2501c9fe51ce3a6c8af15c86b721d3f24c64dc2a,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+116,2501c9fe51ce3a6c8af15c86b721d3f24c64dc2a,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+117,2501c9fe51ce3a6c8af15c86b721d3f24c64dc2a,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+118,2501c9fe51ce3a6c8af15c86b721d3f24c64dc2a,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+119,2501c9fe51ce3a6c8af15c86b721d3f24c64dc2a,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+120,2501c9fe51ce3a6c8af15c86b721d3f24c64dc2a,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+121,2501c9fe51ce3a6c8af15c86b721d3f24c64dc2a,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+122,2501c9fe51ce3a6c8af15c86b721d3f24c64dc2a,/splunk/common-files/Dockerfile,"    # Create the ansible user/group
+"
+123,2501c9fe51ce3a6c8af15c86b721d3f24c64dc2a,/splunk/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+124,ed463c421de27975ee45b200d3a61829e4ee140a,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+125,ed463c421de27975ee45b200d3a61829e4ee140a,/splunk/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+126,ed463c421de27975ee45b200d3a61829e4ee140a,/splunk/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+127,ed463c421de27975ee45b200d3a61829e4ee140a,/splunk/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+128,3bdc606e1cc092404f52a2e5435f5366f4733710,/splunk/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+129,3bdc606e1cc092404f52a2e5435f5366f4733710,/splunk/centos-7/Dockerfile,"# Setup users and download Splunk
+"
+130,3bdc606e1cc092404f52a2e5435f5366f4733710,/splunk/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+131,3bdc606e1cc092404f52a2e5435f5366f4733710,/splunk/centos-7/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+132,ce7b943137772af2ce39e1ea3e18edb3e23125d2,/py23-image/centos-7/Dockerfile,"# INFRA-15385: manual installation of python 3.7 as default distro version is 3.6
+"
+133,ce7b943137772af2ce39e1ea3e18edb3e23125d2,/py23-image/centos-7/Dockerfile,"    #pip version is not automatically ""fixed"", unlike debian-based
+"
+134,bb6e278ed6ddebb5f2eaac48eee92d45b91521a9,/uf/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+135,bb6e278ed6ddebb5f2eaac48eee92d45b91521a9,/uf/common-files/Dockerfile,"#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+136,bb6e278ed6ddebb5f2eaac48eee92d45b91521a9,/uf/common-files/Dockerfile,"#
+# Bare Splunk Universal Forwarder Image without Ansible (BYO entrypoint)
+#
+"
+137,bb6e278ed6ddebb5f2eaac48eee92d45b91521a9,/uf/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+138,bb6e278ed6ddebb5f2eaac48eee92d45b91521a9,/uf/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+139,bb6e278ed6ddebb5f2eaac48eee92d45b91521a9,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+140,bb6e278ed6ddebb5f2eaac48eee92d45b91521a9,/uf/common-files/Dockerfile,"# Copy files from package
+"
+141,bb6e278ed6ddebb5f2eaac48eee92d45b91521a9,/uf/common-files/Dockerfile,"#
+# Full Splunk Universal Forwarder Image with Ansible
+#
+"
+142,bb6e278ed6ddebb5f2eaac48eee92d45b91521a9,/uf/common-files/Dockerfile,"# Copy ansible playbooks
+"
+143,bb6e278ed6ddebb5f2eaac48eee92d45b91521a9,/uf/common-files/Dockerfile,"# Copy scripts
+"
+144,bb6e278ed6ddebb5f2eaac48eee92d45b91521a9,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+145,ecbc063f3daf6d774d30c92945574cb5fd7ea965,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+146,947a9b6e48033f5549d2ec7188fd60113d2ec477,/base/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+147,20f3d961adae225668ba380ef079d9c83123137e,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+148,20f3d961adae225668ba380ef079d9c83123137e,/splunk/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+149,20f3d961adae225668ba380ef079d9c83123137e,/splunk/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+150,b47235094704d74637f46f5322e519cda32f43d1,/uf/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+151,b47235094704d74637f46f5322e519cda32f43d1,/uf/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+152,b47235094704d74637f46f5322e519cda32f43d1,/uf/debian-9/Dockerfile,"    # Set sudo rights
+"
+153,b47235094704d74637f46f5322e519cda32f43d1,/uf/debian-9/Dockerfile,"    # Create the ansible user/group
+"
+154,b47235094704d74637f46f5322e519cda32f43d1,/uf/debian-9/Dockerfile,"    # Download our installer and perform a checksum
+"
+155,b47235094704d74637f46f5322e519cda32f43d1,/uf/debian-9/Dockerfile,"    # Create the Splunk Home directory
+"
+156,b47235094704d74637f46f5322e519cda32f43d1,/uf/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+157,b47235094704d74637f46f5322e519cda32f43d1,/uf/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+158,c1f063a75c42276162bba9efffb0eb5d3552ed7c,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+159,ca655b12b52b4c6f2773017260abf310cd1152e1,/base/debian-10/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+160,03089a26601c1ababc5285ec1d5aef8b9a27047b,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+161,03089a26601c1ababc5285ec1d5aef8b9a27047b,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+162,03089a26601c1ababc5285ec1d5aef8b9a27047b,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+163,03089a26601c1ababc5285ec1d5aef8b9a27047b,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+164,03089a26601c1ababc5285ec1d5aef8b9a27047b,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+165,03089a26601c1ababc5285ec1d5aef8b9a27047b,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+166,03089a26601c1ababc5285ec1d5aef8b9a27047b,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+167,03089a26601c1ababc5285ec1d5aef8b9a27047b,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+168,03089a26601c1ababc5285ec1d5aef8b9a27047b,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+169,60a280858557f477ed2b4e061472d784ab371d63,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+170,60a280858557f477ed2b4e061472d784ab371d63,/splunk/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+171,60a280858557f477ed2b4e061472d784ab371d63,/splunk/debian-9/Dockerfile,"    # Set sudo rights
+"
+172,60a280858557f477ed2b4e061472d784ab371d63,/splunk/debian-9/Dockerfile,"    # Create the ansible user/group
+"
+173,60a280858557f477ed2b4e061472d784ab371d63,/splunk/debian-9/Dockerfile,"    # Download our installer and perform a checksum
+"
+174,60a280858557f477ed2b4e061472d784ab371d63,/splunk/debian-9/Dockerfile,"    # Create the Splunk Home directory
+"
+175,60a280858557f477ed2b4e061472d784ab371d63,/splunk/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+176,60a280858557f477ed2b4e061472d784ab371d63,/splunk/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+177,28f9a73e7e087ea93cf018e6745fb7c891e0fbc1,/py23-image/debian-9/Dockerfile,"# INFRA-15385: manual installation of python 3.7 as default distro version is 3.5
+"
+178,28f9a73e7e087ea93cf018e6745fb7c891e0fbc1,/py23-image/debian-9/Dockerfile,"#removing all intermediate dependencies. All the stuff below comes up to 200+MB
+"
+179,8e7a37afd3761f9a40666ffbb9414cc523b1e1f2,/py23-image/debian-9/Dockerfile,"# INFRA-15385: manual installation of python 3.7 as default distro version is 3.5
+"
+180,8e7a37afd3761f9a40666ffbb9414cc523b1e1f2,/py23-image/debian-9/Dockerfile,"#removing all intermediate dependencies. All the stuff below comes up to 200+MB
+"
+181,36817b11ff85455646726879f2d1facd25f11bd0,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+182,36817b11ff85455646726879f2d1facd25f11bd0,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+183,36817b11ff85455646726879f2d1facd25f11bd0,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+184,36817b11ff85455646726879f2d1facd25f11bd0,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+185,36817b11ff85455646726879f2d1facd25f11bd0,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+186,36817b11ff85455646726879f2d1facd25f11bd0,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+187,36817b11ff85455646726879f2d1facd25f11bd0,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+188,36817b11ff85455646726879f2d1facd25f11bd0,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+189,36817b11ff85455646726879f2d1facd25f11bd0,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+190,36817b11ff85455646726879f2d1facd25f11bd0,/splunk/common-files/Dockerfile,"    # Create the ansible user/group
+"
+191,36817b11ff85455646726879f2d1facd25f11bd0,/splunk/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+192,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+193,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/centos-7/Dockerfile,"# Copy ansible playbooks
+"
+194,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/centos-7/Dockerfile,"# Copy scripts
+"
+195,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/centos-7/Dockerfile,"# Copy TA to collect docker logs
+"
+196,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/centos-7/Dockerfile,"# Setup users and groups
+"
+197,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/centos-7/Dockerfile,"    # Set sudo rights
+"
+198,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/centos-7/Dockerfile,"    # Create the ansible user/group
+"
+199,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+200,23025adf4b4ad388449acf73d8c260a183abd65a,/uf/centos-7/Dockerfile,"# Copy files from package
+"
+201,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+202,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+203,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/debian-9/Dockerfile,"    # Set sudo rights
+"
+204,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/debian-9/Dockerfile,"    # Create the ansible user/group
+"
+205,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/debian-9/Dockerfile,"    # Download our installer and perform a checksum
+"
+206,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/debian-9/Dockerfile,"    # Create the Splunk Home directory
+"
+207,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+208,d8afbe1328a3efb55f333dfe712b66e99c413f6e,/uf/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+209,ed463c421de27975ee45b200d3a61829e4ee140a,/base/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+210,870ffea9764d66418713f9a77333d42960cca1a1,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+211,870ffea9764d66418713f9a77333d42960cca1a1,/splunk/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+212,8f2fc485339e35d8aebd437dd6798654a850f291,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+213,8f2fc485339e35d8aebd437dd6798654a850f291,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+214,8f2fc485339e35d8aebd437dd6798654a850f291,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+215,8f2fc485339e35d8aebd437dd6798654a850f291,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+216,8f2fc485339e35d8aebd437dd6798654a850f291,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+217,8f2fc485339e35d8aebd437dd6798654a850f291,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+218,8f2fc485339e35d8aebd437dd6798654a850f291,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+219,8f2fc485339e35d8aebd437dd6798654a850f291,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+220,8f2fc485339e35d8aebd437dd6798654a850f291,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+221,8f2fc485339e35d8aebd437dd6798654a850f291,/splunk/common-files/Dockerfile,"    # Create the ansible user/group
+"
+222,8f2fc485339e35d8aebd437dd6798654a850f291,/splunk/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+223,70902167327cc2716e51721b93ed2850ac60aede,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+224,70902167327cc2716e51721b93ed2850ac60aede,/splunk/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+225,70902167327cc2716e51721b93ed2850ac60aede,/splunk/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+226,ce7b943137772af2ce39e1ea3e18edb3e23125d2,/py23-image/redhat-8/Dockerfile,"# INFRA-15385: manual installation of python 3.7 as default distro version is 3.6
+"
+227,ce7b943137772af2ce39e1ea3e18edb3e23125d2,/py23-image/redhat-8/Dockerfile,"    #pip version is not automatically ""fixed"", unlike debian-based
+"
+228,ce7b943137772af2ce39e1ea3e18edb3e23125d2,/py23-image/redhat-8/Dockerfile,"#microdnf persists metadata which is a problem for removing packages. So have to clean first before removing. 
+"
+229,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+230,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/debian-9/Dockerfile,"# Copy ansible playbooks
+"
+231,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/debian-9/Dockerfile,"# Copy scripts
+"
+232,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/debian-9/Dockerfile,"# Copy TA to collect docker logs
+"
+233,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/debian-9/Dockerfile,"# Setup users and directories
+"
+234,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+235,d115bba74dfee36d6c0b53c162389f6deea55b8c,/uf/debian-9/Dockerfile,"# Copy files from package
+"
+236,3af57652b0b0b20287539f67899bacc6405e29d0,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+237,70ca3e50e358e606f61c93686240ee03c920c0b5,/uf/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+238,70ca3e50e358e606f61c93686240ee03c920c0b5,/uf/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+239,70ca3e50e358e606f61c93686240ee03c920c0b5,/uf/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+240,70ca3e50e358e606f61c93686240ee03c920c0b5,/uf/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+241,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+#
+# Download and unpack Splunk Enterprise
+#
+"
+242,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/splunk/debian-9/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+243,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/splunk/debian-9/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+244,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/splunk/debian-9/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+245,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/splunk/debian-9/Dockerfile,"# Set timezone to use UTC
+"
+246,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/splunk/debian-9/Dockerfile,"    # Setup users and groups
+"
+247,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/splunk/debian-9/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+248,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/splunk/debian-9/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+249,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/splunk/debian-9/Dockerfile,"# Set sudo rights
+"
+250,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/splunk/debian-9/Dockerfile,"    # Create the ansible user/group
+"
+251,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/splunk/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+252,99eb6c7e1b401b6c15b8e62aa31a8467ff866310,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+253,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Download and unpack Splunk Enterprise
+#
+"
+254,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/centos-7/Dockerfile,"# Copy ansible playbooks
+"
+255,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/centos-7/Dockerfile,"# Copy scripts
+"
+256,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/centos-7/Dockerfile,"# Setup users and groups
+"
+257,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/centos-7/Dockerfile,"    # Set sudo rights
+"
+258,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/centos-7/Dockerfile,"    # Create the ansible user/group
+"
+259,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+260,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/splunk/centos-7/Dockerfile,"# Copy files from package
+"
+261,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+262,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/centos-7/Dockerfile,"# Setup users and download Splunk
+"
+263,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/centos-7/Dockerfile,"    # Set sudo rights
+"
+264,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/centos-7/Dockerfile,"    # Create the ansible user/group
+"
+265,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/centos-7/Dockerfile,"    # Download our installer and perform a checksum
+"
+266,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/centos-7/Dockerfile,"    # Create the Splunk Home directory
+"
+267,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+268,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/centos-7/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+269,870ffea9764d66418713f9a77333d42960cca1a1,/base/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+270,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+271,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+272,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"#
+# Bare Splunk Universal Forwarder Image without Ansible (BYO entrypoint)
+#
+"
+273,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+274,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+275,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+276,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"# Copy files from package
+"
+277,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"#
+# Full Splunk Universal Forwarder Image with Ansible
+#
+"
+278,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"# Copy ansible playbooks
+"
+279,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"# Copy scripts
+"
+280,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+281,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"    # Set sudo rights
+"
+282,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"    # Create the ansible user/group
+"
+283,42c30e6ab96a28f9047a1208e6c89d8d9b953df8,/uf/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+284,3bdc606e1cc092404f52a2e5435f5366f4733710,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+285,3bdc606e1cc092404f52a2e5435f5366f4733710,/splunk/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+286,3bdc606e1cc092404f52a2e5435f5366f4733710,/splunk/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+287,3bdc606e1cc092404f52a2e5435f5366f4733710,/splunk/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+288,df1f34f5e005dde0ca876d8a5198701a7b2d91d1,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+289,947a9b6e48033f5549d2ec7188fd60113d2ec477,/base/debian-10/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+290,947a9b6e48033f5549d2ec7188fd60113d2ec477,/base/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+291,236fb852338e019d8da22a53aed853b1268c0f83,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+292,cc71a0bde875347534eb7347bcca178e92bb70bb,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+293,cc71a0bde875347534eb7347bcca178e92bb70bb,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+294,cc71a0bde875347534eb7347bcca178e92bb70bb,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+295,cc71a0bde875347534eb7347bcca178e92bb70bb,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+296,cc71a0bde875347534eb7347bcca178e92bb70bb,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+297,cc71a0bde875347534eb7347bcca178e92bb70bb,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+298,cc71a0bde875347534eb7347bcca178e92bb70bb,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+299,cc71a0bde875347534eb7347bcca178e92bb70bb,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+300,cc71a0bde875347534eb7347bcca178e92bb70bb,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+301,cc71a0bde875347534eb7347bcca178e92bb70bb,/splunk/common-files/Dockerfile,"    # Create the ansible user/group \
+"
+302,cc71a0bde875347534eb7347bcca178e92bb70bb,/splunk/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"". \
+"
+303,28d26f113986918f66e3f878505945466b8d582f,/uf/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+304,28d26f113986918f66e3f878505945466b8d582f,/uf/centos-7/Dockerfile,"# Copy ansible playbooks
+"
+305,28d26f113986918f66e3f878505945466b8d582f,/uf/centos-7/Dockerfile,"# Copy scripts
+"
+306,28d26f113986918f66e3f878505945466b8d582f,/uf/centos-7/Dockerfile,"# Setup users and groups
+"
+307,28d26f113986918f66e3f878505945466b8d582f,/uf/centos-7/Dockerfile,"    # Set sudo rights
+"
+308,28d26f113986918f66e3f878505945466b8d582f,/uf/centos-7/Dockerfile,"    # Create the ansible user/group
+"
+309,28d26f113986918f66e3f878505945466b8d582f,/uf/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+310,28d26f113986918f66e3f878505945466b8d582f,/uf/centos-7/Dockerfile,"# Copy files from package
+"
+311,238313a9793e7df9269d39a10097dbb469d51c15,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+312,238313a9793e7df9269d39a10097dbb469d51c15,/splunk/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+313,b47235094704d74637f46f5322e519cda32f43d1,/uf/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+314,b47235094704d74637f46f5322e519cda32f43d1,/uf/centos-7/Dockerfile,"# Setup users and download Splunk
+"
+315,b47235094704d74637f46f5322e519cda32f43d1,/uf/centos-7/Dockerfile,"    # Set sudo rights
+"
+316,b47235094704d74637f46f5322e519cda32f43d1,/uf/centos-7/Dockerfile,"    # Create the ansible user/group
+"
+317,b47235094704d74637f46f5322e519cda32f43d1,/uf/centos-7/Dockerfile,"    # Download our installer and perform a checksum
+"
+318,b47235094704d74637f46f5322e519cda32f43d1,/uf/centos-7/Dockerfile,"    # Create the Splunk Home directory
+"
+319,b47235094704d74637f46f5322e519cda32f43d1,/uf/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+320,d192f939ae5b20a3dc5c05186de1d34462f98529,/splunk/common-files/Dockerfile,"# Copyright 2018-2020 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+321,d192f939ae5b20a3dc5c05186de1d34462f98529,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+322,d192f939ae5b20a3dc5c05186de1d34462f98529,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+323,d192f939ae5b20a3dc5c05186de1d34462f98529,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+324,d192f939ae5b20a3dc5c05186de1d34462f98529,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+325,d192f939ae5b20a3dc5c05186de1d34462f98529,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+326,d192f939ae5b20a3dc5c05186de1d34462f98529,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+327,d192f939ae5b20a3dc5c05186de1d34462f98529,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+328,d192f939ae5b20a3dc5c05186de1d34462f98529,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+329,1997910b846142dba743cfc0836d6b898d22fb66,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+330,066dcbd8dc1296dec55616297ce6c44d92ed1431,/uf/debian-10/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+331,066dcbd8dc1296dec55616297ce6c44d92ed1431,/uf/debian-10/Dockerfile,"# Setup users and download Splunk
+"
+332,066dcbd8dc1296dec55616297ce6c44d92ed1431,/uf/debian-10/Dockerfile,"    # Set sudo rights
+"
+333,066dcbd8dc1296dec55616297ce6c44d92ed1431,/uf/debian-10/Dockerfile,"    # Create the ansible user/group
+"
+334,066dcbd8dc1296dec55616297ce6c44d92ed1431,/uf/debian-10/Dockerfile,"    # Download our installer and perform a checksum
+"
+335,066dcbd8dc1296dec55616297ce6c44d92ed1431,/uf/debian-10/Dockerfile,"    # Create the Splunk Home directory
+"
+336,066dcbd8dc1296dec55616297ce6c44d92ed1431,/uf/debian-10/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+337,066dcbd8dc1296dec55616297ce6c44d92ed1431,/uf/debian-10/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+338,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+339,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+340,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+341,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+342,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+343,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+344,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+345,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+346,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+347,5a06104fdc414d4ea508f2d6e6f91179756ce97e,/py23-image/redhat-8/Dockerfile,"# INFRA-15385: manual installation of python 3.7 as default distro version is 3.6
+"
+348,30f7effd57b637dab87266afe74104ba58bb4383,/uf/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+349,30f7effd57b637dab87266afe74104ba58bb4383,/uf/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+350,30f7effd57b637dab87266afe74104ba58bb4383,/uf/debian-9/Dockerfile,"    # Set sudo rights
+"
+351,30f7effd57b637dab87266afe74104ba58bb4383,/uf/debian-9/Dockerfile,"    # Create the ansible user/group
+"
+352,30f7effd57b637dab87266afe74104ba58bb4383,/uf/debian-9/Dockerfile,"    # Download our installer and perform a checksum
+"
+353,30f7effd57b637dab87266afe74104ba58bb4383,/uf/debian-9/Dockerfile,"    # Create the Splunk Home directory
+"
+354,30f7effd57b637dab87266afe74104ba58bb4383,/uf/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+355,30f7effd57b637dab87266afe74104ba58bb4383,/uf/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+356,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/base/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+357,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+358,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+#
+# Download and unpack Splunk Enterprise
+#
+"
+359,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/debian-9/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+360,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/debian-9/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+361,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/debian-9/Dockerfile,"# Set timezone to use UTC
+"
+362,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/debian-9/Dockerfile,"    # Setup users and groups
+"
+363,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/debian-9/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+364,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/debian-9/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+365,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/debian-9/Dockerfile,"# Set sudo rights
+"
+366,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/debian-9/Dockerfile,"    # Create the ansible user/group
+"
+367,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+368,8a56fea5f0573b0835cda707e10b307a5fd88c51,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+369,8a56fea5f0573b0835cda707e10b307a5fd88c51,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+370,8a56fea5f0573b0835cda707e10b307a5fd88c51,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+371,8a56fea5f0573b0835cda707e10b307a5fd88c51,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+372,8a56fea5f0573b0835cda707e10b307a5fd88c51,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+373,8a56fea5f0573b0835cda707e10b307a5fd88c51,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+374,8a56fea5f0573b0835cda707e10b307a5fd88c51,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+375,8a56fea5f0573b0835cda707e10b307a5fd88c51,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+376,8a56fea5f0573b0835cda707e10b307a5fd88c51,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+377,8a56fea5f0573b0835cda707e10b307a5fd88c51,/splunk/common-files/Dockerfile,"    # Create the ansible user/group
+"
+378,8a56fea5f0573b0835cda707e10b307a5fd88c51,/splunk/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+379,e39be467bd1c0ba4c1a067dc6c45f2d351b67ae4,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+#
+# Download and unpack Splunk Enterprise
+#
+"
+380,e39be467bd1c0ba4c1a067dc6c45f2d351b67ae4,/splunk/debian-9/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+381,e39be467bd1c0ba4c1a067dc6c45f2d351b67ae4,/splunk/debian-9/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+382,e39be467bd1c0ba4c1a067dc6c45f2d351b67ae4,/splunk/debian-9/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+383,e39be467bd1c0ba4c1a067dc6c45f2d351b67ae4,/splunk/debian-9/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+384,e39be467bd1c0ba4c1a067dc6c45f2d351b67ae4,/splunk/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+385,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+386,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/centos-7/Dockerfile,"# Copy ansible playbooks
+"
+387,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/centos-7/Dockerfile,"# Copy scripts
+"
+388,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/centos-7/Dockerfile,"# Setup users and groups
+"
+389,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/centos-7/Dockerfile,"    # Set sudo rights
+"
+390,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/centos-7/Dockerfile,"    # Create the ansible user/group
+"
+391,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+392,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/centos-7/Dockerfile,"# Copy files from package
+"
+393,d503cd5a48acc59539be818d0b23646c0e184cfc,/uf/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+394,d503cd5a48acc59539be818d0b23646c0e184cfc,/uf/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+395,03089a26601c1ababc5285ec1d5aef8b9a27047b,/uf/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+396,03089a26601c1ababc5285ec1d5aef8b9a27047b,/uf/common-files/Dockerfile,"#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+397,03089a26601c1ababc5285ec1d5aef8b9a27047b,/uf/common-files/Dockerfile,"#
+# Bare Splunk Universal Forwarder Image without Ansible (BYO entrypoint)
+#
+"
+398,03089a26601c1ababc5285ec1d5aef8b9a27047b,/uf/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+399,03089a26601c1ababc5285ec1d5aef8b9a27047b,/uf/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+400,03089a26601c1ababc5285ec1d5aef8b9a27047b,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+401,03089a26601c1ababc5285ec1d5aef8b9a27047b,/uf/common-files/Dockerfile,"# Copy files from package
+"
+402,03089a26601c1ababc5285ec1d5aef8b9a27047b,/uf/common-files/Dockerfile,"#
+# Full Splunk Universal Forwarder Image with Ansible
+#
+"
+403,03089a26601c1ababc5285ec1d5aef8b9a27047b,/uf/common-files/Dockerfile,"# Copy ansible playbooks
+"
+404,03089a26601c1ababc5285ec1d5aef8b9a27047b,/uf/common-files/Dockerfile,"# Copy scripts
+"
+405,03089a26601c1ababc5285ec1d5aef8b9a27047b,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+406,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/uf/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+407,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/uf/debian-9/Dockerfile,"#
+# Bare Splunk Universal Forwarder Image without Ansible (BYO entrypoint)
+#
+"
+408,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/uf/debian-9/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+409,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/uf/debian-9/Dockerfile,"# Setup users and groups
+"
+410,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/uf/debian-9/Dockerfile,"# Copy files from package
+"
+411,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/uf/debian-9/Dockerfile,"#
+# Full Splunk Universal Forwarder Image with Ansible
+#
+"
+412,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/uf/debian-9/Dockerfile,"# Copy ansible playbooks
+"
+413,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/uf/debian-9/Dockerfile,"# Copy scripts
+"
+414,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/uf/debian-9/Dockerfile,"# Setup users and groups
+"
+415,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/uf/debian-9/Dockerfile,"    # Set sudo rights
+"
+416,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/uf/debian-9/Dockerfile,"    # Create the ansible user/group
+"
+417,c88540d593e5880f0ae8d4458d1b3b89abd6af9e,/uf/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+418,3ca30d04f48f8e97fe82bb76149b84fece88a0e5,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+419,3ca30d04f48f8e97fe82bb76149b84fece88a0e5,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+420,3ca30d04f48f8e97fe82bb76149b84fece88a0e5,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+421,3ca30d04f48f8e97fe82bb76149b84fece88a0e5,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+422,3ca30d04f48f8e97fe82bb76149b84fece88a0e5,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+423,3ca30d04f48f8e97fe82bb76149b84fece88a0e5,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+424,3ca30d04f48f8e97fe82bb76149b84fece88a0e5,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+425,3ca30d04f48f8e97fe82bb76149b84fece88a0e5,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+426,3ca30d04f48f8e97fe82bb76149b84fece88a0e5,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+427,3ca30d04f48f8e97fe82bb76149b84fece88a0e5,/splunk/common-files/Dockerfile,"    # Create the ansible user/group
+"
+428,3ca30d04f48f8e97fe82bb76149b84fece88a0e5,/splunk/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+429,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/splunk/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+430,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/splunk/centos-7/Dockerfile,"# Setup users and download Splunk
+"
+431,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/splunk/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+432,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/splunk/centos-7/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+433,46365fdf217f34c52bb30050965d01842d73b41f,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+434,46365fdf217f34c52bb30050965d01842d73b41f,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+435,46365fdf217f34c52bb30050965d01842d73b41f,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+436,46365fdf217f34c52bb30050965d01842d73b41f,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+437,46365fdf217f34c52bb30050965d01842d73b41f,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+438,46365fdf217f34c52bb30050965d01842d73b41f,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+439,46365fdf217f34c52bb30050965d01842d73b41f,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+440,46365fdf217f34c52bb30050965d01842d73b41f,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+441,46365fdf217f34c52bb30050965d01842d73b41f,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+442,ca5fb04f6b61df8f1d544339455ec9a20bff55f2,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+443,8dbbbf8867e673d5ad1af66b9933ae51ca31c022,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+444,ee53acc0074893b86ec15fa56c3bf0dc1543d45e,/base/redhat-8/Dockerfile,"# Copyright 2018-2020 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+445,5a06104fdc414d4ea508f2d6e6f91179756ce97e,/py23-image/debian-9/Dockerfile,"# INFRA-15385: manual installation of python 3.7 as default distro version is 3.5
+"
+446,5a06104fdc414d4ea508f2d6e6f91179756ce97e,/py23-image/debian-9/Dockerfile,"#removing all intermediate dependencies. All the stuff below comes up to 200+MB
+"
+447,5a06104fdc414d4ea508f2d6e6f91179756ce97e,/py23-image/debian-9/Dockerfile,"#doing this in case there is an older version of python3 installed
+"
+448,5a06104fdc414d4ea508f2d6e6f91179756ce97e,/py23-image/debian-9/Dockerfile,"    #lsb_release not available on python 3.6 and above, but is required by most debian-based image for pip(3)
+"
+449,d45b1cf3bc680f95f78395a8044647c9bc050d4f,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+450,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/uf/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+451,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/uf/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+452,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/uf/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+453,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/uf/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+454,ca05c517ea46bccb699ffae16b93b3d8e29ef69b,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+455,30f7effd57b637dab87266afe74104ba58bb4383,/uf/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+456,30f7effd57b637dab87266afe74104ba58bb4383,/uf/centos-7/Dockerfile,"# Setup users and download Splunk
+"
+457,30f7effd57b637dab87266afe74104ba58bb4383,/uf/centos-7/Dockerfile,"    # Set sudo rights
+"
+458,30f7effd57b637dab87266afe74104ba58bb4383,/uf/centos-7/Dockerfile,"    # Create the ansible user/group
+"
+459,30f7effd57b637dab87266afe74104ba58bb4383,/uf/centos-7/Dockerfile,"    # Download our installer and perform a checksum
+"
+460,30f7effd57b637dab87266afe74104ba58bb4383,/uf/centos-7/Dockerfile,"    # Create the Splunk Home directory
+"
+461,30f7effd57b637dab87266afe74104ba58bb4383,/uf/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+462,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/base/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+463,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+464,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/debian-9/Dockerfile,"#
+# Bare Splunk Universal Forwarder Image without Ansible (BYO entrypoint)
+#
+"
+465,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/debian-9/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+466,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/debian-9/Dockerfile,"# Setup users and groups
+"
+467,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/debian-9/Dockerfile,"# Copy files from package
+"
+468,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/debian-9/Dockerfile,"#
+# Full Splunk Universal Forwarder Image with Ansible
+#
+"
+469,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/debian-9/Dockerfile,"# Copy ansible playbooks
+"
+470,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/debian-9/Dockerfile,"# Copy scripts
+"
+471,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/debian-9/Dockerfile,"# Setup users and groups
+"
+472,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/debian-9/Dockerfile,"    # Set sudo rights
+"
+473,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/debian-9/Dockerfile,"    # Create the ansible user/group
+"
+474,f8b85d459ca9c7fbc37bd2c647c942d3d9b00698,/uf/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+475,7fce4d79d5a988e2d5d717114b3066d14fb95210,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+476,409beed0fe855db58f9b6daf53c5286bed8ab03d,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+477,d192f939ae5b20a3dc5c05186de1d34462f98529,/uf/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+478,d192f939ae5b20a3dc5c05186de1d34462f98529,/uf/common-files/Dockerfile,"#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+479,d192f939ae5b20a3dc5c05186de1d34462f98529,/uf/common-files/Dockerfile,"#
+# Bare Splunk Universal Forwarder Image without Ansible (BYO entrypoint)
+#
+"
+480,d192f939ae5b20a3dc5c05186de1d34462f98529,/uf/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+481,d192f939ae5b20a3dc5c05186de1d34462f98529,/uf/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+482,d192f939ae5b20a3dc5c05186de1d34462f98529,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+483,d192f939ae5b20a3dc5c05186de1d34462f98529,/uf/common-files/Dockerfile,"# Copy files from package
+"
+484,d192f939ae5b20a3dc5c05186de1d34462f98529,/uf/common-files/Dockerfile,"#
+# Full Splunk Universal Forwarder Image with Ansible
+#
+"
+485,d192f939ae5b20a3dc5c05186de1d34462f98529,/uf/common-files/Dockerfile,"# Copy ansible playbooks
+"
+486,d192f939ae5b20a3dc5c05186de1d34462f98529,/uf/common-files/Dockerfile,"# Copy scripts
+"
+487,d192f939ae5b20a3dc5c05186de1d34462f98529,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+488,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Download and unpack Splunk Enterprise
+#
+"
+489,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/centos-7/Dockerfile,"# Copy ansible playbooks
+"
+490,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/centos-7/Dockerfile,"# Copy scripts
+"
+491,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/centos-7/Dockerfile,"# Setup users and groups
+"
+492,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/centos-7/Dockerfile,"    # Set sudo rights
+"
+493,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/centos-7/Dockerfile,"    # Create the ansible user/group
+"
+494,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+495,23025adf4b4ad388449acf73d8c260a183abd65a,/splunk/centos-7/Dockerfile,"# Copy files from package
+"
+496,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/uf/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+497,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/uf/common-files/Dockerfile,"#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+498,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/uf/common-files/Dockerfile,"#
+# Bare Splunk Universal Forwarder Image without Ansible (BYO entrypoint)
+#
+"
+499,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/uf/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+500,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/uf/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+501,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+502,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/uf/common-files/Dockerfile,"# Copy files from package
+"
+503,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/uf/common-files/Dockerfile,"#
+# Full Splunk Universal Forwarder Image with Ansible
+#
+"
+504,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/uf/common-files/Dockerfile,"# Copy ansible playbooks
+"
+505,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/uf/common-files/Dockerfile,"# Copy scripts
+"
+506,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+507,addb6a905d506c66a390dc8c7d20dcbe51cd2799,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+508,addb6a905d506c66a390dc8c7d20dcbe51cd2799,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+509,addb6a905d506c66a390dc8c7d20dcbe51cd2799,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+510,addb6a905d506c66a390dc8c7d20dcbe51cd2799,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+511,addb6a905d506c66a390dc8c7d20dcbe51cd2799,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+512,addb6a905d506c66a390dc8c7d20dcbe51cd2799,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+513,addb6a905d506c66a390dc8c7d20dcbe51cd2799,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+514,addb6a905d506c66a390dc8c7d20dcbe51cd2799,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+515,addb6a905d506c66a390dc8c7d20dcbe51cd2799,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+516,addb6a905d506c66a390dc8c7d20dcbe51cd2799,/splunk/common-files/Dockerfile,"    # Create the ansible user/group
+"
+517,addb6a905d506c66a390dc8c7d20dcbe51cd2799,/splunk/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+518,a7fe70835071642b94b8ffbe9f06ba7bf90eb69c,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+519,a7fe70835071642b94b8ffbe9f06ba7bf90eb69c,/splunk/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+520,d503cd5a48acc59539be818d0b23646c0e184cfc,/uf/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+521,d503cd5a48acc59539be818d0b23646c0e184cfc,/uf/centos-7/Dockerfile,"# Setup users and download Splunk
+"
+522,e2b1081f4bec9d60d5a6c6974ad259b9316e81be,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+523,e2b1081f4bec9d60d5a6c6974ad259b9316e81be,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+524,e2b1081f4bec9d60d5a6c6974ad259b9316e81be,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+525,e2b1081f4bec9d60d5a6c6974ad259b9316e81be,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+526,e2b1081f4bec9d60d5a6c6974ad259b9316e81be,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+527,e2b1081f4bec9d60d5a6c6974ad259b9316e81be,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+528,e2b1081f4bec9d60d5a6c6974ad259b9316e81be,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+529,e2b1081f4bec9d60d5a6c6974ad259b9316e81be,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+530,e2b1081f4bec9d60d5a6c6974ad259b9316e81be,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+531,e2b1081f4bec9d60d5a6c6974ad259b9316e81be,/splunk/common-files/Dockerfile,"    # Create the ansible user/group
+"
+532,e2b1081f4bec9d60d5a6c6974ad259b9316e81be,/splunk/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+533,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+534,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/splunk/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+535,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/splunk/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+536,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/splunk/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+537,51727393573116f44df588813d28415f779e560a,/uf/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+538,51727393573116f44df588813d28415f779e560a,/uf/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+539,51727393573116f44df588813d28415f779e560a,/uf/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+540,51727393573116f44df588813d28415f779e560a,/uf/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+541,541eff0773bc5ad098e93ecc68997067edb34fbf,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+542,541eff0773bc5ad098e93ecc68997067edb34fbf,/splunk/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+543,541eff0773bc5ad098e93ecc68997067edb34fbf,/splunk/debian-9/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+544,541eff0773bc5ad098e93ecc68997067edb34fbf,/splunk/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+545,4f48a2df23972f03b9cedb7ad2afc8c25ebce693,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+546,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/uf/centos-7/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+547,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/uf/centos-7/Dockerfile,"# Setup users and download Splunk
+"
+548,44bc04339d7e779d46c2cdfa449b1475b05ce4f0,/uf/centos-7/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+549,d45b1cf3bc680f95f78395a8044647c9bc050d4f,/py23-image/redhat-8/Dockerfile,"# INFRA-15385: manual installation of python 3.7 as default distro version is 3.6
+"
+550,d45b1cf3bc680f95f78395a8044647c9bc050d4f,/py23-image/redhat-8/Dockerfile,"    #pip version is not automatically ""fixed"", unlike debian-based
+"
+551,d45b1cf3bc680f95f78395a8044647c9bc050d4f,/py23-image/redhat-8/Dockerfile,"#microdnf persists metadata which is a problem for removing packages. So have to clean first before removing. 
+"
+552,1595f16ae7748cd67ecab60b95624685df5fd52e,/uf/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+553,1595f16ae7748cd67ecab60b95624685df5fd52e,/uf/common-files/Dockerfile,"#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+554,1595f16ae7748cd67ecab60b95624685df5fd52e,/uf/common-files/Dockerfile,"#
+# Bare Splunk Universal Forwarder Image without Ansible (BYO entrypoint)
+#
+"
+555,1595f16ae7748cd67ecab60b95624685df5fd52e,/uf/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+556,1595f16ae7748cd67ecab60b95624685df5fd52e,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+557,1595f16ae7748cd67ecab60b95624685df5fd52e,/uf/common-files/Dockerfile,"# Copy files from package
+"
+558,1595f16ae7748cd67ecab60b95624685df5fd52e,/uf/common-files/Dockerfile,"#
+# Full Splunk Universal Forwarder Image with Ansible
+#
+"
+559,1595f16ae7748cd67ecab60b95624685df5fd52e,/uf/common-files/Dockerfile,"# Copy ansible playbooks
+"
+560,1595f16ae7748cd67ecab60b95624685df5fd52e,/uf/common-files/Dockerfile,"# Copy scripts
+"
+561,1595f16ae7748cd67ecab60b95624685df5fd52e,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+562,1595f16ae7748cd67ecab60b95624685df5fd52e,/uf/common-files/Dockerfile,"    # Set sudo rights
+"
+563,1595f16ae7748cd67ecab60b95624685df5fd52e,/uf/common-files/Dockerfile,"    # Create the ansible user/group
+"
+564,1595f16ae7748cd67ecab60b95624685df5fd52e,/uf/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+565,5a06104fdc414d4ea508f2d6e6f91179756ce97e,/py23-image/centos-7/Dockerfile,"# INFRA-15385: manual installation of python 3.7 as default distro version is 3.6
+"
+566,3da4e23f2e4e0cbb02b76b8f39bad534ea85816f,/splunk/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+567,3da4e23f2e4e0cbb02b76b8f39bad534ea85816f,/splunk/common-files/Dockerfile,"#
+# Download and unpack Splunk Enterprise
+#
+"
+568,3da4e23f2e4e0cbb02b76b8f39bad534ea85816f,/splunk/common-files/Dockerfile,"#
+# Minimal Splunk base image with many files excluded, intended for internal and experimental use
+#
+"
+569,3da4e23f2e4e0cbb02b76b8f39bad534ea85816f,/splunk/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+570,3da4e23f2e4e0cbb02b76b8f39bad534ea85816f,/splunk/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+571,3da4e23f2e4e0cbb02b76b8f39bad534ea85816f,/splunk/common-files/Dockerfile,"# Setup users and groups
+"
+572,3da4e23f2e4e0cbb02b76b8f39bad534ea85816f,/splunk/common-files/Dockerfile,"#
+# Bare Splunk Enterprise Image without Ansible (BYO entrypoint)
+#
+"
+573,3da4e23f2e4e0cbb02b76b8f39bad534ea85816f,/splunk/common-files/Dockerfile,"#
+# Full Splunk Enterprise Image with Ansible
+#
+"
+574,3da4e23f2e4e0cbb02b76b8f39bad534ea85816f,/splunk/common-files/Dockerfile,"# Set sudo rights
+"
+575,3da4e23f2e4e0cbb02b76b8f39bad534ea85816f,/splunk/common-files/Dockerfile,"    # Create the ansible user/group
+"
+576,3da4e23f2e4e0cbb02b76b8f39bad534ea85816f,/splunk/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+577,6095573cc8eaea9a687f5b8086beda151fff2336,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+578,d698134f28ba59b3926159a03d77031281bc9374,/splunk/debian-9/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+579,d698134f28ba59b3926159a03d77031281bc9374,/splunk/debian-9/Dockerfile,"# Setup users and download Splunk
+"
+580,d698134f28ba59b3926159a03d77031281bc9374,/splunk/debian-9/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
+581,d56c58eda19f25f346cb2b9e54f5eefe0b5c9320,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+582,57a8e4d0e42711f437e116cad1b280b57eb2013f,/base/redhat-8/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NOTE that since OpenShift Container Platform 3.11
+# the container catalog moved from registry.access.redhat.com to registry.redhat.io
+# So at some point before they deprecate the old registry we have to make sure that
+# we have access to the new registry and change where we pull the ubi image from.
+"
+583,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"
+584,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"#
+# Download and unpack Splunk Universal Forwarder
+#
+"
+585,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"#
+# Bare Splunk Universal Forwarder Image without Ansible (BYO entrypoint)
+#
+"
+586,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"# Currently kubernetes only accepts UID and not USER field to
+# start a container as a particular user. So we create Splunk
+# user with pre-determined UID.
+"
+587,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"# Simple script used to populate/upgrade splunk/etc directory
+"
+588,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+589,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"# Copy files from package
+"
+590,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"#
+# Full Splunk Universal Forwarder Image with Ansible
+#
+"
+591,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"# Copy ansible playbooks
+"
+592,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"# Copy scripts
+"
+593,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"# Setup users and groups
+"
+594,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"    # Set sudo rights
+"
+595,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"    # Create the ansible user/group
+"
+596,1cfe19858587c5ffb893faeb9e633ebcba4c3ed8,/uf/common-files/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+597,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/debian-10/Dockerfile,"# Copyright 2018 Splunk
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"
+598,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/debian-10/Dockerfile,"# Setup users and download Splunk
+"
+599,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/debian-10/Dockerfile,"    # Container Artifact Directory is a place for all artifacts and logs that are generated by the provisioning process. The directory is owned by the user ""ansible"".
+"
+600,d43b698d0b0bf408c8ab9678b1582145b54accd3,/splunk/debian-10/Dockerfile,"# Create the dirs before VOLUME tags so we can control permissions
+# on those folders
+"
