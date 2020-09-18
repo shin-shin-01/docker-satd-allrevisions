@@ -82,7 +82,7 @@ def RevisonsHaveDocker(trepository, txtGitFileStatus):
             tmp["CommitID"] = txt[7:47]
 
         elif txt[:5] == "Date:":
-            tmp["Date"] = txt.split()[1]
+            tmp["Date"] = txt[8:]
 
         elif ("Dockerfile" in txt) or ("dockerfile" in txt):
             if txt[0] != " ":
