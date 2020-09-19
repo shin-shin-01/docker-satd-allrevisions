@@ -22,3 +22,9 @@ PATH_OF_COMMENTFILE = "./4-rowComments"
 PATH_OF_COMMENTFILE = "./4-rowComments"
 PATH_OF_SATD_COMMENTFILE = "./5-satdComments"
 PATH_OF_SATDPATTERN = "./satd-keywords.txt"
+
+# 6 add date rename delete information
+PATH_OF_GITLOGCSV = "./2-gitlogsCSV"
+PATH_OF_SATD_COMMENTFILE = "./5-satdComments"
+PATH_OF_SATD_COMMENTFILE_ADDINFO = "./6-satdCommentsAddInfo"
+PATH_OF_ERROR_ADDINFO = "./6-error-addInfo.txt"
