@@ -1,0 +1,367 @@
+,CommitID,Dockerfiles,LatestDockerfile,Comments,Date,FirstCommit Date,Deleted Date,isSATD,DeletedComment Date
+1224,1dc473d09158fb4752e1176f4ef26e1fcb6e2ad4,18.09-rc/Dockerfile,18.09/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Sat Aug 17 11:04:14 2019 +0000,Wed Aug 22 14:02:26 2018 -0700,Thu Sep 5 11:01:12 2019 +0800,1,Wed May 1 17:04:09 2019 +0000
+1229,1dc473d09158fb4752e1176f4ef26e1fcb6e2ad4,18.09-rc/Dockerfile,18.09/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Sat Aug 17 11:04:14 2019 +0000,Wed Aug 22 14:02:26 2018 -0700,Thu Sep 5 11:01:12 2019 +0800,1,Wed May 1 17:04:09 2019 +0000
+911,70e698f1e2f12ed3de3a32e3f25b3c781f918aa0,18.02-rc/Dockerfile,18.02-rc/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Thu Feb 1 16:55:47 2018 +0000,Thu Jan 25 09:44:20 2018 -0800,Thu Feb 8 09:29:32 2018 -0800,1,Thu Jan 25 09:49:38 2018 -0800
+912,70e698f1e2f12ed3de3a32e3f25b3c781f918aa0,18.02-rc/Dockerfile,18.02-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Thu Feb 1 16:55:47 2018 +0000,Thu Jan 25 09:44:20 2018 -0800,Thu Feb 8 09:29:32 2018 -0800,1,Thu Jan 25 09:49:38 2018 -0800
+99,bc5d62520258cacb230485ee96754f9f9aa117c4,18.03/dind/Dockerfile,18.03/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Tue May 8 11:09:46 2018 -0700,Thu Jan 25 09:44:20 2018 -0800,Thu Jul 19 11:30:16 2018 -0700,1,Tue May 8 11:09:46 2018 -0700
+100,bc5d62520258cacb230485ee96754f9f9aa117c4,18.03/dind/Dockerfile,18.03/dind/Dockerfile,"# https://github.com/docker/docker/tree/master/hack/dind
+",Tue May 8 11:09:46 2018 -0700,Thu Jan 25 09:44:20 2018 -0800,Thu Jul 19 11:30:16 2018 -0700,1,Thu Jul 19 11:30:16 2018 -0700
+776,168a6d227d021c6d38c3986b7c668702ec172fa7,17.06/dind/Dockerfile,17.09/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Fri Sep 29 10:02:06 2017 -0700,Thu Aug 6 12:54:26 2015 -0700,Thu Feb 8 09:29:32 2018 -0800,1,Wed Oct 14 07:05:00 2015 -0700
+1129,2e8569cf5c665ef955855e95be475f52a55c0720,1.7/dind/Dockerfile,17.09/dind/Dockerfile,"# TODO aufs-tools
+
+",Wed Oct 14 07:05:00 2015 -0700,Thu Aug 6 12:54:26 2015 -0700,Thu Feb 8 09:29:32 2018 -0800,1,Wed Oct 14 07:05:00 2015 -0700
+559,7010262c44b136455559bffae26181f730d4de99,Dockerfile-dind.template,Dockerfile-dind.template,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Fri Oct 27 12:17:58 2017 -0500,Wed Jun 7 16:31:50 2017 -0700,,1,Wed Nov 1 20:13:23 2017 -0700
+476,6438624ec99b859db87dcef2cc75f5a961d1903c,Dockerfile-dind.template,Dockerfile-dind.template,"# https://github.com/docker/docker/tree/master/hack/dind
+",Tue Jul 16 19:08:41 2019 -0700,Wed Jun 7 16:31:50 2017 -0700,,1,Wed Nov 1 20:13:23 2017 -0700
+675,1c8b144ed9ec49ac8cc7ca75f8628fd8de6c82b5,1.10/dind/Dockerfile,17.12/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Thu Jun 30 10:09:59 2016 -0700,Thu Aug 6 12:54:26 2015 -0700,Thu May 10 09:18:25 2018 -0700,1,Wed Oct 14 07:05:00 2015 -0700
+108,bc5d62520258cacb230485ee96754f9f9aa117c4,17.12/dind/Dockerfile,17.12/dind/Dockerfile,"# https://github.com/docker/docker/tree/master/hack/dind
+",Tue May 8 11:09:46 2018 -0700,Thu Aug 6 12:54:26 2015 -0700,Thu May 10 09:18:25 2018 -0700,1,Wed Oct 14 07:05:00 2015 -0700
+1131,2e8569cf5c665ef955855e95be475f52a55c0720,1.8/dind/Dockerfile,17.12/dind/Dockerfile,"# TODO aufs-tools
+
+",Wed Oct 14 07:05:00 2015 -0700,Thu Aug 6 12:54:26 2015 -0700,Thu May 10 09:18:25 2018 -0700,1,Wed Oct 14 07:05:00 2015 -0700
+414,fe9ffca05a3e29de69d7b2e8dd6c3d505e83412b,18.06-rc/dind/Dockerfile,18.06-rc/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Mon Aug 13 12:55:11 2018 -0700,Mon Jul 2 10:02:53 2018 -0700,Thu Jul 19 11:30:16 2018 -0700,1,Thu Jul 19 11:30:16 2018 -0700
+418,fe9ffca05a3e29de69d7b2e8dd6c3d505e83412b,18.06-rc/dind/Dockerfile,18.06-rc/dind/Dockerfile,"# https://github.com/docker/docker/tree/master/hack/dind
+",Mon Aug 13 12:55:11 2018 -0700,Mon Jul 2 10:02:53 2018 -0700,Thu Jul 19 11:30:16 2018 -0700,1,Thu Jul 19 11:30:16 2018 -0700
+1119,2d95875bb9c0ea81a04d9a7d3ddb26120fde17cd,18.06-rc/Dockerfile,18.06-rc/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Wed Aug 15 05:04:07 2018 +0000,Mon Jul 2 10:02:53 2018 -0700,Thu Jul 19 11:30:16 2018 -0700,1,Wed Aug 15 05:04:07 2018 +0000
+1123,2d95875bb9c0ea81a04d9a7d3ddb26120fde17cd,18.06-rc/Dockerfile,18.06-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Wed Aug 15 05:04:07 2018 +0000,Mon Jul 2 10:02:53 2018 -0700,Thu Jul 19 11:30:16 2018 -0700,1,Wed Aug 15 05:04:07 2018 +0000
+1216,21b17056a748a279997729c7d26ddb23e4fe5d5e,19.03-rc/Dockerfile,19.03-rc/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Wed Oct 30 05:04:48 2019 +0000,Fri Apr 5 16:09:03 2019 -0700,,1,Wed Oct 30 05:04:48 2019 +0000
+1217,21b17056a748a279997729c7d26ddb23e4fe5d5e,19.03-rc/Dockerfile,19.03-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Wed Oct 30 05:04:48 2019 +0000,Fri Apr 5 16:09:03 2019 -0700,,1,Wed Oct 30 05:04:48 2019 +0000
+1218,4dd3f3fe1f263ea74cdc8bed6091008cf62ab751,19.03/Dockerfile,19.03/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Sat Oct 19 05:04:18 2019 +0000,Mon Jul 22 13:16:30 2019 -0700,,1,Wed Mar 11 20:34:06 2020 +0000
+1219,4dd3f3fe1f263ea74cdc8bed6091008cf62ab751,19.03/Dockerfile,19.03/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Sat Oct 19 05:04:18 2019 +0000,Mon Jul 22 13:16:30 2019 -0700,,1,Wed Mar 11 20:34:06 2020 +0000
+895,7a67842e7ff12c1426ae6a67ac1b7a701b51f3df,Dockerfile.template,Dockerfile.template,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Mon Dec 9 16:06:45 2019 -0800,Wed Jun 7 16:31:50 2017 -0700,,1,Wed Oct 11 14:31:37 2017 -0700
+896,7a67842e7ff12c1426ae6a67ac1b7a701b51f3df,Dockerfile.template,Dockerfile.template,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Mon Dec 9 16:06:45 2019 -0800,Wed Jun 7 16:31:50 2017 -0700,,1,Wed Oct 11 14:31:37 2017 -0700
+1197,f4d3f30de26100deddd4afdc37dd04bb6d018b26,17.12-rc/Dockerfile,17.12-rc/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Tue Dec 12 18:04:13 2017 +0000,Wed Feb 14 11:59:31 2018 -0800,Wed Dec 27 15:29:04 2017 -0800,1,Tue Dec 12 18:04:13 2017 +0000
+1199,f4d3f30de26100deddd4afdc37dd04bb6d018b26,17.12-rc/Dockerfile,17.12-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Tue Dec 12 18:04:13 2017 +0000,Wed Feb 14 11:59:31 2018 -0800,Wed Dec 27 15:29:04 2017 -0800,1,Tue Dec 12 18:04:13 2017 +0000
+1178,65fab2cd767c10f22ee66afa919eda80dbdc8872,18.09/dind/Dockerfile,18.09/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Thu Jan 10 16:15:55 2019 -0800,Wed Aug 22 14:02:26 2018 -0700,Thu Sep 5 11:01:12 2019 +0800,1,Thu Sep 5 11:01:12 2019 +0800
+1183,65fab2cd767c10f22ee66afa919eda80dbdc8872,18.09/dind/Dockerfile,18.09/dind/Dockerfile,"# https://github.com/docker/docker/tree/master/hack/dind
+",Thu Jan 10 16:15:55 2019 -0800,Wed Aug 22 14:02:26 2018 -0700,Thu Sep 5 11:01:12 2019 +0800,1,Thu Sep 5 11:01:12 2019 +0800
+90,2f6926c4fb37274b90fae3ba6c3320619a8d0289,17.07/windows/windowsservercore/Dockerfile,17.10/windows/windowsservercore/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Thu Oct 12 16:46:20 2017 -0700,Thu Oct 12 16:46:20 2017 -0700,Tue Nov 21 09:48:07 2017 -0800,1,Tue Nov 21 09:48:07 2017 -0800
+168,2aa6d388f205fc20ad22402bfed4ece715c7cb48,Dockerfile-windows-windowsservercore.template,Dockerfile-windows-windowsservercore.template,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Wed Nov 22 15:09:40 2017 -0800,Thu Oct 12 16:46:20 2017 -0700,,1,Wed Nov 22 15:09:40 2017 -0800
+92,2f6926c4fb37274b90fae3ba6c3320619a8d0289,17.10-rc/windows/windowsservercore/Dockerfile,17.10-rc/windows/windowsservercore/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Thu Oct 12 16:46:20 2017 -0700,Thu Oct 12 16:46:20 2017 -0700,Wed Oct 18 09:49:43 2017 -0700,1,Wed Oct 18 09:49:43 2017 -0700
+220,4e80fad160cf70fac2ad8920528b43870426a00c,17.09/windows/windowsservercore-1709/Dockerfile,17.09/windows/windowsservercore-1709/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Fri Dec 8 06:04:08 2017 +0000,Thu Oct 12 16:46:20 2017 -0700,Fri Dec 8 10:24:52 2017 -0800,1,Fri Dec 8 10:24:52 2017 -0800
+94,2f6926c4fb37274b90fae3ba6c3320619a8d0289,17.06/windows/windowsservercore/Dockerfile,17.06/windows/windowsservercore/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Thu Oct 12 16:46:20 2017 -0700,Thu Oct 12 16:46:20 2017 -0700,Wed Nov 8 06:45:21 2017 -0800,1,Wed Nov 8 06:45:21 2017 -0800
+623,9fef62af4ad3a24c43894a16e06ba160b592e06a,18.03-rc/dind/Dockerfile,18.05-rc/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Thu Apr 12 10:07:11 2018 -0700,Thu Feb 22 10:05:40 2018 -0800,Thu May 10 09:18:25 2018 -0700,1,Thu May 10 09:18:25 2018 -0700
+98,bc5d62520258cacb230485ee96754f9f9aa117c4,18.05-rc/dind/Dockerfile,18.05-rc/dind/Dockerfile,"# https://github.com/docker/docker/tree/master/hack/dind
+",Tue May 8 11:09:46 2018 -0700,Thu Feb 22 10:05:40 2018 -0800,Thu May 10 09:18:25 2018 -0700,1,Thu May 10 09:18:25 2018 -0700
+1172,65fab2cd767c10f22ee66afa919eda80dbdc8872,18.06/dind/Dockerfile,18.06/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Thu Jan 10 16:15:55 2019 -0800,Tue Apr 3 10:45:34 2018 -0700,Fri Jun 14 14:03:15 2019 -0700,1,Fri Jun 14 14:03:15 2019 -0700
+1173,65fab2cd767c10f22ee66afa919eda80dbdc8872,18.06/dind/Dockerfile,18.06/dind/Dockerfile,"# https://github.com/docker/docker/tree/master/hack/dind
+",Thu Jan 10 16:15:55 2019 -0800,Tue Apr 3 10:45:34 2018 -0700,Fri Jun 14 14:03:15 2019 -0700,1,Fri Jun 14 14:03:15 2019 -0700
+589,51a40fb6eed136282edaf32f45d469ac2c5fb6e4,17.11-rc/windows/windowsservercore/Dockerfile,17.11-rc/windows/windowsservercore/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Thu Nov 16 12:04:06 2017 +0000,Tue Oct 31 07:21:34 2017 -0700,Tue Oct 31 14:04:51 2017 -0700,1,Wed Nov 8 07:14:05 2017 -0800
+333,5235be1da9e2347f1efbbc2a6689726cb72569ce,17.11-rc/dind/Dockerfile,17.11-rc/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Tue Oct 31 07:21:34 2017 -0700,Tue Oct 31 07:21:34 2017 -0700,Tue Oct 31 14:04:51 2017 -0700,1,Tue Oct 31 07:21:34 2017 -0700
+1085,146b0d04de69f9aaace6a5a3c22ac4e8e9744fd3,17.11-rc/Dockerfile,17.11-rc/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Wed Nov 8 06:41:10 2017 -0800,Tue Oct 31 07:21:34 2017 -0700,Tue Oct 31 14:04:51 2017 -0700,1,Wed Nov 8 06:41:10 2017 -0800
+1089,146b0d04de69f9aaace6a5a3c22ac4e8e9744fd3,17.11-rc/Dockerfile,17.11-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Wed Nov 8 06:41:10 2017 -0800,Tue Oct 31 07:21:34 2017 -0700,Tue Oct 31 14:04:51 2017 -0700,1,Wed Nov 8 06:41:10 2017 -0800
+125,737f83092a47b012d09a0cbf0ed72759550301cb,1.13-rc/experimental/dind/Dockerfile,1.13-rc/experimental/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Fri Nov 11 17:36:52 2016 -0800,Fri Nov 11 17:36:52 2016 -0800,Sat Nov 12 08:13:35 2016 -0800,1,Sat Nov 12 08:13:35 2016 -0800
+126,737f83092a47b012d09a0cbf0ed72759550301cb,1.13-rc/dind/Dockerfile,1.13-rc/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Fri Nov 11 17:36:52 2016 -0800,Fri Nov 11 17:36:52 2016 -0800,Wed Jan 18 10:43:24 2017 -0800,1,Wed Jan 18 10:43:24 2017 -0800
+391,f1341e1e9a099073463b1e8192c45435ce3e6760,1.2/dind/Dockerfile,1.2/dind/Dockerfile,"# TODO aufs-tools
+
+",Thu Aug 6 12:56:11 2015 -0700,Thu Aug 6 12:56:11 2015 -0700,Fri Aug 21 20:24:16 2015 -0700,1,Fri Aug 21 20:24:16 2015 -0700
+392,f1341e1e9a099073463b1e8192c45435ce3e6760,1.5/dind/Dockerfile,1.5/dind/Dockerfile,"# TODO aufs-tools
+
+",Thu Aug 6 12:56:11 2015 -0700,Thu Aug 6 12:56:11 2015 -0700,Fri Aug 21 20:24:16 2015 -0700,1,Fri Aug 21 20:24:16 2015 -0700
+393,f1341e1e9a099073463b1e8192c45435ce3e6760,1.1/dind/Dockerfile,1.1/dind/Dockerfile,"# TODO aufs-tools
+
+",Thu Aug 6 12:56:11 2015 -0700,Thu Aug 6 12:56:11 2015 -0700,Fri Aug 21 20:24:16 2015 -0700,1,Fri Aug 21 20:24:16 2015 -0700
+394,f1341e1e9a099073463b1e8192c45435ce3e6760,1.3/dind/Dockerfile,1.3/dind/Dockerfile,"# TODO aufs-tools
+
+",Thu Aug 6 12:56:11 2015 -0700,Thu Aug 6 12:56:11 2015 -0700,Fri Aug 21 20:24:16 2015 -0700,1,Fri Aug 21 20:24:16 2015 -0700
+395,f1341e1e9a099073463b1e8192c45435ce3e6760,1.0/dind/Dockerfile,1.0/dind/Dockerfile,"# TODO aufs-tools
+
+",Thu Aug 6 12:56:11 2015 -0700,Thu Aug 6 12:56:11 2015 -0700,Fri Aug 21 20:24:16 2015 -0700,1,Fri Aug 21 20:24:16 2015 -0700
+396,f1341e1e9a099073463b1e8192c45435ce3e6760,1.4/dind/Dockerfile,1.4/dind/Dockerfile,"# TODO aufs-tools
+
+",Thu Aug 6 12:56:11 2015 -0700,Thu Aug 6 12:56:11 2015 -0700,Fri Aug 21 20:24:16 2015 -0700,1,Fri Aug 21 20:24:16 2015 -0700
+1115,85ba25f3cc07e170c983f4c13947a2786d6bd33d,17.06-rc/Dockerfile,17.06/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Wed Aug 9 05:05:04 2017 +0000,Tue May 30 09:53:57 2017 -0700,Wed Sep 27 09:49:24 2017 -0700,1,Wed Aug 9 05:05:04 2017 +0000
+655,454a0ff9e99d4fde7112b25d64d25f940ab28a99,17.06/Dockerfile,17.06/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Wed Oct 11 14:31:37 2017 -0700,Tue May 30 09:53:57 2017 -0700,Wed Sep 27 09:49:24 2017 -0700,1,Wed Aug 9 05:05:04 2017 +0000
+1077,e7e2e3119360567641d334f1d274952236632357,17.06-rc/Dockerfile,17.06/Dockerfile,"# TODO ENV DOCKER_SHA256
+
+",Tue May 30 09:53:57 2017 -0700,Tue May 30 09:53:57 2017 -0700,Wed Sep 27 09:49:24 2017 -0700,1,Wed Aug 9 05:05:04 2017 +0000
+225,4e80fad160cf70fac2ad8920528b43870426a00c,17.09/windows/windowsservercore-ltsc2016/Dockerfile,17.09/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Fri Dec 8 06:04:08 2017 +0000,Wed Nov 22 15:09:40 2017 -0800,Fri Dec 8 10:24:52 2017 -0800,1,Fri Dec 8 10:24:52 2017 -0800
+1069,e7e2e3119360567641d334f1d274952236632357,17.06-rc/dind/Dockerfile,17.06-rc/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Tue May 30 09:53:57 2017 -0700,Tue May 30 09:53:57 2017 -0700,Wed Jun 28 17:41:31 2017 -0700,1,Tue May 30 09:53:57 2017 -0700
+1153,8fa02e5cb4249cf41263c29531566bd2ca99cf63,1.9-rc/dind/Dockerfile,1.9-rc/dind/Dockerfile,"# TODO aufs-tools
+
+",Fri Nov 13 14:05:16 2015 -0800,Wed Oct 14 07:05:48 2015 -0700,Tue Nov 3 13:37:49 2015 -0800,1,Tue Nov 3 13:37:49 2015 -0800
+696,4f5b0cb5438527c6913a943ae07b4d2b1eaa8393,19.03-rc/dind/Dockerfile,19.03-rc/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Fri Jul 31 11:04:12 2020 +0000,Fri Apr 5 16:09:03 2019 -0700,,1,Fri Jul 31 11:04:12 2020 +0000
+697,4f5b0cb5438527c6913a943ae07b4d2b1eaa8393,19.03-rc/dind/Dockerfile,19.03-rc/dind/Dockerfile,"# https://github.com/docker/docker/tree/master/hack/dind
+",Fri Jul 31 11:04:12 2020 +0000,Fri Apr 5 16:09:03 2019 -0700,,1,Fri Jul 31 11:04:12 2020 +0000
+665,454a0ff9e99d4fde7112b25d64d25f940ab28a99,17.09/Dockerfile,17.09/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Wed Oct 11 14:31:37 2017 -0700,Thu Sep 7 09:31:38 2017 -0700,Thu Feb 8 09:29:32 2018 -0800,1,Thu Sep 21 11:04:06 2017 +0000
+937,f7363cacd357b4bf6a550fb4abfa9faf911d1d71,17.09-rc/Dockerfile,17.09/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Thu Sep 21 11:04:06 2017 +0000,Thu Sep 7 09:31:38 2017 -0700,Thu Feb 8 09:29:32 2018 -0800,1,Thu Sep 21 11:04:06 2017 +0000
+1200,51ba3bdf3e104e8af01150daec9122c4fbeaa41e,17.12/Dockerfile,17.12/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Wed Dec 27 15:46:29 2017 -0800,Thu Oct 5 09:38:01 2017 -0700,Thu May 10 09:18:25 2018 -0700,1,Wed Dec 27 15:46:29 2017 -0800
+1201,51ba3bdf3e104e8af01150daec9122c4fbeaa41e,17.12/Dockerfile,17.12/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Wed Dec 27 15:46:29 2017 -0800,Thu Oct 5 09:38:01 2017 -0700,Thu May 10 09:18:25 2018 -0700,1,Wed Dec 27 15:46:29 2017 -0800
+1078,08e48bcb07e3edeff5399676924c42d18f894df6,18.06/Dockerfile,18.06/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Thu Feb 21 00:04:09 2019 +0000,Thu Jan 4 11:48:10 2018 -0800,Fri Jun 14 14:03:15 2019 -0700,1,Thu Jan 4 11:48:10 2018 -0800
+1079,08e48bcb07e3edeff5399676924c42d18f894df6,18.06/Dockerfile,18.06/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Thu Feb 21 00:04:09 2019 +0000,Thu Jan 4 11:48:10 2018 -0800,Fri Jun 14 14:03:15 2019 -0700,1,Thu Jan 4 11:48:10 2018 -0800
+751,06717e6f2add8226068bec54abb23e646dea90e0,17.03-rc/dind/Dockerfile,17.03-rc/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Wed Feb 22 13:49:18 2017 -0800,Wed Feb 22 13:49:18 2017 -0800,Thu Mar 2 12:33:32 2017 -0800,1,Wed Feb 22 13:49:18 2017 -0800
+341,2c75eb72ab98b95256be008aa93efdec289d96e8,17.03-rc/Dockerfile,17.03-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
+
+",Tue May 30 11:18:35 2017 -0700,Wed Feb 22 13:49:18 2017 -0800,Thu Mar 2 12:33:32 2017 -0800,1,Wed Jun 7 16:31:50 2017 -0700
+388,dab211d7162038d6d595017e4fd01dad78057d0b,17.03-rc/Dockerfile,17.03-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Thu Jun 15 16:39:43 2017 -0700,Wed Feb 22 13:49:18 2017 -0800,Thu Mar 2 12:33:32 2017 -0800,1,Thu Mar 2 12:33:32 2017 -0800
+342,f522868d85d70569fb3e90bd913efa1c3394a264,17.09-rc/windows/windowsservercore-1709/Dockerfile,17.09-rc/windows/windowsservercore-1709/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Sun Dec 3 06:02:35 2017 -0800,Sun Dec 3 06:02:35 2017 -0800,Mon Dec 4 16:35:50 2017 -0800,1,Mon Dec 4 16:35:50 2017 -0800
+343,f522868d85d70569fb3e90bd913efa1c3394a264,17.09-rc/windows/windowsservercore-ltsc2016/Dockerfile,17.09-rc/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Sun Dec 3 06:02:35 2017 -0800,Sun Dec 3 06:02:35 2017 -0800,Mon Dec 4 16:35:50 2017 -0800,1,Mon Dec 4 16:35:50 2017 -0800
+715,56ff41e041f3bffbabaa9237421baa5ebe86ec74,17.12-rc/dind/Dockerfile,17.12-rc/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Wed Feb 14 11:59:31 2018 -0800,Thu Sep 7 09:31:38 2017 -0700,Wed Dec 27 15:29:04 2017 -0800,1,Wed Feb 14 11:59:31 2018 -0800
+1171,ea685128f1db54d575ab464c66b73907e4838c8b,17.07-rc/Dockerfile,17.07/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Thu Aug 17 23:02:22 2017 -0700,Thu Jun 16 11:03:50 2016 -0700,Wed Oct 18 09:49:43 2017 -0700,1,Wed Oct 11 14:31:37 2017 -0700
+546,5a196cae40e2a0ab5050cf6d79b697e032352b24,17.03/Dockerfile,17.07/Dockerfile,"# TODO ENV DOCKER_SHA256
+
+",Wed May 10 21:11:59 2017 -0700,Thu Jun 16 11:03:50 2016 -0700,Wed Oct 18 09:49:43 2017 -0700,1,Wed Oct 11 14:31:37 2017 -0700
+643,454a0ff9e99d4fde7112b25d64d25f940ab28a99,17.07/Dockerfile,17.07/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Wed Oct 11 14:31:37 2017 -0700,Thu Jun 16 11:03:50 2016 -0700,Wed Oct 18 09:49:43 2017 -0700,1,Wed Oct 18 09:49:43 2017 -0700
+376,dab211d7162038d6d595017e4fd01dad78057d0b,17.05/Dockerfile,17.05/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Thu Jun 15 16:39:43 2017 -0700,Wed Mar 30 14:43:17 2016 -0700,Wed Jun 28 17:41:31 2017 -0700,1,Wed May 10 21:11:59 2017 -0700
+549,5a196cae40e2a0ab5050cf6d79b697e032352b24,17.05/Dockerfile,17.05/Dockerfile,"# TODO ENV DOCKER_SHA256
+
+",Wed May 10 21:11:59 2017 -0700,Wed Mar 30 14:43:17 2016 -0700,Wed Jun 28 17:41:31 2017 -0700,1,Wed Jun 28 17:41:31 2017 -0700
+753,c7f43d116aa4a36ed630191442774e39a9c94cb6,18.03-rc/Dockerfile,18.05-rc/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Thu Mar 8 23:43:40 2018 +0000,Thu Feb 22 10:05:40 2018 -0800,Thu May 10 09:18:25 2018 -0700,1,Thu Mar 8 23:43:40 2018 +0000
+755,c7f43d116aa4a36ed630191442774e39a9c94cb6,18.03-rc/Dockerfile,18.05-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Thu Mar 8 23:43:40 2018 +0000,Thu Feb 22 10:05:40 2018 -0800,Thu May 10 09:18:25 2018 -0700,1,Thu Mar 8 23:43:40 2018 +0000
+940,4975dca2dd357705c5613045348402ab664ccdf0,19.03/dind/Dockerfile,19.03/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Mon Jul 22 13:16:30 2019 -0700,Mon Jul 22 13:16:30 2019 -0700,,1,Mon Jul 22 13:16:30 2019 -0700
+941,4975dca2dd357705c5613045348402ab664ccdf0,19.03/dind/Dockerfile,19.03/dind/Dockerfile,"# https://github.com/docker/docker/tree/master/hack/dind
+",Mon Jul 22 13:16:30 2019 -0700,Mon Jul 22 13:16:30 2019 -0700,,1,Mon Jul 22 13:16:30 2019 -0700
+909,fcbb33386d9cff655bbde45f0ecd532ea65cda9c,18.04-rc/Dockerfile,18.05/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
+",Thu Apr 5 11:04:08 2018 +0000,Tue Apr 3 10:45:34 2018 -0700,Thu Jul 19 11:30:16 2018 -0700,1,Thu Jul 19 11:30:16 2018 -0700
+910,fcbb33386d9cff655bbde45f0ecd532ea65cda9c,18.04-rc/Dockerfile,18.05/Dockerfile,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
+
+",Thu Apr 5 11:04:08 2018 +0000,Tue Apr 3 10:45:34 2018 -0700,Thu Jul 19 11:30:16 2018 -0700,1,Thu Jul 19 11:30:16 2018 -0700
+614,a98e0c42a96497670c36f4b2dcad2bcc81f18f35,1.6/dind/Dockerfile,1.6/dind/Dockerfile,"# TODO aufs-tools
+
+",Thu Aug 6 12:54:26 2015 -0700,Thu Aug 6 12:54:26 2015 -0700,Fri Aug 21 20:24:16 2015 -0700,1,Fri Aug 21 20:24:16 2015 -0700
+862,83b2eab8bdb5d35bf343313154ab55938fca3807,1.11-rc/dind/Dockerfile,1.11-rc/dind/Dockerfile,"# TODO aufs-tools
+
+",Thu Mar 31 10:48:48 2016 -0700,Wed Mar 30 14:43:17 2016 -0700,Wed Apr 13 13:33:33 2016 -0700,1,Wed Apr 13 13:33:33 2016 -0700
+837,dba6c6279614ac0a7e520f0b7f7c027250488a4f,1.12-rc/dind/Dockerfile,1.12-rc/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Wed Sep 28 13:18:31 2016 -0700,Thu Jun 16 11:03:50 2016 -0700,Thu Jul 28 18:53:44 2016 -0700,1,Wed Sep 28 13:18:31 2016 -0700
+1157,4d1f83ee6e25a5c2bb1c8a04de0643b1a964ba5e,1.12-rc/dind/Dockerfile,1.12-rc/dind/Dockerfile,"# TODO aufs-tools
+
+",Thu Jun 16 11:03:50 2016 -0700,Thu Jun 16 11:03:50 2016 -0700,Thu Jul 28 18:53:44 2016 -0700,1,Wed Sep 28 13:18:31 2016 -0700
+766,56215ac49d9947e317154fad823410df1201089b,17.05-rc/dind/Dockerfile,17.05-rc/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Thu Apr 13 10:58:36 2017 -0700,Thu Apr 13 10:58:36 2017 -0700,Fri May 5 13:03:48 2017 -0700,1,Fri May 5 13:03:48 2017 -0700
+833,dba6c6279614ac0a7e520f0b7f7c027250488a4f,1.12-rc/experimental/dind/Dockerfile,1.12-rc/experimental/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Wed Sep 28 13:18:31 2016 -0700,Wed Sep 28 13:18:31 2016 -0700,Tue Oct 11 16:54:16 2016 -0700,1,Tue Oct 11 16:54:16 2016 -0700
+935,8de8842b2fffc6bb43609c133b54207ffb7b4ce2,18.01-rc/dind/Dockerfile,18.01/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Thu Jan 4 11:48:10 2018 -0800,Thu Jan 4 11:48:10 2018 -0800,Thu Feb 8 09:29:32 2018 -0800,1,Thu Feb 8 09:29:32 2018 -0800
+971,eb714a73e7e3f87705f468c3c6e9f4e316136bf5,1.12/experimental/dind/Dockerfile,1.12/experimental/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Mon Aug 22 12:06:09 2016 -0700,Mon Aug 22 12:06:09 2016 -0700,Thu Mar 2 12:33:32 2017 -0800,1,Thu Mar 2 12:33:32 2017 -0800
+1038,8ada62f762b30d09fd54664710c0ef3b64038f07,17.10-rc/dind/Dockerfile,17.10-rc/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Thu Oct 5 09:38:01 2017 -0700,Thu Oct 5 09:38:01 2017 -0700,Wed Oct 18 09:49:43 2017 -0700,1,Wed Oct 18 09:49:43 2017 -0700
+1050,e9c09260bfaea5199c6c053a83fc46564aa14990,17.04-rc/dind/Dockerfile,17.04-rc/dind/Dockerfile,"# TODO aufs-tools
+
+# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
+",Wed Mar 22 11:11:47 2017 -0700,Wed Mar 22 11:11:47 2017 -0700,Thu Apr 6 09:25:33 2017 -0700,1,Thu Apr 6 09:25:33 2017 -0700
+1205,e53c4464ce262cba0f93109ea5b537b819bd13f7,1.10-rc/dind/Dockerfile,1.10-rc/dind/Dockerfile,"# TODO aufs-tools
+
+",Sat Feb 20 00:34:37 2016 -0800,Fri Jan 15 13:50:42 2016 -0800,Thu Feb 4 12:22:27 2016 -0800,1,Sat Feb 20 00:34:37 2016 -0800

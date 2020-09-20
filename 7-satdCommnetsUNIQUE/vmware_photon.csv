@@ -1,0 +1,27 @@
+,CommitID,Dockerfiles,LatestDockerfile,Comments,Date,FirstCommit Date,Deleted Date,isSATD,DeletedComment Date
+4,a765f0a0375e07e7cad850cf374e748ed92d7420,support/dockerfiles/photon/make-docker-image.sh,support/dockerfiles/photon/make-docker-image.sh,"# TODO: remove this line after updating photon-build image with new
+# versions of sqlite and rpm with -libs subpackages
+",Tue Nov 22 15:17:59 2016 -0800,Wed Apr 15 11:00:13 2015 -0700,,1,Thu Jul 30 18:06:48 2015 -0700
+12,7d00a1d5c2800d659e4842ba257e37e32cc7de1d,support/dockerfiles/photon/make-docker-image.sh,support/dockerfiles/photon/make-docker-image.sh,"# reinstalling inside to make sure rpmdb is created for tdnf.
+# TODO find better solution.
+",Thu Jul 30 18:06:48 2015 -0700,Wed Apr 15 11:00:13 2015 -0700,,1,Thu Jul 30 18:06:48 2015 -0700
+11,f093864e3c1f22c6bf990f1c9cd35546ed8d6097,support/dockerfiles/photon/make-docker-image.sh,support/dockerfiles/photon/make-docker-image.sh,"# # reinstalling inside to make sure rpmdb is created for tdnf.
+# # TODO find better solution.
+# chroot $TEMP_CHROOT bash -c \
+#    ""tdnf install -y filesystem; \
+#     tdnf install -y glibc ; \
+#     tdnf install -y bash ; \
+#     tdnf install -y coreutils ; \
+#     tdnf install -y rpm-ostree ; \
+#     tdnf install -y photon-release; \
+#     rpm -e --nodeps perl; \
+#     rpm -e --nodeps perl-DBD-SQLite; \
+#     rpm -e --nodeps perl-Module-ScanDeps; \
+#     rpm -e --nodeps perl-DBIx-Simple; \
+#     rpm -e --nodeps perl-DBI; \
+#     rpm -e --nodeps perl-WWW-Curl;""
+
+",Mon Aug 3 19:25:07 2015 -0700,Wed Apr 15 11:00:13 2015 -0700,,1,Wed Jul 1 08:41:07 2015 -0700
+10,332d24faf833ec812b5f749e3e999445a6261018,support/dockerfiles/photon/make-docker-image.sh,support/dockerfiles/photon/make-docker-image.sh,"# # reinstalling inside to make sure rpmdb is created for tdnf.
+# # TODO find better solution.
+",Thu Nov 12 19:44:05 2015 +0000,Wed Apr 15 11:00:13 2015 -0700,,1,Thu Jul 30 18:06:48 2015 -0700
