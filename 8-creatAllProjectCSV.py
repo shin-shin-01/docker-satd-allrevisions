@@ -82,11 +82,14 @@ def addDateCalculatedInfo(df):
     listOfDateToDeleteComment = []
 
     for index, row in df.iterrows():
-        listOfDateFromfirstCommit.append((datetime.strptime(row['CommitDate'], '%Y/%m/%d %H:%M') - datetime.strptime(row['(File) FirstCommit'], '%Y/%m/%d %H:%M')).strftime('%d %H:%M'))
+        listOfDateFromfirstCommit.append((datetime.strptime(row['CommitDate'], '%Y/%m/%d %H:%M') - datetime.strptime(row['(File) FirstCommit'], '%Y/%m/%d %H:%M')))
         if str(row['DeleteComment']) == 'nan':
             listOfDateToDeleteComment.append('削除されていません')
         else:
-            listOfDateToDeleteComment.append((datetime.strptime(row['DeleteComment'], '%Y/%m/%d %H:%M') - datetime.strptime(row['CommitDate'], '%Y/%m/%d %H:%M')).strftime('%d %H:%M'))
+            if row['DeleteComment'] == row['(File) Deleted']:
+                listOfDateToDeleteComment.append('ファイル削除')
+            else:
+                listOfDateToDeleteComment.append((datetime.strptime(row['DeleteComment'], '%Y/%m/%d %H:%M') - datetime.strptime(row['CommitDate'], '%Y/%m/%d %H:%M')))
 
     df["firstCommitからコメント追加までの日数"] = listOfDateFromfirstCommit
     df["コメント追加からコメント削除までの日数"] = listOfDateToDeleteComment
