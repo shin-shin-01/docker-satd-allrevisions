@@ -32,3 +32,7 @@ PATH_OF_ERROR_ADDINFO = "./6-error-addInfo.txt"
 # 7 fix same SATD
 PATH_OF_SATD_COMMENTFILE_ADDINFO = "./6-satdCommentsAddInfo"
 PATH_OF_UNIQUE_SATD_INFO = "./7-satdCommnetsUNIQUE"
+
+# 8 create csv all project with other Info
+PATH_OF_UNIQUE_SATD_INFO = "./7-satdCommnetsUNIQUE"
+PATH_OF_ALLPROJECT_CSV = "./8-allprojectCSV"
