@@ -71,10 +71,26 @@ def countUniqueSATD():
 
 def countDeletedSATD():
     df = pd.read_csv(f'{PATH_OF_ALLPROJECT_CSV}/result.csv', index_col=0)
-    df = df[df["コメント追加からコメント削除までの日数"] != "削除されていません"]
-    uniqueSATD = df["Comments"].unique()
-    print(f"削除されたユニークSATD  \n→{len(uniqueSATD)}")
+    tmp = df[df["コメント追加からコメント削除までの日数"] != "削除されていません"]
+    uniqueSATD = tmp["Comments"].unique()
+    print(f"削除されたユニークSATD (ファイル削除・コメント削除) \n→{len(uniqueSATD)}")
+
+    tmp = df[df["コメント追加からコメント削除までの日数"].apply(lambda delete: True if delete == "ファイル削除" else False)]
+    uniqueSATD = tmp["Comments"].unique()
+    print(f"削除されたユニークSATD (ファイル削除) \n→{len(uniqueSATD)}")
+
+    tmp = df[df["コメント追加からコメント削除までの日数"].apply(lambda delete: False if delete in ["削除されていません", "ファイル削除"] else True)]
+    uniqueSATD = tmp["Comments"].unique()
+    print(f"削除されたユニークSATD (コメント削除)\n→{len(uniqueSATD)}")
+
+    tmp = df[df["コメント追加からコメント削除までの日数"].apply(lambda delete: True if delete == "削除されていません" else False)]
+    uniqueSATD = tmp["Comments"].unique()
+    print(f"削除されていないユニークSATD \n→{len(uniqueSATD)}")
     
+    """
+    同一コメントでも削除された物と存在しているものが複数のファイル（プロジェクト）にまたがって存在しているため数が合わなくなっている
+    """
+
 
 
 if __name__ == "__main__":
