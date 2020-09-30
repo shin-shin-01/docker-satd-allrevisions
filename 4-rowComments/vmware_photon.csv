@@ -1,159 +1,23 @@
 ,CommitID,Dockerfiles,Comments
-0,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-k8s-heapster-image.sh,"#!/bin/bash -e
+0,1bd1a42553d837a0f3b0ed3908500951e428ba7e,/support/dockerfiles/k8s-docker-images/Dockerfile.nginx-ingress,"# forward nginx access and error logs to stdout and stderr
+"
+1,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Minimum Docker API version required for libnetwork.
+"
+2,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Install required packages
+"
+3,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Copy binaries needed by calico/node
+"
+4,af8c820d14e567b8961cea703ef561ec3a0411a7,/support/dockerfiles/k8s-docker-images/Dockerfile.k8sbase,"# k8s base container
 
 "
-1,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-k8s-heapster-image.sh,"#
-# Docker images for heapster - kubernetes cluster monitoring tool.
-#
+5,f4d17450cef98d38be71932b59c859f8a72fe88f,/dockerfiles.md,"# Photon on Docker
 
 "
-2,9874e684d9e4b545eeff466da8c21ec71b3ec711,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
+6,f4d17450cef98d38be71932b59c859f8a72fe88f,/dockerfiles.md,"## Build new Photon Images
 "
-3,9874e684d9e4b545eeff466da8c21ec71b3ec711,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
+7,f4d17450cef98d38be71932b59c859f8a72fe88f,/dockerfiles.md,"## Running Photon Container
 "
-4,9874e684d9e4b545eeff466da8c21ec71b3ec711,/support/dockerfiles/photon/make-docker-image.sh,"# TODO: remove this line after updating photon-build image with new
-# versions of sqlite and rpm with -libs subpackages
-"
-5,9874e684d9e4b545eeff466da8c21ec71b3ec711,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-6,9874e684d9e4b545eeff466da8c21ec71b3ec711,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-7,9874e684d9e4b545eeff466da8c21ec71b3ec711,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-"
-8,9874e684d9e4b545eeff466da8c21ec71b3ec711,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-9,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#!/bin/bash -e
-
-"
-10,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#
-# Docker images for kubernetes-dns artifacts
-#
-"
-11,1bd1a42553d837a0f3b0ed3908500951e428ba7e,/support/dockerfiles/k8s-docker-images/Dockerfile.nginx-ingress,"# forward nginx access and error logs to stdout and stderr
-"
-12,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#!/bin/bash -e
-
-"
-13,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#
-# Docker images for kubernetes-dns artifacts
-#
-"
-14,db36e75e8ae96b052e504a304793560c238e7f16,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-15,db36e75e8ae96b052e504a304793560c238e7f16,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-16,db36e75e8ae96b052e504a304793560c238e7f16,/support/dockerfiles/photon/make-docker-image.sh,"# use host's yum to install in chroot
-"
-17,db36e75e8ae96b052e504a304793560c238e7f16,/support/dockerfiles/photon/make-docker-image.sh,"# reinstalling inside to make sure rpmdb is created for tdnf.
-# TODO find better solution.
-"
-18,db36e75e8ae96b052e504a304793560c238e7f16,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-19,db36e75e8ae96b052e504a304793560c238e7f16,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-20,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Minimum Docker API version required for libnetwork.
-"
-21,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Install required packages
-"
-22,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Copy binaries needed by calico/node
-"
-23,05c6e7935c3ddbc04aa45363b25793603cb963cd,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-24,05c6e7935c3ddbc04aa45363b25793603cb963cd,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-25,05c6e7935c3ddbc04aa45363b25793603cb963cd,/support/dockerfiles/photon/make-docker-image.sh,"# use host's yum to install in chroot
-"
-26,05c6e7935c3ddbc04aa45363b25793603cb963cd,/support/dockerfiles/photon/make-docker-image.sh,"# # reinstalling inside to make sure rpmdb is created for tdnf.
-# # TODO find better solution.
-# chroot $TEMP_CHROOT bash -c \
-#    ""tdnf install -y filesystem; \
-#     tdnf install -y glibc ; \
-#     tdnf install -y bash ; \
-#     tdnf install -y coreutils ; \
-#     tdnf install -y rpm-ostree ; \
-#     tdnf install -y photon-release; \
-#     rpm -e --nodeps perl; \
-#     rpm -e --nodeps perl-DBD-SQLite; \
-#     rpm -e --nodeps perl-Module-ScanDeps; \
-#     rpm -e --nodeps perl-DBIx-Simple; \
-#     rpm -e --nodeps perl-DBI; \
-#     rpm -e --nodeps perl-WWW-Curl;""
-
-"
-27,05c6e7935c3ddbc04aa45363b25793603cb963cd,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-28,05c6e7935c3ddbc04aa45363b25793603cb963cd,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-29,05c6e7935c3ddbc04aa45363b25793603cb963cd,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-
-"
-30,05c6e7935c3ddbc04aa45363b25793603cb963cd,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-31,7f75fb340d81d9beefe6c368ffbddc7a211328ea,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#!/bin/bash -e
-
-"
-32,7f75fb340d81d9beefe6c368ffbddc7a211328ea,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#
-# Docker images for calico-node, calico-cni
-#
-"
-33,1746bf69b46092013ea5441e7d71bab58a815e0b,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#!/bin/bash -e
-
-"
-34,1746bf69b46092013ea5441e7d71bab58a815e0b,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# Docker images for kubernetes artifacts
-#
-"
-35,1746bf69b46092013ea5441e7d71bab58a815e0b,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# K8S Pause container
-#
-"
-36,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#!/bin/bash -e
-
-"
-37,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#
-# Docker images for calico-node, calico-cni
-#
-"
-38,71aeaaeb0e77812f1eec535d30a694aaeac5a22d,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-39,71aeaaeb0e77812f1eec535d30a694aaeac5a22d,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-40,71aeaaeb0e77812f1eec535d30a694aaeac5a22d,/support/dockerfiles/photon/make-docker-image.sh,"# use host's yum to install in chroot
-"
-41,71aeaaeb0e77812f1eec535d30a694aaeac5a22d,/support/dockerfiles/photon/make-docker-image.sh,"# # reinstalling inside to make sure rpmdb is created for tdnf.
-# # TODO find better solution.
-"
-42,71aeaaeb0e77812f1eec535d30a694aaeac5a22d,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-43,71aeaaeb0e77812f1eec535d30a694aaeac5a22d,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-44,71aeaaeb0e77812f1eec535d30a694aaeac5a22d,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-
-"
-45,71aeaaeb0e77812f1eec535d30a694aaeac5a22d,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-46,af8c820d14e567b8961cea703ef561ec3a0411a7,/support/dockerfiles/k8s-docker-images/Dockerfile.k8sbase,"# k8s base container
-
-"
-47,f4d17450cef98d38be71932b59c859f8a72fe88f,/dockerfiles.md,"# Photon on Docker
-
-"
-48,f4d17450cef98d38be71932b59c859f8a72fe88f,/dockerfiles.md,"## Build new Photon Images
-"
-49,f4d17450cef98d38be71932b59c859f8a72fe88f,/dockerfiles.md,"## Running Photon Container
-"
-50,ed8c16d338603522a3076d99f972bc32d4c3d44d,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#!/bin/bash -e
-
-"
-51,ed8c16d338603522a3076d99f972bc32d4c3d44d,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#
-# Docker images for calico-node, calico-cni
-#
-"
-52,2d02818f85bebb27794091e7a5074e4d3c67be36,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# This script may automatically configure wavefront without prompting, based on
+8,2d02818f85bebb27794091e7a5074e4d3c67be36,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# This script may automatically configure wavefront without prompting, based on
 # these variables:
 #  WAVEFRONT_URL           (required)
 #  WAVEFRONT_TOKEN         (required)
@@ -163,122 +27,41 @@
 
 
 "
-53,2d02818f85bebb27794091e7a5074e4d3c67be36,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Copy files
+9,2d02818f85bebb27794091e7a5074e4d3c67be36,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Copy files
 "
-54,2d02818f85bebb27794091e7a5074e4d3c67be36,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Configure agent
+10,2d02818f85bebb27794091e7a5074e4d3c67be36,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Configure agent
 "
-55,2d02818f85bebb27794091e7a5074e4d3c67be36,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Run the agent
+11,2d02818f85bebb27794091e7a5074e4d3c67be36,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Run the agent
 "
-56,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#!/bin/bash -e
-
-"
-57,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#
-# Docker images for kubernetes-dashboard
-#
-"
-58,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#!/bin/bash -e
-
-"
-59,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#
-# Docker image for kubernetes nginx ingress controller
-#
-"
-60,a765f0a0375e07e7cad850cf374e748ed92d7420,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-61,a765f0a0375e07e7cad850cf374e748ed92d7420,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-62,a765f0a0375e07e7cad850cf374e748ed92d7420,/support/dockerfiles/photon/make-docker-image.sh,"# TODO: remove this line after updating photon-build image with new
-# versions of sqlite and rpm with -libs subpackages
-"
-63,a765f0a0375e07e7cad850cf374e748ed92d7420,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-64,a765f0a0375e07e7cad850cf374e748ed92d7420,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-65,a765f0a0375e07e7cad850cf374e748ed92d7420,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-"
-66,a765f0a0375e07e7cad850cf374e748ed92d7420,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-67,36b35687f46b7ebab56fa4ee24dde0a9c8789ab2,/support/dockerfiles/photon/Dockerfile,"#
+12,36b35687f46b7ebab56fa4ee24dde0a9c8789ab2,/support/dockerfiles/photon/Dockerfile,"#
 # Ubuntu-Dev Dockerfile for building Linux Distribution.
 #
 
 "
-68,380c6dd13b89cc5f67c4629ae4ee57d56d3489e4,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#!/bin/bash -e
+13,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-dns,"# Photon Base Build Container
 
 "
-69,380c6dd13b89cc5f67c4629ae4ee57d56d3489e4,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#
-# Docker images for kubernetes-dashboard
-#
-"
-70,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-dns,"# Photon Base Build Container
+14,36b35687f46b7ebab56fa4ee24dde0a9c8789ab2,/support/dockerfiles/k8s-docker-images/Dockerfile.k8sbase,"# k8s base container
 
 "
-71,4124bcd6b758e2c30257d2aa10c1d4e754240798,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#!/bin/bash -e
+15,8996b6b6bb9af20ec44bc500d2c155e9634ceeae,/support/package-builder/Dockerfile.photon_build_container,"# Photon Base Build Container
 
 "
-72,4124bcd6b758e2c30257d2aa10c1d4e754240798,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# Docker images for kubernetes artifacts
-#
-"
-73,4124bcd6b758e2c30257d2aa10c1d4e754240798,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# K8S Pause container
-#
-"
-74,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#!/bin/bash -e
+16,380c6dd13b89cc5f67c4629ae4ee57d56d3489e4,/support/dockerfiles/k8s-docker-images/Dockerfile.sidecar,"# Photon Base Build Container
 
 "
-75,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#
-# Docker images for calico-node, calico-cni
-#
-"
-76,2c153d2993c90f067adcf70093a424764262a8ee,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-77,2c153d2993c90f067adcf70093a424764262a8ee,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-78,2c153d2993c90f067adcf70093a424764262a8ee,/support/dockerfiles/photon/make-docker-image.sh,"# use host's yum to install in chroot
-"
-79,2c153d2993c90f067adcf70093a424764262a8ee,/support/dockerfiles/photon/make-docker-image.sh,"# # reinstalling inside to make sure rpmdb is created for tdnf.
-# # TODO find better solution.
-"
-80,2c153d2993c90f067adcf70093a424764262a8ee,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-81,2c153d2993c90f067adcf70093a424764262a8ee,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-82,2c153d2993c90f067adcf70093a424764262a8ee,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-
-"
-83,2c153d2993c90f067adcf70093a424764262a8ee,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-84,36b35687f46b7ebab56fa4ee24dde0a9c8789ab2,/support/dockerfiles/k8s-docker-images/Dockerfile.k8sbase,"# k8s base container
-
-"
-85,8996b6b6bb9af20ec44bc500d2c155e9634ceeae,/support/package-builder/Dockerfile.photon_build_container,"# Photon Base Build Container
-
-"
-86,380c6dd13b89cc5f67c4629ae4ee57d56d3489e4,/support/dockerfiles/k8s-docker-images/Dockerfile.sidecar,"# Photon Base Build Container
-
-"
-87,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#!/bin/bash -e
-
-"
-88,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#
-# Docker image for kubernetes nginx ingress controller
-#
-"
-89,615f2667a403bad1d17f8b6b60742ea571b678e8,/support/dockerfiles/photon/Dockerfile,"#
+17,615f2667a403bad1d17f8b6b60742ea571b678e8,/support/dockerfiles/photon/Dockerfile,"#
 # Ubuntu-Dev Dockerfile for building Linux Distribution.
 #
 
 "
-90,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-proxy,"# Photon Base Build Container
+18,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-proxy,"# Photon Base Build Container
 
 "
-91,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-apiserver,"# Photon Base Build Container
+19,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-apiserver,"# Photon Base Build Container
 
 "
-92,0285719cf149540693be25b82df36dc0207a63c0,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# This script may automatically configure wavefront without prompting, based on
+20,0285719cf149540693be25b82df36dc0207a63c0,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# This script may automatically configure wavefront without prompting, based on
 # these variables:
 #  WAVEFRONT_URL           (required)
 #  WAVEFRONT_TOKEN         (required)
@@ -287,87 +70,27 @@
 #  WAVEFRONT_USE_GRAPHITE  (default is false)
 
 "
-93,0285719cf149540693be25b82df36dc0207a63c0,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Copy files
+21,0285719cf149540693be25b82df36dc0207a63c0,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Copy files
 "
-94,0285719cf149540693be25b82df36dc0207a63c0,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Configure agent
+22,0285719cf149540693be25b82df36dc0207a63c0,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Configure agent
 "
-95,0285719cf149540693be25b82df36dc0207a63c0,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Run the agent
+23,0285719cf149540693be25b82df36dc0207a63c0,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Run the agent
 "
-96,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#!/bin/bash -e
+24,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-scheduler,"# Photon Base Build Container
 
 "
-97,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#
-# Docker image for flannel
-#
-"
-98,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#!/bin/bash -e
-
-"
-99,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#
-# Docker images for calico-node, calico-cni
-#
-"
-100,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-scheduler,"# Photon Base Build Container
-
-"
-101,f4d17450cef98d38be71932b59c859f8a72fe88f,/support/dockerfiles/photon/Dockerfile,"#
+25,f4d17450cef98d38be71932b59c859f8a72fe88f,/support/dockerfiles/photon/Dockerfile,"#
 # Photon Linux Dockerfile
 #
 
 "
-102,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#!/bin/bash -e
-
+26,f1dd615bd87d0d3ea33a60e159668d34a192239e,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Minimum Docker API version required for libnetwork.
 "
-103,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# Docker images for kubernetes artifacts
-#
+27,f1dd615bd87d0d3ea33a60e159668d34a192239e,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Install required packages
 "
-104,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# K8S Pause container
-#
+28,f1dd615bd87d0d3ea33a60e159668d34a192239e,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Copy binaries needed by calico/node
 "
-105,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#!/bin/bash -e
-
-"
-106,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#
-# Docker images for kubernetes-dashboard
-#
-"
-107,f1dd615bd87d0d3ea33a60e159668d34a192239e,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Minimum Docker API version required for libnetwork.
-"
-108,f1dd615bd87d0d3ea33a60e159668d34a192239e,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Install required packages
-"
-109,f1dd615bd87d0d3ea33a60e159668d34a192239e,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Copy binaries needed by calico/node
-"
-110,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#!/bin/bash -e
-
-"
-111,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# Docker images for kubernetes artifacts
-#
-"
-112,4d53ba0374b945d35042cbe2d4dfb0ae6fb6dd6a,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-113,4d53ba0374b945d35042cbe2d4dfb0ae6fb6dd6a,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-114,4d53ba0374b945d35042cbe2d4dfb0ae6fb6dd6a,/support/dockerfiles/photon/make-docker-image.sh,"# use host's yum to install in chroot
-"
-115,4d53ba0374b945d35042cbe2d4dfb0ae6fb6dd6a,/support/dockerfiles/photon/make-docker-image.sh,"# reinstalling inside to make sure rpmdb is created for tdnf.
-# TODO find better solution.
-"
-116,4d53ba0374b945d35042cbe2d4dfb0ae6fb6dd6a,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-117,4d53ba0374b945d35042cbe2d4dfb0ae6fb6dd6a,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-118,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-wavefront-proxy-docker-image.sh,"#!/bin/bash -e
-
-"
-119,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-wavefront-proxy-docker-image.sh,"#
-# Docker image for wavefront-proxy
-#
-"
-120,1d71166ef39a1bd9699a8ba4889349bccdf8794d,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# This script may automatically configure wavefront without prompting, based on
+29,1d71166ef39a1bd9699a8ba4889349bccdf8794d,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# This script may automatically configure wavefront without prompting, based on
 # these variables:
 #  WAVEFRONT_URL           (required)
 #  WAVEFRONT_TOKEN         (required)
@@ -376,230 +99,54 @@
 #  WAVEFRONT_USE_GRAPHITE  (default is false)
 
 "
-121,1d71166ef39a1bd9699a8ba4889349bccdf8794d,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Copy files
+30,1d71166ef39a1bd9699a8ba4889349bccdf8794d,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Copy files
 "
-122,1d71166ef39a1bd9699a8ba4889349bccdf8794d,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Configure agent
+31,1d71166ef39a1bd9699a8ba4889349bccdf8794d,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Configure agent
 "
-123,1d71166ef39a1bd9699a8ba4889349bccdf8794d,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Run the agent
+32,1d71166ef39a1bd9699a8ba4889349bccdf8794d,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Run the agent
 "
-124,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#!/bin/bash -e
+33,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-controller-manager,"# Photon Base Build Container
 
 "
-125,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#
-# Docker images for kubernetes-dashboard
-#
+34,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/Dockerfile.nginx-ingress,"# forward nginx access and error logs to stdout and stderr
 "
-126,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-controller-manager,"# Photon Base Build Container
+35,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-proxy,"# Photon Base Build Container
 
 "
-127,16934d5c41bc25b2878c44817a5e5abbb0ed5a4c,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
+36,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.heapster,"#   nobody:nobody
+"
+37,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-controller-manager,"# Photon Base Build Container
 
 "
-128,16934d5c41bc25b2878c44817a5e5abbb0ed5a4c,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
+38,ed8c16d338603522a3076d99f972bc32d4c3d44d,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Minimum Docker API version required for libnetwork.
 "
-129,16934d5c41bc25b2878c44817a5e5abbb0ed5a4c,/support/dockerfiles/photon/make-docker-image.sh,"# use host's yum to install in chroot
+39,ed8c16d338603522a3076d99f972bc32d4c3d44d,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Install required packages
 "
-130,16934d5c41bc25b2878c44817a5e5abbb0ed5a4c,/support/dockerfiles/photon/make-docker-image.sh,"# reinstalling inside to make sure rpmdb is created for tdnf.
-# TODO find better solution.
+40,ed8c16d338603522a3076d99f972bc32d4c3d44d,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Copy binaries needed by calico/node
 "
-131,16934d5c41bc25b2878c44817a5e5abbb0ed5a4c,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
+41,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Minimum Docker API version required for libnetwork.
 "
-132,16934d5c41bc25b2878c44817a5e5abbb0ed5a4c,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
+42,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Install required packages
 "
-133,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-k8s-heapster-image.sh,"#!/bin/bash -e
+43,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Copy binaries needed by calico/node
+"
+44,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.dnsmasq-nanny,"# Photon Base Build Container
 
 "
-134,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-k8s-heapster-image.sh,"#
-# Docker images for heapster - kubernetes cluster monitoring tool.
-#
+45,457e39ae916ac3355de8af4bac85265239828c1b,/support/dockerfiles/k8s-docker-images/Dockerfile.heapster,"#   nobody:nobody
+"
+46,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.nginx-ingress,"# forward nginx access and error logs to stdout and stderr
+"
+47,1746bf69b46092013ea5441e7d71bab58a815e0b,/support/dockerfiles/k8s-docker-images/Dockerfile.pause,"# Photon Base Build Container
 
 "
-135,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/Dockerfile.nginx-ingress,"# forward nginx access and error logs to stdout and stderr
+48,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Minimum Docker API version required for libnetwork.
 "
-136,36b35687f46b7ebab56fa4ee24dde0a9c8789ab2,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
+49,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Install required packages
 "
-137,36b35687f46b7ebab56fa4ee24dde0a9c8789ab2,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
+50,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Copy binaries needed by calico/node
 "
-138,36b35687f46b7ebab56fa4ee24dde0a9c8789ab2,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-139,36b35687f46b7ebab56fa4ee24dde0a9c8789ab2,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-140,36b35687f46b7ebab56fa4ee24dde0a9c8789ab2,/support/dockerfiles/photon/make-docker-image.sh,"# set TERM to linux due to stripped terminfo
-"
-141,36b35687f46b7ebab56fa4ee24dde0a9c8789ab2,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-"
-142,36b35687f46b7ebab56fa4ee24dde0a9c8789ab2,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-143,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-proxy,"# Photon Base Build Container
-
-"
-144,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#!/bin/bash -e
-
-"
-145,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#
-# Docker images for kubernetes-dns artifacts
-#
-"
-146,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-k8s-metrics-server-image.sh,"#!/bin/bash -e
-
-"
-147,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-k8s-metrics-server-image.sh,"#
-# Docker images for kubernetes-metrics-server
-#
-"
-148,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.heapster,"#   nobody:nobody
-"
-149,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-k8s-heapster-image.sh,"#!/bin/bash -e
-
-"
-150,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-k8s-heapster-image.sh,"#
-# Docker images for heapster - kubernetes cluster monitoring tool.
-#
-
-"
-151,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-controller-manager,"# Photon Base Build Container
-
-"
-152,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#!/bin/bash -e
-
-"
-153,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#
-# Docker images for calico-node, calico-cni
-#
-"
-154,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#!/bin/bash -e
-
-"
-155,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#
-# Docker image for flannel
-#
-"
-156,ed8c16d338603522a3076d99f972bc32d4c3d44d,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Minimum Docker API version required for libnetwork.
-"
-157,ed8c16d338603522a3076d99f972bc32d4c3d44d,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Install required packages
-"
-158,ed8c16d338603522a3076d99f972bc32d4c3d44d,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Copy binaries needed by calico/node
-"
-159,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Minimum Docker API version required for libnetwork.
-"
-160,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Install required packages
-"
-161,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Copy binaries needed by calico/node
-"
-162,b26bbea054eaced850142fb1f7c6525090a9aeaf,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-163,b26bbea054eaced850142fb1f7c6525090a9aeaf,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-164,b26bbea054eaced850142fb1f7c6525090a9aeaf,/support/dockerfiles/photon/make-docker-image.sh,"# use host's yum to install in chroot
-"
-165,b26bbea054eaced850142fb1f7c6525090a9aeaf,/support/dockerfiles/photon/make-docker-image.sh,"# reinstalling inside to make sure rpmdb is created for tdnf.
-# TODO find better solution.
-"
-166,b26bbea054eaced850142fb1f7c6525090a9aeaf,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-167,b26bbea054eaced850142fb1f7c6525090a9aeaf,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-168,bf56f8a2ebfa6156a1bf42e3a7a70797a7dbf4d3,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#!/bin/bash -e
-
-"
-169,bf56f8a2ebfa6156a1bf42e3a7a70797a7dbf4d3,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#
-# Docker images for calico-node, calico-cni
-#
-"
-170,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-k8s-heapster-image.sh,"#!/bin/bash -e
-
-"
-171,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-k8s-heapster-image.sh,"#
-# Docker images for heapster - kubernetes cluster monitoring tool.
-#
-
-"
-172,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.dnsmasq-nanny,"# Photon Base Build Container
-
-"
-173,457e39ae916ac3355de8af4bac85265239828c1b,/support/dockerfiles/k8s-docker-images/Dockerfile.heapster,"#   nobody:nobody
-"
-174,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#!/bin/bash -e
-
-"
-175,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#
-# Docker image for kubernetes nginx ingress controller
-#
-"
-176,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#!/bin/bash -e
-
-"
-177,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#
-# Docker image for flannel
-#
-"
-178,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.nginx-ingress,"# forward nginx access and error logs to stdout and stderr
-"
-179,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-k8s-heapster-image.sh,"#!/bin/bash -e
-
-"
-180,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-k8s-heapster-image.sh,"#
-# Docker images for heapster - kubernetes cluster monitoring tool.
-#
-
-"
-181,380c6dd13b89cc5f67c4629ae4ee57d56d3489e4,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#!/bin/bash -e
-
-"
-182,380c6dd13b89cc5f67c4629ae4ee57d56d3489e4,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#
-# Docker images for kubernetes-dns artifacts
-#
-"
-183,1746bf69b46092013ea5441e7d71bab58a815e0b,/support/dockerfiles/k8s-docker-images/Dockerfile.pause,"# Photon Base Build Container
-
-"
-184,9d909f3f819dad0cf62049490907303898d1e352,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-185,9d909f3f819dad0cf62049490907303898d1e352,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-186,9d909f3f819dad0cf62049490907303898d1e352,/support/dockerfiles/photon/make-docker-image.sh,"# use host's yum to install in chroot
-"
-187,9d909f3f819dad0cf62049490907303898d1e352,/support/dockerfiles/photon/make-docker-image.sh,"# # reinstalling inside to make sure rpmdb is created for tdnf.
-# # TODO find better solution.
-"
-188,9d909f3f819dad0cf62049490907303898d1e352,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-189,9d909f3f819dad0cf62049490907303898d1e352,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-190,9d909f3f819dad0cf62049490907303898d1e352,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-
-"
-191,9d909f3f819dad0cf62049490907303898d1e352,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-192,332d24faf833ec812b5f749e3e999445a6261018,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-193,332d24faf833ec812b5f749e3e999445a6261018,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-194,332d24faf833ec812b5f749e3e999445a6261018,/support/dockerfiles/photon/make-docker-image.sh,"# use host's yum to install in chroot
-"
-195,332d24faf833ec812b5f749e3e999445a6261018,/support/dockerfiles/photon/make-docker-image.sh,"# # reinstalling inside to make sure rpmdb is created for tdnf.
-# # TODO find better solution.
-"
-196,332d24faf833ec812b5f749e3e999445a6261018,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-197,332d24faf833ec812b5f749e3e999445a6261018,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-198,332d24faf833ec812b5f749e3e999445a6261018,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-
-"
-199,332d24faf833ec812b5f749e3e999445a6261018,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-200,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Minimum Docker API version required for libnetwork.
-"
-201,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Install required packages
-"
-202,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Copy binaries needed by calico/node
-"
-203,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# This script may automatically configure wavefront without prompting, based on
+51,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# This script may automatically configure wavefront without prompting, based on
 # these variables:
 #  WAVEFRONT_URL           (required)
 #  WAVEFRONT_TOKEN         (required)
@@ -609,156 +156,35 @@
 
 
 "
-204,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Copy files
+52,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Copy files
 "
-205,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Configure agent
+53,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Configure agent
 "
-206,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Run the agent
+54,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Run the agent
 "
-207,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.heapster,"#   nobody:nobody
+55,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.heapster,"#   nobody:nobody
 "
-208,1d71166ef39a1bd9699a8ba4889349bccdf8794d,/support/dockerfiles/k8s-docker-images/build-wavefront-proxy-docker-image.sh,"#!/bin/bash -e
-
-"
-209,1d71166ef39a1bd9699a8ba4889349bccdf8794d,/support/dockerfiles/k8s-docker-images/build-wavefront-proxy-docker-image.sh,"#
-# Docker image for wavefront-proxy
-#
-"
-210,f4d17450cef98d38be71932b59c859f8a72fe88f,/support/dockerfiles/ubuntu-dev/Dockerfile,"#
+56,f4d17450cef98d38be71932b59c859f8a72fe88f,/support/dockerfiles/ubuntu-dev/Dockerfile,"#
 # Ubuntu-Dev Dockerfile for building Linux Distribution.
 #
 
 "
-211,f4d17450cef98d38be71932b59c859f8a72fe88f,/support/dockerfiles/ubuntu-dev/Dockerfile,"# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
+57,f4d17450cef98d38be71932b59c859f8a72fe88f,/support/dockerfiles/ubuntu-dev/Dockerfile,"# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
 "
-212,b61348585ee8dbb79ebb5edc19b50e5caabcba57,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#!/bin/bash -e
+58,1d71166ef39a1bd9699a8ba4889349bccdf8794d,/support/dockerfiles/k8s-docker-images/Dockerfile.heapster,"#   nobody:nobody
+"
+59,7418d2bff2b084bf8dab9989e94db86249c049be,/support/package-builder/Dockerfile.photon_build_container,"# Photon Base Build Container
 
 "
-213,b61348585ee8dbb79ebb5edc19b50e5caabcba57,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# Docker images for kubernetes artifacts
-#
-"
-214,b61348585ee8dbb79ebb5edc19b50e5caabcba57,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"    #
-    # K8S Pause container
-    #
-"
-215,1d71166ef39a1bd9699a8ba4889349bccdf8794d,/support/dockerfiles/k8s-docker-images/Dockerfile.heapster,"#   nobody:nobody
-"
-216,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#!/bin/bash -e
+60,1a2d63a2cdf9552a85d079af8b2742513ae8b77a,/dockerfiles.md,"# Photon on Docker
 
 "
-217,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#
-# Docker images for calico-node, calico-cni
-#
+61,1a2d63a2cdf9552a85d079af8b2742513ae8b77a,/dockerfiles.md,"## Build new Photon Images
 "
-218,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-k8s-base-image.sh,"#!/bin/bash -e
+62,1a2d63a2cdf9552a85d079af8b2742513ae8b77a,/dockerfiles.md,"## Running the Photon Container
 
 "
-219,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-k8s-base-image.sh,"#
-# Base docker image for kubernetes containers
-#
-"
-220,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#!/bin/bash -e
-
-"
-221,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#
-# Docker image for flannel
-#
-"
-222,7418d2bff2b084bf8dab9989e94db86249c049be,/support/package-builder/Dockerfile.photon_build_container,"# Photon Base Build Container
-
-"
-223,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#!/bin/bash -e
-
-"
-224,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#
-# Docker images for kubernetes-dashboard
-#
-"
-225,1a2d63a2cdf9552a85d079af8b2742513ae8b77a,/dockerfiles.md,"# Photon on Docker
-
-"
-226,1a2d63a2cdf9552a85d079af8b2742513ae8b77a,/dockerfiles.md,"## Build new Photon Images
-"
-227,1a2d63a2cdf9552a85d079af8b2742513ae8b77a,/dockerfiles.md,"## Running the Photon Container
-
-"
-228,f093864e3c1f22c6bf990f1c9cd35546ed8d6097,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-229,f093864e3c1f22c6bf990f1c9cd35546ed8d6097,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-230,f093864e3c1f22c6bf990f1c9cd35546ed8d6097,/support/dockerfiles/photon/make-docker-image.sh,"# use host's yum to install in chroot
-"
-231,f093864e3c1f22c6bf990f1c9cd35546ed8d6097,/support/dockerfiles/photon/make-docker-image.sh,"# # reinstalling inside to make sure rpmdb is created for tdnf.
-# # TODO find better solution.
-# chroot $TEMP_CHROOT bash -c \
-#    ""tdnf install -y filesystem; \
-#     tdnf install -y glibc ; \
-#     tdnf install -y bash ; \
-#     tdnf install -y coreutils ; \
-#     tdnf install -y rpm-ostree ; \
-#     tdnf install -y photon-release; \
-#     rpm -e --nodeps perl; \
-#     rpm -e --nodeps perl-DBD-SQLite; \
-#     rpm -e --nodeps perl-Module-ScanDeps; \
-#     rpm -e --nodeps perl-DBIx-Simple; \
-#     rpm -e --nodeps perl-DBI; \
-#     rpm -e --nodeps perl-WWW-Curl;""
-
-"
-232,f093864e3c1f22c6bf990f1c9cd35546ed8d6097,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-233,f093864e3c1f22c6bf990f1c9cd35546ed8d6097,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-234,f093864e3c1f22c6bf990f1c9cd35546ed8d6097,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-
-"
-235,f093864e3c1f22c6bf990f1c9cd35546ed8d6097,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-236,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#!/bin/bash -e
-
-"
-237,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#
-# Docker image for kubernetes nginx ingress controller
-#
-"
-238,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#!/bin/bash -e
-
-"
-239,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#
-# Docker image for kubernetes nginx ingress controller
-#
-"
-240,7d00a1d5c2800d659e4842ba257e37e32cc7de1d,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-241,7d00a1d5c2800d659e4842ba257e37e32cc7de1d,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-242,7d00a1d5c2800d659e4842ba257e37e32cc7de1d,/support/dockerfiles/photon/make-docker-image.sh,"# use host's yum to install in chroot
-"
-243,7d00a1d5c2800d659e4842ba257e37e32cc7de1d,/support/dockerfiles/photon/make-docker-image.sh,"# reinstalling inside to make sure rpmdb is created for tdnf.
-# TODO find better solution.
-"
-244,7d00a1d5c2800d659e4842ba257e37e32cc7de1d,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-245,7d00a1d5c2800d659e4842ba257e37e32cc7de1d,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-246,36b35687f46b7ebab56fa4ee24dde0a9c8789ab2,/support/dockerfiles/k8s-docker-images/build-k8s-base-image.sh,"#!/bin/bash -e
-
-"
-247,36b35687f46b7ebab56fa4ee24dde0a9c8789ab2,/support/dockerfiles/k8s-docker-images/build-k8s-base-image.sh,"#
-# Base docker image for kubernetes containers
-#
-"
-248,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#!/bin/bash -e
-
-"
-249,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#
-# Docker image for flannel
-#
-"
-250,596908862f4bb5fc08b969424ed56208d45061d1,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# This script may automatically configure wavefront without prompting, based on
+63,596908862f4bb5fc08b969424ed56208d45061d1,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# This script may automatically configure wavefront without prompting, based on
 # these variables:
 #  WAVEFRONT_URL           (required)
 #  WAVEFRONT_TOKEN         (required)
@@ -767,151 +193,27 @@
 #  WAVEFRONT_USE_GRAPHITE  (default is false)
 
 "
-251,596908862f4bb5fc08b969424ed56208d45061d1,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Copy files
+64,596908862f4bb5fc08b969424ed56208d45061d1,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Copy files
 "
-252,596908862f4bb5fc08b969424ed56208d45061d1,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Configure agent
+65,596908862f4bb5fc08b969424ed56208d45061d1,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Configure agent
 "
-253,596908862f4bb5fc08b969424ed56208d45061d1,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Run the agent
+66,596908862f4bb5fc08b969424ed56208d45061d1,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Run the agent
 "
-254,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#!/bin/bash -e
+67,380c6dd13b89cc5f67c4629ae4ee57d56d3489e4,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-dns,"# Photon Base Build Container
 
 "
-255,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#
-# Docker images for kubernetes-dashboard
-#
-"
-256,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#!/bin/bash -e
+68,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/Dockerfile.k8sbase,"# k8s base container
 
 "
-257,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#
-# Docker images for kubernetes-dashboard
-#
-"
-258,2f10f10cc4bf62699db84a24ae3e61e966758c43,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#!/bin/bash -e
+69,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-scheduler,"# Photon Base Build Container
 
 "
-259,2f10f10cc4bf62699db84a24ae3e61e966758c43,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# Docker images for kubernetes artifacts
-#
+70,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/Dockerfile.nginx-ingress,"# forward nginx access and error logs to stdout and stderr
 "
-260,2f10f10cc4bf62699db84a24ae3e61e966758c43,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"    #
-    # K8S Pause container
-    #
-"
-261,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#!/bin/bash -e
+71,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-apiserver,"# Photon Base Build Container
 
 "
-262,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#
-# Docker images for kubernetes-dns artifacts
-#
-"
-263,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#!/bin/bash -e
-
-"
-264,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# Docker images for kubernetes artifacts
-#
-"
-265,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# K8S Pause container
-#
-"
-266,ef1dfa8dd9d3be61b9f4d6818be4b89f12a82f3d,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#!/bin/bash -e
-
-"
-267,ef1dfa8dd9d3be61b9f4d6818be4b89f12a82f3d,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# Docker images for kubernetes artifacts
-#
-"
-268,ef1dfa8dd9d3be61b9f4d6818be4b89f12a82f3d,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# K8S Pause container
-#
-"
-269,42e8b7da066f544e56e18ed735d891873f2cec59,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-270,42e8b7da066f544e56e18ed735d891873f2cec59,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-271,42e8b7da066f544e56e18ed735d891873f2cec59,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-272,42e8b7da066f544e56e18ed735d891873f2cec59,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-273,42e8b7da066f544e56e18ed735d891873f2cec59,/support/dockerfiles/photon/make-docker-image.sh,"# set TERM to linux due to stripped terminfo
-"
-274,42e8b7da066f544e56e18ed735d891873f2cec59,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-"
-275,42e8b7da066f544e56e18ed735d891873f2cec59,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-276,380c6dd13b89cc5f67c4629ae4ee57d56d3489e4,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-dns,"# Photon Base Build Container
-
-"
-277,965c59d1ad25b7ad9f76b4eb5298aa838da49bcb,/support/dockerfiles/k8s-docker-images/build-k8s-coredns-image.sh,"#!/bin/bash -e
-
-"
-278,965c59d1ad25b7ad9f76b4eb5298aa838da49bcb,/support/dockerfiles/k8s-docker-images/build-k8s-coredns-image.sh,"#
-# Docker images for coredns
-#
-"
-279,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/Dockerfile.k8sbase,"# k8s base container
-
-"
-280,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#!/bin/bash -e
-
-"
-281,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# Docker images for kubernetes artifacts
-#
-"
-282,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# K8S Pause container
-#
-"
-283,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-scheduler,"# Photon Base Build Container
-
-"
-284,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/Dockerfile.nginx-ingress,"# forward nginx access and error logs to stdout and stderr
-"
-285,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#!/bin/bash -e
-
-"
-286,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# Docker images for kubernetes artifacts
-#
-"
-287,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# K8S Pause container
-#
-"
-288,457e39ae916ac3355de8af4bac85265239828c1b,/support/dockerfiles/k8s-docker-images/build-k8s-heapster-image.sh,"#!/bin/bash -e
-
-"
-289,457e39ae916ac3355de8af4bac85265239828c1b,/support/dockerfiles/k8s-docker-images/build-k8s-heapster-image.sh,"#
-# Docker images for heapster - kubernetes cluster monitoring tool.
-#
-
-"
-290,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-apiserver,"# Photon Base Build Container
-
-"
-291,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#!/bin/bash -e
-
-"
-292,93e7617f3571499b28076e2e6e0308d5b65a66d1,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#
-# Docker image for kubernetes nginx ingress controller
-#
-"
-293,3ec8aa3726c74d6e615bdddb5c701070f12788c9,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#!/bin/bash -e
-
-"
-294,3ec8aa3726c74d6e615bdddb5c701070f12788c9,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# Docker images for kubernetes artifacts
-#
-"
-295,3ec8aa3726c74d6e615bdddb5c701070f12788c9,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"    #
-    # K8S Pause container
-    #
-"
-296,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# This script may automatically configure wavefront without prompting, based on
+72,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# This script may automatically configure wavefront without prompting, based on
 # these variables:
 #  WAVEFRONT_URL           (required)
 #  WAVEFRONT_TOKEN         (required)
@@ -920,211 +222,43 @@
 #  WAVEFRONT_USE_GRAPHITE  (default is false)
 
 "
-297,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Copy files
+73,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Copy files
 "
-298,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Configure agent
+74,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Configure agent
 "
-299,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Run the agent
+75,ebccfc27d1067e14b796a9e302480f53195fcb61,/support/dockerfiles/k8s-docker-images/Dockerfile.wavefront-proxy,"# Run the agent
 "
-300,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#!/bin/bash -e
+76,380c6dd13b89cc5f67c4629ae4ee57d56d3489e4,/support/dockerfiles/k8s-docker-images/Dockerfile.dnsmasq-nanny,"# Photon Base Build Container
 
 "
-301,ea8a3d4aa092fc879372a8ed5c11eca0ef52f9af,/support/dockerfiles/k8s-docker-images/build-k8s-nginx-ingress.sh,"#
-# Docker image for kubernetes nginx ingress controller
-#
-"
-302,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-wavefront-proxy-docker-image.sh,"#!/bin/bash -e
-
-"
-303,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-wavefront-proxy-docker-image.sh,"#
-# Docker image for wavefront-proxy
-#
-"
-304,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-wavefront-proxy-docker-image.sh,"#!/bin/bash -e
-
-"
-305,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-wavefront-proxy-docker-image.sh,"#
-# Docker image for wavefront-proxy
-#
-"
-306,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#!/bin/bash -e
-
-"
-307,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#
-# Docker images for kubernetes-dns artifacts
-#
-"
-308,380c6dd13b89cc5f67c4629ae4ee57d56d3489e4,/support/dockerfiles/k8s-docker-images/Dockerfile.dnsmasq-nanny,"# Photon Base Build Container
-
-"
-309,2c153d2993c90f067adcf70093a424764262a8ee,/Dockerfile,"#
+77,2c153d2993c90f067adcf70093a424764262a8ee,/Dockerfile,"#
 # Photon Linux Dockerfile
 #
 
 "
-310,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.nginx-ingress,"# forward nginx access and error logs to stdout and stderr
+78,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.nginx-ingress,"# forward nginx access and error logs to stdout and stderr
 "
-311,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#!/bin/bash -e
-
-"
-312,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#
-# Docker image for flannel
-#
-"
-313,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-k8s-coredns-image.sh,"#!/bin/bash -e
-
-"
-314,0d4c5572e5ca96591ca6b657290d5799e49dd571,/support/dockerfiles/k8s-docker-images/build-k8s-coredns-image.sh,"#
-# Docker images for coredns
-#
-"
-315,171243135f2a1b7374ccbf3d6b4562da7379bcae,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-316,171243135f2a1b7374ccbf3d6b4562da7379bcae,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-317,171243135f2a1b7374ccbf3d6b4562da7379bcae,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-318,171243135f2a1b7374ccbf3d6b4562da7379bcae,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-319,171243135f2a1b7374ccbf3d6b4562da7379bcae,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-"
-320,171243135f2a1b7374ccbf3d6b4562da7379bcae,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-321,615f2667a403bad1d17f8b6b60742ea571b678e8,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-322,615f2667a403bad1d17f8b6b60742ea571b678e8,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-323,615f2667a403bad1d17f8b6b60742ea571b678e8,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-324,615f2667a403bad1d17f8b6b60742ea571b678e8,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-325,615f2667a403bad1d17f8b6b60742ea571b678e8,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-"
-326,615f2667a403bad1d17f8b6b60742ea571b678e8,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-327,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-wavefront-proxy-docker-image.sh,"#!/bin/bash -e
-
-"
-328,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/build-wavefront-proxy-docker-image.sh,"#
-# Docker image for wavefront-proxy
-#
-"
-329,6d95e42c581cfbe4e3d330be24cf4d910ed895ee,/Dockerfile,"#
+79,6d95e42c581cfbe4e3d330be24cf4d910ed895ee,/Dockerfile,"#
 # Photon Linux Dockerfile
 #
 
 "
-330,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#!/bin/bash -e
+80,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-proxy,"# Photon Base Build Container
 
 "
-331,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/build-k8s-dashboard-docker-images.sh,"#
-# Docker images for kubernetes-dashboard
-#
+81,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Minimum Docker API version required for libnetwork.
 "
-332,ddc815c96aacd4757c4f3b9956fd685c72205cd7,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
+82,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Install required packages
+"
+83,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Copy binaries needed by calico/node
+"
+84,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.sidecar,"# Photon Base Build Container
 
 "
-333,ddc815c96aacd4757c4f3b9956fd685c72205cd7,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-334,ddc815c96aacd4757c4f3b9956fd685c72205cd7,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-335,ddc815c96aacd4757c4f3b9956fd685c72205cd7,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-336,ddc815c96aacd4757c4f3b9956fd685c72205cd7,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-"
-337,ddc815c96aacd4757c4f3b9956fd685c72205cd7,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-338,f4d17450cef98d38be71932b59c859f8a72fe88f,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-339,f4d17450cef98d38be71932b59c859f8a72fe88f,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 2 ]; then
-"
-340,2d02818f85bebb27794091e7a5074e4d3c67be36,/support/dockerfiles/k8s-docker-images/build-wavefront-proxy-docker-image.sh,"#!/bin/bash -e
-
-"
-341,2d02818f85bebb27794091e7a5074e4d3c67be36,/support/dockerfiles/k8s-docker-images/build-wavefront-proxy-docker-image.sh,"#
-# Docker image for wavefront-proxy
-#
-"
-342,da35460447774a5d3e2116a4215fd792980f9c59,/support/dockerfiles/k8s-docker-images/Dockerfile.kube-proxy,"# Photon Base Build Container
-
-"
-343,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#!/bin/bash -e
-
-"
-344,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# Docker images for kubernetes artifacts
-#
-"
-345,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-k8s-docker-images.sh,"#
-# K8S Pause container
-#
-"
-346,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#!/bin/bash -e
-
-"
-347,e055b2c4a0e7e1caf308590428476dcea234d1c2,/support/dockerfiles/k8s-docker-images/build-flannel-docker-image.sh,"#
-# Docker image for flannel
-#
-"
-348,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Minimum Docker API version required for libnetwork.
-"
-349,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Install required packages
-"
-350,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.calico-node,"# Copy binaries needed by calico/node
-"
-351,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#!/bin/bash -e
-
-"
-352,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/build-calico-docker-images.sh,"#
-# Docker images for calico-node, calico-cni
-#
-"
-353,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#!/bin/bash -e
-
-"
-354,1a6033d9a322636d93f671a0b375b2e6458251ee,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#
-# Docker images for kubernetes-dns artifacts
-#
-"
-355,2d56eb7baa62098884e2fb4bab13ec007fcb6b41,/support/dockerfiles/k8s-docker-images/build-k8s-metrics-server-image.sh,"#!/bin/bash -e
-
-"
-356,2d56eb7baa62098884e2fb4bab13ec007fcb6b41,/support/dockerfiles/k8s-docker-images/build-k8s-metrics-server-image.sh,"#
-# Docker images for kubernetes-metrics-server
-#
-"
-357,7fbd3a1ef454eb9c39bf5eccefea727b420df51f,/support/dockerfiles/photon/make-docker-image.sh,"#!/bin/bash
-
-"
-358,7fbd3a1ef454eb9c39bf5eccefea727b420df51f,/support/dockerfiles/photon/make-docker-image.sh,"#"" -lt 1 ]; then
-"
-359,7fbd3a1ef454eb9c39bf5eccefea727b420df51f,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup anything not needed inside rootfs
-"
-360,7fbd3a1ef454eb9c39bf5eccefea727b420df51f,/support/dockerfiles/photon/make-docker-image.sh,"# rm -rf var/lib/yum/*
-"
-361,7fbd3a1ef454eb9c39bf5eccefea727b420df51f,/support/dockerfiles/photon/make-docker-image.sh,"# set TERM to linux due to stripped terminfo
-"
-362,7fbd3a1ef454eb9c39bf5eccefea727b420df51f,/support/dockerfiles/photon/make-docker-image.sh,"#find var/cache/tdnf/photon/rpms -type f -name ""*.rpm"" -exec rm {} \;
-"
-363,7fbd3a1ef454eb9c39bf5eccefea727b420df51f,/support/dockerfiles/photon/make-docker-image.sh,"# cleanup
-"
-364,35834c5d73e4b336941fc1d997ac9dd4c8db5f15,/support/dockerfiles/k8s-docker-images/Dockerfile.sidecar,"# Photon Base Build Container
-
-"
-365,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#!/bin/bash -e
-
-"
-366,49c49299050714b3e66c10ee6d4110a1f939c10c,/support/dockerfiles/k8s-docker-images/build-k8s-dns-docker-images.sh,"#
-# Docker images for kubernetes-dns artifacts
-#
-"
-367,f3ce7f0c27d436a34e51a43022f4f73bdb7319fd,/support/dockerfiles/ubuntu-dev/Dockerfile,"#
+85,f3ce7f0c27d436a34e51a43022f4f73bdb7319fd,/support/dockerfiles/ubuntu-dev/Dockerfile,"#
 # Ubuntu-Dev Dockerfile for building Linux Distribution.
 #
 
 "
-368,f3ce7f0c27d436a34e51a43022f4f73bdb7319fd,/support/dockerfiles/ubuntu-dev/Dockerfile,"# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
+86,f3ce7f0c27d436a34e51a43022f4f73bdb7319fd,/support/dockerfiles/ubuntu-dev/Dockerfile,"# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
 "

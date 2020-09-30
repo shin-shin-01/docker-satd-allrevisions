@@ -2912,83 +2912,49 @@
 "
 381,"# FIXME(vdemeester) only used for e2e, could be in e2e special image in the future
 "
-392,"#!/usr/bin/env bash
-#
-# Install dependencies required to cross compile osx, then cleanup
-#
-# TODO: this should be a separate build stage when CI supports it
-
-
-"
-393,"# TODO - consider replacing with an official image and a multi-stage build to pluck the binaries out
+392,"# TODO - consider replacing with an official image and a multi-stage build to pluck the binaries out
 #ARG CONTAINERD_VERSION=v1.1.2
 #ARG CONTAINERD_VERSION=47a128d
 #ARG CONTAINERD_VERSION=6c3e782f
 "
-394,"# TODO - consider replacing with an official image and a multi-stage build to pluck the binaries out
+393,"# TODO - consider replacing with an official image and a multi-stage build to pluck the binaries out
 "
-395,"# TODO verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
+394,"# TODO verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
 "
-396,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)
+395,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)
 "
-397,"# TODO https://github.com/redis/redis/pull/3494 (deduplicate ""redis-server"" copies)
+396,"# TODO https://github.com/redis/redis/pull/3494 (deduplicate ""redis-server"" copies)
 "
-415,"# TODO pin specific commit
+414,"# TODO pin specific commit
 
 # cache-fill
 "
-416,"    # TODO: the distribution given by apache is not gzipped correctly - unzip correctly when fixed
+415,"    # TODO: the distribution given by apache is not gzipped correctly - unzip correctly when fixed
 "
-417,"# reinstalling inside to make sure rpmdb is created for tdnf.
-# TODO find better solution.
-"
-418,"# # reinstalling inside to make sure rpmdb is created for tdnf.
-# # TODO find better solution.
-# chroot $TEMP_CHROOT bash -c \
-#    ""tdnf install -y filesystem; \
-#     tdnf install -y glibc ; \
-#     tdnf install -y bash ; \
-#     tdnf install -y coreutils ; \
-#     tdnf install -y rpm-ostree ; \
-#     tdnf install -y photon-release; \
-#     rpm -e --nodeps perl; \
-#     rpm -e --nodeps perl-DBD-SQLite; \
-#     rpm -e --nodeps perl-Module-ScanDeps; \
-#     rpm -e --nodeps perl-DBIx-Simple; \
-#     rpm -e --nodeps perl-DBI; \
-#     rpm -e --nodeps perl-WWW-Curl;""
-
-"
-419,"# # reinstalling inside to make sure rpmdb is created for tdnf.
-# # TODO find better solution.
-"
-420,"# TODO: remove this line after updating photon-build image with new
-# versions of sqlite and rpm with -libs subpackages
-"
-421,"## Start Hack
+416,"## Start Hack
 ## All of this needed because of missing 8.11.x tag.  Once we update to 8.15 we can resume using Dockerfile.old or remove hack and use FROM node:8.15-slim
 
 ## Installing Node.js
 
 # gpg keys listed at https://github.com/nodejs/node
 "
-422," ## End Hack
+417," ## End Hack
 
 ## Actual Rocket.Chat stuff
 "
-423,"## Start Hack
+418,"## Start Hack
 "
-424,"## All of this needed because of missing 8.11.x tag.  Once we update to 8.15+ we can resume using Dockerfile.old or remove hack and use FROM node:8-slim
+419,"## All of this needed because of missing 8.11.x tag.  Once we update to 8.15+ we can resume using Dockerfile.old or remove hack and use FROM node:8-slim
 
 ## Installing Node.js
 "
-425,"## End Hack
+420,"## End Hack
 
 ## Actual Rocket.Chat stuff
 "
-426,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+421,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
 "
-427,"# Todo: remove build dependencies
+422,"# Todo: remove build dependencies
 #	runDeps=""$( \
 #		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems \
 #		| tr ',' '\n' \
@@ -2999,58 +2965,58 @@
 #	apk del .build-deps
 
 "
-430,"# This is a hack (see libcompose#32) - will be removed when libcompose will be fixed
+425,"# This is a hack (see libcompose#32) - will be removed when libcompose will be fixed
 # (i.e go get able)
 "
-431,"# TODO strip ""demo"" and ""man"" folders?
+426,"# TODO strip ""demo"" and ""man"" folders?
 "
-432,"# TODO gcc: error: unrecognized command line option '-marm'
+427,"# TODO gcc: error: unrecognized command line option '-marm'
 #	android/arm \
 
 # ls src/runtime/defs_*_*.h | sed -r 's!^.*/defs_([^_]+)_([^_]+)[.]h$!\1/\2!'
 
 # (set an explicit GOARM of 5 for maximum ARM compatibility)
 "
-433,"# TODO TARGET_ARCH='i386' (heinous package conflicts trying to get ""gcc -m32""/""gcc-multilib"" to work with all the cross-compiling gccs)
+428,"# TODO TARGET_ARCH='i386' (heinous package conflicts trying to get ""gcc -m32""/""gcc-multilib"" to work with all the cross-compiling gccs)
 
 "
-434,"# TODO consider removing the *-dev deps and only keeping the necessary lib* packages
+429,"# TODO consider removing the *-dev deps and only keeping the necessary lib* packages
 
 # set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php
 "
-443,"# TODO find a simple hacky way to verify Tomcat Native is working properly
+438,"# TODO find a simple hacky way to verify Tomcat Native is working properly
 # (the way we use in 7+ doesn't work here because we have no ""configtest"")
 
 "
-444,"#!/bin/sh$|#!/usr/bin/env bash|' '{}' +
+439,"#!/bin/sh$|#!/usr/bin/env bash|' '{}' +
 
 # TODO find a simple hacky way to verify Tomcat Native is working properly
 # (the way we use in 7+ doesn't work here because we have no ""configtest"")
 
 "
-447,"# TODO there's an odd bug on Oracle Linux where installing ""cpp"" (which gets pulled in as a dependency of ""gcc"") and then marking it as automatically-installed will result in the ""filesystem"" package being removed during ""yum autoremove"" (which then fails), so we set it as manually-installed to compensate
+442,"# TODO there's an odd bug on Oracle Linux where installing ""cpp"" (which gets pulled in as a dependency of ""gcc"") and then marking it as automatically-installed will result in the ""filesystem"" package being removed during ""yum autoremove"" (which then fails), so we set it as manually-installed to compensate
 "
-449,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?
+444,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?
 "
-450,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
+445,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
 # TODO find a better/cleaner way to generically interact with the yumdb for the purposes of marking things as automatically/manually installed
 "
-451,"# TODO should we leave these installed, or remove them too?
+446,"# TODO should we leave these installed, or remove them too?
 "
-475,"# http://tomcat.10.x6.nabble.com/VOTE-Release-Apache-Tomcat-8-0-32-tp5046007p5048274.html (ie, HACK HACK HACK)
+470,"# http://tomcat.10.x6.nabble.com/VOTE-Release-Apache-Tomcat-8-0-32-tp5046007p5048274.html (ie, HACK HACK HACK)
 "
-482,"#Copy Zray docker plugin
+477,"#Copy Zray docker plugin
 #TODO: Integrate Zray docker plugin into Zend Server
 "
-484,"# Zend Server
+479,"# Zend Server
 #
 # Version 0.2
 
 # TODO:
 
 "
-486,"# Zend Server
+481,"# Zend Server
 #
 # Version 0.1
 
@@ -3058,195 +3024,195 @@
 # - version as a variable (both php and ZS)
 
 "
+492,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
+"
+493,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
+# CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
+"
+494,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now; 1.27+)
+# CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
+"
+495,"# TODO s390x ? (needs BR2_TOOLCHAIN_BUILDROOT_UCLIBC support)
+"
+496,"# TODO ppc64el ? (needs BR2_TOOLCHAIN_BUILDROOT_UCLIBC support)
+"
 497,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
-"
-498,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
-# CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
-"
-499,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now; 1.27+)
-# CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
-"
-500,"# TODO s390x ? (needs BR2_TOOLCHAIN_BUILDROOT_UCLIBC support)
-"
-501,"# TODO ppc64el ? (needs BR2_TOOLCHAIN_BUILDROOT_UCLIBC support)
-"
-502,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
 # As long as we rely on libnss, we have to have libc.so anyhow, so
 # we've removed CONFIG_STATIC here for now... :cry:
 "
-503,"# hack hack hack hack hack
+498,"# hack hack hack hack hack
 # with glibc, static busybox uses libnss for DNS resolution :(
 "
-504,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
+499,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
 # CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
 # As long as we rely on libnss, we have to have libc.so anyhow, so
 # we've removed CONFIG_STATIC here for now... :cry:
 "
-505,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now; 1.27+)
+500,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now; 1.27+)
 # CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
 # As long as we rely on libnss, we have to have libc.so anyhow, so
 # we've removed CONFIG_STATIC here for now... :cry:
 "
-506,"# see http://wiki.musl-libc.org/wiki/Building_Busybox
+501,"# see http://wiki.musl-libc.org/wiki/Building_Busybox
 # TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
 "
-507,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
+502,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
 # CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
 # see http://wiki.musl-libc.org/wiki/Building_Busybox
 "
-508,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now; 1.27+)
+503,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now; 1.27+)
 # CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
 # see http://wiki.musl-libc.org/wiki/Building_Busybox
 "
-510,"## haskell package versions; can be overriden via context hacks
+505,"## haskell package versions; can be overriden via context hacks
 "
-511,"## install additional libs typically needed by hackage packages
+506,"## install additional libs typically needed by hackage packages
 "
-512,"## install additional libs typically needed by hackage packages
+507,"## install additional libs typically needed by hackage packages
 #RUN apt-get update && \
 #    apt-get install ${OPTS_APT} zlib1g-dev libtinfo-dev
 
 ## run ghci by default unless a command is specified
 "
-514,"# TODO https://github.com/memcached/memcached/issues/382 ""t/chunked-extstore.t is flaky on arm32v6""
+509,"# TODO https://github.com/memcached/memcached/issues/382 ""t/chunked-extstore.t is flaky on arm32v6""
 "
-516,"# FIXME(oleg_nenashev): This is not an official AdoptOpenJDK Docker Image.
+511,"# FIXME(oleg_nenashev): This is not an official AdoptOpenJDK Docker Image.
 # There is no official Alpine images at the moment.
 # Needs upgrade when/if there is an official alpine image.
 "
-517,"# TODO: revert before the GA release of Java 11 support (JENKINS-55087)
+512,"# TODO: revert before the GA release of Java 11 support (JENKINS-55087)
 "
-518,"# Creates an image to build the CRUX filesystem
+513,"# Creates an image to build the CRUX filesystem
 
 # TODO: Once bootstrapped, use 'crux:latest'
 "
-519,/* TODO decide what to do (if anything) about non-GitHub repos with respect to URL */
-520,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+514,/* TODO decide what to do (if anything) about non-GitHub repos with respect to URL */
+515,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
 "
-521,"# TODO find a way to make --verify work with backpan as well :'(
+516,"# TODO find a way to make --verify work with backpan as well :'(
 #ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify
 
 # reinstall cpanm itself, for good measure
 "
-522,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+517,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
 
 "
-523,"# This is ugly... But for some reason npm and node aren't available at this stage.
+518,"# This is ugly... But for some reason npm and node aren't available at this stage.
 "
-524,"# Hack needed to force use of bundled library instead of system level outdated library
+519,"# Hack needed to force use of bundled library instead of system level outdated library
 # https://github.com/lovell/sharp/issues/892
 "
-525,"# TODO: Create configuration file from environment variables?
+520,"# TODO: Create configuration file from environment variables?
 # TODO: Add entrypoint to run the bridge
 "
-526,"  ## hack to avoid RStudio-bug in detecting build-dependencies         
+521,"  ## hack to avoid RStudio-bug in detecting build-dependencies         
   # && ln -s&& ln -s ln -s /usr/local/bin/R /usr/bin/R \
   # && ln -s&& ln -s ln -s /usr/local/lib/R /usr/lib/R
 
 "
-527,"# These settings are needed so that we can run as a different user than 1001 after server warmup
+522,"# These settings are needed so that we can run as a different user than 1001 after server warmup
 # TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it
 "
-529,"#These settings are needed so that we can run as a different user than 1001 after server warmup
+524,"#These settings are needed so that we can run as a different user than 1001 after server warmup
 # TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it
 "
-542,"# fixme: needs to check out a tag on the next 1.14 release
+537,"# fixme: needs to check out a tag on the next 1.14 release
 "
-544,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
+539,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
 "
-546,"# TODO rebuild other cffi modules here too? (other _*_build.py files)
+541,"# TODO rebuild other cffi modules here too? (other _*_build.py files)
 "
-554,"# TODO switch to buster once https://github.com/docker-library/php/issues/865 is resolved in a clean way (either in the PHP image or in PHP itself)
+549,"# TODO switch to buster once https://github.com/docker-library/php/issues/865 is resolved in a clean way (either in the PHP image or in PHP itself)
 
 # install the PHP extensions we need
 "
-559,"# TODO use this MD5
+554,"# TODO use this MD5
 "
-562,"# By default you'll get a single-node development server that stores everything
+557,"# By default you'll get a single-node development server that stores everything
 # in RAM and bootstraps itself. Don't use this configuration for production.
 "
-563,"# By default you'll get a single-node development server that stores everything
+558,"# By default you'll get a single-node development server that stores everything
 # in RAM, exposes a web UI, and bootstraps itself. Don't use this configuration
 # for production.
 "
-578,"# https://github.com/docker-library/postgres/issues/484 (clang-6.0 required, only available in stretch-backports)
+573,"# https://github.com/docker-library/postgres/issues/484 (clang-6.0 required, only available in stretch-backports)
 # TODO remove this once we hit buster+
 "
-587,"# TODO convert ""dpkg --print-architecture"" to Alpine architecture for downloading the correct architecture binary
+582,"# TODO convert ""dpkg --print-architecture"" to Alpine architecture for downloading the correct architecture binary
 "
-590,"# TODO: Switch to debian sid
+585,"# TODO: Switch to debian sid
 
 "
-591,"    # VisualEditor
+586,"    # VisualEditor
     # TODO: make submodules shallow clones?
 "
-592,"    # Extensions
+587,"    # Extensions
     # TODO: make submodules shallow clones?
 "
-594,"	# Extensions
+589,"	# Extensions
 	# TODO: make submodules shallow clones?
 "
-596,"# By default you'll get an insecure single-node development server that stores
+591,"# By default you'll get an insecure single-node development server that stores
 # everything in RAM, exposes a web UI and HTTP endpoints, and bootstraps itself.
 # Don't use this configuration for production.
 "
-597,"# TODO for some reason, libgo + i386 fails on https://github.com/gcc-mirror/gcc/blob/gcc-7_1_0-release/libgo/runtime/proc.c#L154
+592,"# TODO for some reason, libgo + i386 fails on https://github.com/gcc-mirror/gcc/blob/gcc-7_1_0-release/libgo/runtime/proc.c#L154
 # ""error unknown case for SETCONTEXT_CLOBBERS_TLS""
 "
-598,"# TODO get enough builders to test and verify arm32v5 O:)
+593,"# TODO get enough builders to test and verify arm32v5 O:)
 "
-599,"# TODO make[2]: *** No rule to make target '/usr/src/gcc/gcc/sync-builtinsndef', needed by 'tree-ssa-loop-prefetch.o'.  Stop.
+594,"# TODO make[2]: *** No rule to make target '/usr/src/gcc/gcc/sync-builtinsndef', needed by 'tree-ssa-loop-prefetch.o'.  Stop.
 # (which the builds takes _forever_ to get to)
 "
-615,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+610,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
 "
-616,"# TODO verify signature
+611,"# TODO verify signature
 "
-617,"# TODO .asc / .sha256sum
+612,"# TODO .asc / .sha256sum
 "
-618,"# TODO aufs-tools
+613,"# TODO aufs-tools
 
 "
-619,"# TODO aufs-tools
+614,"# TODO aufs-tools
 
 # set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
 "
-620,"# https://github.com/docker/docker/tree/master/hack/dind
+615,"# https://github.com/docker/docker/tree/master/hack/dind
 "
-621,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
+616,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
 #ONBUILD ADD Gemfile /apps/rails/Gemfile
 #ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
 #ONBUILD RUN cd /apps/rails && bundle install --deployment
 #ONBUILD ADD . /apps/rails
 #ONBUILD RUN chown -R www-data:www-data /apps/rails
 "
-622,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
+617,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
 #ONBUILD ADD Gemfile /apps/rails/Gemfile
 #ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
 #ONBUILD RUN bundle install --deployment
 #ONBUILD ADD . /apps/rails
 "
-624," # TODO inbox-api or inbox-start
+619," # TODO inbox-api or inbox-start
 "
-625,"# TODO find some way to include ccextractor (currently buster-only)
+620,"# TODO find some way to include ccextractor (currently buster-only)
 
 # FPL_MainFeature detection only seemed to work with OpenJDK 9 (8 was insufficient)
 "
-626,"# TODO copy/steal ""browser.sh"" stuff from slack
+621,"# TODO copy/steal ""browser.sh"" stuff from slack
 
 "
-627,"# TODO use links to get a redis server/database instead (since that's where configuration actually goes)
+622,"# TODO use links to get a redis server/database instead (since that's where configuration actually goes)
 "
-628,"# TODO see note above about redis
+623,"# TODO see note above about redis
 "
-629,"#RUN cd /xo/xo-server/public/http && for e in ../../../xo-web/public/*; do ln -s ""$e""; done
+624,"#RUN cd /xo/xo-server/public/http && for e in ../../../xo-web/public/*; do ln -s ""$e""; done
 
 # TODO use links to get a redis server/database instead (since that's where configuration actually goes)
 "
-630,"# https://github.com/docker/docker/tree/master/hack/dind
+625,"# https://github.com/docker/docker/tree/master/hack/dind
 #ENV DIND_COMMIT 130b0bc6032cc675d064e1cc62626cacc9c07a57
 
 #RUN set -eux; \
@@ -3254,128 +3220,109 @@
 #	chmod +x /usr/local/bin/dind
 
 "
-631,"# TODO add ""nbtscan"" when we get to Alpine 3.9 (if it makes it out of edge for 3.9)
+626,"# TODO add ""nbtscan"" when we get to Alpine 3.9 (if it makes it out of edge for 3.9)
 
 "
-632,"# TODO add ""nbtscan"" when we get to Alpine 3.10 (if it makes it out of edge for 3.10)
+627,"# TODO add ""nbtscan"" when we get to Alpine 3.10 (if it makes it out of edge for 3.10)
 
 "
-633,"# TODO add ""nbtscan"" when we get to Alpine 3.11 (if it makes it out of edge)
+628,"# TODO add ""nbtscan"" when we get to Alpine 3.11 (if it makes it out of edge)
 # https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64
 
 "
-634,"# TODO add ""nbtscan"" when we get to Alpine 3.12 (if it makes it out of edge)
+629,"# TODO add ""nbtscan"" when we get to Alpine 3.12 (if it makes it out of edge)
 # https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64
 
 "
-635,"# TODO add a very lightweight browser for opening help and/or registration
+630,"# TODO add a very lightweight browser for opening help and/or registration
 "
-636,"# TODO verify that ookla's ""armhf"" really is armv6
+631,"# TODO verify that ookla's ""armhf"" really is armv6
 "
-637,"# TODO figure out what ookla means by their bare ""arm"" arch
+632,"# TODO figure out what ookla means by their bare ""arm"" arch
 "
-638,"# TODO verify sha256 values! (add "".sha256"" to the end of this URL)
+633,"# TODO verify sha256 values! (add "".sha256"" to the end of this URL)
 "
-639,"# TODO move this down when COPY adheres to USER (and remove chown)
+634,"# TODO move this down when COPY adheres to USER (and remove chown)
 "
-640,"# much of this was gleaned from https://github.com/lxc/lxc/blob/lxc-0.8.0/templates/lxc-ubuntu.in
+635,"# much of this was gleaned from https://github.com/lxc/lxc/blob/lxc-0.8.0/templates/lxc-ubuntu.in
 # and then heavily modified and hacked like crazy
 
 # we're going to want this bad boy installed so we can connect :)
 "
-646,"# TODO set ""TARGET"" appropriately based on ""apk --print-arch"" to avoid ""uname -m"" detection
+641,"# TODO set ""TARGET"" appropriately based on ""apk --print-arch"" to avoid ""uname -m"" detection
 "
-647,"# TODO pin a version
+642,"# TODO pin a version
 "
-648,"# TODO pin versions
+643,"# TODO pin versions
 "
-649,"# FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
+644,"# FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
 # ignore installed rosdep keys
 "
-650,"# FIXME This is a workaround for pytest not found causing builds to fail
+645,"# FIXME This is a workaround for pytest not found causing builds to fail
 # Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722
 "
-651,"# FIXME Remove this once ament_export_interfaces respects COLCON_CURRENT_PREFIX https://github.com/ament/ament_cmake/issues/173
+646,"# FIXME Remove this once ament_export_interfaces respects COLCON_CURRENT_PREFIX https://github.com/ament/ament_cmake/issues/173
 #Workaround hard coded paths in nightly tarball setup scripts
 "
-653,"# HACK, replacing shell with bash for later docker build commands
+648,"# HACK, replacing shell with bash for later docker build commands
 "
-654,"# FIXME renaming manifest.xml is a workaround for rosdep misbehaving when both
+649,"# FIXME renaming manifest.xml is a workaround for rosdep misbehaving when both
 # manifest.xml and package.xml are present
 # install dependencies
 "
-655,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+650,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
 #TODO remove ""--ginkgo.skip"" option after switching from v2.0.1 to the next release,
 # after releasing this https://github.com/kubernetes-csi/csi-test/pull/205/files
 "
-656,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+651,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
 #TODO remove ""--ginkgo.skip"" option after fixing volume paginatin by token:
 "
-657,"# TODO: alter filename after v2 relese (version will be taken out of name)
+652,"# TODO: alter filename after v2 relese (version will be taken out of name)
 "
-658,"# TODO: alter filename after v2 release (version will be taken out of name)
+653,"# TODO: alter filename after v2 release (version will be taken out of name)
 "
-659,/** TODO: support other architectures here **/
-823,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")
+654,/** TODO: support other architectures here **/
+818,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")
 
 "
-825,"# TODO some sort of download verification here
+820,"# TODO some sort of download verification here
 "
-862,"#TODO change branch to master
-"
-863,"# TODO. change branch
-"
-864,"#TODO change branch
-"
-865,"#>?7Eno#6aQis>7';?/u3u76%YmzrF""/)~*}r5a~K6j_GcRaPQ[nu\i|ۥ|*F2"
-866,"#&^#=MuwIS&撶6jƻ<rCeړT+zkkY/.؞(pۮʋ).7	brަ]_-[jh4]7""0U_gpRznk7p\JOwvK&+%75ziYLWVڱYUck%muŴ>!#/'sMVO-b漾#6$5EzC²jԘe3+`,Xz5}<w,3(K{f]FeYF|eVFDnS1JzVўTնPT(/уD$`]csD	OlĚ6a;3&Z 	!锉TAy`3LM~F@-,۳Bt6qQpmkN8l_Z9M\+5m3KmuM.4n"
-867,"#>9"">!>!}@voW/d+CRAp=S=VϷd?g>SSB=^G&&HC?cNUj7&pοR7K]'gG¿J<""gQM]>'s]d]T""}Q'{C~=}I'STsTKpcͮTwɾ""q}ˮ;d[u;J@r$[M;P7ԝ퀺Avvu4@jKcW+|d'*OdG[ܿ'~pOTܡ)`H
-"
-868,"#[O5 7}2c#HWR4㗝N-߈AKUJn҄Q,'ry	R""XqmsW	HacK_WPl`|wZg!aap\7#+=Zp;U*Jwٞ	z(rQHGO\EwS$m]{KwS?ꔫg<h47L>0/tPOC}9׶OЪT(^4
-"
-869,"# <xIdҼPշ-׵wNk!&X}VޯQ1v$]@cU,DbT$""?59Fz!O!431SklƎ8LlKů܏g`OQ<N:|ůxů-~.3'4'TNtɱw7J:{?ռ`&i/T|Q{UgLYVP.~cK^AUx`T.
-"
-870,#z\}OuQABarfrvO7gj?:۩kҽC[]Ύ~?OUb5Mbԗ
-871,"#iV +6ȯWXH˟K+rj.,~>p2|av1~XM}!bVv]pFixMem|)5Ho,;h(GuêO?7焦{5$,T8ݾ2aH8m+S""Q{ci؏F<ej-QUQr4̂)M&(,>qЕG0zJNf:jkx(վ&O>^tULKdoߓ:egM<8nߓh1̈́BGNB6ۃ>Gi+ݬ`c5'ȼdo'Ll$g
-"
-872,"#$os/}""; \
+857,"#$os/}""; \
 # TODO GOARM
 "
-873,"# TODO verify GPG signatures for manifest-tool releases
+858,"# TODO verify GPG signatures for manifest-tool releases
 "
-874,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+859,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
 #ENV MANIFEST_TOOL_GPG_KEY 27F3EA268A97867EAF0BD05C0F386284C03A1162
 # TODO consume Phil's releases again (once he fixes https://github.com/estesp/manifest-tool/issues/47 properly)
 
 "
-875,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+860,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
 #RUN cpanm Digest::SHA Module::Signature
 # TODO find a way to make --verify work with backpan as well :'(
 #ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify
 
 # reinstall cpanm itself, for good measure
 "
-891,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
+876,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 "
-892,"# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7)
+877,"# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7)
 "
-893,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
+878,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 # no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07
 "
-894,"# TODO signature? checksum?
+879,"# TODO signature? checksum?
 "
-907,"# Default to UTF-8 file.encoding
+892,"# Default to UTF-8 file.encoding
 #ENV LANG C.UTF-8
 # TODO oraclelinux doesn't have C.UTF-8 by default??
 
 "
-942,"# TODO ENV DOCKER_SHA256
+927,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
 
 "
-990,"# TODO ENV DOCKER_SHA256
+975,"# TODO ENV DOCKER_SHA256
 
-"
-1032,"  # shellcheck disable=SC1083,SC2086 # TODO not sure about intention here
 "

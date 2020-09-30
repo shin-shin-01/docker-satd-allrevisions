@@ -85,6 +85,17 @@ def RevisonsHaveDocker(trepository, txtGitFileStatus):
             tmp["Date"] = txt[8:]
 
         elif ("Dockerfile" in txt) or ("dockerfile" in txt):
+            ## 例外ファイル
+            if txt[-3:] == ".go":
+                continue
+            elif txt[-4:] == ".tgz":
+                continue
+            elif txt[-10:] == ".installer":
+                continue
+            elif txt[-3:] == ".sh":
+                continue
+
+
             if txt[0] != " ":
                 if txt[0] == "R":
                     tmp["Status"] += f"{txt[0]}\n"

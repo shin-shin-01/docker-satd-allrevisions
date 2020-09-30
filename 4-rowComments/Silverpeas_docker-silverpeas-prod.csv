@@ -152,1036 +152,1031 @@
 "
 45,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile.template,"# What to execute by default when running the container
 "
-46,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/generate-dockerfile.sh,"#!/usr/bin/env bash
-
-"
-47,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/generate-dockerfile.sh,"# -ne 2 ]; then
-"
-48,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"#
+46,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-49,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Fetch and install SWFTools
+47,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Fetch and install SWFTools
 "
-50,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Fetch and install PDF2JSON
+48,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Fetch and install PDF2JSON
+"
+49,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
+"
+50,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Generate locales and set the default one
 "
 51,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
-"
-52,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Generate locales and set the default one
-"
-53,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # add a simple script that can auto-detect the appropriate JAVA_HOME value
 # based on whether the JDK or only the JRE is installed
 "
-54,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"#!/bin/sh'; \
+52,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"#!/bin/sh'; \
 "
-55,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# do some fancy footwork to create a JAVA_HOME that's cross-architecture-safe
+53,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# do some fancy footwork to create a JAVA_HOME that's cross-architecture-safe
 "
-56,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Set up environment variables for Silverpeas
+54,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Set up environment variables for Silverpeas
 "
-57,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+55,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-58,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+56,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-59,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Set the default working directory
+57,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Set the default working directory
 "
-60,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+58,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-61,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Assemble Silverpeas
+59,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# Assemble Silverpeas
 "
-62,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"#
+60,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-63,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
+61,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
 # the data, and the workflow definitions that are produced in Silverpeas.
 "
-64,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# What to execute by default when running the container
+62,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile,"# What to execute by default when running the container
 "
-65,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"#
+63,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-66,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Fetch and install SWFTools
+64,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Fetch and install SWFTools
 "
-67,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Fetch and install PDF2JSON
+65,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Fetch and install PDF2JSON
+"
+66,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
+"
+67,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Generate locales and set the default one
 "
 68,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
-"
-69,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Generate locales and set the default one
-"
-70,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"#
 # Install Silverpeas and Wildfly
 #
 
 # Set up environment variables for Silverpeas
 "
-71,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+69,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-72,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+70,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-73,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Set the default working directory
+71,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Set the default working directory
 "
-74,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Copy this container init script that will be run each time the container is ran
+72,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Copy this container init script that will be run each time the container is ran
 "
-75,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Assemble Silverpeas
+73,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# Assemble Silverpeas
 "
-76,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"#
+74,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-77,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
+75,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
 # or the configuration of Silverpeas outside the container
 "
-78,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# What to execute by default when running the container
+76,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile.template,"# What to execute by default when running the container
 "
-79,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"#
+77,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-80,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Fetch and install SWFTools
+78,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Fetch and install SWFTools
 "
-81,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Fetch and install PDF2JSON
+79,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Fetch and install PDF2JSON
+"
+80,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
+"
+81,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Generate locales and set the default one
 "
 82,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
-"
-83,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Generate locales and set the default one
-"
-84,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # Set up environment variables for Silverpeas
 "
-85,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+83,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-86,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+84,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-87,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Set the default working directory
+85,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Set the default working directory
 "
-88,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+86,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-89,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Assemble Silverpeas
+87,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# Assemble Silverpeas
 "
-90,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"#
+88,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-91,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
+89,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
 # the data, and the workflow definitions that are produced in Silverpeas.
 "
-92,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# What to execute by default when running the container
+90,43daef47765ff3acc21c4d856a0bc3e09f2e9de3,/Dockerfile,"# What to execute by default when running the container
 "
-93,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"#
+91,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-94,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Fetch and install SWFTools
+92,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Fetch and install SWFTools
 "
-95,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Fetch and install PDF2JSON
+93,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Fetch and install PDF2JSON
+"
+94,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
+"
+95,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Generate locales and set the default one
 "
 96,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
-"
-97,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Generate locales and set the default one
-"
-98,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"#
 # Install Silverpeas and Wildfly
 #
 
 # add a simple script that can auto-detect the appropriate JAVA_HOME value
 # based on whether the JDK or only the JRE is installed
 "
-99,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"#!/bin/sh'; \
+97,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"#!/bin/sh'; \
 "
-100,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# do some fancy footwork to create a JAVA_HOME that's cross-architecture-safe
+98,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# do some fancy footwork to create a JAVA_HOME that's cross-architecture-safe
 "
-101,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Set up environment variables for Silverpeas
+99,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Set up environment variables for Silverpeas
 "
-102,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+100,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-103,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+101,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-104,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Set the default working directory
+102,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Set the default working directory
 "
-105,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Copy this container init script that will be run each time the container is ran
+103,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Copy this container init script that will be run each time the container is ran
 "
-106,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Assemble Silverpeas
+104,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# Assemble Silverpeas
 "
-107,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"#
+105,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-108,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
+106,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
 # the data, and the workflow definitions that are produced in Silverpeas.
 "
-109,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# What to execute by default when running the container
+107,e80a605f4141c01e2a4b46f153235bb3f6c9bab1,/Dockerfile.template,"# What to execute by default when running the container
 "
-110,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"#
+108,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of LibreOffice, ImageMagick, Ghostscript, and then
 # the dependencies required to run SWFTools and PDF2JSON
 "
-111,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Fetch and install SWFTools
+109,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Fetch and install SWFTools
 "
-112,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Fetch and install PDF2JSON
+110,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Fetch and install PDF2JSON
+"
+111,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
+"
+112,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Generate locales and set the default one
 "
 113,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
-"
-114,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Generate locales and set the default one
-"
-115,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"#
 # Install Silverpeas and Wildfly
 #
 
 # add a simple script that can auto-detect the appropriate JAVA_HOME value
 # based on whether the JDK or only the JRE is installed
 "
-116,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"#!/bin/sh'; \
+114,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"#!/bin/sh'; \
 "
-117,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# do some fancy footwork to create a JAVA_HOME that's cross-architecture-safe
+115,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# do some fancy footwork to create a JAVA_HOME that's cross-architecture-safe
 "
-118,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Set up environment variables for Silverpeas
+116,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Set up environment variables for Silverpeas
 "
-119,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+117,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-120,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+118,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-121,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Set the default working directory
+119,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Set the default working directory
 "
-122,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Copy this container init script that will be run each time the container is ran
+120,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Copy this container init script that will be run each time the container is ran
 "
-123,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Assemble Silverpeas
+121,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# Assemble Silverpeas
 "
-124,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"#
+122,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-125,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
+123,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
 # the data, the properties and the workflow definitions that are produced in Silverpeas.
 "
-126,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# What to execute by default when running the container
+124,eeb1d0951d64d793db16ef53c84131043d9a70af,/Dockerfile.template,"# What to execute by default when running the container
 "
-127,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"#
+125,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-128,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Fetch and install SWFTools
+126,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Fetch and install SWFTools
 "
-129,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Fetch and install PDF2JSON
+127,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Fetch and install PDF2JSON
+"
+128,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
+"
+129,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Generate locales and set the default one
 "
 130,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
-"
-131,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Generate locales and set the default one
-"
-132,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # add a simple script that can auto-detect the appropriate JAVA_HOME value
 # based on whether the JDK or only the JRE is installed
 "
-133,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"#!/bin/sh'; \
+131,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"#!/bin/sh'; \
 "
-134,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# do some fancy footwork to create a JAVA_HOME that's cross-architecture-safe
+132,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# do some fancy footwork to create a JAVA_HOME that's cross-architecture-safe
 "
-135,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Set up environment variables for Silverpeas
+133,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Set up environment variables for Silverpeas
 "
-136,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+134,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-137,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+135,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-138,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Set the default working directory
+136,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Set the default working directory
 "
-139,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+137,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-140,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Assemble Silverpeas
+138,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# Assemble Silverpeas
 "
-141,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"#
+139,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-142,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
+140,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
 # the data, and the workflow definitions that are produced in Silverpeas.
 "
-143,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# What to execute by default when running the container
+141,189a4f2db783d5052add54f2c07ca7a3b860c685,/Dockerfile,"# What to execute by default when running the container
 "
-144,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"#
+142,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-145,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Fetch and install SWFTools
+143,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Fetch and install SWFTools
 "
-146,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Fetch and install PDF2JSON
+144,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Fetch and install PDF2JSON
+"
+145,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
+"
+146,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Generate locales and set the default one
 "
 147,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
-"
-148,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Generate locales and set the default one
-"
-149,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # Set up environment variables for Silverpeas
 "
-150,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+148,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-151,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+149,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-152,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Set the default working directory
+150,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Set the default working directory
 "
-153,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+151,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-154,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Assemble Silverpeas
+152,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# Assemble Silverpeas
 "
-155,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"#
+153,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-156,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
+154,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
 # the data, and the workflow definitions that are produced in Silverpeas.
 "
-157,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# What to execute by default when running the container
+155,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile,"# What to execute by default when running the container
 "
-158,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"#
+156,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-159,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Fetch and install SWFTools
+157,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Fetch and install SWFTools
 "
-160,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Fetch and install PDF2JSON
+158,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Fetch and install PDF2JSON
+"
+159,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
+"
+160,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Generate locales and set the default one
 "
 161,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
-"
-162,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Generate locales and set the default one
-"
-163,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # Set up environment variables for Silverpeas
 "
-164,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+162,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-165,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+163,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-166,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Set the default working directory
+164,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Set the default working directory
 "
-167,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+165,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-168,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Assemble Silverpeas
+166,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# Assemble Silverpeas
 "
-169,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"#
+167,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-170,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
+168,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
 # or the configuration of Silverpeas outside the container
 "
-171,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# What to execute by default when running the container
+169,5e6d60c3d65c575bcb75e29ddb3150164c02679b,/Dockerfile,"# What to execute by default when running the container
 "
-172,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"#
+170,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-173,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Fetch and install SWFTools
+171,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Fetch and install SWFTools
 "
-174,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Fetch and install PDF2JSON
+172,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Fetch and install PDF2JSON
+"
+173,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
+"
+174,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Generate locales and set the default one
 "
 175,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
-"
-176,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Generate locales and set the default one
-"
-177,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # Set up environment variables for Silverpeas
 "
-178,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+176,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-179,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+177,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-180,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Set the default working directory
+178,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Set the default working directory
 "
-181,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+179,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-182,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Assemble Silverpeas
+180,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# Assemble Silverpeas
 "
-183,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"#
+181,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-184,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
+182,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
 # the data, and the workflow definitions that are produced in Silverpeas.
 "
-185,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# What to execute by default when running the container
+183,48e66a18fb4fa3933a1aafce48be75cc4b18a765,/Dockerfile,"# What to execute by default when running the container
 "
-186,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"#
+184,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of LibreOffice, ImageMagick, Ghostscript, and then
 # the dependencies required to run SWFTools and PDF2JSON
 "
-187,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Fetch and install SWFTools
+185,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Fetch and install SWFTools
 "
-188,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Fetch and install PDF2JSON
+186,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Fetch and install PDF2JSON
+"
+187,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
+"
+188,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Generate locales and set the default one
 "
 189,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
-"
-190,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Generate locales and set the default one
-"
-191,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # add a simple script that can auto-detect the appropriate JAVA_HOME value
 # based on whether the JDK or only the JRE is installed
 "
-192,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"#!/bin/sh'; \
+190,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"#!/bin/sh'; \
 "
-193,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# do some fancy footwork to create a JAVA_HOME that's cross-architecture-safe
+191,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# do some fancy footwork to create a JAVA_HOME that's cross-architecture-safe
 "
-194,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Set up environment variables for Silverpeas
+192,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Set up environment variables for Silverpeas
 "
-195,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+193,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-196,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+194,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-197,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Copy the customized Silverpeas installation settings
+195,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Copy the customized Silverpeas installation settings
 "
-198,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Set the default working directory
+196,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Set the default working directory
 "
-199,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+197,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-200,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Assemble Silverpeas. Rename the script to match what is is expected by the migration descriptor
+198,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# Assemble Silverpeas. Rename the script to match what is is expected by the migration descriptor
 "
-201,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"#
+199,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-202,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
+200,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
 # the data, the properties and the workflow definitions that are produced in Silverpeas.
 "
-203,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# What to execute by default when running the container
+201,7d002ee69a68f8a8f640ce7fbf7fd47b526123d0,/Dockerfile,"# What to execute by default when running the container
 "
-204,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"#
+202,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of LibreOffice, ImageMagick, Ghostscript, and then
 # the dependencies required to run SWFTools and PDF2JSON
 "
-205,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Fetch and install SWFTools
+203,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Fetch and install SWFTools
 "
-206,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Fetch and install PDF2JSON
+204,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Fetch and install PDF2JSON
 "
-207,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"#
+205,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"#
 # Set up environment to install and to run Silverpeas
 #
 
 # Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
 "
-208,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Generate locales and set the default one
+206,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Generate locales and set the default one
 "
-209,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"#
+207,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # add a simple script that can auto-detect the appropriate JAVA_HOME value
 # based on whether the JDK or only the JRE is installed
 "
-210,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"#!/bin/sh'; \
+208,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"#!/bin/sh'; \
 "
-211,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# do some fancy footwork to create a JAVA_HOME that's cross-architecture-safe
+209,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# do some fancy footwork to create a JAVA_HOME that's cross-architecture-safe
 "
-212,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Set up environment variables for Silverpeas
+210,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Set up environment variables for Silverpeas
 "
-213,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+211,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-214,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+212,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-215,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Set the default working directory
+213,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Set the default working directory
 "
-216,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+214,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-217,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Assemble Silverpeas
+215,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# Assemble Silverpeas
 "
-218,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"#
+216,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-219,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
+217,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
 # the data, the properties and the workflow definitions that are produced in Silverpeas.
 "
-220,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# What to execute by default when running the container
+218,1640347564cd5a6af943e49ba565715cff51e840,/Dockerfile,"# What to execute by default when running the container
 "
-221,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"#
+219,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-222,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Fetch and install SWFTools
+220,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Fetch and install SWFTools
 "
-223,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Fetch and install PDF2JSON
+221,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Fetch and install PDF2JSON
+"
+222,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
+"
+223,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Generate locales and set the default one
 "
 224,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
-"
-225,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Generate locales and set the default one
-"
-226,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"#
 # Install Silverpeas and Wildfly
 #
 
 # Set up environment variables for Silverpeas
 "
-227,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+225,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-228,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+226,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-229,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Set the default working directory
+227,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Set the default working directory
 "
-230,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Copy this container init script that will be run each time the container is ran
+228,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Copy this container init script that will be run each time the container is ran
 "
-231,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Assemble Silverpeas
+229,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# Assemble Silverpeas
 "
-232,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"#
+230,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-233,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
+231,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
 # the data, and the workflow definitions that are produced in Silverpeas.
 "
-234,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# What to execute by default when running the container
+232,15a911386becf7df41ae0a68709fd107ad60c9b0,/Dockerfile.template,"# What to execute by default when running the container
 "
-235,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"#
+233,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"#
 # Check Silvereas and Wildfly at the asked version exist
 #
 
 "
-236,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"#
+234,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of OpenJDK 8, ImageMagick, Ghostscript, LibreOffice, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-237,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Fetch the last stable version of SWFTools, build it and install it
+235,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Fetch the last stable version of SWFTools, build it and install it
 "
-238,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_viewer.swf -o -L $(pkgdatadir)\/swfs\/default_viewer.swf/g' swfs/Makefile \
+236,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_viewer.swf -o -L $(pkgdatadir)\/swfs\/default_viewer.swf/g' swfs/Makefile \
 "
-239,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_loader.swf -o -L $(pkgdatadir)\/swfs\/default_loader.swf/g' swfs/Makefile \
+237,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_loader.swf -o -L $(pkgdatadir)\/swfs\/default_loader.swf/g' swfs/Makefile \
 "
-240,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Fetch the last stable version of PDF2JSON, build it and install it
+238,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Fetch the last stable version of PDF2JSON, build it and install it
+"
+239,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Generate locales and set the default one
+"
+240,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Set up environment variables for Silverpeas
 "
 241,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Generate locales and set the default one
-"
-242,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Set up environment variables for Silverpeas
-"
-243,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-244,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+242,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-245,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Set the default working directory
+243,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Set the default working directory
 "
-246,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+244,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-247,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Assemble the Silverpeas application with its working directories and marks it as ready to complete
+245,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# Assemble the Silverpeas application with its working directories and marks it as ready to complete
 # the installation of Silverpeas in Wildfly at first run
 "
-248,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"#
+246,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-249,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
+247,a60b2913c812b6a9da69757f5b422adf252ba3f2,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
 # or the configuration of Silverpeas outside the container
 "
-250,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"#
+248,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"#
 # Check Silvereas and Wildfly at the asked version exist
 #
 
 "
-251,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"#
+249,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of OpenJDK 8, ImageMagick, Ghostscript, LibreOffice, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-252,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Fetch the last stable version of SWFTools, build it and install it
+250,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Fetch the last stable version of SWFTools, build it and install it
 "
-253,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_viewer.swf -o -L $(pkgdatadir)\/swfs\/default_viewer.swf/g' swfs/Makefile \
+251,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_viewer.swf -o -L $(pkgdatadir)\/swfs\/default_viewer.swf/g' swfs/Makefile \
 "
-254,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_loader.swf -o -L $(pkgdatadir)\/swfs\/default_loader.swf/g' swfs/Makefile \
+252,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_loader.swf -o -L $(pkgdatadir)\/swfs\/default_loader.swf/g' swfs/Makefile \
 "
-255,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Fetch the last stable version of PDF2JSON, build it and install it
+253,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Fetch the last stable version of PDF2JSON, build it and install it
+"
+254,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Generate locales and set the default one
+"
+255,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Set up environment variables for Silverpeas
 "
 256,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Generate locales and set the default one
-"
-257,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Set up environment variables for Silverpeas
-"
-258,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-259,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+257,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-260,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Set the default working directory
+258,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Set the default working directory
 "
-261,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+259,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-262,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Assemble the Silverpeas application with its working directories and marks it as ready to complete
+260,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# Assemble the Silverpeas application with its working directories and marks it as ready to complete
 # the installation of Silverpeas in Wildfly at first run
 "
-263,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"#
+261,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-264,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
+262,0c5e8e9f71bbe09b89260220bbd6260dce6ba72b,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
 # or the configuration of Silverpeas outside the container
 "
-265,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"#
+263,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"#
 # Check Silvereas and Wildfly at the asked version exist
 #
 
 "
-266,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"#
+264,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of OpenJDK 8, ImageMagick, Ghostscript, LibreOffice, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-267,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Fetch the last stable version of SWFTools, build it and install it
+265,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Fetch the last stable version of SWFTools, build it and install it
 "
-268,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_viewer.swf -o -L $(pkgdatadir)\/swfs\/default_viewer.swf/g' swfs/Makefile \
+266,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_viewer.swf -o -L $(pkgdatadir)\/swfs\/default_viewer.swf/g' swfs/Makefile \
 "
-269,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_loader.swf -o -L $(pkgdatadir)\/swfs\/default_loader.swf/g' swfs/Makefile \
+267,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_loader.swf -o -L $(pkgdatadir)\/swfs\/default_loader.swf/g' swfs/Makefile \
 "
-270,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Fetch the last stable version of PDF2JSON, build it and install it
+268,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Fetch the last stable version of PDF2JSON, build it and install it
+"
+269,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Generate locales and set the default one
+"
+270,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Set up environment variables for Silverpeas
 "
 271,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Generate locales and set the default one
-"
-272,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Set up environment variables for Silverpeas
-"
-273,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-274,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+272,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-275,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Set the default working directory
+273,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Set the default working directory
 "
-276,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+274,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-277,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Assemble the Silverpeas application with its working directories and marks it as ready to complete
+275,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# Assemble the Silverpeas application with its working directories and marks it as ready to complete
 # the installation of Silverpeas in Wildfly at first run
 "
-278,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"#
+276,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-279,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
+277,b87b3bb7e28e61cd9d76262e897451e2b466d265,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
 # or the configuration of Silverpeas outside the container
 "
-280,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"#
+278,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-281,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Fetch and install SWFTools
+279,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Fetch and install SWFTools
 "
-282,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Fetch and install PDF2JSON
+280,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Fetch and install PDF2JSON
 "
-283,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"#
+281,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"#
 # Set up environment to install and to run Silverpeas
 #
 
 # Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
 "
-284,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Generate locales and set the default one
+282,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Generate locales and set the default one
 "
-285,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"#
+283,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # Set up environment variables for Silverpeas
 "
-286,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+284,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-287,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+285,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-288,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Set the default working directory
+286,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Set the default working directory
 "
-289,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+287,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-290,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Assemble Silverpeas
+288,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# Assemble Silverpeas
 "
-291,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"#
+289,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-292,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
+290,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
 # the data, and the workflow definitions that are produced in Silverpeas.
 "
-293,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# What to execute by default when running the container
+291,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile,"# What to execute by default when running the container
 "
-294,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"#
+292,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"#
 # Check Silvereas and Wildfly at the asked version exist
 #
 
 "
-295,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"#
+293,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of OpenJDK 8, ImageMagick, Ghostscript, LibreOffice, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-296,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Fetch the last stable version of SWFTools, build it and install it
+294,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Fetch the last stable version of SWFTools, build it and install it
 "
-297,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_viewer.swf -o -L $(pkgdatadir)\/swfs\/default_viewer.swf/g' swfs/Makefile \
+295,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_viewer.swf -o -L $(pkgdatadir)\/swfs\/default_viewer.swf/g' swfs/Makefile \
 "
-298,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_loader.swf -o -L $(pkgdatadir)\/swfs\/default_loader.swf/g' swfs/Makefile \
+296,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# rm -f $(pkgdatadir)\/swfs\/default_loader.swf -o -L $(pkgdatadir)\/swfs\/default_loader.swf/g' swfs/Makefile \
 "
-299,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Fetch the last stable version of PDF2JSON, build it and install it
+297,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Fetch the last stable version of PDF2JSON, build it and install it
 "
-300,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"#
+298,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"#
 # Set up environment to install and to run Silverpeas
 #
 
 # Generate locales and set the default one
 "
-301,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Set up environment variables for Silverpeas
+299,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Set up environment variables for Silverpeas
 "
-302,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"#
+300,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-303,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+301,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-304,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Set the default working directory
+302,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Set the default working directory
 "
-305,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+303,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-306,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Assemble the Silverpeas application with its working directories and marks it as ready to complete
+304,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# Assemble the Silverpeas application with its working directories and marks it as ready to complete
 # the installation of Silverpeas in Wildfly at first run
 "
-307,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"#
+305,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-308,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
+306,69b85363e3bfd94c6752c9713173696ad241c1d2,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
 # or the configuration of Silverpeas outside the container
 "
-309,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"#
+307,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-310,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Fetch and install SWFTools
+308,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Fetch and install SWFTools
 "
-311,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Fetch and install PDF2JSON
+309,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Fetch and install PDF2JSON
+"
+310,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"#
+# Set up environment to install and to run Silverpeas
+#
+
+# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
+"
+311,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Generate locales and set the default one
 "
 312,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"#
-# Set up environment to install and to run Silverpeas
-#
-
-# Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
-"
-313,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Generate locales and set the default one
-"
-314,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"#
 # Install Silverpeas and Wildfly
 #
 
 # Set up environment variables for Silverpeas
 "
-315,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+313,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-316,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+314,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-317,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Set the default working directory
+315,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Set the default working directory
 "
-318,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Copy this container init script that will be run each time the container is ran
+316,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Copy this container init script that will be run each time the container is ran
 "
-319,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Assemble Silverpeas
+317,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# Assemble Silverpeas
 "
-320,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"#
+318,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-321,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
+319,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
 # the data, and the workflow definitions that are produced in Silverpeas.
 "
-322,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# What to execute by default when running the container
+320,77c7c86d82aeee270cf23ef1272cfd95767df3c4,/Dockerfile.template,"# What to execute by default when running the container
 "
-323,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"#
+321,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of ImageMagick, Ghostscript, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-324,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Fetch and install SWFTools
+322,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Fetch and install SWFTools
 "
-325,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Fetch and install PDF2JSON
+323,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Fetch and install PDF2JSON
 "
-326,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"#
+324,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"#
 # Set up environment to install and to run Silverpeas
 #
 
 # Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
 "
-327,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Generate locales and set the default one
+325,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Generate locales and set the default one
 "
-328,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"#
+326,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # Set up environment variables for Silverpeas
 "
-329,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+327,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-330,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+328,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-331,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Set the default working directory
+329,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Set the default working directory
 "
-332,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+330,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-333,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Assemble Silverpeas
+331,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# Assemble Silverpeas
 "
-334,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"#
+332,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-335,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
+333,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access outside the container the logs, 
 # the data, and the workflow definitions that are produced in Silverpeas.
 "
-336,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# What to execute by default when running the container
+334,03bd2800e83bf262d07b53f067758115fa6f05fc,/Dockerfile,"# What to execute by default when running the container
 "
-337,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"#
+335,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"#
 # Install required and recommended programs for Silverpeas
 #
 
 # Installation of ImageMagick, Ghostscript, LibreOffice, and then
 # the dependencies required to build SWFTools and PDF2JSON
 "
-338,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Fetch and install SWFTools
+336,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Fetch and install SWFTools
 "
-339,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Fetch and install PDF2JSON
+337,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Fetch and install PDF2JSON
 "
-340,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"#
+338,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"#
 # Set up environment to install and to run Silverpeas
 #
 
 # Default locale of the platform. It can be overriden to build an image for a specific locale other than en_US.UTF-8.
 "
-341,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Generate locales and set the default one
+339,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Generate locales and set the default one
 "
-342,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"#
+340,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"#
 # Install Silverpeas and Wildfly
 #
 
 # Set up environment variables for Silverpeas
 "
-343,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
+341,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Fetch both Silverpeas and Wildfly and unpack them into /opt
 "
-344,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
+342,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Copy the Maven settings.xml required to install Silverpeas by fetching the software bundles from 
 # the Silverpeas Nexus Repository
 "
-345,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Set the default working directory
+343,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Set the default working directory
 "
-346,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
+344,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Copy this container init script that will be run each time the container is ran
 "
-347,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Assemble, pre-configure and install Silverpeas
+345,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# Assemble, pre-configure and install Silverpeas
 "
-348,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"#
+346,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"#
 # Expose image entries. By default, when running, the container will set up Silverpeas and Wildfly
 # according to the host environment.
 #
 
 # Silverpeas listens port 8000 by default
 "
-349,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
+347,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# The following Silverpeas folders are exposed by default so that you can access the logs, the data, the properties
 # or the configuration of Silverpeas outside the container
 "
-350,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# What to execute by default when running the container
+348,35af9d88f66d84e4e26ebde6f59cabedfc66f387,/Dockerfile,"# What to execute by default when running the container
 "

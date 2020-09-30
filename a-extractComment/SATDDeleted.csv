@@ -2551,150 +2551,125 @@
 226,"#COPY hack/dockerfile/binaries-commits /
 
 "
-396,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)
+395,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)
 "
-417,"# reinstalling inside to make sure rpmdb is created for tdnf.
-# TODO find better solution.
-"
-418,"# # reinstalling inside to make sure rpmdb is created for tdnf.
-# # TODO find better solution.
-# chroot $TEMP_CHROOT bash -c \
-#    ""tdnf install -y filesystem; \
-#     tdnf install -y glibc ; \
-#     tdnf install -y bash ; \
-#     tdnf install -y coreutils ; \
-#     tdnf install -y rpm-ostree ; \
-#     tdnf install -y photon-release; \
-#     rpm -e --nodeps perl; \
-#     rpm -e --nodeps perl-DBD-SQLite; \
-#     rpm -e --nodeps perl-Module-ScanDeps; \
-#     rpm -e --nodeps perl-DBIx-Simple; \
-#     rpm -e --nodeps perl-DBI; \
-#     rpm -e --nodeps perl-WWW-Curl;""
-
-"
-419,"# # reinstalling inside to make sure rpmdb is created for tdnf.
-# # TODO find better solution.
-"
-421,"## Start Hack
+416,"## Start Hack
 ## All of this needed because of missing 8.11.x tag.  Once we update to 8.15 we can resume using Dockerfile.old or remove hack and use FROM node:8.15-slim
 
 ## Installing Node.js
 
 # gpg keys listed at https://github.com/nodejs/node
 "
-422," ## End Hack
+417," ## End Hack
 
 ## Actual Rocket.Chat stuff
 "
-443,"# TODO find a simple hacky way to verify Tomcat Native is working properly
+438,"# TODO find a simple hacky way to verify Tomcat Native is working properly
 # (the way we use in 7+ doesn't work here because we have no ""configtest"")
 
 "
-449,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?
+444,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?
 "
-450,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
+445,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
 # TODO find a better/cleaner way to generically interact with the yumdb for the purposes of marking things as automatically/manually installed
 "
-451,"# TODO should we leave these installed, or remove them too?
+446,"# TODO should we leave these installed, or remove them too?
 "
-484,"# Zend Server
+479,"# Zend Server
 #
 # Version 0.2
 
 # TODO:
 
 "
+492,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
+"
+493,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
+# CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
+"
+494,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now; 1.27+)
+# CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
+"
 497,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
-"
-498,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
-# CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
-"
-499,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now; 1.27+)
-# CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
-"
-502,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
 # As long as we rely on libnss, we have to have libc.so anyhow, so
 # we've removed CONFIG_STATIC here for now... :cry:
 "
-504,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
+499,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
 # CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
 # As long as we rely on libnss, we have to have libc.so anyhow, so
 # we've removed CONFIG_STATIC here for now... :cry:
 "
-505,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now; 1.27+)
+500,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now; 1.27+)
 # CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
 # As long as we rely on libnss, we have to have libc.so anyhow, so
 # we've removed CONFIG_STATIC here for now... :cry:
 "
-506,"# see http://wiki.musl-libc.org/wiki/Building_Busybox
+501,"# see http://wiki.musl-libc.org/wiki/Building_Busybox
 # TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
 "
-507,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
+502,"# TODO remove CONFIG_FEATURE_SYNC_FANCY from this explicit list after the next release of busybox (since it's disabled by default upstream now)
 # CONFIG_LAST_SUPPORTED_WCHAR: see https://github.com/docker-library/busybox/issues/13 (UTF-8 input)
 # see http://wiki.musl-libc.org/wiki/Building_Busybox
 "
-510,"## haskell package versions; can be overriden via context hacks
+505,"## haskell package versions; can be overriden via context hacks
 "
-511,"## install additional libs typically needed by hackage packages
+506,"## install additional libs typically needed by hackage packages
 "
-559,"# TODO use this MD5
+554,"# TODO use this MD5
 "
-563,"# By default you'll get a single-node development server that stores everything
+558,"# By default you'll get a single-node development server that stores everything
 # in RAM, exposes a web UI, and bootstraps itself. Don't use this configuration
 # for production.
 "
-590,"# TODO: Switch to debian sid
+585,"# TODO: Switch to debian sid
 
 "
-591,"    # VisualEditor
+586,"    # VisualEditor
     # TODO: make submodules shallow clones?
 "
-593,"    # Extensions
+588,"    # Extensions
     # TODO: make submodules shallow clones?
 "
-598,"# TODO get enough builders to test and verify arm32v5 O:)
+593,"# TODO get enough builders to test and verify arm32v5 O:)
 "
-599,"# TODO make[2]: *** No rule to make target '/usr/src/gcc/gcc/sync-builtinsndef', needed by 'tree-ssa-loop-prefetch.o'.  Stop.
+594,"# TODO make[2]: *** No rule to make target '/usr/src/gcc/gcc/sync-builtinsndef', needed by 'tree-ssa-loop-prefetch.o'.  Stop.
 # (which the builds takes _forever_ to get to)
 "
-618,"# TODO aufs-tools
+613,"# TODO aufs-tools
 
 "
-627,"# TODO use links to get a redis server/database instead (since that's where configuration actually goes)
+622,"# TODO use links to get a redis server/database instead (since that's where configuration actually goes)
 "
-631,"# TODO add ""nbtscan"" when we get to Alpine 3.9 (if it makes it out of edge for 3.9)
+626,"# TODO add ""nbtscan"" when we get to Alpine 3.9 (if it makes it out of edge for 3.9)
 
 "
-632,"# TODO add ""nbtscan"" when we get to Alpine 3.10 (if it makes it out of edge for 3.10)
+627,"# TODO add ""nbtscan"" when we get to Alpine 3.10 (if it makes it out of edge for 3.10)
 
 "
-633,"# TODO add ""nbtscan"" when we get to Alpine 3.11 (if it makes it out of edge)
+628,"# TODO add ""nbtscan"" when we get to Alpine 3.11 (if it makes it out of edge)
 # https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64
 
 "
-650,"# FIXME This is a workaround for pytest not found causing builds to fail
+645,"# FIXME This is a workaround for pytest not found causing builds to fail
 # Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722
 "
-653,"# HACK, replacing shell with bash for later docker build commands
+648,"# HACK, replacing shell with bash for later docker build commands
 "
-655,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+650,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
 #TODO remove ""--ginkgo.skip"" option after switching from v2.0.1 to the next release,
 # after releasing this https://github.com/kubernetes-csi/csi-test/pull/205/files
 "
-657,"# TODO: alter filename after v2 relese (version will be taken out of name)
+652,"# TODO: alter filename after v2 relese (version will be taken out of name)
 "
-863,"# TODO. change branch
-"
-872,"#$os/}""; \
+857,"#$os/}""; \
 # TODO GOARM
 "
-873,"# TODO verify GPG signatures for manifest-tool releases
+858,"# TODO verify GPG signatures for manifest-tool releases
 "
-891,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
+876,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 "
-892,"# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7)
+877,"# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7)
 "
-990,"# TODO ENV DOCKER_SHA256
+975,"# TODO ENV DOCKER_SHA256
 
 "

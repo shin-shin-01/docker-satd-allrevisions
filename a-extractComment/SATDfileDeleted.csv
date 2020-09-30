@@ -179,29 +179,21 @@
 "
 225,"# TODO The way we set the version could easily be simplified not to depend on hack/...
 "
-392,"#!/usr/bin/env bash
-#
-# Install dependencies required to cross compile osx, then cleanup
-#
-# TODO: this should be a separate build stage when CI supports it
-
-
+394,"# TODO verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
 "
-395,"# TODO verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
+409,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)
 "
-410,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)
+418,"## Start Hack
 "
-423,"## Start Hack
-"
-424,"## All of this needed because of missing 8.11.x tag.  Once we update to 8.15+ we can resume using Dockerfile.old or remove hack and use FROM node:8-slim
+419,"## All of this needed because of missing 8.11.x tag.  Once we update to 8.15+ we can resume using Dockerfile.old or remove hack and use FROM node:8-slim
 
 ## Installing Node.js
 "
-425,"## End Hack
+420,"## End Hack
 
 ## Actual Rocket.Chat stuff
 "
-427,"# Todo: remove build dependencies
+422,"# Todo: remove build dependencies
 #	runDeps=""$( \
 #		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems \
 #		| tr ',' '\n' \
@@ -212,32 +204,32 @@
 #	apk del .build-deps
 
 "
-431,"# TODO strip ""demo"" and ""man"" folders?
+426,"# TODO strip ""demo"" and ""man"" folders?
 "
-432,"# TODO gcc: error: unrecognized command line option '-marm'
+427,"# TODO gcc: error: unrecognized command line option '-marm'
 #	android/arm \
 
 # ls src/runtime/defs_*_*.h | sed -r 's!^.*/defs_([^_]+)_([^_]+)[.]h$!\1/\2!'
 
 # (set an explicit GOARM of 5 for maximum ARM compatibility)
 "
-436,"# TODO consider removing the *-dev deps and only keeping the necessary lib* packages
+431,"# TODO consider removing the *-dev deps and only keeping the necessary lib* packages
 
 # set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php
 "
-444,"#!/bin/sh$|#!/usr/bin/env bash|' '{}' +
+439,"#!/bin/sh$|#!/usr/bin/env bash|' '{}' +
 
 # TODO find a simple hacky way to verify Tomcat Native is working properly
 # (the way we use in 7+ doesn't work here because we have no ""configtest"")
 
 "
-453,"# TODO there's an odd bug on Oracle Linux where installing ""cpp"" (which gets pulled in as a dependency of ""gcc"") and then marking it as automatically-installed will result in the ""filesystem"" package being removed during ""yum autoremove"" (which then fails), so we set it as manually-installed to compensate
+448,"# TODO there's an odd bug on Oracle Linux where installing ""cpp"" (which gets pulled in as a dependency of ""gcc"") and then marking it as automatically-installed will result in the ""filesystem"" package being removed during ""yum autoremove"" (which then fails), so we set it as manually-installed to compensate
 "
-482,"#Copy Zray docker plugin
+477,"#Copy Zray docker plugin
 #TODO: Integrate Zray docker plugin into Zend Server
 "
-486,"# Zend Server
+481,"# Zend Server
 #
 # Version 0.1
 
@@ -245,96 +237,92 @@
 # - version as a variable (both php and ZS)
 
 "
-489,"# Zend Server
+484,"# Zend Server
 #
 # Version 0.2
 
 # TODO:
 
 "
-509,"# hack hack hack hack hack
+504,"# hack hack hack hack hack
 # with glibc, static busybox uses libnss for DNS resolution :(
 "
-518,"# Creates an image to build the CRUX filesystem
+513,"# Creates an image to build the CRUX filesystem
 
 # TODO: Once bootstrapped, use 'crux:latest'
 "
-522,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+517,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
 
 "
-527,"# These settings are needed so that we can run as a different user than 1001 after server warmup
+522,"# These settings are needed so that we can run as a different user than 1001 after server warmup
 # TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it
 "
-529,"#These settings are needed so that we can run as a different user than 1001 after server warmup
+524,"#These settings are needed so that we can run as a different user than 1001 after server warmup
 # TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it
 "
-544,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
+539,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
 "
-551,"# TODO rebuild other cffi modules here too? (other _*_build.py files)
+546,"# TODO rebuild other cffi modules here too? (other _*_build.py files)
 "
-564,"# By default you'll get a single-node development server that stores everything
+559,"# By default you'll get a single-node development server that stores everything
 # in RAM and bootstraps itself. Don't use this configuration for production.
 "
-583,"# https://github.com/docker-library/postgres/issues/484 (clang-6.0 required, only available in stretch-backports)
+578,"# https://github.com/docker-library/postgres/issues/484 (clang-6.0 required, only available in stretch-backports)
 # TODO remove this once we hit buster+
 "
-592,"    # Extensions
+587,"    # Extensions
     # TODO: make submodules shallow clones?
 "
-597,"# TODO for some reason, libgo + i386 fails on https://github.com/gcc-mirror/gcc/blob/gcc-7_1_0-release/libgo/runtime/proc.c#L154
+592,"# TODO for some reason, libgo + i386 fails on https://github.com/gcc-mirror/gcc/blob/gcc-7_1_0-release/libgo/runtime/proc.c#L154
 # ""error unknown case for SETCONTEXT_CLOBBERS_TLS""
 "
-616,"# TODO verify signature
+611,"# TODO verify signature
 "
-621,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
+616,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
 #ONBUILD ADD Gemfile /apps/rails/Gemfile
 #ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
 #ONBUILD RUN cd /apps/rails && bundle install --deployment
 #ONBUILD ADD . /apps/rails
 #ONBUILD RUN chown -R www-data:www-data /apps/rails
 "
-622,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
+617,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
 #ONBUILD ADD Gemfile /apps/rails/Gemfile
 #ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
 #ONBUILD RUN bundle install --deployment
 #ONBUILD ADD . /apps/rails
 "
-623,"# TODO aufs-tools
+618,"# TODO aufs-tools
 
 "
-624," # TODO inbox-api or inbox-start
+619," # TODO inbox-api or inbox-start
 "
-635,"# TODO add a very lightweight browser for opening help and/or registration
+630,"# TODO add a very lightweight browser for opening help and/or registration
 "
-640,"# much of this was gleaned from https://github.com/lxc/lxc/blob/lxc-0.8.0/templates/lxc-ubuntu.in
+635,"# much of this was gleaned from https://github.com/lxc/lxc/blob/lxc-0.8.0/templates/lxc-ubuntu.in
 # and then heavily modified and hacked like crazy
 
 # we're going to want this bad boy installed so we can connect :)
 "
-658,"# TODO: alter filename after v2 release (version will be taken out of name)
+653,"# TODO: alter filename after v2 release (version will be taken out of name)
 "
-826,"# TODO some sort of download verification here
+821,"# TODO some sort of download verification here
 "
-827,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")
+822,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")
 
 "
-862,"#TODO change branch to master
-"
-864,"#TODO change branch
-"
-874,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
+859,"# gpg: key 0F386284C03A1162: public key ""Philip Estes <estesp@gmail.com>"" imported
 #ENV MANIFEST_TOOL_GPG_KEY 27F3EA268A97867EAF0BD05C0F386284C03A1162
 # TODO consume Phil's releases again (once he fixes https://github.com/estesp/manifest-tool/issues/47 properly)
 
 "
-875,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+860,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
 #RUN cpanm Digest::SHA Module::Signature
 # TODO find a way to make --verify work with backpan as well :'(
 #ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify
 
 # reinstall cpanm itself, for good measure
 "
-876,"# This file describes the standard way to build Docker, using docker
+861,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -360,12 +348,12 @@
 #
 
 "
-877,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+862,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
 "
-878,"# This file describes the standard way to build Docker on ARMv7, using docker
+863,"# This file describes the standard way to build Docker on ARMv7, using docker
 #
 # Usage:
 #
@@ -383,7 +371,7 @@
 #
 
 "
-880,"# This file describes the standard way to build Docker on aarch64, using docker
+865,"# This file describes the standard way to build Docker on aarch64, using docker
 #
 # Usage:
 #
@@ -401,7 +389,7 @@
 #
 
 "
-882,"# escape=`
+867,"# escape=`
 
 # -----------------------------------------------------------------------------------------
 # This file describes the standard way to build Docker in a container on Windows
@@ -561,7 +549,7 @@
 
 # The number of build steps below are explicitly minimised to improve performance.
 "
-884,"# This file describes the standard way to build Docker on ppc64le, using docker
+869,"# This file describes the standard way to build Docker on ppc64le, using docker
 #
 # Usage:
 #
@@ -579,7 +567,7 @@
 #
 
 "
-886,"# This file describes the standard way to build Docker on s390x, using docker
+871,"# This file describes the standard way to build Docker on s390x, using docker
 #
 # Usage:
 #
@@ -597,7 +585,7 @@
 #
 
 "
-888,"# docker build -t docker:simple -f Dockerfile.simple .
+873,"# docker build -t docker:simple -f Dockerfile.simple .
 # docker run --rm docker:simple hack/make.sh dynbinary
 # docker run --rm --privileged docker:simple hack/dind hack/make.sh test-unit
 # docker run --rm --privileged -v /var/lib/docker docker:simple hack/dind hack/make.sh dynbinary test-integration-cli
@@ -605,29 +593,29 @@
 # This represents the bare minimum required to build and test Docker.
 
 "
-889,"# Install runc, containerd, tini and docker-proxy
+874,"# Install runc, containerd, tini and docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
 "
-894,"# TODO signature? checksum?
+879,"# TODO signature? checksum?
 "
-907,"# Default to UTF-8 file.encoding
+892,"# Default to UTF-8 file.encoding
 #ENV LANG C.UTF-8
 # TODO oraclelinux doesn't have C.UTF-8 by default??
 
 "
-942,"# TODO ENV DOCKER_SHA256
+927,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
 
 "
-943,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+928,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
 "
-946,"# TODO aufs-tools
+931,"# TODO aufs-tools
 
 # set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
 "
-947,"# https://github.com/docker/docker/tree/master/hack/dind
+932,"# https://github.com/docker/docker/tree/master/hack/dind
 "
