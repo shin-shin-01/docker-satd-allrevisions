@@ -1,4 +1,4 @@
-from setting import PATH_OF_GITCLONE, PATH_OF_GITLOGTXT, PATH_OF_ERROR_GITLOG, PATH_OF_GITLOGCSV
+from setting import PATH_OF_GITCLONE, PATH_OF_GITLOGTXT, PATH_OF_ERROR_GITLOG, PATH_OF_GITLOGCSV, PATH_OF_GITSHOWLIST
 from tqdm import tqdm
 import subprocess
 import os
@@ -33,7 +33,8 @@ def GitlogFileStatus(repository):
     - A : Added
     """
 
-    command = f'git log --name-status'
+    # -mオプションは、マージコミットを通常のコミットと同じように扱うオプション。
+    command = f'git log --name-status -m'
     cwd = f'./{PATH_OF_GITCLONE}/{repository}/'
 
     # ignore utf-8 Error
@@ -57,6 +58,7 @@ def GitlogFileStatus(repository):
 """
 outputCSV
 > CommitID
+> Author
 > Date
 > Dockerfiles
 > Status
@@ -64,22 +66,42 @@ outputCSV
 
 def appendToResult(result, tmp):
     result["CommitID"].append(tmp["CommitID"])
+    result["Author"].append(tmp["Author"])
     result["Date"].append(tmp["Date"])
     result["Dockerfiles"].append(tmp["Dockerfiles"])
     result["Status"].append(tmp["Status"])
 
-    return result, { "CommitID":"", "Date":"", "Dockerfiles":"", "Status":"" }
+    return result, { "CommitID":"", "Author": "", "Date":"", "Dockerfiles":"", "Status":"" }
 
 
-def RevisonsHaveDocker(trepository, txtGitFileStatus):
-    result = { "CommitID":[], "Date":[], "Dockerfiles":[], "Status":[] }
-    tmp = { "CommitID":"", "Date":"", "Dockerfiles":"", "Status":"" }
+def appendRevisionFile(revisonFileList, commitid, filename):
+    revisionFile = f"{commitid}:{filename}"
+    if revisionFile in revisonFileList:
+        return revisonFileList
+    else:
+        revisonFileList.append(revisionFile)
+        return revisonFileList
+
+
+def saveRevisonFileToShow(revisonFileList, repository):
+    txt = '\n'.join(revisonFileList)
+    with open(f"./{PATH_OF_GITSHOWLIST}/{repository}.txt", "w") as f:
+        f.write(txt)
+
+
+def RevisonsHaveDocker(repository, txtGitFileStatus):
+    result = { "CommitID":[], "Author":[], "Date":[], "Dockerfiles":[], "Status":[] }
+    tmp = { "CommitID":"", "Author":"", "Date":"", "Dockerfiles":"", "Status":"" }
+    revisonFileList = []
 
     for i, txt in enumerate(txtGitFileStatus.splitlines()):
         if txt[:6] == "commit":
             if not i == 0:
                 result, tmp = appendToResult(result, tmp)
             tmp["CommitID"] = txt[7:47]
+
+        elif txt[:7] == "Author:":
+            tmp["Author"] = txt[8:]
 
         elif txt[:5] == "Date:":
             tmp["Date"] = txt[8:]
@@ -100,14 +122,19 @@ def RevisonsHaveDocker(trepository, txtGitFileStatus):
                 if txt[0] == "R":
                     tmp["Status"] += f"{txt[0]}\n"
                     tmp["Dockerfiles"] += f"{txt.split()[1]}  {txt.split()[2]}\n"
+                    if txt[0:4] != "R100": # 完全一致のRenameじゃないなら git show 
+                        revisonFileList = appendRevisionFile(revisonFileList, tmp["CommitID"], txt.split()[2])
                 else:
                     tmp["Status"] += f"{txt[0]}\n"
                     tmp["Dockerfiles"] += f"{txt.split()[1]}\n"
+                    if txt[0] != "D":
+                        revisonFileList = appendRevisionFile(revisonFileList, tmp["CommitID"], txt.split()[1])
 
     result, tmp = appendToResult(result, tmp)
     result = pd.DataFrame.from_dict(result)
     result.to_csv(f"./{PATH_OF_GITLOGCSV}/{repository}.csv")
 
+    saveRevisonFileToShow(revisonFileList, repository)
 
 
 
