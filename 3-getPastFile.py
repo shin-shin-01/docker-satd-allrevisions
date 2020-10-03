@@ -1,4 +1,4 @@
-from setting import PATH_OF_GITLOGCSV, PATH_OF_PASTFILE, PATH_OF_GITCLONE, PATH_OF_ERROR_NOT_EXISTS_PASTFILE
+from setting import PATH_OF_REVISIONFILE_TXT, PATH_OF_PASTFILE, PATH_OF_GITCLONE, PATH_OF_ERROR_NOT_EXISTS_PASTFILE
 from tqdm import tqdm
 import subprocess
 import os
@@ -16,18 +16,12 @@ outputCSV
 """
 
 ## いずれ対象を絞るかもしれない
-def getTargetCSV(csvfile):
-    if csvfile[-4:] != ".csv":
-        print("Error: Not CSV file")
+def getTargetTXT(txtfile):
+    if txtfile[-4:] != ".txt":
+        print(f"Error: Not TXT file -> {txtfile}")
         return False
 
     return True
-    
-def getDf(csvfile):
-    df = pd.read_csv(f'./{PATH_OF_GITLOGCSV}/{csvfile}')
-    df = df.dropna(subset=['Dockerfiles'])
-
-    return df
 
 
 def createSaveFileName(revision, filename):
@@ -36,19 +30,6 @@ def createSaveFileName(revision, filename):
     """
     filename = filename.replace("/", "___")
     return f"{revision}___{filename}.txt"
-
-
-def notAlreadyExist(savefilename, savePath):
-    try:
-        if savefilename in os.listdir(savePath):
-            print("Already Exists!")
-            return False
-    except FileNotFoundError:
-        cwd = "./"
-        command = f"mkdir {savePath}"
-        tmp = subprocess.run(list(command.split()), cwd=cwd, encoding='utf-8', stdout=subprocess.PIPE, errors="ignore")
-
-    return True
 
 
 def ShowPastFile(revision, cloneDirName, filename):
@@ -70,29 +51,28 @@ def ShowPastFile(revision, cloneDirName, filename):
     return tmp.stdout
 
 
-def CheckoutSaveTXT(row, csvfile):
-    revision = row["CommitID"]
+def CheckoutSaveTXT(revisionFileList, cloneDirName):
+    # save されているファイル一覧を取得
+    savePath = f"./{ PATH_OF_PASTFILE}/{cloneDirName}"
+    try:
+        savedFile = os.listdir(savePath)
+    except FileNotFoundError:
+        cwd = "./"
+        command = f"mkdir {savePath}"
+        tmp = subprocess.run(list(command.split()), cwd=cwd, encoding='utf-8', stdout=subprocess.PIPE, errors="ignore")
+        savedFile = []
 
-    statuses = str(row["Status"]).splitlines()
-    filenames = str(row["Dockerfiles"]).splitlines()
-    cloneDirName = csvfile[:-4]
-
-    for i in range(len(filenames)):
-        status = statuses[i]
-        filename = filenames[i]
-
-        if status == "D" or status == "R":
-            continue
+    for revisionFile in revisionFileList:
+        revision = revisionFile.split(':')[0]
+        filename = revisionFile.split(':')[1].replace('\n', '')
         
         savefilename = createSaveFileName(revision, filename)
-        savePath = f"./{ PATH_OF_PASTFILE}/{cloneDirName}"
-
-        if not notAlreadyExist(savefilename, savePath):
+        if savefilename in savedFile:
             continue
 
         txt = ShowPastFile(revision, cloneDirName, filename)
 
-        if not txt:
+        if not txt: #過去ファイルを取得できなかった場合
             continue
 
         with open(f"{savePath}/{savefilename}", "w") as f:
@@ -100,15 +80,15 @@ def CheckoutSaveTXT(row, csvfile):
 
 
 
-
-
 if __name__ == "__main__":
-    csvfiles = os.listdir(PATH_OF_GITLOGCSV)
+    txtfiles = os.listdir(f'{PATH_OF_REVISIONFILE_TXT}')
 
-    for csvfile in tqdm(csvfiles):
-        if not getTargetCSV(csvfile):
+    for txtfile in tqdm(txtfiles):
+        if not getTargetTXT(txtfile):
             continue
+        
+        with open(f'{PATH_OF_REVISIONFILE_TXT}/{txtfile}', "r") as f:
+            revisionFileList = f.readlines()
 
-        df = getDf(csvfile)
-        for index, row in df.iterrows():
-            CheckoutSaveTXT(row, csvfile)
+            cloneDirName = txtfile[:-4]
+            CheckoutSaveTXT(revisionFileList, cloneDirName)
