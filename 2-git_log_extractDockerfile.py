@@ -74,17 +74,17 @@ def appendToResult(result, tmp):
     return result, { "CommitID":"", "Author": "", "Date":"", "Dockerfiles":"", "Status":"" }
 
 
-def appendRevisionFile(revisonFileList, commitid, filename):
+def appendRevisionFile(revisionFileList, commitid, filename):
     revisionFile = f"{commitid}:{filename}"
-    if revisionFile in revisonFileList:
-        return revisonFileList
+    if revisionFile in revisionFileList:
+        return revisionFileList
     else:
-        revisonFileList.append(revisionFile)
-        return revisonFileList
+        revisionFileList.append(revisionFile)
+        return revisionFileList
 
 
-def saveRevisonFileToShow(revisonFileList, repository):
-    txt = '\n'.join(revisonFileList)
+def saveRevisonFileToShow(revisionFileList, repository):
+    txt = '\n'.join(revisionFileList)
     with open(f"./{PATH_OF_GITSHOWLIST}/{repository}.txt", "w") as f:
         f.write(txt)
 
@@ -92,7 +92,7 @@ def saveRevisonFileToShow(revisonFileList, repository):
 def RevisonsHaveDocker(repository, txtGitFileStatus):
     result = { "CommitID":[], "Author":[], "Date":[], "Dockerfiles":[], "Status":[] }
     tmp = { "CommitID":"", "Author":"", "Date":"", "Dockerfiles":"", "Status":"" }
-    revisonFileList = []
+    revisionFileList = []
 
     for i, txt in enumerate(txtGitFileStatus.splitlines()):
         if txt[:6] == "commit":
@@ -123,18 +123,18 @@ def RevisonsHaveDocker(repository, txtGitFileStatus):
                     tmp["Status"] += f"{txt[0]}\n"
                     tmp["Dockerfiles"] += f"{txt.split()[1]}  {txt.split()[2]}\n"
                     if txt[0:4] != "R100": # 完全一致のRenameじゃないなら git show 
-                        revisonFileList = appendRevisionFile(revisonFileList, tmp["CommitID"], txt.split()[2])
+                        revisionFileList = appendRevisionFile(revisionFileList, tmp["CommitID"], txt.split()[2])
                 else:
                     tmp["Status"] += f"{txt[0]}\n"
                     tmp["Dockerfiles"] += f"{txt.split()[1]}\n"
                     if txt[0] != "D":
-                        revisonFileList = appendRevisionFile(revisonFileList, tmp["CommitID"], txt.split()[1])
+                        revisionFileList = appendRevisionFile(revisionFileList, tmp["CommitID"], txt.split()[1])
 
     result, tmp = appendToResult(result, tmp)
     result = pd.DataFrame.from_dict(result)
     result.to_csv(f"./{PATH_OF_GITLOGCSV}/{repository}.csv")
 
-    saveRevisonFileToShow(revisonFileList, repository)
+    saveRevisonFileToShow(revisionFileList, repository)
 
 
 
