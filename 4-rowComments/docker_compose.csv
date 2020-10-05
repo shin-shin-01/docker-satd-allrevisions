@@ -1,51 +1,169 @@
-,CommitID,Dockerfiles,Comments
-0,38073bbd9fa8a461452db28b89f22617910c43ff,/tests/fixtures/build-shm-size/Dockerfile,"# Report the shm_size (through the size of /dev/shm)
+,CommitID,Dockerfile,Comment
+0,98eab03c61bc6f836eebff511be8f610c11c7d63,/Dockerfile,"# Build Python 2.7.9 from source
 "
-1,9df0a4f3a974a24512e6b7e13053075cff0ffb3d,/Dockerfile,"# Python3 requires a valid locale
+1,98eab03c61bc6f836eebff511be8f610c11c7d63,/Dockerfile,"# Make libpython findable
 "
-2,385b4280a1f6d2b36dccb43a0f99858693ff673f,/Dockerfile,"# Build Python 2.7.9 from source
+2,98eab03c61bc6f836eebff511be8f610c11c7d63,/Dockerfile,"# Install setuptools
 "
-3,385b4280a1f6d2b36dccb43a0f99858693ff673f,/Dockerfile,"# Build python 3.4 from source
+3,98eab03c61bc6f836eebff511be8f610c11c7d63,/Dockerfile,"# Install pip
 "
-4,385b4280a1f6d2b36dccb43a0f99858693ff673f,/Dockerfile,"# Make libpython findable
+4,98eab03c61bc6f836eebff511be8f610c11c7d63,/Dockerfile,"# Set the default Docker to be run
 "
-5,385b4280a1f6d2b36dccb43a0f99858693ff673f,/Dockerfile,"# Install setuptools
+5,38073bbd9fa8a461452db28b89f22617910c43ff,/tests/fixtures/build-shm-size/Dockerfile,"# Report the shm_size (through the size of /dev/shm)
 "
-6,385b4280a1f6d2b36dccb43a0f99858693ff673f,/Dockerfile,"# Install pip
+6,4c2112dbfd4da219f2585569b716b59f7562b034,/Dockerfile,"# Build Python 2.7.9 from source
 "
-7,385b4280a1f6d2b36dccb43a0f99858693ff673f,/Dockerfile,"# Python3 requires a valid locale
+7,4c2112dbfd4da219f2585569b716b59f7562b034,/Dockerfile,"# Make libpython findable
 "
-8,60dcf87cc08bef7d45f1b376fe54374c3c1f99a1,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+8,4c2112dbfd4da219f2585569b716b59f7562b034,/Dockerfile,"# Install setuptools
 "
-9,8b29a50b525c12e283db3b1aaecc1ab7d6ce6ef3,/Dockerfile,"# Build Python 2.7.9 from source
+9,4c2112dbfd4da219f2585569b716b59f7562b034,/Dockerfile,"# Install pip
 "
-10,8b29a50b525c12e283db3b1aaecc1ab7d6ce6ef3,/Dockerfile,"# Build python 3.4 from source
+10,4c2112dbfd4da219f2585569b716b59f7562b034,/Dockerfile,"# Set the default Docker to be run
 "
-11,8b29a50b525c12e283db3b1aaecc1ab7d6ce6ef3,/Dockerfile,"# Make libpython findable
+11,1a97a8ef862a8c981a8e9f84273ad685f90d4565,/Dockerfile,"# Build Python 2.7.9 from source
 "
-12,8b29a50b525c12e283db3b1aaecc1ab7d6ce6ef3,/Dockerfile,"# Install setuptools
+12,1a97a8ef862a8c981a8e9f84273ad685f90d4565,/Dockerfile,"# Build python 3.4 from source
 "
-13,8b29a50b525c12e283db3b1aaecc1ab7d6ce6ef3,/Dockerfile,"# Install pip
+13,1a97a8ef862a8c981a8e9f84273ad685f90d4565,/Dockerfile,"# Make libpython findable
 "
-14,8b29a50b525c12e283db3b1aaecc1ab7d6ce6ef3,/Dockerfile,"# Python3 requires a valid locale
+14,1a97a8ef862a8c981a8e9f84273ad685f90d4565,/Dockerfile,"# Install setuptools
 "
-15,0c6fce271e949955693ed86461d8a0e6adcd18d4,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+15,1a97a8ef862a8c981a8e9f84273ad685f90d4565,/Dockerfile,"# Install pip
 "
-16,836fc569014de13181793599f50060b2c1e07729,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+16,1a97a8ef862a8c981a8e9f84273ad685f90d4565,/Dockerfile,"# Python3 requires a valid locale
 "
-17,c21d6706b6df54f3304b6fc59cb307c42f0c54c5,/Dockerfile,"# Build Python 2.7.9 from source
+17,9df0a4f3a974a24512e6b7e13053075cff0ffb3d,/Dockerfile,"# Python3 requires a valid locale
 "
-18,c21d6706b6df54f3304b6fc59cb307c42f0c54c5,/Dockerfile,"# Make libpython findable
+18,5028e3826129d8490938c900e257fee8f278ac10,/docs/Dockerfile,"# To get the git info for this repo
 "
-19,c21d6706b6df54f3304b6fc59cb307c42f0c54c5,/Dockerfile,"# Install setuptools
+19,5028e3826129d8490938c900e257fee8f278ac10,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
 "
-20,c21d6706b6df54f3304b6fc59cb307c42f0c54c5,/Dockerfile,"# Install pip
+20,d4fc35af9474fbcad44ec8ed9aac4be8672eb736,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
 "
-21,c21d6706b6df54f3304b6fc59cb307c42f0c54c5,/Dockerfile,"# Set the default Docker to be run
+21,66af37b1356f9fec8585c761c9ff1de4db259330,/Dockerfile,"# Build Python 2.7.9 from source
 "
-22,719954b02f8d6f03e20bde2409b074295dc5da98,/docs/Dockerfile,"# To get the git info for this repo
+22,66af37b1356f9fec8585c761c9ff1de4db259330,/Dockerfile,"# Make libpython findable
 "
-23,719954b02f8d6f03e20bde2409b074295dc5da98,/docs/Dockerfile,"# Sed to process GitHub Markdown
+23,66af37b1356f9fec8585c761c9ff1de4db259330,/Dockerfile,"# Install setuptools
+"
+24,66af37b1356f9fec8585c761c9ff1de4db259330,/Dockerfile,"# Install pip
+"
+25,66af37b1356f9fec8585c761c9ff1de4db259330,/Dockerfile,"# Set the default Docker to be run
+"
+26,8cecf2e02dbf9e4d28d06878062f88d5639426ce,/docs/Dockerfile,"# To get the git info for this repo
+"
+27,385b4280a1f6d2b36dccb43a0f99858693ff673f,/Dockerfile,"# Build Python 2.7.9 from source
+"
+28,385b4280a1f6d2b36dccb43a0f99858693ff673f,/Dockerfile,"# Build python 3.4 from source
+"
+29,385b4280a1f6d2b36dccb43a0f99858693ff673f,/Dockerfile,"# Make libpython findable
+"
+30,385b4280a1f6d2b36dccb43a0f99858693ff673f,/Dockerfile,"# Install setuptools
+"
+31,385b4280a1f6d2b36dccb43a0f99858693ff673f,/Dockerfile,"# Install pip
+"
+32,385b4280a1f6d2b36dccb43a0f99858693ff673f,/Dockerfile,"# Python3 requires a valid locale
+"
+33,7e0ab0714fc6d023f2f1c19e8b6cb58cf6eef869,/Dockerfile,"# Set the default Docker to be run
+"
+34,a248cfd65ae27dfc734f44e57707dcb18ffd52d6,/Dockerfile,"# Build Python 2.7.9 from source
+"
+35,a248cfd65ae27dfc734f44e57707dcb18ffd52d6,/Dockerfile,"# Make libpython findable
+"
+36,a248cfd65ae27dfc734f44e57707dcb18ffd52d6,/Dockerfile,"# Install setuptools
+"
+37,a248cfd65ae27dfc734f44e57707dcb18ffd52d6,/Dockerfile,"# Install pip
+"
+38,a248cfd65ae27dfc734f44e57707dcb18ffd52d6,/Dockerfile,"# Set the default Docker to be run
+"
+39,1566930a70c28a10c724c54bd5b2485afa75aff9,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+40,60dcf87cc08bef7d45f1b376fe54374c3c1f99a1,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+41,4bf623d53da363d576bfb4e57d139df97032f004,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+42,6f12224ec9e9806fdcf1077356294bf95738b32f,/Dockerfile,"# Build Python 2.7.9 from source
+"
+43,6f12224ec9e9806fdcf1077356294bf95738b32f,/Dockerfile,"# Build python 3.4 from source
+"
+44,6f12224ec9e9806fdcf1077356294bf95738b32f,/Dockerfile,"# Make libpython findable
+"
+45,6f12224ec9e9806fdcf1077356294bf95738b32f,/Dockerfile,"# Install setuptools
+"
+46,6f12224ec9e9806fdcf1077356294bf95738b32f,/Dockerfile,"# Install pip
+"
+47,6f12224ec9e9806fdcf1077356294bf95738b32f,/Dockerfile,"# Python3 requires a valid locale
+"
+48,de2be2bf37c8625cdb46f6df66aad6bb08ff5747,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+49,8b29a50b525c12e283db3b1aaecc1ab7d6ce6ef3,/Dockerfile,"# Build Python 2.7.9 from source
+"
+50,8b29a50b525c12e283db3b1aaecc1ab7d6ce6ef3,/Dockerfile,"# Build python 3.4 from source
+"
+51,8b29a50b525c12e283db3b1aaecc1ab7d6ce6ef3,/Dockerfile,"# Make libpython findable
+"
+52,8b29a50b525c12e283db3b1aaecc1ab7d6ce6ef3,/Dockerfile,"# Install setuptools
+"
+53,8b29a50b525c12e283db3b1aaecc1ab7d6ce6ef3,/Dockerfile,"# Install pip
+"
+54,8b29a50b525c12e283db3b1aaecc1ab7d6ce6ef3,/Dockerfile,"# Python3 requires a valid locale
+"
+55,525bc9ef7a43e4f8a6120386435c8d94fb074820,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+56,0c6fce271e949955693ed86461d8a0e6adcd18d4,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+57,9e9a66f0f876bd15456267ace2a3e8a7a52a05f8,/docs/Dockerfile,"# to get the git info for this repo
+"
+58,9e9a66f0f876bd15456267ace2a3e8a7a52a05f8,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+"
+59,9e9a66f0f876bd15456267ace2a3e8a7a52a05f8,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+"
+60,836fc569014de13181793599f50060b2c1e07729,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+61,276e369c3167b4f5e189b33e8a55ff6fd7115142,/Dockerfile,"# Build Python 2.7.9 from source
+"
+62,276e369c3167b4f5e189b33e8a55ff6fd7115142,/Dockerfile,"# Make libpython findable
+"
+63,276e369c3167b4f5e189b33e8a55ff6fd7115142,/Dockerfile,"# Install setuptools
+"
+64,276e369c3167b4f5e189b33e8a55ff6fd7115142,/Dockerfile,"# Install pip
+"
+65,276e369c3167b4f5e189b33e8a55ff6fd7115142,/Dockerfile,"# Set the default Docker to be run
+"
+66,e3e22471597a410ba80da9e98616a7699129f517,/Dockerfile,"# Set the default Docker to be run
+"
+67,c21d6706b6df54f3304b6fc59cb307c42f0c54c5,/Dockerfile,"# Build Python 2.7.9 from source
+"
+68,c21d6706b6df54f3304b6fc59cb307c42f0c54c5,/Dockerfile,"# Make libpython findable
+"
+69,c21d6706b6df54f3304b6fc59cb307c42f0c54c5,/Dockerfile,"# Install setuptools
+"
+70,c21d6706b6df54f3304b6fc59cb307c42f0c54c5,/Dockerfile,"# Install pip
+"
+71,c21d6706b6df54f3304b6fc59cb307c42f0c54c5,/Dockerfile,"# Set the default Docker to be run
+"
+72,9f8e01fa9444c4179ab5f8b7df5b469f63db24cc,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+73,9f8e01fa9444c4179ab5f8b7df5b469f63db24cc,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+74,9f8e01fa9444c4179ab5f8b7df5b469f63db24cc,/Dockerfile.armhf,"# Make libpython findable
+"
+75,9f8e01fa9444c4179ab5f8b7df5b469f63db24cc,/Dockerfile.armhf,"# Install pip
+"
+76,9f8e01fa9444c4179ab5f8b7df5b469f63db24cc,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+77,719954b02f8d6f03e20bde2409b074295dc5da98,/docs/Dockerfile,"# To get the git info for this repo
+"
+78,719954b02f8d6f03e20bde2409b074295dc5da98,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Remove .md extension from link text
 # 4 Change ](/ to ](/project/ in links
@@ -55,82 +173,188 @@
 # 
 # 
 "
-24,bd320b19fe2211e77d362e07e3714920665df15d,/docs/Dockerfile,"# to get the git info for this repo
+79,c6c57fcf49c9f967616898998a55188dd8b94b9e,/Dockerfile,"# Python3 requires a valid locale
 "
-25,bd320b19fe2211e77d362e07e3714920665df15d,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+80,c6c57fcf49c9f967616898998a55188dd8b94b9e,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
 "
-26,bd320b19fe2211e77d362e07e3714920665df15d,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+81,a8d7ebd98752e17b1b7b4271e7d5d341afa586f5,/docs/Dockerfile,"# To get the git info for this repo
 "
-27,87ee38ed2c8da3fdee816737b55d7c7eb6e36a26,/docs/Dockerfile,"# To get the git info for this repo
+82,a8d7ebd98752e17b1b7b4271e7d5d341afa586f5,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
 "
-28,993bada521a325910032399f51e8773aa6a90eaf,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+83,bd320b19fe2211e77d362e07e3714920665df15d,/docs/Dockerfile,"# to get the git info for this repo
 "
-29,0e9c542865215a7ff8333e11e9eaa45b4e5a92c1,/docs/Dockerfile,"# To get the git info for this repo
+84,bd320b19fe2211e77d362e07e3714920665df15d,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
 "
-30,fae645466115045f3801cd3926afe752c08840ec,/Dockerfile,"# Build Python 2.7.9 from source
+85,bd320b19fe2211e77d362e07e3714920665df15d,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
 "
-31,fae645466115045f3801cd3926afe752c08840ec,/Dockerfile,"# Make libpython findable
+86,87ee38ed2c8da3fdee816737b55d7c7eb6e36a26,/docs/Dockerfile,"# To get the git info for this repo
 "
-32,fae645466115045f3801cd3926afe752c08840ec,/Dockerfile,"# Install setuptools
+87,c4fda0834d0fd70d9a9f4334ce94b8d88f8eb03c,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
 "
-33,fae645466115045f3801cd3926afe752c08840ec,/Dockerfile,"# Install pip
+88,fc99c7ee1981a4dc2b125bfd08d4c31cbdb5435a,/docs/Dockerfile,"# To get the git info for this repo
 "
-34,fae645466115045f3801cd3926afe752c08840ec,/Dockerfile,"# Set the default Docker to be run
+89,284e3cfae961264ca568eed9e7350c3bd9e241ad,/Dockerfile,"# Build Python 2.7.13 from source
 "
-35,f472fd545be79860a3c9e03b6e63fbacb86977d1,/Dockerfile,"# Python3 requires a valid locale
+90,284e3cfae961264ca568eed9e7350c3bd9e241ad,/Dockerfile,"# Build python 3.4 from source
 "
-36,f472fd545be79860a3c9e03b6e63fbacb86977d1,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+91,284e3cfae961264ca568eed9e7350c3bd9e241ad,/Dockerfile,"# Make libpython findable
 "
-37,9f734f7c53d5ec6d892ea51fdf1c626773a1fd89,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+92,284e3cfae961264ca568eed9e7350c3bd9e241ad,/Dockerfile,"# Install pip
 "
-38,3844ff2fde0a840e28fd05ea0031b19e040b7327,/Dockerfile,"# Python3 requires a valid locale
+93,284e3cfae961264ca568eed9e7350c3bd9e241ad,/Dockerfile,"# Python3 requires a valid locale
 "
-39,65afce526a83c6654428d0d06e45a25991a755fd,/Dockerfile,"# Build Python 2.7.9 from source
+94,61aa2e346e36412d2d27ba9975abd2968367fb34,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
 "
-40,65afce526a83c6654428d0d06e45a25991a755fd,/Dockerfile,"# Make libpython findable
+95,cd8e2f870f27aa6523de4b9f9bac0bff7678244a,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
 "
-41,65afce526a83c6654428d0d06e45a25991a755fd,/Dockerfile,"# Install setuptools
+96,c1b7d6c6ade5d86038ea95353ac011ee2a5cfead,/docs/Dockerfile,"# To get the git info for this repo
 "
-42,65afce526a83c6654428d0d06e45a25991a755fd,/Dockerfile,"# Install pip
+97,1c823597bb6c64de9cc320c54f6aa5ca1feff68f,/Dockerfile,"# Build Python 2.7.9 from source
 "
-43,65afce526a83c6654428d0d06e45a25991a755fd,/Dockerfile,"# Set the default Docker to be run
+98,1c823597bb6c64de9cc320c54f6aa5ca1feff68f,/Dockerfile,"# Build python 3.4 from source
 "
-44,12f7e0d2fbcd0876aaf3dc2aec8dfd70ebf8f921,/Dockerfile,"# Python3 requires a valid locale
+99,1c823597bb6c64de9cc320c54f6aa5ca1feff68f,/Dockerfile,"# Make libpython findable
 "
-45,25942820820fcd8ed3fbd33dde2dcb24005ef997,/Dockerfile,"# Build Python 2.7.9 from source
+100,1c823597bb6c64de9cc320c54f6aa5ca1feff68f,/Dockerfile,"# Install setuptools
 "
-46,25942820820fcd8ed3fbd33dde2dcb24005ef997,/Dockerfile,"# Make libpython findable
+101,1c823597bb6c64de9cc320c54f6aa5ca1feff68f,/Dockerfile,"# Install pip
 "
-47,25942820820fcd8ed3fbd33dde2dcb24005ef997,/Dockerfile,"# Install setuptools
+102,1c823597bb6c64de9cc320c54f6aa5ca1feff68f,/Dockerfile,"# Python3 requires a valid locale
 "
-48,25942820820fcd8ed3fbd33dde2dcb24005ef997,/Dockerfile,"# Install pip
+103,1c823597bb6c64de9cc320c54f6aa5ca1feff68f,/Dockerfile,"# Set the default Docker to be run
 "
-49,25942820820fcd8ed3fbd33dde2dcb24005ef997,/Dockerfile,"# Set the default Docker to be run
+104,de800dea0facb5618335d429a2927106a2ba1e79,/Dockerfile,"# Set the default Docker to be run
 "
-50,74440b2f921e52746be20071ac5a451029a6d66d,/Dockerfile,"# Compose dependencies
+105,8d8dd37d2c9a1cf4a155b283afd8264ba769c9c6,/docs/Dockerfile,"# to get the git info for this repo
 "
-51,74440b2f921e52746be20071ac5a451029a6d66d,/Dockerfile,"# Test dependencies
+106,8d8dd37d2c9a1cf4a155b283afd8264ba769c9c6,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
 "
-52,4c2eb17ccd04e5da00366de2650acf20becf0200,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
+107,8d8dd37d2c9a1cf4a155b283afd8264ba769c9c6,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+"
+108,0cd35913c34dd72f574ac2c53d5fb41a4665ecea,/Dockerfile,"# Build Python 2.7.9 from source
+"
+109,0cd35913c34dd72f574ac2c53d5fb41a4665ecea,/Dockerfile,"# Build python 3.4 from source
+"
+110,0cd35913c34dd72f574ac2c53d5fb41a4665ecea,/Dockerfile,"# Make libpython findable
+"
+111,0cd35913c34dd72f574ac2c53d5fb41a4665ecea,/Dockerfile,"# Install setuptools
+"
+112,0cd35913c34dd72f574ac2c53d5fb41a4665ecea,/Dockerfile,"# Install pip
+"
+113,0cd35913c34dd72f574ac2c53d5fb41a4665ecea,/Dockerfile,"# Python3 requires a valid locale
+"
+114,53cc99a822967e83ddc14adcc4c51f817d3e0e41,/docs/Dockerfile,"# To get the git info for this repo
+"
+115,12ed765af8a5d22a2ccd09b48c7a494bca0a903f,/Dockerfile,"# Python3 requires a valid locale
+"
+116,05a5aae552be9de2ef99c30cc79bd7b0d8bfa62b,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+117,993bada521a325910032399f51e8773aa6a90eaf,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+118,0e9c542865215a7ff8333e11e9eaa45b4e5a92c1,/docs/Dockerfile,"# To get the git info for this repo
+"
+119,5b869b1ad5fd0dbafca588c4ce58707fc48e67b9,/Dockerfile,"# Python3 requires a valid locale
+"
+120,ab93b87f04a25d9397371bd0e78326e8fe631107,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
 # Must be kept in sync with LABEL_PROJECT from compose/const.py
 "
-53,a6cdd6272600a29d013250ddcd1dff667a674fe7,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
+121,91bb682bdf90ad05074f5ca5c5171b9a00eaaac2,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
 "
-54,23beeb353c08e2c53df0d7e7f97d0d70b05d8c25,/Dockerfile,"# Python3 requires a valid locale
+122,a6459efcada48d8e61e4d9a6a7ad166e20385d8e,/Dockerfile.armhf,"# Build Python 2.7.13 from source
 "
-55,e675d677741f7bb8a32e4b644a0a1f20a874aca5,/Dockerfile,"# Build Python 2.7.9 from source
+123,a6459efcada48d8e61e4d9a6a7ad166e20385d8e,/Dockerfile.armhf,"# Build python 3.6 from source
 "
-56,e675d677741f7bb8a32e4b644a0a1f20a874aca5,/Dockerfile,"# Make libpython findable
+124,a6459efcada48d8e61e4d9a6a7ad166e20385d8e,/Dockerfile.armhf,"# Make libpython findable
 "
-57,e675d677741f7bb8a32e4b644a0a1f20a874aca5,/Dockerfile,"# Install setuptools
+125,a6459efcada48d8e61e4d9a6a7ad166e20385d8e,/Dockerfile.armhf,"# Install pip
 "
-58,e675d677741f7bb8a32e4b644a0a1f20a874aca5,/Dockerfile,"# Install pip
+126,a6459efcada48d8e61e4d9a6a7ad166e20385d8e,/Dockerfile.armhf,"# Python3 requires a valid locale
 "
-59,e675d677741f7bb8a32e4b644a0a1f20a874aca5,/Dockerfile,"# Set the default Docker to be run
+127,b4dfa9c15596f1e54559d8804e47f5633c3ff00f,/Dockerfile.armhf,"# Build Python 2.7.13 from source
 "
-60,c3c5d91c47f00d607b68f345e367ed1b828852f8,/docs/Dockerfile,"# To get the git info for this repo
+128,b4dfa9c15596f1e54559d8804e47f5633c3ff00f,/Dockerfile.armhf,"# Build python 3.4 from source
 "
-61,c3c5d91c47f00d607b68f345e367ed1b828852f8,/docs/Dockerfile,"# Sed to process GitHub Markdown
+129,b4dfa9c15596f1e54559d8804e47f5633c3ff00f,/Dockerfile.armhf,"# Make libpython findable
+"
+130,b4dfa9c15596f1e54559d8804e47f5633c3ff00f,/Dockerfile.armhf,"# Install pip
+"
+131,b4dfa9c15596f1e54559d8804e47f5633c3ff00f,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+132,77e7989eaaad1addde5c84d15ace61aeaa14ab96,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+133,77e7989eaaad1addde5c84d15ace61aeaa14ab96,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+134,77e7989eaaad1addde5c84d15ace61aeaa14ab96,/Dockerfile.armhf,"# Make libpython findable
+"
+135,77e7989eaaad1addde5c84d15ace61aeaa14ab96,/Dockerfile.armhf,"# Install pip
+"
+136,77e7989eaaad1addde5c84d15ace61aeaa14ab96,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+137,fae645466115045f3801cd3926afe752c08840ec,/Dockerfile,"# Build Python 2.7.9 from source
+"
+138,fae645466115045f3801cd3926afe752c08840ec,/Dockerfile,"# Make libpython findable
+"
+139,fae645466115045f3801cd3926afe752c08840ec,/Dockerfile,"# Install setuptools
+"
+140,fae645466115045f3801cd3926afe752c08840ec,/Dockerfile,"# Install pip
+"
+141,fae645466115045f3801cd3926afe752c08840ec,/Dockerfile,"# Set the default Docker to be run
+"
+142,b9c76dfabdf57994f5b0eac42f4e300edb7fa040,/docs/Dockerfile,"# To get the git info for this repo
+"
+143,3e58003bd3bdc00292c8aa851cc97760cb180dbe,/Dockerfile,"# Build Python 2.7.9 from source
+"
+144,3e58003bd3bdc00292c8aa851cc97760cb180dbe,/Dockerfile,"# Build python 3.4 from source
+"
+145,3e58003bd3bdc00292c8aa851cc97760cb180dbe,/Dockerfile,"# Make libpython findable
+"
+146,3e58003bd3bdc00292c8aa851cc97760cb180dbe,/Dockerfile,"# Install setuptools
+"
+147,3e58003bd3bdc00292c8aa851cc97760cb180dbe,/Dockerfile,"# Install pip
+"
+148,3e58003bd3bdc00292c8aa851cc97760cb180dbe,/Dockerfile,"# Python3 requires a valid locale
+"
+149,1fe24437350d11a9e1b6483839cb72a6f8f2fbf2,/Dockerfile,"# Build Python 2.7.13 from source
+"
+150,1fe24437350d11a9e1b6483839cb72a6f8f2fbf2,/Dockerfile,"# Build python 3.4 from source
+"
+151,1fe24437350d11a9e1b6483839cb72a6f8f2fbf2,/Dockerfile,"# Make libpython findable
+"
+152,1fe24437350d11a9e1b6483839cb72a6f8f2fbf2,/Dockerfile,"# Install pip
+"
+153,1fe24437350d11a9e1b6483839cb72a6f8f2fbf2,/Dockerfile,"# Python3 requires a valid locale
+"
+154,c8279bc4db56f49cf2e2b80c8734ced1c418b856,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+155,ecf2dd11f9cf95c0db266e71bc71b279b619b66e,/docs/Dockerfile,"# To get the git info for this repo
+"
+156,f472fd545be79860a3c9e03b6e63fbacb86977d1,/Dockerfile,"# Python3 requires a valid locale
+"
+157,f472fd545be79860a3c9e03b6e63fbacb86977d1,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+158,fd1e8024f7524aab78c28a4b6a602b5af72e4a59,/Dockerfile,"# Build Python 2.7.13 from source
+"
+159,fd1e8024f7524aab78c28a4b6a602b5af72e4a59,/Dockerfile,"# Build python 3.4 from source
+"
+160,fd1e8024f7524aab78c28a4b6a602b5af72e4a59,/Dockerfile,"# Make libpython findable
+"
+161,fd1e8024f7524aab78c28a4b6a602b5af72e4a59,/Dockerfile,"# Install pip
+"
+162,fd1e8024f7524aab78c28a4b6a602b5af72e4a59,/Dockerfile,"# Python3 requires a valid locale
+"
+163,fb8cd7d813735386c14c30533198f56de67f170b,/Dockerfile,"# Python3 requires a valid locale
+"
+164,487eae3b7b1e36d037a8fdcf181fdf1bbf9c40cc,/docs/Dockerfile,"# To get the git info for this repo
+"
+165,487eae3b7b1e36d037a8fdcf181fdf1bbf9c40cc,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Change ](/word to ](/project/ in links
 # 4 Change ](word.md) to ](/project/word)
@@ -140,21 +364,11 @@
 # 
 # 
 "
-62,0650c4485a85e350a76fbaa6d167c0ee26b08cbd,/Dockerfile,"# Set the default Docker to be run
+166,f22a1b6a2e7ef93a7a3e8936be3b8518d1c96b53,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
 "
-63,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile,"# Build Python 2.7.13 from source
+167,aa7c7cdf93b1fe8fe415a48325a9b31685fb884b,/docs/Dockerfile,"# To get the git info for this repo
 "
-64,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile,"# Build python 3.6 from source
-"
-65,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile,"# Make libpython findable
-"
-66,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile,"# Install pip
-"
-67,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile,"# Python3 requires a valid locale
-"
-68,dfe9dccab88955b1cd23159a75333a54d2afbf32,/docs/Dockerfile,"# To get the git info for this repo
-"
-69,dfe9dccab88955b1cd23159a75333a54d2afbf32,/docs/Dockerfile,"# Sed to process GitHub Markdown
+168,aa7c7cdf93b1fe8fe415a48325a9b31685fb884b,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Change ](/word to ](/project/ in links
 # 4 Change ](word.md) to ](/project/word)
@@ -164,66 +378,221 @@
 # 
 # 
 "
-70,dce62c81d5c3c801f39065fccd45223f11c0d21c,/Dockerfile,"# Python3 requires a valid locale
+169,9f734f7c53d5ec6d892ea51fdf1c626773a1fd89,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
 "
-71,a2cdffeeee4802882ac88ccc0159e6f2297fe52f,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+170,77c939b256dbed699fdc4643114bea543208a660,/Dockerfile,"# Build Python 2.7.9 from source
 "
-72,07e9f6500ce2f695920d0a2786c308fba750cc2e,/Dockerfile,"# Build Python 2.7.9 from source
+171,77c939b256dbed699fdc4643114bea543208a660,/Dockerfile,"# Make libpython findable
 "
-73,07e9f6500ce2f695920d0a2786c308fba750cc2e,/Dockerfile,"# Build python 3.4 from source
+172,77c939b256dbed699fdc4643114bea543208a660,/Dockerfile,"# Install setuptools
 "
-74,07e9f6500ce2f695920d0a2786c308fba750cc2e,/Dockerfile,"# Make libpython findable
+173,77c939b256dbed699fdc4643114bea543208a660,/Dockerfile,"# Install pip
 "
-75,07e9f6500ce2f695920d0a2786c308fba750cc2e,/Dockerfile,"# Install setuptools
+174,77c939b256dbed699fdc4643114bea543208a660,/Dockerfile,"# Set the default Docker to be run
 "
-76,07e9f6500ce2f695920d0a2786c308fba750cc2e,/Dockerfile,"# Install pip
+175,77e7989eaaad1addde5c84d15ace61aeaa14ab96,/Dockerfile,"# Build Python 2.7.13 from source
 "
-77,07e9f6500ce2f695920d0a2786c308fba750cc2e,/Dockerfile,"# Python3 requires a valid locale
+176,77e7989eaaad1addde5c84d15ace61aeaa14ab96,/Dockerfile,"# Build python 3.4 from source
 "
-78,118a389646a68b914a2de0efb763d6d71868d951,/Dockerfile,"# Build Python 2.7.9 from source
+177,77e7989eaaad1addde5c84d15ace61aeaa14ab96,/Dockerfile,"# Make libpython findable
 "
-79,118a389646a68b914a2de0efb763d6d71868d951,/Dockerfile,"# Make libpython findable
+178,77e7989eaaad1addde5c84d15ace61aeaa14ab96,/Dockerfile,"# Install pip
 "
-80,118a389646a68b914a2de0efb763d6d71868d951,/Dockerfile,"# Install setuptools
+179,77e7989eaaad1addde5c84d15ace61aeaa14ab96,/Dockerfile,"# Python3 requires a valid locale
 "
-81,118a389646a68b914a2de0efb763d6d71868d951,/Dockerfile,"# Install pip
+180,9503aa2b5f57264d56ec37714439b41c77cec60a,/docs/Dockerfile,"# To get the git info for this repo
 "
-82,118a389646a68b914a2de0efb763d6d71868d951,/Dockerfile,"# Set the default Docker to be run
+181,f935791a02b97d6bb7893787c8637eeda06c3c85,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
 "
-83,fd06d699f22fc9d473ac4201feba5847782688ec,/docs/Dockerfile,"# To get the git info for this repo
+182,3844ff2fde0a840e28fd05ea0031b19e040b7327,/Dockerfile,"# Python3 requires a valid locale
 "
-84,49bafdc4cddaa785c1e04718db6f6a5f0e979658,/Dockerfile,"# Build Python 2.7.9 from source
+183,6986a994a84ffb948f38b5c86b843cfd4dee15d0,/Dockerfile.armhf,"# Build Python 2.7.13 from source
 "
-85,49bafdc4cddaa785c1e04718db6f6a5f0e979658,/Dockerfile,"# Make libpython findable
+184,6986a994a84ffb948f38b5c86b843cfd4dee15d0,/Dockerfile.armhf,"# Build python 3.4 from source
 "
-86,49bafdc4cddaa785c1e04718db6f6a5f0e979658,/Dockerfile,"# Install setuptools
+185,6986a994a84ffb948f38b5c86b843cfd4dee15d0,/Dockerfile.armhf,"# Make libpython findable
 "
-87,49bafdc4cddaa785c1e04718db6f6a5f0e979658,/Dockerfile,"# Install pip
+186,6986a994a84ffb948f38b5c86b843cfd4dee15d0,/Dockerfile.armhf,"# Install pip
 "
-88,49bafdc4cddaa785c1e04718db6f6a5f0e979658,/Dockerfile,"# Set the default Docker to be run
+187,6986a994a84ffb948f38b5c86b843cfd4dee15d0,/Dockerfile.armhf,"# Python3 requires a valid locale
 "
-89,26fe8213aa3edcb6bfb8ec287538f9d8674ae124,/Dockerfile,"# Build Python 2.7.9 from source
+188,4ffae4a1acb2c0ec339ff82b56ec6ebb267908dd,/docs/Dockerfile,"# To get the git info for this repo
 "
-90,26fe8213aa3edcb6bfb8ec287538f9d8674ae124,/Dockerfile,"# Build python 3.4 from source
+189,4ffae4a1acb2c0ec339ff82b56ec6ebb267908dd,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
 "
-91,26fe8213aa3edcb6bfb8ec287538f9d8674ae124,/Dockerfile,"# Make libpython findable
+190,ec3af7d49121500dca16ece8da23e1b62591c370,/docs/Dockerfile,"# To get the git info for this repo
 "
-92,26fe8213aa3edcb6bfb8ec287538f9d8674ae124,/Dockerfile,"# Install setuptools
+191,65afce526a83c6654428d0d06e45a25991a755fd,/Dockerfile,"# Build Python 2.7.9 from source
 "
-93,26fe8213aa3edcb6bfb8ec287538f9d8674ae124,/Dockerfile,"# Install pip
+192,65afce526a83c6654428d0d06e45a25991a755fd,/Dockerfile,"# Make libpython findable
 "
-94,26fe8213aa3edcb6bfb8ec287538f9d8674ae124,/Dockerfile,"# Python3 requires a valid locale
+193,65afce526a83c6654428d0d06e45a25991a755fd,/Dockerfile,"# Install setuptools
 "
-95,a259c48ae9755e292dab9ca11cf0307feab8007b,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+194,65afce526a83c6654428d0d06e45a25991a755fd,/Dockerfile,"# Install pip
 "
-96,f2a43d755e351a415fe426ad92c9ee75387ef51d,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+195,65afce526a83c6654428d0d06e45a25991a755fd,/Dockerfile,"# Set the default Docker to be run
 "
-97,99562d9df99c2d63e715c459e56ee681691d50ce,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container will be cleaned up automatically
+196,9973f051ba506eae4a60a5f302c2328667ce9707,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+197,a3e1d54bf700c696bb6c8ccdb6d408c27e353996,/Dockerfile,"# Python3 requires a valid locale
+"
+198,9503aa2b5f57264d56ec37714439b41c77cec60a,/Dockerfile,"# Build Python 2.7.9 from source
+"
+199,9503aa2b5f57264d56ec37714439b41c77cec60a,/Dockerfile,"# Build python 3.4 from source
+"
+200,9503aa2b5f57264d56ec37714439b41c77cec60a,/Dockerfile,"# Make libpython findable
+"
+201,9503aa2b5f57264d56ec37714439b41c77cec60a,/Dockerfile,"# Install setuptools
+"
+202,9503aa2b5f57264d56ec37714439b41c77cec60a,/Dockerfile,"# Install pip
+"
+203,9503aa2b5f57264d56ec37714439b41c77cec60a,/Dockerfile,"# Python3 requires a valid locale
+"
+204,12f7e0d2fbcd0876aaf3dc2aec8dfd70ebf8f921,/Dockerfile,"# Python3 requires a valid locale
+"
+205,8610adcaf37babb29d1fc347f8c310186c4f4534,/docs/Dockerfile,"# to get the git info for this repo
+"
+206,8610adcaf37babb29d1fc347f8c310186c4f4534,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+"
+207,8610adcaf37babb29d1fc347f8c310186c4f4534,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+"
+208,ac99bc5bbfdeade4fd369020fab2dc0a6e73519c,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+209,ac99bc5bbfdeade4fd369020fab2dc0a6e73519c,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+210,ac99bc5bbfdeade4fd369020fab2dc0a6e73519c,/Dockerfile.armhf,"# Make libpython findable
+"
+211,ac99bc5bbfdeade4fd369020fab2dc0a6e73519c,/Dockerfile.armhf,"# Install pip
+"
+212,ac99bc5bbfdeade4fd369020fab2dc0a6e73519c,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+213,beb66430199ba28ce9d5693703ca30d8b6452e53,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container will be cleaned up automatically
 # Must be kept in sync with LABEL_PROJECT from compose/const.py
 "
-98,7eabc06df5ca4a1c2ad372ee8e87012de5429f05,/docs/Dockerfile,"# To get the git info for this repo
+214,c7dccccd1fa4dc2fe6f65d4a839a16567adbee9d,/Dockerfile,"# Build Python 2.7.9 from source
 "
-99,7eabc06df5ca4a1c2ad372ee8e87012de5429f05,/docs/Dockerfile,"# Sed to process GitHub Markdown
+215,c7dccccd1fa4dc2fe6f65d4a839a16567adbee9d,/Dockerfile,"# Make libpython findable
+"
+216,c7dccccd1fa4dc2fe6f65d4a839a16567adbee9d,/Dockerfile,"# Install setuptools
+"
+217,c7dccccd1fa4dc2fe6f65d4a839a16567adbee9d,/Dockerfile,"# Install pip
+"
+218,c7dccccd1fa4dc2fe6f65d4a839a16567adbee9d,/Dockerfile,"# Set the default Docker to be run
+"
+219,5d60fbe31ec791a9adc4d77abe9242f1e86b4e25,/Dockerfile,"# Build Python 2.7.9 from source
+"
+220,5d60fbe31ec791a9adc4d77abe9242f1e86b4e25,/Dockerfile,"# Build python 3.4 from source
+"
+221,5d60fbe31ec791a9adc4d77abe9242f1e86b4e25,/Dockerfile,"# Make libpython findable
+"
+222,5d60fbe31ec791a9adc4d77abe9242f1e86b4e25,/Dockerfile,"# Install setuptools
+"
+223,5d60fbe31ec791a9adc4d77abe9242f1e86b4e25,/Dockerfile,"# Install pip
+"
+224,5d60fbe31ec791a9adc4d77abe9242f1e86b4e25,/Dockerfile,"# Python3 requires a valid locale
+"
+225,25942820820fcd8ed3fbd33dde2dcb24005ef997,/Dockerfile,"# Build Python 2.7.9 from source
+"
+226,25942820820fcd8ed3fbd33dde2dcb24005ef997,/Dockerfile,"# Make libpython findable
+"
+227,25942820820fcd8ed3fbd33dde2dcb24005ef997,/Dockerfile,"# Install setuptools
+"
+228,25942820820fcd8ed3fbd33dde2dcb24005ef997,/Dockerfile,"# Install pip
+"
+229,25942820820fcd8ed3fbd33dde2dcb24005ef997,/Dockerfile,"# Set the default Docker to be run
+"
+230,409a9d820755cd3e445194695a9455338eae9a14,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+231,74440b2f921e52746be20071ac5a451029a6d66d,/Dockerfile,"# Compose dependencies
+"
+232,74440b2f921e52746be20071ac5a451029a6d66d,/Dockerfile,"# Test dependencies
+"
+233,c6c57fcf49c9f967616898998a55188dd8b94b9e,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+234,17682c58db8986f1d1492559d72b3960b86f5f05,/Dockerfile,"# Build Python 2.7.9 from source
+"
+235,17682c58db8986f1d1492559d72b3960b86f5f05,/Dockerfile,"# Make libpython findable
+"
+236,17682c58db8986f1d1492559d72b3960b86f5f05,/Dockerfile,"# Install setuptools
+"
+237,17682c58db8986f1d1492559d72b3960b86f5f05,/Dockerfile,"# Install pip
+"
+238,17682c58db8986f1d1492559d72b3960b86f5f05,/Dockerfile,"# Set the default Docker to be run
+"
+239,5d4ccafd35c32fbfe589cf466b4e674c430f10fe,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+240,5d4ccafd35c32fbfe589cf466b4e674c430f10fe,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+241,5d4ccafd35c32fbfe589cf466b4e674c430f10fe,/Dockerfile.armhf,"# Make libpython findable
+"
+242,5d4ccafd35c32fbfe589cf466b4e674c430f10fe,/Dockerfile.armhf,"# Install pip
+"
+243,5d4ccafd35c32fbfe589cf466b4e674c430f10fe,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+244,4c2eb17ccd04e5da00366de2650acf20becf0200,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
+"
+245,2e31ebba6ad7828a8df91004215af1482da8c59e,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+246,87a50317ad7ba9d7e2987032c017d5a495201b5f,/Dockerfile,"# Build Python 2.7.9 from source
+"
+247,87a50317ad7ba9d7e2987032c017d5a495201b5f,/Dockerfile,"# Build python 3.4 from source
+"
+248,87a50317ad7ba9d7e2987032c017d5a495201b5f,/Dockerfile,"# Make libpython findable
+"
+249,87a50317ad7ba9d7e2987032c017d5a495201b5f,/Dockerfile,"# Install setuptools
+"
+250,87a50317ad7ba9d7e2987032c017d5a495201b5f,/Dockerfile,"# Install pip
+"
+251,87a50317ad7ba9d7e2987032c017d5a495201b5f,/Dockerfile,"# Python3 requires a valid locale
+"
+252,87a50317ad7ba9d7e2987032c017d5a495201b5f,/Dockerfile,"# Set the default Docker to be run
+"
+253,a6cdd6272600a29d013250ddcd1dff667a674fe7,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
+"
+254,6c29830127c0328d2c790abc38a89cba69956d7a,/Dockerfile,"# Build Python 2.7.9 from source
+"
+255,6c29830127c0328d2c790abc38a89cba69956d7a,/Dockerfile,"# Build python 3.4 from source
+"
+256,6c29830127c0328d2c790abc38a89cba69956d7a,/Dockerfile,"# Make libpython findable
+"
+257,6c29830127c0328d2c790abc38a89cba69956d7a,/Dockerfile,"# Install setuptools
+"
+258,6c29830127c0328d2c790abc38a89cba69956d7a,/Dockerfile,"# Install pip
+"
+259,6c29830127c0328d2c790abc38a89cba69956d7a,/Dockerfile,"# Python3 requires a valid locale
+"
+260,c223c3fde950d9295ac33fef682d0ff9f206d5f8,/Dockerfile,"# Python3 requires a valid locale
+"
+261,23beeb353c08e2c53df0d7e7f97d0d70b05d8c25,/Dockerfile,"# Python3 requires a valid locale
+"
+262,e675d677741f7bb8a32e4b644a0a1f20a874aca5,/Dockerfile,"# Build Python 2.7.9 from source
+"
+263,e675d677741f7bb8a32e4b644a0a1f20a874aca5,/Dockerfile,"# Make libpython findable
+"
+264,e675d677741f7bb8a32e4b644a0a1f20a874aca5,/Dockerfile,"# Install setuptools
+"
+265,e675d677741f7bb8a32e4b644a0a1f20a874aca5,/Dockerfile,"# Install pip
+"
+266,e675d677741f7bb8a32e4b644a0a1f20a874aca5,/Dockerfile,"# Set the default Docker to be run
+"
+267,296d8ed155015d57e51ef8a5329363f7ce263a98,/Dockerfile,"# Python3 requires a valid locale
+"
+268,4e83bafec6ac7dfe5f61c86afa3a9b3c0d82d44b,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+269,272e85dce36bd9ca4e982008137a765764f7eb84,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+270,c3c5d91c47f00d607b68f345e367ed1b828852f8,/docs/Dockerfile,"# To get the git info for this repo
+"
+271,c3c5d91c47f00d607b68f345e367ed1b828852f8,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Change ](/word to ](/project/ in links
 # 4 Change ](word.md) to ](/project/word)
@@ -233,65 +602,69 @@
 # 
 # 
 "
-100,9aa61e596e2475fa0bbcf227f2c388f6a9df471a,/Dockerfile,"# Build Python 2.7.9 from source
+272,eb073c53f470df510e81248f2b94bfdc952ff4e1,/Dockerfile,"# Set the default Docker to be run
 "
-101,9aa61e596e2475fa0bbcf227f2c388f6a9df471a,/Dockerfile,"# Make libpython findable
+273,522825e41122800f570c8ba7afa8889e44ba68c5,/Dockerfile,"# Python3 requires a valid locale
 "
-102,9aa61e596e2475fa0bbcf227f2c388f6a9df471a,/Dockerfile,"# Install setuptools
+274,b7baa899e271fd13f17592be015b8bf066c17245,/Dockerfile,"# Build Python 2.7.9 from source
 "
-103,9aa61e596e2475fa0bbcf227f2c388f6a9df471a,/Dockerfile,"# Install pip
+275,b7baa899e271fd13f17592be015b8bf066c17245,/Dockerfile,"# Make libpython findable
 "
-104,9aa61e596e2475fa0bbcf227f2c388f6a9df471a,/Dockerfile,"# Set the default Docker to be run
+276,b7baa899e271fd13f17592be015b8bf066c17245,/Dockerfile,"# Install setuptools
 "
-105,c217bab7f6123de80dbd55c99c2254666d766fb3,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+277,b7baa899e271fd13f17592be015b8bf066c17245,/Dockerfile,"# Install pip
 "
-106,8749bc08443ddb344ecf683e796cdb2d814b7f68,/Dockerfile,"# Build Python 2.7.9 from source
+278,b7baa899e271fd13f17592be015b8bf066c17245,/Dockerfile,"# Set the default Docker to be run
 "
-107,8749bc08443ddb344ecf683e796cdb2d814b7f68,/Dockerfile,"# Make libpython findable
+279,b446c097350f5981cf8ab411f1dba7e8307f6f65,/docs/Dockerfile,"# To get the git info for this repo
 "
-108,8749bc08443ddb344ecf683e796cdb2d814b7f68,/Dockerfile,"# Install setuptools
+280,003319da866bb5ab437a6d4dd6889aa86b3ffd7d,/Dockerfile,"# Build Python 2.7.13 from source
 "
-109,8749bc08443ddb344ecf683e796cdb2d814b7f68,/Dockerfile,"# Install pip
+281,003319da866bb5ab437a6d4dd6889aa86b3ffd7d,/Dockerfile,"# Build python 3.4 from source
 "
-110,8749bc08443ddb344ecf683e796cdb2d814b7f68,/Dockerfile,"# Set the default Docker to be run
+282,003319da866bb5ab437a6d4dd6889aa86b3ffd7d,/Dockerfile,"# Make libpython findable
 "
-111,d0b46ca9b205236fe8809c6b10f351feabd367f1,/Dockerfile,"# Build Python 2.7.9 from source
+283,003319da866bb5ab437a6d4dd6889aa86b3ffd7d,/Dockerfile,"# Install pip
 "
-112,d0b46ca9b205236fe8809c6b10f351feabd367f1,/Dockerfile,"# Build python 3.4 from source
+284,003319da866bb5ab437a6d4dd6889aa86b3ffd7d,/Dockerfile,"# Python3 requires a valid locale
 "
-113,d0b46ca9b205236fe8809c6b10f351feabd367f1,/Dockerfile,"# Make libpython findable
+285,8d3c8be7d9872eb075342cdca875aa8063147434,/Dockerfile.armhf,"# Build Python 2.7.13 from source
 "
-114,d0b46ca9b205236fe8809c6b10f351feabd367f1,/Dockerfile,"# Install setuptools
+286,8d3c8be7d9872eb075342cdca875aa8063147434,/Dockerfile.armhf,"# Build python 3.4 from source
 "
-115,d0b46ca9b205236fe8809c6b10f351feabd367f1,/Dockerfile,"# Install pip
+287,8d3c8be7d9872eb075342cdca875aa8063147434,/Dockerfile.armhf,"# Make libpython findable
 "
-116,d0b46ca9b205236fe8809c6b10f351feabd367f1,/Dockerfile,"# Python3 requires a valid locale
+288,8d3c8be7d9872eb075342cdca875aa8063147434,/Dockerfile.armhf,"# Install pip
 "
-117,6e9a894ccfcf0a92460a6b86a60e0c4ad8b73318,/Dockerfile,"# Build Python 2.7.13 from source
+289,8d3c8be7d9872eb075342cdca875aa8063147434,/Dockerfile.armhf,"# Python3 requires a valid locale
 "
-118,6e9a894ccfcf0a92460a6b86a60e0c4ad8b73318,/Dockerfile,"# Build python 3.4 from source
+290,0650c4485a85e350a76fbaa6d167c0ee26b08cbd,/Dockerfile,"# Set the default Docker to be run
 "
-119,6e9a894ccfcf0a92460a6b86a60e0c4ad8b73318,/Dockerfile,"# Make libpython findable
+291,5d4ccafd35c32fbfe589cf466b4e674c430f10fe,/Dockerfile,"# Build Python 2.7.13 from source
 "
-120,6e9a894ccfcf0a92460a6b86a60e0c4ad8b73318,/Dockerfile,"# Install pip
+292,5d4ccafd35c32fbfe589cf466b4e674c430f10fe,/Dockerfile,"# Build python 3.4 from source
 "
-121,6e9a894ccfcf0a92460a6b86a60e0c4ad8b73318,/Dockerfile,"# Python3 requires a valid locale
+293,5d4ccafd35c32fbfe589cf466b4e674c430f10fe,/Dockerfile,"# Make libpython findable
 "
-122,cd098e0cad4a0155b37179a77c6759ec33be0d61,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
+294,5d4ccafd35c32fbfe589cf466b4e674c430f10fe,/Dockerfile,"# Install pip
 "
-123,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile,"# Build Python 2.7.13 from source
+295,5d4ccafd35c32fbfe589cf466b4e674c430f10fe,/Dockerfile,"# Python3 requires a valid locale
 "
-124,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile,"# Build python 3.4 from source
+296,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile,"# Build Python 2.7.13 from source
 "
-125,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile,"# Make libpython findable
+297,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile,"# Build python 3.6 from source
 "
-126,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile,"# Install pip
+298,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile,"# Make libpython findable
 "
-127,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile,"# Python3 requires a valid locale
+299,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile,"# Install pip
 "
-128,94e6727831f8a6f1abdb49f5763af2b4cffbae3d,/docs/Dockerfile,"# To get the git info for this repo
+300,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile,"# Python3 requires a valid locale
 "
-129,94e6727831f8a6f1abdb49f5763af2b4cffbae3d,/docs/Dockerfile,"# Sed to process GitHub Markdown
+301,1f16a7929d52283aea7e9c343810c2d0e00017bd,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+302,dfe9dccab88955b1cd23159a75333a54d2afbf32,/docs/Dockerfile,"# To get the git info for this repo
+"
+303,dfe9dccab88955b1cd23159a75333a54d2afbf32,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Change ](/word to ](/project/ in links
 # 4 Change ](word.md) to ](/project/word)
@@ -301,23 +674,73 @@
 # 
 # 
 "
-130,c26b1c8ee9b95f8739fcd3197b838a530dd6d4f3,/docs/Dockerfile,"# To get the git info for this repo
+304,dce62c81d5c3c801f39065fccd45223f11c0d21c,/Dockerfile,"# Python3 requires a valid locale
 "
-131,c26b1c8ee9b95f8739fcd3197b838a530dd6d4f3,/docs/Dockerfile,"# Sed to process GitHub Markdown
-# 1-2 Remove comment code from metadata block
-# 3 Change ](/word to ](/project/ in links
-# 4 Change ](word.md) to ](/project/word)
-# 5 Remove .md extension from link text
-# 6 Change ](../ to ](/project/word) 
-# 7 Change ](../../ to ](/project/ --> not implemented
-# 
-# 
+305,a2cdffeeee4802882ac88ccc0159e6f2297fe52f,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
 "
-132,79f29dda2370b7eec9942405d45541f1f569d0f9,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+306,07e9f6500ce2f695920d0a2786c308fba750cc2e,/Dockerfile,"# Build Python 2.7.9 from source
 "
-133,e40fc0256111aae16013baad9aed82a07e9dd302,/docs/Dockerfile,"# To get the git info for this repo
+307,07e9f6500ce2f695920d0a2786c308fba750cc2e,/Dockerfile,"# Build python 3.4 from source
 "
-134,e40fc0256111aae16013baad9aed82a07e9dd302,/docs/Dockerfile,"# Sed to process GitHub Markdown
+308,07e9f6500ce2f695920d0a2786c308fba750cc2e,/Dockerfile,"# Make libpython findable
+"
+309,07e9f6500ce2f695920d0a2786c308fba750cc2e,/Dockerfile,"# Install setuptools
+"
+310,07e9f6500ce2f695920d0a2786c308fba750cc2e,/Dockerfile,"# Install pip
+"
+311,07e9f6500ce2f695920d0a2786c308fba750cc2e,/Dockerfile,"# Python3 requires a valid locale
+"
+312,fae20305ec5ca13f59c93093bb300cee91863e9c,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
+"
+313,ab93b87f04a25d9397371bd0e78326e8fe631107,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+314,118a389646a68b914a2de0efb763d6d71868d951,/Dockerfile,"# Build Python 2.7.9 from source
+"
+315,118a389646a68b914a2de0efb763d6d71868d951,/Dockerfile,"# Make libpython findable
+"
+316,118a389646a68b914a2de0efb763d6d71868d951,/Dockerfile,"# Install setuptools
+"
+317,118a389646a68b914a2de0efb763d6d71868d951,/Dockerfile,"# Install pip
+"
+318,118a389646a68b914a2de0efb763d6d71868d951,/Dockerfile,"# Set the default Docker to be run
+"
+319,8d3c8be7d9872eb075342cdca875aa8063147434,/Dockerfile,"# Build Python 2.7.13 from source
+"
+320,8d3c8be7d9872eb075342cdca875aa8063147434,/Dockerfile,"# Build python 3.4 from source
+"
+321,8d3c8be7d9872eb075342cdca875aa8063147434,/Dockerfile,"# Make libpython findable
+"
+322,8d3c8be7d9872eb075342cdca875aa8063147434,/Dockerfile,"# Install pip
+"
+323,8d3c8be7d9872eb075342cdca875aa8063147434,/Dockerfile,"# Python3 requires a valid locale
+"
+324,2c668e237d07b518630139b185f3337dbcbd5250,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
+"
+325,85d940909e941915ea5a5e1e5c2f8bd0a086948e,/Dockerfile,"# Python3 requires a valid locale
+"
+326,85d940909e941915ea5a5e1e5c2f8bd0a086948e,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+327,fd06d699f22fc9d473ac4201feba5847782688ec,/docs/Dockerfile,"# To get the git info for this repo
+"
+328,f7d86d3194577ebac561b7b55c10421596aa091b,/Dockerfile,"# Build Python 2.7.9 from source
+"
+329,f7d86d3194577ebac561b7b55c10421596aa091b,/Dockerfile,"# Build python 3.4 from source
+"
+330,f7d86d3194577ebac561b7b55c10421596aa091b,/Dockerfile,"# Make libpython findable
+"
+331,f7d86d3194577ebac561b7b55c10421596aa091b,/Dockerfile,"# Install setuptools
+"
+332,f7d86d3194577ebac561b7b55c10421596aa091b,/Dockerfile,"# Install pip
+"
+333,f7d86d3194577ebac561b7b55c10421596aa091b,/Dockerfile,"# Python3 requires a valid locale
+"
+334,f7d86d3194577ebac561b7b55c10421596aa091b,/Dockerfile,"# Set the default Docker to be run
+"
+335,aaccd12d3df2ab64f44db5c6cd8bae282a314419,/docs/Dockerfile,"# To get the git info for this repo
+"
+336,aaccd12d3df2ab64f44db5c6cd8bae282a314419,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Remove .md extension from link text
 # 4 Change ](/ to ](/project/ in links
@@ -327,11 +750,182 @@
 # 
 # 
 "
-135,bb0bd3b26b91a8fdbcaf242265a29b9fffd9f904,/Dockerfile,"# Python3 requires a valid locale
+337,8ddf37c4b3757b08ad90955579ed5dd2a310fddb,/Dockerfile,"# Build Python 2.7.9 from source
 "
-136,bb0bd3b26b91a8fdbcaf242265a29b9fffd9f904,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+338,8ddf37c4b3757b08ad90955579ed5dd2a310fddb,/Dockerfile,"# Make libpython findable
 "
-137,d209ded13c9a7478fc47c41b2319fcf3c1935131,/Dockerfile,"# ENV ALL_DOCKER_VERSIONS 1.6.0
+339,8ddf37c4b3757b08ad90955579ed5dd2a310fddb,/Dockerfile,"# Install setuptools
+"
+340,8ddf37c4b3757b08ad90955579ed5dd2a310fddb,/Dockerfile,"# Install pip
+"
+341,8ddf37c4b3757b08ad90955579ed5dd2a310fddb,/Dockerfile,"# Set the default Docker to be run
+"
+342,f3df2a9fecaa0b4a90a6a6b9ba02ba2b16bb4ccb,/docs/Dockerfile,"# To get the git info for this repo
+"
+343,f3df2a9fecaa0b4a90a6a6b9ba02ba2b16bb4ccb,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Remove .md extension from link text
+# 4 Change ](/ to ](/project/ in links
+# 5 Change ](word) to ](/project/word)
+# 6 Change ](../../ to ](/project/
+# 7 Change ](../ to ](/project/word)
+# 
+# 
+"
+344,d4f55a721dfead3cee08d6406388b5e89de3e99c,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+345,2c668e237d07b518630139b185f3337dbcbd5250,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+346,9f4e83e4564ac7ac8f1cbef52bd1892a10843ed1,/docs/Dockerfile,"# To get the git info for this repo
+"
+347,027414cfc0f6db776dc897dd70baa918ed8d7597,/Dockerfile,"# Build Python 2.7.9 from source
+"
+348,027414cfc0f6db776dc897dd70baa918ed8d7597,/Dockerfile,"# Build python 3.4 from source
+"
+349,027414cfc0f6db776dc897dd70baa918ed8d7597,/Dockerfile,"# Make libpython findable
+"
+350,027414cfc0f6db776dc897dd70baa918ed8d7597,/Dockerfile,"# Install setuptools
+"
+351,027414cfc0f6db776dc897dd70baa918ed8d7597,/Dockerfile,"# Install pip
+"
+352,027414cfc0f6db776dc897dd70baa918ed8d7597,/Dockerfile,"# Python3 requires a valid locale
+"
+353,027414cfc0f6db776dc897dd70baa918ed8d7597,/Dockerfile,"# Set the default Docker to be run
+"
+354,522825e41122800f570c8ba7afa8889e44ba68c5,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+355,522825e41122800f570c8ba7afa8889e44ba68c5,/Dockerfile.armhf,"# Build python 3.6 from source
+"
+356,522825e41122800f570c8ba7afa8889e44ba68c5,/Dockerfile.armhf,"# Make libpython findable
+"
+357,522825e41122800f570c8ba7afa8889e44ba68c5,/Dockerfile.armhf,"# Install pip
+"
+358,522825e41122800f570c8ba7afa8889e44ba68c5,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+359,c1c8c70800f32a160eababddaa24b4cdcce9779d,/docs/Dockerfile,"# To get the git info for this repo
+"
+360,3c232e42c166f453f1fef7a249fd689c9a5ce776,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
+"
+361,17b219454f9239f349420fd431ae82eeadca87ac,/docs/Dockerfile,"# To get the git info for this repo
+"
+362,eb20915c6e62e0f2c8ee44810270f0c101cfde0f,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+363,c3a5488d118473e56b3b45e4a0a1dd1c26c87553,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+364,c3a5488d118473e56b3b45e4a0a1dd1c26c87553,/Dockerfile.armhf,"# Build python 3.6 from source
+"
+365,c3a5488d118473e56b3b45e4a0a1dd1c26c87553,/Dockerfile.armhf,"# Make libpython findable
+"
+366,c3a5488d118473e56b3b45e4a0a1dd1c26c87553,/Dockerfile.armhf,"# Install pip
+"
+367,c3a5488d118473e56b3b45e4a0a1dd1c26c87553,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+368,ef6555f0843129ac371285973d66115439b6bf59,/Dockerfile,"# Set the default Docker to be run
+"
+369,49bafdc4cddaa785c1e04718db6f6a5f0e979658,/Dockerfile,"# Build Python 2.7.9 from source
+"
+370,49bafdc4cddaa785c1e04718db6f6a5f0e979658,/Dockerfile,"# Make libpython findable
+"
+371,49bafdc4cddaa785c1e04718db6f6a5f0e979658,/Dockerfile,"# Install setuptools
+"
+372,49bafdc4cddaa785c1e04718db6f6a5f0e979658,/Dockerfile,"# Install pip
+"
+373,49bafdc4cddaa785c1e04718db6f6a5f0e979658,/Dockerfile,"# Set the default Docker to be run
+"
+374,278ec711d363662111af16dde289910a9b067e1c,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+375,7d6c63d1b75bf8a9c8bbde32d238d5c851327bba,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
+"
+376,bf5bdab4997a5c19f31205ff7f9ebd9bf931ec71,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+377,b87c09b9fc268c3139bfffeb6f2eea39f12a0445,/Dockerfile,"# Build Python 2.7.9 from source
+"
+378,b87c09b9fc268c3139bfffeb6f2eea39f12a0445,/Dockerfile,"# Make libpython findable
+"
+379,b87c09b9fc268c3139bfffeb6f2eea39f12a0445,/Dockerfile,"# Install setuptools
+"
+380,b87c09b9fc268c3139bfffeb6f2eea39f12a0445,/Dockerfile,"# Install pip
+"
+381,b87c09b9fc268c3139bfffeb6f2eea39f12a0445,/Dockerfile,"# Set the default Docker to be run
+"
+382,4b845746efa35a1263dc5c23e0213ca8dc3495f0,/docs/Dockerfile,"# To get the git info for this repo
+"
+383,4b845746efa35a1263dc5c23e0213ca8dc3495f0,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
+"
+384,26fe8213aa3edcb6bfb8ec287538f9d8674ae124,/Dockerfile,"# Build Python 2.7.9 from source
+"
+385,26fe8213aa3edcb6bfb8ec287538f9d8674ae124,/Dockerfile,"# Build python 3.4 from source
+"
+386,26fe8213aa3edcb6bfb8ec287538f9d8674ae124,/Dockerfile,"# Make libpython findable
+"
+387,26fe8213aa3edcb6bfb8ec287538f9d8674ae124,/Dockerfile,"# Install setuptools
+"
+388,26fe8213aa3edcb6bfb8ec287538f9d8674ae124,/Dockerfile,"# Install pip
+"
+389,26fe8213aa3edcb6bfb8ec287538f9d8674ae124,/Dockerfile,"# Python3 requires a valid locale
+"
+390,a75bdfe11cfa87837fe60309855084315324ca36,/Dockerfile,"# Build Python 2.7.9 from source
+"
+391,a75bdfe11cfa87837fe60309855084315324ca36,/Dockerfile,"# Build python 3.4 from source
+"
+392,a75bdfe11cfa87837fe60309855084315324ca36,/Dockerfile,"# Make libpython findable
+"
+393,a75bdfe11cfa87837fe60309855084315324ca36,/Dockerfile,"# Install setuptools
+"
+394,a75bdfe11cfa87837fe60309855084315324ca36,/Dockerfile,"# Install pip
+"
+395,a75bdfe11cfa87837fe60309855084315324ca36,/Dockerfile,"# Python3 requires a valid locale
+"
+396,a259c48ae9755e292dab9ca11cf0307feab8007b,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+397,4e73e86d9480de0be87fa5390d915346a435ac26,/docs/Dockerfile,"# To get the git info for this repo
+"
+398,4e73e86d9480de0be87fa5390d915346a435ac26,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
+"
+399,9c8173dbfda93baef214359991b6a8a54172f6ae,/docs/Dockerfile,"# To get the git info for this repo
+"
+400,50dcb1d7e746acab18bf466250ec9aff5f3ca1a1,/docs/Dockerfile,"# To get the git info for this repo
+"
+401,f2a43d755e351a415fe426ad92c9ee75387ef51d,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+402,a2095a2a0c759fa009e22b5791a33dd093e663ae,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+403,0eba234c54a948051d1c2d3b0f4ebe4a4100e44d,/docs/Dockerfile,"# To get the git info for this repo
+"
+404,99562d9df99c2d63e715c459e56ee681691d50ce,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container will be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
+"
+405,003319da866bb5ab437a6d4dd6889aa86b3ffd7d,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+406,003319da866bb5ab437a6d4dd6889aa86b3ffd7d,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+407,003319da866bb5ab437a6d4dd6889aa86b3ffd7d,/Dockerfile.armhf,"# Make libpython findable
+"
+408,003319da866bb5ab437a6d4dd6889aa86b3ffd7d,/Dockerfile.armhf,"# Install pip
+"
+409,003319da866bb5ab437a6d4dd6889aa86b3ffd7d,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+410,f13f26d0997edda343913222dcf228000d0a3540,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container will be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
+"
+411,02f119e4b728169a7c5ca1e5ee34a3e4adf4ca61,/Dockerfile,"# ENV ALL_DOCKER_VERSIONS 1.6.0
 
 # RUN set -ex; \
 #     for v in ${ALL_DOCKER_VERSIONS}; do \
@@ -341,119 +935,48 @@
 
 # Temporarily use dev version of Docker
 "
-138,c5c36d8b006d9694c34b06e434e08bb17b025250,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
+412,ab93b87f04a25d9397371bd0e78326e8fe631107,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
+"
+413,aa7c7cdf93b1fe8fe415a48325a9b31685fb884b,/Dockerfile,"# Build Python 2.7.9 from source
+"
+414,aa7c7cdf93b1fe8fe415a48325a9b31685fb884b,/Dockerfile,"# Make libpython findable
+"
+415,aa7c7cdf93b1fe8fe415a48325a9b31685fb884b,/Dockerfile,"# Install setuptools
+"
+416,aa7c7cdf93b1fe8fe415a48325a9b31685fb884b,/Dockerfile,"# Install pip
+"
+417,aa7c7cdf93b1fe8fe415a48325a9b31685fb884b,/Dockerfile,"# Set the default Docker to be run
+"
+418,05a5aae552be9de2ef99c30cc79bd7b0d8bfa62b,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container will be cleaned up automatically
 # Must be kept in sync with LABEL_PROJECT from compose/const.py
 "
-139,dd3590180da36f5359d6463003b49ea2fca90315,/docs/Dockerfile,"# To get the git info for this repo
+419,18dbe1b1c0e69d9a02dee9e3759000922a44c720,/Dockerfile,"# Build Python 2.7.9 from source
 "
-140,ae96e1af16d51c31553072fbc364977315b41aa9,/Dockerfile,"# Build Python 2.7.9 from source
+420,18dbe1b1c0e69d9a02dee9e3759000922a44c720,/Dockerfile,"# Build python 3.4 from source
 "
-141,ae96e1af16d51c31553072fbc364977315b41aa9,/Dockerfile,"# Make libpython findable
+421,18dbe1b1c0e69d9a02dee9e3759000922a44c720,/Dockerfile,"# Make libpython findable
 "
-142,ae96e1af16d51c31553072fbc364977315b41aa9,/Dockerfile,"# Install setuptools
+422,18dbe1b1c0e69d9a02dee9e3759000922a44c720,/Dockerfile,"# Install setuptools
 "
-143,ae96e1af16d51c31553072fbc364977315b41aa9,/Dockerfile,"# Install pip
+423,18dbe1b1c0e69d9a02dee9e3759000922a44c720,/Dockerfile,"# Install pip
 "
-144,ae96e1af16d51c31553072fbc364977315b41aa9,/Dockerfile,"# Set the default Docker to be run
+424,18dbe1b1c0e69d9a02dee9e3759000922a44c720,/Dockerfile,"# Python3 requires a valid locale
 "
-145,cd098e0cad4a0155b37179a77c6759ec33be0d61,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
-# Must be kept in sync with LABEL_PROJECT from compose/const.py
+425,9c8173dbfda93baef214359991b6a8a54172f6ae,/Dockerfile,"# Build Python 2.7.9 from source
 "
-146,ac235a1f8571067e810fe0f9ba808e2c29bb9cc9,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+426,9c8173dbfda93baef214359991b6a8a54172f6ae,/Dockerfile,"# Build python 3.4 from source
 "
-147,ac235a1f8571067e810fe0f9ba808e2c29bb9cc9,/Dockerfile.armhf,"# Build python 3.4 from source
+427,9c8173dbfda93baef214359991b6a8a54172f6ae,/Dockerfile,"# Make libpython findable
 "
-148,ac235a1f8571067e810fe0f9ba808e2c29bb9cc9,/Dockerfile.armhf,"# Make libpython findable
+428,9c8173dbfda93baef214359991b6a8a54172f6ae,/Dockerfile,"# Install setuptools
 "
-149,ac235a1f8571067e810fe0f9ba808e2c29bb9cc9,/Dockerfile.armhf,"# Install pip
+429,9c8173dbfda93baef214359991b6a8a54172f6ae,/Dockerfile,"# Install pip
 "
-150,ac235a1f8571067e810fe0f9ba808e2c29bb9cc9,/Dockerfile.armhf,"# Python3 requires a valid locale
+430,9c8173dbfda93baef214359991b6a8a54172f6ae,/Dockerfile,"# Python3 requires a valid locale
 "
-151,7850d6de4533de4f4663eace7ef5ee6aa2cb1ab0,/Dockerfile,"# Build Python 2.7.9 from source
+431,7eabc06df5ca4a1c2ad372ee8e87012de5429f05,/docs/Dockerfile,"# To get the git info for this repo
 "
-152,7850d6de4533de4f4663eace7ef5ee6aa2cb1ab0,/Dockerfile,"# Make libpython findable
-"
-153,7850d6de4533de4f4663eace7ef5ee6aa2cb1ab0,/Dockerfile,"# Install setuptools
-"
-154,7850d6de4533de4f4663eace7ef5ee6aa2cb1ab0,/Dockerfile,"# Install pip
-"
-155,7850d6de4533de4f4663eace7ef5ee6aa2cb1ab0,/Dockerfile,"# Set the default Docker to be run
-"
-156,021bf465572c2dae7e002a98f415fc61fa864691,/Dockerfile,"# Set the default Docker to be run
-"
-157,dc838067fd4ccdf381108acb03bac261924fd297,/tests/fixtures/build-shm-size/Dockerfile,"# Report the shm_size (through the size of /dev/shm)
-"
-158,9978c3ea52edbc99f2e293e98c4db5196972d655,/Dockerfile,"# Build Python 2.7.9 from source
-"
-159,9978c3ea52edbc99f2e293e98c4db5196972d655,/Dockerfile,"# Build python 3.4 from source
-"
-160,9978c3ea52edbc99f2e293e98c4db5196972d655,/Dockerfile,"# Make libpython findable
-"
-161,9978c3ea52edbc99f2e293e98c4db5196972d655,/Dockerfile,"# Install setuptools
-"
-162,9978c3ea52edbc99f2e293e98c4db5196972d655,/Dockerfile,"# Install pip
-"
-163,9978c3ea52edbc99f2e293e98c4db5196972d655,/Dockerfile,"# Python3 requires a valid locale
-"
-164,643166ae98764e1bfe8b2dad8de349e2c23c7f33,/docs/Dockerfile,"# To get the git info for this repo
-"
-165,db852e14e4d8ebc1f0a477360ceef7694970dc59,/Dockerfile,"# Set the default Docker to be run
-"
-166,5a47b692c1142e632f89729ad76a1eddb626a33f,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
-"
-167,e0af1a44ea8da7d0d6f072690f4b5a768845dcec,/Dockerfile,"# Build Python 2.7.9 from source
-"
-168,e0af1a44ea8da7d0d6f072690f4b5a768845dcec,/Dockerfile,"# Make libpython findable
-"
-169,e0af1a44ea8da7d0d6f072690f4b5a768845dcec,/Dockerfile,"# Install setuptools
-"
-170,e0af1a44ea8da7d0d6f072690f4b5a768845dcec,/Dockerfile,"# Install pip
-"
-171,e0af1a44ea8da7d0d6f072690f4b5a768845dcec,/Dockerfile,"# Set the default Docker to be run
-"
-172,20a393d4f95adc5cca092b41138ff41e32627dc9,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
-"
-173,4fd5d580762d5402b11a7103717b9f003b8efba2,/Dockerfile,"# Build Python 2.7.9 from source
-"
-174,4fd5d580762d5402b11a7103717b9f003b8efba2,/Dockerfile,"# Make libpython findable
-"
-175,4fd5d580762d5402b11a7103717b9f003b8efba2,/Dockerfile,"# Install setuptools
-"
-176,4fd5d580762d5402b11a7103717b9f003b8efba2,/Dockerfile,"# Install pip
-"
-177,4fd5d580762d5402b11a7103717b9f003b8efba2,/Dockerfile,"# Set the default Docker to be run
-"
-178,ad4cc5d6dfc0718d44bbcb6497f3483fc05b09f4,/Dockerfile,"# Build Python 2.7.9 from source
-"
-179,ad4cc5d6dfc0718d44bbcb6497f3483fc05b09f4,/Dockerfile,"# Make libpython findable
-"
-180,ad4cc5d6dfc0718d44bbcb6497f3483fc05b09f4,/Dockerfile,"# Install setuptools
-"
-181,ad4cc5d6dfc0718d44bbcb6497f3483fc05b09f4,/Dockerfile,"# Install pip
-"
-182,ad4cc5d6dfc0718d44bbcb6497f3483fc05b09f4,/Dockerfile,"# Set the default Docker to be run
-"
-183,b3382ffd4f455745c0401a0c2d6d74c2a182bc6f,/Dockerfile,"# Set the default Docker to be run
-"
-184,5c47805dc30672da769ed31b976cc60dd6af10a9,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
-"
-185,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Build Python 2.7.9 from source
-"
-186,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Build python 3.4 from source
-"
-187,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Make libpython findable
-"
-188,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Install setuptools
-"
-189,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Install pip
-"
-190,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Python3 requires a valid locale
-"
-191,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Set the default Docker to be run
-"
-192,949dd5b2c7fffdd3790a9429f89af37dd2a8e0af,/docs/Dockerfile,"# To get the git info for this repo
-"
-193,949dd5b2c7fffdd3790a9429f89af37dd2a8e0af,/docs/Dockerfile,"# Sed to process GitHub Markdown
+432,7eabc06df5ca4a1c2ad372ee8e87012de5429f05,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Change ](/word to ](/project/ in links
 # 4 Change ](word.md) to ](/project/word)
@@ -463,147 +986,1361 @@
 # 
 # 
 "
-194,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Build Python 2.7.9 from source
+433,2da8b7e511038d390274fbc5c57f95535c9a8e1b,/Dockerfile,"# Build Python 2.7.9 from source
 "
-195,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Build python 3.4 from source
+434,2da8b7e511038d390274fbc5c57f95535c9a8e1b,/Dockerfile,"# Make libpython findable
 "
-196,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Make libpython findable
+435,2da8b7e511038d390274fbc5c57f95535c9a8e1b,/Dockerfile,"# Install setuptools
 "
-197,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Install setuptools
+436,2da8b7e511038d390274fbc5c57f95535c9a8e1b,/Dockerfile,"# Install pip
 "
-198,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Install pip
+437,2da8b7e511038d390274fbc5c57f95535c9a8e1b,/Dockerfile,"# Set the default Docker to be run
 "
-199,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Python3 requires a valid locale
+438,95b2eaac042bb761b4f94c35a1af539467714098,/Dockerfile,"# Build Python 2.7.9 from source
 "
-200,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Set the default Docker to be run
+439,95b2eaac042bb761b4f94c35a1af539467714098,/Dockerfile,"# Make libpython findable
 "
-201,4390362366babb04b0b68759814206d2faff2b63,/Dockerfile,"# Build Python 2.7.9 from source
+440,95b2eaac042bb761b4f94c35a1af539467714098,/Dockerfile,"# Install setuptools
 "
-202,4390362366babb04b0b68759814206d2faff2b63,/Dockerfile,"# Make libpython findable
+441,95b2eaac042bb761b4f94c35a1af539467714098,/Dockerfile,"# Install pip
 "
-203,4390362366babb04b0b68759814206d2faff2b63,/Dockerfile,"# Install setuptools
+442,95b2eaac042bb761b4f94c35a1af539467714098,/Dockerfile,"# Set the default Docker to be run
 "
-204,4390362366babb04b0b68759814206d2faff2b63,/Dockerfile,"# Install pip
+443,9aa61e596e2475fa0bbcf227f2c388f6a9df471a,/Dockerfile,"# Build Python 2.7.9 from source
 "
-205,4390362366babb04b0b68759814206d2faff2b63,/Dockerfile,"# Set the default Docker to be run
+444,9aa61e596e2475fa0bbcf227f2c388f6a9df471a,/Dockerfile,"# Make libpython findable
 "
-206,78227c3c068a3ca7be47d3104fceb8c1e065e078,/Dockerfile,"# Set the default Docker to be run
+445,9aa61e596e2475fa0bbcf227f2c388f6a9df471a,/Dockerfile,"# Install setuptools
 "
-207,c7cdd63acf77147fcb3d53112c8c56931d671151,/tests/fixtures/build-shm-size/Dockerfile,"# Report the shm_size (through the size of /dev/shm)
+446,9aa61e596e2475fa0bbcf227f2c388f6a9df471a,/Dockerfile,"# Install pip
 "
-208,33c7c750e81528fb4c3a6a650821a722505726b5,/Dockerfile,"# Build Python 2.7.13 from source
+447,9aa61e596e2475fa0bbcf227f2c388f6a9df471a,/Dockerfile,"# Set the default Docker to be run
 "
-209,33c7c750e81528fb4c3a6a650821a722505726b5,/Dockerfile,"# Build python 3.4 from source
+448,9e90b6e645c7d7bb856db70958127f75b0da61cb,/Dockerfile.armhf,"# Build Python 2.7.13 from source
 "
-210,33c7c750e81528fb4c3a6a650821a722505726b5,/Dockerfile,"# Make libpython findable
+449,9e90b6e645c7d7bb856db70958127f75b0da61cb,/Dockerfile.armhf,"# Build python 3.4 from source
 "
-211,33c7c750e81528fb4c3a6a650821a722505726b5,/Dockerfile,"# Install pip
+450,9e90b6e645c7d7bb856db70958127f75b0da61cb,/Dockerfile.armhf,"# Make libpython findable
 "
-212,33c7c750e81528fb4c3a6a650821a722505726b5,/Dockerfile,"# Python3 requires a valid locale
+451,9e90b6e645c7d7bb856db70958127f75b0da61cb,/Dockerfile.armhf,"# Install pip
 "
-213,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Build Python 2.7.9 from source
+452,9e90b6e645c7d7bb856db70958127f75b0da61cb,/Dockerfile.armhf,"# Python3 requires a valid locale
 "
-214,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Build python 3.4 from source
+453,01fa147183f4d7e3f7051d7a9b8be88f6534173f,/Dockerfile.armhf,"# Build Python 2.7.13 from source
 "
-215,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Make libpython findable
+454,01fa147183f4d7e3f7051d7a9b8be88f6534173f,/Dockerfile.armhf,"# Build python 3.4 from source
 "
-216,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Install setuptools
+455,01fa147183f4d7e3f7051d7a9b8be88f6534173f,/Dockerfile.armhf,"# Make libpython findable
 "
-217,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Install pip
+456,01fa147183f4d7e3f7051d7a9b8be88f6534173f,/Dockerfile.armhf,"# Install pip
 "
-218,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Python3 requires a valid locale
+457,01fa147183f4d7e3f7051d7a9b8be88f6534173f,/Dockerfile.armhf,"# Python3 requires a valid locale
 "
-219,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Set the default Docker to be run
+458,c5d5d42158971ad9763a378e624311e66d7a65c8,/Dockerfile.armhf,"# Python3 requires a valid locale
 "
-220,a734371e7fc27f07bbd5f3b16d7f19d49053716d,/Dockerfile,"# Python3 requires a valid locale
+459,c217bab7f6123de80dbd55c99c2254666d766fb3,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
 "
-221,a734371e7fc27f07bbd5f3b16d7f19d49053716d,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+460,8749bc08443ddb344ecf683e796cdb2d814b7f68,/Dockerfile,"# Build Python 2.7.9 from source
 "
-222,809443d6d03e1ec687c01e546ddd9031b56ce40c,/Dockerfile,"# Build Python 2.7.9 from source
+461,8749bc08443ddb344ecf683e796cdb2d814b7f68,/Dockerfile,"# Make libpython findable
 "
-223,809443d6d03e1ec687c01e546ddd9031b56ce40c,/Dockerfile,"# Make libpython findable
+462,8749bc08443ddb344ecf683e796cdb2d814b7f68,/Dockerfile,"# Install setuptools
 "
-224,809443d6d03e1ec687c01e546ddd9031b56ce40c,/Dockerfile,"# Install setuptools
+463,8749bc08443ddb344ecf683e796cdb2d814b7f68,/Dockerfile,"# Install pip
 "
-225,809443d6d03e1ec687c01e546ddd9031b56ce40c,/Dockerfile,"# Install pip
+464,8749bc08443ddb344ecf683e796cdb2d814b7f68,/Dockerfile,"# Set the default Docker to be run
 "
-226,809443d6d03e1ec687c01e546ddd9031b56ce40c,/Dockerfile,"# Set the default Docker to be run
+465,d0b46ca9b205236fe8809c6b10f351feabd367f1,/Dockerfile,"# Build Python 2.7.9 from source
 "
-227,e8e2eb6e59f9351919eec9903d6ed5dd43c27826,/Dockerfile,"# Build Python 2.7.13 from source
+466,d0b46ca9b205236fe8809c6b10f351feabd367f1,/Dockerfile,"# Build python 3.4 from source
 "
-228,e8e2eb6e59f9351919eec9903d6ed5dd43c27826,/Dockerfile,"# Build python 3.4 from source
+467,d0b46ca9b205236fe8809c6b10f351feabd367f1,/Dockerfile,"# Make libpython findable
 "
-229,e8e2eb6e59f9351919eec9903d6ed5dd43c27826,/Dockerfile,"# Make libpython findable
+468,d0b46ca9b205236fe8809c6b10f351feabd367f1,/Dockerfile,"# Install setuptools
 "
-230,e8e2eb6e59f9351919eec9903d6ed5dd43c27826,/Dockerfile,"# Install pip
+469,d0b46ca9b205236fe8809c6b10f351feabd367f1,/Dockerfile,"# Install pip
 "
-231,e8e2eb6e59f9351919eec9903d6ed5dd43c27826,/Dockerfile,"# Python3 requires a valid locale
+470,d0b46ca9b205236fe8809c6b10f351feabd367f1,/Dockerfile,"# Python3 requires a valid locale
 "
-232,836e2b7c4dd9c65b7e829104d116ee2050021343,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+471,5028e3826129d8490938c900e257fee8f278ac10,/Dockerfile,"# Build Python 2.7.9 from source
 "
-233,b4c49ed805656890fe3ce9a1315688fe8c514dd5,/Dockerfile,"# Build Python 2.7.9 from source
+472,5028e3826129d8490938c900e257fee8f278ac10,/Dockerfile,"# Make libpython findable
 "
-234,b4c49ed805656890fe3ce9a1315688fe8c514dd5,/Dockerfile,"# Make libpython findable
+473,5028e3826129d8490938c900e257fee8f278ac10,/Dockerfile,"# Install setuptools
 "
-235,b4c49ed805656890fe3ce9a1315688fe8c514dd5,/Dockerfile,"# Install setuptools
+474,5028e3826129d8490938c900e257fee8f278ac10,/Dockerfile,"# Install pip
 "
-236,b4c49ed805656890fe3ce9a1315688fe8c514dd5,/Dockerfile,"# Install pip
+475,5028e3826129d8490938c900e257fee8f278ac10,/Dockerfile,"# Set the default Docker to be run
 "
-237,b4c49ed805656890fe3ce9a1315688fe8c514dd5,/Dockerfile,"# Set the default Docker to be run
+476,c006c6ea09b30e36042ddf9b09f96e9daca5c5e0,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
 "
-238,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+477,94fea2a4612309513b0b66ae46e1c5f76780a825,/Dockerfile.armhf,"# Build Python 2.7.13 from source
 "
-239,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile.armhf,"# Build python 3.6 from source
+478,94fea2a4612309513b0b66ae46e1c5f76780a825,/Dockerfile.armhf,"# Build python 3.4 from source
 "
-240,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile.armhf,"# Make libpython findable
+479,94fea2a4612309513b0b66ae46e1c5f76780a825,/Dockerfile.armhf,"# Make libpython findable
 "
-241,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile.armhf,"# Install pip
+480,94fea2a4612309513b0b66ae46e1c5f76780a825,/Dockerfile.armhf,"# Install pip
 "
-242,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile.armhf,"# Python3 requires a valid locale
+481,94fea2a4612309513b0b66ae46e1c5f76780a825,/Dockerfile.armhf,"# Python3 requires a valid locale
 "
-243,a541d88d570617ea3ef2694798170386d03d7ad4,/Dockerfile.armhf,"# Python3 requires a valid locale
+482,1a77a7fd447096da5dff32a14ebdad9264ae2fdd,/Dockerfile.armhf,"# Build Python 2.7.13 from source
 "
-244,e0412a24884351e093764b91cc2689c682bc1562,/Dockerfile,"# Python3 requires a valid locale
+483,1a77a7fd447096da5dff32a14ebdad9264ae2fdd,/Dockerfile.armhf,"# Build python 3.4 from source
 "
-245,e0412a24884351e093764b91cc2689c682bc1562,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+484,1a77a7fd447096da5dff32a14ebdad9264ae2fdd,/Dockerfile.armhf,"# Make libpython findable
 "
-246,e8424d5ae0de01fae98fa7aaff3c79cbb1dfcf2b,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+485,1a77a7fd447096da5dff32a14ebdad9264ae2fdd,/Dockerfile.armhf,"# Install pip
 "
-247,2943ac6812bcc8cdcd5b877155cdf69dd08c5b8a,/Dockerfile,"# Build Python 2.7.9 from source
+486,1a77a7fd447096da5dff32a14ebdad9264ae2fdd,/Dockerfile.armhf,"# Python3 requires a valid locale
 "
-248,2943ac6812bcc8cdcd5b877155cdf69dd08c5b8a,/Dockerfile,"# Build python 3.4 from source
+487,e8da6cb631e2d3b8fc67a6aa3db7cdd83b68ac66,/docs/Dockerfile,"# To get the git info for this repo
 "
-249,2943ac6812bcc8cdcd5b877155cdf69dd08c5b8a,/Dockerfile,"# Make libpython findable
+488,6e9a894ccfcf0a92460a6b86a60e0c4ad8b73318,/Dockerfile,"# Build Python 2.7.13 from source
 "
-250,2943ac6812bcc8cdcd5b877155cdf69dd08c5b8a,/Dockerfile,"# Install setuptools
+489,6e9a894ccfcf0a92460a6b86a60e0c4ad8b73318,/Dockerfile,"# Build python 3.4 from source
 "
-251,2943ac6812bcc8cdcd5b877155cdf69dd08c5b8a,/Dockerfile,"# Install pip
+490,6e9a894ccfcf0a92460a6b86a60e0c4ad8b73318,/Dockerfile,"# Make libpython findable
 "
-252,2943ac6812bcc8cdcd5b877155cdf69dd08c5b8a,/Dockerfile,"# Set the default Docker to be run
+491,6e9a894ccfcf0a92460a6b86a60e0c4ad8b73318,/Dockerfile,"# Install pip
 "
-253,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+492,6e9a894ccfcf0a92460a6b86a60e0c4ad8b73318,/Dockerfile,"# Python3 requires a valid locale
 "
-254,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile.armhf,"# Build python 3.4 from source
+493,cd098e0cad4a0155b37179a77c6759ec33be0d61,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
 "
-255,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile.armhf,"# Make libpython findable
+494,159cddf5639463916bbd298b7d6c57bcd074ccc8,/Dockerfile,"# Build Python 2.7.9 from source
 "
-256,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile.armhf,"# Install pip
+495,159cddf5639463916bbd298b7d6c57bcd074ccc8,/Dockerfile,"# Build python 3.4 from source
 "
-257,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile.armhf,"# Python3 requires a valid locale
+496,159cddf5639463916bbd298b7d6c57bcd074ccc8,/Dockerfile,"# Make libpython findable
 "
-258,a734371e7fc27f07bbd5f3b16d7f19d49053716d,/Dockerfile.armhf,"# Python3 requires a valid locale
+497,159cddf5639463916bbd298b7d6c57bcd074ccc8,/Dockerfile,"# Install setuptools
 "
-259,84774cacd210bb176c2daf73106c7dc849a6a0d7,/Dockerfile,"# Build Python 2.7.13 from source
+498,159cddf5639463916bbd298b7d6c57bcd074ccc8,/Dockerfile,"# Install pip
 "
-260,84774cacd210bb176c2daf73106c7dc849a6a0d7,/Dockerfile,"# Build python 3.4 from source
+499,159cddf5639463916bbd298b7d6c57bcd074ccc8,/Dockerfile,"# Python3 requires a valid locale
 "
-261,84774cacd210bb176c2daf73106c7dc849a6a0d7,/Dockerfile,"# Make libpython findable
+500,2c668e237d07b518630139b185f3337dbcbd5250,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
 "
-262,84774cacd210bb176c2daf73106c7dc849a6a0d7,/Dockerfile,"# Install pip
+501,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile,"# Build Python 2.7.13 from source
 "
-263,84774cacd210bb176c2daf73106c7dc849a6a0d7,/Dockerfile,"# Python3 requires a valid locale
+502,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile,"# Build python 3.4 from source
 "
-264,e08409f18d0d72f4e3201cfe664bbfa55dd7bc31,/docs/Dockerfile,"# To get the git info for this repo
+503,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile,"# Make libpython findable
 "
-265,8af0a0f85bb278691cc25c6d4c8f28cf7bc34784,/docs/Dockerfile,"# To get the git info for this repo
+504,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile,"# Install pip
+"
+505,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile,"# Python3 requires a valid locale
+"
+506,827573a5940072acdc45140014032122ee7baeb8,/docs/Dockerfile,"# To get the git info for this repo
+"
+507,ec0f8a8f7c0791fbf1b94abb87f289138060a5ff,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+508,3a775388b2201e3ff0de3d7b45672bbc0182f186,/Dockerfile,"# Build Python 2.7.9 from source
+"
+509,3a775388b2201e3ff0de3d7b45672bbc0182f186,/Dockerfile,"# Make libpython findable
+"
+510,3a775388b2201e3ff0de3d7b45672bbc0182f186,/Dockerfile,"# Install setuptools
+"
+511,3a775388b2201e3ff0de3d7b45672bbc0182f186,/Dockerfile,"# Install pip
+"
+512,3a775388b2201e3ff0de3d7b45672bbc0182f186,/Dockerfile,"# Set the default Docker to be run
+"
+513,94e6727831f8a6f1abdb49f5763af2b4cffbae3d,/docs/Dockerfile,"# To get the git info for this repo
+"
+514,94e6727831f8a6f1abdb49f5763af2b4cffbae3d,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
+"
+515,c26b1c8ee9b95f8739fcd3197b838a530dd6d4f3,/docs/Dockerfile,"# To get the git info for this repo
+"
+516,c26b1c8ee9b95f8739fcd3197b838a530dd6d4f3,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
+"
+517,79f29dda2370b7eec9942405d45541f1f569d0f9,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+518,6fe35498a562bcb1c3079676fc70a688d8cb0ed0,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+519,b4dfa9c15596f1e54559d8804e47f5633c3ff00f,/Dockerfile,"# Build Python 2.7.13 from source
+"
+520,b4dfa9c15596f1e54559d8804e47f5633c3ff00f,/Dockerfile,"# Build python 3.4 from source
+"
+521,b4dfa9c15596f1e54559d8804e47f5633c3ff00f,/Dockerfile,"# Make libpython findable
+"
+522,b4dfa9c15596f1e54559d8804e47f5633c3ff00f,/Dockerfile,"# Install pip
+"
+523,b4dfa9c15596f1e54559d8804e47f5633c3ff00f,/Dockerfile,"# Python3 requires a valid locale
+"
+524,4b6bfa47fc39881beeb530d1779eb530029c991d,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+525,4b6bfa47fc39881beeb530d1779eb530029c991d,/Dockerfile.armhf,"# Build python 3.6 from source
+"
+526,4b6bfa47fc39881beeb530d1779eb530029c991d,/Dockerfile.armhf,"# Make libpython findable
+"
+527,4b6bfa47fc39881beeb530d1779eb530029c991d,/Dockerfile.armhf,"# Install pip
+"
+528,4b6bfa47fc39881beeb530d1779eb530029c991d,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+529,d212fe68a6f2d2fd83bb3afd47bd6b740fb6c965,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+530,bc14c473c97af14ed150160fe84d23fcb05fe4e2,/docs/Dockerfile,"# To get the git info for this repo
+"
+531,bc14c473c97af14ed150160fe84d23fcb05fe4e2,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Remove .md extension from link text
+# 4 Change ](/ to ](/project/ in links
+# 5 Change ](word) to ](/project/word)
+# 6 Change ](../../ to ](/project/
+# 7 Change ](../ to ](/project/word)
+# 
+# 
+"
+532,dd40658f87c3c706074ae186085c9edbc5a53e40,/Dockerfile,"# Set the default Docker to be run
+"
+533,afc9629c59117ab2ae050b91d1e732234591b47f,/Dockerfile,"# Build Python 2.7.9 from source
+"
+534,afc9629c59117ab2ae050b91d1e732234591b47f,/Dockerfile,"# Make libpython findable
+"
+535,afc9629c59117ab2ae050b91d1e732234591b47f,/Dockerfile,"# Install setuptools
+"
+536,afc9629c59117ab2ae050b91d1e732234591b47f,/Dockerfile,"# Install pip
+"
+537,afc9629c59117ab2ae050b91d1e732234591b47f,/Dockerfile,"# Set the default Docker to be run
+"
+538,e40fc0256111aae16013baad9aed82a07e9dd302,/docs/Dockerfile,"# To get the git info for this repo
+"
+539,e40fc0256111aae16013baad9aed82a07e9dd302,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Remove .md extension from link text
+# 4 Change ](/ to ](/project/ in links
+# 5 Change ](word) to ](/project/word)
+# 6 Change ](../../ to ](/project/
+# 7 Change ](../ to ](/project/word)
+# 
+# 
+"
+540,c06d9ec6723beae80f63f7b251d31f393502536b,/docs/Dockerfile,"# To get the git info for this repo
+"
+541,bb0bd3b26b91a8fdbcaf242265a29b9fffd9f904,/Dockerfile,"# Python3 requires a valid locale
+"
+542,bb0bd3b26b91a8fdbcaf242265a29b9fffd9f904,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+543,1deb534fee0bb150292930e8e07d48408326b0d7,/Dockerfile,"# Build Python 2.7.9 from source
+"
+544,1deb534fee0bb150292930e8e07d48408326b0d7,/Dockerfile,"# Build python 3.4 from source
+"
+545,1deb534fee0bb150292930e8e07d48408326b0d7,/Dockerfile,"# Make libpython findable
+"
+546,1deb534fee0bb150292930e8e07d48408326b0d7,/Dockerfile,"# Install setuptools
+"
+547,1deb534fee0bb150292930e8e07d48408326b0d7,/Dockerfile,"# Install pip
+"
+548,1deb534fee0bb150292930e8e07d48408326b0d7,/Dockerfile,"# Python3 requires a valid locale
+"
+549,fd1e8024f7524aab78c28a4b6a602b5af72e4a59,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+550,fd1e8024f7524aab78c28a4b6a602b5af72e4a59,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+551,fd1e8024f7524aab78c28a4b6a602b5af72e4a59,/Dockerfile.armhf,"# Make libpython findable
+"
+552,fd1e8024f7524aab78c28a4b6a602b5af72e4a59,/Dockerfile.armhf,"# Install pip
+"
+553,fd1e8024f7524aab78c28a4b6a602b5af72e4a59,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+554,c63ae64ca64c1e7feae9e5fb9494a92d2c18cff0,/Dockerfile,"# Build Python 2.7.9 from source
+"
+555,c63ae64ca64c1e7feae9e5fb9494a92d2c18cff0,/Dockerfile,"# Build python 3.4 from source
+"
+556,c63ae64ca64c1e7feae9e5fb9494a92d2c18cff0,/Dockerfile,"# Make libpython findable
+"
+557,c63ae64ca64c1e7feae9e5fb9494a92d2c18cff0,/Dockerfile,"# Install setuptools
+"
+558,c63ae64ca64c1e7feae9e5fb9494a92d2c18cff0,/Dockerfile,"# Install pip
+"
+559,c63ae64ca64c1e7feae9e5fb9494a92d2c18cff0,/Dockerfile,"# Python3 requires a valid locale
+"
+560,c63ae64ca64c1e7feae9e5fb9494a92d2c18cff0,/Dockerfile,"# Set the default Docker to be run
+"
+561,b3b44b8e4c7ee7463136bb13cf6c3d759e6d87e9,/docs/Dockerfile,"# To get the git info for this repo
+"
+562,b3b44b8e4c7ee7463136bb13cf6c3d759e6d87e9,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Remove .md extension from link text
+# 4 Change ](/ to ](/project/ in links
+# 5 Change ](word) to ](/project/word)
+# 6 Change ](../../ to ](/project/
+# 7 Change ](../ to ](/project/word)
+# 
+# 
+"
+563,ed549155b3aaf238d9415a4e2a4bfecf902b3ade,/Dockerfile,"# Set the default Docker to be run
+"
+564,d456c3909ddc5ea449197d9db03d41ec1f576a8f,/docs/Dockerfile,"# To get the git info for this repo
+"
+565,d456c3909ddc5ea449197d9db03d41ec1f576a8f,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
+"
+566,73551d5a92c93006ac3405ee60bb90a60da2900c,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+567,21f20cbc9b6735c97d33c49a5243d7c6281b2e52,/docs/Dockerfile,"# To get the git info for this repo
+"
+568,f89f9e3190a1b0f5183c5cc64046372d013f5616,/docs/Dockerfile,"# to get the git info for this repo
+"
+569,f89f9e3190a1b0f5183c5cc64046372d013f5616,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+"
+570,f89f9e3190a1b0f5183c5cc64046372d013f5616,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+"
+571,1a77a7fd447096da5dff32a14ebdad9264ae2fdd,/Dockerfile,"# Build Python 2.7.13 from source
+"
+572,1a77a7fd447096da5dff32a14ebdad9264ae2fdd,/Dockerfile,"# Build python 3.4 from source
+"
+573,1a77a7fd447096da5dff32a14ebdad9264ae2fdd,/Dockerfile,"# Make libpython findable
+"
+574,1a77a7fd447096da5dff32a14ebdad9264ae2fdd,/Dockerfile,"# Install pip
+"
+575,1a77a7fd447096da5dff32a14ebdad9264ae2fdd,/Dockerfile,"# Python3 requires a valid locale
+"
+576,9efb00457da0bb1c28393af3936f1e36525ec6df,/Dockerfile,"# Build Python 2.7.13 from source
+"
+577,9efb00457da0bb1c28393af3936f1e36525ec6df,/Dockerfile,"# Build python 3.4 from source
+"
+578,9efb00457da0bb1c28393af3936f1e36525ec6df,/Dockerfile,"# Make libpython findable
+"
+579,9efb00457da0bb1c28393af3936f1e36525ec6df,/Dockerfile,"# Install pip
+"
+580,9efb00457da0bb1c28393af3936f1e36525ec6df,/Dockerfile,"# Python3 requires a valid locale
+"
+581,d209ded13c9a7478fc47c41b2319fcf3c1935131,/Dockerfile,"# ENV ALL_DOCKER_VERSIONS 1.6.0
+
+# RUN set -ex; \
+#     for v in ${ALL_DOCKER_VERSIONS}; do \
+#         curl https://get.docker.com/builds/Linux/x86_64/docker-$v -o /usr/local/bin/docker-$v; \
+#         chmod +x /usr/local/bin/docker-$v; \
+#     done
+
+# Temporarily use dev version of Docker
+"
+582,c1c8c70800f32a160eababddaa24b4cdcce9779d,/Dockerfile,"# Build Python 2.7.9 from source
+"
+583,c1c8c70800f32a160eababddaa24b4cdcce9779d,/Dockerfile,"# Build python 3.4 from source
+"
+584,c1c8c70800f32a160eababddaa24b4cdcce9779d,/Dockerfile,"# Make libpython findable
+"
+585,c1c8c70800f32a160eababddaa24b4cdcce9779d,/Dockerfile,"# Install setuptools
+"
+586,c1c8c70800f32a160eababddaa24b4cdcce9779d,/Dockerfile,"# Install pip
+"
+587,c1c8c70800f32a160eababddaa24b4cdcce9779d,/Dockerfile,"# Python3 requires a valid locale
+"
+588,a9ac6778df8405c751facdcd157d0976e59689f6,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+589,a9ac6778df8405c751facdcd157d0976e59689f6,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+590,a9ac6778df8405c751facdcd157d0976e59689f6,/Dockerfile.armhf,"# Make libpython findable
+"
+591,a9ac6778df8405c751facdcd157d0976e59689f6,/Dockerfile.armhf,"# Install pip
+"
+592,a9ac6778df8405c751facdcd157d0976e59689f6,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+593,9da2bf3973cc78cbdf141197fd3338b233245696,/Dockerfile,"# Build Python 2.7.9 from source
+"
+594,9da2bf3973cc78cbdf141197fd3338b233245696,/Dockerfile,"# Build python 3.4 from source
+"
+595,9da2bf3973cc78cbdf141197fd3338b233245696,/Dockerfile,"# Make libpython findable
+"
+596,9da2bf3973cc78cbdf141197fd3338b233245696,/Dockerfile,"# Install setuptools
+"
+597,9da2bf3973cc78cbdf141197fd3338b233245696,/Dockerfile,"# Install pip
+"
+598,9da2bf3973cc78cbdf141197fd3338b233245696,/Dockerfile,"# Python3 requires a valid locale
+"
+599,9da2bf3973cc78cbdf141197fd3338b233245696,/Dockerfile,"# Set the default Docker to be run
+"
+600,a8d7ebd98752e17b1b7b4271e7d5d341afa586f5,/Dockerfile,"# Build Python 2.7.9 from source
+"
+601,a8d7ebd98752e17b1b7b4271e7d5d341afa586f5,/Dockerfile,"# Make libpython findable
+"
+602,a8d7ebd98752e17b1b7b4271e7d5d341afa586f5,/Dockerfile,"# Install setuptools
+"
+603,a8d7ebd98752e17b1b7b4271e7d5d341afa586f5,/Dockerfile,"# Install pip
+"
+604,a8d7ebd98752e17b1b7b4271e7d5d341afa586f5,/Dockerfile,"# Set the default Docker to be run
+"
+605,c5c36d8b006d9694c34b06e434e08bb17b025250,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
+"
+606,f49fc1867c2d4ea80a1de33cc9531834efc96d03,/Dockerfile,"# Build Python 2.7.9 from source
+"
+607,f49fc1867c2d4ea80a1de33cc9531834efc96d03,/Dockerfile,"# Build python 3.4 from source
+"
+608,f49fc1867c2d4ea80a1de33cc9531834efc96d03,/Dockerfile,"# Make libpython findable
+"
+609,f49fc1867c2d4ea80a1de33cc9531834efc96d03,/Dockerfile,"# Install setuptools
+"
+610,f49fc1867c2d4ea80a1de33cc9531834efc96d03,/Dockerfile,"# Install pip
+"
+611,f49fc1867c2d4ea80a1de33cc9531834efc96d03,/Dockerfile,"# Python3 requires a valid locale
+"
+612,f49fc1867c2d4ea80a1de33cc9531834efc96d03,/Dockerfile,"# Set the default Docker to be run
+"
+613,986036b6f9605a8cccc7bee5fed80e50cd1bffa4,/Dockerfile,"# Build Python 2.7.9 from source
+"
+614,986036b6f9605a8cccc7bee5fed80e50cd1bffa4,/Dockerfile,"# Build python 3.4 from source
+"
+615,986036b6f9605a8cccc7bee5fed80e50cd1bffa4,/Dockerfile,"# Make libpython findable
+"
+616,986036b6f9605a8cccc7bee5fed80e50cd1bffa4,/Dockerfile,"# Install setuptools
+"
+617,986036b6f9605a8cccc7bee5fed80e50cd1bffa4,/Dockerfile,"# Install pip
+"
+618,986036b6f9605a8cccc7bee5fed80e50cd1bffa4,/Dockerfile,"# Python3 requires a valid locale
+"
+619,dd3590180da36f5359d6463003b49ea2fca90315,/docs/Dockerfile,"# To get the git info for this repo
+"
+620,cd8e2f870f27aa6523de4b9f9bac0bff7678244a,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
+"
+621,928300478be04be20bdd601776fc69203c45fa19,/docs/Dockerfile,"# To get the git info for this repo
+"
+622,928300478be04be20bdd601776fc69203c45fa19,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
+"
+623,0de9a1b3884468d57279c4cb337ac3f0ad05e216,/docs/Dockerfile,"# To get the git info for this repo
+"
+624,a89bc304f6d9fafead4f56832f5ea7a0f6cadbe5,/Dockerfile,"# Set the default Docker to be run
+"
+625,e2ab2eb9d063aa6c67adba16f69963ece190eb44,/Dockerfile,"# Build Python 2.7.9 from source
+"
+626,e2ab2eb9d063aa6c67adba16f69963ece190eb44,/Dockerfile,"# Build python 3.4 from source
+"
+627,e2ab2eb9d063aa6c67adba16f69963ece190eb44,/Dockerfile,"# Make libpython findable
+"
+628,e2ab2eb9d063aa6c67adba16f69963ece190eb44,/Dockerfile,"# Install setuptools
+"
+629,e2ab2eb9d063aa6c67adba16f69963ece190eb44,/Dockerfile,"# Install pip
+"
+630,e2ab2eb9d063aa6c67adba16f69963ece190eb44,/Dockerfile,"# Python3 requires a valid locale
+"
+631,a89128118b7b94159939d54253e7a6f125a72087,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+632,6c95eed781d91ac418541df834f4c4f5732bca7a,/Dockerfile,"# Set the default Docker to be run
+"
+633,ae96e1af16d51c31553072fbc364977315b41aa9,/Dockerfile,"# Build Python 2.7.9 from source
+"
+634,ae96e1af16d51c31553072fbc364977315b41aa9,/Dockerfile,"# Make libpython findable
+"
+635,ae96e1af16d51c31553072fbc364977315b41aa9,/Dockerfile,"# Install setuptools
+"
+636,ae96e1af16d51c31553072fbc364977315b41aa9,/Dockerfile,"# Install pip
+"
+637,ae96e1af16d51c31553072fbc364977315b41aa9,/Dockerfile,"# Set the default Docker to be run
+"
+638,d285ba6aeee4c50f875a4cf0b31c7cca84e75745,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
+"
+639,165eb9c91a809dac1acd97fe090e30064cd50b3a,/Dockerfile,"# Build Python 2.7.13 from source
+"
+640,165eb9c91a809dac1acd97fe090e30064cd50b3a,/Dockerfile,"# Build python 3.4 from source
+"
+641,165eb9c91a809dac1acd97fe090e30064cd50b3a,/Dockerfile,"# Make libpython findable
+"
+642,165eb9c91a809dac1acd97fe090e30064cd50b3a,/Dockerfile,"# Install pip
+"
+643,165eb9c91a809dac1acd97fe090e30064cd50b3a,/Dockerfile,"# Python3 requires a valid locale
+"
+644,ea22d5821c849a6a83da551f9d10dcd5a645bd65,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+645,076b5bc31ce7d0415c6b947ff2df24f24056a84e,/Dockerfile,"# Build Python 2.7.9 from source
+"
+646,076b5bc31ce7d0415c6b947ff2df24f24056a84e,/Dockerfile,"# Build python 3.4 from source
+"
+647,076b5bc31ce7d0415c6b947ff2df24f24056a84e,/Dockerfile,"# Make libpython findable
+"
+648,076b5bc31ce7d0415c6b947ff2df24f24056a84e,/Dockerfile,"# Install setuptools
+"
+649,076b5bc31ce7d0415c6b947ff2df24f24056a84e,/Dockerfile,"# Install pip
+"
+650,076b5bc31ce7d0415c6b947ff2df24f24056a84e,/Dockerfile,"# Python3 requires a valid locale
+"
+651,0167aba2b7ff21729b008b09a96bb27a4339ec47,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+652,0167aba2b7ff21729b008b09a96bb27a4339ec47,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+653,0167aba2b7ff21729b008b09a96bb27a4339ec47,/Dockerfile.armhf,"# Make libpython findable
+"
+654,0167aba2b7ff21729b008b09a96bb27a4339ec47,/Dockerfile.armhf,"# Install pip
+"
+655,0167aba2b7ff21729b008b09a96bb27a4339ec47,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+656,2bc4161526162317934556dd702c19b70a2d8632,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+657,eabccda9d1602950847785d9fbedf815af5ccce0,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
+"
+658,f1603a3ee2b074df4cce61842bfc3dff2af8915e,/docs/Dockerfile,"# To get the git info for this repo
+"
+659,cd098e0cad4a0155b37179a77c6759ec33be0d61,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
+"
+660,b8c35e1298712c328c43deb298311c335ec4321e,/docs/Dockerfile,"# To get the git info for this repo
+"
+661,a2557a33546fc776b0e5a7b19f0eb0aa290da821,/Dockerfile,"# Set the default Docker to be run
+"
+662,8ffeaf2a54828014834f49e9a20d9486a6d6d335,/Dockerfile,"# Build Python 2.7.9 from source
+"
+663,8ffeaf2a54828014834f49e9a20d9486a6d6d335,/Dockerfile,"# Make libpython findable
+"
+664,8ffeaf2a54828014834f49e9a20d9486a6d6d335,/Dockerfile,"# Install setuptools
+"
+665,8ffeaf2a54828014834f49e9a20d9486a6d6d335,/Dockerfile,"# Install pip
+"
+666,8ffeaf2a54828014834f49e9a20d9486a6d6d335,/Dockerfile,"# Set the default Docker to be run
+"
+667,8f8c17bf66365445c2b3092e463291f0922fcf3f,/docs/Dockerfile,"# To get the git info for this repo
+"
+668,adb8de367ec550e073b8821a6bb57a931d4151c1,/docs/Dockerfile,"# To get the git info for this repo
+"
+669,d285ba6aeee4c50f875a4cf0b31c7cca84e75745,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
+"
+670,4f95e81c6d57c506f893bfe20edc9a1738e74c5f,/Dockerfile,"# Set the default Docker to be run
+"
+671,9f8e01fa9444c4179ab5f8b7df5b469f63db24cc,/Dockerfile,"# Build Python 2.7.13 from source
+"
+672,9f8e01fa9444c4179ab5f8b7df5b469f63db24cc,/Dockerfile,"# Build python 3.4 from source
+"
+673,9f8e01fa9444c4179ab5f8b7df5b469f63db24cc,/Dockerfile,"# Make libpython findable
+"
+674,9f8e01fa9444c4179ab5f8b7df5b469f63db24cc,/Dockerfile,"# Install pip
+"
+675,9f8e01fa9444c4179ab5f8b7df5b469f63db24cc,/Dockerfile,"# Python3 requires a valid locale
+"
+676,5ff3037aa850706762d006a655aa4829ab436898,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+677,5ff3037aa850706762d006a655aa4829ab436898,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+678,5ff3037aa850706762d006a655aa4829ab436898,/Dockerfile.armhf,"# Make libpython findable
+"
+679,5ff3037aa850706762d006a655aa4829ab436898,/Dockerfile.armhf,"# Install pip
+"
+680,5ff3037aa850706762d006a655aa4829ab436898,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+681,272e85dce36bd9ca4e982008137a765764f7eb84,/Dockerfile,"# Python3 requires a valid locale
+"
+682,272e85dce36bd9ca4e982008137a765764f7eb84,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+683,3bf75b7330a5e8189ba94741ea0179cb62052110,/docs/Dockerfile,"# To get the git info for this repo
+"
+684,1c73ff33fe12c1d93d29bd753f494fae9e2bb529,/Dockerfile,"# Build Python 2.7.9 from source
+"
+685,1c73ff33fe12c1d93d29bd753f494fae9e2bb529,/Dockerfile,"# Build python 3.4 from source
+"
+686,1c73ff33fe12c1d93d29bd753f494fae9e2bb529,/Dockerfile,"# Make libpython findable
+"
+687,1c73ff33fe12c1d93d29bd753f494fae9e2bb529,/Dockerfile,"# Install setuptools
+"
+688,1c73ff33fe12c1d93d29bd753f494fae9e2bb529,/Dockerfile,"# Install pip
+"
+689,1c73ff33fe12c1d93d29bd753f494fae9e2bb529,/Dockerfile,"# Python3 requires a valid locale
+"
+690,1c73ff33fe12c1d93d29bd753f494fae9e2bb529,/Dockerfile,"# Set the default Docker to be run
+"
+691,ac235a1f8571067e810fe0f9ba808e2c29bb9cc9,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+692,ac235a1f8571067e810fe0f9ba808e2c29bb9cc9,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+693,ac235a1f8571067e810fe0f9ba808e2c29bb9cc9,/Dockerfile.armhf,"# Make libpython findable
+"
+694,ac235a1f8571067e810fe0f9ba808e2c29bb9cc9,/Dockerfile.armhf,"# Install pip
+"
+695,ac235a1f8571067e810fe0f9ba808e2c29bb9cc9,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+696,3af56e1602d43b913f28a8919ee3cd197620d2c7,/Dockerfile,"# Set the default Docker to be run
+"
+697,8a89d94e157dab09fe4f51966401bc91a176f466,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+698,7850d6de4533de4f4663eace7ef5ee6aa2cb1ab0,/Dockerfile,"# Build Python 2.7.9 from source
+"
+699,7850d6de4533de4f4663eace7ef5ee6aa2cb1ab0,/Dockerfile,"# Make libpython findable
+"
+700,7850d6de4533de4f4663eace7ef5ee6aa2cb1ab0,/Dockerfile,"# Install setuptools
+"
+701,7850d6de4533de4f4663eace7ef5ee6aa2cb1ab0,/Dockerfile,"# Install pip
+"
+702,7850d6de4533de4f4663eace7ef5ee6aa2cb1ab0,/Dockerfile,"# Set the default Docker to be run
+"
+703,021bf465572c2dae7e002a98f415fc61fa864691,/Dockerfile,"# Set the default Docker to be run
+"
+704,3803d35c035f6611f99e4c2b18448ff88bdf99e6,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+705,ebc56c5adeaf25c04bd12f9ffeeb9fb55e953552,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+706,6e2d1eb80eec6036097f66d81cf8359e28e96636,/docs/Dockerfile,"# To get the git info for this repo
+"
+707,dc838067fd4ccdf381108acb03bac261924fd297,/tests/fixtures/build-shm-size/Dockerfile,"# Report the shm_size (through the size of /dev/shm)
+"
+708,3fd052afa0c4d112994813cabab96327d90c957e,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container will be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
+"
+709,c223c3fde950d9295ac33fef682d0ff9f206d5f8,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+710,c223c3fde950d9295ac33fef682d0ff9f206d5f8,/Dockerfile.armhf,"# Build python 3.6 from source
+"
+711,c223c3fde950d9295ac33fef682d0ff9f206d5f8,/Dockerfile.armhf,"# Make libpython findable
+"
+712,c223c3fde950d9295ac33fef682d0ff9f206d5f8,/Dockerfile.armhf,"# Install pip
+"
+713,c223c3fde950d9295ac33fef682d0ff9f206d5f8,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+714,9978c3ea52edbc99f2e293e98c4db5196972d655,/Dockerfile,"# Build Python 2.7.9 from source
+"
+715,9978c3ea52edbc99f2e293e98c4db5196972d655,/Dockerfile,"# Build python 3.4 from source
+"
+716,9978c3ea52edbc99f2e293e98c4db5196972d655,/Dockerfile,"# Make libpython findable
+"
+717,9978c3ea52edbc99f2e293e98c4db5196972d655,/Dockerfile,"# Install setuptools
+"
+718,9978c3ea52edbc99f2e293e98c4db5196972d655,/Dockerfile,"# Install pip
+"
+719,9978c3ea52edbc99f2e293e98c4db5196972d655,/Dockerfile,"# Python3 requires a valid locale
+"
+720,643166ae98764e1bfe8b2dad8de349e2c23c7f33,/docs/Dockerfile,"# To get the git info for this repo
+"
+721,53965e65b701997915455b5c01fc59a9fca2c0ce,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+722,a6459efcada48d8e61e4d9a6a7ad166e20385d8e,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
+"
+723,db852e14e4d8ebc1f0a477360ceef7694970dc59,/Dockerfile,"# Set the default Docker to be run
+"
+724,5a47b692c1142e632f89729ad76a1eddb626a33f,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+725,e0af1a44ea8da7d0d6f072690f4b5a768845dcec,/Dockerfile,"# Build Python 2.7.9 from source
+"
+726,e0af1a44ea8da7d0d6f072690f4b5a768845dcec,/Dockerfile,"# Make libpython findable
+"
+727,e0af1a44ea8da7d0d6f072690f4b5a768845dcec,/Dockerfile,"# Install setuptools
+"
+728,e0af1a44ea8da7d0d6f072690f4b5a768845dcec,/Dockerfile,"# Install pip
+"
+729,e0af1a44ea8da7d0d6f072690f4b5a768845dcec,/Dockerfile,"# Set the default Docker to be run
+"
+730,20a393d4f95adc5cca092b41138ff41e32627dc9,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
+"
+731,b446c097350f5981cf8ab411f1dba7e8307f6f65,/Dockerfile,"# Build Python 2.7.9 from source
+"
+732,b446c097350f5981cf8ab411f1dba7e8307f6f65,/Dockerfile,"# Build python 3.4 from source
+"
+733,b446c097350f5981cf8ab411f1dba7e8307f6f65,/Dockerfile,"# Make libpython findable
+"
+734,b446c097350f5981cf8ab411f1dba7e8307f6f65,/Dockerfile,"# Install setuptools
+"
+735,b446c097350f5981cf8ab411f1dba7e8307f6f65,/Dockerfile,"# Install pip
+"
+736,b446c097350f5981cf8ab411f1dba7e8307f6f65,/Dockerfile,"# Python3 requires a valid locale
+"
+737,23a808e5c469ce0230d7607c626a9d8e37ac05de,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+738,23a808e5c469ce0230d7607c626a9d8e37ac05de,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+739,23a808e5c469ce0230d7607c626a9d8e37ac05de,/Dockerfile.armhf,"# Make libpython findable
+"
+740,23a808e5c469ce0230d7607c626a9d8e37ac05de,/Dockerfile.armhf,"# Install pip
+"
+741,23a808e5c469ce0230d7607c626a9d8e37ac05de,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+742,4fd5d580762d5402b11a7103717b9f003b8efba2,/Dockerfile,"# Build Python 2.7.9 from source
+"
+743,4fd5d580762d5402b11a7103717b9f003b8efba2,/Dockerfile,"# Make libpython findable
+"
+744,4fd5d580762d5402b11a7103717b9f003b8efba2,/Dockerfile,"# Install setuptools
+"
+745,4fd5d580762d5402b11a7103717b9f003b8efba2,/Dockerfile,"# Install pip
+"
+746,4fd5d580762d5402b11a7103717b9f003b8efba2,/Dockerfile,"# Set the default Docker to be run
+"
+747,fdb7a1621238091b5caeefe86be0190cc673e605,/Dockerfile,"# Python3 requires a valid locale
+"
+748,263d18ce934cba81239354a24b30eb8d2f8091a0,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+749,6ccbb56fec4a4cdf7911d8513e27771e6f5ec002,/Dockerfile,"# Python3 requires a valid locale
+"
+750,6ccbb56fec4a4cdf7911d8513e27771e6f5ec002,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+751,847f839cabc8c688ef67db7f87b3342666a24964,/Dockerfile,"# Build Python 2.7.9 from source
+"
+752,847f839cabc8c688ef67db7f87b3342666a24964,/Dockerfile,"# Make libpython findable
+"
+753,847f839cabc8c688ef67db7f87b3342666a24964,/Dockerfile,"# Install setuptools
+"
+754,847f839cabc8c688ef67db7f87b3342666a24964,/Dockerfile,"# Install pip
+"
+755,847f839cabc8c688ef67db7f87b3342666a24964,/Dockerfile,"# Set the default Docker to be run
+"
+756,ad4cc5d6dfc0718d44bbcb6497f3483fc05b09f4,/Dockerfile,"# Build Python 2.7.9 from source
+"
+757,ad4cc5d6dfc0718d44bbcb6497f3483fc05b09f4,/Dockerfile,"# Make libpython findable
+"
+758,ad4cc5d6dfc0718d44bbcb6497f3483fc05b09f4,/Dockerfile,"# Install setuptools
+"
+759,ad4cc5d6dfc0718d44bbcb6497f3483fc05b09f4,/Dockerfile,"# Install pip
+"
+760,ad4cc5d6dfc0718d44bbcb6497f3483fc05b09f4,/Dockerfile,"# Set the default Docker to be run
+"
+761,e502417df28e689d07006eb6e7a7e29729ddda82,/docs/Dockerfile,"# To get the git info for this repo
+"
+762,8fc6ac1899ffd6d88cb08403192936a5a9e1aaf4,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
+"
+763,0074d74d7abe6047c4bd3ce97788c4798a83382c,/Dockerfile,"# Build Python 2.7.9 from source
+"
+764,0074d74d7abe6047c4bd3ce97788c4798a83382c,/Dockerfile,"# Build python 3.4 from source
+"
+765,0074d74d7abe6047c4bd3ce97788c4798a83382c,/Dockerfile,"# Make libpython findable
+"
+766,0074d74d7abe6047c4bd3ce97788c4798a83382c,/Dockerfile,"# Install setuptools
+"
+767,0074d74d7abe6047c4bd3ce97788c4798a83382c,/Dockerfile,"# Install pip
+"
+768,0074d74d7abe6047c4bd3ce97788c4798a83382c,/Dockerfile,"# Python3 requires a valid locale
+"
+769,0074d74d7abe6047c4bd3ce97788c4798a83382c,/Dockerfile,"# Set the default Docker to be run
+"
+770,d456c3909ddc5ea449197d9db03d41ec1f576a8f,/Dockerfile,"# Build Python 2.7.9 from source
+"
+771,d456c3909ddc5ea449197d9db03d41ec1f576a8f,/Dockerfile,"# Make libpython findable
+"
+772,d456c3909ddc5ea449197d9db03d41ec1f576a8f,/Dockerfile,"# Install setuptools
+"
+773,d456c3909ddc5ea449197d9db03d41ec1f576a8f,/Dockerfile,"# Install pip
+"
+774,d456c3909ddc5ea449197d9db03d41ec1f576a8f,/Dockerfile,"# Set the default Docker to be run
+"
+775,de374d845e899450db9122de29a8a822b2a6df5c,/docs/Dockerfile,"# To get the git info for this repo
+"
+776,c387d05a40f3482236d96639314ff96cf87a0a5b,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
+"
+777,3cddd1b670a56b323044210a3f77d107bcfc51a1,/Dockerfile,"# Python3 requires a valid locale
+"
+778,3cddd1b670a56b323044210a3f77d107bcfc51a1,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+779,284e3cfae961264ca568eed9e7350c3bd9e241ad,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+780,284e3cfae961264ca568eed9e7350c3bd9e241ad,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+781,284e3cfae961264ca568eed9e7350c3bd9e241ad,/Dockerfile.armhf,"# Make libpython findable
+"
+782,284e3cfae961264ca568eed9e7350c3bd9e241ad,/Dockerfile.armhf,"# Install pip
+"
+783,284e3cfae961264ca568eed9e7350c3bd9e241ad,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+784,b3382ffd4f455745c0401a0c2d6d74c2a182bc6f,/Dockerfile,"# Set the default Docker to be run
+"
+785,5b2a0cc73d104340964b299c11723e465ea7c112,/docs/Dockerfile,"# To get the git info for this repo
+"
+786,5b2a0cc73d104340964b299c11723e465ea7c112,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Remove .md extension from link text
+# 4 Change ](/ to ](/project/ in links
+# 5 Change ](word) to ](/project/word)
+# 6 Change ](../../ to ](/project/
+# 7 Change ](../ to ](/project/word)
+# 
+# 
+"
+787,daed6dbb91e07931add0d5ebca3b2139887a0321,/Dockerfile,"# Build Python 2.7.13 from source
+"
+788,daed6dbb91e07931add0d5ebca3b2139887a0321,/Dockerfile,"# Build python 3.4 from source
+"
+789,daed6dbb91e07931add0d5ebca3b2139887a0321,/Dockerfile,"# Make libpython findable
+"
+790,daed6dbb91e07931add0d5ebca3b2139887a0321,/Dockerfile,"# Install pip
+"
+791,daed6dbb91e07931add0d5ebca3b2139887a0321,/Dockerfile,"# Python3 requires a valid locale
+"
+792,a248cfd65ae27dfc734f44e57707dcb18ffd52d6,/docs/Dockerfile,"# To get the git info for this repo
+"
+793,a248cfd65ae27dfc734f44e57707dcb18ffd52d6,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
+"
+794,854c14a5bcf566792ee8a972325c37590521656b,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+795,952340043a0012be41e331a47321232a7a475136,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+796,bbc8b74c17b1fb6c29dd4013d470d591c6a417a0,/Dockerfile,"# Build Python 2.7.9 from source
+"
+797,bbc8b74c17b1fb6c29dd4013d470d591c6a417a0,/Dockerfile,"# Build python 3.4 from source
+"
+798,bbc8b74c17b1fb6c29dd4013d470d591c6a417a0,/Dockerfile,"# Make libpython findable
+"
+799,bbc8b74c17b1fb6c29dd4013d470d591c6a417a0,/Dockerfile,"# Install setuptools
+"
+800,bbc8b74c17b1fb6c29dd4013d470d591c6a417a0,/Dockerfile,"# Install pip
+"
+801,bbc8b74c17b1fb6c29dd4013d470d591c6a417a0,/Dockerfile,"# Python3 requires a valid locale
+"
+802,fc63454c99674b3758721bcc5df0cea841ed6ba5,/Dockerfile,"# Build Python 2.7.9 from source
+"
+803,fc63454c99674b3758721bcc5df0cea841ed6ba5,/Dockerfile,"# Build python 3.4 from source
+"
+804,fc63454c99674b3758721bcc5df0cea841ed6ba5,/Dockerfile,"# Make libpython findable
+"
+805,fc63454c99674b3758721bcc5df0cea841ed6ba5,/Dockerfile,"# Install setuptools
+"
+806,fc63454c99674b3758721bcc5df0cea841ed6ba5,/Dockerfile,"# Install pip
+"
+807,fc63454c99674b3758721bcc5df0cea841ed6ba5,/Dockerfile,"# Python3 requires a valid locale
+"
+808,fc63454c99674b3758721bcc5df0cea841ed6ba5,/Dockerfile,"# Set the default Docker to be run
+"
+809,15a0fac9394ca2af85d58a02476a859ff567e032,/Dockerfile,"# Set the default Docker to be run
+"
+810,3a3288c54bbea4aa197a3eb9e7c453d664c469e9,/Dockerfile,"# Python3 requires a valid locale
+"
+811,3a3288c54bbea4aa197a3eb9e7c453d664c469e9,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+812,5c47805dc30672da769ed31b976cc60dd6af10a9,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+813,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Build Python 2.7.9 from source
+"
+814,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Build python 3.4 from source
+"
+815,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Make libpython findable
+"
+816,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Install setuptools
+"
+817,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Install pip
+"
+818,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Python3 requires a valid locale
+"
+819,6ac617bae1871dc6dcd53c1108376f2a920541a0,/Dockerfile,"# Set the default Docker to be run
+"
+820,a42f2007eac1702a313b1e0cc3559ae83bcdb1e0,/docs/Dockerfile,"# to get the git info for this repo
+"
+821,a42f2007eac1702a313b1e0cc3559ae83bcdb1e0,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+"
+822,a42f2007eac1702a313b1e0cc3559ae83bcdb1e0,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+"
+823,6e8ac34c321d17b48c8b5d439f7dd948f8e72e43,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+824,9efb00457da0bb1c28393af3936f1e36525ec6df,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+825,9efb00457da0bb1c28393af3936f1e36525ec6df,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+826,9efb00457da0bb1c28393af3936f1e36525ec6df,/Dockerfile.armhf,"# Make libpython findable
+"
+827,9efb00457da0bb1c28393af3936f1e36525ec6df,/Dockerfile.armhf,"# Install pip
+"
+828,9efb00457da0bb1c28393af3936f1e36525ec6df,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+829,eca3146c9c26354203703095197a9f728e3d670b,/Dockerfile,"# Build Python 2.7.13 from source
+"
+830,eca3146c9c26354203703095197a9f728e3d670b,/Dockerfile,"# Build python 3.4 from source
+"
+831,eca3146c9c26354203703095197a9f728e3d670b,/Dockerfile,"# Make libpython findable
+"
+832,eca3146c9c26354203703095197a9f728e3d670b,/Dockerfile,"# Install pip
+"
+833,eca3146c9c26354203703095197a9f728e3d670b,/Dockerfile,"# Python3 requires a valid locale
+"
+834,b01601a53cc8839afbe332f00d0d1b8165012e7b,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+835,949dd5b2c7fffdd3790a9429f89af37dd2a8e0af,/docs/Dockerfile,"# To get the git info for this repo
+"
+836,949dd5b2c7fffdd3790a9429f89af37dd2a8e0af,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
+"
+837,847f839cabc8c688ef67db7f87b3342666a24964,/docs/Dockerfile,"# To get the git info for this repo
+"
+838,847f839cabc8c688ef67db7f87b3342666a24964,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
+"
+839,62cfeab533b0399b6431890dc55efd15d57fb5cb,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container will be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
+"
+840,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Build Python 2.7.9 from source
+"
+841,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Build python 3.4 from source
+"
+842,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Make libpython findable
+"
+843,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Install setuptools
+"
+844,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Install pip
+"
+845,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Python3 requires a valid locale
+"
+846,1451a6e1889b48a780759c41779e99b09ad16d18,/Dockerfile,"# Set the default Docker to be run
+"
+847,4390362366babb04b0b68759814206d2faff2b63,/Dockerfile,"# Build Python 2.7.9 from source
+"
+848,4390362366babb04b0b68759814206d2faff2b63,/Dockerfile,"# Make libpython findable
+"
+849,4390362366babb04b0b68759814206d2faff2b63,/Dockerfile,"# Install setuptools
+"
+850,4390362366babb04b0b68759814206d2faff2b63,/Dockerfile,"# Install pip
+"
+851,4390362366babb04b0b68759814206d2faff2b63,/Dockerfile,"# Set the default Docker to be run
+"
+852,80a378eabf05c109fec37963d3b0af397e4d1f6f,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+853,26ea27172e991ef496be6e20f3a7d9f8ff8e4c63,/Dockerfile,"# Build Python 2.7.9 from source
+"
+854,26ea27172e991ef496be6e20f3a7d9f8ff8e4c63,/Dockerfile,"# Make libpython findable
+"
+855,26ea27172e991ef496be6e20f3a7d9f8ff8e4c63,/Dockerfile,"# Install setuptools
+"
+856,26ea27172e991ef496be6e20f3a7d9f8ff8e4c63,/Dockerfile,"# Install pip
+"
+857,26ea27172e991ef496be6e20f3a7d9f8ff8e4c63,/Dockerfile,"# Set the default Docker to be run
+"
+858,a6459efcada48d8e61e4d9a6a7ad166e20385d8e,/Dockerfile,"# Python3 requires a valid locale
+"
+859,e7a8b2fed5b0ebb3b5ca2fdfbd37e0b29e093a79,/Dockerfile,"# Build Python 2.7.9 from source
+"
+860,e7a8b2fed5b0ebb3b5ca2fdfbd37e0b29e093a79,/Dockerfile,"# Build python 3.4 from source
+"
+861,e7a8b2fed5b0ebb3b5ca2fdfbd37e0b29e093a79,/Dockerfile,"# Make libpython findable
+"
+862,e7a8b2fed5b0ebb3b5ca2fdfbd37e0b29e093a79,/Dockerfile,"# Install setuptools
+"
+863,e7a8b2fed5b0ebb3b5ca2fdfbd37e0b29e093a79,/Dockerfile,"# Install pip
+"
+864,e7a8b2fed5b0ebb3b5ca2fdfbd37e0b29e093a79,/Dockerfile,"# Python3 requires a valid locale
+"
+865,78227c3c068a3ca7be47d3104fceb8c1e065e078,/Dockerfile,"# Set the default Docker to be run
+"
+866,c7cdd63acf77147fcb3d53112c8c56931d671151,/tests/fixtures/build-shm-size/Dockerfile,"# Report the shm_size (through the size of /dev/shm)
+"
+867,a9ac6778df8405c751facdcd157d0976e59689f6,/Dockerfile,"# Build Python 2.7.13 from source
+"
+868,a9ac6778df8405c751facdcd157d0976e59689f6,/Dockerfile,"# Build python 3.4 from source
+"
+869,a9ac6778df8405c751facdcd157d0976e59689f6,/Dockerfile,"# Make libpython findable
+"
+870,a9ac6778df8405c751facdcd157d0976e59689f6,/Dockerfile,"# Install pip
+"
+871,a9ac6778df8405c751facdcd157d0976e59689f6,/Dockerfile,"# Python3 requires a valid locale
+"
+872,9c5351cf27d10a7b8078496fb21a37929b6687cb,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+873,33c7c750e81528fb4c3a6a650821a722505726b5,/Dockerfile,"# Build Python 2.7.13 from source
+"
+874,33c7c750e81528fb4c3a6a650821a722505726b5,/Dockerfile,"# Build python 3.4 from source
+"
+875,33c7c750e81528fb4c3a6a650821a722505726b5,/Dockerfile,"# Make libpython findable
+"
+876,33c7c750e81528fb4c3a6a650821a722505726b5,/Dockerfile,"# Install pip
+"
+877,33c7c750e81528fb4c3a6a650821a722505726b5,/Dockerfile,"# Python3 requires a valid locale
+"
+878,6b68a84b9b0b6f7e4571d04a61522f1b15ee68b7,/docs/Dockerfile,"# To get the git info for this repo
+"
+879,77c939b256dbed699fdc4643114bea543208a660,/docs/Dockerfile,"# To get the git info for this repo
+"
+880,77c939b256dbed699fdc4643114bea543208a660,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Remove .md extension from link text
+# 4 Change ](/ to ](/project/ in links
+# 5 Change ](word) to ](/project/word)
+# 6 Change ](../../ to ](/project/
+# 7 Change ](../ to ](/project/word)
+# 
+# 
+"
+881,4cfa622de88b781448da64578794ec8958fb3cc7,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+882,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Build Python 2.7.9 from source
+"
+883,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Build python 3.4 from source
+"
+884,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Make libpython findable
+"
+885,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Install setuptools
+"
+886,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Install pip
+"
+887,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Python3 requires a valid locale
+"
+888,a1ec26435cbe41ad63e765bfd973ccf306a4e54c,/Dockerfile,"# Set the default Docker to be run
+"
+889,296d8ed155015d57e51ef8a5329363f7ce263a98,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+890,296d8ed155015d57e51ef8a5329363f7ce263a98,/Dockerfile.armhf,"# Build python 3.6 from source
+"
+891,296d8ed155015d57e51ef8a5329363f7ce263a98,/Dockerfile.armhf,"# Make libpython findable
+"
+892,296d8ed155015d57e51ef8a5329363f7ce263a98,/Dockerfile.armhf,"# Install pip
+"
+893,296d8ed155015d57e51ef8a5329363f7ce263a98,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+894,a734371e7fc27f07bbd5f3b16d7f19d49053716d,/Dockerfile,"# Python3 requires a valid locale
+"
+895,a734371e7fc27f07bbd5f3b16d7f19d49053716d,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+896,809443d6d03e1ec687c01e546ddd9031b56ce40c,/Dockerfile,"# Build Python 2.7.9 from source
+"
+897,809443d6d03e1ec687c01e546ddd9031b56ce40c,/Dockerfile,"# Make libpython findable
+"
+898,809443d6d03e1ec687c01e546ddd9031b56ce40c,/Dockerfile,"# Install setuptools
+"
+899,809443d6d03e1ec687c01e546ddd9031b56ce40c,/Dockerfile,"# Install pip
+"
+900,809443d6d03e1ec687c01e546ddd9031b56ce40c,/Dockerfile,"# Set the default Docker to be run
+"
+901,cd0b63879b177f39d87345381384bc56b6b782ef,/Dockerfile,"# Build Python 2.7.9 from source
+"
+902,cd0b63879b177f39d87345381384bc56b6b782ef,/Dockerfile,"# Build python 3.4 from source
+"
+903,cd0b63879b177f39d87345381384bc56b6b782ef,/Dockerfile,"# Make libpython findable
+"
+904,cd0b63879b177f39d87345381384bc56b6b782ef,/Dockerfile,"# Install setuptools
+"
+905,cd0b63879b177f39d87345381384bc56b6b782ef,/Dockerfile,"# Install pip
+"
+906,cd0b63879b177f39d87345381384bc56b6b782ef,/Dockerfile,"# Python3 requires a valid locale
+"
+907,98932e9cb4dcef791a93b1000cb7a400411906c0,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+908,8076c7d7fec159ec1daf174275fe23b3abc9cdf7,/docs/Dockerfile,"# to get the git info for this repo
+"
+909,8076c7d7fec159ec1daf174275fe23b3abc9cdf7,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+"
+910,8076c7d7fec159ec1daf174275fe23b3abc9cdf7,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+"
+911,e0e712736134796f79c43dd36274b6d99ce3c723,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+912,e8e2eb6e59f9351919eec9903d6ed5dd43c27826,/Dockerfile,"# Build Python 2.7.13 from source
+"
+913,e8e2eb6e59f9351919eec9903d6ed5dd43c27826,/Dockerfile,"# Build python 3.4 from source
+"
+914,e8e2eb6e59f9351919eec9903d6ed5dd43c27826,/Dockerfile,"# Make libpython findable
+"
+915,e8e2eb6e59f9351919eec9903d6ed5dd43c27826,/Dockerfile,"# Install pip
+"
+916,e8e2eb6e59f9351919eec9903d6ed5dd43c27826,/Dockerfile,"# Python3 requires a valid locale
+"
+917,836e2b7c4dd9c65b7e829104d116ee2050021343,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+918,b4c49ed805656890fe3ce9a1315688fe8c514dd5,/Dockerfile,"# Build Python 2.7.9 from source
+"
+919,b4c49ed805656890fe3ce9a1315688fe8c514dd5,/Dockerfile,"# Make libpython findable
+"
+920,b4c49ed805656890fe3ce9a1315688fe8c514dd5,/Dockerfile,"# Install setuptools
+"
+921,b4c49ed805656890fe3ce9a1315688fe8c514dd5,/Dockerfile,"# Install pip
+"
+922,b4c49ed805656890fe3ce9a1315688fe8c514dd5,/Dockerfile,"# Set the default Docker to be run
+"
+923,b317071cf30689a6e31bc4ffc4f27abb1d45efa7,/Dockerfile,"# Set the default Docker to be run
+"
+924,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+925,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile.armhf,"# Build python 3.6 from source
+"
+926,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile.armhf,"# Make libpython findable
+"
+927,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile.armhf,"# Install pip
+"
+928,a0f78539b64ee81eb5e43feac85c4ed4b449e102,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+929,eca3146c9c26354203703095197a9f728e3d670b,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+930,eca3146c9c26354203703095197a9f728e3d670b,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+931,eca3146c9c26354203703095197a9f728e3d670b,/Dockerfile.armhf,"# Make libpython findable
+"
+932,eca3146c9c26354203703095197a9f728e3d670b,/Dockerfile.armhf,"# Install pip
+"
+933,eca3146c9c26354203703095197a9f728e3d670b,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+934,f1603a3ee2b074df4cce61842bfc3dff2af8915e,/Dockerfile,"# Build Python 2.7.9 from source
+"
+935,f1603a3ee2b074df4cce61842bfc3dff2af8915e,/Dockerfile,"# Build python 3.4 from source
+"
+936,f1603a3ee2b074df4cce61842bfc3dff2af8915e,/Dockerfile,"# Make libpython findable
+"
+937,f1603a3ee2b074df4cce61842bfc3dff2af8915e,/Dockerfile,"# Install setuptools
+"
+938,f1603a3ee2b074df4cce61842bfc3dff2af8915e,/Dockerfile,"# Install pip
+"
+939,f1603a3ee2b074df4cce61842bfc3dff2af8915e,/Dockerfile,"# Python3 requires a valid locale
+"
+940,ed31673069b417c1f9761812bfb7ea2b82c09ae1,/Dockerfile,"# Build Python 2.7.9 from source
+"
+941,ed31673069b417c1f9761812bfb7ea2b82c09ae1,/Dockerfile,"# Make libpython findable
+"
+942,ed31673069b417c1f9761812bfb7ea2b82c09ae1,/Dockerfile,"# Install setuptools
+"
+943,ed31673069b417c1f9761812bfb7ea2b82c09ae1,/Dockerfile,"# Install pip
+"
+944,ed31673069b417c1f9761812bfb7ea2b82c09ae1,/Dockerfile,"# Set the default Docker to be run
+"
+945,a541d88d570617ea3ef2694798170386d03d7ad4,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+946,b1739e703b4ac4206d0a45c859ece5ae4ded84e8,/docs/Dockerfile,"# to get the git info for this repo
+"
+947,b1739e703b4ac4206d0a45c859ece5ae4ded84e8,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+"
+948,b1739e703b4ac4206d0a45c859ece5ae4ded84e8,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+"
+949,e7a8b2fed5b0ebb3b5ca2fdfbd37e0b29e093a79,/docs/Dockerfile,"# To get the git info for this repo
+"
+950,9efb00457da0bb1c28393af3936f1e36525ec6df,/tests/fixtures/simple-failing-dockerfile/Dockerfile,"# With the following label the container wil be cleaned up automatically
+# Must be kept in sync with LABEL_PROJECT from compose/const.py
+"
+951,0e9ccd36f3c672902a5241f557ed81df19255ccc,/Dockerfile,"# Build Python 2.7.9 from source
+"
+952,0e9ccd36f3c672902a5241f557ed81df19255ccc,/Dockerfile,"# Make libpython findable
+"
+953,0e9ccd36f3c672902a5241f557ed81df19255ccc,/Dockerfile,"# Install setuptools
+"
+954,0e9ccd36f3c672902a5241f557ed81df19255ccc,/Dockerfile,"# Install pip
+"
+955,0e9ccd36f3c672902a5241f557ed81df19255ccc,/Dockerfile,"# Set the default Docker to be run
+"
+956,e0412a24884351e093764b91cc2689c682bc1562,/Dockerfile,"# Python3 requires a valid locale
+"
+957,e0412a24884351e093764b91cc2689c682bc1562,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+958,be807a0be851f0c2c0809b69ae47c5e781d879f0,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+959,e8424d5ae0de01fae98fa7aaff3c79cbb1dfcf2b,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+960,f3df2a9fecaa0b4a90a6a6b9ba02ba2b16bb4ccb,/Dockerfile,"# Build Python 2.7.9 from source
+"
+961,f3df2a9fecaa0b4a90a6a6b9ba02ba2b16bb4ccb,/Dockerfile,"# Make libpython findable
+"
+962,f3df2a9fecaa0b4a90a6a6b9ba02ba2b16bb4ccb,/Dockerfile,"# Install setuptools
+"
+963,f3df2a9fecaa0b4a90a6a6b9ba02ba2b16bb4ccb,/Dockerfile,"# Install pip
+"
+964,f3df2a9fecaa0b4a90a6a6b9ba02ba2b16bb4ccb,/Dockerfile,"# Set the default Docker to be run
+"
+965,2943ac6812bcc8cdcd5b877155cdf69dd08c5b8a,/Dockerfile,"# Build Python 2.7.9 from source
+"
+966,2943ac6812bcc8cdcd5b877155cdf69dd08c5b8a,/Dockerfile,"# Build python 3.4 from source
+"
+967,2943ac6812bcc8cdcd5b877155cdf69dd08c5b8a,/Dockerfile,"# Make libpython findable
+"
+968,2943ac6812bcc8cdcd5b877155cdf69dd08c5b8a,/Dockerfile,"# Install setuptools
+"
+969,2943ac6812bcc8cdcd5b877155cdf69dd08c5b8a,/Dockerfile,"# Install pip
+"
+970,2943ac6812bcc8cdcd5b877155cdf69dd08c5b8a,/Dockerfile,"# Set the default Docker to be run
+"
+971,52733f699681c3ee762917d2d837fa4bd8c4a9ba,/Dockerfile,"# Build Python 2.7.9 from source
+"
+972,52733f699681c3ee762917d2d837fa4bd8c4a9ba,/Dockerfile,"# Make libpython findable
+"
+973,52733f699681c3ee762917d2d837fa4bd8c4a9ba,/Dockerfile,"# Install setuptools
+"
+974,52733f699681c3ee762917d2d837fa4bd8c4a9ba,/Dockerfile,"# Install pip
+"
+975,52733f699681c3ee762917d2d837fa4bd8c4a9ba,/Dockerfile,"# Set the default Docker to be run
+"
+976,6ccbb56fec4a4cdf7911d8513e27771e6f5ec002,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+977,9098a6739459e50bd67b832028e73d69c22fea5d,/tests/fixtures/build-memory/Dockerfile,"# Report the memory (through the size of the group memory)
+"
+978,fb4c9fbb8ba2797284296601eb904dd24c6a7b47,/Dockerfile,"# Build Python 2.7.9 from source
+"
+979,fb4c9fbb8ba2797284296601eb904dd24c6a7b47,/Dockerfile,"# Make libpython findable
+"
+980,fb4c9fbb8ba2797284296601eb904dd24c6a7b47,/Dockerfile,"# Install setuptools
+"
+981,fb4c9fbb8ba2797284296601eb904dd24c6a7b47,/Dockerfile,"# Install pip
+"
+982,fb4c9fbb8ba2797284296601eb904dd24c6a7b47,/Dockerfile,"# Set the default Docker to be run
+"
+983,85d940909e941915ea5a5e1e5c2f8bd0a086948e,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+984,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile.armhf,"# Build Python 2.7.13 from source
+"
+985,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile.armhf,"# Build python 3.4 from source
+"
+986,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile.armhf,"# Make libpython findable
+"
+987,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile.armhf,"# Install pip
+"
+988,f4d7d32280cab3feffc20c09015bc81b7b819849,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+989,4b6bfa47fc39881beeb530d1779eb530029c991d,/Dockerfile,"# Build Python 2.7.13 from source
+"
+990,4b6bfa47fc39881beeb530d1779eb530029c991d,/Dockerfile,"# Build python 3.6 from source
+"
+991,4b6bfa47fc39881beeb530d1779eb530029c991d,/Dockerfile,"# Make libpython findable
+"
+992,4b6bfa47fc39881beeb530d1779eb530029c991d,/Dockerfile,"# Install pip
+"
+993,4b6bfa47fc39881beeb530d1779eb530029c991d,/Dockerfile,"# Python3 requires a valid locale
+"
+994,a734371e7fc27f07bbd5f3b16d7f19d49053716d,/Dockerfile.armhf,"# Python3 requires a valid locale
+"
+995,bc7161b475f7032bfc36e177935e9d7b13354718,/Dockerfile,"# Build Python 2.7.9 from source
+"
+996,bc7161b475f7032bfc36e177935e9d7b13354718,/Dockerfile,"# Make libpython findable
+"
+997,bc7161b475f7032bfc36e177935e9d7b13354718,/Dockerfile,"# Install setuptools
+"
+998,bc7161b475f7032bfc36e177935e9d7b13354718,/Dockerfile,"# Install pip
+"
+999,bc7161b475f7032bfc36e177935e9d7b13354718,/Dockerfile,"# Set the default Docker to be run
+"
+1000,50f06c6ba223fee1a8673ac7d5f15b1b123d131b,/Dockerfile,"# Build Python 2.7.9 from source
+"
+1001,50f06c6ba223fee1a8673ac7d5f15b1b123d131b,/Dockerfile,"# Build python 3.4 from source
+"
+1002,50f06c6ba223fee1a8673ac7d5f15b1b123d131b,/Dockerfile,"# Make libpython findable
+"
+1003,50f06c6ba223fee1a8673ac7d5f15b1b123d131b,/Dockerfile,"# Install setuptools
+"
+1004,50f06c6ba223fee1a8673ac7d5f15b1b123d131b,/Dockerfile,"# Install pip
+"
+1005,50f06c6ba223fee1a8673ac7d5f15b1b123d131b,/Dockerfile,"# Python3 requires a valid locale
+"
+1006,2caf573b89c0de884bb75aef7a7d8bb4343281b1,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+1007,84774cacd210bb176c2daf73106c7dc849a6a0d7,/Dockerfile,"# Build Python 2.7.13 from source
+"
+1008,84774cacd210bb176c2daf73106c7dc849a6a0d7,/Dockerfile,"# Build python 3.4 from source
+"
+1009,84774cacd210bb176c2daf73106c7dc849a6a0d7,/Dockerfile,"# Make libpython findable
+"
+1010,84774cacd210bb176c2daf73106c7dc849a6a0d7,/Dockerfile,"# Install pip
+"
+1011,84774cacd210bb176c2daf73106c7dc849a6a0d7,/Dockerfile,"# Python3 requires a valid locale
+"
+1012,427ec899df7661a114901cef83118bbe8cb8480e,/docs/Dockerfile,"# To get the git info for this repo
+"
+1013,dc88e540106e7f74d6d8fcb9cae52a8d56e1fb2b,/docs/Dockerfile,"# To get the git info for this repo
+"
+1014,86530287d6fdc13e52ffbc3fe2447888ecc6e197,/docs/Dockerfile,"# To get the git info for this repo
+"
+1015,8cecf2e02dbf9e4d28d06878062f88d5639426ce,/Dockerfile,"# Build Python 2.7.9 from source
+"
+1016,8cecf2e02dbf9e4d28d06878062f88d5639426ce,/Dockerfile,"# Build python 3.4 from source
+"
+1017,8cecf2e02dbf9e4d28d06878062f88d5639426ce,/Dockerfile,"# Make libpython findable
+"
+1018,8cecf2e02dbf9e4d28d06878062f88d5639426ce,/Dockerfile,"# Install setuptools
+"
+1019,8cecf2e02dbf9e4d28d06878062f88d5639426ce,/Dockerfile,"# Install pip
+"
+1020,8cecf2e02dbf9e4d28d06878062f88d5639426ce,/Dockerfile,"# Python3 requires a valid locale
+"
+1021,c3a5488d118473e56b3b45e4a0a1dd1c26c87553,/Dockerfile,"# Python3 requires a valid locale
+"
+1022,7bd4291f902bd03a179fe9b87fb8fac04f62e207,/Dockerfile,"# Python3 requires a valid locale
+"
+1023,ca721728f64a89f02659f84fcab1a184f0f3be82,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+1024,e08409f18d0d72f4e3201cfe664bbfa55dd7bc31,/docs/Dockerfile,"# To get the git info for this repo
+"
+1025,a89128118b7b94159939d54253e7a6f125a72087,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+1026,85ba08bb13b0c964586f266f45c1479dc053d33d,/docs/Dockerfile,"# To get the git info for this repo
+"
+1027,0286d282f97ba8f00675d39091002ba5065c9dc1,/Dockerfile,"# Build Python 2.7.9 from source
+"
+1028,0286d282f97ba8f00675d39091002ba5065c9dc1,/Dockerfile,"# Build python 3.4 from source
+"
+1029,0286d282f97ba8f00675d39091002ba5065c9dc1,/Dockerfile,"# Make libpython findable
+"
+1030,0286d282f97ba8f00675d39091002ba5065c9dc1,/Dockerfile,"# Install setuptools
+"
+1031,0286d282f97ba8f00675d39091002ba5065c9dc1,/Dockerfile,"# Install pip
+"
+1032,0286d282f97ba8f00675d39091002ba5065c9dc1,/Dockerfile,"# Python3 requires a valid locale
+"
+1033,0286d282f97ba8f00675d39091002ba5065c9dc1,/Dockerfile,"# Set the default Docker to be run
+"
+1034,853ce255eac5375562e399d3e105dc5a456dbb99,/Dockerfile,"# Set the default Docker to be run
+"
+1035,6166a40f7c85eb347e439445cbdfc118ffaac0b5,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+1036,50dc27aed75d88faff4d0830af814fac59feeda5,/docs/Dockerfile,"# To get the git info for this repo
+"
+1037,cc0bfea8a10c2c6b72a5027549534adbdfc95bd2,/docs/Dockerfile,"# To get the git info for this repo
+"
+1038,cc0bfea8a10c2c6b72a5027549534adbdfc95bd2,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
+"
+1039,8af0a0f85bb278691cc25c6d4c8f28cf7bc34784,/docs/Dockerfile,"# To get the git info for this repo
+"
+1040,98eab03c61bc6f836eebff511be8f610c11c7d63,/docs/Dockerfile,"# To get the git info for this repo
+"
+1041,98eab03c61bc6f836eebff511be8f610c11c7d63,/docs/Dockerfile,"# Sed to process GitHub Markdown
+# 1-2 Remove comment code from metadata block
+# 3 Change ](/word to ](/project/ in links
+# 4 Change ](word.md) to ](/project/word)
+# 5 Remove .md extension from link text
+# 6 Change ](../ to ](/project/word) 
+# 7 Change ](../../ to ](/project/ --> not implemented
+# 
+# 
+"
+1042,1b326fce57ea761c738da8c852809c300466eef8,/Dockerfile,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed
+"
+1043,bc14c473c97af14ed150160fe84d23fcb05fe4e2,/Dockerfile,"# Build Python 2.7.9 from source
+"
+1044,bc14c473c97af14ed150160fe84d23fcb05fe4e2,/Dockerfile,"# Make libpython findable
+"
+1045,bc14c473c97af14ed150160fe84d23fcb05fe4e2,/Dockerfile,"# Install setuptools
+"
+1046,bc14c473c97af14ed150160fe84d23fcb05fe4e2,/Dockerfile,"# Install pip
+"
+1047,bc14c473c97af14ed150160fe84d23fcb05fe4e2,/Dockerfile,"# Set the default Docker to be run
 "

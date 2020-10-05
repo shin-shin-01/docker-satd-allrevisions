@@ -1,4 +1,4 @@
-,CommitID,Dockerfiles,Comments
+,CommitID,Dockerfile,Comment
 0,94177914eda20bd97b8d1c7c9693da96f3633d27,/Dockerfile,"# build container
 "
 1,94177914eda20bd97b8d1c7c9693da96f3633d27,/Dockerfile,"# driver container
@@ -45,82 +45,106 @@
 "
 21,9b7aec9824bcbb46f02386d40c962c1519553801,/Dockerfile.csi-sanity,"#ENTRYPOINT [""/bin/sh"", ""-c"", ""/run-driver && /csi-sanity --csi.endpoint=${SOCK} --csi.createpathcmdtimeout=180 --csi.removepathcmdtimeout=180]
 "
-22,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.pre-release,"# pre-release container generates:
+22,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile,"# build container
+"
+23,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile,"# driver container
+"
+24,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile,"# install nfs and smb dependencies
+"
+25,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile,"# create driver config folder and print version
+"
+26,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile,"# init script: runs rpcbind before starting the plugin
+"
+27,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile,"#!/usr/bin/env sh\nrpcbind;\n/nexentastor-csi-driver ""$@"";\n' > /init.sh
+"
+28,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.pre-release,"# pre-release container generates:
 # - CNAHGELOG.md
 
 "
-23,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.pre-release,"# deps
+29,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.pre-release,"# deps
 "
-24,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.pre-release,"# source code
+30,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.pre-release,"# source code
 "
-25,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.pre-release,"# next release tag
+31,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.pre-release,"# next release tag
 "
-26,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.pre-release,"# generate changelog
+32,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.pre-release,"# generate changelog
 "
-27,4077797331a4ac279a4594251f24e1d60fcb1ce5,/Dockerfile.tests,"# tests container
+33,4077797331a4ac279a4594251f24e1d60fcb1ce5,/Dockerfile.tests,"# tests container
 "
-28,4077797331a4ac279a4594251f24e1d60fcb1ce5,/Dockerfile.tests,"# install deps
+34,4077797331a4ac279a4594251f24e1d60fcb1ce5,/Dockerfile.tests,"# install deps
 "
-29,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# build container
+35,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile,"# build container
 "
-30,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
+36,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile,"# driver container
 "
-31,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# install dependencies
+37,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile,"# install nfs and smb dependencies
 "
-32,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# download csi-sanity binaries
+38,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile,"# create driver config folder and print version
 "
-33,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# copy driver from build container
+39,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile,"# init script: runs rpcbind before starting the plugin
 "
-34,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# copy driver config file
+40,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile,"#!/usr/bin/env sh\nrpcbind;\n/nexentastor-csi-driver ""$@"";\n' > /init.sh
 "
-35,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# test mount direactory
+41,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# build container
 "
-36,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# driver UNIX socket
+42,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
 "
-37,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# driver run script
+43,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# install dependencies
 "
-38,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+44,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# download csi-sanity binaries
 "
-39,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile,"# build container
+45,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# copy driver from build container
 "
-40,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile,"# driver container
+46,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# copy driver config file
 "
-41,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.tests,"# install deps
+47,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# test mount direactory
 "
-42,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# csi-sanity build container
+48,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# driver UNIX socket
 "
-43,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# csi-sanity versions: https://github.com/kubernetes-csi/csi-test/releases
+49,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# driver run script
 "
-44,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# driver build container
+50,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
 "
-45,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
+51,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile,"# build container
 "
-46,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# driver UNIX socket
+52,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile,"# driver container
 "
-47,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# install dependencies
+53,023b68a4880a797e31f824a7bf3ce0ab35140ce5,/Dockerfile.tests,"# install deps
 "
-48,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# copy csi-sanity from build container
+54,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# csi-sanity build container
 "
-49,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# copy driver from build container
+55,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# csi-sanity versions: https://github.com/kubernetes-csi/csi-test/releases
 "
-50,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# copy driver config file
+56,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# driver build container
 "
-51,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# create mount direactory for tests
+57,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
+"
+58,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# driver UNIX socket
+"
+59,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# install dependencies
+"
+60,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# copy csi-sanity from build container
+"
+61,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# copy driver from build container
+"
+62,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# copy driver config file
+"
+63,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# create mount direactory for tests
 # driver run script
 "
-52,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
+64,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
 "
-53,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# versions
+65,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# versions
 "
-54,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+66,b99c6dfd96570909122af1351ed0b1a472176493,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
 #TODO remove ""--ginkgo.skip"" option after switching from v2.0.1 to the next release,
 # after releasing this https://github.com/kubernetes-csi/csi-test/pull/205/files
 "
-55,c9fd3a12fd56e5afb8159aa685696f130fa26bf1,/Dockerfile.tests,"# tests container
+67,c9fd3a12fd56e5afb8159aa685696f130fa26bf1,/Dockerfile.tests,"# tests container
 "
-56,c9fd3a12fd56e5afb8159aa685696f130fa26bf1,/Dockerfile.tests,"# install deps
+68,c9fd3a12fd56e5afb8159aa685696f130fa26bf1,/Dockerfile.tests,"# install deps
 "
-57,84cd3525a7182cbdd3a02fdf6cb29173e2e0e880,/vendor/golang.org/x/net/http2/Dockerfile,"#
+69,84cd3525a7182cbdd3a02fdf6cb29173e2e0e880,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
@@ -129,303 +153,399 @@
 #
 
 "
-58,84cd3525a7182cbdd3a02fdf6cb29173e2e0e880,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
+70,84cd3525a7182cbdd3a02fdf6cb29173e2e0e880,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
 "
-59,84cd3525a7182cbdd3a02fdf6cb29173e2e0e880,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+71,84cd3525a7182cbdd3a02fdf6cb29173e2e0e880,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-60,acb796e844296890dbd504981aafa01614d61bcb,/Dockerfile.pre-release,"# pre-release container generates:
+72,acb796e844296890dbd504981aafa01614d61bcb,/Dockerfile.pre-release,"# pre-release container generates:
 # - CNAHGELOG.md
 
 "
-61,acb796e844296890dbd504981aafa01614d61bcb,/Dockerfile.pre-release,"# deps
+73,acb796e844296890dbd504981aafa01614d61bcb,/Dockerfile.pre-release,"# deps
 "
-62,acb796e844296890dbd504981aafa01614d61bcb,/Dockerfile.pre-release,"# source code
+74,acb796e844296890dbd504981aafa01614d61bcb,/Dockerfile.pre-release,"# source code
 "
-63,acb796e844296890dbd504981aafa01614d61bcb,/Dockerfile.pre-release,"# next release tag
+75,acb796e844296890dbd504981aafa01614d61bcb,/Dockerfile.pre-release,"# next release tag
 "
-64,acb796e844296890dbd504981aafa01614d61bcb,/Dockerfile.pre-release,"# generate changelog
+76,acb796e844296890dbd504981aafa01614d61bcb,/Dockerfile.pre-release,"# generate changelog
 "
-65,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# csi-sanity build container
+77,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"# csi-sanity build container
 "
-66,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# driver build container
+78,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"# csi-sanity versions: https://github.com/kubernetes-csi/csi-test/releases
 "
-67,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
+79,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"# driver build container
 "
-68,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# driver UNIX socket
+80,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
 "
-69,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# install dependencies
+81,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"# driver UNIX socket
 "
-70,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# copy csi-sanity from build container
+82,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"# install dependencies
 "
-71,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# copy driver from build container
+83,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"# copy csi-sanity from build container
 "
-72,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# copy driver config file
+84,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"# copy driver from build container
 "
-73,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# create mount direactory for tests
+85,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"# copy driver config file
 "
-74,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# driver run script
+86,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"# create mount direactory for tests
+# driver run script
 "
-75,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
+87,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"# details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
 "
-76,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# versions
+88,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"# versions
 "
-77,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+89,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+#TODO remove ""--ginkgo.skip"" option after fixing volume paginatin by token:
 "
-78,d15434ca5f00a0201c911154171bfc8d6224af44,/Dockerfile,"# build container
+90,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.csi-sanity,"#ENTRYPOINT [""/bin/sh"", ""-c"", ""/run-driver && /csi-sanity --csi.endpoint=${SOCK} --csi.createpathcmdtimeout=180 --csi.removepathcmdtimeout=180]
 "
-79,d15434ca5f00a0201c911154171bfc8d6224af44,/Dockerfile,"# driver container
+91,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# csi-sanity build container
 "
-80,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# build container
+92,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# driver build container
 "
-81,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
+93,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
 "
-82,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# install dependencies
+94,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# driver UNIX socket
 "
-83,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# download csi-sanity binaries
+95,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# install dependencies
 "
-84,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# copy driver from build container
+96,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# copy csi-sanity from build container
 "
-85,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# copy driver config file
+97,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# copy driver from build container
 "
-86,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# test mount direactory
+98,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# copy driver config file
 "
-87,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# driver UNIX socket
+99,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# create mount direactory for tests
 "
-88,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# driver run script
+100,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# driver run script
 "
-89,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# keep this while https://github.com/kubernetes-csi/csi-test/issues/149 is open
+101,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
+"
+102,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# versions
+"
+103,ef1faf9cccb335a7f866648126b92e5daeb24cd4,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+"
+104,d15434ca5f00a0201c911154171bfc8d6224af44,/Dockerfile,"# build container
+"
+105,d15434ca5f00a0201c911154171bfc8d6224af44,/Dockerfile,"# driver container
+"
+106,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# build container
+"
+107,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
+"
+108,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# install dependencies
+"
+109,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# download csi-sanity binaries
+"
+110,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# copy driver from build container
+"
+111,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# copy driver config file
+"
+112,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# test mount direactory
+"
+113,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# driver UNIX socket
+"
+114,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# driver run script
+"
+115,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# keep this while https://github.com/kubernetes-csi/csi-test/issues/149 is open
 # solution details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
 "
-90,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+116,341f2d58ef0cc7c0869ffc010ab5aa0b5862d18f,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
 "
-91,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.pre-release,"# pre-release container generates:
+117,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"# csi-sanity build container
+"
+118,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"# csi-sanity versions: https://github.com/kubernetes-csi/csi-test/releases
+"
+119,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"# driver build container
+"
+120,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
+"
+121,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"# driver UNIX socket
+"
+122,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"# install dependencies
+"
+123,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"# copy csi-sanity from build container
+"
+124,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"# copy driver from build container
+"
+125,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"# copy driver config file
+"
+126,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"# create mount direactory for tests
+# driver run script
+"
+127,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"# details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
+"
+128,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"# versions
+"
+129,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+#TODO remove ""--ginkgo.skip"" option after fixing volume paginatin by token:
+"
+130,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.csi-sanity,"#ENTRYPOINT [""/bin/sh"", ""-c"", ""/run-driver && /csi-sanity --csi.endpoint=${SOCK} --csi.createpathcmdtimeout=180 --csi.removepathcmdtimeout=180]
+"
+131,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.pre-release,"# pre-release container generates:
 # - CNAHGELOG.md
 
 "
-92,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.pre-release,"# deps
+132,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.pre-release,"# deps
 "
-93,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.pre-release,"# source code
+133,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.pre-release,"# source code
 "
-94,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.pre-release,"# next release tag
+134,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.pre-release,"# next release tag
 "
-95,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.pre-release,"# generate changelog
+135,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.pre-release,"# generate changelog
 "
-96,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.pre-release,"# pre-release container generates:
+136,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.pre-release,"# pre-release container generates:
 # - CNAHGELOG.md
 
 "
-97,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.pre-release,"# deps
+137,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.pre-release,"# deps
 "
-98,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.pre-release,"# source code
+138,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.pre-release,"# source code
 "
-99,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.pre-release,"# next release tag
+139,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.pre-release,"# next release tag
 "
-100,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.pre-release,"# generate changelog
+140,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.pre-release,"# generate changelog
 "
-101,e16d19fd70798e8f78dde1bb0d271693c949d56a,/Dockerfile,"# build container
+141,e16d19fd70798e8f78dde1bb0d271693c949d56a,/Dockerfile,"# build container
 "
-102,e16d19fd70798e8f78dde1bb0d271693c949d56a,/Dockerfile,"# driver container
+142,e16d19fd70798e8f78dde1bb0d271693c949d56a,/Dockerfile,"# driver container
 "
-103,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# csi-sanity build container
+143,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# csi-sanity build container
 "
-104,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# csi-sanity versions: https://github.com/kubernetes-csi/csi-test/releases
+144,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# csi-sanity versions: https://github.com/kubernetes-csi/csi-test/releases
 "
-105,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# driver build container
+145,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# driver build container
 "
-106,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
+146,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
 "
-107,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# driver UNIX socket
+147,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# driver UNIX socket
 "
-108,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# install dependencies
+148,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# install dependencies
 "
-109,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# copy csi-sanity from build container
+149,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# copy csi-sanity from build container
 "
-110,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# copy driver from build container
+150,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# copy driver from build container
 "
-111,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# copy driver config file
+151,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# copy driver config file
 "
-112,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# create mount direactory for tests
+152,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# create mount direactory for tests
 # driver run script
 "
-113,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
+153,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
 "
-114,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# versions
+154,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# versions
 "
-115,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+155,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
 #TODO remove ""--ginkgo.skip"" option after fixing volume paginatin by token:
 "
-116,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"#ENTRYPOINT [""/bin/sh"", ""-c"", ""/run-driver && /csi-sanity --csi.endpoint=${SOCK} --csi.mountdir=/tmp/mnt""]
+156,b1776c49c8762b69856fb30f8edf05d824a83806,/Dockerfile.csi-sanity,"#ENTRYPOINT [""/bin/sh"", ""-c"", ""/run-driver && /csi-sanity --csi.endpoint=${SOCK} --csi.mountdir=/tmp/mnt""]
 "
-117,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# csi-sanity build container
+157,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# csi-sanity build container
 "
-118,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# csi-sanity versions: https://github.com/kubernetes-csi/csi-test/releases
+158,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# csi-sanity versions: https://github.com/kubernetes-csi/csi-test/releases
 "
-119,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# driver build container
+159,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# driver build container
 "
-120,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
+160,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
 "
-121,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# driver UNIX socket
+161,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# driver UNIX socket
 "
-122,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# install dependencies
+162,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# install dependencies
 "
-123,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# copy csi-sanity from build container
+163,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# copy csi-sanity from build container
 "
-124,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# copy driver from build container
+164,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# copy driver from build container
 "
-125,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# copy driver config file
+165,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# copy driver config file
 "
-126,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# create mount direactory for tests
+166,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# create mount direactory for tests
 # driver run script
 "
-127,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
+167,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
 "
-128,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# versions
+168,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# versions
 "
-129,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+169,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
 #TODO remove ""--ginkgo.skip"" option after fixing volume paginatin by token:
 "
-130,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"#ENTRYPOINT [""/bin/sh"", ""-c"", ""/run-driver && /csi-sanity --csi.endpoint=${SOCK} --csi.createpathcmdtimeout=180 --csi.removepathcmdtimeout=180]
+170,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.csi-sanity,"#ENTRYPOINT [""/bin/sh"", ""-c"", ""/run-driver && /csi-sanity --csi.endpoint=${SOCK} --csi.createpathcmdtimeout=180 --csi.removepathcmdtimeout=180]
 "
-131,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# build container
+171,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.pre-release,"# pre-release container generates:
+# - CNAHGELOG.md
+
 "
-132,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
+172,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.pre-release,"# deps
 "
-133,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# install dependencies
+173,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.pre-release,"# source code
 "
-134,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# download csi-sanity binaries
+174,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.pre-release,"# next release tag
 "
-135,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# copy driver from build container
+175,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.pre-release,"# generate changelog
 "
-136,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# copy driver config file
+176,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# build container
 "
-137,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# test mount direactory
+177,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
 "
-138,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# driver UNIX socket
+178,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# install dependencies
 "
-139,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# driver run script
+179,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# download csi-sanity binaries
 "
-140,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# keep this while https://github.com/kubernetes-csi/csi-test/issues/149 is open
+180,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# copy driver from build container
+"
+181,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# copy driver config file
+"
+182,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# test mount direactory
+"
+183,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# driver UNIX socket
+"
+184,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# driver run script
+"
+185,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# keep this while https://github.com/kubernetes-csi/csi-test/issues/149 is open
 # solution details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
 "
-141,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+186,6f0938f50f3396a473d6a241597a6f6c92bbe8a0,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
 "
-142,b1fcf2ee517269643ce5dc09a4c3fa205f934ba3,/Dockerfile.pre-release,"# pre-release container generates:
+187,b1fcf2ee517269643ce5dc09a4c3fa205f934ba3,/Dockerfile.pre-release,"# pre-release container generates:
 # - CNAHGELOG.md
 
 "
-143,b1fcf2ee517269643ce5dc09a4c3fa205f934ba3,/Dockerfile.pre-release,"# deps
+188,b1fcf2ee517269643ce5dc09a4c3fa205f934ba3,/Dockerfile.pre-release,"# deps
 "
-144,b1fcf2ee517269643ce5dc09a4c3fa205f934ba3,/Dockerfile.pre-release,"# source code
+189,b1fcf2ee517269643ce5dc09a4c3fa205f934ba3,/Dockerfile.pre-release,"# source code
 "
-145,b1fcf2ee517269643ce5dc09a4c3fa205f934ba3,/Dockerfile.pre-release,"# next release tag
+190,b1fcf2ee517269643ce5dc09a4c3fa205f934ba3,/Dockerfile.pre-release,"# next release tag
 "
-146,b1fcf2ee517269643ce5dc09a4c3fa205f934ba3,/Dockerfile.pre-release,"# generate changelkog
+191,b1fcf2ee517269643ce5dc09a4c3fa205f934ba3,/Dockerfile.pre-release,"# generate changelkog
 "
-147,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.pre-release,"# pre-release container generates:
+192,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.tests,"# tests container
+"
+193,0178caf6f0b710cbecd7b867f5e097a88fe5055c,/Dockerfile.tests,"# install deps
+"
+194,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.pre-release,"# pre-release container generates:
 # - CNAHGELOG.md
 
 "
-148,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.pre-release,"# deps
+195,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.pre-release,"# deps
 "
-149,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.pre-release,"# source code
+196,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.pre-release,"# source code
 "
-150,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.pre-release,"# next release tag
+197,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.pre-release,"# next release tag
 "
-151,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.pre-release,"# generate changelog
+198,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.pre-release,"# generate changelog
 "
-152,48f7f566f1d7b116323cbc83286bd18723510313,/Dockerfile,"# build container
+199,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.pre-release,"# pre-release container generates:
+# - CNAHGELOG.md
+
 "
-153,48f7f566f1d7b116323cbc83286bd18723510313,/Dockerfile,"# driver container
+200,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.pre-release,"# deps
 "
-154,48f7f566f1d7b116323cbc83286bd18723510313,/Dockerfile,"# install nfs and smb dependencies
+201,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.pre-release,"# source code
 "
-155,48f7f566f1d7b116323cbc83286bd18723510313,/Dockerfile,"# create driver config folder and print version
+202,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.pre-release,"# next release tag
 "
-156,48f7f566f1d7b116323cbc83286bd18723510313,/Dockerfile,"# init script: runs rpcbind before starting the plugin
+203,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.pre-release,"# generate changelog
 "
-157,48f7f566f1d7b116323cbc83286bd18723510313,/Dockerfile,"#!/usr/bin/env sh\nrpcbind;\n/nexentastor-csi-driver ""$@"";\n' > /init.sh
+204,8ef44cff7f6d0940278cc93eeba239fb2cf6e204,/Dockerfile.tests,"# tests container
 "
-158,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.tests,"# tests container
+205,8ef44cff7f6d0940278cc93eeba239fb2cf6e204,/Dockerfile.tests,"# install deps
 "
-159,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.tests,"# install deps
+206,48f7f566f1d7b116323cbc83286bd18723510313,/Dockerfile,"# build container
 "
-160,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile,"# build container
+207,48f7f566f1d7b116323cbc83286bd18723510313,/Dockerfile,"# driver container
 "
-161,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile,"# driver container
+208,48f7f566f1d7b116323cbc83286bd18723510313,/Dockerfile,"# install nfs and smb dependencies
 "
-162,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile,"# install nfs and smb dependencies
+209,48f7f566f1d7b116323cbc83286bd18723510313,/Dockerfile,"# create driver config folder and print version
 "
-163,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile,"# create driver config folder and print version
+210,48f7f566f1d7b116323cbc83286bd18723510313,/Dockerfile,"# init script: runs rpcbind before starting the plugin
 "
-164,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile,"# init script: runs rpcbind before starting the plugin
+211,48f7f566f1d7b116323cbc83286bd18723510313,/Dockerfile,"#!/usr/bin/env sh\nrpcbind;\n/nexentastor-csi-driver ""$@"";\n' > /init.sh
 "
-165,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile,"#!/usr/bin/env sh\nrpcbind;\n/nexentastor-csi-driver ""$@"";\n' > /init.sh
+212,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.tests,"# tests container
 "
-166,e16d19fd70798e8f78dde1bb0d271693c949d56a,/Dockerfile.tests,"# build container
+213,6cf96349c0c7312ce2ad3f7fa31e423f02a737fe,/Dockerfile.tests,"# install deps
 "
-167,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.tests,"# tests container
+214,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.tests,"# tests container
 "
-168,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.tests,"# install deps
+215,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile.tests,"# install deps
 "
-169,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile,"# build container
+216,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile,"# build container
 "
-170,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile,"# driver container
+217,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile,"# driver container
 "
-171,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile,"# install nfs and smb dependencies
+218,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile,"# install nfs and smb dependencies
 "
-172,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile,"# create driver config folder and print version
+219,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile,"# create driver config folder and print version
 "
-173,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile,"# init script: runs rpcbind before starting the plugin
+220,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile,"# init script: runs rpcbind before starting the plugin
 "
-174,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile,"#!/usr/bin/env sh\nrpcbind;\n/nexentastor-csi-driver ""$@"";\n' > /init.sh
+221,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile,"#!/usr/bin/env sh\nrpcbind;\n/nexentastor-csi-driver ""$@"";\n' > /init.sh
 "
-175,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# csi-sanity build container
+222,e16d19fd70798e8f78dde1bb0d271693c949d56a,/Dockerfile.tests,"# build container
 "
-176,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# csi-sanity versions: https://github.com/kubernetes-csi/csi-test/releases
+223,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.tests,"# tests container
 "
-177,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# driver build container
+224,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.tests,"# install deps
 "
-178,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
+225,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile,"# build container
 "
-179,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# driver UNIX socket
+226,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile,"# driver container
 "
-180,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# install dependencies
+227,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile,"# install nfs and smb dependencies
 "
-181,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# copy csi-sanity from build container
+228,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile,"# create driver config folder and print version
 "
-182,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# copy driver from build container
+229,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile,"# init script: runs rpcbind before starting the plugin
 "
-183,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# copy driver config file
+230,7b8d01a0412c26d370909ef54952860ff946cf18,/Dockerfile,"#!/usr/bin/env sh\nrpcbind;\n/nexentastor-csi-driver ""$@"";\n' > /init.sh
 "
-184,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# create mount direactory for tests
+231,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# csi-sanity build container
+"
+232,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# csi-sanity versions: https://github.com/kubernetes-csi/csi-test/releases
+"
+233,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# driver build container
+"
+234,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# run driver and csi-sanity tests
+"
+235,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# driver UNIX socket
+"
+236,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# install dependencies
+"
+237,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# copy csi-sanity from build container
+"
+238,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# copy driver from build container
+"
+239,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# copy driver config file
+"
+240,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# create mount direactory for tests
 # driver run script
 "
-185,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
+241,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# details: https://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
 "
-186,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# versions
+242,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# versions
 "
-187,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
+243,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"# other csi-sanity options: --ginkgo.v -ginkgo.noColor
 #TODO remove ""--ginkgo.skip"" option after fixing volume paginatin by token:
 "
-188,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"#ENTRYPOINT [""/bin/sh"", ""-c"", ""/run-driver && /csi-sanity --csi.endpoint=${SOCK} --csi.createpathcmdtimeout=180 --csi.removepathcmdtimeout=180]
+244,b478a76cdfe3c01623a7c671db01a260e3cb599b,/Dockerfile.csi-sanity,"#ENTRYPOINT [""/bin/sh"", ""-c"", ""/run-driver && /csi-sanity --csi.endpoint=${SOCK} --csi.createpathcmdtimeout=180 --csi.removepathcmdtimeout=180]
 "
-189,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile,"# build container
+245,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile,"# build container
 "
-190,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile,"# driver container
+246,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile,"# driver container
 "
-191,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile,"# install nfs and smb dependencies
+247,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile,"# install nfs and smb dependencies
 "
-192,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile,"# create driver config folder and print version
+248,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile,"# create driver config folder and print version
 "
-193,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile,"# init script: runs rpcbind before starting the plugin
+249,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile,"# init script: runs rpcbind before starting the plugin
 "
-194,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile,"#!/usr/bin/env sh\nrpcbind;\n/nexentastor-csi-driver ""$@"";\n' > /init.sh
+250,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile,"#!/usr/bin/env sh\nrpcbind;\n/nexentastor-csi-driver ""$@"";\n' > /init.sh
 "
-195,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.tests,"# tests container
+251,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.tests,"# tests container
 "
-196,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.tests,"# install deps
+252,29a31227cd2f35ace50ac91d487d4bce7a106d49,/Dockerfile.tests,"# install deps
 "
-197,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.tests,"# tests container
+253,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.tests,"# tests container
 "
-198,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.tests,"# install deps
+254,17e65b12bcb926c08d06049814a6daa082a722f5,/Dockerfile.tests,"# install deps
 "

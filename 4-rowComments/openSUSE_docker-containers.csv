@@ -1,4 +1,4 @@
-,CommitID,Dockerfiles,Comments
+,CommitID,Dockerfile,Comment
 0,7364ea03ae1254bb132b07c6c5ecf2d8219275e2,/derived_images/portus/docker/Dockerfile,"# This script makes it easier to download and import gpg keys from trusted key
 # servers.
 # This is used later on to import the OBS key used to sign all the contents
@@ -34,138 +34,199 @@
 "
 11,31e8a3de7c203a7b09acc8fe5a4167513c58a2bb,/derived_images/yarn/Dockerfile,"    # Remove unneeded packages and clean stuff.
 "
-12,1f8e30d7c4d537e290a4f7b176eb9aefc9e035e0,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
-"
-13,1f8e30d7c4d537e290a4f7b176eb9aefc9e035e0,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
-"
-14,1f8e30d7c4d537e290a4f7b176eb9aefc9e035e0,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus
-    # project. Sometimes the key server times out or has some other problem. In
-    # that case, we fall back to alternative key servers.
-"
-15,1f8e30d7c4d537e290a4f7b176eb9aefc9e035e0,/derived_images/portus/Dockerfile,"    # Now add the repository and install portus.
-"
-16,1f8e30d7c4d537e290a4f7b176eb9aefc9e035e0,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
-"
-17,e36476d6d7a7f9222c55b2efc58ba2c0c5565d6b,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
-"
-18,e36476d6d7a7f9222c55b2efc58ba2c0c5565d6b,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
-"
-19,e36476d6d7a7f9222c55b2efc58ba2c0c5565d6b,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus project.
-"
-20,e36476d6d7a7f9222c55b2efc58ba2c0c5565d6b,/derived_images/portus/Dockerfile,"    # Now add the repository and installa portus.
-"
-21,e36476d6d7a7f9222c55b2efc58ba2c0c5565d6b,/derived_images/portus/Dockerfile,"    # Remove unneeded packages and clean stuff.
-"
-22,e36476d6d7a7f9222c55b2efc58ba2c0c5565d6b,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
-"
-23,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# This script makes it easier to download and import gpg keys from trusted key
-# servers.
-# This is used later on to import the OBS key used to sign all the contents
-# of the Virtualization:containers project.
-"
-24,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
-"
-25,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
-# program is maintained by SUSE and will initialize Apache2 and ensure the httpd
-# daemon is run as wwwrun user.
-"
-26,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
-# this would cause lots of troubles when starting Portus via our init
-# script
-"
-27,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# apache configuration
-"
-28,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
-"
-29,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
-# however Apache will capture everything and send it to text file.
-# This would break commands like `docker logs` and `kubectl logs`.
-# That's why we use this trick.
-"
-30,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
-# used in production mode. We have to use this temporary workaround
-"
-31,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# portus configuration
-"
-32,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
-"
-33,0bbcbc8c4a680d2180f99c001427ea6b17db9d59,/derived_images/python/Dockerfile,"# Only python is added
-"
-34,21c8b60bb2c5ad10e2fd6f766b6f13bbc87c366d,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
-"
-35,21c8b60bb2c5ad10e2fd6f766b6f13bbc87c366d,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
-"
-36,21c8b60bb2c5ad10e2fd6f766b6f13bbc87c366d,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus
-    # project. Sometimes the key server times out or has some other problem. In
-    # that case, we fall back to alternative key servers.
-"
-37,21c8b60bb2c5ad10e2fd6f766b6f13bbc87c366d,/derived_images/portus/Dockerfile,"    # Now add the repository and install portus.
-"
-38,21c8b60bb2c5ad10e2fd6f766b6f13bbc87c366d,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
-"
-39,8ab841e04c1ae459cb3a0bbfcd3cd5c71c1292ee,/derived_images/portus/Dockerfile,"# Install some helper scripts:
+12,49f6efd412134ef526c7379246c189c2c6f59b63,/derived_images/portus/Dockerfile,"# Install some helper scripts:
 #   1. init: contains the entrypoint of this image.
 #   2. rpm-import-repo-key: temporary script that makes it easier to download
 #      and import gpg keys from trusted key servers. This is used later on to
 #      import the OBS key used to sign all the contents of the
 #      Virtualization:containers project.
 "
-40,8ab841e04c1ae459cb3a0bbfcd3cd5c71c1292ee,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+13,49f6efd412134ef526c7379246c189c2c6f59b63,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
 "
-41,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Latest KIWI packages
+14,1f8e30d7c4d537e290a4f7b176eb9aefc9e035e0,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
 "
-42,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# make sure the package repository is up to date
+15,1f8e30d7c4d537e290a4f7b176eb9aefc9e035e0,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
 "
-43,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Install kiwi and remove the conflicting packages, otherwise zypper will stop here
+16,1f8e30d7c4d537e290a4f7b176eb9aefc9e035e0,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus
+    # project. Sometimes the key server times out or has some other problem. In
+    # that case, we fall back to alternative key servers.
 "
-44,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Install kiwi boot image descriptions
+17,1f8e30d7c4d537e290a4f7b176eb9aefc9e035e0,/derived_images/portus/Dockerfile,"    # Now add the repository and install portus.
 "
-45,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Install kiwi templates
+18,1f8e30d7c4d537e290a4f7b176eb9aefc9e035e0,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
 "
-46,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Install core tool chain for image building
+19,f5892cc6bb397ba992e45a04d18ab05c431f0082,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
 "
-47,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Install sudo, not for docker but because kiwi calls it in code
+20,f5892cc6bb397ba992e45a04d18ab05c431f0082,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
 "
-48,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Required to build SLE11 images on a recent system like 13.1
+21,f5892cc6bb397ba992e45a04d18ab05c431f0082,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus project.
 "
-49,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Required to access Novell Customer Center servers over HTTPS
+22,f5892cc6bb397ba992e45a04d18ab05c431f0082,/derived_images/portus/Dockerfile,"    # Now add the repository and installa portus.
 "
-50,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# start kiwi by default if no other entrypoint is set
+23,f5892cc6bb397ba992e45a04d18ab05c431f0082,/derived_images/portus/Dockerfile,"    # Remove unneeded packages and clean stuff.
 "
-51,8bf901450156d1688df54dac71edb7d3d44655d5,/derived_images/registry/Dockerfile,"# Install the entrypoint of this image.
+24,f5892cc6bb397ba992e45a04d18ab05c431f0082,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
 "
-52,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# This script makes it easier to download and import gpg keys from trusted key
+25,e36476d6d7a7f9222c55b2efc58ba2c0c5565d6b,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
+"
+26,e36476d6d7a7f9222c55b2efc58ba2c0c5565d6b,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+27,e36476d6d7a7f9222c55b2efc58ba2c0c5565d6b,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus project.
+"
+28,e36476d6d7a7f9222c55b2efc58ba2c0c5565d6b,/derived_images/portus/Dockerfile,"    # Now add the repository and installa portus.
+"
+29,e36476d6d7a7f9222c55b2efc58ba2c0c5565d6b,/derived_images/portus/Dockerfile,"    # Remove unneeded packages and clean stuff.
+"
+30,e36476d6d7a7f9222c55b2efc58ba2c0c5565d6b,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
+"
+31,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# This script makes it easier to download and import gpg keys from trusted key
 # servers.
 # This is used later on to import the OBS key used to sign all the contents
 # of the Virtualization:containers project.
 "
-53,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
+32,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
 "
-54,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
+33,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
 # program is maintained by SUSE and will initialize Apache2 and ensure the httpd
 # daemon is run as wwwrun user.
 "
-55,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
+34,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
 # this would cause lots of troubles when starting Portus via our init
 # script
 "
-56,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# apache configuration
+35,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# apache configuration
 "
-57,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
+36,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
 "
-58,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
+37,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
 # however Apache will capture everything and send it to text file.
 # This would break commands like `docker logs` and `kubectl logs`.
 # That's why we use this trick.
 "
-59,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
+38,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
 # used in production mode. We have to use this temporary workaround
 "
-60,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# portus configuration
+39,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# portus configuration
 "
-61,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
+40,aaa6914d70f4353af645788d86455541534aac2c,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
 "
-62,8d1108d782123d1cd08d3d82bf7f77b15c9109c4,/derived_images/portus/Dockerfile,"# Install some helper scripts:
+41,0bbcbc8c4a680d2180f99c001427ea6b17db9d59,/derived_images/python/Dockerfile,"# Only python is added
+"
+42,21c8b60bb2c5ad10e2fd6f766b6f13bbc87c366d,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
+"
+43,21c8b60bb2c5ad10e2fd6f766b6f13bbc87c366d,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+44,21c8b60bb2c5ad10e2fd6f766b6f13bbc87c366d,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus
+    # project. Sometimes the key server times out or has some other problem. In
+    # that case, we fall back to alternative key servers.
+"
+45,21c8b60bb2c5ad10e2fd6f766b6f13bbc87c366d,/derived_images/portus/Dockerfile,"    # Now add the repository and install portus.
+"
+46,21c8b60bb2c5ad10e2fd6f766b6f13bbc87c366d,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
+"
+47,8ab841e04c1ae459cb3a0bbfcd3cd5c71c1292ee,/derived_images/portus/Dockerfile,"# Install some helper scripts:
+#   1. init: contains the entrypoint of this image.
+#   2. rpm-import-repo-key: temporary script that makes it easier to download
+#      and import gpg keys from trusted key servers. This is used later on to
+#      import the OBS key used to sign all the contents of the
+#      Virtualization:containers project.
+"
+48,8ab841e04c1ae459cb3a0bbfcd3cd5c71c1292ee,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+49,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Latest KIWI packages
+"
+50,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# make sure the package repository is up to date
+"
+51,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Install kiwi and remove the conflicting packages, otherwise zypper will stop here
+"
+52,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Install kiwi boot image descriptions
+"
+53,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Install kiwi templates
+"
+54,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Install core tool chain for image building
+"
+55,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Install sudo, not for docker but because kiwi calls it in code
+"
+56,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Required to build SLE11 images on a recent system like 13.1
+"
+57,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# Required to access Novell Customer Center servers over HTTPS
+"
+58,c8c8fa874bc46e874e3080774b794e43da8ef56b,/derived_images/kiwi/Dockerfile,"# start kiwi by default if no other entrypoint is set
+"
+59,8bf901450156d1688df54dac71edb7d3d44655d5,/derived_images/registry/Dockerfile,"# Install the entrypoint of this image.
+"
+60,f495154f575168ea36468bd02465cec94d83587e,/derived_images/portus/docker/Dockerfile,"# This script makes it easier to download and import gpg keys from trusted key
+# servers.
+# This is used later on to import the OBS key used to sign all the contents
+# of the Virtualization:containers project.
+"
+61,f495154f575168ea36468bd02465cec94d83587e,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
+"
+62,f495154f575168ea36468bd02465cec94d83587e,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
+# program is maintained by SUSE and will initialize Apache2 and ensure the httpd
+# daemon is run as wwwrun user.
+"
+63,f495154f575168ea36468bd02465cec94d83587e,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
+# this would cause lots of troubles when starting Portus via our init
+# script
+"
+64,f495154f575168ea36468bd02465cec94d83587e,/derived_images/portus/docker/Dockerfile,"# apache configuration
+"
+65,f495154f575168ea36468bd02465cec94d83587e,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
+"
+66,f495154f575168ea36468bd02465cec94d83587e,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
+# however Apache will capture everything and send it to text file.
+# This would break commands like `docker logs` and `kubectl logs`.
+# That's why we use this trick.
+"
+67,f495154f575168ea36468bd02465cec94d83587e,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
+# used in production mode. We have to use this temporary workaround
+"
+68,f495154f575168ea36468bd02465cec94d83587e,/derived_images/portus/docker/Dockerfile,"# portus configuration
+"
+69,f495154f575168ea36468bd02465cec94d83587e,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
+"
+70,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# This script makes it easier to download and import gpg keys from trusted key
+# servers.
+# This is used later on to import the OBS key used to sign all the contents
+# of the Virtualization:containers project.
+"
+71,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
+"
+72,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
+# program is maintained by SUSE and will initialize Apache2 and ensure the httpd
+# daemon is run as wwwrun user.
+"
+73,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
+# this would cause lots of troubles when starting Portus via our init
+# script
+"
+74,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# apache configuration
+"
+75,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
+"
+76,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
+# however Apache will capture everything and send it to text file.
+# This would break commands like `docker logs` and `kubectl logs`.
+# That's why we use this trick.
+"
+77,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
+# used in production mode. We have to use this temporary workaround
+"
+78,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# portus configuration
+"
+79,5adfdd00a4dfbe7a0d632b96a15954d6d10d6314,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
+"
+80,db5f7b4b95513b75ead49f06c496c30f4d7da9b3,/derived_images/portus/Dockerfile,"# Install some helper scripts:
+#   1. init: contains the entrypoint of this image.
+#   2. rpm-import-repo-key: temporary script that makes it easier to download
+#      and import gpg keys from trusted key servers. This is used later on to
+#      import the OBS key used to sign all the contents of the
+#      Virtualization:containers project.
+"
+81,db5f7b4b95513b75ead49f06c496c30f4d7da9b3,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+82,8d1108d782123d1cd08d3d82bf7f77b15c9109c4,/derived_images/portus/Dockerfile,"# Install some helper scripts:
 #   1. init: contains the entrypoint of this image.
 #   2. check_db.rb: a rails runner used by the `init` script that checks
 #      if the database is up and running.
@@ -174,79 +235,9 @@
 #      import the OBS key used to sign all the contents of the
 #      Virtualization:containers project.
 "
-63,8d1108d782123d1cd08d3d82bf7f77b15c9109c4,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+83,8d1108d782123d1cd08d3d82bf7f77b15c9109c4,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
 "
-64,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# Latest KIWI packages
-"
-65,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# make sure the package repository is up to date
-"
-66,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# Install kiwi and remove the conflicting packages, otherwise zypper will stop here
-"
-67,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# Required to build SLE11 images on a recent system like 13.1
-"
-68,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# Required to access Novell Customer Center servers over HTTPS
-"
-69,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# Required by KIWI to compress the image
-"
-70,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# Always start kiwi
-"
-71,7ea627e4fbc21ad0c4f1f8851694e8cff5b5c4a4,/derived_images/portus/Dockerfile,"# Install some helper scripts:
-#   1. init: contains the entrypoint of this image.
-#   2. rpm-import-repo-key: temporary script that makes it easier to download
-#      and import gpg keys from trusted key servers. This is used later on to
-#      import the OBS key used to sign all the contents of the
-#      Virtualization:containers project.
-"
-72,7ea627e4fbc21ad0c4f1f8851694e8cff5b5c4a4,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
-"
-73,a9f0c0a341e45f3f5f5c30d45ef76d1d46a4fa73,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
-"
-74,a9f0c0a341e45f3f5f5c30d45ef76d1d46a4fa73,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
-"
-75,a9f0c0a341e45f3f5f5c30d45ef76d1d46a4fa73,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus
-    # project. Sometimes the key server times out or has some other problem. In
-    # that case, we fall back to alternative key servers.
-"
-76,a9f0c0a341e45f3f5f5c30d45ef76d1d46a4fa73,/derived_images/portus/Dockerfile,"    # Now add the repository and install portus.
-"
-77,a9f0c0a341e45f3f5f5c30d45ef76d1d46a4fa73,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
-"
-78,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
-"
-79,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
-# program is maintained by SUSE and will initialize Apache2 and ensure the httpd
-# daemon is run as wwwrun user.
-"
-80,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
-# this would cause lots of troubles when starting Portus via our init
-# script
-"
-81,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# apache configuration
-"
-82,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
-"
-83,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
-# however Apache will capture everything and send it to text file.
-# This would break commands like `docker logs` and `kubectl logs`.
-# That's why we use this trick.
-"
-84,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
-# used in production mode. We have to use this temporary workaround
-"
-85,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# portus configuration
-"
-86,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
-"
-87,1f11a28efb0b2ea3d2701e32952192f728a1b0bb,/derived_images/portus/Dockerfile,"# Install some helper scripts:
-#   1. init: contains the entrypoint of this image.
-#   2. rpm-import-repo-key: temporary script that makes it easier to download
-#      and import gpg keys from trusted key servers. This is used later on to
-#      import the OBS key used to sign all the contents of the
-#      Virtualization:containers project.
-"
-88,1f11a28efb0b2ea3d2701e32952192f728a1b0bb,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
-"
-89,e2124a54b0a8f8654bb8c45f04152ab85af5de2b,/derived_images/portus/Dockerfile,"# Install some helper scripts:
+84,12840c4b123bb011154a4656e8ebe1bcae582a57,/derived_images/portus/Dockerfile,"# Install some helper scripts:
 #   1. init: contains the entrypoint of this image.
 #   2. check_db.rb: a rails runner used by the `init` script that checks
 #      if the database is up and running.
@@ -255,31 +246,21 @@
 #      import the OBS key used to sign all the contents of the
 #      Virtualization:containers project.
 "
-90,e2124a54b0a8f8654bb8c45f04152ab85af5de2b,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+85,12840c4b123bb011154a4656e8ebe1bcae582a57,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
 "
-91,a57d715e262f7a356b8336cd4562681cc81a73e4,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
+86,00d13db5830fe34ba68603dd560d639805f3ed8e,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
 "
-92,a57d715e262f7a356b8336cd4562681cc81a73e4,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+87,00d13db5830fe34ba68603dd560d639805f3ed8e,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
 "
-93,a57d715e262f7a356b8336cd4562681cc81a73e4,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus project.
+88,00d13db5830fe34ba68603dd560d639805f3ed8e,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus
+    # project. Sometimes the key server times out or has some other problem. In
+    # that case, we fall back to alternative key servers.
 "
-94,a57d715e262f7a356b8336cd4562681cc81a73e4,/derived_images/portus/Dockerfile,"    # Now add the repository and installa portus.
+89,00d13db5830fe34ba68603dd560d639805f3ed8e,/derived_images/portus/Dockerfile,"    # Now add the repository and install portus.
 "
-95,a57d715e262f7a356b8336cd4562681cc81a73e4,/derived_images/portus/Dockerfile,"    # Remove unneeded packages and clean stuff.
+90,00d13db5830fe34ba68603dd560d639805f3ed8e,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
 "
-96,a57d715e262f7a356b8336cd4562681cc81a73e4,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
-"
-97,053959727acbb008a188b3646b61b9ce80c0e555,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
-"
-98,053959727acbb008a188b3646b61b9ce80c0e555,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
-"
-99,053959727acbb008a188b3646b61b9ce80c0e555,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus project.
-"
-100,053959727acbb008a188b3646b61b9ce80c0e555,/derived_images/portus/Dockerfile,"    # Now add the repository and install portus.
-"
-101,053959727acbb008a188b3646b61b9ce80c0e555,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
-"
-102,6cd09387a3290c81ec4a279b547e6f875765f1d0,/derived_images/portus/Dockerfile,"# Install some helper scripts:
+91,3585a277762828925741c9dca5c2742f8b586915,/derived_images/portus/Dockerfile,"# Install some helper scripts:
 #   1. init: contains the entrypoint of this image.
 #   2. check_db.rb: a rails runner used by the `init` script that checks
 #      if the database is up and running.
@@ -288,89 +269,347 @@
 #      import the OBS key used to sign all the contents of the
 #      Virtualization:containers project.
 "
-103,6cd09387a3290c81ec4a279b547e6f875765f1d0,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+92,3585a277762828925741c9dca5c2742f8b586915,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
 "
-104,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# This script makes it easier to download and import gpg keys from trusted key
+93,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# Latest KIWI packages
+"
+94,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# make sure the package repository is up to date
+"
+95,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# Install kiwi and remove the conflicting packages, otherwise zypper will stop here
+"
+96,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# Required to build SLE11 images on a recent system like 13.1
+"
+97,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# Required to access Novell Customer Center servers over HTTPS
+"
+98,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# Required by KIWI to compress the image
+"
+99,6ed7cc4cc246a3c39662317dff76e7fb64c07ae2,/derived_images/kiwi/Dockerfile,"# Always start kiwi
+"
+100,2b6c35780ddb959a2b31da3caaae963abc79ded6,/derived_images/portus/docker/Dockerfile,"# This script makes it easier to download and import gpg keys from trusted key
 # servers.
 # This is used later on to import the OBS key used to sign all the contents
 # of the Virtualization:containers project.
 "
-105,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
+101,2b6c35780ddb959a2b31da3caaae963abc79ded6,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
 "
-106,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
+102,2b6c35780ddb959a2b31da3caaae963abc79ded6,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
 # program is maintained by SUSE and will initialize Apache2 and ensure the httpd
 # daemon is run as wwwrun user.
 "
-107,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
+103,2b6c35780ddb959a2b31da3caaae963abc79ded6,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
 # this would cause lots of troubles when starting Portus via our init
 # script
 "
-108,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# apache configuration
+104,2b6c35780ddb959a2b31da3caaae963abc79ded6,/derived_images/portus/docker/Dockerfile,"# apache configuration
 "
-109,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
+105,2b6c35780ddb959a2b31da3caaae963abc79ded6,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
 "
-110,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
+106,2b6c35780ddb959a2b31da3caaae963abc79ded6,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
 # however Apache will capture everything and send it to text file.
 # This would break commands like `docker logs` and `kubectl logs`.
 # That's why we use this trick.
 "
-111,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
+107,2b6c35780ddb959a2b31da3caaae963abc79ded6,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
 # used in production mode. We have to use this temporary workaround
 "
-112,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# portus configuration
+108,2b6c35780ddb959a2b31da3caaae963abc79ded6,/derived_images/portus/docker/Dockerfile,"# portus configuration
 "
-113,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
+109,2b6c35780ddb959a2b31da3caaae963abc79ded6,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
 "
-114,6ce9d96eba26ed5afcc646b7768591dc536b5039,/derived_images/clair/Dockerfile,"# Install Portus and prepare the /certificates directory.
+110,7ea627e4fbc21ad0c4f1f8851694e8cff5b5c4a4,/derived_images/portus/Dockerfile,"# Install some helper scripts:
+#   1. init: contains the entrypoint of this image.
+#   2. rpm-import-repo-key: temporary script that makes it easier to download
+#      and import gpg keys from trusted key servers. This is used later on to
+#      import the OBS key used to sign all the contents of the
+#      Virtualization:containers project.
 "
-115,6ce9d96eba26ed5afcc646b7768591dc536b5039,/derived_images/clair/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus project.
+111,7ea627e4fbc21ad0c4f1f8851694e8cff5b5c4a4,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
 "
-116,6ce9d96eba26ed5afcc646b7768591dc536b5039,/derived_images/clair/Dockerfile,"    # Now add the repository and installa clair.
+112,8fc7a1e256a16d0f3acaef90c376e727e6892960,/derived_images/python/Dockerfile,"# Only python is added
 "
-117,6ce9d96eba26ed5afcc646b7768591dc536b5039,/derived_images/clair/Dockerfile,"    # Remove unneeded packages and clean stuff.
+113,a9f0c0a341e45f3f5f5c30d45ef76d1d46a4fa73,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
 "
-118,6ce9d96eba26ed5afcc646b7768591dc536b5039,/derived_images/clair/Dockerfile,"    # Prepare the certificates directory.
+114,a9f0c0a341e45f3f5f5c30d45ef76d1d46a4fa73,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
 "
-119,9611b46d7c35ab5ec2d41e5c1440cdc655fc7dbe,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
-"
-120,9611b46d7c35ab5ec2d41e5c1440cdc655fc7dbe,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
-"
-121,9611b46d7c35ab5ec2d41e5c1440cdc655fc7dbe,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus
+115,a9f0c0a341e45f3f5f5c30d45ef76d1d46a4fa73,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus
     # project. Sometimes the key server times out or has some other problem. In
     # that case, we fall back to alternative key servers.
 "
-122,9611b46d7c35ab5ec2d41e5c1440cdc655fc7dbe,/derived_images/portus/Dockerfile,"    # Now add the repository and install portus.
+116,a9f0c0a341e45f3f5f5c30d45ef76d1d46a4fa73,/derived_images/portus/Dockerfile,"    # Now add the repository and install portus.
 "
-123,9611b46d7c35ab5ec2d41e5c1440cdc655fc7dbe,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
+117,a9f0c0a341e45f3f5f5c30d45ef76d1d46a4fa73,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
 "
-124,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# This script makes it easier to download and import gpg keys from trusted key
+118,ba56bc8b3d0f9ef5de7b7d7712a67c35735c365c,/derived_images/portus/docker/Dockerfile,"# This script makes it easier to download and import gpg keys from trusted key
 # servers.
 # This is used later on to import the OBS key used to sign all the contents
 # of the Virtualization:containers project.
 "
-125,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
+119,ba56bc8b3d0f9ef5de7b7d7712a67c35735c365c,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
 "
-126,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
+120,ba56bc8b3d0f9ef5de7b7d7712a67c35735c365c,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
 # program is maintained by SUSE and will initialize Apache2 and ensure the httpd
 # daemon is run as wwwrun user.
 "
-127,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
+121,ba56bc8b3d0f9ef5de7b7d7712a67c35735c365c,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
 # this would cause lots of troubles when starting Portus via our init
 # script
 "
-128,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# apache configuration
+122,ba56bc8b3d0f9ef5de7b7d7712a67c35735c365c,/derived_images/portus/docker/Dockerfile,"# apache configuration
 "
-129,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
+123,ba56bc8b3d0f9ef5de7b7d7712a67c35735c365c,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
 "
-130,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
+124,ba56bc8b3d0f9ef5de7b7d7712a67c35735c365c,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
 # however Apache will capture everything and send it to text file.
 # This would break commands like `docker logs` and `kubectl logs`.
 # That's why we use this trick.
 "
-131,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
+125,ba56bc8b3d0f9ef5de7b7d7712a67c35735c365c,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
 # used in production mode. We have to use this temporary workaround
 "
-132,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# portus configuration
+126,ba56bc8b3d0f9ef5de7b7d7712a67c35735c365c,/derived_images/portus/docker/Dockerfile,"# portus configuration
 "
-133,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
+127,ba56bc8b3d0f9ef5de7b7d7712a67c35735c365c,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
+"
+128,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
+"
+129,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
+# program is maintained by SUSE and will initialize Apache2 and ensure the httpd
+# daemon is run as wwwrun user.
+"
+130,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
+# this would cause lots of troubles when starting Portus via our init
+# script
+"
+131,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# apache configuration
+"
+132,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
+"
+133,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
+# however Apache will capture everything and send it to text file.
+# This would break commands like `docker logs` and `kubectl logs`.
+# That's why we use this trick.
+"
+134,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
+# used in production mode. We have to use this temporary workaround
+"
+135,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# portus configuration
+"
+136,b246574acd18f6563e332fb7a99b4e0df65f8300,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
+"
+137,d4ea38109e24d2567bb9c373683cdd4ce694ff91,/derived_images/kiwi/Dockerfile,"# Latest KIWI packages
+"
+138,d4ea38109e24d2567bb9c373683cdd4ce694ff91,/derived_images/kiwi/Dockerfile,"# make sure the package repository is up to date
+"
+139,d4ea38109e24d2567bb9c373683cdd4ce694ff91,/derived_images/kiwi/Dockerfile,"# Install kiwi and remove the conflicting packages, otherwise zypper will stop here
+"
+140,d4ea38109e24d2567bb9c373683cdd4ce694ff91,/derived_images/kiwi/Dockerfile,"# Install kiwi boot image descriptions
+"
+141,d4ea38109e24d2567bb9c373683cdd4ce694ff91,/derived_images/kiwi/Dockerfile,"# Install kiwi templates
+"
+142,d4ea38109e24d2567bb9c373683cdd4ce694ff91,/derived_images/kiwi/Dockerfile,"# Install core tool chain for image building
+"
+143,d4ea38109e24d2567bb9c373683cdd4ce694ff91,/derived_images/kiwi/Dockerfile,"# Install sudo, not for docker but because kiwi calls it in code
+"
+144,d4ea38109e24d2567bb9c373683cdd4ce694ff91,/derived_images/kiwi/Dockerfile,"# Required to build SLE11 images on a recent system like 13.1
+"
+145,d4ea38109e24d2567bb9c373683cdd4ce694ff91,/derived_images/kiwi/Dockerfile,"# Required to access Novell Customer Center servers over HTTPS
+"
+146,d4ea38109e24d2567bb9c373683cdd4ce694ff91,/derived_images/kiwi/Dockerfile,"# start kiwi by default if no other entrypoint is set
+"
+147,1f11a28efb0b2ea3d2701e32952192f728a1b0bb,/derived_images/portus/Dockerfile,"# Install some helper scripts:
+#   1. init: contains the entrypoint of this image.
+#   2. rpm-import-repo-key: temporary script that makes it easier to download
+#      and import gpg keys from trusted key servers. This is used later on to
+#      import the OBS key used to sign all the contents of the
+#      Virtualization:containers project.
+"
+148,1f11a28efb0b2ea3d2701e32952192f728a1b0bb,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+149,e2124a54b0a8f8654bb8c45f04152ab85af5de2b,/derived_images/portus/Dockerfile,"# Install some helper scripts:
+#   1. init: contains the entrypoint of this image.
+#   2. check_db.rb: a rails runner used by the `init` script that checks
+#      if the database is up and running.
+#   3. rpm-import-repo-key: temporary script that makes it easier to download
+#      and import gpg keys from trusted key servers. This is used later on to
+#      import the OBS key used to sign all the contents of the
+#      Virtualization:containers project.
+"
+150,e2124a54b0a8f8654bb8c45f04152ab85af5de2b,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+151,a57d715e262f7a356b8336cd4562681cc81a73e4,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
+"
+152,a57d715e262f7a356b8336cd4562681cc81a73e4,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+153,a57d715e262f7a356b8336cd4562681cc81a73e4,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus project.
+"
+154,a57d715e262f7a356b8336cd4562681cc81a73e4,/derived_images/portus/Dockerfile,"    # Now add the repository and installa portus.
+"
+155,a57d715e262f7a356b8336cd4562681cc81a73e4,/derived_images/portus/Dockerfile,"    # Remove unneeded packages and clean stuff.
+"
+156,a57d715e262f7a356b8336cd4562681cc81a73e4,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
+"
+157,cafc9b445ba7639ca5c35200382d28f8677cfaa2,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
+"
+158,cafc9b445ba7639ca5c35200382d28f8677cfaa2,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+159,cafc9b445ba7639ca5c35200382d28f8677cfaa2,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus project.
+"
+160,cafc9b445ba7639ca5c35200382d28f8677cfaa2,/derived_images/portus/Dockerfile,"    # Now add the repository and installa portus.
+"
+161,cafc9b445ba7639ca5c35200382d28f8677cfaa2,/derived_images/portus/Dockerfile,"    # Remove unneeded packages and clean stuff.
+"
+162,cafc9b445ba7639ca5c35200382d28f8677cfaa2,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
+"
+163,40ed4eca581f0ea7965a0dbdec6cd663eb00c639,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
+"
+164,40ed4eca581f0ea7965a0dbdec6cd663eb00c639,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
+# program is maintained by SUSE and will initialize Apache2 and ensure the httpd
+# daemon is run as wwwrun user.
+"
+165,40ed4eca581f0ea7965a0dbdec6cd663eb00c639,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
+# this would cause lots of troubles when starting Portus via our init
+# script
+"
+166,40ed4eca581f0ea7965a0dbdec6cd663eb00c639,/derived_images/portus/docker/Dockerfile,"# apache configuration
+"
+167,40ed4eca581f0ea7965a0dbdec6cd663eb00c639,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
+"
+168,40ed4eca581f0ea7965a0dbdec6cd663eb00c639,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
+# however Apache will capture everything and send it to text file.
+# This would break commands like `docker logs` and `kubectl logs`.
+# That's why we use this trick.
+"
+169,40ed4eca581f0ea7965a0dbdec6cd663eb00c639,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
+# used in production mode. We have to use this temporary workaround
+"
+170,40ed4eca581f0ea7965a0dbdec6cd663eb00c639,/derived_images/portus/docker/Dockerfile,"# portus configuration
+"
+171,40ed4eca581f0ea7965a0dbdec6cd663eb00c639,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
+"
+172,a5bdb4ea9a6f610b9b71cb1eb79ae6fb7445ec8b,/derived_images/portus/Dockerfile,"# Install some helper scripts:
+#   1. init: contains the entrypoint of this image.
+#   2. check_db.rb: a rails runner used by the `init` script that checks
+#      if the database is up and running.
+#   3. rpm-import-repo-key: temporary script that makes it easier to download
+#      and import gpg keys from trusted key servers. This is used later on to
+#      import the OBS key used to sign all the contents of the
+#      Virtualization:containers project.
+"
+173,a5bdb4ea9a6f610b9b71cb1eb79ae6fb7445ec8b,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+174,a3718d116168be2150b39c5d29103ccd6efd314c,/derived_images/portus/Dockerfile,"# Install some helper scripts:
+#   1. init: contains the entrypoint of this image.
+#   2. check_db.rb: a rails runner used by the `init` script that checks
+#      if the database is up and running.
+#   3. rpm-import-repo-key: temporary script that makes it easier to download
+#      and import gpg keys from trusted key servers. This is used later on to
+#      import the OBS key used to sign all the contents of the
+#      Virtualization:containers project.
+"
+175,a3718d116168be2150b39c5d29103ccd6efd314c,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+176,053959727acbb008a188b3646b61b9ce80c0e555,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
+"
+177,053959727acbb008a188b3646b61b9ce80c0e555,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+178,053959727acbb008a188b3646b61b9ce80c0e555,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus project.
+"
+179,053959727acbb008a188b3646b61b9ce80c0e555,/derived_images/portus/Dockerfile,"    # Now add the repository and install portus.
+"
+180,053959727acbb008a188b3646b61b9ce80c0e555,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
+"
+181,6cd09387a3290c81ec4a279b547e6f875765f1d0,/derived_images/portus/Dockerfile,"# Install some helper scripts:
+#   1. init: contains the entrypoint of this image.
+#   2. check_db.rb: a rails runner used by the `init` script that checks
+#      if the database is up and running.
+#   3. rpm-import-repo-key: temporary script that makes it easier to download
+#      and import gpg keys from trusted key servers. This is used later on to
+#      import the OBS key used to sign all the contents of the
+#      Virtualization:containers project.
+"
+182,6cd09387a3290c81ec4a279b547e6f875765f1d0,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+183,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# This script makes it easier to download and import gpg keys from trusted key
+# servers.
+# This is used later on to import the OBS key used to sign all the contents
+# of the Virtualization:containers project.
+"
+184,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
+"
+185,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
+# program is maintained by SUSE and will initialize Apache2 and ensure the httpd
+# daemon is run as wwwrun user.
+"
+186,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
+# this would cause lots of troubles when starting Portus via our init
+# script
+"
+187,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# apache configuration
+"
+188,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
+"
+189,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
+# however Apache will capture everything and send it to text file.
+# This would break commands like `docker logs` and `kubectl logs`.
+# That's why we use this trick.
+"
+190,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
+# used in production mode. We have to use this temporary workaround
+"
+191,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# portus configuration
+"
+192,097a2374ac7618658e09d065a98e13ae34a461cf,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
+"
+193,6ce9d96eba26ed5afcc646b7768591dc536b5039,/derived_images/clair/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+194,6ce9d96eba26ed5afcc646b7768591dc536b5039,/derived_images/clair/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus project.
+"
+195,6ce9d96eba26ed5afcc646b7768591dc536b5039,/derived_images/clair/Dockerfile,"    # Now add the repository and installa clair.
+"
+196,6ce9d96eba26ed5afcc646b7768591dc536b5039,/derived_images/clair/Dockerfile,"    # Remove unneeded packages and clean stuff.
+"
+197,6ce9d96eba26ed5afcc646b7768591dc536b5039,/derived_images/clair/Dockerfile,"    # Prepare the certificates directory.
+"
+198,9611b46d7c35ab5ec2d41e5c1440cdc655fc7dbe,/derived_images/portus/Dockerfile,"# Install the entrypoint of this image.
+"
+199,9611b46d7c35ab5ec2d41e5c1440cdc655fc7dbe,/derived_images/portus/Dockerfile,"# Install Portus and prepare the /certificates directory.
+"
+200,9611b46d7c35ab5ec2d41e5c1440cdc655fc7dbe,/derived_images/portus/Dockerfile,"    # Fetch the key from the obs://Virtualization:containers:Portus
+    # project. Sometimes the key server times out or has some other problem. In
+    # that case, we fall back to alternative key servers.
+"
+201,9611b46d7c35ab5ec2d41e5c1440cdc655fc7dbe,/derived_images/portus/Dockerfile,"    # Now add the repository and install portus.
+"
+202,9611b46d7c35ab5ec2d41e5c1440cdc655fc7dbe,/derived_images/portus/Dockerfile,"    # Prepare the certificates directory.
+"
+203,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# This script makes it easier to download and import gpg keys from trusted key
+# servers.
+# This is used later on to import the OBS key used to sign all the contents
+# of the Virtualization:containers project.
+"
+204,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke update-ca-certificates
+"
+205,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# Add sudo rule that allows the wwwrun user to invoke start_apache2; this
+# program is maintained by SUSE and will initialize Apache2 and ensure the httpd
+# daemon is run as wwwrun user.
+"
+206,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# Configure sudo to not wipe out all the existing env variables,
+# this would cause lots of troubles when starting Portus via our init
+# script
+"
+207,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# apache configuration
+"
+208,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# Custom certificates must be placed inside of /certificates,
+"
+209,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# Portus will log everything to stdout and stderr by default,
+# however Apache will capture everything and send it to text file.
+# This would break commands like `docker logs` and `kubectl logs`.
+# That's why we use this trick.
+"
+210,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# The stable release of Portus is not logging to STDOUT by default when
+# used in production mode. We have to use this temporary workaround
+"
+211,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# portus configuration
+"
+212,104fe8aa5093d29929f457ef3eec1048fb00455c,/derived_images/portus/docker/Dockerfile,"# Disable password login for the root user
 "
