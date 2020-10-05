@@ -40,6 +40,8 @@ Dockerfileが含まれる場合、Status とともに情報を取得する。
 
 `Status: A(dd) D(elete) M(odify) R(ename)`
 
+→ 追加：`git show`を行うファイルとリビジョンのペアを、事前にテキストに保存（重複削除）
+
 ## 3-getPastFile.py
 2のファイルを元に過去のRevisionのDockerfileをテキスト形式で保存。
 > Delete, Rename は無視。
@@ -48,18 +50,19 @@ Dockerfileが含まれる場合、Status とともに情報を取得する。
 3で取得したファイルを元にコメントを抽出し、
 各リポジトリごとにCSVファイルで情報を保存。
 
-> コミットID・Dockerfiles・Comments
+> コミットID・Dockerfile・Comment
 上記状態で、生のコメントを抽出しただけであり、重複を考慮していないので注意
 
 ## 5-detecctSATD.py
 4で取得したファイルとキーワード64個をもとにSATDの検出・抽出作業。
-> コミットID・Dockerfiles・Comments・isSATD
+> コミットID・Dockerfile・Comment・isSATD
 
-#### us-ascii を変換したつもりであるが、ファイルによってはエンコーディングエラーがあり検出できていないかも...？？
+#### us-ascii を変換したつもりであるが、ファイルによってはエンコーディングエラーがあり検出できていないかも...
+→ 抽出するファイルを絞って一時的に解決（remove -> .tgz)
 
 ## 6-addDateRenameInfo.py
 5で取得したファイルに以下の情報を追加
-> コミットID・Dockerfiles・LatestDockerfile・Comments・Date・FirstCommit Date・Deleted Date・isSATD
+> コミットID・Dockerfile・LatestDockerfile・Comments・Date・FirstCommit Date・Deleted Date・Deleted Commit・isSATD
 
 1. LatestDockerfile Name: 最新バージョンのファイル名
 2. Date: コミットIDに基づいたコミット日時
@@ -67,6 +70,7 @@ Dockerfileが含まれる場合、Status とともに情報を取得する。
 4. Delete Date: 最新ファイル名であると仮定し、そのファイルがいつ削除(D)されたかの日時　（今の存在するファイル名の中でこの名前が使用されているかも）
 
 #### 1.3.4 に課題あり。
+→ 現在解決作業中であるが解決に向かっていない...
 
 ## 7-fixSameSATD.py
 6で取得したファイルに対して以下の処理を実行
@@ -83,4 +87,4 @@ Dockerfileが含まれる場合、Status とともに情報を取得する。
 7で取得したファイルを１つにまとめて"最強データ"を作成するためのCSVファイルを作成。
 データをまとめる際に、分析に必要な結果を追加してます。
 
-> project・gitPath・CommitID・Dockerfiles・LatestDockerfile・Comments・CommitDate・DeleteComment・(File) FirstCommit・(File) Deleted・isSATD・firstCommitからコメント追加までの日数・コメント追加からコメント削除までの日数
+> project・gitPath・CommitID・Dockerfile・LatestDockerfile・Comments・CommitDate・DeleteComment・(File) FirstCommit・(File) Deleted・isSATD・firstCommitからコメント追加までの日数・コメント追加からコメント削除までの日数・追加時ファイル・削除時ファイル
