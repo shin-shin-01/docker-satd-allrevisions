@@ -3,6 +3,7 @@ from tqdm import tqdm
 import os
 import re
 import pandas as pd
+import numpy as np
 
 
 def getTargetSatdCSV():
@@ -19,7 +20,6 @@ def getTargetSatdCSV():
 
         targetCsvfiles.append(csvfile)
     
-    print("\n ===== 要素数が０のファイルは保存されずに実行されます =====\n")
     return targetCsvfiles
 
 
@@ -27,83 +27,101 @@ def getDataFrame(csvfile):
     df = pd.read_csv(f'{PATH_OF_SATD_COMMENTFILE}/{csvfile}', index_col=0, encoding='utf-8-sig')
     gitlog = pd.read_csv(f'{PATH_OF_GITLOGCSV}/{csvfile}', index_col=0, encoding='utf-8-sig')
 
-
     try:
-        df["Dockerfiles"] = df["Dockerfiles"].apply(lambda fileName: fileName[1:] if fileName[0] == "/" else fileName)
-        gitlog["Dockerfiles"] = gitlog["Dockerfiles"].apply(
+        df["Dockerfile"] = df["Dockerfile"].apply(lambda fileName: fileName[1:] if fileName[0] == "/" else fileName)
+        gitlog["Dockerfile"] = gitlog["Dockerfile"].apply(
             lambda fileNames: '\n'.join(
                 list(map(lambda fileName: fileName[1:] if fileName[0] == "/" else fileName, str(fileNames).splitlines() ))
             ))
-    except KeyError: #Dockerfiles
+    except KeyError: # [Dockerfile] カラムが存在してない（中身がない）
         pass
 
     return df, gitlog
 
 
-def getRenamePairListFromGitLog(gitlog):
-    df = gitlog.copy(deep=True)
-     # isDockerFile
-    df = df.dropna(subset=['Dockerfiles'])
-    # isRename
-    df = df[ df["Status"].apply(lambda st: "R" in str(st)) ]
-
-    renameDict = {
-        "count": 0,
-        "beforeName": [],
-        "afterName": []
-    }
-    
-    # get Rename
-    for index, row in df.iterrows():
-        dockerfiles = row["Dockerfiles"].splitlines()
-        statuses = row["Status"].splitlines()
-        for i in range(len(dockerfiles)):
-            if statuses[i] == "R":
-                dockerfile = dockerfiles[i].split()
-                renameDict["count"] += 1
-                renameDict["beforeName"].append(dockerfile[0])
-                renameDict["afterName"].append(dockerfile[1])
-
-    renameDict["beforeName"] = renameDict["beforeName"][::-1]
-    renameDict["afterName"] = renameDict["afterName"][::-1]
-
-    return renameDict
-
-
-def renameFile(fileName, renameDict):
-    for i in range(renameDict["count"]):
-        if fileName == renameDict["beforeName"][i]:
-            fileName = renameDict["afterName"][i]
-        
-    return fileName
-
-
-def renameFileToLatest(df, gitlog):
-    renameDict = getRenamePairListFromGitLog(gitlog)
-
-    df["LatestDockerfile"] = df["Dockerfiles"]
-    
-    df["LatestDockerfile"] = df["LatestDockerfile"].apply(lambda fileName: renameFile(fileName, renameDict))
-
-    return df, renameDict
- 
-
+# コミットIDとコミット日の紐付け
 def addCommitDate(df, gitlog):
     gitlog = gitlog[["CommitID", "Date"]]
+    gitlog = gitlog.drop_duplicates() # 重複削除
     df = pd.merge(df, gitlog, on=["CommitID"])
     return df
 
 
-def getFirstDateOfDockerfileFromGitLog(gitlog):
+def modifyInformation(df, gitlog):
+    """
+    === 処理内容 ===
+    ・rename 処理
+    ・FirstCommit日 追加
+    ・ファイル削除日 追加
+    """
+
+    df["LatestDockerfile"] = df["Dockerfile"]
+    df["Deleted Date"] = np.nan
+    df["FirstCommit Date"] = np.nan
+    df["Date"] = pd.to_datetime(df["Date"])
+ 
+    dateStatusDataFrame = extractChangeInfo(gitlog)
+    # 日付変換
+    dateStatusDataFrame["Date"] = pd.to_datetime(dateStatusDataFrame["Date"])
+
+    rename_delete_df = dateStatusDataFrame[dateStatusDataFrame["Status"].apply(lambda st: st in ["R", "D"])].iloc[::-1] # 逆順
+    # 逆順にしないことで最過去の日時を追加された日時とすることができる
+    added_df = dateStatusDataFrame[dateStatusDataFrame["Status"] == "A"]
+
+    # 複数回追加されたものでも初期追加されたときの日時を利用する
+    # added_df = added_df.drop_duplicates(keep='first', subset=['filename'])
+
+    for idx, row in rename_delete_df.iterrows():
+        # rename のときは 変更前名称をとる
+        targetfile = row["filename"].split()[0]
+
+        """ rename / delete [条件]
+        1. ファイル名が一致している
+        2. コミット日が 処理日より前
+        3. まだ削除されていない
+        """
+        if row["Status"] == "R":
+            df.loc[(df["LatestDockerfile"] == targetfile) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "LatestDockerfile"] = row["filename"].split()[1]
+        elif row["Status"] == "D":
+            df.loc[(df["LatestDockerfile"] == targetfile) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "Deleted Date"] = row["Date"]
+
+        if row["Status"] == "R":
+            renamefiles = row["filename"].split()
+            """ ここでちょっとエラーがでる
+             rename されたファイルは rename された時刻より前に存在しているはずなのに
+             rename されたあとに add されているファイルが存在している。
+
+             ここを正確に日付入れてやろうとしている理由は
+             ファイルが削除されたあとに異なる同名ファイルが作成されていたら、
+             新しいはずのファイルも同様に rename してしまうから。
+            """
+            added_df.loc[(added_df["filename"] == renamefiles[0]) & (added_df["Date"] <= row["Date"]), "filename"] = renamefiles[1]
+
+            # 全ファイル変更
+            # added_df.loc[ added_df["filename"] == renamefiles[0], "filename"] = renamefiles[1]
+
+
+    # 最初に追加された日付を追加している処理
+    for idx, row in added_df.iterrows():
+        df.loc[df["LatestDockerfile"] == row["filename"], "FirstCommit Date"] = row["Date"]
+
+    return df
+
+
+def extractChangeInfo(gitlog):
+    """ === 処理内容 ===
+    git log から Add Rename Delete の情報（ファイル名・日付・ステータス）を取得
+    """
+
     df = gitlog.copy(deep=True)
      # isDockerFile
     df = df.dropna(subset=['Dockerfiles'])
-    # isAdded
-    df = df[ df["Status"].apply(lambda st: "A" in str(st)) ]
+    df = df[ df["Status"].apply(lambda st: ("A" in str(st)) or ("D" in str(st)) or ("R" in str(st)))]
 
-    firstCommitDateDict = {
+    dateStatusDict = {
         "filename": [],
-        "FirstCommit Date": []
+        "Date": [],
+        "Status": []
     }
     
     # get Rename
@@ -111,57 +129,15 @@ def getFirstDateOfDockerfileFromGitLog(gitlog):
         dockerfiles = row["Dockerfiles"].splitlines()
         statuses = row["Status"].splitlines()
         for i in range(len(dockerfiles)):
-            if statuses[i] == "A":
-                firstCommitDateDict["filename"].append(dockerfiles[i])
-                firstCommitDateDict["FirstCommit Date"].append(row["Date"])
+            if statuses[i] != "M":
+                dateStatusDict["filename"].append(dockerfiles[i])
+                dateStatusDict["Date"].append(row["Date"])
+                dateStatusDict["Status"].append(statuses[i])
 
-    firstCommitDateDataFrame = pd.DataFrame.from_dict(firstCommitDateDict)
+    dateStatusDataFrame = pd.DataFrame.from_dict(dateStatusDict)
 
-    return firstCommitDateDataFrame
+    return dateStatusDataFrame
 
-
-def addFirstCommitDate(df, gitlog):
-    global renameDict
-    firstCommitDateDataFrame = getFirstDateOfDockerfileFromGitLog(gitlog)
-    firstCommitDateDataFrame["filename"] = firstCommitDateDataFrame["filename"].apply(lambda fileName: renameFile(fileName, renameDict))
-
-    # 互いに最新ファイルで比較
-    df = pd.merge(df, firstCommitDateDataFrame, left_on=['LatestDockerfile'], right_on=['filename'], how='left')
-    return df
-    
-
-def getDeletedDateOfDockerfileFromGitLog(gitlog):
-    df = gitlog.copy(deep=True)
-     # isDockerFile
-    df = df.dropna(subset=['Dockerfiles'])
-    # isAdded
-    df = df[ df["Status"].apply(lambda st: "D" in str(st)) ]
-
-    deleteCommitDateDict = {
-        "filename": [],
-        "Deleted Date": []
-    }
-    
-    # get Rename
-    for index, row in df.iterrows():
-        dockerfiles = row["Dockerfiles"].splitlines()
-        statuses = row["Status"].splitlines()
-        for i in range(len(dockerfiles)):
-            if statuses[i] == "D":
-                deleteCommitDateDict["filename"].append(dockerfiles[i])
-                deleteCommitDateDict["Deleted Date"].append(row["Date"])
-
-    deleteCommitDateDataFrame = pd.DataFrame.from_dict(deleteCommitDateDict)
-
-    return deleteCommitDateDataFrame
-
-
-def addDeletedCommitDate(df, gitlog):
-    deleteCommitDateDataFrame = getDeletedDateOfDockerfileFromGitLog(gitlog)
-
-    # 互いに最新ファイルで比較
-    df = pd.merge(df, deleteCommitDateDataFrame, left_on=['LatestDockerfile'], right_on=['filename'], how='left')
-    return df
 
 def writeError(log):
     with open(PATH_OF_ERROR_ADDINFO, "a+") as f:
@@ -171,16 +147,6 @@ def writeError(log):
 
 
 if __name__ == "__main__":
-    """
-    ・ファイル名変更にて、Dockerfile などの名前が複数回定義されたときにエラーが発生する
-    例）
-    → 202001にDockerfileを作成し, 202002に/ver2/Dockerfile に名前を変更
-    → 202007にDockerfileを作成し, 202008に/ver3/Dockerfile に名前を変更
-
-    ・削除された日付や追加された日付が複数存在する時がある
-    → 同じファイルが何度も追加削除されたとき
-    """
-
     csvfiles = getTargetSatdCSV()
 
     for csvfile in tqdm(csvfiles):
@@ -192,29 +158,18 @@ if __name__ == "__main__":
             writeError(errorlog)
             continue
 
-        df, renameDict = renameFileToLatest(df, gitlog)
-        if len(df) != length:
-            errorlog = f"RENAME Error: {csvfile} :最終的な出力結果数が変わっています。{length} -> {len(df)}"
-            print(errorlog)
-            writeError(errorlog)
-
         df = addCommitDate(df, gitlog)
+        
         if len(df) != length:
-            errorlog = f"DATE Error: {csvfile} :最終的な出力結果数が変わっています。{length} -> {len(df)}"
+            errorlog = f"[Error] Merged commit Date:  {csvfile} :最終的な出力結果数が変わっています。{length} -> {len(df)}"
             print(errorlog)
             writeError(errorlog)
 
-        df = addFirstCommitDate(df, gitlog)
+        df = modifyInformation(df, gitlog)
         if len(df) != length:
-            errorlog = f"FIRSTDATE Error: {csvfile} :最終的な出力結果数が変わっています。{length} -> {len(df)}"
+            errorlog = f"[Error] add Information:  {csvfile} :最終的な出力結果数が変わっています。{length} -> {len(df)}"
             print(errorlog)
             writeError(errorlog)
 
-        df = addDeletedCommitDate(df, gitlog)
-        if len(df) != length:
-            errorlog = f"DELETE DATE Error: {csvfile} :最終的な出力結果数が変わっています。{length} -> {len(df)}"
-            print(errorlog)
-            writeError(errorlog)
-
-        df = df.reindex(columns=['CommitID', 'Dockerfiles', 'LatestDockerfile', 'Comments', 'Date', 'FirstCommit Date', 'Deleted Date', 'isSATD'])
+        df = df.reindex(columns=['CommitID', 'Dockerfile', 'LatestDockerfile', 'Comment', 'Date', 'FirstCommit Date', 'Deleted Date', 'isSATD'])
         df.to_csv(f'{PATH_OF_SATD_COMMENTFILE_ADDINFO}/{csvfile}')
