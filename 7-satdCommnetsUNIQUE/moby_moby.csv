@@ -1,5 +1,140 @@
-,CommitID,Dockerfiles,LatestDockerfile,Comments,Date,FirstCommit Date,Deleted Date,isSATD,DeletedComment Date
-2122,b74fd0628aefbca3b77ffa5d52995c7af2f38d04,Dockerfile.arm,Dockerfile.armhf,"# This file describes the standard way to build Docker on ARM, using docker
+,CommitID,Dockerfile,LatestDockerfile,Comment,Date,FirstCommit Date,Deleted Date,isSATD,DeletedComment Date,Deleted CommitID
+19316,66d24c2b44a076a6dda17dabe028da9acaa55deb,Dockerfile.aarch64,Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.aarch64 .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test
+#
+# # Publish a release:
+# docker run --privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2016-01-15 14:25:03+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-02-12 16:56:11+00:00,f27b5dda4afc0b0a278eb5379d17dfc3533c5397
+19317,66d24c2b44a076a6dda17dabe028da9acaa55deb,Dockerfile.aarch64,Dockerfile.aarch64,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Download man page generator
+",2016-01-15 14:25:03+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-09-07 15:02:51+00:00,d0fa13a50201cdcef849b0c2ae67b0747222a1c6
+15206,f27b5dda4afc0b0a278eb5379d17dfc3533c5397,Dockerfile.aarch64,Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.aarch64 .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2016-02-12 16:56:11+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-08-16 21:18:43+00:00,37302bbb3f4889e9de2a95d5ea018acdab9e4447
+24620,12e2c2687e5c1f47287aa3668c8853ee8b5d6706,Dockerfile.aarch64,Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.aarch64 .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2016-06-03 13:09:53+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2017-08-11 17:39:27+00:00,f34e4d295d5c17a78c33beb14b65e5d001c16968
+10916,ee3ac3aa66bfb27b7c21dfb253fdaa113baedd4e,Dockerfile.aarch64,Dockerfile.aarch64,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Download toml validator
+",2016-06-27 21:38:47+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-09-23 09:27:52+00:00,a94067c07fbfa77cdc57aa33c2fe2270cabb9ca3
+9601,5f4dcd825299bf58e87e69c2bff3ceefc300a432,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-09-21 23:18:22+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-10-25 15:54:13+00:00,36f47aa2527f83d7ca7254c43eb08ffc5ce1102e
+9843,bd31b24336ff2da098e62a375552586434a012b0,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Download toml validator
+",2016-09-22 02:15:18+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-10-05 20:15:30+00:00,0b86ca9ad0916b62b7429f5d15821962bc4f7db0
+1345,1b41125ad9f1a3881b71bd044d76fd285170addb,Dockerfile.aarch64,Dockerfile.aarch64,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd.and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-09-23 16:20:57+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-09-23 17:37:28+00:00,b8265e55508db99aea632033b2f5008f921b11e2
+1024,0b86ca9ad0916b62b7429f5d15821962bc4f7db0,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd.and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-05 20:15:30+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-10-06 17:36:31+00:00,5ee2c2a6475056f55327ce77b61677499a9e3fa8
+325,3996975b0840033bda3919440d122d734a4bc66b,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd, grimes, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-18 23:30:47+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-11-04 01:30:19+00:00,c07234707878412eaaeab252af19adac8cf25d6b
+7028,2790ac68b32b399c872de88388bdccc359ed7a88,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-24 22:18:58+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2017-04-12 13:37:40+00:00,330ddf8eb8f8a551677bdfc757fcefdb0cdaec3f
+3883,f2614f2107c838d014d31b806e3b8a9f1395cb2b,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-31 18:22:28+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-11-09 14:29:42+00:00,93e837d1d2d3a24b0219ccadc1fdf170d242c137
+10522,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+
+# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-12-01 13:33:30+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2018-02-22 03:20:29+00:00,49ad3d69a7780e54ace50290d0a1a55c1182a947
+4792,bc82b139955c4a0edb20b070926469cceea0fbbb,Dockerfile.aarch64,Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.aarch64 .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2017-06-17 00:18:44+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
+20449,d6e1cc32d309ee237342975388e729570343a974,Dockerfile.aarch64,Dockerfile.aarch64,"# Options for hack/validate/gometalinter
+",2017-06-30 08:29:56+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
+21792,b529d1b0936b90ae14d584c73f7332919f8d76b7,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+#
+
+# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
+# Please edit hack/dockerfile/install/<name>.installer to update them.
+",2018-02-16 18:51:30+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
+27735,b74fd0628aefbca3b77ffa5d52995c7af2f38d04,Dockerfile.arm,Dockerfile.armhf,"# This file describes the standard way to build Docker on ARM, using docker
 #
 # Usage:
 #
@@ -24,64 +159,72 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2015-11-05 14:38:41+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-01-05 05:50:15+00:00
-2123,b74fd0628aefbca3b77ffa5d52995c7af2f38d04,Dockerfile.arm,Dockerfile.armhf,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+",2015-11-05 14:38:41+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2015-12-30 16:21:52+00:00,3be1a80f1ab2c07322cf54e4bce42914b797c3b1
+27736,b74fd0628aefbca3b77ffa5d52995c7af2f38d04,Dockerfile.arm,Dockerfile.armhf,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Download man page generator
-",2015-11-05 14:38:41+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-07 15:02:51+00:00
-620,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.armhf,Dockerfile.armhf,"# This has been commented out and kept as reference because we don't support compiling with older Go anymore.
+",2015-11-05 14:38:41+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-09-07 15:02:51+00:00,d0fa13a50201cdcef849b0c2ae67b0747222a1c6
+10771,dc38061bee468ebfbfa3c89f0bb5b2edb5fd5147,Dockerfile.armhf,Dockerfile.armhf,"# This has been commented out and kept as reference because we don't support compiling with older Go anymore.
+# ENV GOFMT_VERSION 1.3.3
+# RUN curl -sSL https://storage.googleapis.com/golang/go${GOFMT_VERSION}.$(go env GOOS)-$(go env GOARCH).tar.gz | tar -C /go/bin -xz --strip-components=2 go/bin/gofmt
+
+# TODO update this sha when we upgrade to Go 1.5+
+",2015-12-30 08:50:10+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-01-11 18:25:55+00:00,2d5ca742eb54e077861a29f201eb8fa38359cb1b
+10769,dc38061bee468ebfbfa3c89f0bb5b2edb5fd5147,Dockerfile.armhf,Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.armhf .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test
+#
+# # Publish a release:
+# docker run --privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2015-12-30 08:50:10+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-02-12 16:56:11+00:00,f27b5dda4afc0b0a278eb5379d17dfc3533c5397
+10770,dc38061bee468ebfbfa3c89f0bb5b2edb5fd5147,Dockerfile.armhf,Dockerfile.armhf,"# TODO update GO_TOOLS_COMMIT below when this updates to 1.5+
+",2015-12-30 08:50:10+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-01-11 18:25:55+00:00,2d5ca742eb54e077861a29f201eb8fa38359cb1b
+8796,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.armhf,Dockerfile.armhf,"# Grab Go's lint tool
+#ENV GO_LINT_COMMIT 32a87160691b3c96046c0c678fe57c5bef761456
+# TODO update this sha when we upgrade to Go 1.5+
+",2016-01-05 05:50:15+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-03-23 15:27:53+00:00,f4dfe15cbedd00668d1ad6fe26544cfb814f35ea
+8795,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.armhf,Dockerfile.armhf,"# This has been commented out and kept as reference because we don't support compiling with older Go anymore.
 # ENV GOFMT_VERSION 1.3.3
 # RUN curl -sSL https://storage.googleapis.com/golang/go${GOFMT_VERSION}.$(go env GOOS)-$(go env GOARCH).tar.gz | tar -C /go/bin -xz --strip-components=2 go/bin/gofmt
 
 #ENV GO_TOOLS_COMMIT 823804e1ae08dbb14eb807afc7db9993bc9e3cc3
 # TODO update this sha when we upgrade to Go 1.5+
-",2016-01-05 05:50:15+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-03-23 02:55:25+00:00
-619,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.armhf,Dockerfile.armhf,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
+",2016-01-05 05:50:15+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-03-23 15:27:53+00:00,f4dfe15cbedd00668d1ad6fe26544cfb814f35ea
+8794,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.armhf,Dockerfile.armhf,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
 
 # Install Go
 #ENV GO_VERSION 1.5.2
 # TODO update GO_TOOLS_COMMIT below when this updates to 1.5+
-",2016-01-05 05:50:15+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-01-14 21:51:30+00:00
-618,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.armhf,Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.armhf .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-01-05 05:50:15+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-02-12 16:56:11+00:00
-621,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.armhf,Dockerfile.armhf,"# Grab Go's lint tool
-#ENV GO_LINT_COMMIT 32a87160691b3c96046c0c678fe57c5bef761456
-# TODO update this sha when we upgrade to Go 1.5+
-",2016-01-05 05:50:15+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-03-23 02:55:25+00:00
-2236,9560d941142b0bd17b0aa51e4d9bfe22354732ec,Dockerfile.armhf,Dockerfile.armhf,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
+",2016-01-05 05:50:15+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-01-14 02:44:11+00:00,742a7d53f2961565f0baf43d6423383101be84c3
+28748,9560d941142b0bd17b0aa51e4d9bfe22354732ec,Dockerfile.armhf,Dockerfile.armhf,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
 
 # Install Go
 #ENV GO_VERSION 1.5.3
 # TODO update GO_TOOLS_COMMIT below when this updates to 1.5+
-",2016-01-13 21:04:36+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-03-23 02:55:25+00:00
-1818,4357ed4a7363a1032edf93cf03232953c805184f,Dockerfile.armhf,Dockerfile.armhf,"# install seccomp
+",2016-01-13 21:04:36+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-03-23 15:27:53+00:00,f4dfe15cbedd00668d1ad6fe26544cfb814f35ea
+23878,4357ed4a7363a1032edf93cf03232953c805184f,Dockerfile.armhf,Dockerfile.armhf,"# install seccomp
 # TODO: switch to libseccomp-dev since dockerinit is gone
-",2016-01-20 11:53:54+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-02-02 17:56:29+00:00
-1124,f27b5dda4afc0b0a278eb5379d17dfc3533c5397,Dockerfile.armhf,Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
+",2016-01-20 11:53:54+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-02-02 19:37:43+00:00,51620020aff6f31447a71a5a66af0066c524649a
+15215,f27b5dda4afc0b0a278eb5379d17dfc3533c5397,Dockerfile.armhf,Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
 #
 # Usage:
 #
@@ -98,14 +241,14 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2016-02-12 16:56:11+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-08-23 16:01:28+00:00
-647,e6590b5fa2c442546d3dcfa3e0580eb024ede823,Dockerfile.armhf,Dockerfile.armhf,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
+",2016-02-12 16:56:11+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-08-16 21:18:43+00:00,37302bbb3f4889e9de2a95d5ea018acdab9e4447
+9209,e6590b5fa2c442546d3dcfa3e0580eb024ede823,Dockerfile.armhf,Dockerfile.armhf,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
 
 # Install Go
 # TODO Update to 1.5.4 once available, or build from source, as these builds
 # are marked ""end of life"", see http://dave.cheney.net/unofficial-arm-tarballs
-",2016-03-15 03:12:09+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-05-19 19:13:35+00:00
-1867,12e2c2687e5c1f47287aa3668c8853ee8b5d6706,Dockerfile.armhf,Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
+",2016-03-15 03:12:09+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-05-27 13:54:57+00:00,9b0d385975c80359b4cab2c75e4834fe803e12d5
+24623,12e2c2687e5c1f47287aa3668c8853ee8b5d6706,Dockerfile.armhf,Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
 #
 # Usage:
 #
@@ -122,46 +265,51 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2016-06-03 13:09:53+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2017-08-02 13:07:36+00:00
-783,ee3ac3aa66bfb27b7c21dfb253fdaa113baedd4e,Dockerfile.armhf,Dockerfile.armhf,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+",2016-06-03 13:09:53+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2017-08-11 17:39:27+00:00,f34e4d295d5c17a78c33beb14b65e5d001c16968
+10912,ee3ac3aa66bfb27b7c21dfb253fdaa113baedd4e,Dockerfile.armhf,Dockerfile.armhf,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Download toml validator
-",2016-06-27 21:38:47+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-21 23:18:22+00:00
-675,5f4dcd825299bf58e87e69c2bff3ceefc300a432,Dockerfile.armhf,Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+",2016-06-27 21:38:47+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-09-23 09:27:52+00:00,a94067c07fbfa77cdc57aa33c2fe2270cabb9ca3
+9599,5f4dcd825299bf58e87e69c2bff3ceefc300a432,Dockerfile.armhf,Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, runc, containerd and grimes
 # Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-21 23:18:22+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-10-24 22:18:58+00:00
-709,bd31b24336ff2da098e62a375552586434a012b0,Dockerfile.armhf,Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+",2016-09-21 23:18:22+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-10-25 15:54:13+00:00,36f47aa2527f83d7ca7254c43eb08ffc5ce1102e
+9839,bd31b24336ff2da098e62a375552586434a012b0,Dockerfile.armhf,Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Download toml validator
-",2016-09-22 02:15:18+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-10-18 23:30:47+00:00
-92,1b41125ad9f1a3881b71bd044d76fd285170addb,Dockerfile.armhf,Dockerfile.armhf,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+",2016-09-22 02:15:18+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-10-05 20:15:30+00:00,0b86ca9ad0916b62b7429f5d15821962bc4f7db0
+1349,1b41125ad9f1a3881b71bd044d76fd285170addb,Dockerfile.armhf,Dockerfile.armhf,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, runc, containerd.and grimes
 # Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-23 16:20:57+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-29 18:02:38+00:00
-48,3996975b0840033bda3919440d122d734a4bc66b,Dockerfile.armhf,Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+",2016-09-23 16:20:57+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-09-23 17:37:28+00:00,b8265e55508db99aea632033b2f5008f921b11e2
+1028,0b86ca9ad0916b62b7429f5d15821962bc4f7db0,Dockerfile.armhf,Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd.and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-05 20:15:30+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-10-06 17:36:31+00:00,5ee2c2a6475056f55327ce77b61677499a9e3fa8
+323,3996975b0840033bda3919440d122d734a4bc66b,Dockerfile.armhf,Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, runc, containerd, grimes, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-18 23:30:47+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-10-19 19:58:44+00:00
-443,2790ac68b32b399c872de88388bdccc359ed7a88,Dockerfile.armhf,Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+",2016-10-18 23:30:47+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-11-03 16:47:50+00:00,d58b47623b252803f5cd12f6d9ca584d1587ab22
+7034,2790ac68b32b399c872de88388bdccc359ed7a88,Dockerfile.armhf,Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-24 22:18:58+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2017-03-23 15:28:45+00:00
-273,f2614f2107c838d014d31b806e3b8a9f1395cb2b,Dockerfile.armhf,Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+",2016-10-24 22:18:58+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2017-04-12 13:37:40+00:00,330ddf8eb8f8a551677bdfc757fcefdb0cdaec3f
+3880,f2614f2107c838d014d31b806e3b8a9f1395cb2b,Dockerfile.armhf,Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, vndr, runc, containerd, grimes, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-31 18:22:28+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2016-11-20 22:14:51+00:00
-757,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile.armhf,Dockerfile.armhf,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+",2016-10-31 18:22:28+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-11-09 14:29:42+00:00,93e837d1d2d3a24b0219ccadc1fdf170d242c137
+10527,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile.armhf,Dockerfile.armhf,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
 
 # Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-12-01 13:33:30+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,2018-02-16 18:51:30+00:00
-332,bc82b139955c4a0edb20b070926469cceea0fbbb,Dockerfile.armhf,Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
+",2016-12-01 13:33:30+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2018-02-22 03:20:29+00:00,49ad3d69a7780e54ace50290d0a1a55c1182a947
+4788,bc82b139955c4a0edb20b070926469cceea0fbbb,Dockerfile.armhf,Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
 #
 # Usage:
 #
@@ -178,1012 +326,15 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2017-06-17 00:18:44+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,Fri Mar 9 06:17:37 2018 +0000
-1553,d6e1cc32d309ee237342975388e729570343a974,Dockerfile.armhf,Dockerfile.armhf,"# Options for hack/validate/gometalinter
-",2017-06-30 08:29:56+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,Fri Mar 9 06:17:37 2018 +0000
-1688,b529d1b0936b90ae14d584c73f7332919f8d76b7,Dockerfile.armhf,Dockerfile.armhf,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+",2017-06-17 00:18:44+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
+20452,d6e1cc32d309ee237342975388e729570343a974,Dockerfile.armhf,Dockerfile.armhf,"# Options for hack/validate/gometalinter
+",2017-06-30 08:29:56+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
+21780,b529d1b0936b90ae14d584c73f7332919f8d76b7,Dockerfile.armhf,Dockerfile.armhf,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
 
 # Install tomlv, vndr, runc, containerd, tini, proxy dockercli
 # Please edit hack/dockerfile/install/<name>.installer to update them.
-",2018-02-16 18:51:30+00:00,Thu Nov 5 15:38:41 2015 +0100,Fri Mar 9 06:17:37 2018 +0000,1,Fri Mar 9 06:17:37 2018 +0000
-1813,20d24a450cbf22b6d5268bc1fe76022fa554d6be,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -lxc-conf=lxc.aa_profile=unconfined -i -t docker bash
-#
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-# -e AWS_S3_BUCKET=baz \
-# -e AWS_ACCESS_KEY=foo \
-# -e AWS_SECRET_KEY=bar \
-# -e GPG_PASSPHRASE=gloubiboulga \
-# -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release.sh
-# 
-
-",2013-08-26 22:51:22+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2013-09-30 19:57:30+00:00
-2547,fa806f26aff927eb0d98b41e79786ae98987da5b,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-# -e AWS_S3_BUCKET=baz \
-# -e AWS_ACCESS_KEY=foo \
-# -e AWS_SECRET_KEY=bar \
-# -e GPG_PASSPHRASE=gloubiboulga \
-# -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release/release.sh
-# 
-
-",2013-09-07 02:58:05+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2013-09-07 03:14:03+00:00
-2412,47838051be695a4e74c80690ceef811dcd3ef62c,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-# -e AWS_S3_BUCKET=baz \
-# -e AWS_ACCESS_KEY=foo \
-# -e AWS_SECRET_KEY=bar \
-# -e GPG_PASSPHRASE=gloubiboulga \
-# -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release.sh
-# 
-
-",2013-09-07 03:14:03+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2013-09-07 03:16:13+00:00
-1231,ccefe47897bdcef8b56bf54d4bd324989855f3b5,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -lxc-conf=lxc.aa_profile=unconfined -i -t docker bash
-#
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-
-",2013-09-30 19:57:30+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2013-10-16 00:31:34+00:00
-1719,1cbdaebaa1c2326e57945333420d25d6f77011d5,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -lxc-conf=lxc.aa_profile=unconfined -i -t docker bash
-#
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker hack/make.sh test
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-
-",2013-10-05 02:25:15+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2013-11-05 04:12:18+00:00
-2423,31638ab2ad2a5380d447780f05f7aa078c9421f5,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run -privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run -privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: Apparmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2013-10-31 21:58:43+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2014-03-13 17:46:02+00:00
-1908,62a81370fffb3cfdb15ef19702f0ea07ab2f4c36,Dockerfile,Dockerfile,"# TODO add linux/386 and linux/arm
-",2013-12-19 06:06:14+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2014-01-31 10:16:42+00:00
-2524,484a75f3549239d0489cb0ad518d79ed6783584a,Dockerfile,Dockerfile,"# TODO replace FPM with some very minimal debhelper stuff
-",2013-12-25 03:40:41+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2015-11-15 02:01:24+00:00
-199,44fe8cbbd174b5d85d4a063ed270f6b9d2279b70,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/dotcloud/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: Apparmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2014-03-13 17:46:02+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2014-07-09 21:21:39+00:00
-1524,d0a0e91f1f8c3a43f04e7a58e37498124b283594,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: Apparmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2014-06-19 02:04:08+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2015-06-13 16:21:50+00:00
-2467,d5151ca8ab5d90300839c8572cb96577de4d6233,Dockerfile,Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download man page generator
-",2014-09-03 14:26:19+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2016-09-07 15:02:51+00:00
-110,47769994e5cba81a96529b418052afce7a6d51a3,Dockerfile,Dockerfile,"# TODO when https://jenkins.dockerproject.com/job/Windows/ is green, add windows back to the list above
-#	windows/amd64 windows/386
-
-# (set an explicit GOARM of 5 for maximum compatibility)
-",2015-01-22 22:42:17+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2015-02-09 22:19:08+00:00
-2203,5d70a97b1fff8286220d2bef9ceb248401f046d1,Dockerfile,Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install man page generator
-",2015-02-26 19:20:32+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2015-04-21 09:33:52+00:00
-2535,6089e679a2fb2494fd3e599a9eab9327e6a509fc,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2015-05-01 23:42:53+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2016-08-23 16:01:28+00:00
-1821,4357ed4a7363a1032edf93cf03232953c805184f,Dockerfile,Dockerfile,"# install seccomp
-# TODO: switch to libseccomp-dev since dockerinit is gone
-",2016-01-20 11:53:54+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2016-02-02 17:56:29+00:00
-642,e6590b5fa2c442546d3dcfa3e0580eb024ede823,Dockerfile,Dockerfile,"# !!! TEMPORARY HACK !!!
-# Because of https://github.com/golang/go/issues/15286 we have to revert to Go 1.5.3 for windows/amd64 in master
-# To change which version of Go to compile with, simply prepend PATH with /usr/local/go1.5.3/bin
-# and set GOROOT to /usr/local/go1.5.3
-",2016-03-15 03:12:09+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2016-05-12 14:52:00+00:00
-1769,d8fef66b03c1ea8715470690efbd950033f7f628,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-05-12 14:52:00+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2017-05-15 11:22:52+00:00
-1770,d8fef66b03c1ea8715470690efbd950033f7f628,Dockerfile,Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-05-12 14:52:00+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2016-09-21 23:18:22+00:00
-256,934328d8ea650bf8a9c3c719999ce2a1f5dd5df6,Dockerfile,Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-06-07 07:45:21+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2016-11-17 21:00:59+00:00
-683,5f4dcd825299bf58e87e69c2bff3ceefc300a432,Dockerfile,Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-21 23:18:22+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2016-10-24 22:18:58+00:00
-715,bd31b24336ff2da098e62a375552586434a012b0,Dockerfile,Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-09-22 02:15:18+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2016-09-29 18:02:38+00:00
-96,1b41125ad9f1a3881b71bd044d76fd285170addb,Dockerfile,Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-23 16:20:57+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2016-09-29 17:58:24+00:00
-44,3996975b0840033bda3919440d122d734a4bc66b,Dockerfile,Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-18 23:30:47+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2016-10-19 19:58:44+00:00
-445,2790ac68b32b399c872de88388bdccc359ed7a88,Dockerfile,Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-24 22:18:58+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2017-04-17 19:18:13+00:00
-745,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run -e DOCKER_GITCOMMIT=foo --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-12-01 13:33:30+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2017-08-02 13:07:36+00:00
-746,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile,Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy dockercli
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-12-01 13:33:30+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2018-02-16 18:51:30+00:00
-1112,1ecd8ed5186a161c1c43ae7c99b1c81b97188619,Dockerfile,Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-12-31 19:11:30+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2017-04-17 23:18:46+00:00
-334,bc82b139955c4a0edb20b070926469cceea0fbbb,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run -e DOCKER_GITCOMMIT=foo --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2017-06-17 00:18:44+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2018-02-14 11:03:52+00:00
-1558,d6e1cc32d309ee237342975388e729570343a974,Dockerfile,Dockerfile,"# Options for hack/validate/gometalinter
-",2017-06-30 08:29:56+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2019-09-11 06:51:06+00:00
-113,d539038d9712daa44254412c6fcc6d78a14da691,Dockerfile,Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Just a little hack so we don't have to install these deps twice, once for runc and once for dockerd
-",2017-09-29 21:09:14+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2019-04-16 23:31:49+00:00
-114,d539038d9712daa44254412c6fcc6d78a14da691,Dockerfile,Dockerfile,"# TODO: Some of this is only really needed for testing, it would be nice to split this up
-",2017-09-29 21:09:14+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,
-115,d539038d9712daa44254412c6fcc6d78a14da691,Dockerfile,Dockerfile,"# TODO: This is for the docker-py tests, which shouldn't really be needed for
-# this image, but currently CI is expecting to run this image. This should be
-# split out into a separate image, including all the `python-*` deps installed
-# above.
-",2017-09-29 21:09:14+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2019-07-17 11:59:16+00:00
-112,d539038d9712daa44254412c6fcc6d78a14da691,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Use make to build a development environment image and run it in a container.
-# # This is slow the first time.
-# make BIND_DIR=. shell
-#
-# The following commands are executed inside the running container.
-
-# # Make a dockerd binary.
-# # hack/make.sh binary
-#
-# # Install dockerd to /usr/local/bin
-# # make install
-#
-# # Run unit tests
-# # hack/test/unit
-#
-# # Run tests e.g. integration, py
-# # hack/make.sh binary test-integration test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2017-09-29 21:09:14+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2018-05-18 18:28:43+00:00
-218,be8885525c4d1ef4a13bbd6396f60e8657bc5573,Dockerfile,Dockerfile,"# FIXME(vdemeester) this is kept for other script depending on it to not fail right away
-# Remove this once the other scripts uses something else to detect the version
-",2017-12-08 01:10:04+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2018-10-02 20:41:31+00:00
-61,eaae7750efbc80314c5e028c4d43d3cd9e104edd,Dockerfile,Dockerfile,"# TODO: when issue #35963 fixed, we can upgrade the busybox to multi-arch
-",2018-01-05 02:58:14+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2018-02-16 18:51:30+00:00
-1691,b529d1b0936b90ae14d584c73f7332919f8d76b7,Dockerfile,Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
-# Please edit hack/dockerfile/install/<name>.installer to update them.
-",2018-02-16 18:51:30+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2018-02-27 06:28:29+00:00
-2365,80bc8b4766cc808186af91930152d78afb22aef8,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Use make to build a development environment image and run it in a container.
-# # This is slow the first time.
-# make BIND_DIR=. shell
-#
-# The following commands are executed inside the running container.
-
-# # Make a dockerd binary.
-# # hack/make.sh binary
-#
-# # Install dockerd to /usr/local/bin
-# # make install
-#
-# # Run unit tests
-# # hack/test/unit
-#
-# # Run tests e.g. integration, py
-# # hack/make.sh binary test-integration test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2018-05-18 18:28:43+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,2019-10-04 01:57:29+00:00
-516,4e3ab9e9fbca682f75eb350c8ad4312282869a03,Dockerfile,Dockerfile,"# TODO: This is here because hack/make.sh binary copies these extras binaries
-# from $PATH into the bundles dir.
-# It would be nice to handle this in a different way.
-",2019-07-17 12:37:56+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,
-514,4e3ab9e9fbca682f75eb350c8ad4312282869a03,Dockerfile,Dockerfile,"# Install go-swagger for validating swagger.yaml
-# This is https://github.com/kolyshkin/go-swagger/tree/golang-1.13-fix
-# TODO: move to under moby/ or fix upstream go-swagger to work for us.
-",2019-07-17 12:37:56+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,
-1745,d1a3a17c671b9f89a90e59b58a92f04da0a4e3d9,Dockerfile,Dockerfile,"# Switch to use iptables instead of nftables (to match the CI hosts)
-# TODO use some kind of runtime auto-detection instead if/when nftables is supported (https://github.com/moby/moby/issues/26824)
-",2020-01-15 14:22:41+00:00,Fri Jun 21 19:42:17 2013 -0700,,1,
-1498,66d24c2b44a076a6dda17dabe028da9acaa55deb,Dockerfile.aarch64,Dockerfile.aarch64,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download man page generator
-",2016-01-15 14:25:03+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-07 15:02:51+00:00
-1497,66d24c2b44a076a6dda17dabe028da9acaa55deb,Dockerfile.aarch64,Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.aarch64 .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-01-15 14:25:03+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-02-12 16:56:11+00:00
-1115,f27b5dda4afc0b0a278eb5379d17dfc3533c5397,Dockerfile.aarch64,Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.aarch64 .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-02-12 16:56:11+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-08-26 17:52:10+00:00
-1864,12e2c2687e5c1f47287aa3668c8853ee8b5d6706,Dockerfile.aarch64,Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.aarch64 .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-06-03 13:09:53+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2017-08-02 13:07:36+00:00
-787,ee3ac3aa66bfb27b7c21dfb253fdaa113baedd4e,Dockerfile.aarch64,Dockerfile.aarch64,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-06-27 21:38:47+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-21 23:18:22+00:00
-677,5f4dcd825299bf58e87e69c2bff3ceefc300a432,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-21 23:18:22+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-10-24 22:18:58+00:00
-713,bd31b24336ff2da098e62a375552586434a012b0,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-09-22 02:15:18+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-23 16:20:57+00:00
-88,1b41125ad9f1a3881b71bd044d76fd285170addb,Dockerfile.aarch64,Dockerfile.aarch64,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-23 16:20:57+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-29 18:02:38+00:00
-50,3996975b0840033bda3919440d122d734a4bc66b,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-18 23:30:47+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-10-31 18:22:28+00:00
-437,2790ac68b32b399c872de88388bdccc359ed7a88,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-24 22:18:58+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2017-03-23 15:28:45+00:00
-276,f2614f2107c838d014d31b806e3b8a9f1395cb2b,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-31 18:22:28+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-11-28 18:29:17+00:00
-752,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-12-01 13:33:30+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2018-02-16 18:51:30+00:00
-336,bc82b139955c4a0edb20b070926469cceea0fbbb,Dockerfile.aarch64,Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.aarch64 .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2017-06-17 00:18:44+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,Fri Mar 9 06:17:37 2018 +0000
-1550,d6e1cc32d309ee237342975388e729570343a974,Dockerfile.aarch64,Dockerfile.aarch64,"# Options for hack/validate/gometalinter
-",2017-06-30 08:29:56+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,Fri Mar 9 06:17:37 2018 +0000
-1700,b529d1b0936b90ae14d584c73f7332919f8d76b7,Dockerfile.aarch64,Dockerfile.aarch64,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-#
-
-# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
-# Please edit hack/dockerfile/install/<name>.installer to update them.
-",2018-02-16 18:51:30+00:00,Fri Jan 15 14:25:03 2016 +0000,Fri Mar 9 06:17:37 2018 +0000,1,Fri Mar 9 06:17:37 2018 +0000
-628,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.ppc64le,Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.ppc64le .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-01-05 05:50:15+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-02-25 21:40:00+00:00
-631,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.ppc64le,Dockerfile.ppc64le,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download man page generator
-",2016-01-05 05:50:15+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-07 15:02:51+00:00
-630,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.ppc64le,Dockerfile.ppc64le,"# This has been commented out and kept as reference because we don't support compiling with older Go anymore.
-# ENV GOFMT_VERSION 1.3.3
-# RUN curl -sSL https://storage.googleapis.com/golang/go${GOFMT_VERSION}.$(go env GOOS)-$(go env GOARCH).tar.gz | tar -C /go/bin -xz --strip-components=2 go/bin/gofmt
-
-# TODO update this sha when we upgrade to Go 1.5+
-",2016-01-05 05:50:15+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-03-14 18:21:44+00:00
-629,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.ppc64le,Dockerfile.ppc64le,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-
-# TODO install Go, using gccgo as GOROOT_BOOTSTRAP (Go 1.5+ supports ppc64le properly)
-# possibly a ppc64le/golang image?
-
-",2016-01-05 05:50:15+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-02-18 10:57:43+00:00
-2246,7465a3149f9f0f5c996e95198c46960a4b92c9c2,Dockerfile.ppc64le,Dockerfile.ppc64le,"# TODO update this when we upgrade to Go 1.5.1+
-# Install notary server
-#ENV NOTARY_COMMIT 8e8122eb5528f621afcd4e2854c47302f17392f7
-#RUN set -x \
-#	&& export GOPATH=""$(mktemp -d)"" \
-#	&& git clone https://github.com/docker/notary.git ""$GOPATH/src/github.com/docker/notary"" \
-#	&& (cd ""$GOPATH/src/github.com/docker/notary"" && git checkout -q ""$NOTARY_COMMIT"") \
-#	&& GOPATH=""$GOPATH/src/github.com/docker/notary/Godeps/_workspace:$GOPATH"" \
-#		go build -o /usr/local/bin/notary-server github.com/docker/notary/cmd/notary-server \
-#	&& rm -rf ""$GOPATH""
-
-# Get the ""docker-py"" source so we can run their integration tests
-",2016-01-13 18:37:08+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-01-26 19:51:22+00:00
-1326,589c8a879fea758007a36bd0f00d07aa1000d0cb,Dockerfile.ppc64le,Dockerfile.ppc64le,"# TODO update this when we upgrade to Go 1.5.1+
-# Install notary server
-#ENV NOTARY_VERSION docker-v1.10-3
-#RUN set -x \
-#	&& export GOPATH=""$(mktemp -d)"" \
-#	&& git clone https://github.com/docker/notary.git ""$GOPATH/src/github.com/docker/notary"" \
-#	&& (cd ""$GOPATH/src/github.com/docker/notary"" && git checkout -q ""$NOTARY_VERSION"") \
-#	&& GOPATH=""$GOPATH/src/github.com/docker/notary/Godeps/_workspace:$GOPATH"" \
-#		go build -o /usr/local/bin/notary-server github.com/docker/notary/cmd/notary-server \
-#	&& rm -rf ""$GOPATH""
-
-# Get the ""docker-py"" source so we can run their integration tests
-",2016-01-26 19:51:22+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-01-26 22:21:07+00:00
-1247,8fd2c8791d9c7cf0dd28b77565f0a04349a8c9a2,Dockerfile.ppc64le,Dockerfile.ppc64le,"# TODO update this when we upgrade to Go 1.5.1+
-# Install notary server
-#ENV NOTARY_VERSION docker-v1.10-4
-#RUN set -x \
-#	&& export GOPATH=""$(mktemp -d)"" \
-#	&& git clone https://github.com/docker/notary.git ""$GOPATH/src/github.com/docker/notary"" \
-#	&& (cd ""$GOPATH/src/github.com/docker/notary"" && git checkout -q ""$NOTARY_VERSION"") \
-#	&& GOPATH=""$GOPATH/src/github.com/docker/notary/Godeps/_workspace:$GOPATH"" \
-#		go build -o /usr/local/bin/notary-server github.com/docker/notary/cmd/notary-server \
-#	&& rm -rf ""$GOPATH""
-
-# Get the ""docker-py"" source so we can run their integration tests
-",2016-01-26 22:21:07+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-01-27 17:46:26+00:00
-1300,71a1caddf0af51cfc79db04f80513b292adb0231,Dockerfile.ppc64le,Dockerfile.ppc64le,"# TODO update this when we upgrade to Go 1.5.1+
-# Install notary server
-#ENV NOTARY_VERSION docker-v1.10-5
-#RUN set -x \
-#	&& export GOPATH=""$(mktemp -d)"" \
-#	&& git clone https://github.com/docker/notary.git ""$GOPATH/src/github.com/docker/notary"" \
-#	&& (cd ""$GOPATH/src/github.com/docker/notary"" && git checkout -q ""$NOTARY_VERSION"") \
-#	&& GOPATH=""$GOPATH/src/github.com/docker/notary/Godeps/_workspace:$GOPATH"" \
-#		go build -o /usr/local/bin/notary-server github.com/docker/notary/cmd/notary-server \
-#	&& rm -rf ""$GOPATH""
-
-# Get the ""docker-py"" source so we can run their integration tests
-",2016-01-27 17:46:26+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-02-25 21:40:00+00:00
-1217,b8a9812b92bdaf51ce6d59da82d9dbb089ab2d4d,Dockerfile.ppc64le,Dockerfile.ppc64le,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-
-# TODO install Go, using gccgo as GOROOT_BOOTSTRAP (Go 1.5+ supports ppc64le properly)
-# possibly a ppc64le/golang image?
-
-## BUILD GOLANG 1.6
-",2016-02-09 10:24:38+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-03-28 18:02:06+00:00
-1117,f27b5dda4afc0b0a278eb5379d17dfc3533c5397,Dockerfile.ppc64le,Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.ppc64le .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-02-12 16:56:11+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-08-23 16:01:28+00:00
-1269,7ed3d265a4499ec03f10537fea0aac3ebaa0cec6,Dockerfile.ppc64le,Dockerfile.ppc64le,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-
-# TODO install Go, using gccgo as GOROOT_BOOTSTRAP (Go 1.5+ supports ppc64le properly)
-# possibly a ppc64le/golang image?
-
-## BUILD GOLANG 1.5.3
-",2016-03-24 16:18:03+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-03-29 20:35:19+00:00
-1862,12e2c2687e5c1f47287aa3668c8853ee8b5d6706,Dockerfile.ppc64le,Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.ppc64le .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-06-03 13:09:53+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2017-08-02 13:07:36+00:00
-789,ee3ac3aa66bfb27b7c21dfb253fdaa113baedd4e,Dockerfile.ppc64le,Dockerfile.ppc64le,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-06-27 21:38:47+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-21 23:18:22+00:00
-788,ee3ac3aa66bfb27b7c21dfb253fdaa113baedd4e,Dockerfile.ppc64le,Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.ppc64le .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-# ppc64le/golang is a debian:jessie based image with golang installed
-",2016-06-27 21:38:47+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-12-07 21:49:46+00:00
-679,5f4dcd825299bf58e87e69c2bff3ceefc300a432,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-21 23:18:22+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-10-24 22:18:58+00:00
-711,bd31b24336ff2da098e62a375552586434a012b0,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-09-22 02:15:18+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-29 18:02:38+00:00
-90,1b41125ad9f1a3881b71bd044d76fd285170addb,Dockerfile.ppc64le,Dockerfile.ppc64le,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-23 16:20:57+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-26 16:03:38+00:00
-54,3996975b0840033bda3919440d122d734a4bc66b,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-18 23:30:47+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-10-19 19:58:44+00:00
-435,2790ac68b32b399c872de88388bdccc359ed7a88,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-24 22:18:58+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2017-03-23 15:28:45+00:00
-278,f2614f2107c838d014d31b806e3b8a9f1395cb2b,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-31 18:22:28+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-11-28 18:29:17+00:00
-755,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-12-01 13:33:30+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2018-02-16 18:51:30+00:00
-338,bc82b139955c4a0edb20b070926469cceea0fbbb,Dockerfile.ppc64le,Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.ppc64le .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2017-06-17 00:18:44+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,Fri Mar 9 06:17:37 2018 +0000
-1698,b529d1b0936b90ae14d584c73f7332919f8d76b7,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
-# Please edit hack/dockerfile/install/<name>.installer to update them.
-",2018-02-16 18:51:30+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,Fri Mar 9 06:17:37 2018 +0000
-627,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.s390x,Dockerfile.s390x,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download man page generator
-",2016-01-05 05:50:15+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-07 15:02:51+00:00
-626,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.s390x,Dockerfile.s390x,"# This has been commented out and kept as reference because we don't support compiling with older Go anymore.
-# ENV GOFMT_VERSION 1.3.3
-# RUN curl -sSL https://storage.googleapis.com/golang/go${GOFMT_VERSION}.$(go env GOOS)-$(go env GOARCH).tar.gz | tar -C /go/bin -xz --strip-components=2 go/bin/gofmt
-
-# TODO update this sha when we upgrade to Go 1.5+
-",2016-01-05 05:50:15+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-08-22 17:23:15+00:00
-625,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.s390x,Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.s390x .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-01-05 05:50:15+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-02-12 16:56:11+00:00
-1129,f27b5dda4afc0b0a278eb5379d17dfc3533c5397,Dockerfile.s390x,Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.s390x .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-02-12 16:56:11+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-08-22 17:23:15+00:00
-780,ee3ac3aa66bfb27b7c21dfb253fdaa113baedd4e,Dockerfile.s390x,Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.s390x .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-06-27 21:38:47+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2017-08-02 13:07:36+00:00
-781,ee3ac3aa66bfb27b7c21dfb253fdaa113baedd4e,Dockerfile.s390x,Dockerfile.s390x,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-06-27 21:38:47+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-21 23:18:22+00:00
-681,5f4dcd825299bf58e87e69c2bff3ceefc300a432,Dockerfile.s390x,Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-21 23:18:22+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-10-24 22:18:58+00:00
-718,bd31b24336ff2da098e62a375552586434a012b0,Dockerfile.s390x,Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-09-22 02:15:18+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-23 16:20:57+00:00
-94,1b41125ad9f1a3881b71bd044d76fd285170addb,Dockerfile.s390x,Dockerfile.s390x,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-23 16:20:57+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-09-29 18:02:38+00:00
-52,3996975b0840033bda3919440d122d734a4bc66b,Dockerfile.s390x,Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-18 23:30:47+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-10-19 19:58:44+00:00
-441,2790ac68b32b399c872de88388bdccc359ed7a88,Dockerfile.s390x,Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-24 22:18:58+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2017-03-23 15:28:45+00:00
-271,f2614f2107c838d014d31b806e3b8a9f1395cb2b,Dockerfile.s390x,Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-31 18:22:28+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2016-11-28 18:29:17+00:00
-748,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile.s390x,Dockerfile.s390x,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-12-01 13:33:30+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,2018-02-16 18:51:30+00:00
-342,bc82b139955c4a0edb20b070926469cceea0fbbb,Dockerfile.s390x,Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.s390x .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2017-06-17 00:18:44+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,Fri Mar 9 06:17:37 2018 +0000
-1696,b529d1b0936b90ae14d584c73f7332919f8d76b7,Dockerfile.s390x,Dockerfile.s390x,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
-# Please edit hack/dockerfile/install/<name>.installer to update them.
-",2018-02-16 18:51:30+00:00,Tue Feb 24 18:33:18 2015 +0000,Fri Mar 9 06:17:37 2018 +0000,1,Fri Mar 9 06:17:37 2018 +0000
-216,be8885525c4d1ef4a13bbd6396f60e8657bc5573,Dockerfile.e2e,Dockerfile.e2e,"# Install dockercli
-# Please edit hack/dockerfile/install/<name>.installer to update them.
-",2017-12-08 01:10:04+00:00,Fri Sep 8 16:43:04 2017 +0200,,1,
-2606,5118f1431c9cae757d5e7c193ed85fc8fca3ae85,Dockerfile.simple,Dockerfile.simple,"# docker build -t docker:simple -f Dockerfile.simple .
-# docker run --rm docker:simple hack/make.sh dynbinary
-# docker run --rm --privileged docker:simple hack/make.sh test-unit
-# docker run --rm --privileged docker:simple hack/dind hack/make.sh dynbinary test-integration-cli
-
-# This represents the bare minimum required to build and test Docker.
-
-",2015-02-28 05:37:25+00:00,Fri Feb 27 22:37:25 2015 -0700,,1,2015-03-10 00:24:49+00:00
-2519,ece4b5bde8ff6ea21b51275a69787191d12a5d65,Dockerfile.simple,Dockerfile.simple,"# docker build -t docker:simple -f Dockerfile.simple .
-# docker run --rm docker:simple hack/make.sh dynbinary
-# docker run --rm --privileged docker:simple hack/dind hack/make.sh test-unit
-# docker run --rm --privileged -v /var/lib/docker docker:simple hack/dind hack/make.sh dynbinary test-integration-cli
-
-# This represents the bare minimum required to build and test Docker.
-
-",2015-03-10 00:24:49+00:00,Fri Feb 27 22:37:25 2015 -0700,,1,2017-08-01 13:26:13+00:00
-86,1b41125ad9f1a3881b71bd044d76fd285170addb,Dockerfile.simple,Dockerfile.simple,"# Install runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-23 16:20:57+00:00,Fri Feb 27 22:37:25 2015 -0700,,1,2016-09-29 18:02:38+00:00
-362,7e12c3bb99381f117be73e05c187be6ce44280b9,Dockerfile.simple,Dockerfile.simple,"# Install runc, containerd and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-29 18:02:38+00:00,Fri Feb 27 22:37:25 2015 -0700,,1,2016-10-24 22:18:58+00:00
-46,3996975b0840033bda3919440d122d734a4bc66b,Dockerfile.simple,Dockerfile.simple,"# Install runc, containerd, grimes and docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-18 23:30:47+00:00,Fri Feb 27 22:37:25 2015 -0700,,1,2016-11-20 22:14:51+00:00
-439,2790ac68b32b399c872de88388bdccc359ed7a88,Dockerfile.simple,Dockerfile.simple,"# Install runc, containerd, tini and docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-24 22:18:58+00:00,Fri Feb 27 22:37:25 2015 -0700,,1,2018-02-16 18:51:30+00:00
-340,bc82b139955c4a0edb20b070926469cceea0fbbb,Dockerfile.simple,Dockerfile.simple,"# docker build -t docker:simple -f Dockerfile.simple .
-# docker run --rm docker:simple hack/make.sh dynbinary
-# docker run --rm --privileged docker:simple hack/dind hack/make.sh test-unit
-# docker run --rm --privileged -v /var/lib/docker docker:simple hack/dind hack/make.sh dynbinary test-integration
-
-# This represents the bare minimum required to build and test Docker.
-
-",2017-06-17 00:18:44+00:00,Fri Feb 27 22:37:25 2015 -0700,,1,
-215,be8885525c4d1ef4a13bbd6396f60e8657bc5573,Dockerfile.simple,Dockerfile.simple,"# Install runc, containerd, tini and docker-proxy
-# Please edit hack/dockerfile/install/<name>.installer to update them.
-",2017-12-08 01:10:04+00:00,Fri Feb 27 22:37:25 2015 -0700,,1,
-2478,eacd2fd4daa03b1161d879e835705f7d35b871e3,Dockerfile.windows,Dockerfile.windows,"# This file describes the standard way to build Docker, using a docker container on Windows 
+",2018-02-16 18:51:30+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
+30496,eacd2fd4daa03b1161d879e835705f7d35b871e3,Dockerfile.windows,Dockerfile.windows,"# This file describes the standard way to build Docker, using a docker container on Windows 
 # Server 2016
 #
 # Usage:
@@ -1225,8 +376,8 @@
 # balk at reparse points. Again, see the example at the top of this file on how use a volume
 # to get the built binary out of the container.
 
-",2016-01-21 02:51:34+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2016-01-31 04:50:11+00:00
-1043,c7089b4b469e0a536a260c136ef71bc95591fa51,Dockerfile.windows,Dockerfile.windows,"# This file describes the standard way to build Docker, using a docker container on Windows 
+",2016-01-21 02:51:34+00:00,2015-12-01 09:47:19+01:00,,1,2016-01-31 04:50:11+00:00,c7089b4b469e0a536a260c136ef71bc95591fa51
+13863,c7089b4b469e0a536a260c136ef71bc95591fa51,Dockerfile.windows,Dockerfile.windows,"# This file describes the standard way to build Docker, using a docker container on Windows 
 # Server 2016
 #
 # Usage:
@@ -1263,8 +414,8 @@
 #
 # The steps are minimised dramatically to improve performance (TP4 is slow on commit)
 
-",2016-01-31 04:50:11+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2016-04-05 23:25:43+00:00
-2144,83809de7d45d3465977b2f7a7cf585863cec445c,Dockerfile.windows,Dockerfile.windows,"# This file describes the standard way to build Docker, using a docker container on Windows 
+",2016-01-31 04:50:11+00:00,2015-12-01 09:47:19+01:00,,1,2016-04-05 23:25:43+00:00,83809de7d45d3465977b2f7a7cf585863cec445c
+28012,83809de7d45d3465977b2f7a7cf585863cec445c,Dockerfile.windows,Dockerfile.windows,"# This file describes the standard way to build Docker, using a docker container on Windows 
 # Server 2016
 #
 # Usage:
@@ -1295,8 +446,8 @@
 #
 # The steps are minimised dramatically to improve performance
 
-",2016-04-05 23:25:43+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2016-04-23 22:11:08+00:00
-657,4677f8036e8d090303ef76cbbe4f703d5c85d752,Dockerfile.windows,Dockerfile.windows,"# This file describes the standard way to build Docker, using a docker container on Windows
+",2016-04-05 23:25:43+00:00,2015-12-01 09:47:19+01:00,,1,2016-04-23 22:11:08+00:00,4677f8036e8d090303ef76cbbe4f703d5c85d752
+9223,4677f8036e8d090303ef76cbbe4f703d5c85d752,Dockerfile.windows,Dockerfile.windows,"# This file describes the standard way to build Docker, using a docker container on Windows
 # Server 2016
 #
 # Usage:
@@ -1327,8 +478,8 @@
 #
 # The steps are minimised dramatically to improve performance
 
-",2016-04-23 22:11:08+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2016-10-21 00:02:26+00:00
-2571,9a19bd1b450a4f514d194d8a5571ab5be921464a,Dockerfile.windows,Dockerfile.windows,"# escape=`
+",2016-04-23 22:11:08+00:00,2015-12-01 09:47:19+01:00,,1,2016-10-22 20:01:40+00:00,935d4d1c179259a262eb15fbf7e2bba2df26d740
+31308,9a19bd1b450a4f514d194d8a5571ab5be921464a,Dockerfile.windows,Dockerfile.windows,"# escape=`
 
 # -----------------------------------------------------------------------------------------
 # This file describes the standard way to build Docker in a container on Windows
@@ -1440,8 +591,8 @@
 # -----------------------------------------------------------------------------------------
 
 # The number of build steps below are explicitly minimised to improve performance.
-",2016-10-21 00:02:26+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2016-10-22 02:56:16+00:00
-2011,929fa9ff8075d91624a90ecaae9c1fd31e50c294,Dockerfile.windows,Dockerfile.windows,"# escape=`
+",2016-10-21 00:02:26+00:00,2015-12-01 09:47:19+01:00,,1,2016-10-22 22:06:27+00:00,1f9beceacc916756bd5894f36306727ec9c6c008
+26595,929fa9ff8075d91624a90ecaae9c1fd31e50c294,Dockerfile.windows,Dockerfile.windows,"# escape=`
 
 # -----------------------------------------------------------------------------------------
 # This file describes the standard way to build Docker in a container on Windows
@@ -1559,8 +710,8 @@
 # -----------------------------------------------------------------------------------------
 
 # The number of build steps below are explicitly minimised to improve performance.
-",2016-10-22 02:56:16+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2016-10-30 20:57:40+00:00
-1290,5add621331d2790d04437cff0d936649f5fb4767,Dockerfile.windows,Dockerfile.windows,"# escape=`
+",2016-10-22 02:56:16+00:00,2015-12-01 09:47:19+01:00,,1,2016-11-03 06:08:27+00:00,5c9e38b73f4f5b6f2984436f6defd74a1eea9c9c
+17060,5add621331d2790d04437cff0d936649f5fb4767,Dockerfile.windows,Dockerfile.windows,"# escape=`
 
 # -----------------------------------------------------------------------------------------
 # This file describes the standard way to build Docker in a container on Windows
@@ -1678,8 +829,8 @@
 # -----------------------------------------------------------------------------------------
 
 # The number of build steps below are explicitly minimised to improve performance.
-",2016-10-30 20:57:40+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2016-11-10 20:45:56+00:00
-1761,f6ecfd620a48751124d3d1e590e9e83a437996ca,Dockerfile.windows,Dockerfile.windows,"# escape=`
+",2016-10-30 20:57:40+00:00,2015-12-01 09:47:19+01:00,,1,2016-11-10 22:28:03+00:00,f87e6eb8305627e984f3d72c43837a833cc6de42
+23117,f6ecfd620a48751124d3d1e590e9e83a437996ca,Dockerfile.windows,Dockerfile.windows,"# escape=`
 
 # -----------------------------------------------------------------------------------------
 # This file describes the standard way to build Docker in a container on Windows
@@ -1800,8 +951,8 @@
 # -----------------------------------------------------------------------------------------
 
 # The number of build steps below are explicitly minimised to improve performance.
-",2016-11-10 20:45:56+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2016-11-17 21:54:56+00:00
-2315,155435b6ceeb05b2927ecc726216666b898b6459,Dockerfile.windows,Dockerfile.windows,"# escape=`
+",2016-11-10 20:45:56+00:00,2015-12-01 09:47:19+01:00,,1,2016-12-01 13:33:30+00:00,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0
+29191,155435b6ceeb05b2927ecc726216666b898b6459,Dockerfile.windows,Dockerfile.windows,"# escape=`
 
 # -----------------------------------------------------------------------------------------
 # This file describes the standard way to build Docker in a container on Windows
@@ -1955,8 +1106,8 @@
 
 
 # The number of build steps below are explicitly minimised to improve performance.
-",2016-11-17 21:54:56+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2017-01-20 23:09:28+00:00
-753,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile.windows,Dockerfile.windows,"# escape=`
+",2016-11-17 21:54:56+00:00,2015-12-01 09:47:19+01:00,,1,2016-12-06 11:10:03+00:00,96a2d9e7d2655a8374c2bdf326cd4a7224ce34bf
+10523,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile.windows,Dockerfile.windows,"# escape=`
 
 # -----------------------------------------------------------------------------------------
 # This file describes the standard way to build Docker in a container on Windows
@@ -2111,8 +1262,8 @@
 
 
 # The number of build steps below are explicitly minimised to improve performance.
-",2016-12-01 13:33:30+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2017-06-30 08:29:56+00:00
-245,20e243780ef3b6a7d1debca6279e06b003895121,Dockerfile.windows,Dockerfile.windows,"# escape=`
+",2016-12-01 13:33:30+00:00,2015-12-01 09:47:19+01:00,,1,2017-08-19 14:23:38+00:00,dffa5d6df2e51556edfbcebc4695fdbc0bcc1a90
+3707,20e243780ef3b6a7d1debca6279e06b003895121,Dockerfile.windows,Dockerfile.windows,"# escape=`
 
 # -----------------------------------------------------------------------------------------
 # This file describes the standard way to build Docker in a container on Windows
@@ -2271,8 +1422,8 @@
 
 
 # The number of build steps below are explicitly minimised to improve performance.
-",2016-12-05 16:57:59+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2017-02-05 07:28:34+00:00
-1547,d6e1cc32d309ee237342975388e729570343a974,Dockerfile.windows,Dockerfile.windows,"# escape=`
+",2016-12-05 16:57:59+00:00,2015-12-01 09:47:19+01:00,,1,2017-02-05 03:19:16+00:00,4af2555a353a8f407c49adb57877ead436af04be
+20446,d6e1cc32d309ee237342975388e729570343a974,Dockerfile.windows,Dockerfile.windows,"# escape=`
 
 # -----------------------------------------------------------------------------------------
 # This file describes the standard way to build Docker in a container on Windows
@@ -2427,8 +1578,8 @@
 
 
 # The number of build steps below are explicitly minimised to improve performance.
-",2017-06-30 08:29:56+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2018-12-20 14:47:24+00:00
-2012,db22517fece05d8474e565cb4c6b0b538fab55b5,Dockerfile.windows,Dockerfile.windows,"# escape=`
+",2017-06-30 08:29:56+00:00,2015-12-01 09:47:19+01:00,,1,2019-01-04 19:58:11+00:00,3bcf58236619f4c2902157ce4deaaaf44ca6f128
+26667,db22517fece05d8474e565cb4c6b0b538fab55b5,Dockerfile.windows,Dockerfile.windows,"# escape=`
 
 # -----------------------------------------------------------------------------------------
 # This file describes the standard way to build Docker in a container on Windows
@@ -2590,8 +1741,8 @@
 # would fail between Windows Server 2016 (aka RS1) and Windows Server 2019 (aka RS5).
 # It is expected that the image `microsoft/windowsservercore:latest` is present, and matches
 # the hosts kernel version before doing a build. 
-",2018-12-20 14:47:24+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2019-09-09 23:19:03+00:00
-1916,38e4ae3bca76b9558eb44993c4208b41114c4597,Dockerfile.windows,Dockerfile.windows,"# escape=`
+",2018-12-20 14:47:24+00:00,2015-12-01 09:47:19+01:00,,1,2019-09-09 23:19:03+00:00,ecf91f0d7f90b2bd9fa048f2a800beaf613ac507
+25367,38e4ae3bca76b9558eb44993c4208b41114c4597,Dockerfile.windows,Dockerfile.windows,"# escape=`
 
 # -----------------------------------------------------------------------------------------
 # This file describes the standard way to build Docker in a container on Windows
@@ -2753,8 +1904,8 @@
 # would fail between Windows Server 2016 (aka RS1) and Windows Server 2019 (aka RS5).
 # It is expected that the image `microsoft/windowsservercore:latest` is present, and matches
 # the hosts kernel version before doing a build. 
-",2019-07-17 12:37:56+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,2019-09-26 09:59:51+00:00
-2626,83fd212f2cb71aae2f4a5a60c893c2bd01e59b72,Dockerfile.windows,Dockerfile.windows,"# escape=`
+",2019-07-17 12:37:56+00:00,2015-12-01 09:47:19+01:00,,1,2019-09-26 09:59:51+00:00,83fd212f2cb71aae2f4a5a60c893c2bd01e59b72
+31697,83fd212f2cb71aae2f4a5a60c893c2bd01e59b72,Dockerfile.windows,Dockerfile.windows,"# escape=`
 
 # -----------------------------------------------------------------------------------------
 # This file describes the standard way to build Docker in a container on Windows
@@ -2916,26 +2067,454 @@
 # would fail between Windows Server 2016 (aka RS1) and Windows Server 2019 (aka RS5).
 # It is expected that the image `microsoft/windowsservercore:latest` is present, and matches
 # the hosts kernel version before doing a build. 
-",2019-09-26 09:59:51+00:00,Tue Dec 1 09:47:19 2015 +0100,,1,
-2448,eaa9c85511620aa82f1876e1503604f591f00d23,docs/Dockerfile,docs/Dockerfile,"#
-#    docker build -t docker:docs . && docker run -p 8000:8000 docker:docs
+",2019-09-26 09:59:51+00:00,2015-12-01 09:47:19+01:00,,1,,
+8806,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.ppc64le,Dockerfile.ppc64le,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Download man page generator
+",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-09-07 15:47:01+00:00,4f8ca4797777ee9ed7fa6fbcc33080128c04051e
+8804,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.ppc64le,Dockerfile.ppc64le,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
+
+# TODO install Go, using gccgo as GOROOT_BOOTSTRAP (Go 1.5+ supports ppc64le properly)
+# possibly a ppc64le/golang image?
+
+",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-02-13 01:36:57+00:00,b384fd6b1b2a379d857b4dc9971e441fe8aa5f37
+8803,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.ppc64le,Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.ppc64le .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test
+#
+# # Publish a release:
+# docker run --privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
 #
 
-# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released
+",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-02-19 20:51:30+00:00,3b62a610ec81996ec3b1aa5422c62fa926ef4f04
+8805,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.ppc64le,Dockerfile.ppc64le,"# This has been commented out and kept as reference because we don't support compiling with older Go anymore.
+# ENV GOFMT_VERSION 1.3.3
+# RUN curl -sSL https://storage.googleapis.com/golang/go${GOFMT_VERSION}.$(go env GOOS)-$(go env GOARCH).tar.gz | tar -C /go/bin -xz --strip-components=2 go/bin/gofmt
 
-",2014-01-15 02:23:30+00:00,Thu Aug 29 23:49:41 2013 +0000,Tue Oct 11 12:14:15 2016 -0700,1,2015-02-18 04:20:46+00:00
-1734,3e84b9e56abdff7230e84a1830085c79c73aa3b7,docs/Dockerfile,docs/Dockerfile,"# TODO: don't do this - look at merging the yml file in build.sh
-",2015-02-18 04:20:46+00:00,Thu Aug 29 23:49:41 2013 +0000,Tue Oct 11 12:14:15 2016 -0700,1,2015-02-25 00:37:36+00:00
-1733,3e84b9e56abdff7230e84a1830085c79c73aa3b7,docs/Dockerfile,docs/Dockerfile,"# TODO: need the full repo source to get the git version info
-",2015-02-18 04:20:46+00:00,Thu Aug 29 23:49:41 2013 +0000,Tue Oct 11 12:14:15 2016 -0700,1,Tue Oct 11 12:14:15 2016 -0700
-1930,8d4459fffb5c1885b65506093538e059f0b51d90,docs/Dockerfile,docs/Dockerfile,"# adding the image spec will require Docker 1.5 and `docker build -f docs/Dockerfile .`
-#COPY ./image/spec/v1.md /docs/sources/reference/image-spec-v1.md
+# TODO update this sha when we upgrade to Go 1.5+
+",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-03-14 18:21:44+00:00,2bcf50bdd41174b2519cab66b1fef0eb8bc78f9b
+28773,7465a3149f9f0f5c996e95198c46960a4b92c9c2,Dockerfile.ppc64le,Dockerfile.ppc64le,"# TODO update this when we upgrade to Go 1.5.1+
+# Install notary server
+#ENV NOTARY_COMMIT 8e8122eb5528f621afcd4e2854c47302f17392f7
+#RUN set -x \
+#	&& export GOPATH=""$(mktemp -d)"" \
+#	&& git clone https://github.com/docker/notary.git ""$GOPATH/src/github.com/docker/notary"" \
+#	&& (cd ""$GOPATH/src/github.com/docker/notary"" && git checkout -q ""$NOTARY_COMMIT"") \
+#	&& GOPATH=""$GOPATH/src/github.com/docker/notary/Godeps/_workspace:$GOPATH"" \
+#		go build -o /usr/local/bin/notary-server github.com/docker/notary/cmd/notary-server \
+#	&& rm -rf ""$GOPATH""
 
-# TODO: don't do this - look at merging the yml file in build.sh
-",2015-02-25 00:37:36+00:00,Thu Aug 29 23:49:41 2013 +0000,Tue Oct 11 12:14:15 2016 -0700,1,Tue Oct 11 12:14:15 2016 -0700
-2511,22c46af4b358cf3ec4f7af47c701064c00cf7de4,builder/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# TODO replace FPM with some very minimal debhelper stuff
-",2014-08-05 20:17:40+00:00,Tue Aug 5 13:17:40 2014 -0700,Sat Jun 2 09:46:53 2018 -0700,1,Sat Jun 2 09:46:53 2018 -0700
-2510,22c46af4b358cf3ec4f7af47c701064c00cf7de4,builder/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+# Get the ""docker-py"" source so we can run their integration tests
+",2016-01-13 18:37:08+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-01-27 17:36:26+00:00,c39c7e6edf7d432730a84fa549b74203954b54c4
+17376,589c8a879fea758007a36bd0f00d07aa1000d0cb,Dockerfile.ppc64le,Dockerfile.ppc64le,"# TODO update this when we upgrade to Go 1.5.1+
+# Install notary server
+#ENV NOTARY_VERSION docker-v1.10-3
+#RUN set -x \
+#	&& export GOPATH=""$(mktemp -d)"" \
+#	&& git clone https://github.com/docker/notary.git ""$GOPATH/src/github.com/docker/notary"" \
+#	&& (cd ""$GOPATH/src/github.com/docker/notary"" && git checkout -q ""$NOTARY_VERSION"") \
+#	&& GOPATH=""$GOPATH/src/github.com/docker/notary/Godeps/_workspace:$GOPATH"" \
+#		go build -o /usr/local/bin/notary-server github.com/docker/notary/cmd/notary-server \
+#	&& rm -rf ""$GOPATH""
+
+# Get the ""docker-py"" source so we can run their integration tests
+",2016-01-26 19:51:22+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-01-26 22:21:07+00:00,8fd2c8791d9c7cf0dd28b77565f0a04349a8c9a2
+16803,8fd2c8791d9c7cf0dd28b77565f0a04349a8c9a2,Dockerfile.ppc64le,Dockerfile.ppc64le,"# TODO update this when we upgrade to Go 1.5.1+
+# Install notary server
+#ENV NOTARY_VERSION docker-v1.10-4
+#RUN set -x \
+#	&& export GOPATH=""$(mktemp -d)"" \
+#	&& git clone https://github.com/docker/notary.git ""$GOPATH/src/github.com/docker/notary"" \
+#	&& (cd ""$GOPATH/src/github.com/docker/notary"" && git checkout -q ""$NOTARY_VERSION"") \
+#	&& GOPATH=""$GOPATH/src/github.com/docker/notary/Godeps/_workspace:$GOPATH"" \
+#		go build -o /usr/local/bin/notary-server github.com/docker/notary/cmd/notary-server \
+#	&& rm -rf ""$GOPATH""
+
+# Get the ""docker-py"" source so we can run their integration tests
+",2016-01-26 22:21:07+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-01-27 22:35:32+00:00,e5b1f29ac311d98b9f92b0211be2477d040e49e0
+17096,71a1caddf0af51cfc79db04f80513b292adb0231,Dockerfile.ppc64le,Dockerfile.ppc64le,"# TODO update this when we upgrade to Go 1.5.1+
+# Install notary server
+#ENV NOTARY_VERSION docker-v1.10-5
+#RUN set -x \
+#	&& export GOPATH=""$(mktemp -d)"" \
+#	&& git clone https://github.com/docker/notary.git ""$GOPATH/src/github.com/docker/notary"" \
+#	&& (cd ""$GOPATH/src/github.com/docker/notary"" && git checkout -q ""$NOTARY_VERSION"") \
+#	&& GOPATH=""$GOPATH/src/github.com/docker/notary/Godeps/_workspace:$GOPATH"" \
+#		go build -o /usr/local/bin/notary-server github.com/docker/notary/cmd/notary-server \
+#	&& rm -rf ""$GOPATH""
+
+# Get the ""docker-py"" source so we can run their integration tests
+",2016-01-27 17:46:26+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-02-25 21:40:00+00:00,84dc2d9e70f1ad4422732421e2d6b91274f4dfae
+16124,b8a9812b92bdaf51ce6d59da82d9dbb089ab2d4d,Dockerfile.ppc64le,Dockerfile.ppc64le,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
+
+# TODO install Go, using gccgo as GOROOT_BOOTSTRAP (Go 1.5+ supports ppc64le properly)
+# possibly a ppc64le/golang image?
+
+## BUILD GOLANG 1.6
+",2016-02-09 10:24:38+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-03-25 05:44:49+00:00,b35aaa9d1e284d17e8468ae1407e03405be4258c
+15208,f27b5dda4afc0b0a278eb5379d17dfc3533c5397,Dockerfile.ppc64le,Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.ppc64le .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2016-02-12 16:56:11+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-08-16 21:18:43+00:00,37302bbb3f4889e9de2a95d5ea018acdab9e4447
+16961,7ed3d265a4499ec03f10537fea0aac3ebaa0cec6,Dockerfile.ppc64le,Dockerfile.ppc64le,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
+
+# TODO install Go, using gccgo as GOROOT_BOOTSTRAP (Go 1.5+ supports ppc64le properly)
+# possibly a ppc64le/golang image?
+
+## BUILD GOLANG 1.5.3
+",2016-03-24 16:18:03+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-03-29 07:58:20+00:00,78076d5cf9413476a8d4e27822b96fef7a55e055
+24618,12e2c2687e5c1f47287aa3668c8853ee8b5d6706,Dockerfile.ppc64le,Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.ppc64le .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2016-06-03 13:09:53+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2017-08-11 17:39:27+00:00,f34e4d295d5c17a78c33beb14b65e5d001c16968
+10918,ee3ac3aa66bfb27b7c21dfb253fdaa113baedd4e,Dockerfile.ppc64le,Dockerfile.ppc64le,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Download toml validator
+",2016-06-27 21:38:47+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-09-23 09:27:52+00:00,a94067c07fbfa77cdc57aa33c2fe2270cabb9ca3
+10917,ee3ac3aa66bfb27b7c21dfb253fdaa113baedd4e,Dockerfile.ppc64le,Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.ppc64le .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+# ppc64le/golang is a debian:jessie based image with golang installed
+",2016-06-27 21:38:47+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-12-08 23:59:31+00:00,9aa0c9a2142af249527aa301ddd7e21bc308c624
+9603,5f4dcd825299bf58e87e69c2bff3ceefc300a432,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-09-21 23:18:22+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-10-25 15:54:13+00:00,36f47aa2527f83d7ca7254c43eb08ffc5ce1102e
+9841,bd31b24336ff2da098e62a375552586434a012b0,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Download toml validator
+",2016-09-22 02:15:18+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-10-05 20:15:30+00:00,0b86ca9ad0916b62b7429f5d15821962bc4f7db0
+1347,1b41125ad9f1a3881b71bd044d76fd285170addb,Dockerfile.ppc64le,Dockerfile.ppc64le,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd.and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-09-23 16:20:57+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-09-23 17:37:28+00:00,b8265e55508db99aea632033b2f5008f921b11e2
+1030,0b86ca9ad0916b62b7429f5d15821962bc4f7db0,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd.and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-05 20:15:30+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-10-06 17:36:31+00:00,5ee2c2a6475056f55327ce77b61677499a9e3fa8
+329,3996975b0840033bda3919440d122d734a4bc66b,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd, grimes, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-18 23:30:47+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-11-03 16:47:50+00:00,d58b47623b252803f5cd12f6d9ca584d1587ab22
+7026,2790ac68b32b399c872de88388bdccc359ed7a88,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-24 22:18:58+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2017-04-12 13:37:40+00:00,330ddf8eb8f8a551677bdfc757fcefdb0cdaec3f
+3885,f2614f2107c838d014d31b806e3b8a9f1395cb2b,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-31 18:22:28+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-11-09 14:29:42+00:00,93e837d1d2d3a24b0219ccadc1fdf170d242c137
+10525,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+
+# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-12-01 13:33:30+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2018-02-22 03:20:29+00:00,49ad3d69a7780e54ace50290d0a1a55c1182a947
+4794,bc82b139955c4a0edb20b070926469cceea0fbbb,Dockerfile.ppc64le,Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.ppc64le .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2017-06-17 00:18:44+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
+21790,b529d1b0936b90ae14d584c73f7332919f8d76b7,Dockerfile.ppc64le,Dockerfile.ppc64le,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+
+# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
+# Please edit hack/dockerfile/install/<name>.installer to update them.
+",2018-02-16 18:51:30+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
+31631,5118f1431c9cae757d5e7c193ed85fc8fca3ae85,Dockerfile.simple,Dockerfile.simple,"# docker build -t docker:simple -f Dockerfile.simple .
+# docker run --rm docker:simple hack/make.sh dynbinary
+# docker run --rm --privileged docker:simple hack/make.sh test-unit
+# docker run --rm --privileged docker:simple hack/dind hack/make.sh dynbinary test-integration-cli
+
+# This represents the bare minimum required to build and test Docker.
+
+",2015-02-28 05:37:25+00:00,2015-02-27 22:37:25-07:00,,1,2015-03-12 14:05:56+00:00,5d174e000f9e0d0d4d557367ab7685834d190a71
+30881,ece4b5bde8ff6ea21b51275a69787191d12a5d65,Dockerfile.simple,Dockerfile.simple,"# docker build -t docker:simple -f Dockerfile.simple .
+# docker run --rm docker:simple hack/make.sh dynbinary
+# docker run --rm --privileged docker:simple hack/dind hack/make.sh test-unit
+# docker run --rm --privileged -v /var/lib/docker docker:simple hack/dind hack/make.sh dynbinary test-integration-cli
+
+# This represents the bare minimum required to build and test Docker.
+
+",2015-03-10 00:24:49+00:00,2015-02-27 22:37:25-07:00,,1,2017-08-11 17:39:27+00:00,f34e4d295d5c17a78c33beb14b65e5d001c16968
+1343,1b41125ad9f1a3881b71bd044d76fd285170addb,Dockerfile.simple,Dockerfile.simple,"# Install runc, containerd.and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-09-23 16:20:57+00:00,2015-02-27 22:37:25-07:00,,1,2016-10-06 17:36:31+00:00,5ee2c2a6475056f55327ce77b61677499a9e3fa8
+4972,7e12c3bb99381f117be73e05c187be6ce44280b9,Dockerfile.simple,Dockerfile.simple,"# Install runc, containerd and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-09-29 18:02:38+00:00,2015-02-27 22:37:25-07:00,,1,2016-10-25 15:54:13+00:00,36f47aa2527f83d7ca7254c43eb08ffc5ce1102e
+321,3996975b0840033bda3919440d122d734a4bc66b,Dockerfile.simple,Dockerfile.simple,"# Install runc, containerd, grimes and docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-18 23:30:47+00:00,2015-02-27 22:37:25-07:00,,1,2016-11-09 14:29:42+00:00,93e837d1d2d3a24b0219ccadc1fdf170d242c137
+7030,2790ac68b32b399c872de88388bdccc359ed7a88,Dockerfile.simple,Dockerfile.simple,"# Install runc, containerd, tini and docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-24 22:18:58+00:00,2015-02-27 22:37:25-07:00,,1,2018-02-22 03:20:29+00:00,49ad3d69a7780e54ace50290d0a1a55c1182a947
+4796,bc82b139955c4a0edb20b070926469cceea0fbbb,Dockerfile.simple,Dockerfile.simple,"# docker build -t docker:simple -f Dockerfile.simple .
+# docker run --rm docker:simple hack/make.sh dynbinary
+# docker run --rm --privileged docker:simple hack/dind hack/make.sh test-unit
+# docker run --rm --privileged -v /var/lib/docker docker:simple hack/dind hack/make.sh dynbinary test-integration
+
+# This represents the bare minimum required to build and test Docker.
+
+",2017-06-17 00:18:44+00:00,2015-02-27 22:37:25-07:00,,1,,
+3560,be8885525c4d1ef4a13bbd6396f60e8657bc5573,Dockerfile.simple,Dockerfile.simple,"# Install runc, containerd, tini and docker-proxy
+# Please edit hack/dockerfile/install/<name>.installer to update them.
+",2017-12-08 01:10:04+00:00,2015-02-27 22:37:25-07:00,,1,,
+23869,20d24a450cbf22b6d5268bc1fe76022fa554d6be,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+# # Apparmor messes with privileged mode: disable it
+# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -lxc-conf=lxc.aa_profile=unconfined -i -t docker bash
+#
+#
+# # Run the test suite:
+# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
+#
+# # Publish a release:
+# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
+# -e AWS_S3_BUCKET=baz \
+# -e AWS_ACCESS_KEY=foo \
+# -e AWS_SECRET_KEY=bar \
+# -e GPG_PASSPHRASE=gloubiboulga \
+# -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release.sh
+# 
+
+",2013-08-26 22:51:22+00:00,2013-06-21 19:42:17-07:00,,1,2013-09-30 19:57:30+00:00,ccefe47897bdcef8b56bf54d4bd324989855f3b5
+31032,fa806f26aff927eb0d98b41e79786ae98987da5b,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+# # Apparmor messes with privileged mode: disable it
+# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
+#
+# # Run the test suite:
+# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
+#
+# # Publish a release:
+# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
+# -e AWS_S3_BUCKET=baz \
+# -e AWS_ACCESS_KEY=foo \
+# -e AWS_SECRET_KEY=bar \
+# -e GPG_PASSPHRASE=gloubiboulga \
+# -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release/release.sh
+# 
+
+",2013-09-07 02:58:05+00:00,2013-06-21 19:42:17-07:00,,1,2013-09-07 03:14:03+00:00,47838051be695a4e74c80690ceef811dcd3ef62c
+29907,47838051be695a4e74c80690ceef811dcd3ef62c,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+# # Apparmor messes with privileged mode: disable it
+# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
+#
+# # Run the test suite:
+# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
+#
+# # Publish a release:
+# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
+# -e AWS_S3_BUCKET=baz \
+# -e AWS_ACCESS_KEY=foo \
+# -e AWS_SECRET_KEY=bar \
+# -e GPG_PASSPHRASE=gloubiboulga \
+# -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release.sh
+# 
+
+",2013-09-07 03:14:03+00:00,2013-06-21 19:42:17-07:00,,1,2013-09-07 03:16:13+00:00,d757bd0904b71346b6c83622ae5685bc0c0d4349
+16542,ccefe47897bdcef8b56bf54d4bd324989855f3b5,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+# # Apparmor messes with privileged mode: disable it
+# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -lxc-conf=lxc.aa_profile=unconfined -i -t docker bash
+#
+#
+# # Run the test suite:
+# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
+#
+# # Publish a release:
+# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+
+",2013-09-30 19:57:30+00:00,2013-06-21 19:42:17-07:00,,1,2013-10-16 00:31:34+00:00,ee7d9b0bdec40d02ba5ef25f557cca9444a19669
+22328,1cbdaebaa1c2326e57945333420d25d6f77011d5,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+# # Apparmor messes with privileged mode: disable it
+# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -lxc-conf=lxc.aa_profile=unconfined -i -t docker bash
+#
+#
+# # Run the test suite:
+# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker hack/make.sh test
+#
+# # Publish a release:
+# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+
+",2013-10-05 02:25:15+00:00,2013-06-21 19:42:17-07:00,,1,2013-11-05 18:29:54+00:00,962a66cd36a615bb0a7cb9866becdccf4aa97839
+30089,31638ab2ad2a5380d447780f05f7aa078c9421f5,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run -privileged docker hack/make.sh test
+#
+# # Publish a release:
+# docker run -privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: Apparmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2013-10-31 21:58:43+00:00,2013-06-21 19:42:17-07:00,,1,2014-03-13 17:46:02+00:00,44fe8cbbd174b5d85d4a063ed270f6b9d2279b70
+25307,62a81370fffb3cfdb15ef19702f0ea07ab2f4c36,Dockerfile,Dockerfile,"# TODO add linux/386 and linux/arm
+",2013-12-19 06:06:14+00:00,2013-06-21 19:42:17-07:00,,1,2014-01-31 19:48:10+00:00,523341d994265b9f72e4869f0fd094fd15f1b480
+30912,484a75f3549239d0489cb0ad518d79ed6783584a,Dockerfile,Dockerfile,"# TODO replace FPM with some very minimal debhelper stuff
+",2013-12-25 03:40:41+00:00,2013-06-21 19:42:17-07:00,,1,2015-11-12 17:51:36+00:00,8b9856dbd7a1981aaa76fcf0fc10b37d1141c9af
+3254,44fe8cbbd174b5d85d4a063ed270f6b9d2279b70,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/dotcloud/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test
+#
+# # Publish a release:
+# docker run --privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: Apparmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2014-03-13 17:46:02+00:00,2013-06-21 19:42:17-07:00,,1,2014-07-24 22:19:50+00:00,b3ee9ac74e171e00f14027e39278013629e681b8
+20080,d0a0e91f1f8c3a43f04e7a58e37498124b283594,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2960,8 +2539,21 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2014-08-05 20:17:40+00:00,Tue Aug 5 13:17:40 2014 -0700,Sat Jun 2 09:46:53 2018 -0700,1,2015-06-13 16:21:50+00:00
-946,cd44018856be421497a35d96f88dd0eec42fae43,builder/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+",2014-06-19 02:04:08+00:00,2013-06-21 19:42:17-07:00,,1,2015-06-13 16:21:50+00:00,cd44018856be421497a35d96f88dd0eec42fae43
+30404,d5151ca8ab5d90300839c8572cb96577de4d6233,Dockerfile,Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Download man page generator
+",2014-09-03 14:26:19+00:00,2013-06-21 19:42:17-07:00,,1,2016-09-07 15:02:51+00:00,d0fa13a50201cdcef849b0c2ae67b0747222a1c6
+1543,47769994e5cba81a96529b418052afce7a6d51a3,Dockerfile,Dockerfile,"# TODO when https://jenkins.dockerproject.com/job/Windows/ is green, add windows back to the list above
+#	windows/amd64 windows/386
+
+# (set an explicit GOARM of 5 for maximum compatibility)
+",2015-01-22 22:42:17+00:00,2013-06-21 19:42:17-07:00,,1,2015-02-11 18:54:34+00:00,df7a04f9a64fc7b8e528a3b99beb71b97b4b22d0
+28520,5d70a97b1fff8286220d2bef9ceb248401f046d1,Dockerfile,Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install man page generator
+",2015-02-26 19:20:32+00:00,2013-06-21 19:42:17-07:00,,1,2015-04-30 17:29:01+00:00,72e9e12fa015d89c5184d6dda69497f1b090331d
+30974,6089e679a2fb2494fd3e599a9eab9327e6a509fc,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2986,8 +2578,16 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2015-06-13 16:21:50+00:00,Tue Aug 5 13:17:40 2014 -0700,Sat Jun 2 09:46:53 2018 -0700,1,2016-07-04 14:43:53+00:00
-1159,11280665b45d0ac9920d17abaf6a7328f2bc77d9,builder/dockerfile/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+",2015-05-01 23:42:53+00:00,2013-06-21 19:42:17-07:00,,1,2016-08-16 21:18:43+00:00,37302bbb3f4889e9de2a95d5ea018acdab9e4447
+23881,4357ed4a7363a1032edf93cf03232953c805184f,Dockerfile,Dockerfile,"# install seccomp
+# TODO: switch to libseccomp-dev since dockerinit is gone
+",2016-01-20 11:53:54+00:00,2013-06-21 19:42:17-07:00,,1,2016-02-02 19:37:43+00:00,51620020aff6f31447a71a5a66af0066c524649a
+9204,e6590b5fa2c442546d3dcfa3e0580eb024ede823,Dockerfile,Dockerfile,"# !!! TEMPORARY HACK !!!
+# Because of https://github.com/golang/go/issues/15286 we have to revert to Go 1.5.3 for windows/amd64 in master
+# To change which version of Go to compile with, simply prepend PATH with /usr/local/go1.5.3/bin
+# and set GOROOT to /usr/local/go1.5.3
+",2016-03-15 03:12:09+00:00,2013-06-21 19:42:17-07:00,,1,2016-05-27 13:54:57+00:00,9b0d385975c80359b4cab2c75e4834fe803e12d5
+23188,d8fef66b03c1ea8715470690efbd950033f7f628,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -3012,8 +2612,422 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2016-07-04 14:43:53+00:00,Tue Aug 5 13:17:40 2014 -0700,Sat Jun 2 09:46:53 2018 -0700,1,2017-11-28 02:21:47+00:00
-1702,b6eed3dca2e57705cb75895cad0b5337c79686d9,builder/dockerfile/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+",2016-05-12 14:52:00+00:00,2013-06-21 19:42:17-07:00,,1,2017-05-09 15:20:42+00:00,a762ceace4e8c1c7ce4fb582789af9d8074be3e1
+23189,d8fef66b03c1ea8715470690efbd950033f7f628,Dockerfile,Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Download toml validator
+",2016-05-12 14:52:00+00:00,2013-06-21 19:42:17-07:00,,1,2016-09-23 09:27:52+00:00,a94067c07fbfa77cdc57aa33c2fe2270cabb9ca3
+3723,934328d8ea650bf8a9c3c719999ce2a1f5dd5df6,Dockerfile,Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-06-07 07:45:21+00:00,2013-06-21 19:42:17-07:00,,1,2016-11-09 14:29:42+00:00,93e837d1d2d3a24b0219ccadc1fdf170d242c137
+9607,5f4dcd825299bf58e87e69c2bff3ceefc300a432,Dockerfile,Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-09-21 23:18:22+00:00,2013-06-21 19:42:17-07:00,,1,2016-10-25 15:54:13+00:00,36f47aa2527f83d7ca7254c43eb08ffc5ce1102e
+9845,bd31b24336ff2da098e62a375552586434a012b0,Dockerfile,Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Download toml validator
+",2016-09-22 02:15:18+00:00,2013-06-21 19:42:17-07:00,,1,2016-10-05 20:15:30+00:00,0b86ca9ad0916b62b7429f5d15821962bc4f7db0
+1353,1b41125ad9f1a3881b71bd044d76fd285170addb,Dockerfile,Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd.and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-09-23 16:20:57+00:00,2013-06-21 19:42:17-07:00,,1,2016-09-23 17:37:28+00:00,b8265e55508db99aea632033b2f5008f921b11e2
+1026,0b86ca9ad0916b62b7429f5d15821962bc4f7db0,Dockerfile,Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd.and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-05 20:15:30+00:00,2013-06-21 19:42:17-07:00,,1,2016-10-06 17:36:31+00:00,5ee2c2a6475056f55327ce77b61677499a9e3fa8
+319,3996975b0840033bda3919440d122d734a4bc66b,Dockerfile,Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd, grimes, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-18 23:30:47+00:00,2013-06-21 19:42:17-07:00,,1,2016-11-03 16:47:50+00:00,d58b47623b252803f5cd12f6d9ca584d1587ab22
+7036,2790ac68b32b399c872de88388bdccc359ed7a88,Dockerfile,Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-24 22:18:58+00:00,2013-06-21 19:42:17-07:00,,1,2017-04-12 13:37:40+00:00,330ddf8eb8f8a551677bdfc757fcefdb0cdaec3f
+10516,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile,Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+
+# Install tomlv, vndr, runc, containerd, tini, docker-proxy dockercli
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-12-01 13:33:30+00:00,2013-06-21 19:42:17-07:00,,1,2018-02-22 03:20:29+00:00,49ad3d69a7780e54ace50290d0a1a55c1182a947
+10515,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run -e DOCKER_GITCOMMIT=foo --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
+#
+# # Publish a release:
+# docker run --privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2016-12-01 13:33:30+00:00,2013-06-21 19:42:17-07:00,,1,2017-08-11 17:39:27+00:00,f34e4d295d5c17a78c33beb14b65e5d001c16968
+15107,1ecd8ed5186a161c1c43ae7c99b1c81b97188619,Dockerfile,Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+
+# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-12-31 19:11:30+00:00,2013-06-21 19:42:17-07:00,,1,2017-05-05 22:03:30+00:00,34337db95d8eb85875509e341f452d8b555452b8
+4790,bc82b139955c4a0edb20b070926469cceea0fbbb,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run -e DOCKER_GITCOMMIT=foo --privileged docker hack/make.sh test-unit test-integration test-docker-py
+#
+# # Publish a release:
+# docker run --privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2017-06-17 00:18:44+00:00,2013-06-21 19:42:17-07:00,,1,2018-02-14 11:03:52+00:00,ba49e8c49830b69c833edff3c393716da20f897a
+20457,d6e1cc32d309ee237342975388e729570343a974,Dockerfile,Dockerfile,"# Options for hack/validate/gometalinter
+",2017-06-30 08:29:56+00:00,2013-06-21 19:42:17-07:00,,1,2019-09-11 06:51:06+00:00,a464a3d51f89566b3e480d66903056004576cc85
+1694,d539038d9712daa44254412c6fcc6d78a14da691,Dockerfile,Dockerfile,"# TODO: Some of this is only really needed for testing, it would be nice to split this up
+",2017-09-29 21:09:14+00:00,2013-06-21 19:42:17-07:00,,1,,
+1692,d539038d9712daa44254412c6fcc6d78a14da691,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Use make to build a development environment image and run it in a container.
+# # This is slow the first time.
+# make BIND_DIR=. shell
+#
+# The following commands are executed inside the running container.
+
+# # Make a dockerd binary.
+# # hack/make.sh binary
+#
+# # Install dockerd to /usr/local/bin
+# # make install
+#
+# # Run unit tests
+# # hack/test/unit
+#
+# # Run tests e.g. integration, py
+# # hack/make.sh binary test-integration test-docker-py
+#
+# # Publish a release:
+# docker run --privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2017-09-29 21:09:14+00:00,2013-06-21 19:42:17-07:00,,1,2018-05-18 18:28:43+00:00,80bc8b4766cc808186af91930152d78afb22aef8
+1693,d539038d9712daa44254412c6fcc6d78a14da691,Dockerfile,Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+
+# Just a little hack so we don't have to install these deps twice, once for runc and once for dockerd
+",2017-09-29 21:09:14+00:00,2013-06-21 19:42:17-07:00,,1,2019-04-20 20:34:05+00:00,aac801ac751a9562698d2eb1de262f74476b93f9
+1695,d539038d9712daa44254412c6fcc6d78a14da691,Dockerfile,Dockerfile,"# TODO: This is for the docker-py tests, which shouldn't really be needed for
+# this image, but currently CI is expecting to run this image. This should be
+# split out into a separate image, including all the `python-*` deps installed
+# above.
+",2017-09-29 21:09:14+00:00,2013-06-21 19:42:17-07:00,,1,2019-07-18 18:54:16+00:00,764160031e1dc165411ee6612a129bd26a9872b7
+3563,be8885525c4d1ef4a13bbd6396f60e8657bc5573,Dockerfile,Dockerfile,"# FIXME(vdemeester) this is kept for other script depending on it to not fail right away
+# Remove this once the other scripts uses something else to detect the version
+",2017-12-08 01:10:04+00:00,2013-06-21 19:42:17-07:00,,1,2018-09-07 08:35:33+00:00,ec99bd6ab865f49da659cb6a2da3d805eff92ec1
+478,eaae7750efbc80314c5e028c4d43d3cd9e104edd,Dockerfile,Dockerfile,"# TODO: when issue #35963 fixed, we can upgrade the busybox to multi-arch
+",2018-01-05 02:58:14+00:00,2013-06-21 19:42:17-07:00,,1,2018-02-15 08:49:15+00:00,e3102d5055995a43b090dbc29342a1846a39edae
+21783,b529d1b0936b90ae14d584c73f7332919f8d76b7,Dockerfile,Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+
+# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
+# Please edit hack/dockerfile/install/<name>.installer to update them.
+",2018-02-16 18:51:30+00:00,2013-06-21 19:42:17-07:00,,1,2018-02-26 13:05:21+00:00,00c1c604d08bbceb73a680d37d7428e6a4e986af
+29545,80bc8b4766cc808186af91930152d78afb22aef8,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Use make to build a development environment image and run it in a container.
+# # This is slow the first time.
+# make BIND_DIR=. shell
+#
+# The following commands are executed inside the running container.
+
+# # Make a dockerd binary.
+# # hack/make.sh binary
+#
+# # Install dockerd to /usr/local/bin
+# # make install
+#
+# # Run unit tests
+# # hack/test/unit
+#
+# # Run tests e.g. integration, py
+# # hack/make.sh binary test-integration test-docker-py
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2018-05-18 18:28:43+00:00,2013-06-21 19:42:17-07:00,,1,2019-10-04 01:57:29+00:00,93f9b902af89f82367d750aa871d40f25ccd99ca
+7540,4e3ab9e9fbca682f75eb350c8ad4312282869a03,Dockerfile,Dockerfile,"# TODO: This is here because hack/make.sh binary copies these extras binaries
+# from $PATH into the bundles dir.
+# It would be nice to handle this in a different way.
+",2019-07-17 12:37:56+00:00,2013-06-21 19:42:17-07:00,,1,,
+7538,4e3ab9e9fbca682f75eb350c8ad4312282869a03,Dockerfile,Dockerfile,"# Install go-swagger for validating swagger.yaml
+# This is https://github.com/kolyshkin/go-swagger/tree/golang-1.13-fix
+# TODO: move to under moby/ or fix upstream go-swagger to work for us.
+",2019-07-17 12:37:56+00:00,2013-06-21 19:42:17-07:00,,1,,
+22913,d1a3a17c671b9f89a90e59b58a92f04da0a4e3d9,Dockerfile,Dockerfile,"# Switch to use iptables instead of nftables (to match the CI hosts)
+# TODO use some kind of runtime auto-detection instead if/when nftables is supported (https://github.com/moby/moby/issues/26824)
+",2020-01-15 14:22:41+00:00,2013-06-21 19:42:17-07:00,,1,,
+8802,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.s390x,Dockerfile.s390x,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Download man page generator
+",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-09-07 15:02:51+00:00,d0fa13a50201cdcef849b0c2ae67b0747222a1c6
+8800,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.s390x,Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.s390x .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test
+#
+# # Publish a release:
+# docker run --privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-02-12 16:56:11+00:00,f27b5dda4afc0b0a278eb5379d17dfc3533c5397
+8801,91201678c6f58a5e46fe302bed9eb55a7ddcf693,Dockerfile.s390x,Dockerfile.s390x,"# This has been commented out and kept as reference because we don't support compiling with older Go anymore.
+# ENV GOFMT_VERSION 1.3.3
+# RUN curl -sSL https://storage.googleapis.com/golang/go${GOFMT_VERSION}.$(go env GOOS)-$(go env GOARCH).tar.gz | tar -C /go/bin -xz --strip-components=2 go/bin/gofmt
+
+# TODO update this sha when we upgrade to Go 1.5+
+",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-08-23 16:01:28+00:00,08c16f8abfdc1f91119a35056c92d131b815fbf8
+15220,f27b5dda4afc0b0a278eb5379d17dfc3533c5397,Dockerfile.s390x,Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.s390x .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2016-02-12 16:56:11+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-08-16 21:18:43+00:00,37302bbb3f4889e9de2a95d5ea018acdab9e4447
+10909,ee3ac3aa66bfb27b7c21dfb253fdaa113baedd4e,Dockerfile.s390x,Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.s390x .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2016-06-27 21:38:47+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2017-08-11 17:39:27+00:00,f34e4d295d5c17a78c33beb14b65e5d001c16968
+10910,ee3ac3aa66bfb27b7c21dfb253fdaa113baedd4e,Dockerfile.s390x,Dockerfile.s390x,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Download toml validator
+",2016-06-27 21:38:47+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-09-23 09:27:52+00:00,a94067c07fbfa77cdc57aa33c2fe2270cabb9ca3
+9605,5f4dcd825299bf58e87e69c2bff3ceefc300a432,Dockerfile.s390x,Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-09-21 23:18:22+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-10-25 15:54:13+00:00,36f47aa2527f83d7ca7254c43eb08ffc5ce1102e
+9848,bd31b24336ff2da098e62a375552586434a012b0,Dockerfile.s390x,Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Download toml validator
+",2016-09-22 02:15:18+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-10-05 20:15:30+00:00,0b86ca9ad0916b62b7429f5d15821962bc4f7db0
+1351,1b41125ad9f1a3881b71bd044d76fd285170addb,Dockerfile.s390x,Dockerfile.s390x,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd.and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-09-23 16:20:57+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-09-23 17:37:28+00:00,b8265e55508db99aea632033b2f5008f921b11e2
+1020,0b86ca9ad0916b62b7429f5d15821962bc4f7db0,Dockerfile.s390x,Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd.and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-05 20:15:30+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-10-06 17:36:31+00:00,5ee2c2a6475056f55327ce77b61677499a9e3fa8
+327,3996975b0840033bda3919440d122d734a4bc66b,Dockerfile.s390x,Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, runc, containerd, grimes, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-18 23:30:47+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-11-03 16:47:50+00:00,d58b47623b252803f5cd12f6d9ca584d1587ab22
+7032,2790ac68b32b399c872de88388bdccc359ed7a88,Dockerfile.s390x,Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-24 22:18:58+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2017-04-12 13:37:40+00:00,330ddf8eb8f8a551677bdfc757fcefdb0cdaec3f
+3878,f2614f2107c838d014d31b806e3b8a9f1395cb2b,Dockerfile.s390x,Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-10-31 18:22:28+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-11-09 14:29:42+00:00,93e837d1d2d3a24b0219ccadc1fdf170d242c137
+10518,470dfd69b3a86d8966f51d3f7237bdb10d6e00e0,Dockerfile.s390x,Dockerfile.s390x,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+
+# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2016-12-01 13:33:30+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2018-02-22 03:20:29+00:00,49ad3d69a7780e54ace50290d0a1a55c1182a947
+4798,bc82b139955c4a0edb20b070926469cceea0fbbb,Dockerfile.s390x,Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.s390x .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2017-06-17 00:18:44+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
+21788,b529d1b0936b90ae14d584c73f7332919f8d76b7,Dockerfile.s390x,Dockerfile.s390x,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+
+# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
+# Please edit hack/dockerfile/install/<name>.installer to update them.
+",2018-02-16 18:51:30+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
+30823,22c46af4b358cf3ec4f7af47c701064c00cf7de4,builder/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test
+#
+# # Publish a release:
+# docker run --privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: Apparmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2014-08-05 20:17:40+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2015-06-13 16:21:50+00:00,cd44018856be421497a35d96f88dd0eec42fae43
+30824,22c46af4b358cf3ec4f7af47c701064c00cf7de4,builder/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# TODO replace FPM with some very minimal debhelper stuff
+",2014-08-05 20:17:40+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2018-11-19 09:12:15+01:00,
+12806,cd44018856be421497a35d96f88dd0eec42fae43,builder/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test
+#
+# # Publish a release:
+# docker run --privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2015-06-13 16:21:50+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2016-07-04 14:43:53+00:00,11280665b45d0ac9920d17abaf6a7328f2bc77d9
+15773,11280665b45d0ac9920d17abaf6a7328f2bc77d9,builder/dockerfile/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
+#
+# # Publish a release:
+# docker run --privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2016-07-04 14:43:53+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2017-11-28 02:21:47+00:00,b6eed3dca2e57705cb75895cad0b5337c79686d9
+21856,b6eed3dca2e57705cb75895cad0b5337c79686d9,builder/dockerfile/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -3038,8 +3052,8 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2017-11-28 02:21:47+00:00,Tue Aug 5 13:17:40 2014 -0700,Sat Jun 2 09:46:53 2018 -0700,1,2018-05-18 18:28:43+00:00
-2371,80bc8b4766cc808186af91930152d78afb22aef8,builder/dockerfile/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+",2017-11-28 02:21:47+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2018-05-18 18:28:43+00:00,80bc8b4766cc808186af91930152d78afb22aef8
+29551,80bc8b4766cc808186af91930152d78afb22aef8,builder/dockerfile/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -3056,55 +3070,36 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2018-05-18 18:28:43+00:00,Tue Aug 5 13:17:40 2014 -0700,Sat Jun 2 09:46:53 2018 -0700,1,Sat Jun 2 09:46:53 2018 -0700
-254,934328d8ea650bf8a9c3c719999ce2a1f5dd5df6,Dockerfile.solaris,Dockerfile.solaris,"# Defines an image that hosts a native Docker build environment for Solaris
+",2018-05-18 18:28:43+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2018-11-19 09:12:15+01:00,
+3561,be8885525c4d1ef4a13bbd6396f60e8657bc5573,Dockerfile.e2e,Dockerfile.e2e,"# Install dockercli
+# Please edit hack/dockerfile/install/<name>.installer to update them.
+",2017-12-08 01:10:04+00:00,2017-09-08 16:43:04+02:00,,1,,
+3721,934328d8ea650bf8a9c3c719999ce2a1f5dd5df6,Dockerfile.solaris,Dockerfile.solaris,"# Defines an image that hosts a native Docker build environment for Solaris
 # TODO: Improve stub
 
-",2016-06-07 07:45:21+00:00,Tue Jun 7 00:45:21 2016 -0700,Tue Oct 24 14:32:52 2017 -0400,1,Tue Oct 24 14:32:52 2017 -0400
-777,82c56755ea9e6c0ce197fbdfd41d0c5d1724b50c,Dockerfile.buildkit,Dockerfile.buildkit,"# TODO: Some of this is only really needed for testing, it would be nice to split this up
-",2019-05-22 23:49:55+00:00,Wed May 22 16:49:55 2019 -0700,Fri Jun 7 10:10:31 2019 -0700,1,Fri Jun 7 10:10:31 2019 -0700
-778,82c56755ea9e6c0ce197fbdfd41d0c5d1724b50c,Dockerfile.buildkit,Dockerfile.buildkit,"# Options for hack/validate/gometalinter
-",2019-05-22 23:49:55+00:00,Wed May 22 16:49:55 2019 -0700,Fri Jun 7 10:10:31 2019 -0700,1,Fri Jun 7 10:10:31 2019 -0700
-1823,4357ed4a7363a1032edf93cf03232953c805184f,Dockerfile.gccgo,Dockerfile.gccgo,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
+",2016-06-07 07:45:21+00:00,2016-06-07 00:45:21-07:00,2017-11-09 06:21:02-08:00,1,2017-11-09 06:21:02-08:00,
+23883,4357ed4a7363a1032edf93cf03232953c805184f,Dockerfile.gccgo,Dockerfile.gccgo,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
 
 # install seccomp
 # TODO: switch to libseccomp-dev since dockerinit is gone
-",2016-01-20 11:53:54+00:00,Mon Aug 17 09:20:45 2015 +0000,Wed Aug 24 11:09:35 2016 +0100,1,Wed Aug 24 11:09:35 2016 +0100
-2089,6e3068700fb32299cf733acd74785e29609b1974,testing/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"#### FIXME. Temporarily install docker with proper apparmor handling
-",2013-09-21 19:14:40+00:00,Sat Sep 7 10:30:29 2013 -0700,Fri Feb 14 20:50:16 2014 -0800,1,2013-10-27 19:13:03+00:00
-1886,17172276366fc3114ae52eb6c83aafbec004d5f3,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.5
-# DOCKER-VERSION  0.6.4
-# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
-# DESCRIPTION:    Build docker nightly release using Docker in Docker.
-# REFERENCES:     This code reuses the excellent implementation of docker in docker
-#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
-# COMMENTS:
-#   release_credentials.json is a base64 json encoded file containing:
-#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
-#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
-#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
-# TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh
+",2016-01-20 11:53:54+00:00,2015-08-17 09:20:45+00:00,2016-09-26 23:17:09+01:00,1,2016-09-26 23:17:09+01:00,
+30262,eaa9c85511620aa82f1876e1503604f591f00d23,docs/Dockerfile,docs/Dockerfile,"#
+#    docker build -t docker:docs . && docker run -p 8000:8000 docker:docs
+#
 
-",2013-10-27 19:13:03+00:00,Sat Sep 7 10:30:29 2013 -0700,Fri Feb 14 20:50:16 2014 -0800,1,2013-11-07 04:05:26+00:00
-2384,0cbeda73910d6d1d3336da93c5f94df0bdd5fa44,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"#### FIXME. Temporarily install docker and dind with proper apparmor handling
-",2013-10-28 23:51:31+00:00,Sat Sep 7 10:30:29 2013 -0700,Fri Feb 14 20:50:16 2014 -0800,1,2013-11-07 04:05:26+00:00
-1909,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.6
-# DOCKER-VERSION  0.6.6
-# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
-# DESCRIPTION:    Build docker nightly release using Docker in Docker.
-# REFERENCES:     This code reuses the excellent implementation of docker in docker
-#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
-# COMMENTS:
-#   release_credentials.json is a base64 json encoded file containing:
-#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
-#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
-#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
-# TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh
+# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released
 
-",2013-11-07 04:05:26+00:00,Sat Sep 7 10:30:29 2013 -0700,Fri Feb 14 20:50:16 2014 -0800,1,Fri Feb 14 20:50:16 2014 -0800
-2525,95f3f77fc417bbc55f03e869136deec27e26bc51,hack/infrastructure/docker-ci/docker-test/Dockerfile,hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.3
+",2014-01-15 02:23:30+00:00,2013-08-29 23:49:41+00:00,2017-01-31 13:41:02-08:00,1,2015-02-18 04:20:46+00:00,3e84b9e56abdff7230e84a1830085c79c73aa3b7
+22630,3e84b9e56abdff7230e84a1830085c79c73aa3b7,docs/Dockerfile,docs/Dockerfile,"# TODO: need the full repo source to get the git version info
+",2015-02-18 04:20:46+00:00,2013-08-29 23:49:41+00:00,2017-01-31 13:41:02-08:00,1,2017-01-31 13:41:02-08:00,
+22631,3e84b9e56abdff7230e84a1830085c79c73aa3b7,docs/Dockerfile,docs/Dockerfile,"# TODO: don't do this - look at merging the yml file in build.sh
+",2015-02-18 04:20:46+00:00,2013-08-29 23:49:41+00:00,2017-01-31 13:41:02-08:00,1,2015-02-25 00:37:36+00:00,8d4459fffb5c1885b65506093538e059f0b51d90
+25600,8d4459fffb5c1885b65506093538e059f0b51d90,docs/Dockerfile,docs/Dockerfile,"# adding the image spec will require Docker 1.5 and `docker build -f docs/Dockerfile .`
+#COPY ./image/spec/v1.md /docs/sources/reference/image-spec-v1.md
+
+# TODO: don't do this - look at merging the yml file in build.sh
+",2015-02-25 00:37:36+00:00,2013-08-29 23:49:41+00:00,2017-01-31 13:41:02-08:00,1,2017-01-31 13:41:02-08:00,
+30918,95f3f77fc417bbc55f03e869136deec27e26bc51,hack/infrastructure/docker-ci/docker-test/Dockerfile,hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.3
 # DOCKER-VERSION  0.6.3
 # AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
 # DESCRIPTION:    Testing docker PRs and commits on top of master using
@@ -3120,10 +3115,10 @@
 # TO_BUILD:       docker build -t test_docker .
 # TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]
 
-",2013-10-19 05:33:16+00:00,Fri Oct 18 22:33:16 2013 -0700,Fri Feb 14 20:50:16 2014 -0800,1,2013-11-07 04:05:26+00:00
-2503,efb4c800a7c8167cf2202466a720c0fad7001a5d,hack/infrastructure/docker-ci/docker-test/Dockerfile,hack/infrastructure/docker-ci/docker-test/Dockerfile,"#### FIXME. Temporarily install docker and dind with proper apparmor handling
-",2013-10-30 02:37:56+00:00,Fri Oct 18 22:33:16 2013 -0700,Fri Feb 14 20:50:16 2014 -0800,1,2013-11-07 04:05:26+00:00
-1910,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,hack/infrastructure/docker-ci/docker-test/Dockerfile,hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.4
+",2013-10-19 05:33:16+00:00,2013-10-18 22:33:16-07:00,2014-03-10 13:20:49-07:00,1,2013-11-07 04:05:26+00:00,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065
+30691,efb4c800a7c8167cf2202466a720c0fad7001a5d,hack/infrastructure/docker-ci/docker-test/Dockerfile,hack/infrastructure/docker-ci/docker-test/Dockerfile,"#### FIXME. Temporarily install docker and dind with proper apparmor handling
+",2013-10-30 02:37:56+00:00,2013-10-18 22:33:16-07:00,2014-03-10 13:20:49-07:00,1,2013-10-31 16:42:19+00:00,e37a7d49818581a17303aacd06baf1db6835cfd6
+25311,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,hack/infrastructure/docker-ci/docker-test/Dockerfile,hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.4
 # DOCKER-VERSION  0.6.6
 # AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
 # DESCRIPTION:    Testing docker PRs and commits on top of master using
@@ -3139,7 +3134,45 @@
 # TO_BUILD:       docker build -t test_docker .
 # TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]
 
-",2013-11-07 04:05:26+00:00,Fri Oct 18 22:33:16 2013 -0700,Fri Feb 14 20:50:16 2014 -0800,1,Fri Feb 14 20:50:16 2014 -0800
-1949,878dcb89f38e8eb7bb07ccd4a4e5ce622252ff30,Dockerfile.centos,Dockerfile.centos,"# Wrap all commands in the ""docker-in-docker"" script to allow nested containers
+",2013-11-07 04:05:26+00:00,2013-10-18 22:33:16-07:00,2014-03-10 13:20:49-07:00,1,2014-03-10 13:20:49-07:00,
+27445,6e3068700fb32299cf733acd74785e29609b1974,testing/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"#### FIXME. Temporarily install docker with proper apparmor handling
+",2013-09-21 19:14:40+00:00,2013-09-07 10:30:29-07:00,2014-03-10 13:20:49-07:00,1,2013-11-07 04:05:26+00:00,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065
+24799,17172276366fc3114ae52eb6c83aafbec004d5f3,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.5
+# DOCKER-VERSION  0.6.4
+# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
+# DESCRIPTION:    Build docker nightly release using Docker in Docker.
+# REFERENCES:     This code reuses the excellent implementation of docker in docker
+#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
+# COMMENTS:
+#   release_credentials.json is a base64 json encoded file containing:
+#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
+#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
+#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
+# TO_BUILD:       docker build -t dockerbuilder .
+# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh
+
+",2013-10-27 19:13:03+00:00,2013-09-07 10:30:29-07:00,2014-03-10 13:20:49-07:00,1,2013-10-29 20:44:03+00:00,d91e1453320dd8ff37f133b530e372c5b9bc1ec9
+29638,0cbeda73910d6d1d3336da93c5f94df0bdd5fa44,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"#### FIXME. Temporarily install docker and dind with proper apparmor handling
+",2013-10-28 23:51:31+00:00,2013-09-07 10:30:29-07:00,2014-03-10 13:20:49-07:00,1,2013-10-29 20:44:03+00:00,d91e1453320dd8ff37f133b530e372c5b9bc1ec9
+25310,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.6
+# DOCKER-VERSION  0.6.6
+# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
+# DESCRIPTION:    Build docker nightly release using Docker in Docker.
+# REFERENCES:     This code reuses the excellent implementation of docker in docker
+#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
+# COMMENTS:
+#   release_credentials.json is a base64 json encoded file containing:
+#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
+#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
+#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
+# TO_BUILD:       docker build -t dockerbuilder .
+# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh
+
+",2013-11-07 04:05:26+00:00,2013-09-07 10:30:29-07:00,2014-03-10 13:20:49-07:00,1,2014-03-10 13:20:49-07:00,
+10837,82c56755ea9e6c0ce197fbdfd41d0c5d1724b50c,Dockerfile.buildkit,Dockerfile.buildkit,"# TODO: Some of this is only really needed for testing, it would be nice to split this up
+",2019-05-22 23:49:55+00:00,2019-05-22 16:49:55-07:00,2019-06-07 10:10:31-07:00,1,2019-06-07 10:10:31-07:00,
+10838,82c56755ea9e6c0ce197fbdfd41d0c5d1724b50c,Dockerfile.buildkit,Dockerfile.buildkit,"# Options for hack/validate/gometalinter
+",2019-05-22 23:49:55+00:00,2019-05-22 16:49:55-07:00,2019-06-07 10:10:31-07:00,1,2019-06-07 10:10:31-07:00,
+25909,878dcb89f38e8eb7bb07ccd4a4e5ce622252ff30,Dockerfile.centos,Dockerfile.centos,"# Wrap all commands in the ""docker-in-docker"" script to allow nested containers
 #ENTRYPOINT [""hack/dind""]
-",2015-03-31 20:58:17+00:00,Tue Mar 31 13:58:17 2015 -0700,Thu Apr 30 15:30:42 2015 -0700,1,Thu Apr 30 15:30:42 2015 -0700
+",2015-03-31 20:58:17+00:00,2015-03-31 13:58:17-07:00,2015-04-30 15:30:42-07:00,1,2015-04-30 15:30:42-07:00,

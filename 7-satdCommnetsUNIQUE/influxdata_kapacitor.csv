@@ -1,5 +1,28 @@
-,CommitID,Dockerfiles,LatestDockerfile,Comments,Date,FirstCommit Date,Deleted Date,isSATD,DeletedComment Date
-0,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile,vendor/github.com/docker/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+,CommitID,Dockerfile,LatestDockerfile,Comment,Date,FirstCommit Date,Deleted Date,isSATD,DeletedComment Date,Deleted CommitID
+24,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.s390x,vendor/github.com/docker/docker/Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker -f Dockerfile.s390x .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
+25,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.s390x,vendor/github.com/docker/docker/Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
+14,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile,vendor/github.com/docker/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -24,36 +47,13 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
-1,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile,vendor/github.com/docker/docker/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
+15,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile,vendor/github.com/docker/docker/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
-2,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.armhf,vendor/github.com/docker/docker/Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.armhf .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
-3,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.armhf,vendor/github.com/docker/docker/Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
-4,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.aarch64,vendor/github.com/docker/docker/Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
+18,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.aarch64,vendor/github.com/docker/docker/Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
 #
 # Usage:
 #
@@ -70,13 +70,13 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
-5,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.aarch64,vendor/github.com/docker/docker/Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
+19,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.aarch64,vendor/github.com/docker/docker/Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
-6,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.windows,vendor/github.com/docker/docker/Dockerfile.windows,"# escape=`
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
+20,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.windows,vendor/github.com/docker/docker/Dockerfile.windows,"# escape=`
 
 # -----------------------------------------------------------------------------------------
 # This file describes the standard way to build Docker in a container on Windows
@@ -235,12 +235,12 @@
 
 
 # The number of build steps below are explicitly minimised to improve performance.
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
-7,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.solaris,vendor/github.com/docker/docker/Dockerfile.solaris,"# Defines an image that hosts a native Docker build environment for Solaris
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
+21,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.solaris,vendor/github.com/docker/docker/Dockerfile.solaris,"# Defines an image that hosts a native Docker build environment for Solaris
 # TODO: Improve stub
 
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
-8,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.ppc64le,vendor/github.com/docker/docker/Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
+22,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.ppc64le,vendor/github.com/docker/docker/Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
 #
 # Usage:
 #
@@ -257,18 +257,18 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
-9,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.ppc64le,vendor/github.com/docker/docker/Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
+23,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.ppc64le,vendor/github.com/docker/docker/Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
-10,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.s390x,vendor/github.com/docker/docker/Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
+16,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.armhf,vendor/github.com/docker/docker/Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
 #
 # Usage:
 #
 # # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.s390x .
+# docker build -t docker -f Dockerfile.armhf .
 #
 # # Mount your source in an interactive container for quick testing:
 # docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
@@ -280,20 +280,20 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
-11,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.s390x,vendor/github.com/docker/docker/Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
+17,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.armhf,vendor/github.com/docker/docker/Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
-12,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.simple,vendor/github.com/docker/docker/Dockerfile.simple,"# docker build -t docker:simple -f Dockerfile.simple .
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
+26,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.simple,vendor/github.com/docker/docker/Dockerfile.simple,"# docker build -t docker:simple -f Dockerfile.simple .
 # docker run --rm docker:simple hack/make.sh dynbinary
 # docker run --rm --privileged docker:simple hack/dind hack/make.sh test-unit
 # docker run --rm --privileged -v /var/lib/docker docker:simple hack/dind hack/make.sh dynbinary test-integration-cli
 
 # This represents the bare minimum required to build and test Docker.
 
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
-13,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.simple,vendor/github.com/docker/docker/Dockerfile.simple,"# Install runc, containerd, tini and docker-proxy
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
+27,5dd218345c6ac415de818984998112a9ecad5167,vendor/github.com/docker/docker/Dockerfile.simple,vendor/github.com/docker/docker/Dockerfile.simple,"# Install runc, containerd, tini and docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
-",2017-07-25 19:32:56+00:00,Tue Jul 25 13:32:56 2017 -0600,Fri Mar 16 13:23:59 2018 -0600,1,Fri Mar 16 13:23:59 2018 -0600
+",2017-07-25 19:32:56+00:00,2017-07-25 13:32:56-06:00,2018-03-16 13:32:10-06:00,1,2018-03-16 13:32:10-06:00,
