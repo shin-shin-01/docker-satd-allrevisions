@@ -37,10 +37,10 @@ def countUniqueComment():
         except UnboundLocalError:
             df = pd.read_csv(f'{PATH_OF_COMMENTFILE}/{csvfile}', index_col=0)
 
-    comments = df["Comments"]
+    comments = df["Comment"]
     print(f"リビジョン統合前全コメント数 \n→{len(comments)}")
 
-    uniqueComment = df["Comments"].unique()
+    uniqueComment = df["Comment"].unique()
     print(f"UniqueComments from 4-rowComments (全プロジェクト全リビジョンでのユニークコメント検出)   \n→{len(uniqueComment)}")
 
 
@@ -61,10 +61,10 @@ def countSATDbeforeRevisionMerge():
 def countUniqueSATD():
     df = pd.read_csv(f'{PATH_OF_ALLPROJECT_CSV}/result.csv', index_col=0)
     
-    SATD = df["Comments"]
+    SATD = df["Comment"]
     print(f"SATD from 8-result.csv (全プロジェクト全リビジョンでのSATD検出(Fileが異なる物は異なるものとしてカウント -> file ごとにコメントマージ)) \n→{len(SATD)}")
 
-    uniqueSATD = df["Comments"].unique()
+    uniqueSATD = df["Comment"].unique()
     print(f"UniqueSATD from 8-result.csv (全プロジェクト全リビジョンでのユニークSATD検出) \n→{len(uniqueSATD)}")
 
 
@@ -72,19 +72,19 @@ def countUniqueSATD():
 def countDeletedSATD():
     df = pd.read_csv(f'{PATH_OF_ALLPROJECT_CSV}/result.csv', index_col=0)
     tmp = df[df["コメント追加からコメント削除までの日数"] != "削除されていません"]
-    uniqueSATD = tmp["Comments"].unique()
+    uniqueSATD = tmp["Comment"].unique()
     print(f"削除されたユニークSATD (ファイル削除・コメント削除) \n→{len(uniqueSATD)}")
 
     tmp = df[df["コメント追加からコメント削除までの日数"].apply(lambda delete: True if delete == "ファイル削除" else False)]
-    uniqueSATD = tmp["Comments"].unique()
+    uniqueSATD = tmp["Comment"].unique()
     print(f"削除されたユニークSATD (ファイル削除) \n→{len(uniqueSATD)}")
 
     tmp = df[df["コメント追加からコメント削除までの日数"].apply(lambda delete: False if delete in ["削除されていません", "ファイル削除"] else True)]
-    uniqueSATD = tmp["Comments"].unique()
+    uniqueSATD = tmp["Comment"].unique()
     print(f"削除されたユニークSATD (コメント削除)\n→{len(uniqueSATD)}")
 
     tmp = df[df["コメント追加からコメント削除までの日数"].apply(lambda delete: True if delete == "削除されていません" else False)]
-    uniqueSATD = tmp["Comments"].unique()
+    uniqueSATD = tmp["Comment"].unique()
     print(f"削除されていないユニークSATD \n→{len(uniqueSATD)}")
     
     """
