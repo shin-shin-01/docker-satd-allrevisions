@@ -41,9 +41,9 @@ def modifyColumnName():
         'project',
         'gitPath',
         'CommitID',
-        'Dockerfiles',
+        'Dockerfile',
         'LatestDockerfile',
-        'Comments',
+        'Comment',
         'Date',
         'DeletedComment Date',
         'FirstCommit Date',
@@ -94,6 +94,10 @@ def addDateCalculatedInfo(df):
     df["firstCommitからコメント追加までの日数"] = listOfDateFromfirstCommit
     df["コメント追加からコメント削除までの日数"] = listOfDateToDeleteComment
     return df
+
+def addBlob(df):
+    df["追加時ファイル"] = df["gitPath"] + '/blob/' + df['CommitID'] + "/" + df["Dockerfile"]
+    df["削除時ファイル"] = df["gitPath"] + '/blob/' + df['DeletedCommitID'] + "/" + df["LatestDockerfile"]
 
 
         

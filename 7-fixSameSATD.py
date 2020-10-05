@@ -41,11 +41,11 @@ def removeSameSATDofSameFile(csvfile):
     for fileName in uniqueLatestNameList:
         df_File = df[ df["LatestDockerfile"] == fileName ]
         df_File = df_File.sort_values('Date') # 定期的にソートしておく
-        uniqueCommentList = df_File["Comments"].unique()
+        uniqueCommentList = df_File["Comment"].unique()
 
         for comment in uniqueCommentList:
             # Dockerfile ごとのユニークなコメント
-            df_FileComment = df_File[ df_File["Comments"] == comment ]
+            df_FileComment = df_File[ df_File["Comment"] == comment ]
             df_FileComment = df_FileComment.sort_values('Date') # 定期的にソートしておく
 
             firstCommitRow = df_FileComment.head(1).iloc[0, :]
@@ -54,7 +54,7 @@ def removeSameSATDofSameFile(csvfile):
             # 同一Dockerfile のコミット履歴に対して、対象SATDの最終コミット日より後で直近の日付を '削除された日' として取得したい
             tmp_date = df_File[ df_File["Date"] > LatestCommentDate ]
 
-            if comment in tmp_date["Comments"].tolist():
+            if comment in tmp_date["Comment"].tolist():
                 # 同一ファイル
                 print("Error: 対象SATDの最終コミット日よりあとのデータに対象SATDが含まれています．\n === コードを修正してください。===")
                 exit()

@@ -43,7 +43,7 @@ def isSATD(comment):
 def detectSATD(csvfile):
     df = pd.read_csv(f'./{PATH_OF_COMMENTFILE}/{csvfile}', index_col=0, encoding='utf-8-sig')
 
-    df = df[ df['Comments'].apply(lambda com: isSATD(com))]
+    df = df[ df['Comment'].apply(lambda com: isSATD(com))]
     df = df.assign(isSATD=1)
     
     df.to_csv(f'./{PATH_OF_SATD_COMMENTFILE}/{csvfile}')

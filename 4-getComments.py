@@ -40,8 +40,8 @@ def saveComentToResult(txtfile, result, comments):
 
     for comment in comments:
         result["CommitID"].append(revision)
-        result["Dockerfiles"].append(filename)
-        result["Comments"].append(comment)
+        result["Dockerfile"].append(filename)
+        result["Comment"].append(comment)
 
     return result
 
@@ -50,7 +50,7 @@ def saveComentToResult(txtfile, result, comments):
 def main(repository):
     txtfiles = os.listdir(f'{PATH_OF_PASTFILE}/{repository}')
 
-    result = { "CommitID":[], "Dockerfiles":[], "Comments":[] }
+    result = { "CommitID":[], "Dockerfile":[], "Comment":[] }
 
     # 過去の全ての　Docker-file でfor文回してます
     for txtfile in txtfiles:
