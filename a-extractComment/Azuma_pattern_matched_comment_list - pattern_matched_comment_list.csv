@@ -1,0 +1,432 @@
+id,project,path,revision,url,start,end,comment,below
+1,cruxlinux/docker-crux,cruxlinux/docker-crux/build/aarch64/Dockerfile,78132f1f828e871dab1a541f78b7631ad5d12c11,https://github.com/cruxlinux/docker-crux/blob/78132f1f828e871dab1a541f78b7631ad5d12c11/build/aarch64/Dockerfile#L3-L3,3,3,"# TODO: Once bootstrapped, use 'crux:latest'",FROM alpine:3.8
+2,docker-library/docker,"docker-library/docker/19.03/Dockerfile
+docker-library/docker/19.03-rc/Dockerfile",cdd23554f9417055ca2a18805fa9ad5716209934,"https://github.com/docker-library/docker/blob/cdd23554f9417055ca2a18805fa9ad5716209934/19.03/Dockerfile#L8-L11
+https://github.com/docker-library/docker/blob/cdd23554f9417055ca2a18805fa9ad5716209934/19.03-rc/Dockerfile#L8-L11","8
+8","11
+11","# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",RUN [ ! -e /etc/nsswitch.conf ] && echo 'hosts: files dns' > /etc/nsswitch.conf
+3,docker-library/docker,"docker-library/docker/19.03/Dockerfile
+docker-library/docker/19.03-rc/Dockerfile",cdd23554f9417055ca2a18805fa9ad5716209934,"https://github.com/docker-library/docker/blob/cdd23554f9417055ca2a18805fa9ad5716209934/19.03/Dockerfile#L16-L18
+https://github.com/docker-library/docker/blob/cdd23554f9417055ca2a18805fa9ad5716209934/19.03-rc/Dockerfile#L16-L18","16
+16","18
+18","# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",
+4,docker-library/docker,"docker-library/docker/19.03/dind/Dockerfile
+docker-library/docker/19.03-rc/dind/Dockerfile",cdd23554f9417055ca2a18805fa9ad5716209934,"https://github.com/docker-library/docker/blob/cdd23554f9417055ca2a18805fa9ad5716209934/19.03/dind/Dockerfile#L24-L24
+https://github.com/docker-library/docker/blob/cdd23554f9417055ca2a18805fa9ad5716209934/19.03-rc/dind/Dockerfile#L24-L24","24
+24","24
+24",# TODO aufs-tools,
+5,docker-library/docker,"docker-library/docker/19.03/dind/Dockerfile
+docker-library/docker/19.03-rc/dind/Dockerfile",cdd23554f9417055ca2a18805fa9ad5716209934,"https://github.com/docker-library/docker/blob/cdd23554f9417055ca2a18805fa9ad5716209934/19.03/dind/Dockerfile#L33-L33
+https://github.com/docker-library/docker/blob/cdd23554f9417055ca2a18805fa9ad5716209934/19.03-rc/dind/Dockerfile#L33-L33","33
+33","33
+33",# https://github.com/docker/docker/tree/master/hack/dind,ENV DIND_COMMIT 37498f009d8bf25fbb6199e8ccd34bed84f2874b
+6,docker-library/docs,docker-library/docs/Dockerfile,a1f9f5dc41f0bd53c942b40f0b003f9405874970,https://github.com/docker-library/docs/blob/a1f9f5dc41f0bd53c942b40f0b003f9405874970/Dockerfile#L14-L14,14,14,# TODO find a way to make --mirror-only / SSL work with backpan too :(,RUN cpanm Digest::SHA Module::Signature
+7,docker-library/docs,docker-library/docs/Dockerfile,a1f9f5dc41f0bd53c942b40f0b003f9405874970,https://github.com/docker-library/docs/blob/a1f9f5dc41f0bd53c942b40f0b003f9405874970/Dockerfile#L16-L17,16,17,"# TODO find a way to make --verify work with backpan as well :'(
+#ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify",
+8,docker-library/drupal,"docker-library/drupal/7/apache/Dockerfile
+docker-library/drupal/7/fpm/Dockerfile
+docker-library/drupal/8.7/apache/Dockerfile
+docker-library/drupal/8.7/fpm/Dockerfile
+docker-library/drupal/8.8/apache/Dockerfile
+docker-library/drupal/8.8/fpm/Dockerfile",a238069a74de3039f8effb25f59224fbeaf93646,"https://github.com/docker-library/drupal/blob/a238069a74de3039f8effb25f59224fbeaf93646/7/apache/Dockerfile#L3-L3
+https://github.com/docker-library/drupal/blob/a238069a74de3039f8effb25f59224fbeaf93646/7/fpm/Dockerfile#L3-L3
+https://github.com/docker-library/drupal/blob/a238069a74de3039f8effb25f59224fbeaf93646/8.7/apache/Dockerfile#L3-L3
+https://github.com/docker-library/drupal/blob/a238069a74de3039f8effb25f59224fbeaf93646/8.7/fpm/Dockerfile#L3-L3
+https://github.com/docker-library/drupal/blob/a238069a74de3039f8effb25f59224fbeaf93646/8.8/apache/Dockerfile#L3-L3
+https://github.com/docker-library/drupal/blob/a238069a74de3039f8effb25f59224fbeaf93646/8.8/fpm/Dockerfile#L3-L3","3
+3
+3
+3
+3
+3","3
+3
+3
+3
+3
+3",# TODO switch to buster once https://github.com/docker-library/php/issues/865 is resolved in a clean way (either in the PHP image or in PHP itself),
+9,docker-library/gcc,"docker-library/gcc/10/Dockerfile
+docker-library/gcc/8/Dockerfile
+docker-library/gcc/9/Dockerfile",7f1fc5e8be598446b2546b808572db546e959643,"https://github.com/docker-library/gcc/blob/7f1fc5e8be598446b2546b808572db546e959643/10/Dockerfile#L112-L113
+https://github.com/docker-library/gcc/blob/7f1fc5e8be598446b2546b808572db546e959643/8/Dockerfile#L112-L113
+https://github.com/docker-library/gcc/blob/7f1fc5e8be598446b2546b808572db546e959643/9/Dockerfile#L112-L113","112
+112
+112","113
+113
+113","# TODO for some reason, libgo + i386 fails on https://github.com/gcc-mirror/gcc/blob/gcc-7_1_0-release/libgo/runtime/proc.c#L154
+# ""error unknown case for SETCONTEXT_CLOBBERS_TLS""",			;; \
+10,docker-library/mongo,"docker-library/mongo/3.6/Dockerfile
+docker-library/mongo/4.0/Dockerfile
+docker-library/mongo/4.2/Dockerfile",3ec50f2f7ae9fd2c824682bc08d07a093bbdb521,"https://github.com/docker-library/mongo/blob/3ec50f2f7ae9fd2c824682bc08d07a093bbdb521/3.6/Dockerfile#L49-L49
+https://github.com/docker-library/mongo/blob/3ec50f2f7ae9fd2c824682bc08d07a093bbdb521/4.0/Dockerfile#L49-L49
+https://github.com/docker-library/mongo/blob/3ec50f2f7ae9fd2c824682bc08d07a093bbdb521/4.2/Dockerfile#L49-L49","49
+49
+49","49
+49
+49",# TODO some sort of download verification here,	\
+11,docker-library/mongo,"docker-library/mongo/3.6/windows/windowsservercore-1809/Dockerfile
+docker-library/mongo/3.6/windows/windowsservercore-ltsc2016/Dockerfile
+docker-library/mongo/4.0/windows/windowsservercore-1809/Dockerfile
+docker-library/mongo/4.0/windows/windowsservercore-ltsc2016/Dockerfile
+docker-library/mongo/4.2/windows/windowsservercore-1809/Dockerfile
+docker-library/mongo/4.2/windows/windowsservercore-ltsc2016/Dockerfile",3ec50f2f7ae9fd2c824682bc08d07a093bbdb521,"https://github.com/docker-library/mongo/blob/3ec50f2f7ae9fd2c824682bc08d07a093bbdb521/3.6/windows/windowsservercore-1809/Dockerfile#L48-L48
+https://github.com/docker-library/mongo/blob/3ec50f2f7ae9fd2c824682bc08d07a093bbdb521/3.6/windows/windowsservercore-ltsc2016/Dockerfile#L48-L48
+https://github.com/docker-library/mongo/blob/3ec50f2f7ae9fd2c824682bc08d07a093bbdb521/4.0/windows/windowsservercore-1809/Dockerfile#L48-L48
+https://github.com/docker-library/mongo/blob/3ec50f2f7ae9fd2c824682bc08d07a093bbdb521/4.0/windows/windowsservercore-ltsc2016/Dockerfile#L48-L48
+https://github.com/docker-library/mongo/blob/3ec50f2f7ae9fd2c824682bc08d07a093bbdb521/4.2/windows/windowsservercore-1809/Dockerfile#L48-L48
+https://github.com/docker-library/mongo/blob/3ec50f2f7ae9fd2c824682bc08d07a093bbdb521/4.2/windows/windowsservercore-ltsc2016/Dockerfile#L48-L48","48
+48
+48
+48
+48
+48","48
+48
+48
+48
+48
+48","# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",
+12,docker-library/openjdk,"docker-library/openjdk/11/jdk/Dockerfile
+docker-library/openjdk/11/jdk/slim/Dockerfile
+docker-library/openjdk/11/jre/Dockerfile
+docker-library/openjdk/11/jre/slim/Dockerfile
+docker-library/openjdk/8/jdk/Dockerfile
+docker-library/openjdk/8/jdk/slim/Dockerfile
+docker-library/openjdk/8/jre/Dockerfile
+docker-library/openjdk/8/jre/slim/Dockerfile",bb4265f075850b8b6b36347d0cb045a3fa4df18e,"https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/11/jdk/Dockerfile#L58-L59
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/11/jdk/slim/Dockerfile#L58-L59
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/11/jre/Dockerfile#L58-L59
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/11/jre/slim/Dockerfile#L58-L59
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/8/jdk/Dockerfile#L58-L59
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/8/jdk/slim/Dockerfile#L58-L59
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/8/jre/Dockerfile#L58-L59
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/8/jre/slim/Dockerfile#L58-L59","58
+58
+58
+58
+58
+58
+58
+58","59
+59
+59
+59
+59
+59
+59
+59","# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
+# no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07",	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; \
+13,docker-library/openjdk,"docker-library/openjdk/11/jdk/Dockerfile
+docker-library/openjdk/11/jdk/slim/Dockerfile
+docker-library/openjdk/11/jre/Dockerfile
+docker-library/openjdk/11/jre/slim/Dockerfile
+docker-library/openjdk/8/jdk/Dockerfile
+docker-library/openjdk/8/jdk/slim/Dockerfile
+docker-library/openjdk/8/jre/Dockerfile
+docker-library/openjdk/8/jre/slim/Dockerfile",bb4265f075850b8b6b36347d0cb045a3fa4df18e,"https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/11/jdk/Dockerfile#L81-L81
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/11/jdk/slim/Dockerfile#L81-L81
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/11/jre/Dockerfile#L81-L81
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/11/jre/slim/Dockerfile#L81-L81
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/8/jdk/Dockerfile#L81-L81
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/8/jdk/slim/Dockerfile#L81-L81
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/8/jre/Dockerfile#L81-L81
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/8/jre/slim/Dockerfile#L81-L81","81
+81
+81
+81
+81
+81
+81
+81","81
+81
+81
+81
+81
+81
+81
+81","# TODO strip ""demo"" and ""man"" folders?",	\
+14,docker-library/openjdk,"docker-library/openjdk/11/jdk/windows/windowsservercore-1809/Dockerfile
+docker-library/openjdk/11/jdk/windows/windowsservercore-ltsc2016/Dockerfile
+docker-library/openjdk/11/jre/windows/windowsservercore-1809/Dockerfile
+docker-library/openjdk/11/jre/windows/windowsservercore-ltsc2016/Dockerfile
+docker-library/openjdk/8/jdk/windows/windowsservercore-1809/Dockerfile
+docker-library/openjdk/8/jdk/windows/windowsservercore-ltsc2016/Dockerfile
+docker-library/openjdk/8/jre/windows/windowsservercore-1809/Dockerfile
+docker-library/openjdk/8/jre/windows/windowsservercore-ltsc2016/Dockerfile",bb4265f075850b8b6b36347d0cb045a3fa4df18e,"https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/11/jdk/windows/windowsservercore-1809/Dockerfile#L32-L32
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/11/jdk/windows/windowsservercore-ltsc2016/Dockerfile#L32-L32
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/11/jre/windows/windowsservercore-1809/Dockerfile#L32-L32
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/11/jre/windows/windowsservercore-ltsc2016/Dockerfile#L32-L32
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/8/jdk/windows/windowsservercore-1809/Dockerfile#L32-L32
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/8/jdk/windows/windowsservercore-ltsc2016/Dockerfile#L32-L32
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/8/jre/windows/windowsservercore-1809/Dockerfile#L32-L32
+https://github.com/docker-library/openjdk/blob/bb4265f075850b8b6b36347d0cb045a3fa4df18e/8/jre/windows/windowsservercore-ltsc2016/Dockerfile#L32-L32","32
+32
+32
+32
+32
+32
+32
+32","32
+32
+32
+32
+32
+32
+32
+32",# TODO signature? checksum?,	\
+15,docker-library/postgres,"docker-library/postgres/10/Dockerfile
+docker-library/postgres/11/Dockerfile
+docker-library/postgres/12/Dockerfile
+docker-library/postgres/13/Dockerfile
+docker-library/postgres/9.5/Dockerfile
+docker-library/postgres/9.6/Dockerfile",9c5ca99fdc9af3e2cbefbc3bfa3348fe12fe9514,"https://github.com/docker-library/postgres/blob/9c5ca99fdc9af3e2cbefbc3bfa3348fe12fe9514/10/Dockerfile#L108-L109
+https://github.com/docker-library/postgres/blob/9c5ca99fdc9af3e2cbefbc3bfa3348fe12fe9514/11/Dockerfile#L108-L109
+https://github.com/docker-library/postgres/blob/9c5ca99fdc9af3e2cbefbc3bfa3348fe12fe9514/12/Dockerfile#L108-L109
+https://github.com/docker-library/postgres/blob/9c5ca99fdc9af3e2cbefbc3bfa3348fe12fe9514/13/Dockerfile#L108-L109
+https://github.com/docker-library/postgres/blob/9c5ca99fdc9af3e2cbefbc3bfa3348fe12fe9514/9.5/Dockerfile#L108-L109
+https://github.com/docker-library/postgres/blob/9c5ca99fdc9af3e2cbefbc3bfa3348fe12fe9514/9.6/Dockerfile#L108-L109","108
+108
+108
+108
+108
+108","109
+109
+109
+109
+109
+109","# https://github.com/docker-library/postgres/issues/484 (clang-6.0 required, only available in stretch-backports)
+# TODO remove this once we hit buster+","					echo 'deb http://deb.debian.org/debian stretch-backports main' >> /etc/apt/sources.list.d/pgdg.list; \
+					echo 'deb http://deb.debian.org/debian buster-backports main' >> /etc/apt/sources.list.d/pgdg.list; \
+					echo 'deb http://deb.debian.org/debian buster-backports main' >> /etc/apt/sources.list.d/pgdg.list; \
+					echo 'deb http://deb.debian.org/debian stretch-backports main' >> /etc/apt/sources.list.d/pgdg.list; \
+					echo 'deb http://deb.debian.org/debian stretch-backports main' >> /etc/apt/sources.list.d/pgdg.list; \"
+16,docker-library/pypy,"docker-library/pypy/2.7/Dockerfile
+docker-library/pypy/2.7/slim/Dockerfile
+docker-library/pypy/3.6/Dockerfile
+docker-library/pypy/3.6/slim/Dockerfile",e335b7b193bb4c08c03804454ecc08950ce3f541,"https://github.com/docker-library/pypy/blob/e335b7b193bb4c08c03804454ecc08950ce3f541/2.7/Dockerfile#L54-L54
+https://github.com/docker-library/pypy/blob/e335b7b193bb4c08c03804454ecc08950ce3f541/2.7/slim/Dockerfile#L56-L56
+https://github.com/docker-library/pypy/blob/e335b7b193bb4c08c03804454ecc08950ce3f541/3.6/Dockerfile#L58-L58
+https://github.com/docker-library/pypy/blob/e335b7b193bb4c08c03804454ecc08950ce3f541/3.6/slim/Dockerfile#L60-L60","54
+56
+58
+60","54
+56
+58
+60",# TODO rebuild other cffi modules here too? (other _*_build.py files),	fi; \
+17,docker-library/rabbitmq,"docker-library/rabbitmq/3.7/alpine/Dockerfile
+docker-library/rabbitmq/3.7/ubuntu/Dockerfile
+docker-library/rabbitmq/3.7-rc/alpine/Dockerfile
+docker-library/rabbitmq/3.7-rc/ubuntu/Dockerfile
+docker-library/rabbitmq/3.8/alpine/Dockerfile
+docker-library/rabbitmq/3.8/ubuntu/Dockerfile
+docker-library/rabbitmq/3.8-rc/alpine/Dockerfile
+docker-library/rabbitmq/3.8-rc/ubuntu/Dockerfile",29b163923699c18c6d76a95df10ba52665ef8741,"https://github.com/docker-library/rabbitmq/blob/29b163923699c18c6d76a95df10ba52665ef8741/3.7/alpine/Dockerfile#L26-L27
+https://github.com/docker-library/rabbitmq/blob/29b163923699c18c6d76a95df10ba52665ef8741/3.7/ubuntu/Dockerfile#L29-L30
+https://github.com/docker-library/rabbitmq/blob/29b163923699c18c6d76a95df10ba52665ef8741/3.7-rc/alpine/Dockerfile#L26-L27
+https://github.com/docker-library/rabbitmq/blob/29b163923699c18c6d76a95df10ba52665ef8741/3.7-rc/ubuntu/Dockerfile#L29-L30
+https://github.com/docker-library/rabbitmq/blob/29b163923699c18c6d76a95df10ba52665ef8741/3.8/alpine/Dockerfile#L26-L27
+https://github.com/docker-library/rabbitmq/blob/29b163923699c18c6d76a95df10ba52665ef8741/3.8/ubuntu/Dockerfile#L29-L30
+https://github.com/docker-library/rabbitmq/blob/29b163923699c18c6d76a95df10ba52665ef8741/3.8-rc/alpine/Dockerfile#L26-L27
+https://github.com/docker-library/rabbitmq/blob/29b163923699c18c6d76a95df10ba52665ef8741/3.8-rc/ubuntu/Dockerfile#L29-L30","26
+29
+26
+29
+26
+29
+26
+29","27
+30
+27
+30
+27
+30
+27
+30","# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
+# http://erlang.org/pipermail/erlang-questions/2019-January/097067.html","ENV OTP_SOURCE_SHA256=""12d628c2d0bdc0cf1f1ec56bd3c4da697510b25ab744d45872f63fefdd1a7680""
+ENV OTP_SOURCE_SHA256=""4cf44ed12f657c309a2c00e7806f36f56a88e5b74de6814058796561f3842f66""
+ENV OTP_SOURCE_SHA256=""4cf44ed12f657c309a2c00e7806f36f56a88e5b74de6814058796561f3842f66""
+ENV OTP_SOURCE_SHA256=""25e9d9d4903701e4b86c60b68ac34b4a85f5a5bccfd55fa6a2345f70d84f3de8""
+ENV OTP_SOURCE_SHA256=""25e9d9d4903701e4b86c60b68ac34b4a85f5a5bccfd55fa6a2345f70d84f3de8""
+ENV OTP_SOURCE_SHA256=""25e9d9d4903701e4b86c60b68ac34b4a85f5a5bccfd55fa6a2345f70d84f3de8""
+ENV OTP_SOURCE_SHA256=""25e9d9d4903701e4b86c60b68ac34b4a85f5a5bccfd55fa6a2345f70d84f3de8"""
+18,docker-library/redis,"docker-library/redis/5.0/Dockerfile
+docker-library/redis/5.0/32bit/Dockerfile
+docker-library/redis/5.0/alpine/Dockerfile
+docker-library/redis/6.0/Dockerfile
+docker-library/redis/6.0/alpine/Dockerfile",9c9d49d25acd7428ea30669f0395506f4a7f78fc,"https://github.com/docker-library/redis/blob/9c9d49d25acd7428ea30669f0395506f4a7f78fc/5.0/Dockerfile#L66-L66
+https://github.com/docker-library/redis/blob/9c9d49d25acd7428ea30669f0395506f4a7f78fc/5.0/32bit/Dockerfile#L66-L66
+https://github.com/docker-library/redis/blob/9c9d49d25acd7428ea30669f0395506f4a7f78fc/5.0/alpine/Dockerfile#L47-L47
+https://github.com/docker-library/redis/blob/9c9d49d25acd7428ea30669f0395506f4a7f78fc/6.0/Dockerfile#L68-L68
+https://github.com/docker-library/redis/blob/9c9d49d25acd7428ea30669f0395506f4a7f78fc/6.0/alpine/Dockerfile#L48-L48","66
+66
+47
+68
+48","66
+66
+47
+68
+48","# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)","	serverMd5=""$(md5sum /usr/local/bin/redis-server | cut -d' ' -f1)""; export serverMd5; \"
+19,docker-library/ruby,"docker-library/ruby/2.5/alpine3.10/Dockerfile
+docker-library/ruby/2.5/alpine3.11/Dockerfile
+docker-library/ruby/2.5/buster/Dockerfile
+docker-library/ruby/2.5/buster/slim/Dockerfile
+docker-library/ruby/2.5/stretch/Dockerfile
+docker-library/ruby/2.5/stretch/slim/Dockerfile
+docker-library/ruby/2.6/alpine3.10/Dockerfile
+docker-library/ruby/2.6/alpine3.11/Dockerfile
+docker-library/ruby/2.6/buster/Dockerfile
+docker-library/ruby/2.6/buster/slim/Dockerfile
+docker-library/ruby/2.6/stretch/Dockerfile
+docker-library/ruby/2.6/stretch/slim/Dockerfile
+docker-library/ruby/2.7/alpine3.10/Dockerfile
+docker-library/ruby/2.7/alpine3.11/Dockerfile
+docker-library/ruby/2.7/buster/Dockerfile
+docker-library/ruby/2.7/buster/slim/Dockerfile",a6b23d587aa4ce804f69b40d3fb48bc27c4a39db,"https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.5/alpine3.10/Dockerfile#L70-L71
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.5/alpine3.11/Dockerfile#L70-L71
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.5/buster/Dockerfile#L39-L40
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.5/buster/slim/Dockerfile#L65-L66
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.5/stretch/Dockerfile#L39-L40
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.5/stretch/slim/Dockerfile#L64-L65
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.6/alpine3.10/Dockerfile#L69-L70
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.6/alpine3.11/Dockerfile#L69-L70
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.6/buster/Dockerfile#L38-L39
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.6/buster/slim/Dockerfile#L64-L65
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.6/stretch/Dockerfile#L38-L39
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.6/stretch/slim/Dockerfile#L63-L64
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.7/alpine3.10/Dockerfile#L69-L70
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.7/alpine3.11/Dockerfile#L69-L70
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.7/buster/Dockerfile#L38-L39
+https://github.com/docker-library/ruby/blob/a6b23d587aa4ce804f69b40d3fb48bc27c4a39db/2.7/buster/slim/Dockerfile#L64-L65","70
+70
+39
+65
+39
+64
+69
+69
+38
+64
+38
+63
+69
+69
+38
+64","71
+71
+40
+66
+40
+65
+70
+70
+39
+65
+39
+64
+70
+70
+39
+65","# hack in ""ENABLE_PATH_CHECK"" disabling to suppress:
+#   warning: Insecure world writable dir",	{ \
+20,docker-library/tomcat,"docker-library/tomcat/10.0/jdk11/corretto/Dockerfile
+docker-library/tomcat/10.0/jdk14/openjdk-oracle/Dockerfile
+docker-library/tomcat/10.0/jdk8/corretto/Dockerfile
+docker-library/tomcat/7/jdk8/corretto/Dockerfile
+docker-library/tomcat/8.5/jdk11/corretto/Dockerfile
+docker-library/tomcat/8.5/jdk14/openjdk-oracle/Dockerfile
+docker-library/tomcat/8.5/jdk8/corretto/Dockerfile
+docker-library/tomcat/9.0/jdk11/corretto/Dockerfile
+docker-library/tomcat/9.0/jdk14/openjdk-oracle/Dockerfile
+docker-library/tomcat/9.0/jdk8/corretto/Dockerfile",1838fdf7663a2e2d4bd426c1392e715c6b84fa5b,"https://github.com/docker-library/tomcat/blob/1838fdf7663a2e2d4bd426c1392e715c6b84fa5b/10.0/jdk11/corretto/Dockerfile#L28-L28
+https://github.com/docker-library/tomcat/blob/1838fdf7663a2e2d4bd426c1392e715c6b84fa5b/10.0/jdk14/openjdk-oracle/Dockerfile#L28-L28
+https://github.com/docker-library/tomcat/blob/1838fdf7663a2e2d4bd426c1392e715c6b84fa5b/10.0/jdk8/corretto/Dockerfile#L28-L28
+https://github.com/docker-library/tomcat/blob/1838fdf7663a2e2d4bd426c1392e715c6b84fa5b/7/jdk8/corretto/Dockerfile#L28-L28
+https://github.com/docker-library/tomcat/blob/1838fdf7663a2e2d4bd426c1392e715c6b84fa5b/8.5/jdk11/corretto/Dockerfile#L28-L28
+https://github.com/docker-library/tomcat/blob/1838fdf7663a2e2d4bd426c1392e715c6b84fa5b/8.5/jdk14/openjdk-oracle/Dockerfile#L28-L28
+https://github.com/docker-library/tomcat/blob/1838fdf7663a2e2d4bd426c1392e715c6b84fa5b/8.5/jdk8/corretto/Dockerfile#L28-L28
+https://github.com/docker-library/tomcat/blob/1838fdf7663a2e2d4bd426c1392e715c6b84fa5b/9.0/jdk11/corretto/Dockerfile#L28-L28
+https://github.com/docker-library/tomcat/blob/1838fdf7663a2e2d4bd426c1392e715c6b84fa5b/9.0/jdk14/openjdk-oracle/Dockerfile#L28-L28
+https://github.com/docker-library/tomcat/blob/1838fdf7663a2e2d4bd426c1392e715c6b84fa5b/9.0/jdk8/corretto/Dockerfile#L28-L28","28
+28
+28
+28
+28
+28
+28
+28
+28
+28","28
+28
+28
+28
+28
+28
+28
+28
+28
+28","# TODO there's an odd bug on Oracle Linux where installing ""cpp"" (which gets pulled in as a dependency of ""gcc"") and then marking it as automatically-installed will result in the ""filesystem"" package being removed during ""yum autoremove"" (which then fails), so we set it as manually-installed to compensate",		yumdb set reason user filesystem; \
+21,docker/compose,docker/compose/Dockerfile,d4baba057bd20962e40cdd66a075dc7d01eefc3b,https://github.com/docker/compose/blob/d4baba057bd20962e40cdd66a075dc7d01eefc3b/Dockerfile#L51-L51,51,51,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed",RUN pip install virtualenv==16.2.0
+22,docker/docker,docker/docker/Dockerfile,07e6b843594e061f82baa5fa23c2ff7d536c2a05,https://github.com/docker/docker/blob/07e6b843594e061f82baa5fa23c2ff7d536c2a05/Dockerfile#L70-L72,70,72,"# Install go-swagger for validating swagger.yaml
+# This is https://github.com/kolyshkin/go-swagger/tree/golang-1.13-fix
+# TODO: move to under moby/ or fix upstream go-swagger to work for us.",ENV GO_SWAGGER_COMMIT 5e6cb12f7c82ce78e45ba71fa6cb1928094db050
+23,docker/docker,docker/docker/Dockerfile,07e6b843594e061f82baa5fa23c2ff7d536c2a05,https://github.com/docker/docker/blob/07e6b843594e061f82baa5fa23c2ff7d536c2a05/Dockerfile#L241-L241,241,241,"# TODO: Some of this is only really needed for testing, it would be nice to split this up",FROM runtime-dev AS dev-systemd-false
+24,docker/docker,docker/docker/Dockerfile,07e6b843594e061f82baa5fa23c2ff7d536c2a05,https://github.com/docker/docker/blob/07e6b843594e061f82baa5fa23c2ff7d536c2a05/Dockerfile#L284-L285,284,285,"# Switch to use iptables instead of nftables (to match the CI hosts)
+# TODO use some kind of runtime auto-detection instead if/when nftables is supported (https://github.com/moby/moby/issues/26824)",RUN update-alternatives --set iptables  /usr/sbin/iptables-legacy  || true \
+25,docker/docker,docker/docker/Dockerfile,07e6b843594e061f82baa5fa23c2ff7d536c2a05,https://github.com/docker/docker/blob/07e6b843594e061f82baa5fa23c2ff7d536c2a05/Dockerfile#L346-L348,346,348,"# TODO: This is here because hack/make.sh binary copies these extras binaries
+# from $PATH into the bundles dir.
+# It would be nice to handle this in a different way.",COPY --from=tini        /build/ /usr/local/bin/
+26,docker/docker-ce,docker/docker-ce/components/engine/Dockerfile,afe55f47bf11bc1500fe0845c4769ca67f0da112,https://github.com/docker/docker-ce/blob/afe55f47bf11bc1500fe0845c4769ca67f0da112/components/engine/Dockerfile#L70-L72,70,72,"# Install go-swagger for validating swagger.yaml
+# This is https://github.com/kolyshkin/go-swagger/tree/golang-1.13-fix
+# TODO: move to under moby/ or fix upstream go-swagger to work for us.",ENV GO_SWAGGER_COMMIT 5e6cb12f7c82ce78e45ba71fa6cb1928094db050
+27,docker/docker-ce,docker/docker-ce/components/engine/Dockerfile,afe55f47bf11bc1500fe0845c4769ca67f0da112,https://github.com/docker/docker-ce/blob/afe55f47bf11bc1500fe0845c4769ca67f0da112/components/engine/Dockerfile#L241-L241,241,241,"# TODO: Some of this is only really needed for testing, it would be nice to split this up",FROM runtime-dev AS dev-systemd-false
+28,docker/docker-ce,docker/docker-ce/components/engine/Dockerfile,afe55f47bf11bc1500fe0845c4769ca67f0da112,https://github.com/docker/docker-ce/blob/afe55f47bf11bc1500fe0845c4769ca67f0da112/components/engine/Dockerfile#L284-L285,284,285,"# Switch to use iptables instead of nftables (to match the CI hosts)
+# TODO use some kind of runtime auto-detection instead if/when nftables is supported (https://github.com/moby/moby/issues/26824)",RUN update-alternatives --set iptables  /usr/sbin/iptables-legacy  || true \
+29,docker/docker-ce,docker/docker-ce/components/engine/Dockerfile,afe55f47bf11bc1500fe0845c4769ca67f0da112,https://github.com/docker/docker-ce/blob/afe55f47bf11bc1500fe0845c4769ca67f0da112/components/engine/Dockerfile#L346-L348,346,348,"# TODO: This is here because hack/make.sh binary copies these extras binaries
+# from $PATH into the bundles dir.
+# It would be nice to handle this in a different way.",COPY --from=tini        /build/ /usr/local/bin/
+30,hashicorp/docker-consul,hashicorp/docker-consul/0.X/Dockerfile,47c5def6b37c59a5e1ec01d3cd7d5c3ef074c52b,https://github.com/hashicorp/docker-consul/blob/47c5def6b37c59a5e1ec01d3cd7d5c3ef074c52b/0.X/Dockerfile#L77-L79,77,79,"# By default you'll get an insecure single-node development server that stores
+# everything in RAM, exposes a web UI and HTTP endpoints, and bootstraps itself.
+# Don't use this configuration for production.","CMD [""agent"", ""-dev"", ""-client"", ""0.0.0.0""]"
+31,hashicorp/docker-vault,hashicorp/docker-vault/0.X/Dockerfile,d7ce84c6fec613d7fb11cbedd1a8d54bc5d2495e,https://github.com/hashicorp/docker-vault/blob/d7ce84c6fec613d7fb11cbedd1a8d54bc5d2495e/0.X/Dockerfile#L78-L79,78,79,"# By default you'll get a single-node development server that stores everything
+# in RAM and bootstraps itself. Don't use this configuration for production.","CMD [""server"", ""-dev""]"
+32,moby/moby,moby/moby/Dockerfile,89382f2f20745b9e63bed6c066f104980dff4396,https://github.com/moby/moby/blob/89382f2f20745b9e63bed6c066f104980dff4396/Dockerfile#L70-L72,70,72,"# Install go-swagger for validating swagger.yaml
+# This is https://github.com/kolyshkin/go-swagger/tree/golang-1.13-fix
+# TODO: move to under moby/ or fix upstream go-swagger to work for us.",ENV GO_SWAGGER_COMMIT 5e6cb12f7c82ce78e45ba71fa6cb1928094db050
+33,moby/moby,moby/moby/Dockerfile,89382f2f20745b9e63bed6c066f104980dff4396,https://github.com/moby/moby/blob/89382f2f20745b9e63bed6c066f104980dff4396/Dockerfile#L241-L241,241,241,"# TODO: Some of this is only really needed for testing, it would be nice to split this up",FROM runtime-dev AS dev-systemd-false
+34,moby/moby,moby/moby/Dockerfile,89382f2f20745b9e63bed6c066f104980dff4396,https://github.com/moby/moby/blob/89382f2f20745b9e63bed6c066f104980dff4396/Dockerfile#L284-L285,284,285,"# Switch to use iptables instead of nftables (to match the CI hosts)
+# TODO use some kind of runtime auto-detection instead if/when nftables is supported (https://github.com/moby/moby/issues/26824)",RUN update-alternatives --set iptables  /usr/sbin/iptables-legacy  || true \
+35,moby/moby,moby/moby/Dockerfile,89382f2f20745b9e63bed6c066f104980dff4396,https://github.com/moby/moby/blob/89382f2f20745b9e63bed6c066f104980dff4396/Dockerfile#L346-L348,346,348,"# TODO: This is here because hack/make.sh binary copies these extras binaries
+# from $PATH into the bundles dir.
+# It would be nice to handle this in a different way.",COPY --from=tini        /build/ /usr/local/bin/
+36,osrf/docker_images,osrf/docker_images/ros2/nightly/nightly/Dockerfile,850fcf8f9501388ea0898b02847178ef804a9c21,https://github.com/osrf/docker_images/blob/850fcf8f9501388ea0898b02847178ef804a9c21/ros2/nightly/nightly/Dockerfile#L102-L103,102,103,"# FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
+# ignore installed rosdep keys",ENV ROS_PACKAGE_PATH /opt/ros/$ROS_DISTRO/share
+37,osrf/docker_images,osrf/docker_images/ros2/nightly/nightly/Dockerfile,850fcf8f9501388ea0898b02847178ef804a9c21,https://github.com/osrf/docker_images/blob/850fcf8f9501388ea0898b02847178ef804a9c21/ros2/nightly/nightly/Dockerfile#L106-L107,106,107,"# FIXME Remove this once ament_export_interfaces respects COLCON_CURRENT_PREFIX https://github.com/ament/ament_cmake/issues/173
+#Workaround hard coded paths in nightly tarball setup scripts",ARG UPSTREAM_CI_WS=/home/jenkins-agent/workspace/packaging_linux/ws
+38,osrf/docker_images,osrf/docker_images/sros/kinetic/Dockerfile,850fcf8f9501388ea0898b02847178ef804a9c21,https://github.com/osrf/docker_images/blob/850fcf8f9501388ea0898b02847178ef804a9c21/sros/kinetic/Dockerfile#L56-L58,56,58,"# FIXME renaming manifest.xml is a workaround for rosdep misbehaving when both
+# manifest.xml and package.xml are present
+# install dependencies",RUN mv roslisp/manifest.xml roslisp/oldmanifest.xml && \
+39,therealprologic/docker-crux,therealprologic/docker-crux/build/aarch64/Dockerfile,78132f1f828e871dab1a541f78b7631ad5d12c11,https://github.com/therealprologic/docker-crux/blob/78132f1f828e871dab1a541f78b7631ad5d12c11/build/aarch64/Dockerfile#L3-L3,3,3,"# TODO: Once bootstrapped, use 'crux:latest'",FROM alpine:3.8
+40,tianon/dockerfiles,tianon/dockerfiles/containerd/Dockerfile,44e5012b3b8c47340ad24da5467c7bc3175173f5,https://github.com/tianon/dockerfiles/blob/44e5012b3b8c47340ad24da5467c7bc3175173f5/containerd/Dockerfile#L17-L17,17,17,# TODO .asc / .sha256sum,	chmod +x /usr/local/bin/runc; \
+41,tianon/dockerfiles,tianon/dockerfiles/docker-master/Dockerfile,44e5012b3b8c47340ad24da5467c7bc3175173f5,https://github.com/tianon/dockerfiles/blob/44e5012b3b8c47340ad24da5467c7bc3175173f5/docker-master/Dockerfile#L6-L9,6,9,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
+# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",RUN [ ! -e /etc/nsswitch.conf ] && echo 'hosts: files dns' > /etc/nsswitch.conf
+42,tianon/dockerfiles,tianon/dockerfiles/docker-master/dind/Dockerfile,44e5012b3b8c47340ad24da5467c7bc3175173f5,https://github.com/tianon/dockerfiles/blob/44e5012b3b8c47340ad24da5467c7bc3175173f5/docker-master/dind/Dockerfile#L24-L24,24,24,# TODO aufs-tools,
+43,tianon/dockerfiles,tianon/dockerfiles/docker-master/dind/Dockerfile,44e5012b3b8c47340ad24da5467c7bc3175173f5,https://github.com/tianon/dockerfiles/blob/44e5012b3b8c47340ad24da5467c7bc3175173f5/docker-master/dind/Dockerfile#L33-L33,33,33,# https://github.com/docker/docker/tree/master/hack/dind,ENV DIND_COMMIT 37498f009d8bf25fbb6199e8ccd34bed84f2874b
+44,tianon/dockerfiles,tianon/dockerfiles/docker-tianon/Dockerfile,44e5012b3b8c47340ad24da5467c7bc3175173f5,https://github.com/tianon/dockerfiles/blob/44e5012b3b8c47340ad24da5467c7bc3175173f5/docker-tianon/Dockerfile#L63-L64,63,64,"# https://github.com/docker/docker/tree/master/hack/dind
+#ENV DIND_COMMIT 130b0bc6032cc675d064e1cc62626cacc9c07a57",
+45,tianon/dockerfiles,tianon/dockerfiles/docker-tianon/Dockerfile,44e5012b3b8c47340ad24da5467c7bc3175173f5,https://github.com/tianon/dockerfiles/blob/44e5012b3b8c47340ad24da5467c7bc3175173f5/docker-tianon/Dockerfile#L66-L68,66,68,"#RUN set -eux; \
+#	wget -O /usr/local/bin/dind ""https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind""; \
+#	chmod +x /usr/local/bin/dind",
+46,tianon/dockerfiles,tianon/dockerfiles/grafana/Dockerfile,44e5012b3b8c47340ad24da5467c7bc3175173f5,https://github.com/tianon/dockerfiles/blob/44e5012b3b8c47340ad24da5467c7bc3175173f5/grafana/Dockerfile#L34-L34,34,34,"# TODO verify sha256 values! (add "".sha256"" to the end of this URL)","	wget -O grafana.tgz --progress=dot:giga ""https://dl.grafana.com/oss/release/grafana-${GRAFANA_VERSION}.linux-${arch}.tar.gz""; \"
+47,tianon/dockerfiles,tianon/dockerfiles/mojo/Dockerfile,44e5012b3b8c47340ad24da5467c7bc3175173f5,https://github.com/tianon/dockerfiles/blob/44e5012b3b8c47340ad24da5467c7bc3175173f5/mojo/Dockerfile#L3-L3,3,3,# TODO pin a version,RUN cpanm Mojolicious && rm -rf ~/.cpanm
+48,tianon/dockerfiles,tianon/dockerfiles/mojo/Dockerfile,44e5012b3b8c47340ad24da5467c7bc3175173f5,https://github.com/tianon/dockerfiles/blob/44e5012b3b8c47340ad24da5467c7bc3175173f5/mojo/Dockerfile#L6-L6,6,6,# TODO pin versions,RUN cpanm EV && rm -rf ~/.cpanm
+49,tianon/dockerfiles,tianon/dockerfiles/network-toolbox/alpine/Dockerfile,44e5012b3b8c47340ad24da5467c7bc3175173f5,https://github.com/tianon/dockerfiles/blob/44e5012b3b8c47340ad24da5467c7bc3175173f5/network-toolbox/alpine/Dockerfile#L26-L27,26,27,"# TODO add ""nbtscan"" when we get to Alpine 3.12 (if it makes it out of edge)
+# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",
+50,tianon/dockerfiles,tianon/dockerfiles/speedtest/Dockerfile,44e5012b3b8c47340ad24da5467c7bc3175173f5,https://github.com/tianon/dockerfiles/blob/44e5012b3b8c47340ad24da5467c7bc3175173f5/speedtest/Dockerfile#L10-L10,10,10,"# TODO verify that ookla's ""armhf"" really is armv6",		armv7) ooklaArch='armhf' ;; \
+51,tianon/dockerfiles,tianon/dockerfiles/speedtest/Dockerfile,44e5012b3b8c47340ad24da5467c7bc3175173f5,https://github.com/tianon/dockerfiles/blob/44e5012b3b8c47340ad24da5467c7bc3175173f5/speedtest/Dockerfile#L13-L13,13,13,"# TODO figure out what ookla means by their bare ""arm"" arch","		*) echo >&2 ""error: unknown/unsupported architecture: $apkArch (see https://www.speedtest.net/apps/cli#download)""; exit 1 ;; \"
+52,wikimedia/mediawiki-docker,wikimedia/mediawiki-docker/dev/Dockerfile,672a803dfb39e86b8dc1f4b57fde4c6df6304050,https://github.com/wikimedia/mediawiki-docker/blob/672a803dfb39e86b8dc1f4b57fde4c6df6304050/dev/Dockerfile#L44-L45,44,45,"# Extensions
+	# TODO: make submodules shallow clones?",	git submodule update --init --recursive VisualEditor; \
