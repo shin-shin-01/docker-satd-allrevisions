@@ -64,15 +64,14 @@ outputCSV
 > Status
 """
 
-def appendToResult(result, tmp):
+def appendToResult(result, tmp, status, dockerfile):
     result["CommitID"].append(tmp["CommitID"])
     result["Author"].append(tmp["Author"])
     result["Date"].append(tmp["Date"])
-    result["Dockerfiles"].append(tmp["Dockerfiles"])
-    result["Status"].append(tmp["Status"])
+    result["Dockerfile"].append(dockerfile)
+    result["Status"].append(status)
 
-    return result, { "CommitID":"", "Author": "", "Date":"", "Dockerfiles":"", "Status":"" }
-
+    return result
 
 def appendRevisionFile(revisionFileList, commitid, filename):
     revisionFile = f"{commitid}:{filename}"
@@ -89,15 +88,13 @@ def saveRevisonFileToShow(revisionFileList, repository):
         f.write(txt)
 
 
-def RevisonsHaveDocker(repository, txtGitFileStatus):
-    result = { "CommitID":[], "Author":[], "Date":[], "Dockerfiles":[], "Status":[] }
-    tmp = { "CommitID":"", "Author":"", "Date":"", "Dockerfiles":"", "Status":"" }
+def RevisionsHaveDocker(repository, txtGitFileStatus):
+    result = { "CommitID":[], "Author":[], "Date":[], "Dockerfile":[], "Status":[] }
+    tmp = { "CommitID":"", "Author":"", "Date":"" }
     revisionFileList = []
 
     for i, txt in enumerate(txtGitFileStatus.splitlines()):
         if txt[:6] == "commit":
-            if not i == 0:
-                result, tmp = appendToResult(result, tmp)
             tmp["CommitID"] = txt[7:47]
 
         elif txt[:7] == "Author:":
@@ -106,31 +103,22 @@ def RevisonsHaveDocker(repository, txtGitFileStatus):
         elif txt[:5] == "Date:":
             tmp["Date"] = txt[8:]
 
-        elif ("Dockerfile" in txt) or ("dockerfile" in txt):
-            ## 例外ファイル
-            if txt[-3:] == ".go":
-                continue
-            elif txt[-4:] == ".tgz":
-                continue
-            elif txt[-10:] == ".installer":
-                continue
-            elif txt[-3:] == ".sh":
-                continue
-
+        elif ("Dockerfile" == txt[-10:]) or ("dockerfile" == txt[-10:]):
 
             if txt[0] != " ":
                 if txt[0] == "R":
-                    tmp["Status"] += f"{txt[0]}\n"
-                    tmp["Dockerfiles"] += f"{txt.split()[1]}  {txt.split()[2]}\n"
-                    if txt[0:4] != "R100": # 完全一致のRenameじゃないなら git show 
-                        revisionFileList = appendRevisionFile(revisionFileList, tmp["CommitID"], txt.split()[2])
+                    status = f"{txt[0]}"
+                    dockerfile = f"{txt.split()[1]}  {txt.split()[2]}"
+                    result = appendToResult(result, tmp, status, dockerfile)
+                    # いつ削除されたかを明確にするため、R100 でも取得する
+                    revisionFileList = appendRevisionFile(revisionFileList, tmp["CommitID"], txt.split()[2])
                 else:
-                    tmp["Status"] += f"{txt[0]}\n"
-                    tmp["Dockerfiles"] += f"{txt.split()[1]}\n"
+                    status = f"{txt[0]}"
+                    dockerfile = f"{txt.split()[1]}"
+                    result = appendToResult(result, tmp, status, dockerfile)
                     if txt[0] != "D":
                         revisionFileList = appendRevisionFile(revisionFileList, tmp["CommitID"], txt.split()[1])
 
-    result, tmp = appendToResult(result, tmp)
     result = pd.DataFrame.from_dict(result)
     result.to_csv(f"./{PATH_OF_GITLOGCSV}/{repository}.csv")
 
@@ -152,6 +140,6 @@ if __name__ == "__main__":
         if not txtGitFileStatus:
             continue
 
-        RevisonsHaveDocker(repository, txtGitFileStatus)
+        RevisionsHaveDocker(repository, txtGitFileStatus)
 
 
