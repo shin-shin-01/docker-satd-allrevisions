@@ -1,2345 +1,5 @@
 ,CommitID,Dockerfile,LatestDockerfile,Comment,Date,FirstCommit Date,Deleted Date,isSATD,DeletedComment Date,Deleted CommitID
-8023,4c0e9a70666324c751229e1afbe4b1015655fc84,components/engine/Dockerfile.arm,components/engine/Dockerfile.armhf,"# This file describes the standard way to build Docker on ARM, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.arm .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2015-11-05 14:38:41+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2015-12-30 16:21:52+00:00,f44591d6b90462fe0f2940c8c108467327ca50e0
-8024,4c0e9a70666324c751229e1afbe4b1015655fc84,components/engine/Dockerfile.arm,components/engine/Dockerfile.armhf,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download man page generator
-",2015-11-05 14:38:41+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-09-07 15:02:51+00:00,bcba22b38ed2bf9c8ec2aca2bc50390e96761c0c
-6255,6a60a419681de62ae7c641c83664bb7740fa908c,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# This has been commented out and kept as reference because we don't support compiling with older Go anymore.
-# ENV GOFMT_VERSION 1.3.3
-# RUN curl -sSL https://storage.googleapis.com/golang/go${GOFMT_VERSION}.$(go env GOOS)-$(go env GOARCH).tar.gz | tar -C /go/bin -xz --strip-components=2 go/bin/gofmt
-
-# TODO update this sha when we upgrade to Go 1.5+
-",2015-12-30 08:50:10+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-01-11 18:25:55+00:00,5cfea6b0eb46b0a4bc299639e6b785378b6660d3
-6254,6a60a419681de62ae7c641c83664bb7740fa908c,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# TODO update GO_TOOLS_COMMIT below when this updates to 1.5+
-",2015-12-30 08:50:10+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-01-11 18:25:55+00:00,5cfea6b0eb46b0a4bc299639e6b785378b6660d3
-6253,6a60a419681de62ae7c641c83664bb7740fa908c,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.armhf .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2015-12-30 08:50:10+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-02-12 16:56:11+00:00,47313c7b66d30a236f172ff2c193b1cf5031fd0c
-19066,819eda81428c6968c2224c503773158f8b7fb2a8,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# Grab Go's lint tool
-#ENV GO_LINT_COMMIT 32a87160691b3c96046c0c678fe57c5bef761456
-# TODO update this sha when we upgrade to Go 1.5+
-",2016-01-05 05:50:15+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-03-23 15:27:53+00:00,d1c6644a1676d962991c6ca4da46253ae95f2312
-19064,819eda81428c6968c2224c503773158f8b7fb2a8,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-
-# Install Go
-#ENV GO_VERSION 1.5.2
-# TODO update GO_TOOLS_COMMIT below when this updates to 1.5+
-",2016-01-05 05:50:15+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-01-14 02:44:11+00:00,b4989a8d3c3dbfbaa91bca69ff36f9fa18f3ad28
-19065,819eda81428c6968c2224c503773158f8b7fb2a8,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# This has been commented out and kept as reference because we don't support compiling with older Go anymore.
-# ENV GOFMT_VERSION 1.3.3
-# RUN curl -sSL https://storage.googleapis.com/golang/go${GOFMT_VERSION}.$(go env GOOS)-$(go env GOARCH).tar.gz | tar -C /go/bin -xz --strip-components=2 go/bin/gofmt
-
-#ENV GO_TOOLS_COMMIT 823804e1ae08dbb14eb807afc7db9993bc9e3cc3
-# TODO update this sha when we upgrade to Go 1.5+
-",2016-01-05 05:50:15+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-03-23 15:27:53+00:00,d1c6644a1676d962991c6ca4da46253ae95f2312
-30768,2e1c787d5fe62e00f12ca8e2ca863cb85cd0373b,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-
-# Install Go
-#ENV GO_VERSION 1.5.3
-# TODO update GO_TOOLS_COMMIT below when this updates to 1.5+
-",2016-01-13 21:04:36+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-03-23 15:27:53+00:00,d1c6644a1676d962991c6ca4da46253ae95f2312
-5032,4edafc3bc120137c52da71f041df222fcf88cb3d,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# install seccomp
-# TODO: switch to libseccomp-dev since dockerinit is gone
-",2016-01-20 11:53:54+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-02-02 19:37:43+00:00,5e084d01fea3e874cd77be21aab90b7d65b88977
-7537,47313c7b66d30a236f172ff2c193b1cf5031fd0c,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.armhf .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-02-12 16:56:11+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-08-16 21:18:43+00:00,a0933c7d27b0559510dd97c75bc54edcd14f6130
-34844,26d82a2984d6a5c6399fdff9a1624f18d0863df0,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-
-# Install Go
-# TODO Update to 1.5.4 once available, or build from source, as these builds
-# are marked ""end of life"", see http://dave.cheney.net/unofficial-arm-tarballs
-",2016-03-15 03:12:09+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-05-27 13:54:57+00:00,9b06540d329d2fcf96839faa3f760ce6b7cbfbe4
-22467,0f0bfaaffbe6ea65a078e7fa4d87fe13ff0b20f7,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.armhf .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-06-03 13:09:53+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2017-08-14 16:20:18+00:00,9685380dbb006361ee592c9971ca3813a8e3b4ad
-34261,8ee0f568102e960349ad57df83db0d76223cd8c0,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-06-27 21:38:47+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-09-23 09:27:52+00:00,f04a024adba7d860a4efa598ccfb1f8749400461
-13112,58bc04a76a6821834e956fbce23b5c52ecfac918,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-21 23:18:22+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-10-25 15:54:13+00:00,ea2938292ab3607a9dab7b1c9143ff7b620b6599
-726,d08760316a8b777b01850352d326617c1c75b7ce,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-09-22 02:15:18+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-10-05 20:15:30+00:00,391b6f94da2ef9268f60766b92216b482d48ac70
-16066,75e7ddadb0fc7a072bf1f95a336ee7b4bcb40e7f,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-23 16:20:57+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-09-23 17:37:28+00:00,da06cf8da01009b5e8f23eae96d661d30a9ba8f7
-21491,391b6f94da2ef9268f60766b92216b482d48ac70,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-05 20:15:30+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-10-06 17:36:31+00:00,9ad2ffa17adf20a0e82e1e0ef48ae406bdabc181
-27075,44e77a4b4f79be08a5f353adfa2533a6aa8c845a,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-18 23:30:47+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-11-03 16:47:50+00:00,64d7644ec8c917daa03c0013a86bc5b7521b3a54
-39694,515ebb7b5cb98dec83a7333059b6178ceb5fab78,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-24 22:18:58+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2017-04-12 13:37:40+00:00,4de7d7962060bdf994c78b6a15e91e509833168c
-31580,61646d77af8af895590b2069eefe76586bd48988,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-31 18:22:28+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2016-11-09 14:29:42+00:00,72ae55dd14ba3300f3b722866d86e0bc88f5dc39
-10910,c9bef385b2510bc2b9624989e0f516152cd05c1f,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-12-01 13:33:30+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2018-02-22 17:06:34+00:00,c679327e8019ed4c68b1e7199eba5c9069fedca6
-3799,9a9d90f97d60b698ff9786ef021b75881ee294f8,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# This file describes the standard way to build Docker on ARMv7, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.armhf .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2017-06-17 00:18:44+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
-4250,605885e5180c01af497fba3c7bd25b605bb12341,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# Options for hack/validate/gometalinter
-",2017-06-30 08:29:56+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
-28413,f11213a80093591f2a3ac7ed0bb5a03312ffb533,components/engine/Dockerfile.armhf,components/engine/Dockerfile.armhf,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
-# Please edit hack/dockerfile/install/<name>.installer to update them.
-",2018-02-16 18:51:30+00:00,2015-11-05 15:38:41+01:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
-44177,4030bbc684dc21272124af1e2ee7686de85ea342,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.aarch64 .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-01-15 14:25:03+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-02-12 16:56:11+00:00,47313c7b66d30a236f172ff2c193b1cf5031fd0c
-44178,4030bbc684dc21272124af1e2ee7686de85ea342,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download man page generator
-",2016-01-15 14:25:03+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-09-07 15:02:51+00:00,bcba22b38ed2bf9c8ec2aca2bc50390e96761c0c
-7550,47313c7b66d30a236f172ff2c193b1cf5031fd0c,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.aarch64 .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-02-12 16:56:11+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-08-16 21:18:43+00:00,a0933c7d27b0559510dd97c75bc54edcd14f6130
-22474,0f0bfaaffbe6ea65a078e7fa4d87fe13ff0b20f7,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.aarch64 .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-06-03 13:09:53+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2017-08-14 16:20:18+00:00,9685380dbb006361ee592c9971ca3813a8e3b4ad
-34266,8ee0f568102e960349ad57df83db0d76223cd8c0,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-06-27 21:38:47+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-09-23 09:27:52+00:00,f04a024adba7d860a4efa598ccfb1f8749400461
-13106,58bc04a76a6821834e956fbce23b5c52ecfac918,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-21 23:18:22+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-10-25 15:54:13+00:00,ea2938292ab3607a9dab7b1c9143ff7b620b6599
-724,d08760316a8b777b01850352d326617c1c75b7ce,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-09-22 02:15:18+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-10-05 20:15:30+00:00,391b6f94da2ef9268f60766b92216b482d48ac70
-16064,75e7ddadb0fc7a072bf1f95a336ee7b4bcb40e7f,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-23 16:20:57+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-09-23 17:37:28+00:00,da06cf8da01009b5e8f23eae96d661d30a9ba8f7
-21495,391b6f94da2ef9268f60766b92216b482d48ac70,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-05 20:15:30+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-10-06 17:36:31+00:00,9ad2ffa17adf20a0e82e1e0ef48ae406bdabc181
-27079,44e77a4b4f79be08a5f353adfa2533a6aa8c845a,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-18 23:30:47+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-11-04 01:30:19+00:00,7379675f650cee01e44ba324f7942bb4f88b975c
-39698,515ebb7b5cb98dec83a7333059b6178ceb5fab78,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-24 22:18:58+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2017-04-12 13:37:40+00:00,4de7d7962060bdf994c78b6a15e91e509833168c
-31573,61646d77af8af895590b2069eefe76586bd48988,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-31 18:22:28+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2016-11-09 14:29:42+00:00,72ae55dd14ba3300f3b722866d86e0bc88f5dc39
-10905,c9bef385b2510bc2b9624989e0f516152cd05c1f,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-12-01 13:33:30+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2018-02-22 17:06:34+00:00,c679327e8019ed4c68b1e7199eba5c9069fedca6
-3795,9a9d90f97d60b698ff9786ef021b75881ee294f8,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# This file describes the standard way to build Docker on aarch64, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.aarch64 .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2017-06-17 00:18:44+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
-4239,605885e5180c01af497fba3c7bd25b605bb12341,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# Options for hack/validate/gometalinter
-",2017-06-30 08:29:56+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
-28408,f11213a80093591f2a3ac7ed0bb5a03312ffb533,components/engine/Dockerfile.aarch64,components/engine/Dockerfile.aarch64,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-#
-
-# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
-# Please edit hack/dockerfile/install/<name>.installer to update them.
-",2018-02-16 18:51:30+00:00,2016-01-15 14:25:03+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
-1957,da964dbf5841c6622b70fb36f7f7f523238f8cbb,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# This file describes the standard way to build Docker, using a docker container on Windows 
-# Server 2016
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time. Run this from
-# # a directory containing the sources you are validating. For example from 
-# # c:\go\src\github.com\docker\docker
-#
-# docker build -t docker -f Dockerfile.windows .
-#
-#
-# # Build docker in a container. Run the following from a Windows cmd command prommpt,
-# # replacing c:\built with the directory you want the binaries to be placed on the
-# # host system.
-#
-# docker run --rm -v ""c:\built:c:\target"" docker sh -c 'cd /c/go/src/github.com/docker/docker; hack/make.sh binary; ec=$?; if [ $ec -eq 0 ]; then robocopy /c/go/src/github.com/docker/docker/bundles/$(cat VERSION)/binary /c/target/binary; fi; exit $ec'
-#
-# Important notes:
-# ---------------
-#
-# Multiple commands in a single powershell RUN command are deliberately not done. This is
-# because PS doesn't have a concept quite like set -e in bash. It would be possible to use 
-# try-catch script blocks, but that would make this file unreadable. The problem is that
-# if there are two commands eg ""RUN powershell -command fail; succeed"", as far as docker
-# would be concerned, the return code from the overall RUN is succeed. This doesn't apply to
-# RUN which uses cmd as the command interpreter such as ""RUN fail; succeed"".
-#
-# 'sleep 5' is a deliberate workaround for a current problem on containers in Windows 
-# Server 2016. It ensures that the network is up and available for when the command is
-# network related. This bug is being tracked internally at Microsoft and exists in TP4.
-# Generally sleep 1 or 2 is probably enough, but making it 5 to make the build file
-# as bullet proof as possible. This isn't a big deal as this only runs the first time.
-#
-# The cygwin posix utilities from GIT aren't usable interactively as at January 2016. This
-# is because they require a console window which isn't present in a container in Windows.
-# See the example at the top of this file. Do NOT use -it in that docker run!!! 
-#
-# Don't try to use a volume for passing the source through. The cygwin posix utilities will
-# balk at reparse points. Again, see the example at the top of this file on how use a volume
-# to get the built binary out of the container.
-
-",2016-01-21 02:51:34+00:00,2015-12-01 09:47:19+01:00,,1,2016-01-31 04:50:11+00:00,d59617c5ea5eeb806584d50fefccb2cf96d55bd7
-45195,d59617c5ea5eeb806584d50fefccb2cf96d55bd7,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# This file describes the standard way to build Docker, using a docker container on Windows 
-# Server 2016
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time. Run this from
-# # a directory containing the sources you are validating. For example from 
-# # c:\go\src\github.com\docker\docker
-#
-# docker build -t docker -f Dockerfile.windows .
-#
-#
-# # Build docker in a container. Run the following from a Windows cmd command prommpt,
-# # replacing c:\built with the directory you want the binaries to be placed on the
-# # host system.
-#
-# docker run --rm -v ""c:\built:c:\target"" docker sh -c 'cd /c/go/src/github.com/docker/docker; hack/make.sh binary; ec=$?; if [ $ec -eq 0 ]; then robocopy /c/go/src/github.com/docker/docker/bundles/$(cat VERSION)/binary /c/target/binary; fi; exit $ec'
-#
-# Important notes:
-# ---------------
-#
-# 'Start-Sleep' is a deliberate workaround for a current problem on containers in Windows 
-# Server 2016. It ensures that the network is up and available for when the command is
-# network related. This bug is being tracked internally at Microsoft and exists in TP4.
-# Generally sleep 1 or 2 is probably enough, but making it 5 to make the build file
-# as bullet proof as possible. This isn't a big deal as this only runs the first time.
-#
-# The cygwin posix utilities from GIT aren't usable interactively as at January 2016. This
-# is because they require a console window which isn't present in a container in Windows.
-# See the example at the top of this file. Do NOT use -it in that docker run!!! 
-#
-# Don't try to use a volume for passing the source through. The cygwin posix utilities will
-# balk at reparse points. Again, see the example at the top of this file on how use a volume
-# to get the built binary out of the container.
-#
-# The steps are minimised dramatically to improve performance (TP4 is slow on commit)
-
-",2016-01-31 04:50:11+00:00,2015-12-01 09:47:19+01:00,,1,2016-04-05 23:25:43+00:00,3d85a4f2409198283337355316bd24d838f4a308
-43661,3d85a4f2409198283337355316bd24d838f4a308,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# This file describes the standard way to build Docker, using a docker container on Windows 
-# Server 2016
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time. Run this from
-# # a directory containing the sources you are validating. For example from 
-# # c:\go\src\github.com\docker\docker
-#
-# docker build -t docker -f Dockerfile.windows .
-#
-#
-# # Build docker in a container. Run the following from a Windows cmd command prommpt,
-# # replacing c:\built with the directory you want the binaries to be placed on the
-# # host system.
-#
-# docker run --rm -v ""c:\built:c:\target"" docker sh -c 'cd /c/go/src/github.com/docker/docker; hack/make.sh binary; ec=$?; if [ $ec -eq 0 ]; then robocopy /c/go/src/github.com/docker/docker/bundles/$(cat VERSION)/binary /c/target/binary; fi; exit $ec'
-#
-# Important notes:
-# ---------------
-#
-# The posix utilities from GIT aren't usable interactively as at January 2016. This
-# is because they require a console window which isn't present in a container in Windows.
-# See the example at the top of this file. Do NOT use -it in that docker run!!! 
-#
-# Don't try to use a volume for passing the source through. The posix utilities will
-# balk at reparse points. Again, see the example at the top of this file on how use a volume
-# to get the built binary out of the container.
-#
-# The steps are minimised dramatically to improve performance
-
-",2016-04-05 23:25:43+00:00,2015-12-01 09:47:19+01:00,,1,2016-04-23 22:11:08+00:00,f103a2320b92c2f97054a105c922cbe726052440
-7348,f103a2320b92c2f97054a105c922cbe726052440,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# This file describes the standard way to build Docker, using a docker container on Windows
-# Server 2016
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time. Run this from
-# # a directory containing the sources you are validating. For example from
-# # c:\go\src\github.com\docker\docker
-#
-# docker build -t docker -f Dockerfile.windows .
-#
-#
-# # Build docker in a container. Run the following from a Windows cmd command prommpt,
-# # replacing c:\built with the directory you want the binaries to be placed on the
-# # host system.
-#
-# docker run --rm -v ""c:\built:c:\target"" docker sh -c 'cd /c/go/src/github.com/docker/docker; hack/make.sh binary; ec=$?; if [ $ec -eq 0 ]; then robocopy /c/go/src/github.com/docker/docker/bundles/$(cat VERSION)/binary /c/target/binary; fi; exit $ec'
-#
-# Important notes:
-# ---------------
-#
-# The posix utilities from GIT aren't usable interactively as at January 2016. This
-# is because they require a console window which isn't present in a container in Windows.
-# See the example at the top of this file. Do NOT use -it in that docker run!!!
-#
-# Don't try to use a volume for passing the source through. The posix utilities will
-# balk at reparse points. Again, see the example at the top of this file on how use a volume
-# to get the built binary out of the container.
-#
-# The steps are minimised dramatically to improve performance
-
-",2016-04-23 22:11:08+00:00,2015-12-01 09:47:19+01:00,,1,2016-10-22 20:01:40+00:00,04213eed5f9cb2206bd3ef735801aee685c01e82
-45898,87b7e2db815407d1f55fe8b929164c7ee4de73a6,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# escape=`
-
-# -----------------------------------------------------------------------------------------
-# This file describes the standard way to build Docker in a container on Windows
-# Server 2016 or Windows 10.
-#
-# Maintainer: @jhowardmsft
-# -----------------------------------------------------------------------------------------
-
-
-# Prerequisites:
-# --------------
-#
-# 1. Windows 10 or Windows Server 2016 with all Windows updates applied. Pre-release
-#    versions of Windows are not supported (eg Windows Server 2016 TP5). The build
-#    number must be at least 14393. This can be confirmed, for example, by running
-#    the following from an elevated PowerShell prompt - this sample output is from a 
-#    fully up to date machine as at late October 2016:
-#
-#    >> PS C:\> $(gin).WindowsBuildLabEx
-#    >> 14393.321.amd64fre.rs1_release_inmarket.161004-2338
-#
-# 2. Git for Windows (or another git client) must be installed. https://git-scm.com/download/win.
-#
-# 3. The machine must be configured to run containers. For example, by following
-#    the quick start guidance at https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start or
-#    https://github.com/docker/labs/blob/master/windows/windows-containers/Setup.md
-
-
-# -----------------------------------------------------------------------------------------
-
-
-# Usage:
-# -----
-#
-#  The following steps should be run from an (elevated*) Windows PowerShell prompt. 
-#
-#  (*In a default installation of containers on Windows following the quick-start guidance at
-#    https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start,
-#    the docker.exe client must run elevated to be able to connect to the daemon).
-#
-# 1. Clone the sources from github.com:
-#
-#    >>   git clone https://github.com/docker/docker.git c:\go\src\github.com\docker\docker
-#    >>   Cloning into 'c:\go\src\github.com\docker\docker'...
-#    >>   remote: Counting objects: 186216, done.
-#    >>   remote: Compressing objects: 100% (21/21), done.
-#    >>   remote: Total 186216 (delta 5), reused 0 (delta 0), pack-reused 186195
-#    >>   Receiving objects: 100% (186216/186216), 104.32 MiB | 8.18 MiB/s, done.
-#    >>   Resolving deltas: 100% (123139/123139), done.
-#    >>   Checking connectivity... done.
-#    >>   Checking out files: 100% (3912/3912), done.
-#    >>   PS C:\>
-#
-#
-# 2. Change directory to the cloned docker sources:
-#
-#    >>   cd c:\go\src\github.com\docker\docker 
-#
-#
-# 3. Build a docker image with the components required to build the docker binaries from source:
-#
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows .
-#
-#
-# 4. Build the docker executable binaries in a container:
-#
-#    >>   docker run --name binaries nativebuildimage sh -c 'cd /c/go/src/github.com/docker/docker; hack/make.sh binary'
-#
-#
-# 5. Copy the binaries out of the above container, replacing HostPath with an appropriate destination 
-#    folder on the host system where you want the binaries to be located.
-#
-#    >>   $v=$(Get-Content "".\VERSION"" -raw).ToString().Replace(""`n"","""").Trim()
-#    >>   docker cp binaries:c:\go\src\github.com\docker\docker\bundles\$v\binary-client\docker-$v.exe c:\HostPath\docker.exe
-#    >>   docker cp binaries:c:\go\src\github.com\docker\docker\bundles\$v\binary-daemon\dockerd.exe c:\HostPath\dockerd.exe
-#    >>   docker cp binaries:c:\go\src\github.com\docker\docker\bundles\$v\binary-daemon\docker-proxy-$v.exe c:\HostPath\docker-proxy.exe
-#
-#
-# 6. (Optional) Remove the interim container holding the built executable binaries:
-#
-#    >>    docker rm binaries
-#
-#
-# 7. (Optional) Remove the image used for the container in which the executable
-#    binaries are build. Tip - it may be useful to keep this image around if you need to
-#    build multiple times. Then you can take advantage of the builder cache to have an
-#    image which has all the components required to build the binaries already installed.
-#
-#    >>    docker rmi nativebuildimage
-
-
-# -----------------------------------------------------------------------------------------
-
-
-# Important notes:
-# ---------------
-#
-# The posix utilities from git aren't usable interactively as at October 2016. This
-# is because they require a console window which isn't present in a container in Windows.
-# See the example at the top of this file. Do NOT use -it in that docker run. It will not work.
-#
-# Don't attempt to use a volume for passing the source through to the container. The posix utilities will
-# balk at reparse points. 
-#
-# The downloaded files are not cleared from the image. go.zip is used by the Windows
-# CI servers to ensure the host and image are running consistent versions of go.
-#
-
-# -----------------------------------------------------------------------------------------
-
-# The number of build steps below are explicitly minimised to improve performance.
-",2016-10-21 00:02:26+00:00,2015-12-01 09:47:19+01:00,,1,2016-10-22 22:06:27+00:00,c01f7998fd356e5d44604f4f3a99bf2019571036
-7090,65f0de5a38b9ee4836d27d874134d76f06e4b690,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# escape=`
-
-# -----------------------------------------------------------------------------------------
-# This file describes the standard way to build Docker in a container on Windows
-# Server 2016 or Windows 10.
-#
-# Maintainer: @jhowardmsft
-# -----------------------------------------------------------------------------------------
-
-
-# Prerequisites:
-# --------------
-#
-# 1. Windows 10 or Windows Server 2016 with all Windows updates applied. Pre-release
-#    versions of Windows are not supported (eg Windows Server 2016 TP5). The build
-#    number must be at least 14393. This can be confirmed, for example, by running
-#    the following from an elevated PowerShell prompt - this sample output is from a 
-#    fully up to date machine as at late October 2016:
-#
-#    >> PS C:\> $(gin).WindowsBuildLabEx
-#    >> 14393.321.amd64fre.rs1_release_inmarket.161004-2338
-#
-# 2. Git for Windows (or another git client) must be installed. https://git-scm.com/download/win.
-#
-# 3. The machine must be configured to run containers. For example, by following
-#    the quick start guidance at https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start or
-#    https://github.com/docker/labs/blob/master/windows/windows-containers/Setup.md
-
-
-# -----------------------------------------------------------------------------------------
-
-
-# Usage:
-# -----
-#
-#  The following steps should be run from an (elevated*) Windows PowerShell prompt. 
-#
-#  (*In a default installation of containers on Windows following the quick-start guidance at
-#    https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start,
-#    the docker.exe client must run elevated to be able to connect to the daemon).
-#
-# 1. Clone the sources from github.com:
-#
-#    >>   git clone https://github.com/docker/docker.git c:\go\src\github.com\docker\docker
-#    >>   Cloning into 'c:\go\src\github.com\docker\docker'...
-#    >>   remote: Counting objects: 186216, done.
-#    >>   remote: Compressing objects: 100% (21/21), done.
-#    >>   remote: Total 186216 (delta 5), reused 0 (delta 0), pack-reused 186195
-#    >>   Receiving objects: 100% (186216/186216), 104.32 MiB | 8.18 MiB/s, done.
-#    >>   Resolving deltas: 100% (123139/123139), done.
-#    >>   Checking connectivity... done.
-#    >>   Checking out files: 100% (3912/3912), done.
-#    >>   PS C:\>
-#
-#
-# 2. Change directory to the cloned docker sources:
-#
-#    >>   cd c:\go\src\github.com\docker\docker 
-#
-#
-# 3. Build a docker image with the components required to build the docker binaries from source:
-#
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows .
-#
-#
-# 4. Build the docker executable binaries in a container:
-#
-#    >>   docker run --name binaries nativebuildimage sh -c 'cd /c/go/src/github.com/docker/docker; hack/make.sh binary'
-#
-#
-# 5. Copy the binaries out of the above container, replacing HostPath with an appropriate destination 
-#    folder on the host system where you want the binaries to be located.
-#
-#    >>   $v=$(Get-Content "".\VERSION"" -raw).ToString().Replace(""`n"","""").Trim()
-#    >>   docker cp binaries:c:\go\src\github.com\docker\docker\bundles\$v\binary-client\docker-$v.exe c:\HostPath\docker.exe
-#    >>   docker cp binaries:c:\go\src\github.com\docker\docker\bundles\$v\binary-daemon\dockerd.exe c:\HostPath\dockerd.exe
-#    >>   docker cp binaries:c:\go\src\github.com\docker\docker\bundles\$v\binary-daemon\docker-proxy-$v.exe c:\HostPath\docker-proxy.exe
-#
-#
-# 6. (Optional) Remove the interim container holding the built executable binaries:
-#
-#    >>    docker rm binaries
-#
-#
-# 7. (Optional) Remove the image used for the container in which the executable
-#    binaries are build. Tip - it may be useful to keep this image around if you need to
-#    build multiple times. Then you can take advantage of the builder cache to have an
-#    image which has all the components required to build the binaries already installed.
-#
-#    >>    docker rmi nativebuildimage
-
-
-# -----------------------------------------------------------------------------------------
-
-
-# Important notes:
-# ---------------
-#
-# The posix utilities from git aren't usable interactively as at October 2016. This
-# is because they require a console window which isn't present in a container in Windows.
-# See the example at the top of this file. Do NOT use -it in that docker run. It will not work.
-#
-# Don't attempt to use a volume for passing the source through to the container. The posix utilities will
-# balk at reparse points. 
-#
-# The downloaded files are not cleared from the image. go.zip is used by the Windows
-# CI servers to ensure the host and image are running consistent versions of go.
-#
-# The GIT installer isn't very good at unattended install. We use techniques described
-# at the links below to force it to set the path and other options accordingly. 
-# >> http://superuser.com/questions/944576/git-for-windows-silent-install-silent-arguments 
-# and follow through to installer at
-# >> https://github.com/ferventcoder/chocolatey-packages/blob/master/automatic/git.install/tools/chocolateyInstall.ps1
-
-
-# -----------------------------------------------------------------------------------------
-
-# The number of build steps below are explicitly minimised to improve performance.
-",2016-10-22 02:56:16+00:00,2015-12-01 09:47:19+01:00,,1,2016-11-03 06:08:27+00:00,a35b88e218b9173c4ab9ee0740260cc5c8766300
-40496,1c00388b8a51103ea224beee5d4ce4c6070bab63,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# escape=`
-
-# -----------------------------------------------------------------------------------------
-# This file describes the standard way to build Docker in a container on Windows
-# Server 2016 or Windows 10.
-#
-# Maintainer: @jhowardmsft
-# -----------------------------------------------------------------------------------------
-
-
-# Prerequisites:
-# --------------
-#
-# 1. Windows 10 or Windows Server 2016 with all Windows updates applied. Pre-release
-#    versions of Windows are not supported (eg Windows Server 2016 TP5). The build
-#    number must be at least 14393. This can be confirmed, for example, by running
-#    the following from an elevated PowerShell prompt - this sample output is from a 
-#    fully up to date machine as at late October 2016:
-#
-#    >> PS C:\> $(gin).WindowsBuildLabEx
-#    >> 14393.321.amd64fre.rs1_release_inmarket.161004-2338
-#
-# 2. Git for Windows (or another git client) must be installed. https://git-scm.com/download/win.
-#
-# 3. The machine must be configured to run containers. For example, by following
-#    the quick start guidance at https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start or
-#    https://github.com/docker/labs/blob/master/windows/windows-containers/Setup.md
-
-
-# -----------------------------------------------------------------------------------------
-
-
-# Usage:
-# -----
-#
-#  The following steps should be run from an (elevated*) Windows PowerShell prompt. 
-#
-#  (*In a default installation of containers on Windows following the quick-start guidance at
-#    https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start,
-#    the docker.exe client must run elevated to be able to connect to the daemon).
-#
-# 1. Clone the sources from github.com:
-#
-#    >>   git clone https://github.com/docker/docker.git C:\go\src\github.com\docker\docker
-#    >>   Cloning into 'C:\go\src\github.com\docker\docker'...
-#    >>   remote: Counting objects: 186216, done.
-#    >>   remote: Compressing objects: 100% (21/21), done.
-#    >>   remote: Total 186216 (delta 5), reused 0 (delta 0), pack-reused 186195
-#    >>   Receiving objects: 100% (186216/186216), 104.32 MiB | 8.18 MiB/s, done.
-#    >>   Resolving deltas: 100% (123139/123139), done.
-#    >>   Checking connectivity... done.
-#    >>   Checking out files: 100% (3912/3912), done.
-#    >>   PS C:\>
-#
-#
-# 2. Change directory to the cloned docker sources:
-#
-#    >>   cd C:\go\src\github.com\docker\docker 
-#
-#
-# 3. Build a docker image with the components required to build the docker binaries from source:
-#
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows .
-#
-#
-# 4. Build the docker executable binaries in a container:
-#
-#    >>   docker run --name binaries nativebuildimage sh -c 'cd /c/go/src/github.com/docker/docker; hack/make.sh binary'
-#
-#
-# 5. Copy the binaries out of the above container, replacing HostPath with an appropriate destination 
-#    folder on the host system where you want the binaries to be located.
-#
-#    >>   $v=$(Get-Content "".\VERSION"" -raw).ToString().Replace(""`n"","""").Trim()
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\$v\binary-client\docker-$v.exe C:\HostPath\docker.exe
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\$v\binary-daemon\dockerd.exe C:\HostPath\dockerd.exe
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\$v\binary-daemon\docker-proxy-$v.exe C:\HostPath\docker-proxy.exe
-#
-#
-# 6. (Optional) Remove the interim container holding the built executable binaries:
-#
-#    >>    docker rm binaries
-#
-#
-# 7. (Optional) Remove the image used for the container in which the executable
-#    binaries are build. Tip - it may be useful to keep this image around if you need to
-#    build multiple times. Then you can take advantage of the builder cache to have an
-#    image which has all the components required to build the binaries already installed.
-#
-#    >>    docker rmi nativebuildimage
-
-
-# -----------------------------------------------------------------------------------------
-
-
-# Important notes:
-# ---------------
-#
-# The posix utilities from git aren't usable interactively as at October 2016. This
-# is because they require a console window which isn't present in a container in Windows.
-# See the example at the top of this file. Do NOT use -it in that docker run. It will not work.
-#
-# Don't attempt to use a volume for passing the source through to the container. The posix utilities will
-# balk at reparse points. 
-#
-# The downloaded files are not cleared from the image. go.zip is used by the Windows
-# CI servers to ensure the host and image are running consistent versions of go.
-#
-# The GIT installer isn't very good at unattended install. We use techniques described
-# at the links below to force it to set the path and other options accordingly. 
-# >> http://superuser.com/questions/944576/git-for-windows-silent-install-silent-arguments 
-# and follow through to installer at
-# >> https://github.com/ferventcoder/chocolatey-packages/blob/master/automatic/git.install/tools/chocolateyInstall.ps1
-
-
-# -----------------------------------------------------------------------------------------
-
-# The number of build steps below are explicitly minimised to improve performance.
-",2016-10-30 20:57:40+00:00,2015-12-01 09:47:19+01:00,,1,2016-11-10 22:28:03+00:00,a99fd733adb195d781fe20502473ec8e4b0ef9c9
-30189,8afc09fa08b4fb45d4bb115d8d1f8d99b225038f,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# escape=`
-
-# -----------------------------------------------------------------------------------------
-# This file describes the standard way to build Docker in a container on Windows
-# Server 2016.
-#
-# Maintainer: @jhowardmsft
-# -----------------------------------------------------------------------------------------
-
-
-# Prerequisites:
-# --------------
-#
-# 1. Windows Server 2016 with all Windows updates applied. Pre-release versions
-#    of Windows are not supported (eg Windows Server 2016 TP5). The build number
-#    must be at least 14393. This can be confirmed, for example, by running the
-#    following from an elevated PowerShell prompt - this sample output is from a 
-#    fully up to date machine as at late October 2016:
-#
-#    >> PS C:\> $(gin).WindowsBuildLabEx
-#    >> 14393.321.amd64fre.rs1_release_inmarket.161004-2338
-#
-# 2. Git for Windows (or another git client) must be installed. https://git-scm.com/download/win.
-#
-# 3. The machine must be configured to run containers. For example, by following
-#    the quick start guidance at https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start or
-#    https://github.com/docker/labs/blob/master/windows/windows-containers/Setup.md
-
-
-# -----------------------------------------------------------------------------------------
-
-
-# Usage:
-# -----
-#
-#  The following steps should be run from an (elevated*) Windows PowerShell prompt. 
-#
-#  (*In a default installation of containers on Windows following the quick-start guidance at
-#    https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start,
-#    the docker.exe client must run elevated to be able to connect to the daemon).
-#
-# 1. Clone the sources from github.com:
-#
-#    >>   git clone https://github.com/docker/docker.git C:\go\src\github.com\docker\docker
-#    >>   Cloning into 'C:\go\src\github.com\docker\docker'...
-#    >>   remote: Counting objects: 186216, done.
-#    >>   remote: Compressing objects: 100% (21/21), done.
-#    >>   remote: Total 186216 (delta 5), reused 0 (delta 0), pack-reused 186195
-#    >>   Receiving objects: 100% (186216/186216), 104.32 MiB | 8.18 MiB/s, done.
-#    >>   Resolving deltas: 100% (123139/123139), done.
-#    >>   Checking connectivity... done.
-#    >>   Checking out files: 100% (3912/3912), done.
-#    >>   PS C:\>
-#
-#
-# 2. Change directory to the cloned docker sources:
-#
-#    >>   cd C:\go\src\github.com\docker\docker 
-#
-#
-# 3. Build a docker image with the components required to build the docker binaries from source:
-#
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows .
-#
-#
-# 4. Build the docker executable binaries in a container:
-#
-#    >>   docker run --name binaries nativebuildimage sh -c 'cd /c/go/src/github.com/docker/docker; hack/make.sh binary'
-#
-#
-# 5. Copy the binaries out of the above container, replacing HostPath with an appropriate destination 
-#    folder on the host system where you want the binaries to be located.
-#
-#    >>   $v=$(Get-Content "".\VERSION"" -raw).ToString().Replace(""`n"","""").Trim()
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\$v\binary-client\docker-$v.exe C:\HostPath\docker.exe
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\$v\binary-daemon\dockerd.exe C:\HostPath\dockerd.exe
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\$v\binary-daemon\docker-proxy-$v.exe C:\HostPath\docker-proxy.exe
-#
-#
-# 6. (Optional) Remove the interim container holding the built executable binaries:
-#
-#    >>    docker rm binaries
-#
-#
-# 7. (Optional) Remove the image used for the container in which the executable
-#    binaries are build. Tip - it may be useful to keep this image around if you need to
-#    build multiple times. Then you can take advantage of the builder cache to have an
-#    image which has all the components required to build the binaries already installed.
-#
-#    >>    docker rmi nativebuildimage
-
-
-# -----------------------------------------------------------------------------------------
-
-
-# Important notes:
-# ---------------
-#
-# The posix utilities from git aren't usable interactively as at October 2016. This
-# is because they require a console window which isn't present in a container in Windows.
-# See the example at the top of this file. Do NOT use -it in that docker run. It will not work.
-#
-# Don't attempt to use a volume for passing the source through to the container. The posix utilities will
-# balk at reparse points. 
-#
-# The downloaded files are not cleared from the image. go.zip is used by the Windows
-# CI servers to ensure the host and image are running consistent versions of go.
-#
-# The GIT installer isn't very good at unattended install. We use techniques described
-# at the links below to force it to set the path and other options accordingly. 
-# >> http://superuser.com/questions/944576/git-for-windows-silent-install-silent-arguments 
-# and follow through to installer at
-# >> https://github.com/ferventcoder/chocolatey-packages/blob/master/automatic/git.install/tools/chocolateyInstall.ps1
-#
-# As of October 2016, this does not work on Windows 10 client, just Windows Server 2016,
-# and only with the default isolation mode (process). It does not work with isolation mode
-# set to Hyper-V containers (hyperv).
-
-# -----------------------------------------------------------------------------------------
-
-# The number of build steps below are explicitly minimised to improve performance.
-",2016-11-10 20:45:56+00:00,2015-12-01 09:47:19+01:00,,1,2016-12-01 13:33:30+00:00,c9bef385b2510bc2b9624989e0f516152cd05c1f
-11732,05a05baa0e6c5464c512c08d8577a342e682b91c,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# escape=`
-
-# -----------------------------------------------------------------------------------------
-# This file describes the standard way to build Docker in a container on Windows
-# Server 2016 or Windows 10.
-#
-# Maintainer: @jhowardmsft
-# -----------------------------------------------------------------------------------------
-
-
-# Prerequisites:
-# --------------
-#
-# 1. Windows Server 2016 or Windows 10 with all Windows updates applied. The major 
-#    build number must be at least 14393. This can be confirmed, for example, by 
-#    running the following from an elevated PowerShell prompt - this sample output 
-#    is from a fully up to date machine as at mid-November 2016:
-#
-#    >> PS C:\> $(gin).WindowsBuildLabEx
-#    >> 14393.447.amd64fre.rs1_release_inmarket.161102-0100
-#
-# 2. Git for Windows (or another git client) must be installed. https://git-scm.com/download/win.
-#
-# 3. The machine must be configured to run containers. For example, by following
-#    the quick start guidance at https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start or
-#    https://github.com/docker/labs/blob/master/windows/windows-containers/Setup.md
-#
-# 4. If building in a Hyper-V VM: For Windows Server 2016 using Windows Server
-#    containers as the default option, it is recommended you have at least 1GB 
-#    of memory assigned; For Windows 10 where Hyper-V Containers are employed, you
-#    should have at least 4GB of memory assigned. Note also, to run Hyper-V 
-#    containers in a VM, it is necessary to configure the VM for nested virtualization.
-
-# -----------------------------------------------------------------------------------------
-
-
-# Usage:
-# -----
-#
-#  The following steps should be run from an (elevated*) Windows PowerShell prompt. 
-#
-#  (*In a default installation of containers on Windows following the quick-start guidance at
-#    https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start,
-#    the docker.exe client must run elevated to be able to connect to the daemon).
-#
-# 1. Clone the sources from github.com:
-#
-#    >>   git clone https://github.com/docker/docker.git C:\go\src\github.com\docker\docker
-#    >>   Cloning into 'C:\go\src\github.com\docker\docker'...
-#    >>   remote: Counting objects: 186216, done.
-#    >>   remote: Compressing objects: 100% (21/21), done.
-#    >>   remote: Total 186216 (delta 5), reused 0 (delta 0), pack-reused 186195
-#    >>   Receiving objects: 100% (186216/186216), 104.32 MiB | 8.18 MiB/s, done.
-#    >>   Resolving deltas: 100% (123139/123139), done.
-#    >>   Checking connectivity... done.
-#    >>   Checking out files: 100% (3912/3912), done.
-#    >>   PS C:\>
-#
-#
-# 2. Change directory to the cloned docker sources:
-#
-#    >>   cd C:\go\src\github.com\docker\docker 
-#
-#
-# 3. Build a docker image with the components required to build the docker binaries from source:
-#
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows .
-#
-#
-# 4. Build the docker executable binaries:
-#
-#    >>   docker run --name binaries nativebuildimage hack\make.ps1 -Binary
-#
-#
-# 5. Copy the binaries out of the container, replacing HostPath with an appropriate destination 
-#    folder on the host system where you want the binaries to be located.
-#
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\docker.exe C:\HostPath\docker.exe
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\dockerd.exe C:\HostPath\dockerd.exe
-#
-#
-# 6. (Optional) Remove the interim container holding the built executable binaries:
-#
-#    >>    docker rm binaries
-#
-#
-# 7. (Optional) Remove the image used for the container in which the executable
-#    binaries are build. Tip - it may be useful to keep this image around if you need to
-#    build multiple times. Then you can take advantage of the builder cache to have an
-#    image which has all the components required to build the binaries already installed.
-#
-#    >>    docker rmi nativebuildimage
-#
-
-# -----------------------------------------------------------------------------------------
-
-
-#  The validation tests can either run in a container, or directly on the host. To run in a
-#  container, ensure you have created the nativebuildimage above. Then run the following
-#  from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run --rm nativebuildimage hack\make.ps1 -DCO -PkgImports -GoFormat
-
-# To run the validation tests on the host, from the root of the repository, run the
-# following from a Windows PowerShell prompt (elevation is not required): (Note Go
-# must be installed to run these tests)
-#
-#    >>   hack\make.ps1 -DCO -PkgImports -GoFormat
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run unit tests, ensure you have created the nativebuildimage above. Then run the
-#  following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run --rm nativebuildimage hack\make.ps1 -TestUnit
-
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run all tests and binary build, ensure you have created the nativebuildimage above. Then 
-# run the following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run nativebuildimage hack\make.ps1 -All
-
-
-# -----------------------------------------------------------------------------------------
-
-
-# Important notes:
-# ---------------
-#
-# Don't attempt to use a bind-mount to pass a local directory as the bundles target
-# directory. It does not work (golang attempts for follow a mapped folder incorrectly). 
-# Instead, use docker cp as per the example.
-#
-# go.zip is not removed from the image as it is used by the Windows CI servers
-# to ensure the host and image are running consistent versions of go.
-#
-# Nanoserver support is a work in progress. Although the image will build if the 
-# FROM statement is updated, it will not work when running autogen through hack\make.ps1. 
-# It is suspected that the required GCC utilities (eg gcc, windres, windmc) silently
-# quit due to the use of console hooks which are not available.
-#
-# The docker integration tests do not currently run in a container on Windows, predominantly
-# due to Windows not supporting privileged mode, so anything using a volume would fail.
-# They (along with the rest of the docker CI suite) can be run using 
-# https://github.com/jhowardmsft/docker-w2wCIScripts/blob/master/runCI/Invoke-DockerCI.ps1.
-#
-# -----------------------------------------------------------------------------------------
-
-
-# The number of build steps below are explicitly minimised to improve performance.
-",2016-11-17 21:54:56+00:00,2015-12-01 09:47:19+01:00,,1,2016-12-06 11:10:03+00:00,3e9857033be81cbb5be055ff5103f6ebccf558da
-10906,c9bef385b2510bc2b9624989e0f516152cd05c1f,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# escape=`
-
-# -----------------------------------------------------------------------------------------
-# This file describes the standard way to build Docker in a container on Windows
-# Server 2016 or Windows 10.
-#
-# Maintainer: @jhowardmsft
-# -----------------------------------------------------------------------------------------
-
-
-# Prerequisites:
-# --------------
-#
-# 1. Windows Server 2016 or Windows 10 with all Windows updates applied. The major 
-#    build number must be at least 14393. This can be confirmed, for example, by 
-#    running the following from an elevated PowerShell prompt - this sample output 
-#    is from a fully up to date machine as at mid-November 2016:
-#
-#    >> PS C:\> $(gin).WindowsBuildLabEx
-#    >> 14393.447.amd64fre.rs1_release_inmarket.161102-0100
-#
-# 2. Git for Windows (or another git client) must be installed. https://git-scm.com/download/win.
-#
-# 3. The machine must be configured to run containers. For example, by following
-#    the quick start guidance at https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start or
-#    https://github.com/docker/labs/blob/master/windows/windows-containers/Setup.md
-#
-# 4. If building in a Hyper-V VM: For Windows Server 2016 using Windows Server
-#    containers as the default option, it is recommended you have at least 1GB 
-#    of memory assigned; For Windows 10 where Hyper-V Containers are employed, you
-#    should have at least 4GB of memory assigned. Note also, to run Hyper-V 
-#    containers in a VM, it is necessary to configure the VM for nested virtualization.
-
-# -----------------------------------------------------------------------------------------
-
-
-# Usage:
-# -----
-#
-#  The following steps should be run from an (elevated*) Windows PowerShell prompt. 
-#
-#  (*In a default installation of containers on Windows following the quick-start guidance at
-#    https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start,
-#    the docker.exe client must run elevated to be able to connect to the daemon).
-#
-# 1. Clone the sources from github.com:
-#
-#    >>   git clone https://github.com/docker/docker.git C:\go\src\github.com\docker\docker
-#    >>   Cloning into 'C:\go\src\github.com\docker\docker'...
-#    >>   remote: Counting objects: 186216, done.
-#    >>   remote: Compressing objects: 100% (21/21), done.
-#    >>   remote: Total 186216 (delta 5), reused 0 (delta 0), pack-reused 186195
-#    >>   Receiving objects: 100% (186216/186216), 104.32 MiB | 8.18 MiB/s, done.
-#    >>   Resolving deltas: 100% (123139/123139), done.
-#    >>   Checking connectivity... done.
-#    >>   Checking out files: 100% (3912/3912), done.
-#    >>   PS C:\>
-#
-#
-# 2. Change directory to the cloned docker sources:
-#
-#    >>   cd C:\go\src\github.com\docker\docker 
-#
-#
-# 3. Build a docker image with the components required to build the docker binaries from source
-#    by running one of the following:
-#
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows .          
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows -m 2GB .    (if using Hyper-V containers)
-#
-#
-# 4. Build the docker executable binaries by running one of the following:
-#
-#    >>   $DOCKER_GITCOMMIT=(git rev-parse --short HEAD)
-#    >>   docker run --name binaries -e DOCKER_GITCOMMIT=$DOCKER_GITCOMMIT nativebuildimage hack\make.ps1 -Binary
-#    >>   docker run --name binaries -e DOCKER_GITCOMMIT=$DOCKER_GITCOMMIT -m 2GB nativebuildimage hack\make.ps1 -Binary    (if using Hyper-V containers)
-#
-#
-# 5. Copy the binaries out of the container, replacing HostPath with an appropriate destination 
-#    folder on the host system where you want the binaries to be located.
-#
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\docker.exe C:\HostPath\docker.exe
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\dockerd.exe C:\HostPath\dockerd.exe
-#
-#
-# 6. (Optional) Remove the interim container holding the built executable binaries:
-#
-#    >>    docker rm binaries
-#
-#
-# 7. (Optional) Remove the image used for the container in which the executable
-#    binaries are build. Tip - it may be useful to keep this image around if you need to
-#    build multiple times. Then you can take advantage of the builder cache to have an
-#    image which has all the components required to build the binaries already installed.
-#
-#    >>    docker rmi nativebuildimage
-#
-
-# -----------------------------------------------------------------------------------------
-
-
-#  The validation tests can only run directly on the host. This is because they calculate
-#  information from the git repo, but the .git directory is not passed into the image as
-#  it is excluded via .dockerignore. Run the following from a Windows PowerShell prompt
-#  (elevation is not required): (Note Go must be installed to run these tests)
-#
-#    >>   hack\make.ps1 -DCO -PkgImports -GoFormat
-
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run unit tests, ensure you have created the nativebuildimage above. Then run one of
-#  the following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run --rm nativebuildimage hack\make.ps1 -TestUnit
-#    >>   docker run --rm -m 2GB nativebuildimage hack\make.ps1 -TestUnit    (if using Hyper-V containers)
-
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run unit tests and binary build, ensure you have created the nativebuildimage above. Then 
-#  run one of the following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run nativebuildimage hack\make.ps1 -All
-#    >>   docker run -m 2GB nativebuildimage hack\make.ps1 -All    (if using Hyper-V containers)
-
-# -----------------------------------------------------------------------------------------
-
-
-# Important notes:
-# ---------------
-#
-# Don't attempt to use a bind-mount to pass a local directory as the bundles target
-# directory. It does not work (golang attempts for follow a mapped folder incorrectly). 
-# Instead, use docker cp as per the example.
-#
-# go.zip is not removed from the image as it is used by the Windows CI servers
-# to ensure the host and image are running consistent versions of go.
-#
-# Nanoserver support is a work in progress. Although the image will build if the 
-# FROM statement is updated, it will not work when running autogen through hack\make.ps1. 
-# It is suspected that the required GCC utilities (eg gcc, windres, windmc) silently
-# quit due to the use of console hooks which are not available.
-#
-# The docker integration tests do not currently run in a container on Windows, predominantly
-# due to Windows not supporting privileged mode, so anything using a volume would fail.
-# They (along with the rest of the docker CI suite) can be run using 
-# https://github.com/jhowardmsft/docker-w2wCIScripts/blob/master/runCI/Invoke-DockerCI.ps1.
-#
-# -----------------------------------------------------------------------------------------
-
-
-# The number of build steps below are explicitly minimised to improve performance.
-",2016-12-01 13:33:30+00:00,2015-12-01 09:47:19+01:00,,1,2017-08-30 23:44:42+00:00,9dabee631f26e569f8c4453405acfb2ee5ef4027
-3341,ef878bf7f4d20b584fc725d3c494af5ba5c81d8c,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# escape=`
-
-# -----------------------------------------------------------------------------------------
-# This file describes the standard way to build Docker in a container on Windows
-# Server 2016 or Windows 10.
-#
-# Maintainer: @jhowardmsft
-# -----------------------------------------------------------------------------------------
-
-
-# Prerequisites:
-# --------------
-#
-# 1. Windows Server 2016 or Windows 10 with all Windows updates applied. The major 
-#    build number must be at least 14393. This can be confirmed, for example, by 
-#    running the following from an elevated PowerShell prompt - this sample output 
-#    is from a fully up to date machine as at mid-November 2016:
-#
-#    >> PS C:\> $(gin).WindowsBuildLabEx
-#    >> 14393.447.amd64fre.rs1_release_inmarket.161102-0100
-#
-# 2. Git for Windows (or another git client) must be installed. https://git-scm.com/download/win.
-#
-# 3. The machine must be configured to run containers. For example, by following
-#    the quick start guidance at https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start or
-#    https://github.com/docker/labs/blob/master/windows/windows-containers/Setup.md
-#
-# 4. If building in a Hyper-V VM: For Windows Server 2016 using Windows Server
-#    containers as the default option, it is recommended you have at least 1GB 
-#    of memory assigned; For Windows 10 where Hyper-V Containers are employed, you
-#    should have at least 4GB of memory assigned. Note also, to run Hyper-V 
-#    containers in a VM, it is necessary to configure the VM for nested virtualization.
-
-# -----------------------------------------------------------------------------------------
-
-
-# Usage:
-# -----
-#
-#  The following steps should be run from an (elevated*) Windows PowerShell prompt. 
-#
-#  (*In a default installation of containers on Windows following the quick-start guidance at
-#    https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start,
-#    the docker.exe client must run elevated to be able to connect to the daemon).
-#
-# 1. Clone the sources from github.com:
-#
-#    >>   git clone https://github.com/docker/docker.git C:\go\src\github.com\docker\docker
-#    >>   Cloning into 'C:\go\src\github.com\docker\docker'...
-#    >>   remote: Counting objects: 186216, done.
-#    >>   remote: Compressing objects: 100% (21/21), done.
-#    >>   remote: Total 186216 (delta 5), reused 0 (delta 0), pack-reused 186195
-#    >>   Receiving objects: 100% (186216/186216), 104.32 MiB | 8.18 MiB/s, done.
-#    >>   Resolving deltas: 100% (123139/123139), done.
-#    >>   Checking connectivity... done.
-#    >>   Checking out files: 100% (3912/3912), done.
-#    >>   PS C:\>
-#
-#
-# 2. Change directory to the cloned docker sources:
-#
-#    >>   cd C:\go\src\github.com\docker\docker 
-#
-#
-# 3. Build a docker image with the components required to build the docker binaries from source
-#    by running one of the following:
-#
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows .          
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows -m 2GB .    (if using Hyper-V containers)
-#
-#
-# 4. Build the docker executable binaries by running one of the following:
-#
-#    >>   docker run --name binaries nativebuildimage hack\make.ps1 -Binary
-#    >>   docker run --name binaries -m 2GB nativebuildimage hack\make.ps1 -Binary    (if using Hyper-V containers)
-#
-#
-# 5. Copy the binaries out of the container, replacing HostPath with an appropriate destination 
-#    folder on the host system where you want the binaries to be located.
-#
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\docker.exe C:\HostPath\docker.exe
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\dockerd.exe C:\HostPath\dockerd.exe
-#
-#
-# 6. (Optional) Remove the interim container holding the built executable binaries:
-#
-#    >>    docker rm binaries
-#
-#
-# 7. (Optional) Remove the image used for the container in which the executable
-#    binaries are build. Tip - it may be useful to keep this image around if you need to
-#    build multiple times. Then you can take advantage of the builder cache to have an
-#    image which has all the components required to build the binaries already installed.
-#
-#    >>    docker rmi nativebuildimage
-#
-
-# -----------------------------------------------------------------------------------------
-
-
-#  The validation tests can either run in a container, or directly on the host. To run in a
-#  container, ensure you have created the nativebuildimage above. Then run one of the
-#  following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run --rm nativebuildimage hack\make.ps1 -DCO -PkgImports -GoFormat
-#    >>   docker run --rm -m 2GB nativebuildimage hack\make.ps1 -DCO -PkgImports -GoFormat    (if using Hyper-V containers)
-
-# To run the validation tests on the host, from the root of the repository, run the
-# following from a Windows PowerShell prompt (elevation is not required): (Note Go
-# must be installed to run these tests)
-#
-#    >>   hack\make.ps1 -DCO -PkgImports -GoFormat
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run unit tests, ensure you have created the nativebuildimage above. Then run one of
-#  the following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run --rm nativebuildimage hack\make.ps1 -TestUnit
-#    >>   docker run --rm -m 2GB nativebuildimage hack\make.ps1 -TestUnit    (if using Hyper-V containers)
-
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run all tests and binary build, ensure you have created the nativebuildimage above. Then 
-#  run one of the following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run nativebuildimage hack\make.ps1 -All
-#    >>   docker run -m 2GB nativebuildimage hack\make.ps1 -All    (if using Hyper-V containers)
-
-# -----------------------------------------------------------------------------------------
-
-
-# Important notes:
-# ---------------
-#
-# Don't attempt to use a bind-mount to pass a local directory as the bundles target
-# directory. It does not work (golang attempts for follow a mapped folder incorrectly). 
-# Instead, use docker cp as per the example.
-#
-# go.zip is not removed from the image as it is used by the Windows CI servers
-# to ensure the host and image are running consistent versions of go.
-#
-# Nanoserver support is a work in progress. Although the image will build if the 
-# FROM statement is updated, it will not work when running autogen through hack\make.ps1. 
-# It is suspected that the required GCC utilities (eg gcc, windres, windmc) silently
-# quit due to the use of console hooks which are not available.
-#
-# The docker integration tests do not currently run in a container on Windows, predominantly
-# due to Windows not supporting privileged mode, so anything using a volume would fail.
-# They (along with the rest of the docker CI suite) can be run using 
-# https://github.com/jhowardmsft/docker-w2wCIScripts/blob/master/runCI/Invoke-DockerCI.ps1.
-#
-# -----------------------------------------------------------------------------------------
-
-
-# The number of build steps below are explicitly minimised to improve performance.
-",2016-12-05 16:57:59+00:00,2015-12-01 09:47:19+01:00,,1,2017-02-05 03:19:16+00:00,ba62bc02bb8dce87e053de159df95be935adc2b8
-4240,605885e5180c01af497fba3c7bd25b605bb12341,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# escape=`
-
-# -----------------------------------------------------------------------------------------
-# This file describes the standard way to build Docker in a container on Windows
-# Server 2016 or Windows 10.
-#
-# Maintainer: @jhowardmsft
-# -----------------------------------------------------------------------------------------
-
-
-# Prerequisites:
-# --------------
-#
-# 1. Windows Server 2016 or Windows 10 with all Windows updates applied. The major 
-#    build number must be at least 14393. This can be confirmed, for example, by 
-#    running the following from an elevated PowerShell prompt - this sample output 
-#    is from a fully up to date machine as at mid-November 2016:
-#
-#    >> PS C:\> $(gin).WindowsBuildLabEx
-#    >> 14393.447.amd64fre.rs1_release_inmarket.161102-0100
-#
-# 2. Git for Windows (or another git client) must be installed. https://git-scm.com/download/win.
-#
-# 3. The machine must be configured to run containers. For example, by following
-#    the quick start guidance at https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start or
-#    https://github.com/docker/labs/blob/master/windows/windows-containers/Setup.md
-#
-# 4. If building in a Hyper-V VM: For Windows Server 2016 using Windows Server
-#    containers as the default option, it is recommended you have at least 1GB 
-#    of memory assigned; For Windows 10 where Hyper-V Containers are employed, you
-#    should have at least 4GB of memory assigned. Note also, to run Hyper-V 
-#    containers in a VM, it is necessary to configure the VM for nested virtualization.
-
-# -----------------------------------------------------------------------------------------
-
-
-# Usage:
-# -----
-#
-#  The following steps should be run from an (elevated*) Windows PowerShell prompt. 
-#
-#  (*In a default installation of containers on Windows following the quick-start guidance at
-#    https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start,
-#    the docker.exe client must run elevated to be able to connect to the daemon).
-#
-# 1. Clone the sources from github.com:
-#
-#    >>   git clone https://github.com/docker/docker.git C:\go\src\github.com\docker\docker
-#    >>   Cloning into 'C:\go\src\github.com\docker\docker'...
-#    >>   remote: Counting objects: 186216, done.
-#    >>   remote: Compressing objects: 100% (21/21), done.
-#    >>   remote: Total 186216 (delta 5), reused 0 (delta 0), pack-reused 186195
-#    >>   Receiving objects: 100% (186216/186216), 104.32 MiB | 8.18 MiB/s, done.
-#    >>   Resolving deltas: 100% (123139/123139), done.
-#    >>   Checking connectivity... done.
-#    >>   Checking out files: 100% (3912/3912), done.
-#    >>   PS C:\>
-#
-#
-# 2. Change directory to the cloned docker sources:
-#
-#    >>   cd C:\go\src\github.com\docker\docker 
-#
-#
-# 3. Build a docker image with the components required to build the docker binaries from source
-#    by running one of the following:
-#
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows .          
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows -m 2GB .    (if using Hyper-V containers)
-#
-#
-# 4. Build the docker executable binaries by running one of the following:
-#
-#    >>   $DOCKER_GITCOMMIT=(git rev-parse --short HEAD)
-#    >>   docker run --name binaries -e DOCKER_GITCOMMIT=$DOCKER_GITCOMMIT nativebuildimage hack\make.ps1 -Binary
-#    >>   docker run --name binaries -e DOCKER_GITCOMMIT=$DOCKER_GITCOMMIT -m 2GB nativebuildimage hack\make.ps1 -Binary    (if using Hyper-V containers)
-#
-#
-# 5. Copy the binaries out of the container, replacing HostPath with an appropriate destination 
-#    folder on the host system where you want the binaries to be located.
-#
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\docker.exe C:\HostPath\docker.exe
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\dockerd.exe C:\HostPath\dockerd.exe
-#
-#
-# 6. (Optional) Remove the interim container holding the built executable binaries:
-#
-#    >>    docker rm binaries
-#
-#
-# 7. (Optional) Remove the image used for the container in which the executable
-#    binaries are build. Tip - it may be useful to keep this image around if you need to
-#    build multiple times. Then you can take advantage of the builder cache to have an
-#    image which has all the components required to build the binaries already installed.
-#
-#    >>    docker rmi nativebuildimage
-#
-
-# -----------------------------------------------------------------------------------------
-
-
-#  The validation tests can only run directly on the host. This is because they calculate
-#  information from the git repo, but the .git directory is not passed into the image as
-#  it is excluded via .dockerignore. Run the following from a Windows PowerShell prompt
-#  (elevation is not required): (Note Go must be installed to run these tests)
-#
-#    >>   hack\make.ps1 -DCO -PkgImports -GoFormat
-
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run unit tests, ensure you have created the nativebuildimage above. Then run one of
-#  the following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run --rm nativebuildimage hack\make.ps1 -TestUnit
-#    >>   docker run --rm -m 2GB nativebuildimage hack\make.ps1 -TestUnit    (if using Hyper-V containers)
-
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run unit tests and binary build, ensure you have created the nativebuildimage above. Then 
-#  run one of the following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run nativebuildimage hack\make.ps1 -All
-#    >>   docker run -m 2GB nativebuildimage hack\make.ps1 -All    (if using Hyper-V containers)
-
-# -----------------------------------------------------------------------------------------
-
-
-# Important notes:
-# ---------------
-#
-# Don't attempt to use a bind mount to pass a local directory as the bundles target
-# directory. It does not work (golang attempts for follow a mapped folder incorrectly).
-# Instead, use docker cp as per the example.
-#
-# go.zip is not removed from the image as it is used by the Windows CI servers
-# to ensure the host and image are running consistent versions of go.
-#
-# Nanoserver support is a work in progress. Although the image will build if the 
-# FROM statement is updated, it will not work when running autogen through hack\make.ps1. 
-# It is suspected that the required GCC utilities (eg gcc, windres, windmc) silently
-# quit due to the use of console hooks which are not available.
-#
-# The docker integration tests do not currently run in a container on Windows, predominantly
-# due to Windows not supporting privileged mode, so anything using a volume would fail.
-# They (along with the rest of the docker CI suite) can be run using 
-# https://github.com/jhowardmsft/docker-w2wCIScripts/blob/master/runCI/Invoke-DockerCI.ps1.
-#
-# -----------------------------------------------------------------------------------------
-
-
-# The number of build steps below are explicitly minimised to improve performance.
-",2017-06-30 08:29:56+00:00,2015-12-01 09:47:19+01:00,,1,2019-01-05 03:34:15+00:00,fda9ee4e31f2f97cfb3e2dcc225cae806d710ae9
-26461,8bae96ae89ba9f60f10b5a1244a256f5721659bd,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# escape=`
-
-# -----------------------------------------------------------------------------------------
-# This file describes the standard way to build Docker in a container on Windows
-# Server 2016 or Windows 10.
-#
-# Maintainer: @jhowardmsft
-# -----------------------------------------------------------------------------------------
-
-
-# Prerequisites:
-# --------------
-#
-# 1. Windows Server 2016 or Windows 10 with all Windows updates applied. The major 
-#    build number must be at least 14393. This can be confirmed, for example, by 
-#    running the following from an elevated PowerShell prompt - this sample output 
-#    is from a fully up to date machine as at mid-November 2016:
-#
-#    >> PS C:\> $(gin).WindowsBuildLabEx
-#    >> 14393.447.amd64fre.rs1_release_inmarket.161102-0100
-#
-# 2. Git for Windows (or another git client) must be installed. https://git-scm.com/download/win.
-#
-# 3. The machine must be configured to run containers. For example, by following
-#    the quick start guidance at https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start or
-#    https://github.com/docker/labs/blob/master/windows/windows-containers/Setup.md
-#
-# 4. If building in a Hyper-V VM: For Windows Server 2016 using Windows Server
-#    containers as the default option, it is recommended you have at least 1GB 
-#    of memory assigned; For Windows 10 where Hyper-V Containers are employed, you
-#    should have at least 4GB of memory assigned. Note also, to run Hyper-V 
-#    containers in a VM, it is necessary to configure the VM for nested virtualization.
-
-# -----------------------------------------------------------------------------------------
-
-
-# Usage:
-# -----
-#
-#  The following steps should be run from an (elevated*) Windows PowerShell prompt. 
-#
-#  (*In a default installation of containers on Windows following the quick-start guidance at
-#    https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start,
-#    the docker.exe client must run elevated to be able to connect to the daemon).
-#
-# 1. Clone the sources from github.com:
-#
-#    >>   git clone https://github.com/docker/docker.git C:\go\src\github.com\docker\docker
-#    >>   Cloning into 'C:\go\src\github.com\docker\docker'...
-#    >>   remote: Counting objects: 186216, done.
-#    >>   remote: Compressing objects: 100% (21/21), done.
-#    >>   remote: Total 186216 (delta 5), reused 0 (delta 0), pack-reused 186195
-#    >>   Receiving objects: 100% (186216/186216), 104.32 MiB | 8.18 MiB/s, done.
-#    >>   Resolving deltas: 100% (123139/123139), done.
-#    >>   Checking connectivity... done.
-#    >>   Checking out files: 100% (3912/3912), done.
-#    >>   PS C:\>
-#
-#
-# 2. Change directory to the cloned docker sources:
-#
-#    >>   cd C:\go\src\github.com\docker\docker 
-#
-#
-# 3. Build a docker image with the components required to build the docker binaries from source
-#    by running one of the following:
-#
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows .          
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows -m 2GB .    (if using Hyper-V containers)
-#
-#
-# 4. Build the docker executable binaries by running one of the following:
-#
-#    >>   $DOCKER_GITCOMMIT=(git rev-parse --short HEAD)
-#    >>   docker run --name binaries -e DOCKER_GITCOMMIT=$DOCKER_GITCOMMIT nativebuildimage hack\make.ps1 -Binary
-#    >>   docker run --name binaries -e DOCKER_GITCOMMIT=$DOCKER_GITCOMMIT -m 2GB nativebuildimage hack\make.ps1 -Binary    (if using Hyper-V containers)
-#
-#
-# 5. Copy the binaries out of the container, replacing HostPath with an appropriate destination 
-#    folder on the host system where you want the binaries to be located.
-#
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\docker.exe C:\HostPath\docker.exe
-#    >>   docker cp binaries:C:\go\src\github.com\docker\docker\bundles\dockerd.exe C:\HostPath\dockerd.exe
-#
-#
-# 6. (Optional) Remove the interim container holding the built executable binaries:
-#
-#    >>    docker rm binaries
-#
-#
-# 7. (Optional) Remove the image used for the container in which the executable
-#    binaries are build. Tip - it may be useful to keep this image around if you need to
-#    build multiple times. Then you can take advantage of the builder cache to have an
-#    image which has all the components required to build the binaries already installed.
-#
-#    >>    docker rmi nativebuildimage
-#
-
-# -----------------------------------------------------------------------------------------
-
-
-#  The validation tests can only run directly on the host. This is because they calculate
-#  information from the git repo, but the .git directory is not passed into the image as
-#  it is excluded via .dockerignore. Run the following from a Windows PowerShell prompt
-#  (elevation is not required): (Note Go must be installed to run these tests)
-#
-#    >>   hack\make.ps1 -DCO -PkgImports -GoFormat
-
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run unit tests, ensure you have created the nativebuildimage above. Then run one of
-#  the following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run --rm nativebuildimage hack\make.ps1 -TestUnit
-#    >>   docker run --rm -m 2GB nativebuildimage hack\make.ps1 -TestUnit    (if using Hyper-V containers)
-
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run unit tests and binary build, ensure you have created the nativebuildimage above. Then 
-#  run one of the following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run nativebuildimage hack\make.ps1 -All
-#    >>   docker run -m 2GB nativebuildimage hack\make.ps1 -All    (if using Hyper-V containers)
-
-# -----------------------------------------------------------------------------------------
-
-
-# Important notes:
-# ---------------
-#
-# Don't attempt to use a bind mount to pass a local directory as the bundles target
-# directory. It does not work (golang attempts for follow a mapped folder incorrectly).
-# Instead, use docker cp as per the example.
-#
-# go.zip is not removed from the image as it is used by the Windows CI servers
-# to ensure the host and image are running consistent versions of go.
-#
-# Nanoserver support is a work in progress. Although the image will build if the 
-# FROM statement is updated, it will not work when running autogen through hack\make.ps1. 
-# It is suspected that the required GCC utilities (eg gcc, windres, windmc) silently
-# quit due to the use of console hooks which are not available.
-#
-# The docker integration tests do not currently run in a container on Windows, predominantly
-# due to Windows not supporting privileged mode, so anything using a volume would fail.
-# They (along with the rest of the docker CI suite) can be run using 
-# https://github.com/jhowardmsft/docker-w2wCIScripts/blob/master/runCI/Invoke-DockerCI.ps1.
-#
-# -----------------------------------------------------------------------------------------
-
-
-# The number of build steps below are explicitly minimised to improve performance.
-
-# Extremely important - do not change the following line to reference a ""specific"" image, 
-# such as `mcr.microsoft.com/windows/servercore:ltsc2019`. If using this Dockerfile in process
-# isolated containers, the kernel of the host must match the container image, and hence
-# would fail between Windows Server 2016 (aka RS1) and Windows Server 2019 (aka RS5).
-# It is expected that the image `microsoft/windowsservercore:latest` is present, and matches
-# the hosts kernel version before doing a build. 
-",2018-12-20 14:47:24+00:00,2015-12-01 09:47:19+01:00,,1,2019-09-09 23:19:03+00:00,d1ba4251b4b028a62efb204893a19ebfede3ee7a
-41717,fe75864cf817ed77fe119af2db6f40e2c88141a0,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# escape=`
-
-# -----------------------------------------------------------------------------------------
-# This file describes the standard way to build Docker in a container on Windows
-# Server 2016 or Windows 10.
-#
-# Maintainer: @jhowardmsft
-# -----------------------------------------------------------------------------------------
-
-
-# Prerequisites:
-# --------------
-#
-# 1. Windows Server 2016 or Windows 10 with all Windows updates applied. The major 
-#    build number must be at least 14393. This can be confirmed, for example, by 
-#    running the following from an elevated PowerShell prompt - this sample output 
-#    is from a fully up to date machine as at mid-November 2016:
-#
-#    >> PS C:\> $(gin).WindowsBuildLabEx
-#    >> 14393.447.amd64fre.rs1_release_inmarket.161102-0100
-#
-# 2. Git for Windows (or another git client) must be installed. https://git-scm.com/download/win.
-#
-# 3. The machine must be configured to run containers. For example, by following
-#    the quick start guidance at https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start or
-#    https://github.com/docker/labs/blob/master/windows/windows-containers/Setup.md
-#
-# 4. If building in a Hyper-V VM: For Windows Server 2016 using Windows Server
-#    containers as the default option, it is recommended you have at least 1GB 
-#    of memory assigned; For Windows 10 where Hyper-V Containers are employed, you
-#    should have at least 4GB of memory assigned. Note also, to run Hyper-V 
-#    containers in a VM, it is necessary to configure the VM for nested virtualization.
-
-# -----------------------------------------------------------------------------------------
-
-
-# Usage:
-# -----
-#
-#  The following steps should be run from an (elevated*) Windows PowerShell prompt. 
-#
-#  (*In a default installation of containers on Windows following the quick-start guidance at
-#    https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start,
-#    the docker.exe client must run elevated to be able to connect to the daemon).
-#
-# 1. Clone the sources from github.com:
-#
-#    >>   git clone https://github.com/docker/docker.git C:\gopath\src\github.com\docker\docker
-#    >>   Cloning into 'C:\gopath\src\github.com\docker\docker'...
-#    >>   remote: Counting objects: 186216, done.
-#    >>   remote: Compressing objects: 100% (21/21), done.
-#    >>   remote: Total 186216 (delta 5), reused 0 (delta 0), pack-reused 186195
-#    >>   Receiving objects: 100% (186216/186216), 104.32 MiB | 8.18 MiB/s, done.
-#    >>   Resolving deltas: 100% (123139/123139), done.
-#    >>   Checking connectivity... done.
-#    >>   Checking out files: 100% (3912/3912), done.
-#    >>   PS C:\>
-#
-#
-# 2. Change directory to the cloned docker sources:
-#
-#    >>   cd C:\gopath\src\github.com\docker\docker 
-#
-#
-# 3. Build a docker image with the components required to build the docker binaries from source
-#    by running one of the following:
-#
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows .          
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows -m 2GB .    (if using Hyper-V containers)
-#
-#
-# 4. Build the docker executable binaries by running one of the following:
-#
-#    >>   $DOCKER_GITCOMMIT=(git rev-parse --short HEAD)
-#    >>   docker run --name binaries -e DOCKER_GITCOMMIT=$DOCKER_GITCOMMIT nativebuildimage hack\make.ps1 -Binary
-#    >>   docker run --name binaries -e DOCKER_GITCOMMIT=$DOCKER_GITCOMMIT -m 2GB nativebuildimage hack\make.ps1 -Binary    (if using Hyper-V containers)
-#
-#
-# 5. Copy the binaries out of the container, replacing HostPath with an appropriate destination 
-#    folder on the host system where you want the binaries to be located.
-#
-#    >>   docker cp binaries:C:\gopath\src\github.com\docker\docker\bundles\docker.exe C:\HostPath\docker.exe
-#    >>   docker cp binaries:C:\gopath\src\github.com\docker\docker\bundles\dockerd.exe C:\HostPath\dockerd.exe
-#
-#
-# 6. (Optional) Remove the interim container holding the built executable binaries:
-#
-#    >>    docker rm binaries
-#
-#
-# 7. (Optional) Remove the image used for the container in which the executable
-#    binaries are build. Tip - it may be useful to keep this image around if you need to
-#    build multiple times. Then you can take advantage of the builder cache to have an
-#    image which has all the components required to build the binaries already installed.
-#
-#    >>    docker rmi nativebuildimage
-#
-
-# -----------------------------------------------------------------------------------------
-
-
-#  The validation tests can only run directly on the host. This is because they calculate
-#  information from the git repo, but the .git directory is not passed into the image as
-#  it is excluded via .dockerignore. Run the following from a Windows PowerShell prompt
-#  (elevation is not required): (Note Go must be installed to run these tests)
-#
-#    >>   hack\make.ps1 -DCO -PkgImports -GoFormat
-
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run unit tests, ensure you have created the nativebuildimage above. Then run one of
-#  the following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run --rm nativebuildimage hack\make.ps1 -TestUnit
-#    >>   docker run --rm -m 2GB nativebuildimage hack\make.ps1 -TestUnit    (if using Hyper-V containers)
-
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run unit tests and binary build, ensure you have created the nativebuildimage above. Then 
-#  run one of the following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run nativebuildimage hack\make.ps1 -All
-#    >>   docker run -m 2GB nativebuildimage hack\make.ps1 -All    (if using Hyper-V containers)
-
-# -----------------------------------------------------------------------------------------
-
-
-# Important notes:
-# ---------------
-#
-# Don't attempt to use a bind mount to pass a local directory as the bundles target
-# directory. It does not work (golang attempts for follow a mapped folder incorrectly).
-# Instead, use docker cp as per the example.
-#
-# go.zip is not removed from the image as it is used by the Windows CI servers
-# to ensure the host and image are running consistent versions of go.
-#
-# Nanoserver support is a work in progress. Although the image will build if the 
-# FROM statement is updated, it will not work when running autogen through hack\make.ps1. 
-# It is suspected that the required GCC utilities (eg gcc, windres, windmc) silently
-# quit due to the use of console hooks which are not available.
-#
-# The docker integration tests do not currently run in a container on Windows, predominantly
-# due to Windows not supporting privileged mode, so anything using a volume would fail.
-# They (along with the rest of the docker CI suite) can be run using 
-# https://github.com/jhowardmsft/docker-w2wCIScripts/blob/master/runCI/Invoke-DockerCI.ps1.
-#
-# -----------------------------------------------------------------------------------------
-
-
-# The number of build steps below are explicitly minimised to improve performance.
-
-# Extremely important - do not change the following line to reference a ""specific"" image, 
-# such as `mcr.microsoft.com/windows/servercore:ltsc2019`. If using this Dockerfile in process
-# isolated containers, the kernel of the host must match the container image, and hence
-# would fail between Windows Server 2016 (aka RS1) and Windows Server 2019 (aka RS5).
-# It is expected that the image `microsoft/windowsservercore:latest` is present, and matches
-# the hosts kernel version before doing a build. 
-",2019-07-17 12:37:56+00:00,2015-12-01 09:47:19+01:00,,1,2019-09-26 18:03:45+00:00,76c9258f75ff03200c430adb1e54d45cae81d9b8
-14355,79bc167c15cf847a2930b00f70676d84a7c8cf86,components/engine/Dockerfile.windows,components/engine/Dockerfile.windows,"# escape=`
-
-# -----------------------------------------------------------------------------------------
-# This file describes the standard way to build Docker in a container on Windows
-# Server 2016 or Windows 10.
-#
-# Maintainer: @jhowardmsft
-# -----------------------------------------------------------------------------------------
-
-
-# Prerequisites:
-# --------------
-#
-# 1. Windows Server 2016 or Windows 10 with all Windows updates applied. The major 
-#    build number must be at least 14393. This can be confirmed, for example, by 
-#    running the following from an elevated PowerShell prompt - this sample output 
-#    is from a fully up to date machine as at mid-November 2016:
-#
-#    >> PS C:\> $(gin).WindowsBuildLabEx
-#    >> 14393.447.amd64fre.rs1_release_inmarket.161102-0100
-#
-# 2. Git for Windows (or another git client) must be installed. https://git-scm.com/download/win.
-#
-# 3. The machine must be configured to run containers. For example, by following
-#    the quick start guidance at https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start or
-#    https://github.com/docker/labs/blob/master/windows/windows-containers/Setup.md
-#
-# 4. If building in a Hyper-V VM: For Windows Server 2016 using Windows Server
-#    containers as the default option, it is recommended you have at least 1GB 
-#    of memory assigned; For Windows 10 where Hyper-V Containers are employed, you
-#    should have at least 4GB of memory assigned. Note also, to run Hyper-V 
-#    containers in a VM, it is necessary to configure the VM for nested virtualization.
-
-# -----------------------------------------------------------------------------------------
-
-
-# Usage:
-# -----
-#
-#  The following steps should be run from an (elevated*) Windows PowerShell prompt. 
-#
-#  (*In a default installation of containers on Windows following the quick-start guidance at
-#    https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start,
-#    the docker.exe client must run elevated to be able to connect to the daemon).
-#
-# 1. Clone the sources from github.com:
-#
-#    >>   git clone https://github.com/docker/docker.git C:\gopath\src\github.com\docker\docker
-#    >>   Cloning into 'C:\gopath\src\github.com\docker\docker'...
-#    >>   remote: Counting objects: 186216, done.
-#    >>   remote: Compressing objects: 100% (21/21), done.
-#    >>   remote: Total 186216 (delta 5), reused 0 (delta 0), pack-reused 186195
-#    >>   Receiving objects: 100% (186216/186216), 104.32 MiB | 8.18 MiB/s, done.
-#    >>   Resolving deltas: 100% (123139/123139), done.
-#    >>   Checking connectivity... done.
-#    >>   Checking out files: 100% (3912/3912), done.
-#    >>   PS C:\>
-#
-#
-# 2. Change directory to the cloned docker sources:
-#
-#    >>   cd C:\gopath\src\github.com\docker\docker 
-#
-#
-# 3. Build a docker image with the components required to build the docker binaries from source
-#    by running one of the following:
-#
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows .          
-#    >>   docker build -t nativebuildimage -f Dockerfile.windows -m 2GB .    (if using Hyper-V containers)
-#
-#
-# 4. Build the docker executable binaries by running one of the following:
-#
-#    >>   $DOCKER_GITCOMMIT=(git rev-parse --short HEAD)
-#    >>   docker run --name binaries -e DOCKER_GITCOMMIT=$DOCKER_GITCOMMIT nativebuildimage hack\make.ps1 -Binary
-#    >>   docker run --name binaries -e DOCKER_GITCOMMIT=$DOCKER_GITCOMMIT -m 2GB nativebuildimage hack\make.ps1 -Binary    (if using Hyper-V containers)
-#
-#
-# 5. Copy the binaries out of the container, replacing HostPath with an appropriate destination 
-#    folder on the host system where you want the binaries to be located.
-#
-#    >>   docker cp binaries:C:\gopath\src\github.com\docker\docker\bundles\docker.exe C:\HostPath\docker.exe
-#    >>   docker cp binaries:C:\gopath\src\github.com\docker\docker\bundles\dockerd.exe C:\HostPath\dockerd.exe
-#
-#
-# 6. (Optional) Remove the interim container holding the built executable binaries:
-#
-#    >>    docker rm binaries
-#
-#
-# 7. (Optional) Remove the image used for the container in which the executable
-#    binaries are build. Tip - it may be useful to keep this image around if you need to
-#    build multiple times. Then you can take advantage of the builder cache to have an
-#    image which has all the components required to build the binaries already installed.
-#
-#    >>    docker rmi nativebuildimage
-#
-
-# -----------------------------------------------------------------------------------------
-
-
-#  The validation tests can only run directly on the host. This is because they calculate
-#  information from the git repo, but the .git directory is not passed into the image as
-#  it is excluded via .dockerignore. Run the following from a Windows PowerShell prompt
-#  (elevation is not required): (Note Go must be installed to run these tests)
-#
-#    >>   hack\make.ps1 -DCO -PkgImports -GoFormat
-
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run unit tests, ensure you have created the nativebuildimage above. Then run one of
-#  the following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run --rm nativebuildimage hack\make.ps1 -TestUnit
-#    >>   docker run --rm -m 2GB nativebuildimage hack\make.ps1 -TestUnit    (if using Hyper-V containers)
-
-
-# -----------------------------------------------------------------------------------------
-
-
-#  To run unit tests and binary build, ensure you have created the nativebuildimage above. Then 
-#  run one of the following from an (elevated) Windows PowerShell prompt:
-#
-#    >>   docker run nativebuildimage hack\make.ps1 -All
-#    >>   docker run -m 2GB nativebuildimage hack\make.ps1 -All    (if using Hyper-V containers)
-
-# -----------------------------------------------------------------------------------------
-
-
-# Important notes:
-# ---------------
-#
-# Don't attempt to use a bind mount to pass a local directory as the bundles target
-# directory. It does not work (golang attempts for follow a mapped folder incorrectly).
-# Instead, use docker cp as per the example.
-#
-# go.zip is not removed from the image as it is used by the Windows CI servers
-# to ensure the host and image are running consistent versions of go.
-#
-# Nanoserver support is a work in progress. Although the image will build if the 
-# FROM statement is updated, it will not work when running autogen through hack\make.ps1. 
-# It is suspected that the required GCC utilities (eg gcc, windres, windmc) silently
-# quit due to the use of console hooks which are not available.
-#
-# The docker integration tests do not currently run in a container on Windows, predominantly
-# due to Windows not supporting privileged mode, so anything using a volume would fail.
-# They (along with the rest of the docker CI suite) can be run using 
-# https://github.com/kevpar/docker-w2wCIScripts/blob/master/runCI/Invoke-DockerCI.ps1.
-#
-# -----------------------------------------------------------------------------------------
-
-
-# The number of build steps below are explicitly minimised to improve performance.
-
-# Extremely important - do not change the following line to reference a ""specific"" image, 
-# such as `mcr.microsoft.com/windows/servercore:ltsc2019`. If using this Dockerfile in process
-# isolated containers, the kernel of the host must match the container image, and hence
-# would fail between Windows Server 2016 (aka RS1) and Windows Server 2019 (aka RS5).
-# It is expected that the image `microsoft/windowsservercore:latest` is present, and matches
-# the hosts kernel version before doing a build. 
-",2019-09-26 09:59:51+00:00,2015-12-01 09:47:19+01:00,,1,,
-19061,819eda81428c6968c2224c503773158f8b7fb2a8,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# This has been commented out and kept as reference because we don't support compiling with older Go anymore.
-# ENV GOFMT_VERSION 1.3.3
-# RUN curl -sSL https://storage.googleapis.com/golang/go${GOFMT_VERSION}.$(go env GOOS)-$(go env GOARCH).tar.gz | tar -C /go/bin -xz --strip-components=2 go/bin/gofmt
-
-# TODO update this sha when we upgrade to Go 1.5+
-",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-03-14 18:21:44+00:00,36b081e8df55d1023fd7afd0a96d09f776551b7c
-19059,819eda81428c6968c2224c503773158f8b7fb2a8,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.ppc64le .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-02-19 20:51:30+00:00,0373049b19ef161841317152a063edbaeeef8359
-19062,819eda81428c6968c2224c503773158f8b7fb2a8,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download man page generator
-",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-09-07 15:47:01+00:00,6b6c93e68e30af75a8095cecf481bc3a3a10a777
-19060,819eda81428c6968c2224c503773158f8b7fb2a8,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-
-# TODO install Go, using gccgo as GOROOT_BOOTSTRAP (Go 1.5+ supports ppc64le properly)
-# possibly a ppc64le/golang image?
-
-",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-02-13 01:36:57+00:00,9f086a0d578dadb60fa8d1e543703b50a811233e
-43128,37e5d77defe9377894fc3834775aa79216a4bbe6,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# TODO update this when we upgrade to Go 1.5.1+
-# Install notary server
-#ENV NOTARY_COMMIT 8e8122eb5528f621afcd4e2854c47302f17392f7
-#RUN set -x \
-#	&& export GOPATH=""$(mktemp -d)"" \
-#	&& git clone https://github.com/docker/notary.git ""$GOPATH/src/github.com/docker/notary"" \
-#	&& (cd ""$GOPATH/src/github.com/docker/notary"" && git checkout -q ""$NOTARY_COMMIT"") \
-#	&& GOPATH=""$GOPATH/src/github.com/docker/notary/Godeps/_workspace:$GOPATH"" \
-#		go build -o /usr/local/bin/notary-server github.com/docker/notary/cmd/notary-server \
-#	&& rm -rf ""$GOPATH""
-
-# Get the ""docker-py"" source so we can run their integration tests
-",2016-01-13 18:37:08+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-01-27 17:36:26+00:00,0da34ddb6915a8457c0a93464d46a29f77aae5aa
-33998,81922b0d60f11309a91b709751532e0d05af6f96,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# TODO update this when we upgrade to Go 1.5.1+
-# Install notary server
-#ENV NOTARY_VERSION docker-v1.10-3
-#RUN set -x \
-#	&& export GOPATH=""$(mktemp -d)"" \
-#	&& git clone https://github.com/docker/notary.git ""$GOPATH/src/github.com/docker/notary"" \
-#	&& (cd ""$GOPATH/src/github.com/docker/notary"" && git checkout -q ""$NOTARY_VERSION"") \
-#	&& GOPATH=""$GOPATH/src/github.com/docker/notary/Godeps/_workspace:$GOPATH"" \
-#		go build -o /usr/local/bin/notary-server github.com/docker/notary/cmd/notary-server \
-#	&& rm -rf ""$GOPATH""
-
-# Get the ""docker-py"" source so we can run their integration tests
-",2016-01-26 19:51:22+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-01-26 22:21:07+00:00,65cf98bf38f98ec09d8baf0de18ddbb3432a6040
-23214,65cf98bf38f98ec09d8baf0de18ddbb3432a6040,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# TODO update this when we upgrade to Go 1.5.1+
-# Install notary server
-#ENV NOTARY_VERSION docker-v1.10-4
-#RUN set -x \
-#	&& export GOPATH=""$(mktemp -d)"" \
-#	&& git clone https://github.com/docker/notary.git ""$GOPATH/src/github.com/docker/notary"" \
-#	&& (cd ""$GOPATH/src/github.com/docker/notary"" && git checkout -q ""$NOTARY_VERSION"") \
-#	&& GOPATH=""$GOPATH/src/github.com/docker/notary/Godeps/_workspace:$GOPATH"" \
-#		go build -o /usr/local/bin/notary-server github.com/docker/notary/cmd/notary-server \
-#	&& rm -rf ""$GOPATH""
-
-# Get the ""docker-py"" source so we can run their integration tests
-",2016-01-26 22:21:07+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-01-27 22:35:32+00:00,bcbfddb2b68dd6bf34dc304275c92cc0b95cc86d
-12456,ee8542db2e1591541098307d6f28f76bdb4e5435,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# TODO update this when we upgrade to Go 1.5.1+
-# Install notary server
-#ENV NOTARY_VERSION docker-v1.10-5
-#RUN set -x \
-#	&& export GOPATH=""$(mktemp -d)"" \
-#	&& git clone https://github.com/docker/notary.git ""$GOPATH/src/github.com/docker/notary"" \
-#	&& (cd ""$GOPATH/src/github.com/docker/notary"" && git checkout -q ""$NOTARY_VERSION"") \
-#	&& GOPATH=""$GOPATH/src/github.com/docker/notary/Godeps/_workspace:$GOPATH"" \
-#		go build -o /usr/local/bin/notary-server github.com/docker/notary/cmd/notary-server \
-#	&& rm -rf ""$GOPATH""
-
-# Get the ""docker-py"" source so we can run their integration tests
-",2016-01-27 17:46:26+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-02-25 21:40:00+00:00,534b2f07798d89f09baf2125f70d943544aa9269
-41519,0e8ffb200ceea9e020ed40374db0d25ed6195204,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-
-# TODO install Go, using gccgo as GOROOT_BOOTSTRAP (Go 1.5+ supports ppc64le properly)
-# possibly a ppc64le/golang image?
-
-## BUILD GOLANG 1.6
-",2016-02-09 10:24:38+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-03-25 05:44:49+00:00,5d223a177b71f0772d66d0727aeea9b5ecc708b7
-7545,47313c7b66d30a236f172ff2c193b1cf5031fd0c,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.ppc64le .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-02-12 16:56:11+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-08-16 21:18:43+00:00,a0933c7d27b0559510dd97c75bc54edcd14f6130
-28528,3b9321568d823fda6056789bfcd6aa022318841a,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-
-# TODO install Go, using gccgo as GOROOT_BOOTSTRAP (Go 1.5+ supports ppc64le properly)
-# possibly a ppc64le/golang image?
-
-## BUILD GOLANG 1.5.3
-",2016-03-24 16:18:03+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-03-29 07:58:20+00:00,d37b8026f1000c2d58307a03a0e3e2480f268951
-22472,0f0bfaaffbe6ea65a078e7fa4d87fe13ff0b20f7,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.ppc64le .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-06-03 13:09:53+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2017-08-14 16:20:18+00:00,9685380dbb006361ee592c9971ca3813a8e3b4ad
-34267,8ee0f568102e960349ad57df83db0d76223cd8c0,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.ppc64le .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-# ppc64le/golang is a debian:jessie based image with golang installed
-",2016-06-27 21:38:47+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-12-08 23:59:31+00:00,2274bcf15c35735624c59802b7412d4f9114c75a
-34268,8ee0f568102e960349ad57df83db0d76223cd8c0,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-06-27 21:38:47+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-09-23 09:27:52+00:00,f04a024adba7d860a4efa598ccfb1f8749400461
-13108,58bc04a76a6821834e956fbce23b5c52ecfac918,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-21 23:18:22+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-10-25 15:54:13+00:00,ea2938292ab3607a9dab7b1c9143ff7b620b6599
-722,d08760316a8b777b01850352d326617c1c75b7ce,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-09-22 02:15:18+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-10-05 20:15:30+00:00,391b6f94da2ef9268f60766b92216b482d48ac70
-16068,75e7ddadb0fc7a072bf1f95a336ee7b4bcb40e7f,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-23 16:20:57+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-09-23 17:37:28+00:00,da06cf8da01009b5e8f23eae96d661d30a9ba8f7
-21493,391b6f94da2ef9268f60766b92216b482d48ac70,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-05 20:15:30+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-10-06 17:36:31+00:00,9ad2ffa17adf20a0e82e1e0ef48ae406bdabc181
-27081,44e77a4b4f79be08a5f353adfa2533a6aa8c845a,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-18 23:30:47+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-11-03 16:47:50+00:00,64d7644ec8c917daa03c0013a86bc5b7521b3a54
-39700,515ebb7b5cb98dec83a7333059b6178ceb5fab78,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-24 22:18:58+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2017-04-12 13:37:40+00:00,4de7d7962060bdf994c78b6a15e91e509833168c
-31578,61646d77af8af895590b2069eefe76586bd48988,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-31 18:22:28+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-11-09 14:29:42+00:00,72ae55dd14ba3300f3b722866d86e0bc88f5dc39
-10903,c9bef385b2510bc2b9624989e0f516152cd05c1f,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-12-01 13:33:30+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2018-02-22 17:06:34+00:00,c679327e8019ed4c68b1e7199eba5c9069fedca6
-3797,9a9d90f97d60b698ff9786ef021b75881ee294f8,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# This file describes the standard way to build Docker on ppc64le, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.ppc64le .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2017-06-17 00:18:44+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
-28406,f11213a80093591f2a3ac7ed0bb5a03312ffb533,components/engine/Dockerfile.ppc64le,components/engine/Dockerfile.ppc64le,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
-# Please edit hack/dockerfile/install/<name>.installer to update them.
-",2018-02-16 18:51:30+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
-7720,91c1ef0fbfd3df31b78094b54869d49bf78afeeb,components/engine/Dockerfile.e2e,components/engine/Dockerfile.e2e,"# Install dockercli
-# Please edit hack/dockerfile/install/<name>.installer to update them.
-",2017-12-08 01:10:04+00:00,2017-09-08 16:43:04+02:00,,1,,
-34057,7e8cf8c782dd824f71cc9ae0b16f42fbd884e4da,components/engine/Dockerfile.simple,components/engine/Dockerfile.simple,"# docker build -t docker:simple -f Dockerfile.simple .
-# docker run --rm docker:simple hack/make.sh dynbinary
-# docker run --rm --privileged docker:simple hack/make.sh test-unit
-# docker run --rm --privileged docker:simple hack/dind hack/make.sh dynbinary test-integration-cli
-
-# This represents the bare minimum required to build and test Docker.
-
-",2015-02-28 05:37:25+00:00,2015-02-27 22:37:25-07:00,,1,2015-03-12 14:05:56+00:00,10fceb4fae374ec6e4157214a4a11e3522a45240
-29666,69c59ed353bb96d4a2d8e824d9cd643671dca178,components/engine/Dockerfile.simple,components/engine/Dockerfile.simple,"# docker build -t docker:simple -f Dockerfile.simple .
-# docker run --rm docker:simple hack/make.sh dynbinary
-# docker run --rm --privileged docker:simple hack/dind hack/make.sh test-unit
-# docker run --rm --privileged -v /var/lib/docker docker:simple hack/dind hack/make.sh dynbinary test-integration-cli
-
-# This represents the bare minimum required to build and test Docker.
-
-",2015-03-10 00:24:49+00:00,2015-02-27 22:37:25-07:00,,1,2017-08-14 16:37:05+00:00,1ebf5edb0d6211a8bd0a326f56405c8e7eb70e5b
-16062,75e7ddadb0fc7a072bf1f95a336ee7b4bcb40e7f,components/engine/Dockerfile.simple,components/engine/Dockerfile.simple,"# Install runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-23 16:20:57+00:00,2015-02-27 22:37:25-07:00,,1,2016-10-06 17:36:31+00:00,9ad2ffa17adf20a0e82e1e0ef48ae406bdabc181
-12149,6e5d016ba60c4baa4931a603c3c7a407ca69b4bc,components/engine/Dockerfile.simple,components/engine/Dockerfile.simple,"# Install runc, containerd and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-29 18:02:38+00:00,2015-02-27 22:37:25-07:00,,1,2016-10-25 15:54:13+00:00,ea2938292ab3607a9dab7b1c9143ff7b620b6599
-27071,44e77a4b4f79be08a5f353adfa2533a6aa8c845a,components/engine/Dockerfile.simple,components/engine/Dockerfile.simple,"# Install runc, containerd, grimes and docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-18 23:30:47+00:00,2015-02-27 22:37:25-07:00,,1,2016-11-09 14:29:42+00:00,72ae55dd14ba3300f3b722866d86e0bc88f5dc39
-39692,515ebb7b5cb98dec83a7333059b6178ceb5fab78,components/engine/Dockerfile.simple,components/engine/Dockerfile.simple,"# Install runc, containerd, tini and docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-24 22:18:58+00:00,2015-02-27 22:37:25-07:00,,1,2018-02-22 17:06:34+00:00,c679327e8019ed4c68b1e7199eba5c9069fedca6
-3803,9a9d90f97d60b698ff9786ef021b75881ee294f8,components/engine/Dockerfile.simple,components/engine/Dockerfile.simple,"# docker build -t docker:simple -f Dockerfile.simple .
-# docker run --rm docker:simple hack/make.sh dynbinary
-# docker run --rm --privileged docker:simple hack/dind hack/make.sh test-unit
-# docker run --rm --privileged -v /var/lib/docker docker:simple hack/dind hack/make.sh dynbinary test-integration
-
-# This represents the bare minimum required to build and test Docker.
-
-",2017-06-17 00:18:44+00:00,2015-02-27 22:37:25-07:00,,1,,
-7728,91c1ef0fbfd3df31b78094b54869d49bf78afeeb,components/engine/Dockerfile.simple,components/engine/Dockerfile.simple,"# Install runc, containerd, tini and docker-proxy
-# Please edit hack/dockerfile/install/<name>.installer to update them.
-",2017-12-08 01:10:04+00:00,2015-02-27 22:37:25-07:00,,1,,
-29700,9327ca0955ad75cc1beb759784326304123c6b05,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+4741,9327ca0955ad75cc1beb759784326304123c6b05,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2365,7 +25,7 @@
 # 
 
 ",2013-08-26 22:51:22+00:00,2013-06-21 19:42:17-07:00,,1,2013-09-30 19:57:30+00:00,33aa0c2b851e1b478f1e55dc5e4a45cc8ceeac41
-45915,4d40f8afe3d3f7cdeee3f6ce2f4f8e725107508a,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+16117,4d40f8afe3d3f7cdeee3f6ce2f4f8e725107508a,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2387,7 +47,7 @@
 # 
 
 ",2013-09-07 02:58:05+00:00,2013-06-21 19:42:17-07:00,,1,2013-09-07 03:14:03+00:00,742fb66041377fe472ebc29508c4ea7f2140cb11
-44831,742fb66041377fe472ebc29508c4ea7f2140cb11,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+14383,742fb66041377fe472ebc29508c4ea7f2140cb11,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2409,7 +69,7 @@
 # 
 
 ",2013-09-07 03:14:03+00:00,2013-06-21 19:42:17-07:00,,1,2013-09-07 03:16:13+00:00,970480b8f8cf2b4730078f136de5e7341571be25
-35910,33aa0c2b851e1b478f1e55dc5e4a45cc8ceeac41,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+6781,33aa0c2b851e1b478f1e55dc5e4a45cc8ceeac41,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2435,7 +95,7 @@
 #
 
 ",2013-09-30 19:57:30+00:00,2013-06-21 19:42:17-07:00,,1,2013-10-16 00:31:34+00:00,8846d6c44348681e2964d46b103d645e3fd6b8dc
-44050,952ac8a789e9be9ce4386ba3b14931a1c7d2e239,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+13265,952ac8a789e9be9ce4386ba3b14931a1c7d2e239,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2461,7 +121,7 @@
 #
 
 ",2013-10-05 02:25:15+00:00,2013-06-21 19:42:17-07:00,,1,2013-11-05 18:29:54+00:00,b64b038b0002d739898d6610cf45275358571fe9
-44419,5e4f4153669d1dbd07f53a9267d5d8677c107b51,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+13760,5e4f4153669d1dbd07f53a9267d5d8677c107b51,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2487,11 +147,11 @@
 #
 
 ",2013-10-31 21:58:43+00:00,2013-06-21 19:42:17-07:00,,1,2014-03-13 17:46:02+00:00,c48adc6929a1f41dd086e3f9b91af773bbd2c8f2
-45880,a7fc58e1eb11c1f9c94348203647b59eff438fdf,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO add linux/386 and linux/arm
+16064,a7fc58e1eb11c1f9c94348203647b59eff438fdf,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO add linux/386 and linux/arm
 ",2013-12-19 06:06:14+00:00,2013-06-21 19:42:17-07:00,,1,2014-01-31 19:48:10+00:00,df82456ed97e08ffa192c1f821acd9315295e7da
-38408,5ca82c401df8f0d035205702e2b6848d6afa3910,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO replace FPM with some very minimal debhelper stuff
+7959,5ca82c401df8f0d035205702e2b6848d6afa3910,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO replace FPM with some very minimal debhelper stuff
 ",2013-12-25 03:40:41+00:00,2013-06-21 19:42:17-07:00,,1,2015-11-12 17:51:36+00:00,d41faf6fe1177b1ca296d996242f1d5ac854955c
-35113,c48adc6929a1f41dd086e3f9b91af773bbd2c8f2,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+6430,c48adc6929a1f41dd086e3f9b91af773bbd2c8f2,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2517,7 +177,7 @@
 #
 
 ",2014-03-13 17:46:02+00:00,2013-06-21 19:42:17-07:00,,1,2014-07-24 22:19:50+00:00,6ae4c9014c47cc292e642bb85211b74fcf01af7a
-19835,79b92f27aa2690e85e628e6ce11033bf0333d828,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+2759,79b92f27aa2690e85e628e6ce11033bf0333d828,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2543,20 +203,20 @@
 #
 
 ",2014-06-19 02:04:08+00:00,2013-06-21 19:42:17-07:00,,1,2015-06-13 16:21:50+00:00,57eb64c9c05d84f5c98a381a0d497a23b5a1792a
-19639,e5820ed7e4b39ee86c7a0b12702340d6f296667a,components/engine/Dockerfile,components/engine/Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+2725,e5820ed7e4b39ee86c7a0b12702340d6f296667a,components/engine/Dockerfile,components/engine/Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Download man page generator
 ",2014-09-03 14:26:19+00:00,2013-06-21 19:42:17-07:00,,1,2016-09-07 15:02:51+00:00,bcba22b38ed2bf9c8ec2aca2bc50390e96761c0c
-44424,44958a29f2f2eb9a144b895146af552f1a3cd8d1,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO when https://jenkins.dockerproject.com/job/Windows/ is green, add windows back to the list above
+13765,44958a29f2f2eb9a144b895146af552f1a3cd8d1,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO when https://jenkins.dockerproject.com/job/Windows/ is green, add windows back to the list above
 #	windows/amd64 windows/386
 
 # (set an explicit GOARM of 5 for maximum compatibility)
 ",2015-01-22 22:42:17+00:00,2013-06-21 19:42:17-07:00,,1,2015-02-11 18:54:34+00:00,c13ff1800716bee309a2c14b666bc9422b710dbd
-46000,92fbf90d6ef31c368fe9dd7f3b4617cc953c65fe,components/engine/Dockerfile,components/engine/Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+16292,92fbf90d6ef31c368fe9dd7f3b4617cc953c65fe,components/engine/Dockerfile,components/engine/Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install man page generator
 ",2015-02-26 19:20:32+00:00,2013-06-21 19:42:17-07:00,,1,2015-04-30 17:29:01+00:00,585f4aedc7e0a60950dcb3d1ac04f0a439f290db
-46156,1d551c443cbd014f7310d20396a5a81de5ad47ee,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+16567,1d551c443cbd014f7310d20396a5a81de5ad47ee,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2582,19 +242,19 @@
 #
 
 ",2015-05-01 23:42:53+00:00,2013-06-21 19:42:17-07:00,,1,2016-08-16 21:18:43+00:00,a0933c7d27b0559510dd97c75bc54edcd14f6130
-5026,4edafc3bc120137c52da71f041df222fcf88cb3d,components/engine/Dockerfile,components/engine/Dockerfile,"# install seccomp
+748,4edafc3bc120137c52da71f041df222fcf88cb3d,components/engine/Dockerfile,components/engine/Dockerfile,"# install seccomp
 # TODO: switch to libseccomp-dev since dockerinit is gone
 ",2016-01-20 11:53:54+00:00,2013-06-21 19:42:17-07:00,,1,2016-02-02 19:37:43+00:00,5e084d01fea3e874cd77be21aab90b7d65b88977
-34851,26d82a2984d6a5c6399fdff9a1624f18d0863df0,components/engine/Dockerfile,components/engine/Dockerfile,"# !!! TEMPORARY HACK !!!
+14550,26d82a2984d6a5c6399fdff9a1624f18d0863df0,components/engine/Dockerfile,components/engine/Dockerfile,"# !!! TEMPORARY HACK !!!
 # Because of https://github.com/golang/go/issues/15286 we have to revert to Go 1.5.3 for windows/amd64 in master
 # To change which version of Go to compile with, simply prepend PATH with /usr/local/go1.5.3/bin
 # and set GOROOT to /usr/local/go1.5.3
 ",2016-03-15 03:12:09+00:00,2013-06-21 19:42:17-07:00,,1,2016-05-27 13:54:57+00:00,9b06540d329d2fcf96839faa3f760ce6b7cbfbe4
-36686,7bef93723c911971da6fbb12ad26697205d1a9e1,components/engine/Dockerfile,components/engine/Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+7121,7bef93723c911971da6fbb12ad26697205d1a9e1,components/engine/Dockerfile,components/engine/Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Download toml validator
 ",2016-05-12 14:52:00+00:00,2013-06-21 19:42:17-07:00,,1,2016-09-23 09:27:52+00:00,f04a024adba7d860a4efa598ccfb1f8749400461
-36685,7bef93723c911971da6fbb12ad26697205d1a9e1,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+7120,7bef93723c911971da6fbb12ad26697205d1a9e1,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2620,41 +280,41 @@
 #
 
 ",2016-05-12 14:52:00+00:00,2013-06-21 19:42:17-07:00,,1,2017-05-09 15:20:42+00:00,8a093adb5cceabb305117fc020841db4bfec435e
-3050,6fb90ed484e943d6cfc0849ab8f7be32241c9802,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+10203,6fb90ed484e943d6cfc0849ab8f7be32241c9802,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, vndr, runc, containerd, grimes, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
 ",2016-06-07 07:45:21+00:00,2013-06-21 19:42:17-07:00,,1,2016-11-09 14:29:42+00:00,72ae55dd14ba3300f3b722866d86e0bc88f5dc39
-13110,58bc04a76a6821834e956fbce23b5c52ecfac918,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+8017,58bc04a76a6821834e956fbce23b5c52ecfac918,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, runc, containerd and grimes
 # Please edit hack/dockerfile/install-binaries.sh to update them.
 ",2016-09-21 23:18:22+00:00,2013-06-21 19:42:17-07:00,,1,2016-10-25 15:54:13+00:00,ea2938292ab3607a9dab7b1c9143ff7b620b6599
-728,d08760316a8b777b01850352d326617c1c75b7ce,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+13606,d08760316a8b777b01850352d326617c1c75b7ce,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Download toml validator
 ",2016-09-22 02:15:18+00:00,2013-06-21 19:42:17-07:00,,1,2016-10-05 20:15:30+00:00,391b6f94da2ef9268f60766b92216b482d48ac70
-16060,75e7ddadb0fc7a072bf1f95a336ee7b4bcb40e7f,components/engine/Dockerfile,components/engine/Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+6265,75e7ddadb0fc7a072bf1f95a336ee7b4bcb40e7f,components/engine/Dockerfile,components/engine/Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, runc, containerd.and grimes
 # Please edit hack/dockerfile/install-binaries.sh to update them.
 ",2016-09-23 16:20:57+00:00,2013-06-21 19:42:17-07:00,,1,2016-09-23 17:37:28+00:00,da06cf8da01009b5e8f23eae96d661d30a9ba8f7
-21487,391b6f94da2ef9268f60766b92216b482d48ac70,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+3034,391b6f94da2ef9268f60766b92216b482d48ac70,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, runc, containerd.and grimes
 # Please edit hack/dockerfile/install-binaries.sh to update them.
 ",2016-10-05 20:15:30+00:00,2013-06-21 19:42:17-07:00,,1,2016-10-06 17:36:31+00:00,9ad2ffa17adf20a0e82e1e0ef48ae406bdabc181
-27077,44e77a4b4f79be08a5f353adfa2533a6aa8c845a,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+10876,44e77a4b4f79be08a5f353adfa2533a6aa8c845a,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, runc, containerd, grimes, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
 ",2016-10-18 23:30:47+00:00,2013-06-21 19:42:17-07:00,,1,2016-11-03 16:47:50+00:00,64d7644ec8c917daa03c0013a86bc5b7521b3a54
-39702,515ebb7b5cb98dec83a7333059b6178ceb5fab78,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+16644,515ebb7b5cb98dec83a7333059b6178ceb5fab78,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
 
 # Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
 ",2016-10-24 22:18:58+00:00,2013-06-21 19:42:17-07:00,,1,2017-04-12 13:37:40+00:00,4de7d7962060bdf994c78b6a15e91e509833168c
-10913,c9bef385b2510bc2b9624989e0f516152cd05c1f,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+16331,c9bef385b2510bc2b9624989e0f516152cd05c1f,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2680,17 +340,17 @@
 #
 
 ",2016-12-01 13:33:30+00:00,2013-06-21 19:42:17-07:00,,1,2017-08-14 16:20:18+00:00,9685380dbb006361ee592c9971ca3813a8e3b4ad
-10914,c9bef385b2510bc2b9624989e0f516152cd05c1f,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+16332,c9bef385b2510bc2b9624989e0f516152cd05c1f,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
 
 # Install tomlv, vndr, runc, containerd, tini, docker-proxy dockercli
 # Please edit hack/dockerfile/install-binaries.sh to update them.
 ",2016-12-01 13:33:30+00:00,2013-06-21 19:42:17-07:00,,1,2018-02-22 17:06:34+00:00,c679327e8019ed4c68b1e7199eba5c9069fedca6
-805,2160e9bb7d89df1a9261eb809546a2f902817ed1,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+8979,2160e9bb7d89df1a9261eb809546a2f902817ed1,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
 
 # Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.
 ",2016-12-31 19:11:30+00:00,2013-06-21 19:42:17-07:00,,1,2017-05-05 22:03:30+00:00,0456165ea42cca2fbad96aedc6509e951f6a1d9a
-3805,9a9d90f97d60b698ff9786ef021b75881ee294f8,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+16481,9a9d90f97d60b698ff9786ef021b75881ee294f8,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2716,9 +376,20 @@
 #
 
 ",2017-06-17 00:18:44+00:00,2013-06-21 19:42:17-07:00,,1,2018-02-15 17:07:01+00:00,481715cd839638feb344bdcba36851505b49b633
-4247,605885e5180c01af497fba3c7bd25b605bb12341,components/engine/Dockerfile,components/engine/Dockerfile,"# Options for hack/validate/gometalinter
+11428,605885e5180c01af497fba3c7bd25b605bb12341,components/engine/Dockerfile,components/engine/Dockerfile,"# Options for hack/validate/gometalinter
 ",2017-06-30 08:29:56+00:00,2013-06-21 19:42:17-07:00,,1,2019-09-11 06:51:06+00:00,2652782fc983bd35c9e2a7a888c3ebb595cc31e1
-45736,e4ccd4c846b6e85d2543ad6649dff52d3e303c70,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+15830,e4ccd4c846b6e85d2543ad6649dff52d3e303c70,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO: This is for the docker-py tests, which shouldn't really be needed for
+# this image, but currently CI is expecting to run this image. This should be
+# split out into a separate image, including all the `python-*` deps installed
+# above.
+",2017-09-29 21:09:14+00:00,2013-06-21 19:42:17-07:00,,1,2019-07-18 21:01:38+00:00,d52a66f6949167cfd0e3be0df34549086d9addb0
+15829,e4ccd4c846b6e85d2543ad6649dff52d3e303c70,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO: Some of this is only really needed for testing, it would be nice to split this up
+",2017-09-29 21:09:14+00:00,2013-06-21 19:42:17-07:00,,1,,
+15828,e4ccd4c846b6e85d2543ad6649dff52d3e303c70,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+
+# Just a little hack so we don't have to install these deps twice, once for runc and once for dockerd
+",2017-09-29 21:09:14+00:00,2013-06-21 19:42:17-07:00,,1,2019-04-20 20:34:05+00:00,4ada9355cb2594d16b801d2fad428302886f4021
+15827,e4ccd4c846b6e85d2543ad6649dff52d3e303c70,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2753,28 +424,17 @@
 #
 
 ",2017-09-29 21:09:14+00:00,2013-06-21 19:42:17-07:00,,1,2018-05-18 18:28:43+00:00,7a1680b13a4d40f402fb54bfef604e8539c37662
-45739,e4ccd4c846b6e85d2543ad6649dff52d3e303c70,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO: This is for the docker-py tests, which shouldn't really be needed for
-# this image, but currently CI is expecting to run this image. This should be
-# split out into a separate image, including all the `python-*` deps installed
-# above.
-",2017-09-29 21:09:14+00:00,2013-06-21 19:42:17-07:00,,1,2019-07-18 21:01:38+00:00,d52a66f6949167cfd0e3be0df34549086d9addb0
-45738,e4ccd4c846b6e85d2543ad6649dff52d3e303c70,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO: Some of this is only really needed for testing, it would be nice to split this up
-",2017-09-29 21:09:14+00:00,2013-06-21 19:42:17-07:00,,1,,
-45737,e4ccd4c846b6e85d2543ad6649dff52d3e303c70,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Just a little hack so we don't have to install these deps twice, once for runc and once for dockerd
-",2017-09-29 21:09:14+00:00,2013-06-21 19:42:17-07:00,,1,2019-04-20 20:34:05+00:00,4ada9355cb2594d16b801d2fad428302886f4021
-7722,91c1ef0fbfd3df31b78094b54869d49bf78afeeb,components/engine/Dockerfile,components/engine/Dockerfile,"# FIXME(vdemeester) this is kept for other script depending on it to not fail right away
+4843,91c1ef0fbfd3df31b78094b54869d49bf78afeeb,components/engine/Dockerfile,components/engine/Dockerfile,"# FIXME(vdemeester) this is kept for other script depending on it to not fail right away
 # Remove this once the other scripts uses something else to detect the version
 ",2017-12-08 01:10:04+00:00,2013-06-21 19:42:17-07:00,,1,2018-09-07 08:35:33+00:00,97a0cbc24bf3f77186e4c980f901e15061b832a4
-35214,c6bfcea4c884c56b4860c83eb65b39a0fe356c4f,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO: when issue #35963 fixed, we can upgrade the busybox to multi-arch
+15193,c6bfcea4c884c56b4860c83eb65b39a0fe356c4f,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO: when issue #35963 fixed, we can upgrade the busybox to multi-arch
 ",2018-01-05 02:58:14+00:00,2013-06-21 19:42:17-07:00,,1,2018-02-15 17:07:01+00:00,481715cd839638feb344bdcba36851505b49b633
-28416,f11213a80093591f2a3ac7ed0bb5a03312ffb533,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
+12004,f11213a80093591f2a3ac7ed0bb5a03312ffb533,components/engine/Dockerfile,components/engine/Dockerfile,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
 
 # Install tomlv, vndr, runc, containerd, tini, proxy dockercli
 # Please edit hack/dockerfile/install/<name>.installer to update them.
 ",2018-02-16 18:51:30+00:00,2013-06-21 19:42:17-07:00,,1,2018-03-01 01:35:10+00:00,da1e08d48493406ce290a1b99269e52879af5b0e
-38436,7a1680b13a4d40f402fb54bfef604e8539c37662,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
+7979,7a1680b13a4d40f402fb54bfef604e8539c37662,components/engine/Dockerfile,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2801,158 +461,20 @@
 #
 
 ",2018-05-18 18:28:43+00:00,2013-06-21 19:42:17-07:00,,1,2019-10-05 20:41:27+00:00,1fcfa3c1aabd517aca3f04b2e72dc1a10dc04db5
-40429,b03d2799c83d1ada6b7ce96e59dfc885d7995c40,components/engine/Dockerfile,components/engine/Dockerfile,"# Install go-swagger for validating swagger.yaml
+9127,b03d2799c83d1ada6b7ce96e59dfc885d7995c40,components/engine/Dockerfile,components/engine/Dockerfile,"# Install go-swagger for validating swagger.yaml
 # This is https://github.com/kolyshkin/go-swagger/tree/golang-1.13-fix
 # TODO: move to under moby/ or fix upstream go-swagger to work for us.
 ",2019-07-17 12:37:56+00:00,2013-06-21 19:42:17-07:00,,1,,
-40431,b03d2799c83d1ada6b7ce96e59dfc885d7995c40,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO: This is here because hack/make.sh binary copies these extras binaries
+9129,b03d2799c83d1ada6b7ce96e59dfc885d7995c40,components/engine/Dockerfile,components/engine/Dockerfile,"# TODO: This is here because hack/make.sh binary copies these extras binaries
 # from $PATH into the bundles dir.
 # It would be nice to handle this in a different way.
 ",2019-07-17 12:37:56+00:00,2013-06-21 19:42:17-07:00,,1,,
-41681,0064565ac48a38f084f45f4fb476b5c2bed4b1d9,components/engine/Dockerfile,components/engine/Dockerfile,"# Switch to use iptables instead of nftables (to match the CI hosts)
+10219,0064565ac48a38f084f45f4fb476b5c2bed4b1d9,components/engine/Dockerfile,components/engine/Dockerfile,"# Switch to use iptables instead of nftables (to match the CI hosts)
 # TODO use some kind of runtime auto-detection instead if/when nftables is supported (https://github.com/moby/moby/issues/26824)
 ",2020-01-15 14:22:41+00:00,2013-06-21 19:42:17-07:00,,1,,
-19056,819eda81428c6968c2224c503773158f8b7fb2a8,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.s390x .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-02-12 16:56:11+00:00,47313c7b66d30a236f172ff2c193b1cf5031fd0c
-19057,819eda81428c6968c2224c503773158f8b7fb2a8,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# This has been commented out and kept as reference because we don't support compiling with older Go anymore.
-# ENV GOFMT_VERSION 1.3.3
-# RUN curl -sSL https://storage.googleapis.com/golang/go${GOFMT_VERSION}.$(go env GOOS)-$(go env GOARCH).tar.gz | tar -C /go/bin -xz --strip-components=2 go/bin/gofmt
-
-# TODO update this sha when we upgrade to Go 1.5+
-",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-08-23 16:01:28+00:00,497f1fa7f5e3d3637c934a6f55d5cd10ea76904b
-19058,819eda81428c6968c2224c503773158f8b7fb2a8,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download man page generator
-",2016-01-05 05:50:15+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-09-07 15:02:51+00:00,bcba22b38ed2bf9c8ec2aca2bc50390e96761c0c
-7542,47313c7b66d30a236f172ff2c193b1cf5031fd0c,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.s390x .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-02-12 16:56:11+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-08-16 21:18:43+00:00,a0933c7d27b0559510dd97c75bc54edcd14f6130
-34264,8ee0f568102e960349ad57df83db0d76223cd8c0,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-06-27 21:38:47+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-09-23 09:27:52+00:00,f04a024adba7d860a4efa598ccfb1f8749400461
-34263,8ee0f568102e960349ad57df83db0d76223cd8c0,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.s390x .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2016-06-27 21:38:47+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2017-08-14 16:20:18+00:00,9685380dbb006361ee592c9971ca3813a8e3b4ad
-13104,58bc04a76a6821834e956fbce23b5c52ecfac918,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-21 23:18:22+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-10-25 15:54:13+00:00,ea2938292ab3607a9dab7b1c9143ff7b620b6599
-731,d08760316a8b777b01850352d326617c1c75b7ce,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-",2016-09-22 02:15:18+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-10-05 20:15:30+00:00,391b6f94da2ef9268f60766b92216b482d48ac70
-16058,75e7ddadb0fc7a072bf1f95a336ee7b4bcb40e7f,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-09-23 16:20:57+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-09-23 17:37:28+00:00,da06cf8da01009b5e8f23eae96d661d30a9ba8f7
-21497,391b6f94da2ef9268f60766b92216b482d48ac70,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-05 20:15:30+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-10-06 17:36:31+00:00,9ad2ffa17adf20a0e82e1e0ef48ae406bdabc181
-27073,44e77a4b4f79be08a5f353adfa2533a6aa8c845a,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-18 23:30:47+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-11-03 16:47:50+00:00,64d7644ec8c917daa03c0013a86bc5b7521b3a54
-39696,515ebb7b5cb98dec83a7333059b6178ceb5fab78,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-24 22:18:58+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2017-04-12 13:37:40+00:00,4de7d7962060bdf994c78b6a15e91e509833168c
-31582,61646d77af8af895590b2069eefe76586bd48988,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-10-31 18:22:28+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2016-11-09 14:29:42+00:00,72ae55dd14ba3300f3b722866d86e0bc88f5dc39
-10912,c9bef385b2510bc2b9624989e0f516152cd05c1f,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-",2016-12-01 13:33:30+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2018-02-22 17:06:34+00:00,c679327e8019ed4c68b1e7199eba5c9069fedca6
-3801,9a9d90f97d60b698ff9786ef021b75881ee294f8,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# This file describes the standard way to build Docker on s390x, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker -f Dockerfile.s390x .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-",2017-06-17 00:18:44+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
-28411,f11213a80093591f2a3ac7ed0bb5a03312ffb533,components/engine/Dockerfile.s390x,components/engine/Dockerfile.s390x,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
-# Please edit hack/dockerfile/install/<name>.installer to update them.
-",2018-02-16 18:51:30+00:00,2015-02-24 18:33:18+00:00,2018-05-11 21:28:50+02:00,1,2018-05-11 21:28:50+02:00,
-44271,68301c38288c1554119f272cd8e44b6342965cac,components/engine/builder/parser/testfiles/docker/Dockerfile,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# TODO replace FPM with some very minimal debhelper stuff
-",2014-08-05 20:17:40+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2018-11-19 09:12:15+01:00,
-44270,68301c38288c1554119f272cd8e44b6342965cac,components/engine/builder/parser/testfiles/docker/Dockerfile,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+13531,68301c38288c1554119f272cd8e44b6342965cac,components/engine/builder/parser/testfiles/docker/Dockerfile,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# TODO replace FPM with some very minimal debhelper stuff
+",2014-08-05 20:17:40+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2018-06-04 17:09:05+00:00,78419943dda676e1819ea8cded1b00d733038858
+13530,68301c38288c1554119f272cd8e44b6342965cac,components/engine/builder/parser/testfiles/docker/Dockerfile,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2978,7 +500,7 @@
 #
 
 ",2014-08-05 20:17:40+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2015-06-13 16:21:50+00:00,57eb64c9c05d84f5c98a381a0d497a23b5a1792a
-31230,57eb64c9c05d84f5c98a381a0d497a23b5a1792a,components/engine/builder/parser/testfiles/docker/Dockerfile,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+5143,57eb64c9c05d84f5c98a381a0d497a23b5a1792a,components/engine/builder/parser/testfiles/docker/Dockerfile,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -3004,7 +526,7 @@
 #
 
 ",2015-06-13 16:21:50+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2016-07-04 14:43:53+00:00,dc5e6798a10239fe6fc1ad788095ee9668247889
-21069,dc5e6798a10239fe6fc1ad788095ee9668247889,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+2956,dc5e6798a10239fe6fc1ad788095ee9668247889,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -3030,7 +552,7 @@
 #
 
 ",2016-07-04 14:43:53+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2017-12-01 04:12:05+00:00,6a8cf843af181b118737a9abd0c7b3cded3a93cd
-16314,94ae8f10c7281c0b5bd8f0945ac9ce250dbd55db,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+2128,94ae8f10c7281c0b5bd8f0945ac9ce250dbd55db,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -3056,7 +578,7 @@
 #
 
 ",2017-11-28 02:21:47+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2018-05-18 18:28:43+00:00,7a1680b13a4d40f402fb54bfef604e8539c37662
-38442,7a1680b13a4d40f402fb54bfef604e8539c37662,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+7985,7a1680b13a4d40f402fb54bfef604e8539c37662,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -3073,33 +595,10 @@
 # the case. Therefore, you don't have to disable it anymore.
 #
 
-",2018-05-18 18:28:43+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2018-11-19 09:12:15+01:00,
-41586,78ba8bbfa182d305b3f34d7ecc2d05baa56c1c5b,components/packaging/image/Dockerfile,components/packaging/image/Dockerfile.engine,"#COPY hack/dockerfile/binaries-commits /
-
-",2018-07-11 00:04:55+00:00,2018-07-10 17:04:55-07:00,2020-07-21 21:54:57+02:00,1,2018-08-23 15:08:24+00:00,b778905c3e6e5b392e95dde430de0ce4044f03bb
-41589,78ba8bbfa182d305b3f34d7ecc2d05baa56c1c5b,components/packaging/image/Dockerfile,components/packaging/image/Dockerfile.engine,"# docker-init - TODO move this out, last time we bumped was 2016!
-",2018-07-11 00:04:55+00:00,2018-07-10 17:04:55-07:00,2020-07-21 21:54:57+02:00,1,2020-07-21 21:54:57+02:00,
-41588,78ba8bbfa182d305b3f34d7ecc2d05baa56c1c5b,components/packaging/image/Dockerfile,components/packaging/image/Dockerfile.engine,"# docker-proxy
-# TODO if libnetwork folds into the docker tree this can be combined above
-",2018-07-11 00:04:55+00:00,2018-07-10 17:04:55-07:00,2020-07-21 21:54:57+02:00,1,2020-07-21 21:54:57+02:00,
-41587,78ba8bbfa182d305b3f34d7ecc2d05baa56c1c5b,components/packaging/image/Dockerfile,components/packaging/image/Dockerfile.engine,"# TODO The way we set the version could easily be simplified not to depend on hack/...
-",2018-07-11 00:04:55+00:00,2018-07-10 17:04:55-07:00,2020-07-21 21:54:57+02:00,1,2020-07-21 21:54:57+02:00,
-35759,75f7edc9b6d3db48e524810599193656c42b7a27,components/packaging/image/Dockerfile.engine-dm,components/packaging/image/Dockerfile.engine-dm,"# docker-init - TODO move this out, last time we bumped was 2016!
-",2018-08-23 22:53:57+00:00,2018-08-23 22:53:57+00:00,2020-07-21 21:54:57+02:00,1,2020-07-21 21:54:57+02:00,
-35758,75f7edc9b6d3db48e524810599193656c42b7a27,components/packaging/image/Dockerfile.engine-dm,components/packaging/image/Dockerfile.engine-dm,"# docker-proxy
-# TODO if libnetwork folds into the docker tree this can be combined above
-",2018-08-23 22:53:57+00:00,2018-08-23 22:53:57+00:00,2020-07-21 21:54:57+02:00,1,2020-07-21 21:54:57+02:00,
-35757,75f7edc9b6d3db48e524810599193656c42b7a27,components/packaging/image/Dockerfile.engine-dm,components/packaging/image/Dockerfile.engine-dm,"# TODO The way we set the version could easily be simplified not to depend on hack/...
-",2018-08-23 22:53:57+00:00,2018-08-23 22:53:57+00:00,2020-07-21 21:54:57+02:00,1,2020-07-21 21:54:57+02:00,
-41977,0aa2494eadf3ef807aa3fc27674c8c4d9925fb31,components/cli/dockerfiles/Dockerfile.dev,components/cli/dockerfiles/Dockerfile.dev,"# FIXME(vdemeester) only used for e2e, could be in e2e special image in the future
-",2018-03-06 10:15:18+00:00,2017-04-18 19:12:24-04:00,,1,,
-3048,6fb90ed484e943d6cfc0849ab8f7be32241c9802,components/engine/Dockerfile.solaris,components/engine/Dockerfile.solaris,"# Defines an image that hosts a native Docker build environment for Solaris
-# TODO: Improve stub
-
-",2016-06-07 07:45:21+00:00,2016-06-07 00:45:21-07:00,2017-11-09 06:21:02-08:00,1,2017-11-09 06:21:02-08:00,
-25510,736b960e2df15e35aca9abec3ef6a9bc64ead7b3,components/engine/testing/nightlyrelease/Dockerfile,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"#### FIXME. Temporarily install docker with proper apparmor handling
+",2018-05-18 18:28:43+00:00,2014-08-05 13:17:40-07:00,2018-11-19 09:12:15+01:00,1,2018-06-04 17:09:05+00:00,78419943dda676e1819ea8cded1b00d733038858
+3758,736b960e2df15e35aca9abec3ef6a9bc64ead7b3,components/engine/testing/nightlyrelease/Dockerfile,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"#### FIXME. Temporarily install docker with proper apparmor handling
 ",2013-09-21 19:14:40+00:00,2013-09-07 10:30:29-07:00,2014-03-10 13:20:49-07:00,1,2013-11-07 04:05:26+00:00,ba4e682cde6ad56a7fe88c5e61c976e1db93338b
-34531,aac90cd92e4389ce099b59cb7313755538ca4d48,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.5
+6161,aac90cd92e4389ce099b59cb7313755538ca4d48,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.5
 # DOCKER-VERSION  0.6.4
 # AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
 # DESCRIPTION:    Build docker nightly release using Docker in Docker.
@@ -3114,9 +613,9 @@
 # TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh
 
 ",2013-10-27 19:13:03+00:00,2013-09-07 10:30:29-07:00,2014-03-10 13:20:49-07:00,1,2013-10-29 20:44:03+00:00,d5914d940b1e172dc97b01692bf13fc83223b061
-39026,7a7c9f0f1d41534dd4afd66f7d8fa56e38ed94e1,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"#### FIXME. Temporarily install docker and dind with proper apparmor handling
+8250,7a7c9f0f1d41534dd4afd66f7d8fa56e38ed94e1,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"#### FIXME. Temporarily install docker and dind with proper apparmor handling
 ",2013-10-28 23:51:31+00:00,2013-09-07 10:30:29-07:00,2014-03-10 13:20:49-07:00,1,2013-10-29 20:44:03+00:00,d5914d940b1e172dc97b01692bf13fc83223b061
-30190,ba4e682cde6ad56a7fe88c5e61c976e1db93338b,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.6
+4863,ba4e682cde6ad56a7fe88c5e61c976e1db93338b,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.6
 # DOCKER-VERSION  0.6.6
 # AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
 # DESCRIPTION:    Build docker nightly release using Docker in Docker.
@@ -3130,8 +629,8 @@
 # TO_BUILD:       docker build -t dockerbuilder .
 # TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh
 
-",2013-11-07 04:05:26+00:00,2013-09-07 10:30:29-07:00,2014-03-10 13:20:49-07:00,1,2014-03-10 13:20:49-07:00,
-43427,8802449935b4e4d4be8e279e99348a99c4e13bc0,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.3
+",2013-11-07 04:05:26+00:00,2013-09-07 10:30:29-07:00,2014-03-10 13:20:49-07:00,1,2014-02-14 20:50:16-08:00,d96c32338087d2d4f61af1fa34985c2cfed62307
+12370,8802449935b4e4d4be8e279e99348a99c4e13bc0,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.3
 # DOCKER-VERSION  0.6.3
 # AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
 # DESCRIPTION:    Testing docker PRs and commits on top of master using
@@ -3148,9 +647,9 @@
 # TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]
 
 ",2013-10-19 05:33:16+00:00,2013-10-18 22:33:16-07:00,2014-03-10 13:20:49-07:00,1,2013-11-07 04:05:26+00:00,ba4e682cde6ad56a7fe88c5e61c976e1db93338b
-44833,837c6b480c6859db6bf3f3fb044b070afb3f336d,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,"#### FIXME. Temporarily install docker and dind with proper apparmor handling
+14389,837c6b480c6859db6bf3f3fb044b070afb3f336d,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,"#### FIXME. Temporarily install docker and dind with proper apparmor handling
 ",2013-10-30 02:37:56+00:00,2013-10-18 22:33:16-07:00,2014-03-10 13:20:49-07:00,1,2013-10-31 16:42:19+00:00,ce0d02b06fc3cacbb34bfef7b633b65764d3bae0
-30191,ba4e682cde6ad56a7fe88c5e61c976e1db93338b,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.4
+4864,ba4e682cde6ad56a7fe88c5e61c976e1db93338b,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.4
 # DOCKER-VERSION  0.6.6
 # AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
 # DESCRIPTION:    Testing docker PRs and commits on top of master using
@@ -3166,39 +665,30 @@
 # TO_BUILD:       docker build -t test_docker .
 # TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]
 
-",2013-11-07 04:05:26+00:00,2013-10-18 22:33:16-07:00,2014-03-10 13:20:49-07:00,1,2014-03-10 13:20:49-07:00,
-5024,4edafc3bc120137c52da71f041df222fcf88cb3d,components/engine/Dockerfile.gccgo,components/engine/Dockerfile.gccgo,"# see https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-
-# install seccomp
-# TODO: switch to libseccomp-dev since dockerinit is gone
-",2016-01-20 11:53:54+00:00,2015-08-17 09:20:45+00:00,2016-09-26 23:17:09+01:00,1,2016-09-26 23:17:09+01:00,
-41013,f4a7b443427875047af645e72059618ea9e14d9c,components/cli/dockerfiles/Dockerfile.e2e,components/cli/dockerfiles/Dockerfile.e2e,"# TODO - consider replacing with an official image and a multi-stage build to pluck the binaries out
-#ARG CONTAINERD_VERSION=v1.1.2
-#ARG CONTAINERD_VERSION=47a128d
-#ARG CONTAINERD_VERSION=6c3e782f
-",2018-03-19 22:56:51+00:00,2018-05-17 13:11:59+02:00,,1,,
-41014,f4a7b443427875047af645e72059618ea9e14d9c,components/cli/dockerfiles/Dockerfile.e2e,components/cli/dockerfiles/Dockerfile.e2e,"# TODO - consider replacing with an official image and a multi-stage build to pluck the binaries out
-",2018-03-19 22:56:51+00:00,2018-05-17 13:11:59+02:00,,1,,
-33710,0f4b49bea82d2dc2fb6004befdde9f1d380cb527,components/engine/docs/Dockerfile,components/engine/docs/Dockerfile,"#
+",2013-11-07 04:05:26+00:00,2013-10-18 22:33:16-07:00,2014-03-10 13:20:49-07:00,1,2014-02-14 20:50:16-08:00,d96c32338087d2d4f61af1fa34985c2cfed62307
+5871,0f4b49bea82d2dc2fb6004befdde9f1d380cb527,components/engine/docs/Dockerfile,components/engine/docs/Dockerfile,"#
 #    docker build -t docker:docs . && docker run -p 8000:8000 docker:docs
 #
 
 # TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released
 
 ",2014-01-15 02:23:30+00:00,2013-08-29 23:49:41+00:00,2017-01-31 13:41:02-08:00,1,2015-02-18 04:20:46+00:00,824b119187656e9475e2a02cd33d44f946f9d17b
-1279,824b119187656e9475e2a02cd33d44f946f9d17b,components/engine/docs/Dockerfile,components/engine/docs/Dockerfile,"# TODO: need the full repo source to get the git version info
-",2015-02-18 04:20:46+00:00,2013-08-29 23:49:41+00:00,2017-01-31 13:41:02-08:00,1,2017-01-31 13:41:02-08:00,
-1280,824b119187656e9475e2a02cd33d44f946f9d17b,components/engine/docs/Dockerfile,components/engine/docs/Dockerfile,"# TODO: don't do this - look at merging the yml file in build.sh
+142,824b119187656e9475e2a02cd33d44f946f9d17b,components/engine/docs/Dockerfile,components/engine/docs/Dockerfile,"# TODO: don't do this - look at merging the yml file in build.sh
 ",2015-02-18 04:20:46+00:00,2013-08-29 23:49:41+00:00,2017-01-31 13:41:02-08:00,1,2015-02-25 00:37:36+00:00,17fe06fc30b82f739ad1b3366edfbdb99180e339
-46187,17fe06fc30b82f739ad1b3366edfbdb99180e339,components/engine/docs/Dockerfile,components/engine/docs/Dockerfile,"# adding the image spec will require Docker 1.5 and `docker build -f docs/Dockerfile .`
+141,824b119187656e9475e2a02cd33d44f946f9d17b,components/engine/docs/Dockerfile,components/engine/docs/Dockerfile,"# TODO: need the full repo source to get the git version info
+",2015-02-18 04:20:46+00:00,2013-08-29 23:49:41+00:00,2017-01-31 13:41:02-08:00,1,2015-06-15 13:57:12-07:00,f0cfc88b9ec1ae3f920cc1a54576c74422bf5ce9
+16621,17fe06fc30b82f739ad1b3366edfbdb99180e339,components/engine/docs/Dockerfile,components/engine/docs/Dockerfile,"# adding the image spec will require Docker 1.5 and `docker build -f docs/Dockerfile .`
 #COPY ./image/spec/v1.md /docs/sources/reference/image-spec-v1.md
 
 # TODO: don't do this - look at merging the yml file in build.sh
-",2015-02-25 00:37:36+00:00,2013-08-29 23:49:41+00:00,2017-01-31 13:41:02-08:00,1,2017-01-31 13:41:02-08:00,
-14534,ae45d9cbead510f527a8882333d5b40be40c1352,components/engine/Dockerfile.centos,components/engine/Dockerfile.centos,"# Wrap all commands in the ""docker-in-docker"" script to allow nested containers
-#ENTRYPOINT [""hack/dind""]
-",2015-03-31 20:58:17+00:00,2015-03-31 13:58:17-07:00,2015-04-30 15:30:42-07:00,1,2015-04-30 15:30:42-07:00,
-30599,dd52c68ae4d8dbcbb34a4ba7983eb160dbfe37fc,components/engine/Dockerfile.buildkit,components/engine/Dockerfile.buildkit,"# TODO: Some of this is only really needed for testing, it would be nice to split this up
-",2019-05-22 23:49:55+00:00,2019-05-22 16:49:55-07:00,2019-06-07 10:10:31-07:00,1,2019-06-07 10:10:31-07:00,
-30600,dd52c68ae4d8dbcbb34a4ba7983eb160dbfe37fc,components/engine/Dockerfile.buildkit,components/engine/Dockerfile.buildkit,"# Options for hack/validate/gometalinter
-",2019-05-22 23:49:55+00:00,2019-05-22 16:49:55-07:00,2019-06-07 10:10:31-07:00,1,2019-06-07 10:10:31-07:00,
+",2015-02-25 00:37:36+00:00,2013-08-29 23:49:41+00:00,2017-01-31 13:41:02-08:00,1,2015-06-15 13:57:12-07:00,f0cfc88b9ec1ae3f920cc1a54576c74422bf5ce9
+10108,78ba8bbfa182d305b3f34d7ecc2d05baa56c1c5b,components/packaging/image/Dockerfile,components/packaging/image/Dockerfile,"# docker-init - TODO move this out, last time we bumped was 2016!
+",2018-07-11 00:04:55+00:00,2018-07-10 17:04:55-07:00,,1,,
+10107,78ba8bbfa182d305b3f34d7ecc2d05baa56c1c5b,components/packaging/image/Dockerfile,components/packaging/image/Dockerfile,"# docker-proxy
+# TODO if libnetwork folds into the docker tree this can be combined above
+",2018-07-11 00:04:55+00:00,2018-07-10 17:04:55-07:00,,1,,
+10106,78ba8bbfa182d305b3f34d7ecc2d05baa56c1c5b,components/packaging/image/Dockerfile,components/packaging/image/Dockerfile,"# TODO The way we set the version could easily be simplified not to depend on hack/...
+",2018-07-11 00:04:55+00:00,2018-07-10 17:04:55-07:00,,1,,
+10105,78ba8bbfa182d305b3f34d7ecc2d05baa56c1c5b,components/packaging/image/Dockerfile,components/packaging/image/Dockerfile,"#COPY hack/dockerfile/binaries-commits /
+
+",2018-07-11 00:04:55+00:00,2018-07-10 17:04:55-07:00,,1,,

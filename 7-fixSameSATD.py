@@ -5,6 +5,7 @@ import re
 import pandas as pd
 import numpy as np
 
+from fix_bug import getCommentDeleteDate
 
 
 def getTargetCSV():
@@ -28,8 +29,14 @@ def getTargetCSV():
 iloc[0, :], iloc[-1, :] でDataFrameの最初・最後の要素を取得できていなかったため head(1), tails(1) を使用
 """
 
+"""
+SATDで判断してるの良くない → 次のコミットがあるかどうかで判断する
+Delete はそのままで良くて、削除されていないものは 次のコミットがあるかどうか確認。
+"""
 def removeSameSATDofSameFile(csvfile):
     df = pd.read_csv(f'{PATH_OF_SATD_COMMENTFILE_ADDINFO}/{csvfile}', index_col=0)
+
+    repository = csvfile[:-4]
     df["Date"] = pd.to_datetime(df["Date"], utc=True)
 
     col = df.columns.tolist()
@@ -63,10 +70,10 @@ def removeSameSATDofSameFile(csvfile):
                 exit()
 
             if len(tmp_date) == 0:
-                # 'コメントが削除された日' が存在しない場合に (File) Deleted Date　を適用 -> 日付もしくはNan
-                firstCommitRow["DeletedComment Date"] = firstCommitRow["Deleted Date"]
-                firstCommitRow["Deleted CommitID"] = np.nan
-
+                # 最新ファイル名でいいのか？ # 変更される前のファイル名でコミットが存在している可能性を考えれていない
+                deleted_date, commit_id = getCommentDeleteDate(repository, fileName, LatestCommentRow["Date"])
+                firstCommitRow["DeletedComment Date"] = deleted_date
+                firstCommitRow["Deleted CommitID"] = commit_id
             else:
                 # コメントが削除された日
                 firstCommitRow["DeletedComment Date"] = tmp_date.head(1).iloc[0, :]["Date"]
