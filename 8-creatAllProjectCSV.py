@@ -4,6 +4,7 @@ import os
 import re
 import pandas as pd
 from datetime import datetime
+import hashlib
 
 """
 必要になった情報はここでまとめていきます
@@ -79,7 +80,7 @@ def renameColumns(df):
     return df
 
 def deleteColumns(df):
-    df.drop(columns='isSATD', inplace=True)
+    df = df.drop(columns='isSATD', inplace=True)
     return df
 
 def addDateCalculatedInfo(df):
@@ -107,6 +108,10 @@ def addBlob(df):
     return df
 
 
+def addDiff(df):
+    df["追加時ファイル"] = df["gitPath"] + '/commit/' + df['CommitID'] + "#diff-" + df["Dockerfile"].apply(lambda f: hashlib.md5(f.encode()).hexdigest())
+    df["削除時ファイル"] = df["gitPath"] + '/commit/' + df['Deleted CommitID'] + "#diff-" + df["LatestDockerfile"].apply(lambda f: hashlib.md5(f.encode()).hexdigest())
+    return df
         
 
 if __name__ == "__main__":
@@ -121,7 +126,7 @@ if __name__ == "__main__":
     result = convertDateTime(result)
     result = renameColumns(result)
     result = addDateCalculatedInfo(result)
-    result = addBlob(result)
+    result = addDiff(result)
 
     result.to_csv(f'{PATH_OF_ALLPROJECT_CSV}/result.csv')
 
