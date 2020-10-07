@@ -1,2148 +1,302 @@
 ,CommitID,Dockerfile,Comment
-0,dba3849c800d75fb085525060cd857ae9a7cd431,/Dockerfile_build_ubuntu64_git,"# Setup env
+0,7d1c32fb965d82501ba90270574c6185ceacbd65,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-1,dba3849c800d75fb085525060cd857ae9a7cd431,/Dockerfile_build_ubuntu64_git,"# Install go
+1,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
 "
-2,dba3849c800d75fb085525060cd857ae9a7cd431,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
+2,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# copy binary into image
 "
-3,dba3849c800d75fb085525060cd857ae9a7cd431,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
+3,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# Add influxd to the PATH
 "
-4,5641b2ef3230fb01260073646a6972df903a1650,/Dockerfile_jenkins_ubuntu32,"# Install go
+4,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# Generate a default config
 "
-5,2a54e93ab0899959b625b2f6e070a9bfc2dbc4b1,/Dockerfile_build_ubuntu64_tip,"# Setup env
+5,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# Use /data for all disk storage
 "
-6,2a54e93ab0899959b625b2f6e070a9bfc2dbc4b1,/Dockerfile_build_ubuntu64_tip,"# Install go1.5+
+6,dff34939f8e2176955052de7ace2c47c08e7fd19,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
 "
-7,2a54e93ab0899959b625b2f6e070a9bfc2dbc4b1,/Dockerfile_build_ubuntu64_tip,"# Clone Go tip for compilation
+7,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,"# Needed for Yarn steps to veryify the keys
 "
-8,2a54e93ab0899959b625b2f6e070a9bfc2dbc4b1,/Dockerfile_build_ubuntu64_tip,"# Add script for compiling go
+8,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,"# Now update index with Yarn
 "
-9,28987f79627eaeaaff84704b2bbe8a9bb109b243,/Dockerfile_build_ubuntu64,"# Install go
-"
-10,7d1c32fb965d82501ba90270574c6185ceacbd65,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-11,c70efc8261981617438e080cbf86f26daada126a,/Dockerfile_build_ubuntu64,"# Install go
-"
-12,857afc1006b93dbbeb87e92b0503bdd312992687,/Dockerfile_build_ubuntu64,"# Install go
-"
-13,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-14,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# copy binary into image
-"
-15,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# Add influxd to the PATH
-"
-16,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# Generate a default config
-"
-17,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# Use /data for all disk storage
-"
-18,dff34939f8e2176955052de7ace2c47c08e7fd19,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
-"
-19,367328aa3eb74c86674a922eab54434ccda3d570,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-20,dff34939f8e2176955052de7ace2c47c08e7fd19,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-21,ebf50d06ca44b05e194f72afe0b460755136922b,/Dockerfile_build_ubuntu32,"# Install go
-"
-22,a446134d6fd89642d208446886696333da576874,/Dockerfile_build_ubuntu64,"# Install go
-"
-23,e415d0b10ffe372a706690646ed79578949c502b,/Dockerfile_build_ubuntu64,"# Install go
-"
-24,e2cb1d0ff46d343d876690357e72a3dac671165f,/Dockerfile_build_ubuntu64,"# Install go
-"
-25,6022775c5578a348bc1ac155028b69821014103c,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-26,6022775c5578a348bc1ac155028b69821014103c,/Dockerfile_build_ubuntu64_git,"# Install go1.5+
-"
-27,6022775c5578a348bc1ac155028b69821014103c,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-28,6022775c5578a348bc1ac155028b69821014103c,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-29,96dea3cf904631af1f3146e797cf30650942881f,/Dockerfile_build_ubuntu64,"# Install go1.5+
-"
-30,a736f186f0b1ba494943f9c778fee9ddfd2c2761,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-31,a736f186f0b1ba494943f9c778fee9ddfd2c2761,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-32,a736f186f0b1ba494943f9c778fee9ddfd2c2761,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-33,a736f186f0b1ba494943f9c778fee9ddfd2c2761,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-34,d785a2d9f231ea29cbfb3a97b32af58bdfd1b8da,/Dockerfile_build_ubuntu32,"# Install go
-"
-35,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,"# Needed for Yarn steps to veryify the keys
-"
-36,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,"# Now update index with Yarn
-"
-37,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,"##
+9,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,"##
 # InfluxDB Image (Monolith)
 ##
 "
-38,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,"##
+10,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,"##
 # InfluxDB UI Image
 ##
 "
-39,2102b779f46ff5707cb769e7b80604c38fae0eb6,/etc/Dockerfile_build,"# Install node
+11,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Install node deps
 "
-40,2102b779f46ff5707cb769e7b80604c38fae0eb6,/etc/Dockerfile_build,"# Update npm
+12,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Build assets to ./dist
 "
-41,2102b779f46ff5707cb769e7b80604c38fae0eb6,/etc/Dockerfile_build,"# Install go
+13,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Run the image as a non-root user
 "
-42,e2cb1d0ff46d343d876690357e72a3dac671165f,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-43,d45ca3741e7406e3ae0887a1c378568e48c8d60e,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-44,d45ca3741e7406e3ae0887a1c378568e48c8d60e,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-45,d45ca3741e7406e3ae0887a1c378568e48c8d60e,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-46,d45ca3741e7406e3ae0887a1c378568e48c8d60e,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-47,49dec4c83a6f2f77332cc5476d0586632ae053da,/etc/Dockerfile_build,"# Install node
-"
-48,49dec4c83a6f2f77332cc5476d0586632ae053da,/etc/Dockerfile_build,"# Update npm
-"
-49,49dec4c83a6f2f77332cc5476d0586632ae053da,/etc/Dockerfile_build,"# Install go
-"
-50,a40ef53b49837d90d4ca32499a253e96b3443dfe,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-51,a40ef53b49837d90d4ca32499a253e96b3443dfe,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-52,a40ef53b49837d90d4ca32499a253e96b3443dfe,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-53,a40ef53b49837d90d4ca32499a253e96b3443dfe,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-54,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Install node deps
-"
-55,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Build assets to ./dist
-"
-56,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Run the image as a non-root user
-"
-57,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
+14,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
 # in the future we'd start the go process here.
 "
-58,5d899505dcd564d8633051956f00fb72afb523d9,/Dockerfile_build_ubuntu32,"# Install go
+15,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
 "
-59,75d435c5d6a10a17ce42f4ddbb70c509e545275b,/Dockerfile_build_ubuntu32,"# Install go
+16,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# copy binary into image
 "
-60,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
+17,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# Add influxd to the PATH
 "
-61,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# copy binary into image
+18,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# Generate a default config
 "
-62,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# Add influxd to the PATH
+19,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# Use /data for all disk storage
 "
-63,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# Generate a default config
+20,a446134d6fd89642d208446886696333da576874,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
 "
-64,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# Use /data for all disk storage
+21,940da04a346979d531ee17d7a7d33794defd715e,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-65,e6f52a687ea7842d142babe6d131b909555a97c8,/Dockerfile_build_ubuntu64_git,"# Setup env
+22,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
 "
-66,e6f52a687ea7842d142babe6d131b909555a97c8,/Dockerfile_build_ubuntu64_git,"# Install go
+23,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# copy binary into image
 "
-67,e6f52a687ea7842d142babe6d131b909555a97c8,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
+24,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# Add influxd to the PATH
 "
-68,e6f52a687ea7842d142babe6d131b909555a97c8,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
+25,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# Generate a default config
 "
-69,0a9b755dc8def35c2144a42dc782994594a81bd5,/etc/Dockerfile_build,"# Install node
+26,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# Use /data for all disk storage
 "
-70,0a9b755dc8def35c2144a42dc782994594a81bd5,/etc/Dockerfile_build,"# Update npm
+27,f8e85e6df5d9ff53a4c14d2a1d3756afbab0b344,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-71,0a9b755dc8def35c2144a42dc782994594a81bd5,/etc/Dockerfile_build,"# Install go
+28,f292dda8471b3f0ae95f995875453b0711be7aec,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-72,0b905c059f4cd8260f9cf72d4c1e7174eff10e02,/Dockerfile_build_ubuntu32,"# Install go
+29,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,"# Install node deps
 "
-73,15507f2aec69fbf18d50f14b029cd10f3cd19448,/etc/Dockerfile_build,"# Install node
+30,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,"# Build assets to ./dist
 "
-74,15507f2aec69fbf18d50f14b029cd10f3cd19448,/etc/Dockerfile_build,"# Update npm
+31,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,"# Run the image as a non-root user
 "
-75,15507f2aec69fbf18d50f14b029cd10f3cd19448,/etc/Dockerfile_build,"# Install go
-"
-76,a446134d6fd89642d208446886696333da576874,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
-"
-77,31518b7022b41aa6c81668cd502ae4b083c5c5a0,/chronograf/etc/Dockerfile_build,"# Install node
-"
-78,31518b7022b41aa6c81668cd502ae4b083c5c5a0,/chronograf/etc/Dockerfile_build,"# Install go
-"
-79,dff34939f8e2176955052de7ace2c47c08e7fd19,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-80,10c4276eeb1406bb1865c0af4cb9ee8c1e03dc3d,/Dockerfile_build_ubuntu64,"# Install go
-"
-81,61a11c1b64057d400b388980603a08b883339802,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-82,61a11c1b64057d400b388980603a08b883339802,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-83,4b07139feb6864a43a70dfb751194a011e4785a3,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-84,4b07139feb6864a43a70dfb751194a011e4785a3,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-85,4b07139feb6864a43a70dfb751194a011e4785a3,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-86,4b07139feb6864a43a70dfb751194a011e4785a3,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-87,5280c237e81b96c1bed12c9a57d3da6b71430e83,/etc/Dockerfile_build,"# Install node
-"
-88,5280c237e81b96c1bed12c9a57d3da6b71430e83,/etc/Dockerfile_build,"# Update npm
-"
-89,5280c237e81b96c1bed12c9a57d3da6b71430e83,/etc/Dockerfile_build,"# Install go
-"
-90,6ebc19229816614a97567253146c7d360f3010b4,/Dockerfile_build_ubuntu32,"# Install go
-"
-91,cb1b1859fed86cbd5cc5f347b3583ece220d69d5,/Dockerfile_build_ubuntu32,"# Install go
-"
-92,625f8a1ae6ac7a8038b76f7aad402da10e568156,/etc/Dockerfile_build,"# Install node
-"
-93,625f8a1ae6ac7a8038b76f7aad402da10e568156,/etc/Dockerfile_build,"# Update npm
-"
-94,625f8a1ae6ac7a8038b76f7aad402da10e568156,/etc/Dockerfile_build,"# Install go
-"
-95,700431d6de680db79545a4c7d80ab88f7f0e5528,/Dockerfile_build_ubuntu64,"# Install go
-"
-96,1e816e618b28a68ed69dd65858fe1502583711a0,/Dockerfile_build_ubuntu64_tip,"# Setup env
-"
-97,1e816e618b28a68ed69dd65858fe1502583711a0,/Dockerfile_build_ubuntu64_tip,"# Install go1.5+
-"
-98,1e816e618b28a68ed69dd65858fe1502583711a0,/Dockerfile_build_ubuntu64_tip,"# Clone Go tip for compilation
-"
-99,1e816e618b28a68ed69dd65858fe1502583711a0,/Dockerfile_build_ubuntu64_tip,"# Add script for compiling go
-"
-100,2217d0499dc97b2b297009afafe859f753edbf45,/Dockerfile_build_ubuntu64,"# Install go
-"
-101,355d742d4a31ae4e276e8c0513fa4621fccefc0c,/Dockerfile_build_ubuntu32,"# Install go
-"
-102,5a6c8f1c0592c2c2e473e55b2cd8125fa852c597,/etc/Dockerfile_build,"# Install node
-"
-103,5a6c8f1c0592c2c2e473e55b2cd8125fa852c597,/etc/Dockerfile_build,"# Update npm
-"
-104,5a6c8f1c0592c2c2e473e55b2cd8125fa852c597,/etc/Dockerfile_build,"# Install go
-"
-105,940da04a346979d531ee17d7a7d33794defd715e,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-106,b3deccb1874e695d45e2ba05f6c63fa2e63c18d9,/Dockerfile_build_ubuntu64,"# Install go
-"
-107,878fcf2782a9de2bf0f4f2391c91521ca2b968b3,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-108,d7e328050c0e0eca0cfbed044624eb74730358b2,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-109,d7e328050c0e0eca0cfbed044624eb74730358b2,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-110,d7e328050c0e0eca0cfbed044624eb74730358b2,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-111,d7e328050c0e0eca0cfbed044624eb74730358b2,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-112,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-113,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# copy binary into image
-"
-114,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# Add influxd to the PATH
-"
-115,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# Generate a default config
-"
-116,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# Use /data for all disk storage
-"
-117,680de727b9a1d1776d1d3292b74b2cabba21ffae,/Dockerfile_build_ubuntu64,"# Install go
-"
-118,e6f52a687ea7842d142babe6d131b909555a97c8,/Dockerfile_build_ubuntu64,"# Install go
-"
-119,f8e85e6df5d9ff53a4c14d2a1d3756afbab0b344,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-120,f292dda8471b3f0ae95f995875453b0711be7aec,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-121,dff34939f8e2176955052de7ace2c47c08e7fd19,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-122,dff34939f8e2176955052de7ace2c47c08e7fd19,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-123,dff34939f8e2176955052de7ace2c47c08e7fd19,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-124,dff34939f8e2176955052de7ace2c47c08e7fd19,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-125,86bd10e6ab36629e513e45d9213b0d16248526b0,/etc/Dockerfile_build,"# Install node
-"
-126,86bd10e6ab36629e513e45d9213b0d16248526b0,/etc/Dockerfile_build,"# Update npm
-"
-127,86bd10e6ab36629e513e45d9213b0d16248526b0,/etc/Dockerfile_build,"# Install go
-"
-128,53cccd02bebd94dfe8f426ef62fff6aecb96b671,/Dockerfile_build_ubuntu32,"# Install go
-"
-129,5641b2ef3230fb01260073646a6972df903a1650,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-130,5641b2ef3230fb01260073646a6972df903a1650,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-131,5641b2ef3230fb01260073646a6972df903a1650,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-132,5641b2ef3230fb01260073646a6972df903a1650,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-133,97ab61addb82be06cc4174c3fc6d83bbfe37aeca,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-134,76df4371eeb327fe82d606b0ee1423a03fecc0d5,/Dockerfile_build_ubuntu64,"# Install go
-"
-135,62534ce5c1fcb1e7e3962210d74a44917a68381a,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-136,3dc5165b3ccf66df6aa1a6e80a9b74a0f1d97d47,/Dockerfile_build_ubuntu32,"# Install go
-"
-137,1187f5325128233a9fa1ac3329358005964800fa,/Dockerfile_build_ubuntu32,"# Install go
-"
-138,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,"# Install node deps
-"
-139,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,"# Build assets to ./dist
-"
-140,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,"# Run the image as a non-root user
-"
-141,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
+32,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
 # in the future we'd start the go process here.
 "
-142,30a31d3acf526732278003b7634ec6f6a1cfe0a9,/Dockerfile_build_ubuntu64,"# Install go
-"
-143,2d266ca186f9c94d8a359bacfce974943253ac50,/Dockerfile_build_ubuntu32,"# Install go
-"
-144,d4ee1cb2b176c10dfb56cc1bf03cfa1ab907ee99,/Dockerfile_build_ubuntu64,"# Install go
-"
-145,314f48114d0858201dcf6688565a8c144394ca07,/Dockerfile_build_ubuntu64_tip,"# Setup env
-"
-146,314f48114d0858201dcf6688565a8c144394ca07,/Dockerfile_build_ubuntu64_tip,"# Install go1.5+
-"
-147,314f48114d0858201dcf6688565a8c144394ca07,/Dockerfile_build_ubuntu64_tip,"# Clone Go tip for compilation
-"
-148,314f48114d0858201dcf6688565a8c144394ca07,/Dockerfile_build_ubuntu64_tip,"# Add script for compiling go
-"
-149,13eff5dbc52c8258052df29f091bcdc962184b5d,/Dockerfile,"# ENV PORT ||= 8888
+33,13eff5dbc52c8258052df29f091bcdc962184b5d,/Dockerfile,"# ENV PORT ||= 8888
 
 "
-150,05c252696e6137863ee46a8806dada079a5bc6f3,/Dockerfile_build_ubuntu64,"# Install go
+34,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,"# Needed for Yarn steps to veryify the keys
 "
-151,0b905c059f4cd8260f9cf72d4c1e7174eff10e02,/Dockerfile_build_ubuntu64_git,"# Setup env
+35,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,"# Now update index with Yarn
 "
-152,0b905c059f4cd8260f9cf72d4c1e7174eff10e02,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-153,0b905c059f4cd8260f9cf72d4c1e7174eff10e02,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-154,0b905c059f4cd8260f9cf72d4c1e7174eff10e02,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-155,64f3293e264406e467f44bb47fc8c1bb52ab6f29,/etc/Dockerfile_build,"# Install node
-"
-156,64f3293e264406e467f44bb47fc8c1bb52ab6f29,/etc/Dockerfile_build,"# Update npm
-"
-157,64f3293e264406e467f44bb47fc8c1bb52ab6f29,/etc/Dockerfile_build,"# Install go
-"
-158,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,"# Needed for Yarn steps to veryify the keys
-"
-159,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,"# Now update index with Yarn
-"
-160,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,"##
+36,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,"##
 # InfluxDB Image (Monolith)
 ##
 "
-161,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,"##
+37,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,"##
 # InfluxDB UI Image
 ##
 "
-162,96270df8fe0d125a322ab39efc8c6501d7f43ea7,/Dockerfile_jenkins_ubuntu32,"# Install go
+38,3e7c80dd6681a3c5adcb599485147533c94ae39d,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
 "
-163,3e7c80dd6681a3c5adcb599485147533c94ae39d,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
+39,e415d0b10ffe372a706690646ed79578949c502b,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-164,afde7ce531579470156cbb4ad9f83ac39c765ae9,/Dockerfile_build_ubuntu64_git,"# Setup env
+40,a89def234944fd2646fd73dbf8c7a345d95b8385,/Dockerfile,"# Build assets to ./ui/build
 "
-165,afde7ce531579470156cbb4ad9f83ac39c765ae9,/Dockerfile_build_ubuntu64_git,"# Install go
+41,a89def234944fd2646fd73dbf8c7a345d95b8385,/Dockerfile,"# Run the image as a non-root user
 "
-166,afde7ce531579470156cbb4ad9f83ac39c765ae9,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-167,afde7ce531579470156cbb4ad9f83ac39c765ae9,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-168,1f62ecd778333284b261aff12d21a530516b87f6,/Dockerfile_build_ubuntu32,"# Install go
-"
-169,5a3f80dfc7529b1d55031b29c0cd647934dffa7b,/etc/Dockerfile_build,"# Install node
-"
-170,5a3f80dfc7529b1d55031b29c0cd647934dffa7b,/etc/Dockerfile_build,"# Update npm
-"
-171,5a3f80dfc7529b1d55031b29c0cd647934dffa7b,/etc/Dockerfile_build,"# Install go
-"
-172,b05e83e8efa5bb636e39dd689a23cb19ce0b6722,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-173,b05e83e8efa5bb636e39dd689a23cb19ce0b6722,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-174,944c9c2b19c09cc0e0cfc9efb84dc5a1339eab93,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-175,944c9c2b19c09cc0e0cfc9efb84dc5a1339eab93,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-176,944c9c2b19c09cc0e0cfc9efb84dc5a1339eab93,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-177,944c9c2b19c09cc0e0cfc9efb84dc5a1339eab93,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-178,ca5a773c34e4c7edbfbc973b9a8770de5c47f548,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-179,40027336954c998d3e20bd42cfc775ec5db16960,/Dockerfile_build_ubuntu32,"# Install go
-"
-180,966f2ff9f3cc330334f09426e4a739dc05ee9d33,/chronograf/etc/Dockerfile_build,"# Install node
-"
-181,966f2ff9f3cc330334f09426e4a739dc05ee9d33,/chronograf/etc/Dockerfile_build,"# Install go
-"
-182,d7e328050c0e0eca0cfbed044624eb74730358b2,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-183,9e503eae1a186ff2a33ef0a4d7dd68b2a36570f9,/etc/Dockerfile_build,"# Install node
-"
-184,9e503eae1a186ff2a33ef0a4d7dd68b2a36570f9,/etc/Dockerfile_build,"# Install go
-"
-185,6e32203d9203d61f9393edc0d527ea017500c386,/etc/Dockerfile_build,"# Install node
-"
-186,6e32203d9203d61f9393edc0d527ea017500c386,/etc/Dockerfile_build,"# Update npm
-"
-187,6e32203d9203d61f9393edc0d527ea017500c386,/etc/Dockerfile_build,"# Install go
-"
-188,920b2bee2e0f9532b12440c0e37512c5caa06bca,/Dockerfile_build_ubuntu32,"# Install go
-"
-189,2d266ca186f9c94d8a359bacfce974943253ac50,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-190,2d266ca186f9c94d8a359bacfce974943253ac50,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-191,a446134d6fd89642d208446886696333da576874,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-192,e415d0b10ffe372a706690646ed79578949c502b,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-193,2d266ca186f9c94d8a359bacfce974943253ac50,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-194,2d266ca186f9c94d8a359bacfce974943253ac50,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-195,2d266ca186f9c94d8a359bacfce974943253ac50,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-196,2d266ca186f9c94d8a359bacfce974943253ac50,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-197,58c03448aa0e5af37614041add65d968ea694012,/Dockerfile_build_ubuntu64,"# Install go
-"
-198,8b164c98dfdcc79162402e9038c6a3564f9c1f47,/etc/Dockerfile_build,"# Install node
-"
-199,8b164c98dfdcc79162402e9038c6a3564f9c1f47,/etc/Dockerfile_build,"# Install go
-"
-200,f6835632e7c0fae8720e91369d9073d4858966f5,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-201,7ff67db776a57e39c3578ca5317743bb48a8c6f5,/Dockerfile_build_ubuntu32,"# Install go
-"
-202,4db3b69b9db8cf177a25d64fa944f8fba7f879f8,/Dockerfile_build_ubuntu32,"# Install go
-"
-203,5a0d1ab7c1d308a0a1b5c2fd0a724a28190eee51,/Dockerfile_build_ubuntu64,"# Install go
-"
-204,a89def234944fd2646fd73dbf8c7a345d95b8385,/Dockerfile,"# Build assets to ./ui/build
-"
-205,a89def234944fd2646fd73dbf8c7a345d95b8385,/Dockerfile,"# Run the image as a non-root user
-"
-206,a89def234944fd2646fd73dbf8c7a345d95b8385,/Dockerfile,"# Start the server.
+42,a89def234944fd2646fd73dbf8c7a345d95b8385,/Dockerfile,"# Start the server.
 # in the future we'd start the go process here and serve the static assets in /build
 "
-207,244c026bcbf82bc460ea04a1ad295cad3959eac0,/etc/Dockerfile_build,"# Install node
+43,dc9e43101fb3d896a51515462e1fc6ff099f5e98,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-208,244c026bcbf82bc460ea04a1ad295cad3959eac0,/etc/Dockerfile_build,"# Update npm
+44,d227d240e92edacead9069cb65e03810b8c7058b,/Dockerfile,"# Build assets to ./ui/build
 "
-209,244c026bcbf82bc460ea04a1ad295cad3959eac0,/etc/Dockerfile_build,"# Install go
+45,d227d240e92edacead9069cb65e03810b8c7058b,/Dockerfile,"# Run the image as a non-root user
 "
-210,28987f79627eaeaaff84704b2bbe8a9bb109b243,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-211,1ccdda88aad85a30d2dea01424ee145933e437fa,/Dockerfile_build_ubuntu64,"# Install go
-"
-212,73f579b6bdedc6b2848d01d5fc0a0bf73c480a5a,/etc/Dockerfile_build,"# Install node
-"
-213,73f579b6bdedc6b2848d01d5fc0a0bf73c480a5a,/etc/Dockerfile_build,"# Update npm
-"
-214,73f579b6bdedc6b2848d01d5fc0a0bf73c480a5a,/etc/Dockerfile_build,"# Install go
-"
-215,a16096cbc42814651551f492a869a3694beffdb0,/Dockerfile_build_ubuntu32,"# Install go
-"
-216,dc9e43101fb3d896a51515462e1fc6ff099f5e98,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-217,ad83a19ad9cd15ce567e6a3cdf6bd738924fddb2,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-218,ad83a19ad9cd15ce567e6a3cdf6bd738924fddb2,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-219,ad83a19ad9cd15ce567e6a3cdf6bd738924fddb2,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-220,ad83a19ad9cd15ce567e6a3cdf6bd738924fddb2,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-221,fa92dc55984da642e7aa5ead763700fc29fb883b,/etc/Dockerfile_build,"# Install node
-"
-222,fa92dc55984da642e7aa5ead763700fc29fb883b,/etc/Dockerfile_build,"# Update npm
-"
-223,fa92dc55984da642e7aa5ead763700fc29fb883b,/etc/Dockerfile_build,"# Install go
-"
-224,3fa849296577715b04fc2f8d86524c9500ea17be,/Dockerfile_build_ubuntu32,"# Install go
-"
-225,05c252696e6137863ee46a8806dada079a5bc6f3,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-226,05c252696e6137863ee46a8806dada079a5bc6f3,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-227,05c252696e6137863ee46a8806dada079a5bc6f3,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-228,05c252696e6137863ee46a8806dada079a5bc6f3,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-229,30a31d3acf526732278003b7634ec6f6a1cfe0a9,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-230,30a31d3acf526732278003b7634ec6f6a1cfe0a9,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-231,30a31d3acf526732278003b7634ec6f6a1cfe0a9,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-232,30a31d3acf526732278003b7634ec6f6a1cfe0a9,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-233,355d742d4a31ae4e276e8c0513fa4621fccefc0c,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-234,2498dd20cc4780677684852ec3d589c8398628d1,/Dockerfile_build_ubuntu64,"# Install go
-"
-235,b5247cd1d4327d6592de37bcb17290b7cf0e30ba,/Dockerfile_build_ubuntu32,"# Install go
-"
-236,b1e29d4ae16e3b10cfb02ca31a38c3eaaf2a94ee,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-237,b1e29d4ae16e3b10cfb02ca31a38c3eaaf2a94ee,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-238,b1e29d4ae16e3b10cfb02ca31a38c3eaaf2a94ee,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-239,b1e29d4ae16e3b10cfb02ca31a38c3eaaf2a94ee,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-240,f6fe95827d5ea9a72c09edfa573135a89555a246,/etc/Dockerfile_build,"# Install node
-"
-241,f6fe95827d5ea9a72c09edfa573135a89555a246,/etc/Dockerfile_build,"# Update npm
-"
-242,f6fe95827d5ea9a72c09edfa573135a89555a246,/etc/Dockerfile_build,"# Install go
-"
-243,d227d240e92edacead9069cb65e03810b8c7058b,/Dockerfile,"# Build assets to ./ui/build
-"
-244,d227d240e92edacead9069cb65e03810b8c7058b,/Dockerfile,"# Run the image as a non-root user
-"
-245,d227d240e92edacead9069cb65e03810b8c7058b,/Dockerfile,"# Start the server.
+46,d227d240e92edacead9069cb65e03810b8c7058b,/Dockerfile,"# Start the server.
 # in the future we'd start the go process here and serve the static assets in /build
 "
-246,77146e42cc206eafee400739cbf8313fd5a1d6c0,/etc/Dockerfile_build,"# Install node
+47,3c7e62bcd5ad241d6fec76b43579375c3e352d9a,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-247,77146e42cc206eafee400739cbf8313fd5a1d6c0,/etc/Dockerfile_build,"# Update npm
+48,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
 "
-248,77146e42cc206eafee400739cbf8313fd5a1d6c0,/etc/Dockerfile_build,"# Install go
+49,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# copy binary into image
 "
-249,b42a2316b114e2af51d9e97e5ae50283069d849f,/Dockerfile_build_ubuntu32,"# Install go
+50,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# Add influxd to the PATH
 "
-250,d13bb97ea83b56bc55b77cfac56ca9df533606be,/etc/Dockerfile_build,"# Install node
+51,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# Generate a default config
 "
-251,d13bb97ea83b56bc55b77cfac56ca9df533606be,/etc/Dockerfile_build,"# Update npm
+52,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# Use /data for all disk storage
 "
-252,d13bb97ea83b56bc55b77cfac56ca9df533606be,/etc/Dockerfile_build,"# Install go
+53,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,"# Needed for Yarn steps to veryify the keys
 "
-253,ca85dd4cffa05bf351ea7c5f9b3c9b2c5369a4ce,/Dockerfile_build_ubuntu32,"# Install go
+54,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,"# Now update index with Yarn
 "
-254,28987f79627eaeaaff84704b2bbe8a9bb109b243,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-255,28987f79627eaeaaff84704b2bbe8a9bb109b243,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-256,28987f79627eaeaaff84704b2bbe8a9bb109b243,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-257,28987f79627eaeaaff84704b2bbe8a9bb109b243,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-258,5641b2ef3230fb01260073646a6972df903a1650,/Dockerfile_build_ubuntu32,"# Install go
-"
-259,c558f29e5484d3e7cf2ee39b18722ad4fdccc103,/Dockerfile_build_ubuntu64,"# Install go
-"
-260,e74107ecc72dac93a41726c0a70f7db30255ed3e,/etc/Dockerfile_build,"# Install node
-"
-261,e74107ecc72dac93a41726c0a70f7db30255ed3e,/etc/Dockerfile_build,"# Update npm
-"
-262,e74107ecc72dac93a41726c0a70f7db30255ed3e,/etc/Dockerfile_build,"# Install go
-"
-263,47317d73b4654a3bc62cc4e2ab95237ceb26fa40,/Dockerfile_build_ubuntu64,"# Install go1.5+
-"
-264,ad83a19ad9cd15ce567e6a3cdf6bd738924fddb2,/Dockerfile_build_ubuntu64,"# Install go
-"
-265,2f1e83427bb710f752d0cfd482a5da3ce94c011b,/Dockerfile_build_ubuntu32,"# Install go
-"
-266,710f32321a0224c8ac5c759e61ad303d02274551,/Dockerfile_build_ubuntu64,"# Install go
-"
-267,3c7e62bcd5ad241d6fec76b43579375c3e352d9a,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-268,d52eb01c17b206677805fc11661c6af319f50699,/Dockerfile_build_ubuntu32,"# Install go
-"
-269,448c0c116ed57bbda98eac9359e82a38746c7cd5,/Dockerfile_build_ubuntu32,"# Install go
-"
-270,b05e83e8efa5bb636e39dd689a23cb19ce0b6722,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-271,b05e83e8efa5bb636e39dd689a23cb19ce0b6722,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-272,b05e83e8efa5bb636e39dd689a23cb19ce0b6722,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-273,b05e83e8efa5bb636e39dd689a23cb19ce0b6722,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-274,d45ca3741e7406e3ae0887a1c378568e48c8d60e,/Dockerfile_build_ubuntu32,"# Install go
-"
-275,944c9c2b19c09cc0e0cfc9efb84dc5a1339eab93,/Dockerfile_build_ubuntu32,"# Install go
-"
-276,d6fe873b7151d88d8b2625970899ccac333294f8,/etc/Dockerfile_build,"# Install node
-"
-277,d6fe873b7151d88d8b2625970899ccac333294f8,/etc/Dockerfile_build,"# Update npm
-"
-278,d6fe873b7151d88d8b2625970899ccac333294f8,/etc/Dockerfile_build,"# Install go
-"
-279,96dea3cf904631af1f3146e797cf30650942881f,/Dockerfile_build_ubuntu64_tip,"# Setup env
-"
-280,96dea3cf904631af1f3146e797cf30650942881f,/Dockerfile_build_ubuntu64_tip,"# Install go1.5+
-"
-281,96dea3cf904631af1f3146e797cf30650942881f,/Dockerfile_build_ubuntu64_tip,"# Clone Go tip for compilation
-"
-282,96dea3cf904631af1f3146e797cf30650942881f,/Dockerfile_build_ubuntu64_tip,"# Add script for compiling go
-"
-283,31cbc3eef869ae6c2a4fce245a161b32797cdbf2,/Dockerfile_build_ubuntu32,"# Install go
-"
-284,0b905c059f4cd8260f9cf72d4c1e7174eff10e02,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-285,9c851f790e964545b31511895d874baa03d60db2,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-286,9c851f790e964545b31511895d874baa03d60db2,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-287,9c851f790e964545b31511895d874baa03d60db2,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-288,9c851f790e964545b31511895d874baa03d60db2,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-289,20e20f596f9a26191c8c0faad44c9eda57e77daf,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-290,e3571eefe83d8a63f762802c4932b69cf5a3e7ab,/etc/Dockerfile_build,"# Install node
-"
-291,e3571eefe83d8a63f762802c4932b69cf5a3e7ab,/etc/Dockerfile_build,"# Update npm
-"
-292,e3571eefe83d8a63f762802c4932b69cf5a3e7ab,/etc/Dockerfile_build,"# Install go
-"
-293,2a54e93ab0899959b625b2f6e070a9bfc2dbc4b1,/Dockerfile_build_ubuntu64,"# Install go1.5+
-"
-294,1806d5def7427eadb29e6d8dc3001b3977385fbf,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-295,1806d5def7427eadb29e6d8dc3001b3977385fbf,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-296,1806d5def7427eadb29e6d8dc3001b3977385fbf,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-297,1806d5def7427eadb29e6d8dc3001b3977385fbf,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-298,448c0c116ed57bbda98eac9359e82a38746c7cd5,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-299,448c0c116ed57bbda98eac9359e82a38746c7cd5,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-300,448c0c116ed57bbda98eac9359e82a38746c7cd5,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-301,448c0c116ed57bbda98eac9359e82a38746c7cd5,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-302,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-303,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# copy binary into image
-"
-304,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# Add influxd to the PATH
-"
-305,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# Generate a default config
-"
-306,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# Use /data for all disk storage
-"
-307,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,"# Needed for Yarn steps to veryify the keys
-"
-308,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,"# Now update index with Yarn
-"
-309,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,"##
+55,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,"##
 # InfluxDB Image (Monolith)
 ##
 "
-310,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,"##
+56,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,"##
 # InfluxDB UI Image
 ##
 "
-311,fca7e5faf427fed7c311f5d8aae03a74b029d370,/etc/Dockerfile_build,"# Install node
+57,6d0d7aa1cc4d63edea7e6fd4f67cb1e298a12ff5,/Dockerfile,"# Build assets to ./ui/build
 "
-312,fca7e5faf427fed7c311f5d8aae03a74b029d370,/etc/Dockerfile_build,"# Install go
+58,6d0d7aa1cc4d63edea7e6fd4f67cb1e298a12ff5,/Dockerfile,"# Run the image as a non-root user
 "
-313,38ec9085d17747ac1162731e455252bbad050893,/chronograf/etc/Dockerfile_build,"# Install node
-"
-314,38ec9085d17747ac1162731e455252bbad050893,/chronograf/etc/Dockerfile_build,"# Install go
-"
-315,cdad866b9fd41a3600a94c334ae282f2dd447509,/Dockerfile_build_ubuntu32,"# Install go
-"
-316,dff34939f8e2176955052de7ace2c47c08e7fd19,/Dockerfile_build_ubuntu32,"# Install go
-"
-317,db84a6ed76353905432ff8bd91527c68b3ea1be6,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-318,db84a6ed76353905432ff8bd91527c68b3ea1be6,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-319,db84a6ed76353905432ff8bd91527c68b3ea1be6,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-320,db84a6ed76353905432ff8bd91527c68b3ea1be6,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-321,6d0d7aa1cc4d63edea7e6fd4f67cb1e298a12ff5,/Dockerfile,"# Build assets to ./ui/build
-"
-322,6d0d7aa1cc4d63edea7e6fd4f67cb1e298a12ff5,/Dockerfile,"# Run the image as a non-root user
-"
-323,6d0d7aa1cc4d63edea7e6fd4f67cb1e298a12ff5,/Dockerfile,"# Start the server.
+59,6d0d7aa1cc4d63edea7e6fd4f67cb1e298a12ff5,/Dockerfile,"# Start the server.
 # in the future we'd start the go process here and serve the static assets in /build
 "
-324,a736f186f0b1ba494943f9c778fee9ddfd2c2761,/Dockerfile_build_ubuntu32,"# Install go
+60,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
 "
-325,96270df8fe0d125a322ab39efc8c6501d7f43ea7,/Dockerfile_build_ubuntu64,"# Install go
+61,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# copy binary into image
 "
-326,8e7614fbb4c72aa9b3a067684786b93a33963455,/chronograf/etc/Dockerfile_build,"# Install node
+62,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# Add influxd to the PATH
 "
-327,8e7614fbb4c72aa9b3a067684786b93a33963455,/chronograf/etc/Dockerfile_build,"# Install go
+63,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# Generate a default config
 "
-328,fe1691c640b4e8b34217dd25b7aa2f03e3062128,/etc/Dockerfile_build,"# Install node
+64,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# Use /data for all disk storage
 "
-329,fe1691c640b4e8b34217dd25b7aa2f03e3062128,/etc/Dockerfile_build,"# Update npm
+65,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
 "
-330,fe1691c640b4e8b34217dd25b7aa2f03e3062128,/etc/Dockerfile_build,"# Install go
+66,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# copy binary into image
 "
-331,76df4371eeb327fe82d606b0ee1423a03fecc0d5,/Dockerfile_jenkins_ubuntu32,"# Install go
+67,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# Add influxd to the PATH
 "
-332,96ad9c57d96b2bcd804d5f12df625b0c6b41874d,/Dockerfile_build_ubuntu64,"# Install go
+68,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# Generate a default config
 "
-333,c6763fc0aec7fe6964c7a5ab3b690f4b0af58697,/Dockerfile_build_ubuntu32,"# Install go
+69,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# Use /data for all disk storage
 "
-334,ba76535b355a047684efc81a6e3ac2336014333f,/Dockerfile_build_ubuntu64_go19,"# Install go
+70,44691847e997c502ff5f0990fe92781563442e58,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-335,677552f093180f9431249d6d9087e1ee2547410c,/Dockerfile_build_ubuntu32,"# Install go
+71,365866ca306c96763be40f780be7fc98f0e3a201,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-336,db84a6ed76353905432ff8bd91527c68b3ea1be6,/Dockerfile_build_ubuntu32,"# Install go
+72,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,"# Needed for Yarn steps to veryify the keys
 "
-337,80a2874361f5993030332315498c4e9982825e6f,/Dockerfile_build_ubuntu64,"# Install go
+73,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,"# Now update index with Yarn
 "
-338,d7e328050c0e0eca0cfbed044624eb74730358b2,/Dockerfile_build_ubuntu32,"# Install go
-"
-339,96270df8fe0d125a322ab39efc8c6501d7f43ea7,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-340,96270df8fe0d125a322ab39efc8c6501d7f43ea7,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-341,96270df8fe0d125a322ab39efc8c6501d7f43ea7,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-342,96270df8fe0d125a322ab39efc8c6501d7f43ea7,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-343,f7ec7906d4031da3498d243cf11c2bfb2ddc4ef3,/etc/Dockerfile_build,"# Install node
-"
-344,f7ec7906d4031da3498d243cf11c2bfb2ddc4ef3,/etc/Dockerfile_build,"# Install go
-"
-345,f6835632e7c0fae8720e91369d9073d4858966f5,/Dockerfile_build_ubuntu64,"# Install go
-"
-346,10c4276eeb1406bb1865c0af4cb9ee8c1e03dc3d,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-347,d46e0407a09d7ded8fde0dc2a811eedf8a1c43a5,/Dockerfile_build_ubuntu64,"# Install go
-"
-348,1806d5def7427eadb29e6d8dc3001b3977385fbf,/Dockerfile_build_ubuntu64,"# Install go
-"
-349,cc28b9ab95486c3ecd599d5a1e212d50857d2f0d,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-350,cc28b9ab95486c3ecd599d5a1e212d50857d2f0d,/Dockerfile_build_ubuntu64_git,"# Install go1.5+
-"
-351,cc28b9ab95486c3ecd599d5a1e212d50857d2f0d,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-352,cc28b9ab95486c3ecd599d5a1e212d50857d2f0d,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-353,01bb46fc1389c32fa530f7de0267c8b7e3c3484a,/etc/Dockerfile_build,"# Install node
-"
-354,01bb46fc1389c32fa530f7de0267c8b7e3c3484a,/etc/Dockerfile_build,"# Update npm
-"
-355,01bb46fc1389c32fa530f7de0267c8b7e3c3484a,/etc/Dockerfile_build,"# Install go
-"
-356,9cafd4b1f55540c01ced403189a46408f73bc64f,/Dockerfile_build_ubuntu32,"# Install go
-"
-357,7ff67db776a57e39c3578ca5317743bb48a8c6f5,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-358,7ff67db776a57e39c3578ca5317743bb48a8c6f5,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-359,7ff67db776a57e39c3578ca5317743bb48a8c6f5,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-360,7ff67db776a57e39c3578ca5317743bb48a8c6f5,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-361,20f309a64da0a7f9235fbc40bbe5b35beccb4488,/etc/Dockerfile_build,"# Install node
-"
-362,20f309a64da0a7f9235fbc40bbe5b35beccb4488,/etc/Dockerfile_build,"# Update npm
-"
-363,20f309a64da0a7f9235fbc40bbe5b35beccb4488,/etc/Dockerfile_build,"# Install go
-"
-364,9c851f790e964545b31511895d874baa03d60db2,/Dockerfile_build_ubuntu32,"# Install go
-"
-365,367328aa3eb74c86674a922eab54434ccda3d570,/Dockerfile_build_ubuntu32,"# Install go
-"
-366,a989b0135678594b965ca42360aa5ca0be0fc27d,/Dockerfile_build_ubuntu64,"# Install go
-"
-367,878fcf2782a9de2bf0f4f2391c91521ca2b968b3,/Dockerfile_build_ubuntu32,"# Install go
-"
-368,80a2874361f5993030332315498c4e9982825e6f,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-369,80a2874361f5993030332315498c4e9982825e6f,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-370,80a2874361f5993030332315498c4e9982825e6f,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-371,80a2874361f5993030332315498c4e9982825e6f,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-372,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-373,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# copy binary into image
-"
-374,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# Add influxd to the PATH
-"
-375,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# Generate a default config
-"
-376,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# Use /data for all disk storage
-"
-377,1b270973b91be060540818cc00e4558780c6a0d9,/Dockerfile_build_ubuntu64,"# Install go
-"
-378,1c844ce3449de02b9a1144983ad3a48d7509eca1,/etc/Dockerfile_build,"# Install node
-"
-379,1c844ce3449de02b9a1144983ad3a48d7509eca1,/etc/Dockerfile_build,"# Update npm
-"
-380,1c844ce3449de02b9a1144983ad3a48d7509eca1,/etc/Dockerfile_build,"# Install go
-"
-381,a446134d6fd89642d208446886696333da576874,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-382,2a9744f801bfee163b6a336e86765adb33350d56,/Dockerfile_build_ubuntu32,"# Install go
-"
-383,0e4bc275d87d11141ba8fb902bfe33d593e5ce8c,/Dockerfile_build_ubuntu32,"# Install go
-"
-384,18cb95f858098a40b9c653d4469ee99fb6d42284,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-385,30bea335a494c0ce25c4caaa6030bd501f364113,/Dockerfile_build_ubuntu64,"# Install go
-"
-386,ba4c9e03176f1dd53003cf083b8a80b17024ba18,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-387,810b3a3f9bebd48eb55f2da1a3c943425e5394b4,/etc/Dockerfile_build,"# Install node
-"
-388,810b3a3f9bebd48eb55f2da1a3c943425e5394b4,/etc/Dockerfile_build,"# Install go
-"
-389,4b07139feb6864a43a70dfb751194a011e4785a3,/Dockerfile_build_ubuntu64,"# Install go
-"
-390,a16096cbc42814651551f492a869a3694beffdb0,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-391,bec895726d3ae900c9c66b87300a08dca70898eb,/etc/Dockerfile_build,"# Install node
-"
-392,bec895726d3ae900c9c66b87300a08dca70898eb,/etc/Dockerfile_build,"# Update npm
-"
-393,bec895726d3ae900c9c66b87300a08dca70898eb,/etc/Dockerfile_build,"# Install go
-"
-394,5f8761a78f85579a61609217fb3ffb0bfee9e422,/Dockerfile_build_ubuntu32,"# Install go
-"
-395,107431523e29546e32de68abb57de5c0128b7f77,/chronograf/etc/Dockerfile_build,"# Install node
-"
-396,107431523e29546e32de68abb57de5c0128b7f77,/chronograf/etc/Dockerfile_build,"# Install go
-"
-397,ba7fc7d54802a777f345a583e1e3306947cf447b,/Dockerfile_build_ubuntu32,"# Install go
-"
-398,4e291a1a6a7278b4ba1c8dd31136920e8ddede42,/etc/Dockerfile_build,"# Install node
-"
-399,4e291a1a6a7278b4ba1c8dd31136920e8ddede42,/etc/Dockerfile_build,"# Install go
-"
-400,73b3a2a0565dbf8b2caa4225ba10ae5777e8ca44,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-401,73b3a2a0565dbf8b2caa4225ba10ae5777e8ca44,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-402,73b3a2a0565dbf8b2caa4225ba10ae5777e8ca44,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-403,73b3a2a0565dbf8b2caa4225ba10ae5777e8ca44,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-404,cb1b1859fed86cbd5cc5f347b3583ece220d69d5,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-405,cb1b1859fed86cbd5cc5f347b3583ece220d69d5,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-406,cb1b1859fed86cbd5cc5f347b3583ece220d69d5,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-407,cb1b1859fed86cbd5cc5f347b3583ece220d69d5,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-408,314f48114d0858201dcf6688565a8c144394ca07,/Dockerfile_build_ubuntu64,"# Install go1.5+
-"
-409,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-410,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# copy binary into image
-"
-411,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# Add influxd to the PATH
-"
-412,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# Generate a default config
-"
-413,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# Use /data for all disk storage
-"
-414,ff12e83e7f7de6052b3c3328ac82b835ffbc72c1,/Dockerfile_build_ubuntu64_tip,"# Setup env
-"
-415,ff12e83e7f7de6052b3c3328ac82b835ffbc72c1,/Dockerfile_build_ubuntu64_tip,"# Install go1.5+
-"
-416,ff12e83e7f7de6052b3c3328ac82b835ffbc72c1,/Dockerfile_build_ubuntu64_tip,"# Clone Go tip for compilation
-"
-417,ff12e83e7f7de6052b3c3328ac82b835ffbc72c1,/Dockerfile_build_ubuntu64_tip,"# Add script for compiling go
-"
-418,1e816e618b28a68ed69dd65858fe1502583711a0,/Dockerfile_build_ubuntu64,"# Install go1.5+
-"
-419,7033caed32b1af635f4a2a72429d64d30e11c8d4,/etc/Dockerfile_build,"# Install node
-"
-420,7033caed32b1af635f4a2a72429d64d30e11c8d4,/etc/Dockerfile_build,"# Update npm
-"
-421,7033caed32b1af635f4a2a72429d64d30e11c8d4,/etc/Dockerfile_build,"# Install go
-"
-422,44691847e997c502ff5f0990fe92781563442e58,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-423,4db3b69b9db8cf177a25d64fa944f8fba7f879f8,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-424,4db3b69b9db8cf177a25d64fa944f8fba7f879f8,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-425,4db3b69b9db8cf177a25d64fa944f8fba7f879f8,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-426,4db3b69b9db8cf177a25d64fa944f8fba7f879f8,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-427,a989b0135678594b965ca42360aa5ca0be0fc27d,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-428,40027336954c998d3e20bd42cfc775ec5db16960,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-429,40027336954c998d3e20bd42cfc775ec5db16960,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-430,40027336954c998d3e20bd42cfc775ec5db16960,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-431,40027336954c998d3e20bd42cfc775ec5db16960,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-432,5c888b367378bbd0ab1bb7f9613e4b213437e2ec,/Dockerfile_build_ubuntu64,"# Install go1.5+
-"
-433,d73d73c0d4b708462ef58c8851577486aeb3de56,/chronograf/etc/Dockerfile_build,"# Install node
-"
-434,d73d73c0d4b708462ef58c8851577486aeb3de56,/chronograf/etc/Dockerfile_build,"# Install go
-"
-435,18cb95f858098a40b9c653d4469ee99fb6d42284,/Dockerfile_build_ubuntu32,"# Install go
-"
-436,ba76535b355a047684efc81a6e3ac2336014333f,/Dockerfile_build_ubuntu64,"# Install go
-"
-437,260866d3c293cec141f4fc3dc46033bd297dc871,/etc/Dockerfile_build,"# Install node
-"
-438,260866d3c293cec141f4fc3dc46033bd297dc871,/etc/Dockerfile_build,"# Update npm
-"
-439,260866d3c293cec141f4fc3dc46033bd297dc871,/etc/Dockerfile_build,"# Install go
-"
-440,d85b7334cd921483b933bbbd10b2a8c271bb1f5c,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-441,d85b7334cd921483b933bbbd10b2a8c271bb1f5c,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-442,d85b7334cd921483b933bbbd10b2a8c271bb1f5c,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-443,d85b7334cd921483b933bbbd10b2a8c271bb1f5c,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-444,5c888b367378bbd0ab1bb7f9613e4b213437e2ec,/Dockerfile_build_ubuntu64_tip,"# Setup env
-"
-445,5c888b367378bbd0ab1bb7f9613e4b213437e2ec,/Dockerfile_build_ubuntu64_tip,"# Install go1.5+
-"
-446,5c888b367378bbd0ab1bb7f9613e4b213437e2ec,/Dockerfile_build_ubuntu64_tip,"# Clone Go tip for compilation
-"
-447,5c888b367378bbd0ab1bb7f9613e4b213437e2ec,/Dockerfile_build_ubuntu64_tip,"# Add script for compiling go
-"
-448,dc2527ce869457d9dfa17d93852ba5c9584ec9f8,/Dockerfile_build_ubuntu32,"# Install go
-"
-449,d36fe120a4007c5b4fd7693fd550ef2f07a2b442,/chronograf/etc/Dockerfile_build,"# Install node
-"
-450,d36fe120a4007c5b4fd7693fd550ef2f07a2b442,/chronograf/etc/Dockerfile_build,"# Install go
-"
-451,365866ca306c96763be40f780be7fc98f0e3a201,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-452,b3deccb1874e695d45e2ba05f6c63fa2e63c18d9,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-453,b3deccb1874e695d45e2ba05f6c63fa2e63c18d9,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-454,b3deccb1874e695d45e2ba05f6c63fa2e63c18d9,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-455,b3deccb1874e695d45e2ba05f6c63fa2e63c18d9,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-456,d52eb01c17b206677805fc11661c6af319f50699,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-457,d52eb01c17b206677805fc11661c6af319f50699,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-458,d52eb01c17b206677805fc11661c6af319f50699,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-459,d52eb01c17b206677805fc11661c6af319f50699,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-460,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,"# Needed for Yarn steps to veryify the keys
-"
-461,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,"# Now update index with Yarn
-"
-462,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,"##
+74,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,"##
 # InfluxDB Image (Monolith)
 ##
 "
-463,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,"##
+75,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,"##
 # InfluxDB UI Image
 ##
 "
-464,b05e83e8efa5bb636e39dd689a23cb19ce0b6722,/Dockerfile_build_ubuntu32,"# Install go
+76,7e2b22f8d4970195b90b13f728ef0208123ee385,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-465,677552f093180f9431249d6d9087e1ee2547410c,/Dockerfile_build_ubuntu64_go1.11,"# Install go
+77,defb81413e82abfb235564146101aed84a07c96a,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-466,677552f093180f9431249d6d9087e1ee2547410c,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
+78,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
 "
-467,e2cb4715ca888eefe151a5925400d3a4d36f6436,/etc/Dockerfile_build,"# Install node
+79,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# copy binary into image
 "
-468,e2cb4715ca888eefe151a5925400d3a4d36f6436,/etc/Dockerfile_build,"# Update npm
+80,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# Add influxd to the PATH
 "
-469,e2cb4715ca888eefe151a5925400d3a4d36f6436,/etc/Dockerfile_build,"# Install go
+81,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# Generate a default config
 "
-470,7e2b22f8d4970195b90b13f728ef0208123ee385,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
+82,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# Use /data for all disk storage
 "
-471,b1e29d4ae16e3b10cfb02ca31a38c3eaaf2a94ee,/Dockerfile_build_ubuntu32,"# Install go
+83,8c70cfd74b6c48c0e26617ef6cad52c1d3026902,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-472,dba3849c800d75fb085525060cd857ae9a7cd431,/Dockerfile_build_ubuntu32,"# Install go
+84,e39de3e427d3bf04328ec8c4829c2a2df03332c7,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-473,20e20f596f9a26191c8c0faad44c9eda57e77daf,/Dockerfile_build_ubuntu32,"# Install go
+85,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
 "
-474,c30c33dbcbe60b17bbc803767e548469fc6777e7,/Dockerfile_build_ubuntu32,"# Install go
+86,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# copy binary into image
 "
-475,ebf50d06ca44b05e194f72afe0b460755136922b,/Dockerfile_build_ubuntu64_git,"# Setup env
+87,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# Add influxd to the PATH
 "
-476,ebf50d06ca44b05e194f72afe0b460755136922b,/Dockerfile_build_ubuntu64_git,"# Install go
+88,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# Generate a default config
 "
-477,ebf50d06ca44b05e194f72afe0b460755136922b,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
+89,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# Use /data for all disk storage
 "
-478,ebf50d06ca44b05e194f72afe0b460755136922b,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
+90,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
 "
-479,d85b7334cd921483b933bbbd10b2a8c271bb1f5c,/Dockerfile_build_ubuntu64,"# Install go
+91,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# copy binary into image
 "
-480,10b271968ce6e5596dde349d083fabbd5fca6e60,/Dockerfile_build_ubuntu64_git,"# Setup env
+92,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# Add influxd to the PATH
 "
-481,10b271968ce6e5596dde349d083fabbd5fca6e60,/Dockerfile_build_ubuntu64_git,"# Install go
+93,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# Generate a default config
 "
-482,10b271968ce6e5596dde349d083fabbd5fca6e60,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
+94,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# Use /data for all disk storage
 "
-483,10b271968ce6e5596dde349d083fabbd5fca6e60,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
+95,f910e6aaba27398c3b6c2440a4795b740a9d71e1,/Dockerfile,"# Build assets to ./ui/build
 "
-484,c70efc8261981617438e080cbf86f26daada126a,/Dockerfile_build_ubuntu64_git,"# Setup env
+96,f910e6aaba27398c3b6c2440a4795b740a9d71e1,/Dockerfile,"# Run the image as a non-root user
 "
-485,c70efc8261981617438e080cbf86f26daada126a,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-486,c70efc8261981617438e080cbf86f26daada126a,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-487,c70efc8261981617438e080cbf86f26daada126a,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-488,2a9744f801bfee163b6a336e86765adb33350d56,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-489,677552f093180f9431249d6d9087e1ee2547410c,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-490,9679db0a6165749a6c7ab3d2c0de8e60b7efcdd3,/etc/Dockerfile_build,"# Install node
-"
-491,9679db0a6165749a6c7ab3d2c0de8e60b7efcdd3,/etc/Dockerfile_build,"# Update npm
-"
-492,9679db0a6165749a6c7ab3d2c0de8e60b7efcdd3,/etc/Dockerfile_build,"# Install go
-"
-493,489a667d4fe6954276003963065e1e7a935025ab,/etc/Dockerfile_build,"# Install node
-"
-494,489a667d4fe6954276003963065e1e7a935025ab,/etc/Dockerfile_build,"# Install go
-"
-495,258d5e2de0686ded346132756845d207566e5612,/etc/Dockerfile_build,"# Install node
-"
-496,258d5e2de0686ded346132756845d207566e5612,/etc/Dockerfile_build,"# Update npm
-"
-497,258d5e2de0686ded346132756845d207566e5612,/etc/Dockerfile_build,"# Install go
-"
-498,4010b2fbbcd8195e4a76e4135bf3942c564331a6,/etc/Dockerfile_build,"# Install node
-"
-499,4010b2fbbcd8195e4a76e4135bf3942c564331a6,/etc/Dockerfile_build,"# Update npm
-"
-500,4010b2fbbcd8195e4a76e4135bf3942c564331a6,/etc/Dockerfile_build,"# Install go
-"
-501,355d742d4a31ae4e276e8c0513fa4621fccefc0c,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-502,355d742d4a31ae4e276e8c0513fa4621fccefc0c,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-503,355d742d4a31ae4e276e8c0513fa4621fccefc0c,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-504,355d742d4a31ae4e276e8c0513fa4621fccefc0c,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-505,57cb3fdbc0610c6bc8ccd315359331d1ab6acf1f,/Dockerfile_build_ubuntu64,"# Install go
-"
-506,ff12e83e7f7de6052b3c3328ac82b835ffbc72c1,/Dockerfile_build_ubuntu32,"# Install go
-"
-507,8d679cf0c36edf5aaede7a0ea068cf9d0c9be409,/Dockerfile_build_ubuntu32,"# Install go
-"
-508,ec0229cdf34552ccbb088742c94426e047a507a9,/etc/Dockerfile_build,"# Install node
-"
-509,ec0229cdf34552ccbb088742c94426e047a507a9,/etc/Dockerfile_build,"# Update npm
-"
-510,ec0229cdf34552ccbb088742c94426e047a507a9,/etc/Dockerfile_build,"# Install go
-"
-511,53cccd02bebd94dfe8f426ef62fff6aecb96b671,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-512,53cccd02bebd94dfe8f426ef62fff6aecb96b671,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-513,53cccd02bebd94dfe8f426ef62fff6aecb96b671,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-514,53cccd02bebd94dfe8f426ef62fff6aecb96b671,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-515,156cee7c96226fcabf711bf73004e6cbf9e498de,/Dockerfile_build_ubuntu32,"# Install go
-"
-516,5641b2ef3230fb01260073646a6972df903a1650,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-517,5641b2ef3230fb01260073646a6972df903a1650,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-518,73b3a2a0565dbf8b2caa4225ba10ae5777e8ca44,/Dockerfile_build_ubuntu32,"# Install go
-"
-519,a989b0135678594b965ca42360aa5ca0be0fc27d,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-520,a989b0135678594b965ca42360aa5ca0be0fc27d,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-521,a989b0135678594b965ca42360aa5ca0be0fc27d,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-522,a989b0135678594b965ca42360aa5ca0be0fc27d,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-523,afde7ce531579470156cbb4ad9f83ac39c765ae9,/Dockerfile_build_ubuntu64,"# Install go
-"
-524,9cafd4b1f55540c01ced403189a46408f73bc64f,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-525,9cafd4b1f55540c01ced403189a46408f73bc64f,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-526,9cafd4b1f55540c01ced403189a46408f73bc64f,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-527,9cafd4b1f55540c01ced403189a46408f73bc64f,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-528,c30c33dbcbe60b17bbc803767e548469fc6777e7,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-529,c30c33dbcbe60b17bbc803767e548469fc6777e7,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-530,c30c33dbcbe60b17bbc803767e548469fc6777e7,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-531,c30c33dbcbe60b17bbc803767e548469fc6777e7,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-532,75d435c5d6a10a17ce42f4ddbb70c509e545275b,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-533,d4ee1cb2b176c10dfb56cc1bf03cfa1ab907ee99,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-534,d4ee1cb2b176c10dfb56cc1bf03cfa1ab907ee99,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-535,d4ee1cb2b176c10dfb56cc1bf03cfa1ab907ee99,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-536,d4ee1cb2b176c10dfb56cc1bf03cfa1ab907ee99,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-537,cc739c7a8cedf847d5e5756b08f8573eb602ce07,/etc/Dockerfile_build,"# Install node
-"
-538,cc739c7a8cedf847d5e5756b08f8573eb602ce07,/etc/Dockerfile_build,"# Update npm
-"
-539,cc739c7a8cedf847d5e5756b08f8573eb602ce07,/etc/Dockerfile_build,"# Install go
-"
-540,a40ef53b49837d90d4ca32499a253e96b3443dfe,/Dockerfile_build_ubuntu32,"# Install go
-"
-541,10b271968ce6e5596dde349d083fabbd5fca6e60,/Dockerfile_build_ubuntu32,"# Install go
-"
-542,ec920cbc443809fef71710ba9e8d605772f1763b,/chronograf/etc/Dockerfile_build,"# Install node
-"
-543,ec920cbc443809fef71710ba9e8d605772f1763b,/chronograf/etc/Dockerfile_build,"# Install go
-"
-544,d46e0407a09d7ded8fde0dc2a811eedf8a1c43a5,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-545,d46e0407a09d7ded8fde0dc2a811eedf8a1c43a5,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-546,d46e0407a09d7ded8fde0dc2a811eedf8a1c43a5,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-547,d46e0407a09d7ded8fde0dc2a811eedf8a1c43a5,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-548,8d679cf0c36edf5aaede7a0ea068cf9d0c9be409,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-549,8d679cf0c36edf5aaede7a0ea068cf9d0c9be409,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-550,8d679cf0c36edf5aaede7a0ea068cf9d0c9be409,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-551,8d679cf0c36edf5aaede7a0ea068cf9d0c9be409,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-552,28987f79627eaeaaff84704b2bbe8a9bb109b243,/Dockerfile_build_ubuntu32,"# Install go
-"
-553,c70efc8261981617438e080cbf86f26daada126a,/Dockerfile_build_ubuntu32,"# Install go
-"
-554,857afc1006b93dbbeb87e92b0503bdd312992687,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-555,857afc1006b93dbbeb87e92b0503bdd312992687,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-556,10c4276eeb1406bb1865c0af4cb9ee8c1e03dc3d,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-557,10c4276eeb1406bb1865c0af4cb9ee8c1e03dc3d,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-558,10c4276eeb1406bb1865c0af4cb9ee8c1e03dc3d,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-559,10c4276eeb1406bb1865c0af4cb9ee8c1e03dc3d,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-560,857afc1006b93dbbeb87e92b0503bdd312992687,/Dockerfile_build_ubuntu32,"# Install go
-"
-561,a446134d6fd89642d208446886696333da576874,/Dockerfile_build_ubuntu32,"# Install go
-"
-562,ebf50d06ca44b05e194f72afe0b460755136922b,/Dockerfile_build_ubuntu64,"# Install go
-"
-563,710f32321a0224c8ac5c759e61ad303d02274551,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-564,710f32321a0224c8ac5c759e61ad303d02274551,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-565,710f32321a0224c8ac5c759e61ad303d02274551,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-566,710f32321a0224c8ac5c759e61ad303d02274551,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-567,e415d0b10ffe372a706690646ed79578949c502b,/Dockerfile_build_ubuntu32,"# Install go
-"
-568,96dea3cf904631af1f3146e797cf30650942881f,/Dockerfile_build_ubuntu32,"# Install go
-"
-569,e6e3682c2cbcd7fc6ace0234dbe04ed62d39a656,/etc/Dockerfile_build,"# Install node
-"
-570,e6e3682c2cbcd7fc6ace0234dbe04ed62d39a656,/etc/Dockerfile_build,"# Update npm
-"
-571,e6e3682c2cbcd7fc6ace0234dbe04ed62d39a656,/etc/Dockerfile_build,"# Install go
-"
-572,76df4371eeb327fe82d606b0ee1423a03fecc0d5,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-573,76df4371eeb327fe82d606b0ee1423a03fecc0d5,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-574,76df4371eeb327fe82d606b0ee1423a03fecc0d5,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-575,76df4371eeb327fe82d606b0ee1423a03fecc0d5,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-576,d785a2d9f231ea29cbfb3a97b32af58bdfd1b8da,/Dockerfile_build_ubuntu64,"# Install go
-"
-577,f126f012eb0ccccd9639aed99d7ce48a1cc1158e,/etc/Dockerfile_build,"# Install node
-"
-578,f126f012eb0ccccd9639aed99d7ce48a1cc1158e,/etc/Dockerfile_build,"# Update npm
-"
-579,f126f012eb0ccccd9639aed99d7ce48a1cc1158e,/etc/Dockerfile_build,"# Install go
-"
-580,7280c0505a8dbf97abf44d26478b87a4c54e77ac,/etc/Dockerfile_build,"# Install node
-"
-581,7280c0505a8dbf97abf44d26478b87a4c54e77ac,/etc/Dockerfile_build,"# Update npm
-"
-582,7280c0505a8dbf97abf44d26478b87a4c54e77ac,/etc/Dockerfile_build,"# Install go
-"
-583,685d9ce688e2425420a36bfdbb1d4fc1c4ae4e1a,/etc/Dockerfile_build,"# Install node
-"
-584,685d9ce688e2425420a36bfdbb1d4fc1c4ae4e1a,/etc/Dockerfile_build,"# Install go
-"
-585,94f6c19eab347fa20c729be8cf8831375fc68d78,/Dockerfile_build_ubuntu64,"# Install go
-"
-586,465f91a784e0e4550526c47626ed08819267e622,/etc/Dockerfile_build,"# Install node
-"
-587,465f91a784e0e4550526c47626ed08819267e622,/etc/Dockerfile_build,"# Update npm
-"
-588,465f91a784e0e4550526c47626ed08819267e622,/etc/Dockerfile_build,"# Install go
-"
-589,59fb016a4e9a9627247dcabd8872423e3b66fb98,/etc/Dockerfile_build,"# Install node
-"
-590,59fb016a4e9a9627247dcabd8872423e3b66fb98,/etc/Dockerfile_build,"# Update npm
-"
-591,59fb016a4e9a9627247dcabd8872423e3b66fb98,/etc/Dockerfile_build,"# Install go
-"
-592,2217d0499dc97b2b297009afafe859f753edbf45,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-593,2217d0499dc97b2b297009afafe859f753edbf45,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-594,2217d0499dc97b2b297009afafe859f753edbf45,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-595,2217d0499dc97b2b297009afafe859f753edbf45,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-596,75d435c5d6a10a17ce42f4ddbb70c509e545275b,/Dockerfile_build_ubuntu64,"# Install go
-"
-597,59796b9aba500fc08d1009646b9c1796de60b2b6,/etc/Dockerfile_build,"# Install node
-"
-598,59796b9aba500fc08d1009646b9c1796de60b2b6,/etc/Dockerfile_build,"# Update npm
-"
-599,59796b9aba500fc08d1009646b9c1796de60b2b6,/etc/Dockerfile_build,"# Install go
-"
-600,5f0ef591ea93d442f6573ae7617e68f79815bea7,/etc/Dockerfile_build,"# Install node
-"
-601,5f0ef591ea93d442f6573ae7617e68f79815bea7,/etc/Dockerfile_build,"# Update npm
-"
-602,5f0ef591ea93d442f6573ae7617e68f79815bea7,/etc/Dockerfile_build,"# Install go
-"
-603,0b905c059f4cd8260f9cf72d4c1e7174eff10e02,/Dockerfile_build_ubuntu64,"# Install go
-"
-604,10c4276eeb1406bb1865c0af4cb9ee8c1e03dc3d,/Dockerfile_build_ubuntu32,"# Install go
-"
-605,41a85d7c5f9a70405f575523faff2644fee6ce2d,/etc/Dockerfile_build,"# Install node
-"
-606,41a85d7c5f9a70405f575523faff2644fee6ce2d,/etc/Dockerfile_build,"# Update npm
-"
-607,41a85d7c5f9a70405f575523faff2644fee6ce2d,/etc/Dockerfile_build,"# Install go
-"
-608,b42a2316b114e2af51d9e97e5ae50283069d849f,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-609,b42a2316b114e2af51d9e97e5ae50283069d849f,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-610,b42a2316b114e2af51d9e97e5ae50283069d849f,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-611,b42a2316b114e2af51d9e97e5ae50283069d849f,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-612,defb81413e82abfb235564146101aed84a07c96a,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-613,6ebc19229816614a97567253146c7d360f3010b4,/Dockerfile_build_ubuntu64,"# Install go
-"
-614,f04d420709182c29bc6a36afe85746f3ead2735d,/chronograf/etc/Dockerfile_build,"# Install node
-"
-615,f04d420709182c29bc6a36afe85746f3ead2735d,/chronograf/etc/Dockerfile_build,"# Install go
-"
-616,cb1b1859fed86cbd5cc5f347b3583ece220d69d5,/Dockerfile_build_ubuntu64,"# Install go
-"
-617,700431d6de680db79545a4c7d80ab88f7f0e5528,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-618,700431d6de680db79545a4c7d80ab88f7f0e5528,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-619,700431d6de680db79545a4c7d80ab88f7f0e5528,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-620,700431d6de680db79545a4c7d80ab88f7f0e5528,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-621,c558f29e5484d3e7cf2ee39b18722ad4fdccc103,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-622,c558f29e5484d3e7cf2ee39b18722ad4fdccc103,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-623,c558f29e5484d3e7cf2ee39b18722ad4fdccc103,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-624,c558f29e5484d3e7cf2ee39b18722ad4fdccc103,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-625,700431d6de680db79545a4c7d80ab88f7f0e5528,/Dockerfile_build_ubuntu32,"# Install go
-"
-626,355d742d4a31ae4e276e8c0513fa4621fccefc0c,/Dockerfile_build_ubuntu64,"# Install go
-"
-627,2217d0499dc97b2b297009afafe859f753edbf45,/Dockerfile_build_ubuntu32,"# Install go
-"
-628,0b905c059f4cd8260f9cf72d4c1e7174eff10e02,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-629,b3deccb1874e695d45e2ba05f6c63fa2e63c18d9,/Dockerfile_build_ubuntu32,"# Install go
-"
-630,2498dd20cc4780677684852ec3d589c8398628d1,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-631,2498dd20cc4780677684852ec3d589c8398628d1,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-632,2498dd20cc4780677684852ec3d589c8398628d1,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-633,2498dd20cc4780677684852ec3d589c8398628d1,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-634,9cafd4b1f55540c01ced403189a46408f73bc64f,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-635,75d435c5d6a10a17ce42f4ddbb70c509e545275b,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-636,75d435c5d6a10a17ce42f4ddbb70c509e545275b,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-637,75d435c5d6a10a17ce42f4ddbb70c509e545275b,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-638,75d435c5d6a10a17ce42f4ddbb70c509e545275b,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-639,53cccd02bebd94dfe8f426ef62fff6aecb96b671,/Dockerfile_build_ubuntu64,"# Install go
-"
-640,0a679ee5a3c7d0809bcd6cd3ac30d78d0ff7bb28,/etc/Dockerfile_build,"# Install node
-"
-641,0a679ee5a3c7d0809bcd6cd3ac30d78d0ff7bb28,/etc/Dockerfile_build,"# Update npm
-"
-642,0a679ee5a3c7d0809bcd6cd3ac30d78d0ff7bb28,/etc/Dockerfile_build,"# Install go
-"
-643,76df4371eeb327fe82d606b0ee1423a03fecc0d5,/Dockerfile_build_ubuntu32,"# Install go
-"
-644,30a31d3acf526732278003b7634ec6f6a1cfe0a9,/Dockerfile_build_ubuntu32,"# Install go
-"
-645,3dc5165b3ccf66df6aa1a6e80a9b74a0f1d97d47,/Dockerfile_build_ubuntu64,"# Install go
-"
-646,ff20ec6877c0acb2b8f56a6c90082835adace82f,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-647,ff20ec6877c0acb2b8f56a6c90082835adace82f,/Dockerfile_build_ubuntu64_git,"# Install go1.5+
-"
-648,ff20ec6877c0acb2b8f56a6c90082835adace82f,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-649,ff20ec6877c0acb2b8f56a6c90082835adace82f,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-650,2d266ca186f9c94d8a359bacfce974943253ac50,/Dockerfile_build_ubuntu64,"# Install go
-"
-651,05c252696e6137863ee46a8806dada079a5bc6f3,/Dockerfile_build_ubuntu32,"# Install go
-"
-652,d4ee1cb2b176c10dfb56cc1bf03cfa1ab907ee99,/Dockerfile_build_ubuntu32,"# Install go
-"
-653,5f8761a78f85579a61609217fb3ffb0bfee9e422,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-654,5f8761a78f85579a61609217fb3ffb0bfee9e422,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-655,5f8761a78f85579a61609217fb3ffb0bfee9e422,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-656,5f8761a78f85579a61609217fb3ffb0bfee9e422,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-657,2c33919f9c27ea903ae7c5180f923a65d2ecb806,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-658,31cbc3eef869ae6c2a4fce245a161b32797cdbf2,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-659,31cbc3eef869ae6c2a4fce245a161b32797cdbf2,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-660,31cbc3eef869ae6c2a4fce245a161b32797cdbf2,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-661,31cbc3eef869ae6c2a4fce245a161b32797cdbf2,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-662,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-663,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# copy binary into image
-"
-664,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# Add influxd to the PATH
-"
-665,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# Generate a default config
-"
-666,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# Use /data for all disk storage
-"
-667,227009723dc65a8dab65379c8c5d855e0ac3edf3,/etc/Dockerfile_build,"# Install node
-"
-668,227009723dc65a8dab65379c8c5d855e0ac3edf3,/etc/Dockerfile_build,"# Update npm
-"
-669,227009723dc65a8dab65379c8c5d855e0ac3edf3,/etc/Dockerfile_build,"# Install go
-"
-670,4ff0b102103858c0503ecd792dad914c821910e7,/Dockerfile_build_ubuntu32,"# Install go
-"
-671,8c70cfd74b6c48c0e26617ef6cad52c1d3026902,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-672,9aeb26a24b33db121f23d9fa79ef19da42b9eda2,/etc/Dockerfile_build,"# Install node
-"
-673,9aeb26a24b33db121f23d9fa79ef19da42b9eda2,/etc/Dockerfile_build,"# Update npm
-"
-674,9aeb26a24b33db121f23d9fa79ef19da42b9eda2,/etc/Dockerfile_build,"# Install go
-"
-675,6ebc19229816614a97567253146c7d360f3010b4,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-676,6ebc19229816614a97567253146c7d360f3010b4,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-677,6ebc19229816614a97567253146c7d360f3010b4,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-678,6ebc19229816614a97567253146c7d360f3010b4,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-679,3fa849296577715b04fc2f8d86524c9500ea17be,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-680,3fa849296577715b04fc2f8d86524c9500ea17be,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-681,3fa849296577715b04fc2f8d86524c9500ea17be,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-682,3fa849296577715b04fc2f8d86524c9500ea17be,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-683,1f62ecd778333284b261aff12d21a530516b87f6,/Dockerfile_build_ubuntu64,"# Install go
-"
-684,367328aa3eb74c86674a922eab54434ccda3d570,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-685,367328aa3eb74c86674a922eab54434ccda3d570,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-686,fb6b674556b3ea82dffa697535c973322d97a25d,/etc/Dockerfile_build,"# Install node
-"
-687,fb6b674556b3ea82dffa697535c973322d97a25d,/etc/Dockerfile_build,"# Update npm
-"
-688,fb6b674556b3ea82dffa697535c973322d97a25d,/etc/Dockerfile_build,"# Install go
-"
-689,47317d73b4654a3bc62cc4e2ab95237ceb26fa40,/Dockerfile_build_ubuntu64_tip,"# Setup env
-"
-690,47317d73b4654a3bc62cc4e2ab95237ceb26fa40,/Dockerfile_build_ubuntu64_tip,"# Install go1.5+
-"
-691,47317d73b4654a3bc62cc4e2ab95237ceb26fa40,/Dockerfile_build_ubuntu64_tip,"# Clone Go tip for compilation
-"
-692,47317d73b4654a3bc62cc4e2ab95237ceb26fa40,/Dockerfile_build_ubuntu64_tip,"# Add script for compiling go
-"
-693,40027336954c998d3e20bd42cfc775ec5db16960,/Dockerfile_build_ubuntu64,"# Install go
-"
-694,62534109ce6549971042aebd22fc02cdd443139c,/etc/Dockerfile_build,"# Install node
-"
-695,62534109ce6549971042aebd22fc02cdd443139c,/etc/Dockerfile_build,"# Update npm
-"
-696,62534109ce6549971042aebd22fc02cdd443139c,/etc/Dockerfile_build,"# Install go
-"
-697,e03c8f4f9eadd51ee6764c6ea9aac70cca91d02d,/etc/Dockerfile_build,"# Install node
-"
-698,e03c8f4f9eadd51ee6764c6ea9aac70cca91d02d,/etc/Dockerfile_build,"# Update npm
-"
-699,e03c8f4f9eadd51ee6764c6ea9aac70cca91d02d,/etc/Dockerfile_build,"# Install go
-"
-700,95416b607661915aae346e5977b50622e1180fe5,/Dockerfile_build,"# Install go
-"
-701,920b2bee2e0f9532b12440c0e37512c5caa06bca,/Dockerfile_build_ubuntu64,"# Install go
-"
-702,4aaf35b2ce26e0f592b2fc1b136196b50b032ae8,/etc/Dockerfile_build,"# Install node
-"
-703,4aaf35b2ce26e0f592b2fc1b136196b50b032ae8,/etc/Dockerfile_build,"# Update npm
-"
-704,4aaf35b2ce26e0f592b2fc1b136196b50b032ae8,/etc/Dockerfile_build,"# Install go
-"
-705,2a9744f801bfee163b6a336e86765adb33350d56,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-706,2a9744f801bfee163b6a336e86765adb33350d56,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-707,2a9744f801bfee163b6a336e86765adb33350d56,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-708,2a9744f801bfee163b6a336e86765adb33350d56,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-709,23fe33fba5bc53f7258d24fe0e7d1546a7c09e6d,/etc/Dockerfile_build,"# Install node
-"
-710,23fe33fba5bc53f7258d24fe0e7d1546a7c09e6d,/etc/Dockerfile_build,"# Update npm
-"
-711,23fe33fba5bc53f7258d24fe0e7d1546a7c09e6d,/etc/Dockerfile_build,"# Install go
-"
-712,3e7a7bad761bf7fd569697ecbbcf2417a10bf841,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-713,3e7a7bad761bf7fd569697ecbbcf2417a10bf841,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-714,58c03448aa0e5af37614041add65d968ea694012,/Dockerfile_build_ubuntu32,"# Install go
-"
-715,e1dbf51ab4f386275f9a89e76e315b281bbadb78,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-716,e1dbf51ab4f386275f9a89e76e315b281bbadb78,/Dockerfile_build_ubuntu64_git,"# Install go1.5+
-"
-717,e1dbf51ab4f386275f9a89e76e315b281bbadb78,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-718,e1dbf51ab4f386275f9a89e76e315b281bbadb78,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-719,ba52d17c35e184388bf86ca6d006efadf38ee9a2,/etc/Dockerfile_build,"# Install node
-"
-720,ba52d17c35e184388bf86ca6d006efadf38ee9a2,/etc/Dockerfile_build,"# Update npm
-"
-721,ba52d17c35e184388bf86ca6d006efadf38ee9a2,/etc/Dockerfile_build,"# Install go
-"
-722,325e481468cda5d7db3d138f7ada61c3a22fc7e4,/etc/Dockerfile_build,"# Install node
-"
-723,325e481468cda5d7db3d138f7ada61c3a22fc7e4,/etc/Dockerfile_build,"# Update npm
-"
-724,325e481468cda5d7db3d138f7ada61c3a22fc7e4,/etc/Dockerfile_build,"# Install go
-"
-725,d2dac8353f9ab97ac7ac888740bd4f1e9b4a8584,/etc/Dockerfile_build,"# Install node
-"
-726,d2dac8353f9ab97ac7ac888740bd4f1e9b4a8584,/etc/Dockerfile_build,"# Update npm
-"
-727,d2dac8353f9ab97ac7ac888740bd4f1e9b4a8584,/etc/Dockerfile_build,"# Install go
-"
-728,1ccdda88aad85a30d2dea01424ee145933e437fa,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-729,1ccdda88aad85a30d2dea01424ee145933e437fa,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-730,1ccdda88aad85a30d2dea01424ee145933e437fa,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-731,1ccdda88aad85a30d2dea01424ee145933e437fa,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-732,7ff67db776a57e39c3578ca5317743bb48a8c6f5,/Dockerfile_build_ubuntu64,"# Install go
-"
-733,156cee7c96226fcabf711bf73004e6cbf9e498de,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-734,156cee7c96226fcabf711bf73004e6cbf9e498de,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-735,156cee7c96226fcabf711bf73004e6cbf9e498de,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-736,156cee7c96226fcabf711bf73004e6cbf9e498de,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-737,4db3b69b9db8cf177a25d64fa944f8fba7f879f8,/Dockerfile_build_ubuntu64,"# Install go
-"
-738,5a0d1ab7c1d308a0a1b5c2fd0a724a28190eee51,/Dockerfile_build_ubuntu32,"# Install go
-"
-739,e39de3e427d3bf04328ec8c4829c2a2df03332c7,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-740,d6539dd2080368148993af307b8cee781056b012,/etc/Dockerfile_build,"# Install node
-"
-741,d6539dd2080368148993af307b8cee781056b012,/etc/Dockerfile_build,"# Update npm
-"
-742,d6539dd2080368148993af307b8cee781056b012,/etc/Dockerfile_build,"# Install go
-"
-743,1ccdda88aad85a30d2dea01424ee145933e437fa,/Dockerfile_build_ubuntu32,"# Install go
-"
-744,a16096cbc42814651551f492a869a3694beffdb0,/Dockerfile_build_ubuntu64,"# Install go
-"
-745,156cee7c96226fcabf711bf73004e6cbf9e498de,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-746,be96e578acf50e041492f2316a0155e8c05d357e,/etc/Dockerfile_build,"# Install node
-"
-747,be96e578acf50e041492f2316a0155e8c05d357e,/etc/Dockerfile_build,"# Update npm
-"
-748,be96e578acf50e041492f2316a0155e8c05d357e,/etc/Dockerfile_build,"# Install go
-"
-749,3fa849296577715b04fc2f8d86524c9500ea17be,/Dockerfile_build_ubuntu64,"# Install go
-"
-750,05d979d6b116b28b7cd0ed8e45b4279c5c890dcd,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-751,05d979d6b116b28b7cd0ed8e45b4279c5c890dcd,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-752,e2cb1d0ff46d343d876690357e72a3dac671165f,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-753,e2cb1d0ff46d343d876690357e72a3dac671165f,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-754,e2cb1d0ff46d343d876690357e72a3dac671165f,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-755,e2cb1d0ff46d343d876690357e72a3dac671165f,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-756,1f62ecd778333284b261aff12d21a530516b87f6,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-757,1f62ecd778333284b261aff12d21a530516b87f6,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-758,1f62ecd778333284b261aff12d21a530516b87f6,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-759,1f62ecd778333284b261aff12d21a530516b87f6,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-760,4b07139feb6864a43a70dfb751194a011e4785a3,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-761,2498dd20cc4780677684852ec3d589c8398628d1,/Dockerfile_build_ubuntu32,"# Install go
-"
-762,b5247cd1d4327d6592de37bcb17290b7cf0e30ba,/Dockerfile_build_ubuntu64,"# Install go
-"
-763,6150bc1eea14f9c9bd7f5b6f2f4d88597576cb32,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-764,6150bc1eea14f9c9bd7f5b6f2f4d88597576cb32,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-765,04807d4a7e3a84cd811d981d3b2bc7977a6161a9,/etc/Dockerfile_build,"# Install node
-"
-766,04807d4a7e3a84cd811d981d3b2bc7977a6161a9,/etc/Dockerfile_build,"# Update npm
-"
-767,04807d4a7e3a84cd811d981d3b2bc7977a6161a9,/etc/Dockerfile_build,"# Install go
-"
-768,e415d0b10ffe372a706690646ed79578949c502b,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-769,e415d0b10ffe372a706690646ed79578949c502b,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-770,e415d0b10ffe372a706690646ed79578949c502b,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-771,e415d0b10ffe372a706690646ed79578949c502b,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-772,a374b2dcb7702850367054ee8a49c05efb2b8f11,/etc/Dockerfile_build,"# Install node
-"
-773,a374b2dcb7702850367054ee8a49c05efb2b8f11,/etc/Dockerfile_build,"# Update npm
-"
-774,a374b2dcb7702850367054ee8a49c05efb2b8f11,/etc/Dockerfile_build,"# Install go
-"
-775,ca85dd4cffa05bf351ea7c5f9b3c9b2c5369a4ce,/Dockerfile_build_ubuntu64,"# Install go
-"
-776,a16096cbc42814651551f492a869a3694beffdb0,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-777,a16096cbc42814651551f492a869a3694beffdb0,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-778,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-779,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# copy binary into image
-"
-780,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# Add influxd to the PATH
-"
-781,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# Generate a default config
-"
-782,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# Use /data for all disk storage
-"
-783,b42a2316b114e2af51d9e97e5ae50283069d849f,/Dockerfile_build_ubuntu64,"# Install go
-"
-784,5641b2ef3230fb01260073646a6972df903a1650,/Dockerfile_build_ubuntu64,"# Install go
-"
-785,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-786,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# copy binary into image
-"
-787,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# Add influxd to the PATH
-"
-788,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# Generate a default config
-"
-789,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# Use /data for all disk storage
-"
-790,857afc1006b93dbbeb87e92b0503bdd312992687,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-791,47317d73b4654a3bc62cc4e2ab95237ceb26fa40,/Dockerfile_build_ubuntu32,"# Install go
-"
-792,677552f093180f9431249d6d9087e1ee2547410c,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-793,677552f093180f9431249d6d9087e1ee2547410c,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-794,677552f093180f9431249d6d9087e1ee2547410c,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-795,677552f093180f9431249d6d9087e1ee2547410c,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-796,c558f29e5484d3e7cf2ee39b18722ad4fdccc103,/Dockerfile_build_ubuntu32,"# Install go
-"
-797,2f1e83427bb710f752d0cfd482a5da3ce94c011b,/Dockerfile_build_ubuntu64,"# Install go
-"
-798,ad83a19ad9cd15ce567e6a3cdf6bd738924fddb2,/Dockerfile_build_ubuntu32,"# Install go
-"
-799,710f32321a0224c8ac5c759e61ad303d02274551,/Dockerfile_build_ubuntu32,"# Install go
-"
-800,215215a5f71b1a66a3e34da24b03585e14591ec0,/etc/Dockerfile_build,"# Install node
-"
-801,215215a5f71b1a66a3e34da24b03585e14591ec0,/etc/Dockerfile_build,"# Update npm
-"
-802,215215a5f71b1a66a3e34da24b03585e14591ec0,/etc/Dockerfile_build,"# Install go
-"
-803,f910e6aaba27398c3b6c2440a4795b740a9d71e1,/Dockerfile,"# Build assets to ./ui/build
-"
-804,f910e6aaba27398c3b6c2440a4795b740a9d71e1,/Dockerfile,"# Run the image as a non-root user
-"
-805,f910e6aaba27398c3b6c2440a4795b740a9d71e1,/Dockerfile,"# Start the server.
+97,f910e6aaba27398c3b6c2440a4795b740a9d71e1,/Dockerfile,"# Start the server.
 # in the future we'd start the go process here and serve the static assets in /build
 "
-806,1a5bcd29daa8df8a09113cd71b4d47da2e8332a2,/Dockerfile_build_ubuntu64_go1.11,"# Install go
+98,6bd2ae05d49d023ff0f53587b2dbf706c84ec74a,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-807,1a5bcd29daa8df8a09113cd71b4d47da2e8332a2,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
+99,4d6672fa66ad0ac4e9620afc3c1c5491a7d9ae8e,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-808,2217d0499dc97b2b297009afafe859f753edbf45,/Dockerfile_build_ubuntu64_go19,"# Install go
+100,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
 "
-809,d821b62d740a93f5cf85de48dcf24287462e4e7d,/etc/Dockerfile_build,"# Install node
+101,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# copy binary into image
 "
-810,d821b62d740a93f5cf85de48dcf24287462e4e7d,/etc/Dockerfile_build,"# Update npm
+102,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# Add influxd to the PATH
 "
-811,d821b62d740a93f5cf85de48dcf24287462e4e7d,/etc/Dockerfile_build,"# Install go
+103,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# Generate a default config
 "
-812,d52eb01c17b206677805fc11661c6af319f50699,/Dockerfile_build_ubuntu64,"# Install go
+104,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# Use /data for all disk storage
 "
-813,448c0c116ed57bbda98eac9359e82a38746c7cd5,/Dockerfile_build_ubuntu64,"# Install go
+105,6820dd8d1337d2bba0598d31c2d3ad7224837013,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
 "
-814,944c9c2b19c09cc0e0cfc9efb84dc5a1339eab93,/Dockerfile_build_ubuntu64,"# Install go
+106,6e636264f2c1f0155e59879ad26222862ea4941d,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-815,ef42b16b1b1c1c42518c782b27fa6276b4f574ff,/etc/Dockerfile_build,"# Install node
+107,9cb3fbd8dad524256eefaf1c7fbda894b9bbdcce,/Dockerfile,"# Build assets to ./ui/build
 "
-816,ef42b16b1b1c1c42518c782b27fa6276b4f574ff,/etc/Dockerfile_build,"# Update npm
+108,9cb3fbd8dad524256eefaf1c7fbda894b9bbdcce,/Dockerfile,"# Run the image as a non-root user
 "
-817,ef42b16b1b1c1c42518c782b27fa6276b4f574ff,/etc/Dockerfile_build,"# Install go
-"
-818,d45ca3741e7406e3ae0887a1c378568e48c8d60e,/Dockerfile_build_ubuntu64,"# Install go
-"
-819,367328aa3eb74c86674a922eab54434ccda3d570,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-820,367328aa3eb74c86674a922eab54434ccda3d570,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-821,367328aa3eb74c86674a922eab54434ccda3d570,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-822,367328aa3eb74c86674a922eab54434ccda3d570,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-823,31cbc3eef869ae6c2a4fce245a161b32797cdbf2,/Dockerfile_build_ubuntu64,"# Install go
-"
-824,30bea335a494c0ce25c4caaa6030bd501f364113,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-825,30bea335a494c0ce25c4caaa6030bd501f364113,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-826,30bea335a494c0ce25c4caaa6030bd501f364113,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-827,30bea335a494c0ce25c4caaa6030bd501f364113,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-828,590a33bce83f196a01a8d777c3d09de790da94a6,/etc/Dockerfile_build,"# Install node
-"
-829,590a33bce83f196a01a8d777c3d09de790da94a6,/etc/Dockerfile_build,"# Update npm
-"
-830,590a33bce83f196a01a8d777c3d09de790da94a6,/etc/Dockerfile_build,"# Install go
-"
-831,8d679cf0c36edf5aaede7a0ea068cf9d0c9be409,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-832,2a54e93ab0899959b625b2f6e070a9bfc2dbc4b1,/Dockerfile_build_ubuntu32,"# Install go
-"
-833,6bd2ae05d49d023ff0f53587b2dbf706c84ec74a,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-834,91067f21888769aed22cbeb19b0807ebaf43a79d,/chronograf/etc/Dockerfile_build,"# Install node
-"
-835,91067f21888769aed22cbeb19b0807ebaf43a79d,/chronograf/etc/Dockerfile_build,"# Install go
-"
-836,a16096cbc42814651551f492a869a3694beffdb0,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-837,a16096cbc42814651551f492a869a3694beffdb0,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-838,a16096cbc42814651551f492a869a3694beffdb0,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-839,a16096cbc42814651551f492a869a3694beffdb0,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-840,dff34939f8e2176955052de7ace2c47c08e7fd19,/Dockerfile_build_ubuntu64,"# Install go
-"
-841,a736f186f0b1ba494943f9c778fee9ddfd2c2761,/Dockerfile_build_ubuntu64,"# Install go
-"
-842,96270df8fe0d125a322ab39efc8c6501d7f43ea7,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-843,96270df8fe0d125a322ab39efc8c6501d7f43ea7,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-844,96270df8fe0d125a322ab39efc8c6501d7f43ea7,/Dockerfile_build_ubuntu32,"# Install go
-"
-845,9cafd4b1f55540c01ced403189a46408f73bc64f,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-846,96ad9c57d96b2bcd804d5f12df625b0c6b41874d,/Dockerfile_build_ubuntu32,"# Install go
-"
-847,57cb3fdbc0610c6bc8ccd315359331d1ab6acf1f,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-848,57cb3fdbc0610c6bc8ccd315359331d1ab6acf1f,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-849,57cb3fdbc0610c6bc8ccd315359331d1ab6acf1f,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-850,57cb3fdbc0610c6bc8ccd315359331d1ab6acf1f,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-851,b09026c7657d2877048ca3c099c63c8e806d780a,/etc/Dockerfile_build,"# Install node
-"
-852,b09026c7657d2877048ca3c099c63c8e806d780a,/etc/Dockerfile_build,"# Install go
-"
-853,677552f093180f9431249d6d9087e1ee2547410c,/Dockerfile_build_ubuntu64,"# Install go
-"
-854,76df4371eeb327fe82d606b0ee1423a03fecc0d5,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-855,76df4371eeb327fe82d606b0ee1423a03fecc0d5,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-856,db84a6ed76353905432ff8bd91527c68b3ea1be6,/Dockerfile_build_ubuntu64,"# Install go
-"
-857,920b2bee2e0f9532b12440c0e37512c5caa06bca,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-858,920b2bee2e0f9532b12440c0e37512c5caa06bca,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-859,920b2bee2e0f9532b12440c0e37512c5caa06bca,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-860,920b2bee2e0f9532b12440c0e37512c5caa06bca,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-861,80a2874361f5993030332315498c4e9982825e6f,/Dockerfile_build_ubuntu32,"# Install go
-"
-862,e66a63800deb39b790959fedb67859c2f6680c28,/etc/Dockerfile_build,"# Install node
-"
-863,e66a63800deb39b790959fedb67859c2f6680c28,/etc/Dockerfile_build,"# Update npm
-"
-864,e66a63800deb39b790959fedb67859c2f6680c28,/etc/Dockerfile_build,"# Install go
-"
-865,2588b14df4a8173065bec757b11a812b2b998e26,/chronograf/etc/Dockerfile_build,"# Install node
-"
-866,2588b14df4a8173065bec757b11a812b2b998e26,/chronograf/etc/Dockerfile_build,"# Install go
-"
-867,d7e328050c0e0eca0cfbed044624eb74730358b2,/Dockerfile_build_ubuntu64,"# Install go
-"
-868,4d6672fa66ad0ac4e9620afc3c1c5491a7d9ae8e,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-869,18cb95f858098a40b9c653d4469ee99fb6d42284,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-870,18cb95f858098a40b9c653d4469ee99fb6d42284,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-871,18cb95f858098a40b9c653d4469ee99fb6d42284,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-872,18cb95f858098a40b9c653d4469ee99fb6d42284,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-873,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-874,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# copy binary into image
-"
-875,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# Add influxd to the PATH
-"
-876,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# Generate a default config
-"
-877,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# Use /data for all disk storage
-"
-878,d46e0407a09d7ded8fde0dc2a811eedf8a1c43a5,/Dockerfile_build_ubuntu32,"# Install go
-"
-879,81c06b58fae8fc5a77e1ed2a387f408762d487fd,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-880,1806d5def7427eadb29e6d8dc3001b3977385fbf,/Dockerfile_build_ubuntu32,"# Install go
-"
-881,d785a2d9f231ea29cbfb3a97b32af58bdfd1b8da,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-882,d785a2d9f231ea29cbfb3a97b32af58bdfd1b8da,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-883,d785a2d9f231ea29cbfb3a97b32af58bdfd1b8da,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-884,d785a2d9f231ea29cbfb3a97b32af58bdfd1b8da,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-885,9cafd4b1f55540c01ced403189a46408f73bc64f,/Dockerfile_build_ubuntu64,"# Install go
-"
-886,878fcf2782a9de2bf0f4f2391c91521ca2b968b3,/Dockerfile_build_ubuntu64,"# Install go
-"
-887,a446134d6fd89642d208446886696333da576874,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-888,a446134d6fd89642d208446886696333da576874,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-889,a446134d6fd89642d208446886696333da576874,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-890,a446134d6fd89642d208446886696333da576874,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-891,9c851f790e964545b31511895d874baa03d60db2,/Dockerfile_build_ubuntu64,"# Install go
-"
-892,367328aa3eb74c86674a922eab54434ccda3d570,/Dockerfile_build_ubuntu64,"# Install go
-"
-893,a989b0135678594b965ca42360aa5ca0be0fc27d,/Dockerfile_build_ubuntu32,"# Install go
-"
-894,289a05efd63f58c7e2a1c751182709590bcc7380,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-895,289a05efd63f58c7e2a1c751182709590bcc7380,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-896,1b270973b91be060540818cc00e4558780c6a0d9,/Dockerfile_build_ubuntu32,"# Install go
-"
-897,0e4bc275d87d11141ba8fb902bfe33d593e5ce8c,/Dockerfile_build_ubuntu64,"# Install go1.5+
-"
-898,2a9744f801bfee163b6a336e86765adb33350d56,/Dockerfile_build_ubuntu64,"# Install go
-"
-899,920b2bee2e0f9532b12440c0e37512c5caa06bca,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-900,6820dd8d1337d2bba0598d31c2d3ad7224837013,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
-"
-901,49297fb3a6c556a7acdc481fbd2f5d60945eb08d,/etc/Dockerfile_build,"# Install node
-"
-902,49297fb3a6c556a7acdc481fbd2f5d60945eb08d,/etc/Dockerfile_build,"# Update npm
-"
-903,49297fb3a6c556a7acdc481fbd2f5d60945eb08d,/etc/Dockerfile_build,"# Install go
-"
-904,30bea335a494c0ce25c4caaa6030bd501f364113,/Dockerfile_build_ubuntu32,"# Install go
-"
-905,e6f52a687ea7842d142babe6d131b909555a97c8,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-906,3dc5165b3ccf66df6aa1a6e80a9b74a0f1d97d47,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-907,3dc5165b3ccf66df6aa1a6e80a9b74a0f1d97d47,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-908,3dc5165b3ccf66df6aa1a6e80a9b74a0f1d97d47,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-909,3dc5165b3ccf66df6aa1a6e80a9b74a0f1d97d47,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-910,ba7fc7d54802a777f345a583e1e3306947cf447b,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-911,ba7fc7d54802a777f345a583e1e3306947cf447b,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-912,ba7fc7d54802a777f345a583e1e3306947cf447b,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-913,ba7fc7d54802a777f345a583e1e3306947cf447b,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-914,66e907390950f3a9cae1a8a33cf12b37a6058cf7,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-915,66e907390950f3a9cae1a8a33cf12b37a6058cf7,/Dockerfile_build_ubuntu64_git,"# Install go1.5+
-"
-916,66e907390950f3a9cae1a8a33cf12b37a6058cf7,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-917,66e907390950f3a9cae1a8a33cf12b37a6058cf7,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-918,6e636264f2c1f0155e59879ad26222862ea4941d,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-919,5a0d1ab7c1d308a0a1b5c2fd0a724a28190eee51,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-920,5a0d1ab7c1d308a0a1b5c2fd0a724a28190eee51,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-921,5a0d1ab7c1d308a0a1b5c2fd0a724a28190eee51,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-922,5a0d1ab7c1d308a0a1b5c2fd0a724a28190eee51,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-923,2a9744f801bfee163b6a336e86765adb33350d56,/Dockerfile_build_ubuntu64_go1.11,"# Install go
-"
-924,2a9744f801bfee163b6a336e86765adb33350d56,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
-"
-925,f2cc269a33a69432774f2572d30f6100a06be4ce,/etc/Dockerfile_build,"# Install node
-"
-926,f2cc269a33a69432774f2572d30f6100a06be4ce,/etc/Dockerfile_build,"# Update npm
-"
-927,f2cc269a33a69432774f2572d30f6100a06be4ce,/etc/Dockerfile_build,"# Install go
-"
-928,96ad9c57d96b2bcd804d5f12df625b0c6b41874d,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-929,96ad9c57d96b2bcd804d5f12df625b0c6b41874d,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-930,96ad9c57d96b2bcd804d5f12df625b0c6b41874d,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-931,96ad9c57d96b2bcd804d5f12df625b0c6b41874d,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-932,5f8761a78f85579a61609217fb3ffb0bfee9e422,/Dockerfile_build_ubuntu64,"# Install go
-"
-933,d2aa0fc5adf19fc5a8f0c3bf27e02ec83db189e3,/etc/Dockerfile_build,"# Install node
-"
-934,d2aa0fc5adf19fc5a8f0c3bf27e02ec83db189e3,/etc/Dockerfile_build,"# Update npm
-"
-935,d2aa0fc5adf19fc5a8f0c3bf27e02ec83db189e3,/etc/Dockerfile_build,"# Install go
-"
-936,9cb3fbd8dad524256eefaf1c7fbda894b9bbdcce,/Dockerfile,"# Build assets to ./ui/build
-"
-937,9cb3fbd8dad524256eefaf1c7fbda894b9bbdcce,/Dockerfile,"# Run the image as a non-root user
-"
-938,9cb3fbd8dad524256eefaf1c7fbda894b9bbdcce,/Dockerfile,"# Start the server.
+109,9cb3fbd8dad524256eefaf1c7fbda894b9bbdcce,/Dockerfile,"# Start the server.
 # in the future we'd start the go process here and serve the static assets in /build
 "
-939,1eda0277a70e3ab703ee23f67992c44cc648d409,/Dockerfile_build_ubuntu32,"# Install go
+110,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,"# Needed for Yarn steps to veryify the keys
 "
-940,f6835632e7c0fae8720e91369d9073d4858966f5,/Dockerfile_build_ubuntu64_git,"# Setup env
+111,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,"# Now update index with Yarn
 "
-941,f6835632e7c0fae8720e91369d9073d4858966f5,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-942,f6835632e7c0fae8720e91369d9073d4858966f5,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-943,f6835632e7c0fae8720e91369d9073d4858966f5,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-944,ba7fc7d54802a777f345a583e1e3306947cf447b,/Dockerfile_build_ubuntu64,"# Install go
-"
-945,b5247cd1d4327d6592de37bcb17290b7cf0e30ba,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-946,b5247cd1d4327d6592de37bcb17290b7cf0e30ba,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-947,b5247cd1d4327d6592de37bcb17290b7cf0e30ba,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-948,b5247cd1d4327d6592de37bcb17290b7cf0e30ba,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-949,314f48114d0858201dcf6688565a8c144394ca07,/Dockerfile_build_ubuntu32,"# Install go
-"
-950,b3deccb1874e695d45e2ba05f6c63fa2e63c18d9,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-951,1e816e618b28a68ed69dd65858fe1502583711a0,/Dockerfile_build_ubuntu32,"# Install go
-"
-952,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,"# Needed for Yarn steps to veryify the keys
-"
-953,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,"# Now update index with Yarn
-"
-954,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,"##
+112,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,"##
 # InfluxDB Image (Monolith)
 ##
 "
-955,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,"##
+113,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,"##
 # InfluxDB UI Image
 ##
 "
-956,920b2bee2e0f9532b12440c0e37512c5caa06bca,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
+114,920b2bee2e0f9532b12440c0e37512c5caa06bca,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-957,18cb95f858098a40b9c653d4469ee99fb6d42284,/Dockerfile_build_ubuntu64,"# Install go
+115,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Install node deps
 "
-958,5c888b367378bbd0ab1bb7f9613e4b213437e2ec,/Dockerfile_build_ubuntu32,"# Install go
+116,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Build assets to ./dist
 "
-959,1b270973b91be060540818cc00e4558780c6a0d9,/Dockerfile_build_ubuntu64_go19,"# Install go
+117,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Run the image as a non-root user
 "
-960,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Install node deps
-"
-961,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Build assets to ./dist
-"
-962,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Run the image as a non-root user
-"
-963,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
+118,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
 # in the future we'd start the go process here.
 "
-964,2d266ca186f9c94d8a359bacfce974943253ac50,/Dockerfile_jenkins_ubuntu32,"# Install go
+119,9ed4770700bbc75269967c1d8e6de308028d9eb7,/e2e/scripts/Dockerfile,"#Use and official Python runtime as a base image
 "
-965,6fee7a3671cdf0a94175fe22a6a273e03bad0370,/etc/Dockerfile_build,"# Install node
-"
-966,6fee7a3671cdf0a94175fe22a6a273e03bad0370,/etc/Dockerfile_build,"# Update npm
-"
-967,6fee7a3671cdf0a94175fe22a6a273e03bad0370,/etc/Dockerfile_build,"# Install go
-"
-968,ba76535b355a047684efc81a6e3ac2336014333f,/Dockerfile_build_ubuntu32,"# Install go
-"
-969,9ed4770700bbc75269967c1d8e6de308028d9eb7,/e2e/scripts/Dockerfile,"#Use and official Python runtime as a base image
-"
-970,9ed4770700bbc75269967c1d8e6de308028d9eb7,/e2e/scripts/Dockerfile,"#ADD entrypoint.sh /entrypoint.sh
+120,9ed4770700bbc75269967c1d8e6de308028d9eb7,/e2e/scripts/Dockerfile,"#ADD entrypoint.sh /entrypoint.sh
 
 #Run app.py when the container launches
 "
-971,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
+121,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
 "
-972,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# copy binary into image
+122,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# copy binary into image
 "
-973,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# Add influxd to the PATH
+123,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# Add influxd to the PATH
 "
-974,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# Generate a default config
+124,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# Generate a default config
 "
-975,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# Use /data for all disk storage
+125,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# Use /data for all disk storage
 "
-976,ca85dd4cffa05bf351ea7c5f9b3c9b2c5369a4ce,/Dockerfile_build_ubuntu64_git,"# Setup env
+126,b5a248802e71050f4ca2eeb026934cf66279e1ba,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-977,ca85dd4cffa05bf351ea7c5f9b3c9b2c5369a4ce,/Dockerfile_build_ubuntu64_git,"# Install go
+127,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
 "
-978,ca85dd4cffa05bf351ea7c5f9b3c9b2c5369a4ce,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
+128,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# copy binary into image
 "
-979,ca85dd4cffa05bf351ea7c5f9b3c9b2c5369a4ce,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
+129,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# Add influxd to the PATH
 "
-980,ca1b7809064a91eefaa91d6795e4deab37be685d,/Dockerfile_build_ubuntu64_go1.11,"# Install go
+130,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# Generate a default config
 "
-981,ca1b7809064a91eefaa91d6795e4deab37be685d,/Dockerfile_build_ubuntu64_go1.11,"# TODO(edd) this needs to be updated to 1.11 when the branch is available.
+131,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# Use /data for all disk storage
 "
-982,cccc9a38ce190e98e8d14b35729df4a280c5e606,/etc/Dockerfile_build,"# Install node
+132,066d53f99da9d6ecd448deac3a0d366097a6feea,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
 "
-983,cccc9a38ce190e98e8d14b35729df4a280c5e606,/etc/Dockerfile_build,"# Install go
+133,aa7ae36880ffc21de46d910026e155733a9e8816,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
 "
-984,b05e83e8efa5bb636e39dd689a23cb19ce0b6722,/Dockerfile_build_ubuntu64,"# Install go
-"
-985,7d243c31b3dbdb30b671b26ba37618650404df6e,/Dockerfile_build_ubuntu32,"# Install go
-"
-986,33cf8a8c53528a0543d74a10d3a553b6ef404897,/etc/Dockerfile_build,"# Install node
-"
-987,33cf8a8c53528a0543d74a10d3a553b6ef404897,/etc/Dockerfile_build,"# Update npm
-"
-988,33cf8a8c53528a0543d74a10d3a553b6ef404897,/etc/Dockerfile_build,"# Install go
-"
-989,b5a248802e71050f4ca2eeb026934cf66279e1ba,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-990,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-991,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# copy binary into image
-"
-992,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# Add influxd to the PATH
-"
-993,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# Generate a default config
-"
-994,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# Use /data for all disk storage
-"
-995,b1e29d4ae16e3b10cfb02ca31a38c3eaaf2a94ee,/Dockerfile_build_ubuntu64,"# Install go
-"
-996,2f1e83427bb710f752d0cfd482a5da3ce94c011b,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-997,2f1e83427bb710f752d0cfd482a5da3ce94c011b,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-998,2f1e83427bb710f752d0cfd482a5da3ce94c011b,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-999,2f1e83427bb710f752d0cfd482a5da3ce94c011b,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-1000,dba3849c800d75fb085525060cd857ae9a7cd431,/Dockerfile_build_ubuntu64,"# Install go
-"
-1001,2cd86f68a5a3f8808a723ac4aa18e39722962575,/etc/Dockerfile_build,"# Install node
-"
-1002,2cd86f68a5a3f8808a723ac4aa18e39722962575,/etc/Dockerfile_build,"# Update npm
-"
-1003,2cd86f68a5a3f8808a723ac4aa18e39722962575,/etc/Dockerfile_build,"# Install go
-"
-1004,20e20f596f9a26191c8c0faad44c9eda57e77daf,/Dockerfile_build_ubuntu64,"# Install go
-"
-1005,c30c33dbcbe60b17bbc803767e548469fc6777e7,/Dockerfile_build_ubuntu64,"# Install go
-"
-1006,0e4bc275d87d11141ba8fb902bfe33d593e5ce8c,/Dockerfile_build_ubuntu64_tip,"# Setup env
-"
-1007,0e4bc275d87d11141ba8fb902bfe33d593e5ce8c,/Dockerfile_build_ubuntu64_tip,"# Install go1.5+
-"
-1008,0e4bc275d87d11141ba8fb902bfe33d593e5ce8c,/Dockerfile_build_ubuntu64_tip,"# Clone Go tip for compilation
-"
-1009,0e4bc275d87d11141ba8fb902bfe33d593e5ce8c,/Dockerfile_build_ubuntu64_tip,"# Add script for compiling go
-"
-1010,05694a2c0e82d52d12f2faddc1481eb298dc197c,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-1011,f07173cf0df8b4e4ceb5207e6a75b179798820a3,/etc/Dockerfile_build,"# Install node
-"
-1012,f07173cf0df8b4e4ceb5207e6a75b179798820a3,/etc/Dockerfile_build,"# Update npm
-"
-1013,f07173cf0df8b4e4ceb5207e6a75b179798820a3,/etc/Dockerfile_build,"# Install go
-"
-1014,d85b7334cd921483b933bbbd10b2a8c271bb1f5c,/Dockerfile_build_ubuntu32,"# Install go
-"
-1015,066d53f99da9d6ecd448deac3a0d366097a6feea,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
-"
-1016,aa7ae36880ffc21de46d910026e155733a9e8816,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-1017,f5345fbaf2ceed1050d17546d21526934c8d624b,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-1018,8f784a249806ce38689e1d163d6bc3a917b45242,/etc/Dockerfile_build,"# Install node
-"
-1019,8f784a249806ce38689e1d163d6bc3a917b45242,/etc/Dockerfile_build,"# Update npm
-"
-1020,8f784a249806ce38689e1d163d6bc3a917b45242,/etc/Dockerfile_build,"# Install go
-"
-1021,d2c7c742385a2baf7191b733dfb103491ced54ea,/etc/Dockerfile_build,"# Install node
-"
-1022,d2c7c742385a2baf7191b733dfb103491ced54ea,/etc/Dockerfile_build,"# Update npm
-"
-1023,d2c7c742385a2baf7191b733dfb103491ced54ea,/etc/Dockerfile_build,"# Install go
-"
-1024,58c03448aa0e5af37614041add65d968ea694012,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-1025,58c03448aa0e5af37614041add65d968ea694012,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-1026,58c03448aa0e5af37614041add65d968ea694012,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-1027,58c03448aa0e5af37614041add65d968ea694012,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-1028,57cb3fdbc0610c6bc8ccd315359331d1ab6acf1f,/Dockerfile_build_ubuntu32,"# Install go
-"
-1029,b05e83e8efa5bb636e39dd689a23cb19ce0b6722,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-1030,4d5d9e472822a5bdb4050f85eabc39db6b07cb99,/etc/Dockerfile_build,"# Install node
-"
-1031,4d5d9e472822a5bdb4050f85eabc39db6b07cb99,/etc/Dockerfile_build,"# Update npm
-"
-1032,4d5d9e472822a5bdb4050f85eabc39db6b07cb99,/etc/Dockerfile_build,"# Install go
-"
-1033,ff12e83e7f7de6052b3c3328ac82b835ffbc72c1,/Dockerfile_build_ubuntu64,"# Install go1.5+
-"
-1034,8d679cf0c36edf5aaede7a0ea068cf9d0c9be409,/Dockerfile_build_ubuntu64,"# Install go
-"
-1035,156cee7c96226fcabf711bf73004e6cbf9e498de,/Dockerfile_build_ubuntu64,"# Install go
-"
-1036,677552f093180f9431249d6d9087e1ee2547410c,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
-"
-1037,ebdb12a1d2d667200543c21d5d416a435ef3b7ad,/etc/Dockerfile_build,"# Install node
-"
-1038,ebdb12a1d2d667200543c21d5d416a435ef3b7ad,/etc/Dockerfile_build,"# Update npm
-"
-1039,ebdb12a1d2d667200543c21d5d416a435ef3b7ad,/etc/Dockerfile_build,"# Install go
-"
-1040,73b3a2a0565dbf8b2caa4225ba10ae5777e8ca44,/Dockerfile_build_ubuntu64,"# Install go
-"
-1041,afde7ce531579470156cbb4ad9f83ac39c765ae9,/Dockerfile_build_ubuntu32,"# Install go
-"
-1042,ad83a19ad9cd15ce567e6a3cdf6bd738924fddb2,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-1043,156cee7c96226fcabf711bf73004e6cbf9e498de,/Dockerfile_jenkins_ubuntu32,"# Install go
-"
-1044,857afc1006b93dbbeb87e92b0503bdd312992687,/Dockerfile_build_ubuntu64_git,"# Setup env
-"
-1045,857afc1006b93dbbeb87e92b0503bdd312992687,/Dockerfile_build_ubuntu64_git,"# Install go
-"
-1046,857afc1006b93dbbeb87e92b0503bdd312992687,/Dockerfile_build_ubuntu64_git,"# Clone Go tip for compilation
-"
-1047,857afc1006b93dbbeb87e92b0503bdd312992687,/Dockerfile_build_ubuntu64_git,"# Add script for compiling go
-"
-1048,e415d0b10ffe372a706690646ed79578949c502b,/Dockerfile_build_ubuntu64_go19,"# Install go
-"
-1049,d83c1e8a6396e4fe0e75379456976744741b9448,/etc/Dockerfile_build,"# Install node
-"
-1050,d83c1e8a6396e4fe0e75379456976744741b9448,/etc/Dockerfile_build,"# Update npm
-"
-1051,d83c1e8a6396e4fe0e75379456976744741b9448,/etc/Dockerfile_build,"# Install go
-"
-1052,10b271968ce6e5596dde349d083fabbd5fca6e60,/Dockerfile_build_ubuntu64,"# Install go
-"
-1053,c1cbf0df939b94b78254db52600d84b7653b6b3c,/etc/Dockerfile_build,"# Install node
-"
-1054,c1cbf0df939b94b78254db52600d84b7653b6b3c,/etc/Dockerfile_build,"# Update npm
-"
-1055,c1cbf0df939b94b78254db52600d84b7653b6b3c,/etc/Dockerfile_build,"# Install go
-"
-1056,a40ef53b49837d90d4ca32499a253e96b3443dfe,/Dockerfile_build_ubuntu64,"# Install go
-"
-1057,d7e328050c0e0eca0cfbed044624eb74730358b2,/Dockerfile_jenkins_ubuntu32,"# Install go
+134,677552f093180f9431249d6d9087e1ee2547410c,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
 "

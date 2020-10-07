@@ -115,8 +115,8 @@ def extractChangeInfo(gitlog):
 
     df = gitlog.copy(deep=True)
      # isDockerFile
-    df = df.dropna(subset=['Dockerfiles'])
-    df = df[ df["Status"].apply(lambda st: ("A" in str(st)) or ("D" in str(st)) or ("R" in str(st)))]
+    df = df.dropna(subset=['Dockerfile'])
+    df = df[ df["Status"].apply(lambda st: ("A" == str(st)) or ("D" == str(st)) or ("R" == str(st)))]
 
     dateStatusDict = {
         "filename": [],
@@ -126,13 +126,9 @@ def extractChangeInfo(gitlog):
     
     # get Rename
     for index, row in df.iterrows():
-        dockerfiles = row["Dockerfiles"].splitlines()
-        statuses = row["Status"].splitlines()
-        for i in range(len(dockerfiles)):
-            if statuses[i] != "M":
-                dateStatusDict["filename"].append(dockerfiles[i])
-                dateStatusDict["Date"].append(row["Date"])
-                dateStatusDict["Status"].append(statuses[i])
+        dateStatusDict["filename"].append(row["Dockerfile"])
+        dateStatusDict["Date"].append(row["Date"])
+        dateStatusDict["Status"].append(row["Status"])
 
     dateStatusDataFrame = pd.DataFrame.from_dict(dateStatusDict)
 

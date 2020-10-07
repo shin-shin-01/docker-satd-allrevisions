@@ -500,35 +500,46 @@
 "
 149,b7088d29c6ee508881153aed3bb46290f521e15d,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-150,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+150,77e69b9cf3d9e707ef2f5bbfe815e80708974e1a,/vendor/github.com/bradfitz/http2/Dockerfile,"#
+# This Dockerfile builds a recent curl with HTTP/2 client support, using
+# a recent nghttp2 build.
+#
+# See the Makefile for how to tag it. If Docker and that image is found, the
+# Go tests use this curl binary for integration tests.
+#
+
+"
+151,77e69b9cf3d9e707ef2f5bbfe815e80708974e1a,/vendor/github.com/bradfitz/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+"
+152,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-151,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"        # For DIND
+153,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-152,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"        # For build
+154,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"        # For build
 "
-153,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"# Install Docker
+155,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-154,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"# Install DIND
+156,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-155,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"# Install bats
+157,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-156,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+158,61a4a1362c9bb6f8f585e0522d67612c08c9d0e4,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "
-157,7cfc6fd0627e31aef7d656e3d844d6401e1c7aaf,/docs/Dockerfile,"# to get the git info for this repo
+159,7cfc6fd0627e31aef7d656e3d844d6401e1c7aaf,/docs/Dockerfile,"# to get the git info for this repo
 "
-158,7cfc6fd0627e31aef7d656e3d844d6401e1c7aaf,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+160,7cfc6fd0627e31aef7d656e3d844d6401e1c7aaf,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
 "
-159,7cfc6fd0627e31aef7d656e3d844d6401e1c7aaf,/docs/Dockerfile,"#
+161,7cfc6fd0627e31aef7d656e3d844d6401e1c7aaf,/docs/Dockerfile,"#
 # RUN git describe --match 'v[0-9]*' --dirty='.m' --always > /docs/VERSION
 # The above line causes a floating point error in our tools
 #
 "
-160,7cfc6fd0627e31aef7d656e3d844d6401e1c7aaf,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+162,7cfc6fd0627e31aef7d656e3d844d6401e1c7aaf,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
 "
-161,95e80a82830d739436fc9685f30bdd9c615084f6,/docs/Dockerfile,"# To get the git info for this repo
+163,95e80a82830d739436fc9685f30bdd9c615084f6,/docs/Dockerfile,"# To get the git info for this repo
 "
-162,41e71e9a461878a2cf0ff50428e8a5092dee3086,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"#
+164,41e71e9a461878a2cf0ff50428e8a5092dee3086,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
@@ -537,11 +548,11 @@
 #
 
 "
-163,41e71e9a461878a2cf0ff50428e8a5092dee3086,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+165,41e71e9a461878a2cf0ff50428e8a5092dee3086,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-164,74bb6f89c87dacc5c538a1807cda5b4d3f335262,/docs/Dockerfile,"# To get the git info for this repo
+166,74bb6f89c87dacc5c538a1807cda5b4d3f335262,/docs/Dockerfile,"# To get the git info for this repo
 "
-165,a33095af80fa2dfeac65be78185428f31bef190a,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"#
+167,a33095af80fa2dfeac65be78185428f31bef190a,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
@@ -550,37 +561,37 @@
 #
 
 "
-166,a33095af80fa2dfeac65be78185428f31bef190a,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+168,a33095af80fa2dfeac65be78185428f31bef190a,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-167,0a2affa79f74bfd8f61606e83409ae5563a3f367,/docs/Dockerfile,"# to get the git info for this repo
+169,0a2affa79f74bfd8f61606e83409ae5563a3f367,/docs/Dockerfile,"# to get the git info for this repo
 "
-168,0a2affa79f74bfd8f61606e83409ae5563a3f367,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+170,0a2affa79f74bfd8f61606e83409ae5563a3f367,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
 "
-169,0a2affa79f74bfd8f61606e83409ae5563a3f367,/docs/Dockerfile,"# 
+171,0a2affa79f74bfd8f61606e83409ae5563a3f367,/docs/Dockerfile,"# 
 #
 "
-170,0a2affa79f74bfd8f61606e83409ae5563a3f367,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+172,0a2affa79f74bfd8f61606e83409ae5563a3f367,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
 "
-171,cf9b4ab5e9458eb4e542b8db487344a59657f4fe,/docs/Dockerfile,"# to get the git info for this repo
+173,cf9b4ab5e9458eb4e542b8db487344a59657f4fe,/docs/Dockerfile,"# to get the git info for this repo
 "
-172,cf9b4ab5e9458eb4e542b8db487344a59657f4fe,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+174,cf9b4ab5e9458eb4e542b8db487344a59657f4fe,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
 "
-173,cf9b4ab5e9458eb4e542b8db487344a59657f4fe,/docs/Dockerfile,"#
+175,cf9b4ab5e9458eb4e542b8db487344a59657f4fe,/docs/Dockerfile,"#
 # RUN git describe --match 'v[0-9]*' --dirty='.m' --always > /docs/VERSION
 # The above line causes a floating point error in our tools
 #
 "
-174,cf9b4ab5e9458eb4e542b8db487344a59657f4fe,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+176,cf9b4ab5e9458eb4e542b8db487344a59657f4fe,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
 "
-175,1b9ab303a477ded9bdd3fc97e9119fa8f9e58fca,/docs/Dockerfile,"# To get the git info for this repo
+177,1b9ab303a477ded9bdd3fc97e9119fa8f9e58fca,/docs/Dockerfile,"# To get the git info for this repo
 "
-176,bf991fec01662fc14610365882d8bc142a6cbdd6,/docs/Dockerfile,"# To get the git info for this repo
+178,bf991fec01662fc14610365882d8bc142a6cbdd6,/docs/Dockerfile,"# To get the git info for this repo
 "
-177,91cea1aa169c93080affadecef5f2c41625a1d36,/Dockerfile,"# Fetch any dependencies to run the registry
+179,91cea1aa169c93080affadecef5f2c41625a1d36,/Dockerfile,"# Fetch any dependencies to run the registry
 "
-178,3ea67df37383dd6941908a9949ab55c7073ece5b,/docs/Dockerfile,"# To get the git info for this repo
+180,3ea67df37383dd6941908a9949ab55c7073ece5b,/docs/Dockerfile,"# To get the git info for this repo
 "
-179,3ea67df37383dd6941908a9949ab55c7073ece5b,/docs/Dockerfile,"# Sed to process GitHub Markdown
+181,3ea67df37383dd6941908a9949ab55c7073ece5b,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Remove .md extension from link text
 # 4 Change ](/ to ](/project/ in links
@@ -590,39 +601,39 @@
 # 
 # 
 "
-180,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+182,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-181,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"        # For DIND
+183,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-182,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"        # For build
+184,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"        # For build
 "
-183,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"# Install Docker
+185,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-184,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"# Install DIND
+186,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-185,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"# Install bats
+187,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-186,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+188,a6346d64a19827f1566a4b69fbc48ea6ffdf8025,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "
-187,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+189,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-188,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"        # For DIND
+190,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-189,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"        # For build
+191,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"        # For build
 "
-190,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"# Install Docker
+192,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-191,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"# Install DIND
+193,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-192,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"# Install bats
+194,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-193,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+195,e920231b17d94647434e51920d076c1a9dcf999b,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "
-194,1aa8b00bdf0b56e5906ab798d88a617f3b806c18,/docs/Dockerfile,"# To get the git info for this repo
+196,1aa8b00bdf0b56e5906ab798d88a617f3b806c18,/docs/Dockerfile,"# To get the git info for this repo
 "
-195,1aa8b00bdf0b56e5906ab798d88a617f3b806c18,/docs/Dockerfile,"# Sed to process GitHub Markdown
+197,1aa8b00bdf0b56e5906ab798d88a617f3b806c18,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Change ](/word to ](/project/ in links
 # 4 Change ](word.md) to ](/project/word)
@@ -632,38 +643,38 @@
 # 8 Change ](../ to ](/project/ 
 # 
 "
-196,d187e765b6382c7c40be2459df6cc9320e5f94fb,/docs/Dockerfile,"# To get the git info for this repo
+198,d187e765b6382c7c40be2459df6cc9320e5f94fb,/docs/Dockerfile,"# To get the git info for this repo
 "
-197,d187e765b6382c7c40be2459df6cc9320e5f94fb,/docs/Dockerfile,"# Processing GitHub Markdown
+199,d187e765b6382c7c40be2459df6cc9320e5f94fb,/docs/Dockerfile,"# Processing GitHub Markdown
 # 1 Remove <!--[metadata]> and <![end-metadata]-->
 # 2 Remove any leading combination of dots and slashes (./, ../, ../../, etc)
 # 3 Prepend /$PROJECT to all links, remove any trailing .md, only for non http:// links and non internal anchors
 
 "
-198,d187e765b6382c7c40be2459df6cc9320e5f94fb,/docs/Dockerfile,"#\{0,1\}\(#[A-Za-z0-9_-]*\)\{0,1\}\)[)]/\1\/'$PROJECT'\/\2\4)/g' \
+200,d187e765b6382c7c40be2459df6cc9320e5f94fb,/docs/Dockerfile,"#\{0,1\}\(#[A-Za-z0-9_-]*\)\{0,1\}\)[)]/\1\/'$PROJECT'\/\2\4)/g' \
 "
-199,d187e765b6382c7c40be2459df6cc9320e5f94fb,/docs/Dockerfile,"# Prepare the compare file and expect an empty diff against test.md
+201,d187e765b6382c7c40be2459df6cc9320e5f94fb,/docs/Dockerfile,"# Prepare the compare file and expect an empty diff against test.md
 "
-200,f6d22717e79e695f19cb3c1d745b4570265e4f55,/docs/Dockerfile,"# To get the git info for this repo
+202,f6d22717e79e695f19cb3c1d745b4570265e4f55,/docs/Dockerfile,"# To get the git info for this repo
 "
-201,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+203,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-202,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"        # For DIND
+204,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-203,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"        # For build
+205,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"        # For build
 "
-204,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"# Install Docker
+206,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-205,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"# Install DIND
+207,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-206,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"# Install bats
+208,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-207,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+209,2b42e98a98df33fbddae9e48e8a52a358ac067d7,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "
-208,4e95367e5500194c263fef9c3f5bb4036d11e0a7,/docs/Dockerfile,"# To get the git info for this repo
+210,4e95367e5500194c263fef9c3f5bb4036d11e0a7,/docs/Dockerfile,"# To get the git info for this repo
 "
-209,4e95367e5500194c263fef9c3f5bb4036d11e0a7,/docs/Dockerfile,"# Sed to process GitHub Markdown
+211,4e95367e5500194c263fef9c3f5bb4036d11e0a7,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Change ](/word to ](/project/ in links
 # 4 Change ](word.md) to ](/project/word)
@@ -673,22 +684,22 @@
 # 8 Change ](../ to ](/project/ 
 # 
 "
-210,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+212,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-211,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"        # For DIND
+213,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-212,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"        # For build
+214,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"        # For build
 "
-213,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"# Install Docker
+215,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-214,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"# Install DIND
+216,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-215,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"# Install bats
+217,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-216,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+218,3a414deddb8114c9e2c5bdbae56bd6061d83a012,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "
-217,5ebf6391a704768c325c0d033081048d644d7878,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"#
+219,5ebf6391a704768c325c0d033081048d644d7878,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
@@ -697,9 +708,9 @@
 #
 
 "
-218,5ebf6391a704768c325c0d033081048d644d7878,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+220,5ebf6391a704768c325c0d033081048d644d7878,/Godeps/_workspace/src/github.com/bradfitz/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-219,71309e96e426d6a21e203cd8b2480f437bfe2d15,/vendor/golang.org/x/net/http2/Dockerfile,"#
+221,71309e96e426d6a21e203cd8b2480f437bfe2d15,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
@@ -708,27 +719,27 @@
 #
 
 "
-220,71309e96e426d6a21e203cd8b2480f437bfe2d15,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
+222,71309e96e426d6a21e203cd8b2480f437bfe2d15,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
 "
-221,71309e96e426d6a21e203cd8b2480f437bfe2d15,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+223,71309e96e426d6a21e203cd8b2480f437bfe2d15,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-222,642fb631f493441c283e0c2a4be6c184da2099d9,/docs/Dockerfile,"# To get the git info for this repo
+224,642fb631f493441c283e0c2a4be6c184da2099d9,/docs/Dockerfile,"# To get the git info for this repo
 "
-223,642fb631f493441c283e0c2a4be6c184da2099d9,/docs/Dockerfile,"# Processing GitHub Markdown
+225,642fb631f493441c283e0c2a4be6c184da2099d9,/docs/Dockerfile,"# Processing GitHub Markdown
 # 1 Remove <!--[metadata]> and <![end-metadata]-->
 # 2 Remove any leading combination of dots and slashes (./, ../, ../../, etc)
 # 3 Prepend /$PROJECT to all links, remove any trailing .md, only for non http:// links and non internal anchors
 
 "
-224,642fb631f493441c283e0c2a4be6c184da2099d9,/docs/Dockerfile,"#\{0,1\}\(#[A-Za-z0-9_-]*\)\{0,1\}\)[)]/\1\/'$PROJECT'\/\2\4)/g' \
+226,642fb631f493441c283e0c2a4be6c184da2099d9,/docs/Dockerfile,"#\{0,1\}\(#[A-Za-z0-9_-]*\)\{0,1\}\)[)]/\1\/'$PROJECT'\/\2\4)/g' \
 "
-225,642fb631f493441c283e0c2a4be6c184da2099d9,/docs/Dockerfile,"# Prepare the compare file and expect an empty diff against test.md
+227,642fb631f493441c283e0c2a4be6c184da2099d9,/docs/Dockerfile,"# Prepare the compare file and expect an empty diff against test.md
 "
-226,c1c230dee9623945981e08e39cd41e527df8e306,/docs/Dockerfile,"# To get the git info for this repo
+228,c1c230dee9623945981e08e39cd41e527df8e306,/docs/Dockerfile,"# To get the git info for this repo
 "
-227,d4910831a339fa96a21a4e473312c2155e2570d9,/docs/Dockerfile,"# To get the git info for this repo
+229,d4910831a339fa96a21a4e473312c2155e2570d9,/docs/Dockerfile,"# To get the git info for this repo
 "
-228,55287010cef064daf47da634065f54baa433de4a,/vendor/golang.org/x/net/http2/Dockerfile,"#
+230,55287010cef064daf47da634065f54baa433de4a,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
@@ -737,13 +748,13 @@
 #
 
 "
-229,55287010cef064daf47da634065f54baa433de4a,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
+231,55287010cef064daf47da634065f54baa433de4a,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
 "
-230,55287010cef064daf47da634065f54baa433de4a,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+232,55287010cef064daf47da634065f54baa433de4a,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-231,856638e299eddf01964fa918ac1552d8aa2e22b3,/docs/Dockerfile,"# To get the git info for this repo
+233,856638e299eddf01964fa918ac1552d8aa2e22b3,/docs/Dockerfile,"# To get the git info for this repo
 "
-232,856638e299eddf01964fa918ac1552d8aa2e22b3,/docs/Dockerfile,"# Sed to process GitHub Markdown
+234,856638e299eddf01964fa918ac1552d8aa2e22b3,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Change ](/word to ](/project/ in links
 # 4 Change ](word.md) to ](/project/word)
@@ -753,38 +764,38 @@
 # 8 Change ](../ to ](/project/ 
 # 
 "
-233,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+235,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-234,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"        # For DIND
+236,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-235,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"        # For build
+237,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"        # For build
 "
-236,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"# Install Docker
+238,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-237,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"# Install DIND
+239,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-238,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"# Install bats
+240,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-239,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+241,b6faf3fa9f45f1fa4f251b4e9a5f1a71b979e68c,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "
-240,261ed7fa988c110b0ef1c143795af283f52a3b34,/docs/Dockerfile,"# To get the git info for this repo
+242,261ed7fa988c110b0ef1c143795af283f52a3b34,/docs/Dockerfile,"# To get the git info for this repo
 "
-241,3ad11ff36372a483dc18123c90b49cf4bc0ee047,/docs/Dockerfile,"# To get the git info for this repo
+243,3ad11ff36372a483dc18123c90b49cf4bc0ee047,/docs/Dockerfile,"# To get the git info for this repo
 "
-242,3ad11ff36372a483dc18123c90b49cf4bc0ee047,/docs/Dockerfile,"# Processing GitHub Markdown
+244,3ad11ff36372a483dc18123c90b49cf4bc0ee047,/docs/Dockerfile,"# Processing GitHub Markdown
 # 1 Remove <!--[metadata]> and <![end-metadata]-->
 # 2 Remove any leading combination of dots and slashes (./, ../, ../../, etc)
 # 3 Prepend /$PROJECT to all links, remove any trailing .md, only for non http:// links and non internal anchors
 
 "
-243,3ad11ff36372a483dc18123c90b49cf4bc0ee047,/docs/Dockerfile,"#\{0,1\}\(#[A-Za-z0-9_-]*\)\{0,1\}\)[)]/\1\/'$PROJECT'\/\2\4)/g' \
+245,3ad11ff36372a483dc18123c90b49cf4bc0ee047,/docs/Dockerfile,"#\{0,1\}\(#[A-Za-z0-9_-]*\)\{0,1\}\)[)]/\1\/'$PROJECT'\/\2\4)/g' \
 "
-244,3ad11ff36372a483dc18123c90b49cf4bc0ee047,/docs/Dockerfile,"# Prepare the compare file and expect an empty diff against test.md
+246,3ad11ff36372a483dc18123c90b49cf4bc0ee047,/docs/Dockerfile,"# Prepare the compare file and expect an empty diff against test.md
 "
-245,f89e584aa51738bd0f315372f1755b030173fb81,/docs/Dockerfile,"# To get the git info for this repo
+247,f89e584aa51738bd0f315372f1755b030173fb81,/docs/Dockerfile,"# To get the git info for this repo
 "
-246,f89e584aa51738bd0f315372f1755b030173fb81,/docs/Dockerfile,"# Sed to process GitHub Markdown
+248,f89e584aa51738bd0f315372f1755b030173fb81,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Change ](/word to ](/project/ in links
 # 4 Change ](word.md) to ](/project/word)
@@ -794,7 +805,7 @@
 # 8 Change ](../ to ](/project/ 
 # 
 "
-247,a31474626b734af9cb9380a2db163023870e752d,/vendor/golang.org/x/net/http2/Dockerfile,"#
+249,a31474626b734af9cb9380a2db163023870e752d,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
@@ -803,11 +814,11 @@
 #
 
 "
-248,a31474626b734af9cb9380a2db163023870e752d,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
+250,a31474626b734af9cb9380a2db163023870e752d,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
 "
-249,a31474626b734af9cb9380a2db163023870e752d,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+251,a31474626b734af9cb9380a2db163023870e752d,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-250,b787035d8b5973cb4cb0f14771f699dd9f93e9d8,/vendor/golang.org/x/net/http2/Dockerfile,"#
+252,b787035d8b5973cb4cb0f14771f699dd9f93e9d8,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
@@ -816,28 +827,28 @@
 #
 
 "
-251,b787035d8b5973cb4cb0f14771f699dd9f93e9d8,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
+253,b787035d8b5973cb4cb0f14771f699dd9f93e9d8,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
 "
-252,b787035d8b5973cb4cb0f14771f699dd9f93e9d8,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+254,b787035d8b5973cb4cb0f14771f699dd9f93e9d8,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-253,1fc752c7184a2bdcbeb26ad90eba80f9fd9c76bf,/docs/Dockerfile,"# To get the git info for this repo
+255,1fc752c7184a2bdcbeb26ad90eba80f9fd9c76bf,/docs/Dockerfile,"# To get the git info for this repo
 "
-254,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+256,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-255,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"        # For DIND
+257,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-256,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"        # For build
+258,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"        # For build
 "
-257,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"# Install Docker
+259,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-258,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"# Install DIND
+260,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-259,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"# Install bats
+261,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-260,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+262,6bf5a049ff66fad8b1281e62c28876c93031890e,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "
-261,fb106e167a680086edb8c64534c2ec95654b83d7,/vendor/golang.org/x/net/http2/Dockerfile,"#
+263,fb106e167a680086edb8c64534c2ec95654b83d7,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
@@ -846,24 +857,24 @@
 #
 
 "
-262,fb106e167a680086edb8c64534c2ec95654b83d7,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
+264,fb106e167a680086edb8c64534c2ec95654b83d7,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
 "
-263,fb106e167a680086edb8c64534c2ec95654b83d7,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+265,fb106e167a680086edb8c64534c2ec95654b83d7,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-264,636a19b2126ffe78d209eb6a7aedef857abd2539,/docs/Dockerfile,"# to get the git info for this repo
+266,636a19b2126ffe78d209eb6a7aedef857abd2539,/docs/Dockerfile,"# to get the git info for this repo
 "
-265,636a19b2126ffe78d209eb6a7aedef857abd2539,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+267,636a19b2126ffe78d209eb6a7aedef857abd2539,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
 "
-266,636a19b2126ffe78d209eb6a7aedef857abd2539,/docs/Dockerfile,"# 
+268,636a19b2126ffe78d209eb6a7aedef857abd2539,/docs/Dockerfile,"# 
 #
 "
-267,636a19b2126ffe78d209eb6a7aedef857abd2539,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+269,636a19b2126ffe78d209eb6a7aedef857abd2539,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
 "
-268,78aa1d2bb1a9801c4eee2c98ebd5be69dcc8c3f5,/docs/Dockerfile,"# To get the git info for this repo
+270,78aa1d2bb1a9801c4eee2c98ebd5be69dcc8c3f5,/docs/Dockerfile,"# To get the git info for this repo
 "
-269,73333615964427de0c49980f16489a4147fe0146,/docs/Dockerfile,"# To get the git info for this repo
+271,73333615964427de0c49980f16489a4147fe0146,/docs/Dockerfile,"# To get the git info for this repo
 "
-270,73333615964427de0c49980f16489a4147fe0146,/docs/Dockerfile,"# Sed to process GitHub Markdown
+272,73333615964427de0c49980f16489a4147fe0146,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Change ](/word to ](/project/ in links
 # 4 Change ](word.md) to ](/project/word)
@@ -873,15 +884,15 @@
 # 8 Change ](../ to ](/project/ 
 # 
 "
-271,a31474626b734af9cb9380a2db163023870e752d,/docs/Dockerfile,"# To get the git info for this repo
+273,a31474626b734af9cb9380a2db163023870e752d,/docs/Dockerfile,"# To get the git info for this repo
 "
-272,e728c8bbed82b9cbe078ed3461cdd366e22cfdb5,/docs/Dockerfile,"# To get the git info for this repo
+274,e728c8bbed82b9cbe078ed3461cdd366e22cfdb5,/docs/Dockerfile,"# To get the git info for this repo
 "
-273,fb106e167a680086edb8c64534c2ec95654b83d7,/docs/Dockerfile,"# To get the git info for this repo
+275,fb106e167a680086edb8c64534c2ec95654b83d7,/docs/Dockerfile,"# To get the git info for this repo
 "
-274,d46b6a8796d66767978ae4e6153f6d898f758a0d,/docs/Dockerfile,"# To get the git info for this repo
+276,d46b6a8796d66767978ae4e6153f6d898f758a0d,/docs/Dockerfile,"# To get the git info for this repo
 "
-275,87a997249d7432b910ed46dec5e5fde62a44638c,/vendor/golang.org/x/net/http2/Dockerfile,"#
+277,87a997249d7432b910ed46dec5e5fde62a44638c,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
@@ -890,11 +901,11 @@
 #
 
 "
-276,87a997249d7432b910ed46dec5e5fde62a44638c,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
+278,87a997249d7432b910ed46dec5e5fde62a44638c,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
 "
-277,87a997249d7432b910ed46dec5e5fde62a44638c,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+279,87a997249d7432b910ed46dec5e5fde62a44638c,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-278,be07be99045e304898724e8a8c21aaefbfdc8446,/vendor/golang.org/x/net/http2/Dockerfile,"#
+280,be07be99045e304898724e8a8c21aaefbfdc8446,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
@@ -903,45 +914,45 @@
 #
 
 "
-279,be07be99045e304898724e8a8c21aaefbfdc8446,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
+281,be07be99045e304898724e8a8c21aaefbfdc8446,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
 "
-280,be07be99045e304898724e8a8c21aaefbfdc8446,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+282,be07be99045e304898724e8a8c21aaefbfdc8446,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-281,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+283,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-282,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"        # For DIND
+284,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-283,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"        # For build
+285,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"        # For build
 "
-284,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"# Install Docker
+286,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-285,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"# Install DIND
+287,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-286,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"# Install bats
+288,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-287,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+289,2e7ac2ec6209cb4829647e04f6eef36a8a0f90ce,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "
-288,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+290,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-289,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"        # For DIND
+291,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-290,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"        # For build
+292,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"        # For build
 "
-291,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"# Install Docker
+293,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-292,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"# Install DIND
+294,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-293,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"# Install bats
+295,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-294,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+296,a0c63372fad430b7ab08d2763cb7d9e2c512c384,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "
-295,d438e75dcf902c35e183e75d88492b02bb0f9ea8,/docs/Dockerfile,"# To get the git info for this repo
+297,d438e75dcf902c35e183e75d88492b02bb0f9ea8,/docs/Dockerfile,"# To get the git info for this repo
 "
-296,020bd0b45f23e183724d23293fe0bb808d86bc72,/docs/Dockerfile,"# To get the git info for this repo
+298,020bd0b45f23e183724d23293fe0bb808d86bc72,/docs/Dockerfile,"# To get the git info for this repo
 "
-297,020bd0b45f23e183724d23293fe0bb808d86bc72,/docs/Dockerfile,"# Sed to process GitHub Markdown
+299,020bd0b45f23e183724d23293fe0bb808d86bc72,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Remove .md extension from link text
 # 4 Change ](/ to ](/project/ in links
@@ -951,24 +962,24 @@
 # 
 # 
 "
-298,d588ed13b257d19e79346beab608fb84a9613f24,/docs/Dockerfile,"# to get the git info for this repo
+300,d588ed13b257d19e79346beab608fb84a9613f24,/docs/Dockerfile,"# to get the git info for this repo
 "
-299,d588ed13b257d19e79346beab608fb84a9613f24,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+301,d588ed13b257d19e79346beab608fb84a9613f24,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
 "
-300,d588ed13b257d19e79346beab608fb84a9613f24,/docs/Dockerfile,"#
+302,d588ed13b257d19e79346beab608fb84a9613f24,/docs/Dockerfile,"#
 # RUN git describe --match 'v[0-9]*' --dirty='.m' --always > /docs/VERSION
 # The above line causes a floating point error in our tools
 #
 "
-301,d588ed13b257d19e79346beab608fb84a9613f24,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+303,d588ed13b257d19e79346beab608fb84a9613f24,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
 "
-302,62d46ef07d9ca38bba965564f80d71a7f10460fa,/docs/Dockerfile,"# To get the git info for this repo
+304,62d46ef07d9ca38bba965564f80d71a7f10460fa,/docs/Dockerfile,"# To get the git info for this repo
 "
-303,8e92a8ab008cf5981166a0fd83202c89f268360f,/docs/Dockerfile,"# To get the git info for this repo
+305,8e92a8ab008cf5981166a0fd83202c89f268360f,/docs/Dockerfile,"# To get the git info for this repo
 "
-304,32e7acfea2d149f72d204d269e4150f385a513f0,/docs/Dockerfile,"# To get the git info for this repo
+306,32e7acfea2d149f72d204d269e4150f385a513f0,/docs/Dockerfile,"# To get the git info for this repo
 "
-305,32e7acfea2d149f72d204d269e4150f385a513f0,/docs/Dockerfile,"# Sed to process GitHub Markdown
+307,32e7acfea2d149f72d204d269e4150f385a513f0,/docs/Dockerfile,"# Sed to process GitHub Markdown
 # 1-2 Remove comment code from metadata block
 # 3 Change ](/word to ](/project/ in links
 # 4 Change ](word.md) to ](/project/word)
@@ -978,67 +989,67 @@
 # 8 Change ](../ to ](/project/ 
 # 
 "
-306,c8dff1bb5764aa6ea48d261b813ef3b0d2e25989,/docs/Dockerfile,"# To get the git info for this repo
+308,c8dff1bb5764aa6ea48d261b813ef3b0d2e25989,/docs/Dockerfile,"# To get the git info for this repo
 "
-307,e5d98379701799dda78929550df915a9ab3310ad,/docs/Dockerfile,"# To get the git info for this repo
+309,e5d98379701799dda78929550df915a9ab3310ad,/docs/Dockerfile,"# To get the git info for this repo
 "
-308,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+310,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-309,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"        # For DIND
+311,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-310,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"        # For build
+312,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"        # For build
 "
-311,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"# Install Docker
+313,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-312,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"# Install DIND
+314,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-313,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"# Install bats
+315,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-314,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+316,d0fda14e858625e22e9bfaea4feda20bb8b60130,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "
-315,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+317,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-316,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"        # For DIND
+318,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-317,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"        # For build
+319,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"        # For build
 "
-318,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"# Install Docker
+320,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-319,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"# Install DIND
+321,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-320,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"# Install bats
+322,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-321,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+323,b39e6395fdd39c4aa279fe9fbc1d40b4cc09ce11,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "
-322,41dd70c90166a50a2a4cc4feb1d2def4b5a3182a,/docs/Dockerfile,"# to get the git info for this repo
+324,41dd70c90166a50a2a4cc4feb1d2def4b5a3182a,/docs/Dockerfile,"# to get the git info for this repo
 "
-323,41dd70c90166a50a2a4cc4feb1d2def4b5a3182a,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+325,41dd70c90166a50a2a4cc4feb1d2def4b5a3182a,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
 "
-324,41dd70c90166a50a2a4cc4feb1d2def4b5a3182a,/docs/Dockerfile,"#
+326,41dd70c90166a50a2a4cc4feb1d2def4b5a3182a,/docs/Dockerfile,"#
 # RUN git describe --match 'v[0-9]*' --dirty='.m' --always > /docs/VERSION
 # The above line causes a floating point error in our tools
 #
 "
-325,41dd70c90166a50a2a4cc4feb1d2def4b5a3182a,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+327,41dd70c90166a50a2a4cc4feb1d2def4b5a3182a,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
 "
-326,a1f74a783a3dd14c9b086d882c451d330863599d,/Dockerfile,"# Fetch any dependencies to run the registry
+328,a1f74a783a3dd14c9b086d882c451d330863599d,/Dockerfile,"# Fetch any dependencies to run the registry
 "
-327,5dd885b3117ad6db150230a84bd5d1690ff2a39a,/docs/Dockerfile,"# to get the git info for this repo
+329,5dd885b3117ad6db150230a84bd5d1690ff2a39a,/docs/Dockerfile,"# to get the git info for this repo
 "
-328,5dd885b3117ad6db150230a84bd5d1690ff2a39a,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
+330,5dd885b3117ad6db150230a84bd5d1690ff2a39a,/docs/Dockerfile,"# Reset the /docs dir so we can replace the theme meta with the new repo's git info
 "
-329,5dd885b3117ad6db150230a84bd5d1690ff2a39a,/docs/Dockerfile,"#
+331,5dd885b3117ad6db150230a84bd5d1690ff2a39a,/docs/Dockerfile,"#
 # RUN git describe --match 'v[0-9]*' --dirty='.m' --always > /docs/VERSION
 # The above line causes a floating point error in our tools
 #
 "
-330,5dd885b3117ad6db150230a84bd5d1690ff2a39a,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
+332,5dd885b3117ad6db150230a84bd5d1690ff2a39a,/docs/Dockerfile,"# Then build everything together, ready for mkdocs
 "
-331,7b66c50bb7e0e4b3b83f8fd134a9f6ea4be08b57,/docs/Dockerfile,"# To get the git info for this repo
+333,7b66c50bb7e0e4b3b83f8fd134a9f6ea4be08b57,/docs/Dockerfile,"# To get the git info for this repo
 "
-332,d7fd863ba47ab86775b1742ebde14181954e5dac,/vendor/golang.org/x/net/http2/Dockerfile,"#
+334,d7fd863ba47ab86775b1742ebde14181954e5dac,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
@@ -1047,13 +1058,13 @@
 #
 
 "
-333,d7fd863ba47ab86775b1742ebde14181954e5dac,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
+335,d7fd863ba47ab86775b1742ebde14181954e5dac,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
 "
-334,d7fd863ba47ab86775b1742ebde14181954e5dac,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+336,d7fd863ba47ab86775b1742ebde14181954e5dac,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-335,a5f72a60320b1080ba3c86da9352d7f24442ab49,/docs/Dockerfile,"# To get the git info for this repo
+337,a5f72a60320b1080ba3c86da9352d7f24442ab49,/docs/Dockerfile,"# To get the git info for this repo
 "
-336,f593b8d97570d27db8772f31a675e5df513ce5ac,/vendor/golang.org/x/net/http2/Dockerfile,"#
+338,f593b8d97570d27db8772f31a675e5df513ce5ac,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
@@ -1062,58 +1073,58 @@
 #
 
 "
-337,f593b8d97570d27db8772f31a675e5df513ce5ac,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
+339,f593b8d97570d27db8772f31a675e5df513ce5ac,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
 "
-338,f593b8d97570d27db8772f31a675e5df513ce5ac,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
+340,f593b8d97570d27db8772f31a675e5df513ce5ac,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
 "
-339,87c10960d23e3fdfef7c9324d70b600b11203a96,/Dockerfile,"# Fetch any dependencies to run the registry
+341,87c10960d23e3fdfef7c9324d70b600b11203a96,/Dockerfile,"# Fetch any dependencies to run the registry
 "
-340,454d4e918a824ad8821dcc4358f58cfdfe07a706,/Dockerfile,"# Fetch any dependencies to run the registry
+342,454d4e918a824ad8821dcc4358f58cfdfe07a706,/Dockerfile,"# Fetch any dependencies to run the registry
 "
-341,3069a04b8ceb0b1d5dcb475cad797052bbfc8c12,/docs/Dockerfile,"# To get the git info for this repo
+343,3069a04b8ceb0b1d5dcb475cad797052bbfc8c12,/docs/Dockerfile,"# To get the git info for this repo
 "
-342,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+344,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-343,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"        # For DIND
+345,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-344,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"        # For build
+346,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"        # For build
 "
-345,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"# Install Docker
+347,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-346,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"# Install DIND
+348,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-347,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"# Install bats
+349,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-348,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+350,f7a11aa2585b533ed0c1c7082bafe26b304f0df0,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "
-349,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+351,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-350,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"        # For DIND
+352,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-351,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"        # For build
+353,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"        # For build
 "
-352,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"# Install Docker
+354,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-353,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"# Install DIND
+355,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-354,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"# Install bats
+356,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-355,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+357,ef1c72b978f3327c03aff65947898b07afcb3ac9,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "
-356,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
+358,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"# compile and runtime deps
 # https://github.com/docker/docker/blob/master/project/PACKAGERS.md#runtime-dependencies
 "
-357,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"        # For DIND
+359,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"        # For DIND
 "
-358,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"        # For build
+360,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"        # For build
 "
-359,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"# Install Docker
+361,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"# Install Docker
 "
-360,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"# Install DIND
+362,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"# Install DIND
 "
-361,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"# Install bats
+363,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"# Install bats
 "
-362,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"# Install docker-compose
+364,5ebf6391a704768c325c0d033081048d644d7878,/contrib/docker-integration/Dockerfile,"# Install docker-compose
 "

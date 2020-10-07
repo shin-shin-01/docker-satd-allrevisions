@@ -21,14 +21,3 @@
 #	apk del .build-deps
 
 ",2019-04-04 18:29:18+02:00,2019-04-04 18:29:18+02:00,,1
-2,0ca74edc277862714856657aa9df3b7fab4d4b6f,Dockerfile-alpine.template,Dockerfile-alpine.template,"# Todo: remove build dependencies
-#	runDeps=""$( \
-#		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems \
-#		| tr ',' '\n' \
-#		| sort -u \
-#		| awk 'system(""[ -e /usr/local/lib/"" $1 "" ]"") == 0 { next } { print ""so:"" $1 }' \
-#	)""; \
-#	apk add --virtual .redmine-rundeps $runDeps; \
-#	apk del .build-deps
-
-",2019-04-04 18:29:18+02:00,2019-04-04 18:29:18+02:00,,1
