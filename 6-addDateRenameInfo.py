@@ -101,7 +101,8 @@ def modifyInformation(df, gitlog):
             # added_df.loc[ added_df["filename"] == renamefiles[0], "filename"] = renamefiles[1]
 
 
-    # 最初に追加された日付を追加している処理
+    # TODO: ここ正しい値にはなっていない（暫定で判断している）
+    # 最初に追加された日付を追加している処理 (逆順にしないことで)
     for idx, row in added_df.iterrows():
         df.loc[df["LatestDockerfile"] == row["filename"], "FirstCommit Date"] = row["Date"]
 

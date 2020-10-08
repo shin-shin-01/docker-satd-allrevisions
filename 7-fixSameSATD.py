@@ -64,13 +64,9 @@ def removeSameSATDofSameFile(csvfile):
             # 同一Dockerfile のコミット履歴に対して、対象SATDの最終コミット日より後で直近の日付を '削除された日' として取得したい
             tmp_date = df_Fileunique[ df_Fileunique["Date"] > LatestCommentRow["Date"] ]
 
-            if comment in tmp_date["Comment"].tolist():
-                # 同一ファイル
-                print("Error: 対象SATDの最終コミット日よりあとのデータに対象SATDが含まれています．\n === コードを修正してください。===")
-                exit()
-
+            # tmp_df (SATD のみのDataFrame) であるため、完全に削除されたあとは git log から コミット日時・ファイル名 を元に次のコミット日時 を取得
             if len(tmp_date) == 0:
-                # 最新ファイル名でいいのか？ # 変更される前のファイル名でコミットが存在している可能性を考えれていない
+                # TODO: 最新ファイル名でいいのか？ # 変更される前のファイル名でコミットが存在している可能性を考えれていない
                 deleted_date, commit_id = getCommentDeleteDate(repository, fileName, LatestCommentRow["Date"])
                 firstCommitRow["DeletedComment Date"] = deleted_date
                 firstCommitRow["Deleted CommitID"] = commit_id
