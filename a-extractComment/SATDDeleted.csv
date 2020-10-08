@@ -1,7 +1,4 @@
 ,Comment
-2,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
-# http://erlang.org/pipermail/erlang-questions/2019-January/097067.html
-"
 7,"# TODO
 # Start with new FROM
 # Copy necessary artefacts from openssl-otp
@@ -28,9 +25,6 @@
 "
 14,"# get logs to stdout (thanks to http://www.superpumpup.com/docker-rabbitmq-stdout for inspiration)
 # TODO figure out what we'd need to do to add ""(sasl_)?"" to this sed and have it work (""{""init terminating in do_boot"",{rabbit,failure_during_boot,{error,{cannot_log_to_tty,sasl_report_tty_h,not_installed}}}}"")
-"
-19,"# hack in ""ENABLE_PATH_CHECK"" disabling to suppress:
-#   warning: Insecure world writable dir
 "
 57,"# This file describes the standard way to build Docker, using docker
 #
@@ -518,24 +512,6 @@
 #
 
 "
-103,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-"
 104,"#
 #    docker build -t docker:docs . && docker run -p 8000:8000 docker:docs
 #
@@ -571,43 +547,11 @@
 "
 109,"#### FIXME. Temporarily install docker and dind with proper apparmor handling
 "
-110,"# VERSION:        0.4
-# DOCKER-VERSION  0.6.6
-# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
-# DESCRIPTION:    Testing docker PRs and commits on top of master using
-# REFERENCES:     This code reuses the excellent implementation of
-#                 Docker in Docker made by Jerome Petazzoni.
-#                 https://github.com/jpetazzo/dind
-# COMMENTS:
-#   This Dockerfile adapts /Dockerfile to enable docker PRs and commits testing
-#   Optional arguments:
-#       [commit]  (default: 'HEAD')
-#       [repo]    (default: 'http://github.com/dotcloud/docker')
-#       [branch]  (default: 'master')
-# TO_BUILD:       docker build -t test_docker .
-# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]
-
-"
 111,"#### FIXME. Temporarily install docker with proper apparmor handling
 "
 112,"# VERSION:        1.5
 # DOCKER-VERSION  0.6.4
 # AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
-# DESCRIPTION:    Build docker nightly release using Docker in Docker.
-# REFERENCES:     This code reuses the excellent implementation of docker in docker
-#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
-# COMMENTS:
-#   release_credentials.json is a base64 json encoded file containing:
-#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
-#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
-#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
-# TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh
-
-"
-114,"# VERSION:        1.6
-# DOCKER-VERSION  0.6.6
-# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
 # DESCRIPTION:    Build docker nightly release using Docker in Docker.
 # REFERENCES:     This code reuses the excellent implementation of docker in docker
 #                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
@@ -680,6 +624,14 @@
 # TODO:
 
 "
+258,"# Zend Server
+#
+# Version 0.1
+
+# TODO:
+# - version as a variable (both php and ZS)
+
+"
 262,"## haskell package versions; can be overriden via context hacks
 "
 263,"## install additional libs typically needed by hackage packages
@@ -698,15 +650,7 @@
   # && ln -s&& ln -s ln -s /usr/local/lib/R /usr/lib/R
 
 "
-273,"#These settings are needed so that we can run as a different user than 1001 after server warmup
-# TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it
-"
-274,"# These settings are needed so that we can run as a different user than 1001 after server warmup
-# TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it
-"
 288,"# fixme: needs to check out a tag on the next 1.14 release
-"
-295,"# TODO rebuild other cffi modules here too? (other _*_build.py files)
 "
 297,"# TODO switch to buster once https://github.com/docker-library/php/issues/865 is resolved in a clean way (either in the PHP image or in PHP itself)
 
@@ -717,9 +661,6 @@
 306,"# By default you'll get a single-node development server that stores everything
 # in RAM, exposes a web UI, and bootstraps itself. Don't use this configuration
 # for production.
-"
-325,"# https://github.com/docker-library/postgres/issues/484 (clang-6.0 required, only available in stretch-backports)
-# TODO remove this once we hit buster+
 "
 328,"# TODO: Switch to debian sid
 
@@ -784,18 +725,6 @@
 "
 390,"# TODO: alter filename after v2 release (version will be taken out of name)
 "
-454,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")
-
-"
-471,"# TODO some sort of download verification here
-"
-484,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
-#RUN cpanm Digest::SHA Module::Signature
-# TODO find a way to make --verify work with backpan as well :'(
-#ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify
-
-# reinstall cpanm itself, for good measure
-"
 490,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 "
 497,"# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7)
@@ -804,22 +733,6 @@
 #ENV LANG C.UTF-8
 # TODO oraclelinux doesn't have C.UTF-8 by default??
 
-"
-530,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
-# - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
-# - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
-# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
-"
-531,"# TODO ENV DOCKER_SHA256
-# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
-# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
-
-"
-534,"# TODO aufs-tools
-
-# set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
-"
-535,"# https://github.com/docker/docker/tree/master/hack/dind
 "
 562,"# TODO ENV DOCKER_SHA256
 

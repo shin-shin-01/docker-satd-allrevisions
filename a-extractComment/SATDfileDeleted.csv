@@ -1,5 +1,5 @@
 ,Comment
-15,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
+2,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
 # http://erlang.org/pipermail/erlang-questions/2019-January/097067.html
 "
 17,"# TODO verification
@@ -8,8 +8,60 @@
 
 # TODO CMD [""rabbitmq-server""]
 "
-26,"# hack in ""ENABLE_PATH_CHECK"" disabling to suppress:
+19,"# hack in ""ENABLE_PATH_CHECK"" disabling to suppress:
 #   warning: Insecure world writable dir
+"
+99,"# TODO replace FPM with some very minimal debhelper stuff
+"
+103,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+"
+110,"# VERSION:        0.4
+# DOCKER-VERSION  0.6.6
+# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
+# DESCRIPTION:    Testing docker PRs and commits on top of master using
+# REFERENCES:     This code reuses the excellent implementation of
+#                 Docker in Docker made by Jerome Petazzoni.
+#                 https://github.com/jpetazzo/dind
+# COMMENTS:
+#   This Dockerfile adapts /Dockerfile to enable docker PRs and commits testing
+#   Optional arguments:
+#       [commit]  (default: 'HEAD')
+#       [repo]    (default: 'http://github.com/dotcloud/docker')
+#       [branch]  (default: 'master')
+# TO_BUILD:       docker build -t test_docker .
+# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]
+
+"
+114,"# VERSION:        1.6
+# DOCKER-VERSION  0.6.6
+# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
+# DESCRIPTION:    Build docker nightly release using Docker in Docker.
+# REFERENCES:     This code reuses the excellent implementation of docker in docker
+#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
+# COMMENTS:
+#   release_credentials.json is a base64 json encoded file containing:
+#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
+#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
+#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
+# TO_BUILD:       docker build -t dockerbuilder .
+# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh
+
 "
 178,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)
 "
@@ -56,6 +108,14 @@
 # TODO:
 
 "
+273,"#These settings are needed so that we can run as a different user than 1001 after server warmup
+# TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it
+"
+274,"# These settings are needed so that we can run as a different user than 1001 after server warmup
+# TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it
+"
+295,"# TODO rebuild other cffi modules here too? (other _*_build.py files)
+"
 305,"# By default you'll get a single-node development server that stores everything
 # in RAM and bootstraps itself. Don't use this configuration for production.
 "
@@ -90,21 +150,64 @@
 453,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")
 
 "
+484,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+#RUN cpanm Digest::SHA Module::Signature
+# TODO find a way to make --verify work with backpan as well :'(
+#ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify
+
+# reinstall cpanm itself, for good measure
+"
+485,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
+#
+# # Publish a release:
+# docker run --privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#
+
+"
+486,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
+
+# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them.
+"
 524,"# TODO signature? checksum?
 "
-532,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+528,"# Default to UTF-8 file.encoding
+#ENV LANG C.UTF-8
+# TODO oraclelinux doesn't have C.UTF-8 by default??
+
+"
+530,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf
 "
-533,"# TODO ENV DOCKER_SHA256
+531,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
 
 "
-537,"# TODO aufs-tools
+534,"# TODO aufs-tools
 
 # set up subuid/subgid so that ""--userns-remap=default"" works out-of-the-box
 "
-541,"# https://github.com/docker/docker/tree/master/hack/dind
+535,"# https://github.com/docker/docker/tree/master/hack/dind
 "

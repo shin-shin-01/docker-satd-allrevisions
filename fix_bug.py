@@ -25,16 +25,23 @@ def getTargetDataFrame(repository):
 def getCommentDeleteDate(repository, filename, latestCommitDate):
     """
     File Delete は D でコミット日時を取れるので大丈夫
+    → 複数回 Delete されていたら最初の Delete を取得するが
+    → ファイルdeleteとして記載しているのは 最後の Delete である
+    → よって D の場合は最後をとるように変更する
     """
     df = getTargetDataFrame(repository)
     df = df[df["Dockerfile"].apply(lambda files: filename in files)]
     # LatestCommit日(SATDが含まれる最終コミット日) よりあとのコミット情報を取得する。 
     df = df[ df["Date"] > latestCommitDate ]
-    
-    if len(df) == 0:
+
+    if len(df) == 0: # 存在していなかったら削除されていない
         return np.nan, np.nan
-    else:
-        return df.head(1).iloc[0, :]["Date"], df.head(1).iloc[0, :]["CommitID"]
+
+    # 削除に関しては 最後を残して全て削除
+    delete_index = df[df["Status"] == "D"].index.tolist()
+    df.drop(index=delete_index[:-1], inplace=True)
+
+    return df.head(1).iloc[0, :]["Date"], df.head(1).iloc[0, :]["CommitID"]
 
 
 if __name__ == "__main__":
