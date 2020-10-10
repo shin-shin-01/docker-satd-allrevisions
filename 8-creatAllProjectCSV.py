@@ -79,9 +79,6 @@ def renameColumns(df):
     df.rename(columns=renameColumns, inplace=True)
     return df
 
-def deleteColumns(df):
-    df = df.drop(columns='isSATD', inplace=True)
-    return df
 
 def addDateCalculatedInfo(df):
     listOfDateFromfirstCommit = []
