@@ -59,6 +59,7 @@ def modifyInformation(df, gitlog):
     df["Deleted Date"] = np.nan
     df["FirstCommit Date"] = np.nan
     df["Date"] = pd.to_datetime(df["Date"])
+    df["RenameList"] = df["Dockerfile"]
  
     dateStatusDataFrame = extractChangeInfo(gitlog)
     # 日付変換
@@ -81,7 +82,9 @@ def modifyInformation(df, gitlog):
         3. まだ削除されていない
         """
         if row["Status"] == "R":
-            df.loc[(df["LatestDockerfile"] == targetfile) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "LatestDockerfile"] = row["filename"].split()[1]
+            new_filename = row["filename"].split()[1]
+            df.loc[(df["LatestDockerfile"] == targetfile) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "LatestDockerfile"] = new_filename
+            df.loc[(df["LatestDockerfile"] == targetfile) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "RenameList"] += f"\n{new_filename}"
         elif row["Status"] == "D":
             df.loc[(df["LatestDockerfile"] == targetfile) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "Deleted Date"] = row["Date"]
 
@@ -168,5 +171,5 @@ if __name__ == "__main__":
             print(errorlog)
             writeError(errorlog)
 
-        df = df.reindex(columns=['CommitID', 'Dockerfile', 'LatestDockerfile', 'Comment', 'Date', 'FirstCommit Date', 'Deleted Date', 'isSATD'])
+        df = df.reindex(columns=['CommitID', 'Dockerfile', 'LatestDockerfile', 'Comment', 'Date', 'FirstCommit Date', 'Deleted Date', 'RenameList'])
         df.to_csv(f'{PATH_OF_SATD_COMMENTFILE_ADDINFO}/{csvfile}')
