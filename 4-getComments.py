@@ -23,10 +23,11 @@ def getTargetRepository():
 
 def commentDetect(txt):
     # テストコメント
-    # txt = "# コメントですよ\n python app.py #コメント \n　python # 1コメント目\n # ２連続\n /*\n skommento\n*/\n ですよ"
+    # txt = "# コメントですよ\n python app.py #コメント\n ##\n   #testttt\npython # 1コメント目\n # ２連続\n /*\n skommento\n*/\n ですよ"
 
-    HashCommnets = re.findall(r'(([ \t\f\r]*\#[^\n]*\n*)+)', txt)
-    HashCommnets = list(map(lambda tup: tup[0], HashCommnets))
+    HashCommnets = re.findall(r'(([ \t\f\r]*\#[^\n]*\n)+)', txt)
+    # [:-1] で最後の改行はなくすようにしてる
+    HashCommnets = list(map(lambda tup: tup[0][:-1], HashCommnets))
     AstaCommnets = re.findall(r'(/\*[^/]*\*/)', txt)
     
     HashCommnets.extend(AstaCommnets)
@@ -73,5 +74,3 @@ if __name__ == "__main__":
 
     for repository in tqdm(repositories):
         main(repository)
-
-
