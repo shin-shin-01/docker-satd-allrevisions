@@ -3,30 +3,21 @@
 # Start with new FROM
 # Copy necessary artefacts from openssl-otp
 # Install RabbitMQ
-# Ensure RabbitMQ starts & rabbitmqctl works correctly
-"
+# Ensure RabbitMQ starts & rabbitmqctl works correctly"
 8,"# TODO
 # Install RabbitMQ
-# Ensure RabbitMQ starts & rabbitmqctl works correctly
-"
+# Ensure RabbitMQ starts & rabbitmqctl works correctly"
 9,"# Delete all src dirs to keep the final image size down, they add an extra 19MB
-# TODO Could this be done better?
-"
+# TODO Could this be done better?"
 11,"# Add RabbitMQ to PATH, send all logs to TTY
-# TODO @tianon is sbin a problem? Notice that I'm installing generic-unix, not the Debian package
-"
+# TODO @tianon is sbin a problem? Notice that I'm installing generic-unix, not the Debian package"
 12,"# TODO @tianon why is this necessary?
-# RUN ln -sf ""/usr/lib/rabbitmq/lib/rabbitmq_server-$RABBITMQ_VERSION/plugins"" /plugins
-
-# Hint that the config, log & data (a.k.a. home dir) dirs should be separate volumes
-"
+# RUN ln -sf ""/usr/lib/rabbitmq/lib/rabbitmq_server-$RABBITMQ_VERSION/plugins"" /plugins"
 13,"# Delete all src dirs to keep the final image size down, they add an extra 19MB
-# TODO @dumbbell could this be done better, in the build/install phases?
-"
+# TODO @dumbbell could this be done better, in the build/install phases?"
 14,"# get logs to stdout (thanks to http://www.superpumpup.com/docker-rabbitmq-stdout for inspiration)
-# TODO figure out what we'd need to do to add ""(sasl_)?"" to this sed and have it work (""{""init terminating in do_boot"",{rabbit,failure_during_boot,{error,{cannot_log_to_tty,sasl_report_tty_h,not_installed}}}}"")
-"
-57,"# This file describes the standard way to build Docker, using docker
+# TODO figure out what we'd need to do to add ""(sasl_)?"" to this sed and have it work (""{""init terminating in do_boot"",{rabbit,failure_during_boot,{error,{cannot_log_to_tty,sasl_report_tty_h,not_installed}}}}"")"
+58,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -49,31 +40,7 @@
 # -e AWS_SECRET_KEY=bar \
 # -e GPG_PASSPHRASE=gloubiboulga \
 # -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release.sh
-# 
-
-"
-58,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-# -e AWS_S3_BUCKET=baz \
-# -e AWS_ACCESS_KEY=foo \
-# -e AWS_SECRET_KEY=bar \
-# -e GPG_PASSPHRASE=gloubiboulga \
-# -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release/release.sh
-# 
-
-"
+# "
 59,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
@@ -92,11 +59,29 @@
 # -e AWS_ACCESS_KEY=foo \
 # -e AWS_SECRET_KEY=bar \
 # -e GPG_PASSPHRASE=gloubiboulga \
-# -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release.sh
-# 
-
-"
+# -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release/release.sh
+# "
 60,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+# # Apparmor messes with privileged mode: disable it
+# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
+#
+# # Run the test suite:
+# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
+#
+# # Publish a release:
+# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
+# -e AWS_S3_BUCKET=baz \
+# -e AWS_ACCESS_KEY=foo \
+# -e AWS_SECRET_KEY=bar \
+# -e GPG_PASSPHRASE=gloubiboulga \
+# -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release.sh
+# "
+61,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -119,10 +104,8 @@
 #  -e AWS_SECRET_KEY=bar \
 #  -e GPG_PASSPHRASE=gloubiboulga \
 #  docker hack/release.sh
-#
-
-"
-61,"# This file describes the standard way to build Docker, using docker
+#"
+62,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -145,10 +128,8 @@
 #  -e AWS_SECRET_KEY=bar \
 #  -e GPG_PASSPHRASE=gloubiboulga \
 #  docker hack/release.sh
-#
-
-"
-62,"# This file describes the standard way to build Docker, using docker
+#"
+63,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -171,14 +152,10 @@
 #
 # Note: Apparmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#
-
-"
-63,"# TODO add linux/386 and linux/arm
-"
-64,"# TODO replace FPM with some very minimal debhelper stuff
-"
-65,"# This file describes the standard way to build Docker, using docker
+#"
+64,# TODO add linux/386 and linux/arm
+65,# TODO replace FPM with some very minimal debhelper stuff
+66,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -201,10 +178,8 @@
 #
 # Note: Apparmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#
-
-"
-66,"# This file describes the standard way to build Docker, using docker
+#"
+67,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -227,61 +202,17 @@
 #
 # Note: Apparmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#
-
-"
-67,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download man page generator
-"
-68,"# TODO when https://jenkins.dockerproject.com/job/Windows/ is green, add windows back to the list above
-#	windows/amd64 windows/386
-
-# (set an explicit GOARM of 5 for maximum compatibility)
-"
-69,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install man page generator
-"
-70,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#
-
-"
-71,"# install seccomp
-# TODO: switch to libseccomp-dev since dockerinit is gone
-"
-72,"# !!! TEMPORARY HACK !!!
+#"
+68,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
+69,"# TODO when https://jenkins.dockerproject.com/job/Windows/ is green, add windows back to the list above
+#	windows/amd64 windows/386"
+70,"# install seccomp
+# TODO: switch to libseccomp-dev since dockerinit is gone"
+71,"# !!! TEMPORARY HACK !!!
 # Because of https://github.com/golang/go/issues/15286 we have to revert to Go 1.5.3 for windows/amd64 in master
 # To change which version of Go to compile with, simply prepend PATH with /usr/local/go1.5.3/bin
-# and set GOROOT to /usr/local/go1.5.3
-"
-73,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-"
-74,"# This file describes the standard way to build Docker, using docker
+# and set GOROOT to /usr/local/go1.5.3"
+72,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -304,49 +235,42 @@
 #
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
+#"
+73,"# This file describes the standard way to build Docker, using docker
 #
-
-"
-75,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-"
-76,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-"
-77,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Download toml validator
-"
-78,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-"
-79,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-"
-80,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-"
-81,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-"
-82,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy dockercli
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-"
-83,"# This file describes the standard way to build Docker, using docker
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
+#
+# # Publish a release:
+# docker run --privileged \
+#  -e AWS_S3_BUCKET=baz \
+#  -e AWS_ACCESS_KEY=foo \
+#  -e AWS_SECRET_KEY=bar \
+#  -e GPG_PASSPHRASE=gloubiboulga \
+#  docker hack/release.sh
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#"
+74,"# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them."
+75,"# Install tomlv, runc, containerd and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them."
+76,"# Install tomlv, runc, containerd.and grimes
+# Please edit hack/dockerfile/install-binaries.sh to update them."
+77,"# Install tomlv, runc, containerd, grimes, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them."
+78,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+# Please edit hack/dockerfile/install-binaries.sh to update them."
+79,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -369,15 +293,10 @@
 #
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#
-
-"
-84,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.
-"
-85,"# This file describes the standard way to build Docker, using docker
+#"
+80,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy dockercli
+# Please edit hack/dockerfile/install-binaries.sh to update them."
+81,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -400,27 +319,13 @@
 #
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#
-
-"
-86,"# Options for hack/validate/gometalinter
-"
-87,"# TODO: This is for the docker-py tests, which shouldn't really be needed for
+#"
+82,# Options for hack/validate/gometalinter
+83,"# TODO: This is for the docker-py tests, which shouldn't really be needed for
 # this image, but currently CI is expecting to run this image. This should be
 # split out into a separate image, including all the `python-*` deps installed
-# above.
-"
-89,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Use make to build a development environment image and run it in a container.
-# # This is slow the first time.
-# make BIND_DIR=. shell
-#
-# The following commands are executed inside the running container.
-
-# # Make a dockerd binary.
+# above."
+84,"# # Make a dockerd binary.
 # # hack/make.sh binary
 #
 # # Install dockerd to /usr/local/bin
@@ -442,34 +347,14 @@
 #
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#
-
-"
-90,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Just a little hack so we don't have to install these deps twice, once for runc and once for dockerd
-"
-91,"# FIXME(vdemeester) this is kept for other script depending on it to not fail right away
-# Remove this once the other scripts uses something else to detect the version
-"
-92,"# TODO: when issue #35963 fixed, we can upgrade the busybox to multi-arch
-"
-93,"# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
-
-# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
-# Please edit hack/dockerfile/install/<name>.installer to update them.
-"
-94,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Use make to build a development environment image and run it in a container.
-# # This is slow the first time.
-# make BIND_DIR=. shell
-#
-# The following commands are executed inside the running container.
-
-# # Make a dockerd binary.
+#"
+85,"# Just a little hack so we don't have to install these deps twice, once for runc and once for dockerd"
+87,"# FIXME(vdemeester) this is kept for other script depending on it to not fail right away
+# Remove this once the other scripts uses something else to detect the version"
+88,"# TODO: when issue #35963 fixed, we can upgrade the busybox to multi-arch"
+89,"# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
+# Please edit hack/dockerfile/install/<name>.installer to update them."
+90,"# # Make a dockerd binary.
 # # hack/make.sh binary
 #
 # # Install dockerd to /usr/local/bin
@@ -483,10 +368,8 @@
 #
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#
-
-"
-102,"# This file describes the standard way to build Docker, using docker
+#"
+97,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -509,26 +392,11 @@
 #
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#
-
-"
-104,"#
-#    docker build -t docker:docs . && docker run -p 8000:8000 docker:docs
-#
-
-# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released
-
-"
-105,"# TODO: need the full repo source to get the git version info
-"
-106,"# TODO: don't do this - look at merging the yml file in build.sh
-"
-107,"# adding the image spec will require Docker 1.5 and `docker build -f docs/Dockerfile .`
-#COPY ./image/spec/v1.md /docs/sources/reference/image-spec-v1.md
-
-# TODO: don't do this - look at merging the yml file in build.sh
-"
-108,"# VERSION:        0.3
+#"
+99,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released
+100,# TODO: need the full repo source to get the git version info
+101,# TODO: don't do this - look at merging the yml file in build.sh
+102,"# VERSION:        0.3
 # DOCKER-VERSION  0.6.3
 # AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
 # DESCRIPTION:    Testing docker PRs and commits on top of master using
@@ -542,14 +410,10 @@
 #       [repo]    (default: 'http://github.com/dotcloud/docker')
 #       [branch]  (default: 'master')
 # TO_BUILD:       docker build -t test_docker .
-# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]
-
-"
-109,"#### FIXME. Temporarily install docker and dind with proper apparmor handling
-"
-111,"#### FIXME. Temporarily install docker with proper apparmor handling
-"
-112,"# VERSION:        1.5
+# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]"
+103,#### FIXME. Temporarily install docker and dind with proper apparmor handling
+105,#### FIXME. Temporarily install docker with proper apparmor handling
+106,"# VERSION:        1.5
 # DOCKER-VERSION  0.6.4
 # AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
 # DESCRIPTION:    Build docker nightly release using Docker in Docker.
@@ -561,31 +425,15 @@
 #         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
 #         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
 # TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh
-
-"
-177,"# TODO verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
-"
-179,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)
-"
-192,"# TODO pin specific commit
-
-# cache-fill
-"
-193,"    # TODO: the distribution given by apache is not gzipped correctly - unzip correctly when fixed
-"
-194,"## Start Hack
-## All of this needed because of missing 8.11.x tag.  Once we update to 8.15 we can resume using Dockerfile.old or remove hack and use FROM node:8.15-slim
-
-## Installing Node.js
-
-# gpg keys listed at https://github.com/nodejs/node
-"
-195," ## End Hack
-
-## Actual Rocket.Chat stuff
-"
-200,"# Todo: remove build dependencies
+# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh"
+163,# TODO verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
+165,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)"
+178,# TODO pin specific commit
+179,    # TODO: the distribution given by apache is not gzipped correctly - unzip correctly when fixed
+180,"## Start Hack
+## All of this needed because of missing 8.11.x tag.  Once we update to 8.15 we can resume using Dockerfile.old or remove hack and use FROM node:8.15-slim"
+181, ## End Hack
+186,"# Todo: remove build dependencies
 #	runDeps=""$( \
 #		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems \
 #		| tr ',' '\n' \
@@ -593,135 +441,63 @@
 #		| awk 'system(""[ -e /usr/local/lib/"" $1 "" ]"") == 0 { next } { print ""so:"" $1 }' \
 #	)""; \
 #	apk add --virtual .redmine-rundeps $runDeps; \
-#	apk del .build-deps
-
-"
-202,"# This is a hack (see libcompose#32) - will be removed when libcompose will be fixed
-# (i.e go get able)
-"
-204,"# TODO consider removing the *-dev deps and only keeping the necessary lib* packages
-
-# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php
-"
-212,"# TODO find a simple hacky way to verify Tomcat Native is working properly
-# (the way we use in 7+ doesn't work here because we have no ""configtest"")
-
-"
-218,"# TODO should we leave these installed, or remove them too?
-"
-219,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
-# TODO find a better/cleaner way to generically interact with the yumdb for the purposes of marking things as automatically/manually installed
-"
-220,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?
-"
-243,"# http://tomcat.10.x6.nabble.com/VOTE-Release-Apache-Tomcat-8-0-32-tp5046007p5048274.html (ie, HACK HACK HACK)
-"
-249,"# Zend Server
-#
-# Version 0.2
-
-# TODO:
-
-"
-262,"## haskell package versions; can be overriden via context hacks
-"
-263,"## install additional libs typically needed by hackage packages
-"
-264,"## install additional libs typically needed by hackage packages
+#	apk del .build-deps"
+188,"# This is a hack (see libcompose#32) - will be removed when libcompose will be fixed
+# (i.e go get able)"
+190,# TODO consider removing the *-dev deps and only keeping the necessary lib* packages
+202,"# TODO should we leave these installed, or remove them too?"
+203,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
+# TODO find a better/cleaner way to generically interact with the yumdb for the purposes of marking things as automatically/manually installed"
+204,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?"
+227,"# http://tomcat.10.x6.nabble.com/VOTE-Release-Apache-Tomcat-8-0-32-tp5046007p5048274.html (ie, HACK HACK HACK)"
+233,# TODO:
+246,## haskell package versions; can be overriden via context hacks
+247,## install additional libs typically needed by hackage packages
+248,"## install additional libs typically needed by hackage packages
 #RUN apt-get update && \
-#    apt-get install ${OPTS_APT} zlib1g-dev libtinfo-dev
-
-## run ghci by default unless a command is specified
-"
-271,"# TODO figure out what's going on here and what it'll settle to for 5.0 GA
-
-"
-272,"  ## hack to avoid RStudio-bug in detecting build-dependencies         
+#    apt-get install ${OPTS_APT} zlib1g-dev libtinfo-dev"
+255,# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+256,"  ## hack to avoid RStudio-bug in detecting build-dependencies         
   # && ln -s&& ln -s ln -s /usr/local/bin/R /usr/bin/R \
-  # && ln -s&& ln -s ln -s /usr/local/lib/R /usr/lib/R
-
-"
-288,"# fixme: needs to check out a tag on the next 1.14 release
-"
-302,"# TODO use this MD5
-"
-306,"# By default you'll get a single-node development server that stores everything
+  # && ln -s&& ln -s ln -s /usr/local/lib/R /usr/lib/R"
+272,# fixme: needs to check out a tag on the next 1.14 release
+286,# TODO use this MD5
+290,"# By default you'll get a single-node development server that stores everything
 # in RAM, exposes a web UI, and bootstraps itself. Don't use this configuration
-# for production.
-"
-328,"# TODO: Switch to debian sid
-
-"
-329,"    # VisualEditor
-    # TODO: make submodules shallow clones?
-"
-330,"    # Extensions
-    # TODO: make submodules shallow clones?
-"
-335,"# TODO make[2]: *** No rule to make target '/usr/src/gcc/gcc/sync-builtinsndef', needed by 'tree-ssa-loop-prefetch.o'.  Stop.
-# (which the builds takes _forever_ to get to)
-"
-337,"# TODO get enough builders to test and verify arm32v5 O:)
-"
-353,"# TODO aufs-tools
-
-"
-356,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
+# for production."
+312,# TODO: Switch to debian sid
+313,"    # VisualEditor
+    # TODO: make submodules shallow clones?"
+314,"    # Extensions
+    # TODO: make submodules shallow clones?"
+319,"# TODO make[2]: *** No rule to make target '/usr/src/gcc/gcc/sync-builtinsndef', needed by 'tree-ssa-loop-prefetch.o'.  Stop.
+# (which the builds takes _forever_ to get to)"
+321,# TODO get enough builders to test and verify arm32v5 O:)
+339,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
 #ONBUILD ADD Gemfile /apps/rails/Gemfile
 #ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
 #ONBUILD RUN cd /apps/rails && bundle install --deployment
 #ONBUILD ADD . /apps/rails
-#ONBUILD RUN chown -R www-data:www-data /apps/rails
-"
-359,"# TODO add ""nbtscan"" when we get to Alpine 3.9 (if it makes it out of edge for 3.9)
-
-"
-360,"# TODO add ""nbtscan"" when we get to Alpine 3.10 (if it makes it out of edge for 3.10)
-
-"
-361,"# TODO add ""nbtscan"" when we get to Alpine 3.11 (if it makes it out of edge)
-# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64
-
-"
-363,"# TODO verify that ookla's ""armhf"" really is armv6
-"
-364,"# TODO figure out what ookla means by their bare ""arm"" arch
-"
-366,"# TODO find some way to include ccextractor (currently buster-only)
-
-# FPL_MainFeature detection only seemed to work with OpenJDK 9 (8 was insufficient)
-"
-368,"# TODO use links to get a redis server/database instead (since that's where configuration actually goes)
-"
-369,"# TODO see note above about redis
-"
-370,"#RUN cd /xo/xo-server/public/http && for e in ../../../xo-web/public/*; do ln -s ""$e""; done
-
-# TODO use links to get a redis server/database instead (since that's where configuration actually goes)
-"
-374,"# TODO move this down when COPY adheres to USER (and remove chown)
-"
-380,"# TODO set ""TARGET"" appropriately based on ""apk --print-arch"" to avoid ""uname -m"" detection
-"
-384,"# FIXME This is a workaround for pytest not found causing builds to fail
-# Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722
-"
-387,"# HACK, replacing shell with bash for later docker build commands
-"
-389,"# TODO: alter filename after v2 relese (version will be taken out of name)
-"
-390,"# TODO: alter filename after v2 release (version will be taken out of name)
-"
-490,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
-"
-497,"# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7)
-"
-522,"# Default to UTF-8 file.encoding
+#ONBUILD RUN chown -R www-data:www-data /apps/rails"
+342,"# TODO add ""nbtscan"" when we get to Alpine 3.9 (if it makes it out of edge for 3.9)"
+343,"# TODO add ""nbtscan"" when we get to Alpine 3.10 (if it makes it out of edge for 3.10)"
+344,"# TODO add ""nbtscan"" when we get to Alpine 3.11 (if it makes it out of edge)
+# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64"
+346,"# TODO verify that ookla's ""armhf"" really is armv6"
+347,"# TODO figure out what ookla means by their bare ""arm"" arch"
+349,# TODO find some way to include ccextractor (currently buster-only)
+351,# TODO use links to get a redis server/database instead (since that's where configuration actually goes)
+352,# TODO see note above about redis
+357,# TODO move this down when COPY adheres to USER (and remove chown)
+363,"# TODO set ""TARGET"" appropriately based on ""apk --print-arch"" to avoid ""uname -m"" detection"
+367,"# FIXME This is a workaround for pytest not found causing builds to fail
+# Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722"
+370,"# HACK, replacing shell with bash for later docker build commands"
+372,# TODO: alter filename after v2 relese (version will be taken out of name)
+373,# TODO: alter filename after v2 release (version will be taken out of name)
+466,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
+473,# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7)
+498,"# Default to UTF-8 file.encoding
 #ENV LANG C.UTF-8
-# TODO oraclelinux doesn't have C.UTF-8 by default??
-
-"
-562,"# TODO ENV DOCKER_SHA256
-
-"
+# TODO oraclelinux doesn't have C.UTF-8 by default??"
+536,# TODO ENV DOCKER_SHA256

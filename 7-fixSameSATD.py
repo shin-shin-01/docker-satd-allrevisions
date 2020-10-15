@@ -50,12 +50,14 @@ def removeSameSATDofSameFile(csvfile):
     for fileName in uniqueLatestNameList:
         df_Fileunique = df[ df["LatestDockerfile"] == fileName ]
         df_Fileunique = df_Fileunique.sort_values('Date') # 定期的にソートしておく
-        uniqueCommentList = df_Fileunique["Comment"].unique()
+        # 小文字・大文字の変化も削除になってしまうため、全てを小文字に変換しておく
+        tmpComment = df_Fileunique["Comment"].apply(lambda st: st.lower())
+        uniqueCommentList = tmpComment.unique()
 
         # 同一ファイルのユニークコメントごとに処理を行う
         for comment in uniqueCommentList:
             # Dockerfile ごとのユニークなコメント
-            df_FileCommentunique = df_Fileunique[ df_Fileunique["Comment"] == comment ]
+            df_FileCommentunique = df_Fileunique[ df_Fileunique["Comment"].apply(lambda st: st.lower() == comment) ]
             df_FileCommentunique = df_FileCommentunique.sort_values('Date') # 定期的にソートしておく
 
             firstCommitRow = df_FileCommentunique.head(1).iloc[0, :]
@@ -85,6 +87,3 @@ if __name__ == "__main__":
 
     for csvfile in tqdm(csvfiles):
         removeSameSATDofSameFile(csvfile)
-
-
-
