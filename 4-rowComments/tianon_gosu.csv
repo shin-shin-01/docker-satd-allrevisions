@@ -1,351 +1,201 @@
 ,CommitID,Dockerfile,Comment
-0,d4f07d6e129eec35a4edec314fb973bfca1617c0,/Dockerfile,"# https://github.com/opencontainers/runc/releases
-"
-1,d4f07d6e129eec35a4edec314fb973bfca1617c0,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-2,d4f07d6e129eec35a4edec314fb973bfca1617c0,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+0,d4f07d6e129eec35a4edec314fb973bfca1617c0,/Dockerfile,# https://github.com/opencontainers/runc/releases
+1,d4f07d6e129eec35a4edec314fb973bfca1617c0,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+2,d4f07d6e129eec35a4edec314fb973bfca1617c0,/Dockerfile,# gosu-$(dpkg --print-architecture)
 3,d4f07d6e129eec35a4edec314fb973bfca1617c0,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -eux; \
 #	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
-#	file /go/bin/gosu-armhf
-"
-4,6172d3fa75c718ead3402f1c9c838a384bc5d0bf,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-5,6172d3fa75c718ead3402f1c9c838a384bc5d0bf,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-6,6172d3fa75c718ead3402f1c9c838a384bc5d0bf,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-7,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-8,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	file /go/bin/gosu-armhf"
+4,6172d3fa75c718ead3402f1c9c838a384bc5d0bf,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+5,6172d3fa75c718ead3402f1c9c838a384bc5d0bf,/Dockerfile,# gosu-$(dpkg --print-architecture)
+6,6172d3fa75c718ead3402f1c9c838a384bc5d0bf,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+7,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+8,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile,# gosu-$(dpkg --print-architecture)
 9,9fcdbfd5ae56553ecf9f18853bc82fbec6674f66,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -eux; \
 #	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
-#	file /go/bin/gosu-armhf
-"
-10,4aa139519069ab49fe24fde4a47e206054d363b9,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
-
-"
-11,4aa139519069ab49fe24fde4a47e206054d363b9,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-12,4aa139519069ab49fe24fde4a47e206054d363b9,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	file /go/bin/gosu-armhf"
+10,4aa139519069ab49fe24fde4a47e206054d363b9,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc"
+11,4aa139519069ab49fe24fde4a47e206054d363b9,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+12,4aa139519069ab49fe24fde4a47e206054d363b9,/Dockerfile,# gosu-$(dpkg --print-architecture)
 13,4aa139519069ab49fe24fde4a47e206054d363b9,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -x \
 #	&& eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" \
-#	&& file /go/bin/gosu-armhf
-"
-14,91dbde2f5a538616d462788ab6f98370b409b0bb,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
-
-"
-15,91dbde2f5a538616d462788ab6f98370b409b0bb,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-16,91dbde2f5a538616d462788ab6f98370b409b0bb,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	&& file /go/bin/gosu-armhf"
+14,91dbde2f5a538616d462788ab6f98370b409b0bb,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc"
+15,91dbde2f5a538616d462788ab6f98370b409b0bb,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+16,91dbde2f5a538616d462788ab6f98370b409b0bb,/Dockerfile,# gosu-$(dpkg --print-architecture)
 17,91dbde2f5a538616d462788ab6f98370b409b0bb,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -x \
 #	&& eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" \
-#	&& file /go/bin/gosu-armhf
-"
-18,5cbd5c064ab954f0ecca8d39d3b9f0ce3aa81497,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-19,5cbd5c064ab954f0ecca8d39d3b9f0ce3aa81497,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-20,5cbd5c064ab954f0ecca8d39d3b9f0ce3aa81497,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-21,df4db204a3fa3f08f4a50b347d3eb98b89589028,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-22,df4db204a3fa3f08f4a50b347d3eb98b89589028,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	&& file /go/bin/gosu-armhf"
+18,5cbd5c064ab954f0ecca8d39d3b9f0ce3aa81497,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+19,5cbd5c064ab954f0ecca8d39d3b9f0ce3aa81497,/Dockerfile,# gosu-$(dpkg --print-architecture)
+20,5cbd5c064ab954f0ecca8d39d3b9f0ce3aa81497,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+21,df4db204a3fa3f08f4a50b347d3eb98b89589028,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+22,df4db204a3fa3f08f4a50b347d3eb98b89589028,/Dockerfile,# gosu-$(dpkg --print-architecture)
 23,df4db204a3fa3f08f4a50b347d3eb98b89589028,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -eux; \
 #	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
-#	file /go/bin/gosu-armhf
-"
-24,56c451355f181d4e88eac5f61fca56a39f173b0c,/Dockerfile,"# https://github.com/opencontainers/runc/releases
-"
-25,56c451355f181d4e88eac5f61fca56a39f173b0c,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-26,56c451355f181d4e88eac5f61fca56a39f173b0c,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	file /go/bin/gosu-armhf"
+24,56c451355f181d4e88eac5f61fca56a39f173b0c,/Dockerfile,# https://github.com/opencontainers/runc/releases
+25,56c451355f181d4e88eac5f61fca56a39f173b0c,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+26,56c451355f181d4e88eac5f61fca56a39f173b0c,/Dockerfile,# gosu-$(dpkg --print-architecture)
 27,56c451355f181d4e88eac5f61fca56a39f173b0c,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -eux; \
 #	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
-#	file /go/bin/gosu-armhf
-"
-28,0506cbfff296eef2098f90130b1adb2e43252d00,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-29,0506cbfff296eef2098f90130b1adb2e43252d00,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-30,0506cbfff296eef2098f90130b1adb2e43252d00,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-31,06a8066255bc28e5a6632599bcf2360bb0da28b5,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-32,06a8066255bc28e5a6632599bcf2360bb0da28b5,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-33,06a8066255bc28e5a6632599bcf2360bb0da28b5,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-34,2344d0524f255dc0532cdce096509b07fb3d697e,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-35,2344d0524f255dc0532cdce096509b07fb3d697e,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	file /go/bin/gosu-armhf"
+28,0506cbfff296eef2098f90130b1adb2e43252d00,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+29,0506cbfff296eef2098f90130b1adb2e43252d00,/Dockerfile,# gosu-$(dpkg --print-architecture)
+30,0506cbfff296eef2098f90130b1adb2e43252d00,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+31,06a8066255bc28e5a6632599bcf2360bb0da28b5,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+32,06a8066255bc28e5a6632599bcf2360bb0da28b5,/Dockerfile,# gosu-$(dpkg --print-architecture)
+33,06a8066255bc28e5a6632599bcf2360bb0da28b5,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+34,2344d0524f255dc0532cdce096509b07fb3d697e,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+35,2344d0524f255dc0532cdce096509b07fb3d697e,/Dockerfile,# gosu-$(dpkg --print-architecture)
 36,2344d0524f255dc0532cdce096509b07fb3d697e,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -eux; \
 #	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
-#	file /go/bin/gosu-armhf
-"
-37,7dc4bb6e4fb1c21bd83f36348c2c4b5c0cadf621,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-38,7dc4bb6e4fb1c21bd83f36348c2c4b5c0cadf621,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-39,7dc4bb6e4fb1c21bd83f36348c2c4b5c0cadf621,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-40,164af4d48cfa860320fb19d84663373ddd0fbdc5,/Dockerfile,"# cache-fill
-"
-41,51692217017d57791389df0fb6ada2ecb4176ccd,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-42,51692217017d57791389df0fb6ada2ecb4176ccd,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	file /go/bin/gosu-armhf"
+37,7dc4bb6e4fb1c21bd83f36348c2c4b5c0cadf621,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+38,7dc4bb6e4fb1c21bd83f36348c2c4b5c0cadf621,/Dockerfile,# gosu-$(dpkg --print-architecture)
+39,7dc4bb6e4fb1c21bd83f36348c2c4b5c0cadf621,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+40,164af4d48cfa860320fb19d84663373ddd0fbdc5,/Dockerfile,# cache-fill
+41,51692217017d57791389df0fb6ada2ecb4176ccd,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+42,51692217017d57791389df0fb6ada2ecb4176ccd,/Dockerfile,# gosu-$(dpkg --print-architecture)
 43,51692217017d57791389df0fb6ada2ecb4176ccd,/Dockerfile,"# boo Raspberry Pi, making life hard (armhf-is-v7 vs armhf-is-v6 ...)
 #RUN set -eux; \
 #	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
-#	file /go/bin/gosu-armhf
-
-"
-44,5b9cb4a88740660218fa452f0b8e850fbf2dbb73,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-45,5b9cb4a88740660218fa452f0b8e850fbf2dbb73,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-46,5b9cb4a88740660218fa452f0b8e850fbf2dbb73,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-47,c1becc66ed4c10fee594fff24d912f4e43e08543,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-48,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile,"# https://github.com/opencontainers/runc/releases
-"
-49,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-50,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	file /go/bin/gosu-armhf"
+44,5b9cb4a88740660218fa452f0b8e850fbf2dbb73,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+45,5b9cb4a88740660218fa452f0b8e850fbf2dbb73,/Dockerfile,# gosu-$(dpkg --print-architecture)
+46,5b9cb4a88740660218fa452f0b8e850fbf2dbb73,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+47,c1becc66ed4c10fee594fff24d912f4e43e08543,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+48,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile,# https://github.com/opencontainers/runc/releases
+49,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+50,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile,# gosu-$(dpkg --print-architecture)
 51,ffe2a52f1700d2e9535dc9138f250829150a9be9,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -eux; \
 #	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
-#	file /go/bin/gosu-armhf
-"
-52,df5c1d81c7873b43f0bffb2979ded27b4b30c29d,/Dockerfile,"# cache-fill
-"
-53,764a32e813e3a665863687001511eaff01a68533,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-54,764a32e813e3a665863687001511eaff01a68533,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-55,764a32e813e3a665863687001511eaff01a68533,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-56,3414434bef8c804b9c042db48fbb1c6323f5c831,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
-
-"
-57,3414434bef8c804b9c042db48fbb1c6323f5c831,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-58,3414434bef8c804b9c042db48fbb1c6323f5c831,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	file /go/bin/gosu-armhf"
+52,df5c1d81c7873b43f0bffb2979ded27b4b30c29d,/Dockerfile,# cache-fill
+53,764a32e813e3a665863687001511eaff01a68533,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+54,764a32e813e3a665863687001511eaff01a68533,/Dockerfile,# gosu-$(dpkg --print-architecture)
+55,764a32e813e3a665863687001511eaff01a68533,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+56,3414434bef8c804b9c042db48fbb1c6323f5c831,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc"
+57,3414434bef8c804b9c042db48fbb1c6323f5c831,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+58,3414434bef8c804b9c042db48fbb1c6323f5c831,/Dockerfile,# gosu-$(dpkg --print-architecture)
 59,3414434bef8c804b9c042db48fbb1c6323f5c831,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -x \
 #	&& eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" \
-#	&& file /go/bin/gosu-armhf
-"
-60,98b438654ca20c788d04dc201c08ec28e4c5cedc,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-61,98b438654ca20c788d04dc201c08ec28e4c5cedc,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	&& file /go/bin/gosu-armhf"
+60,98b438654ca20c788d04dc201c08ec28e4c5cedc,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+61,98b438654ca20c788d04dc201c08ec28e4c5cedc,/Dockerfile,# gosu-$(dpkg --print-architecture)
 62,98b438654ca20c788d04dc201c08ec28e4c5cedc,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -eux; \
 #	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
-#	file /go/bin/gosu-armhf
-"
-63,083d4e3b05ecc087ac7408abe197011a09a9c95d,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
-
-"
-64,083d4e3b05ecc087ac7408abe197011a09a9c95d,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-65,083d4e3b05ecc087ac7408abe197011a09a9c95d,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	file /go/bin/gosu-armhf"
+63,083d4e3b05ecc087ac7408abe197011a09a9c95d,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc"
+64,083d4e3b05ecc087ac7408abe197011a09a9c95d,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+65,083d4e3b05ecc087ac7408abe197011a09a9c95d,/Dockerfile,# gosu-$(dpkg --print-architecture)
 66,083d4e3b05ecc087ac7408abe197011a09a9c95d,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -x \
 #	&& eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" \
-#	&& file /go/bin/gosu-armhf
-"
-67,c883478a0dd8bdf593619d9392ba8930bcb5849b,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
-
-"
-68,c883478a0dd8bdf593619d9392ba8930bcb5849b,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-69,c883478a0dd8bdf593619d9392ba8930bcb5849b,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	&& file /go/bin/gosu-armhf"
+67,c883478a0dd8bdf593619d9392ba8930bcb5849b,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc"
+68,c883478a0dd8bdf593619d9392ba8930bcb5849b,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+69,c883478a0dd8bdf593619d9392ba8930bcb5849b,/Dockerfile,# gosu-$(dpkg --print-architecture)
 70,c883478a0dd8bdf593619d9392ba8930bcb5849b,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -x \
 #	&& eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" \
-#	&& file /go/bin/gosu-armhf
-"
-71,4b7414ad43bf1ba9579bc7226a0b2e1ea1a33240,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-72,4b7414ad43bf1ba9579bc7226a0b2e1ea1a33240,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-73,4b7414ad43bf1ba9579bc7226a0b2e1ea1a33240,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-74,57bff5bb553b6155bc23accb8a3e1d3178f01fa7,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
-
-"
-75,57bff5bb553b6155bc23accb8a3e1d3178f01fa7,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-76,57bff5bb553b6155bc23accb8a3e1d3178f01fa7,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	&& file /go/bin/gosu-armhf"
+71,4b7414ad43bf1ba9579bc7226a0b2e1ea1a33240,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+72,4b7414ad43bf1ba9579bc7226a0b2e1ea1a33240,/Dockerfile,# gosu-$(dpkg --print-architecture)
+73,4b7414ad43bf1ba9579bc7226a0b2e1ea1a33240,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+74,57bff5bb553b6155bc23accb8a3e1d3178f01fa7,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc"
+75,57bff5bb553b6155bc23accb8a3e1d3178f01fa7,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+76,57bff5bb553b6155bc23accb8a3e1d3178f01fa7,/Dockerfile,# gosu-$(dpkg --print-architecture)
 77,57bff5bb553b6155bc23accb8a3e1d3178f01fa7,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -x \
 #	&& eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" \
-#	&& file /go/bin/gosu-armhf
-"
-78,5c2681b0987fd7bfe34c3093a8ba7dd4749726c7,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-79,5c2681b0987fd7bfe34c3093a8ba7dd4749726c7,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	&& file /go/bin/gosu-armhf"
+78,5c2681b0987fd7bfe34c3093a8ba7dd4749726c7,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+79,5c2681b0987fd7bfe34c3093a8ba7dd4749726c7,/Dockerfile,# gosu-$(dpkg --print-architecture)
 80,5c2681b0987fd7bfe34c3093a8ba7dd4749726c7,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -eux; \
 #	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
-#	file /go/bin/gosu-armhf
-"
-81,2fdacb8304a76b15339e10c290056dc33b9eb115,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-82,2fdacb8304a76b15339e10c290056dc33b9eb115,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#	file /go/bin/gosu-armhf"
+81,2fdacb8304a76b15339e10c290056dc33b9eb115,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+82,2fdacb8304a76b15339e10c290056dc33b9eb115,/Dockerfile,# gosu-$(dpkg --print-architecture)
 83,2fdacb8304a76b15339e10c290056dc33b9eb115,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
-#		go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-84,1cd812660509c88866db7a8be45e94bfd703ac65,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
-
-"
-85,1cd812660509c88866db7a8be45e94bfd703ac65,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-86,1cd812660509c88866db7a8be45e94bfd703ac65,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#		go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+84,1cd812660509c88866db7a8be45e94bfd703ac65,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc"
+85,1cd812660509c88866db7a8be45e94bfd703ac65,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+86,1cd812660509c88866db7a8be45e94bfd703ac65,/Dockerfile,# gosu-$(dpkg --print-architecture)
 87,1cd812660509c88866db7a8be45e94bfd703ac65,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
-#		eval ""go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" # boo Raspberry Pi, making life hard
-"
-88,b1f8a83b55c42838a4eb24b8ad3304dca79df24f,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
-
-"
-89,b1f8a83b55c42838a4eb24b8ad3304dca79df24f,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-90,b1f8a83b55c42838a4eb24b8ad3304dca79df24f,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#		eval ""go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" # boo Raspberry Pi, making life hard"
+88,b1f8a83b55c42838a4eb24b8ad3304dca79df24f,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc"
+89,b1f8a83b55c42838a4eb24b8ad3304dca79df24f,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+90,b1f8a83b55c42838a4eb24b8ad3304dca79df24f,/Dockerfile,# gosu-$(dpkg --print-architecture)
 91,b1f8a83b55c42838a4eb24b8ad3304dca79df24f,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
-#		eval ""go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" # boo Raspberry Pi, making life hard
-"
-92,a7d68068240aace53835ac4c2dea304df4e75848,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-93,a7d68068240aace53835ac4c2dea304df4e75848,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
+#		eval ""go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" # boo Raspberry Pi, making life hard"
+92,a7d68068240aace53835ac4c2dea304df4e75848,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+93,a7d68068240aace53835ac4c2dea304df4e75848,/Dockerfile,# gosu-$(dpkg --print-architecture)
 94,a7d68068240aace53835ac4c2dea304df4e75848,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -eux; \
 #	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
-#	file /go/bin/gosu-armhf
-"
-95,5fb235fb1f30d3fbbacd516033b1546dd246fef5,/Dockerfile,"# TODO pin specific commit
-
-# cache-fill
-"
-96,b304eab5a681e46ed538cea7966abac02887839d,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-97,b4266e274d6f36ec4a3ae7823a1bd1880d0da810,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
-
-"
-98,b4266e274d6f36ec4a3ae7823a1bd1880d0da810,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-99,b4266e274d6f36ec4a3ae7823a1bd1880d0da810,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-100,b4266e274d6f36ec4a3ae7823a1bd1880d0da810,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
-#		eval ""go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" # boo Raspberry Pi, making life hard
-"
-101,26e9585d65e80def2612bf171b837644cff66009,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-102,26e9585d65e80def2612bf171b837644cff66009,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-103,26e9585d65e80def2612bf171b837644cff66009,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-104,fb71463c1ee94c6cc3d79808c01161401daa3e85,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-105,fb71463c1ee94c6cc3d79808c01161401daa3e85,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-106,fb71463c1ee94c6cc3d79808c01161401daa3e85,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-107,4c79b78815115b076bf398387e09dc73ba517e4a,/Dockerfile,"# cache-fill
-"
-108,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-109,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-110,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile,"# boo Raspberry Pi, making life hard
+#	file /go/bin/gosu-armhf"
+95,5fb235fb1f30d3fbbacd516033b1546dd246fef5,/Dockerfile,# TODO pin specific commit
+96,5fb235fb1f30d3fbbacd516033b1546dd246fef5,/Dockerfile,# cache-fill
+97,b304eab5a681e46ed538cea7966abac02887839d,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+98,b4266e274d6f36ec4a3ae7823a1bd1880d0da810,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc"
+99,b4266e274d6f36ec4a3ae7823a1bd1880d0da810,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+100,b4266e274d6f36ec4a3ae7823a1bd1880d0da810,/Dockerfile,# gosu-$(dpkg --print-architecture)
+101,b4266e274d6f36ec4a3ae7823a1bd1880d0da810,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
+#		eval ""go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" # boo Raspberry Pi, making life hard"
+102,26e9585d65e80def2612bf171b837644cff66009,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+103,26e9585d65e80def2612bf171b837644cff66009,/Dockerfile,# gosu-$(dpkg --print-architecture)
+104,26e9585d65e80def2612bf171b837644cff66009,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+105,fb71463c1ee94c6cc3d79808c01161401daa3e85,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+106,fb71463c1ee94c6cc3d79808c01161401daa3e85,/Dockerfile,# gosu-$(dpkg --print-architecture)
+107,fb71463c1ee94c6cc3d79808c01161401daa3e85,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+108,4c79b78815115b076bf398387e09dc73ba517e4a,/Dockerfile,# cache-fill
+109,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+110,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile,# gosu-$(dpkg --print-architecture)
+111,c260b375807764b475a7e38105b22b4d0987072e,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -eux; \
 #	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
-#	file /go/bin/gosu-armhf
-"
-111,a9280b27e9844a88c5a3ce1948dbc8b3e5dbadae,/Dockerfile,"# cache-fill
-"
-112,82e807086c35abf41685cc3e9913d3c121ed14d1,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-113,82e807086c35abf41685cc3e9913d3c121ed14d1,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-114,82e807086c35abf41685cc3e9913d3c121ed14d1,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-115,d88cab3d9ddb838618668d83d8a39f27a2192e57,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
-
-"
-116,d88cab3d9ddb838618668d83d8a39f27a2192e57,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-117,d88cab3d9ddb838618668d83d8a39f27a2192e57,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-118,d88cab3d9ddb838618668d83d8a39f27a2192e57,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
-#		go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-119,7ae54ff1bdeda6311075d04b781f4e5bcea2aa50,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
-
-"
-120,7ae54ff1bdeda6311075d04b781f4e5bcea2aa50,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-121,7ae54ff1bdeda6311075d04b781f4e5bcea2aa50,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-122,7ae54ff1bdeda6311075d04b781f4e5bcea2aa50,/Dockerfile,"# boo Raspberry Pi, making life hard
+#	file /go/bin/gosu-armhf"
+112,a9280b27e9844a88c5a3ce1948dbc8b3e5dbadae,/Dockerfile,# cache-fill
+113,82e807086c35abf41685cc3e9913d3c121ed14d1,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+114,82e807086c35abf41685cc3e9913d3c121ed14d1,/Dockerfile,# gosu-$(dpkg --print-architecture)
+115,82e807086c35abf41685cc3e9913d3c121ed14d1,/Dockerfile,"#RUN GOARCH=arm GOARM=7 go build -v -ldflags -d -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+116,d88cab3d9ddb838618668d83d8a39f27a2192e57,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc"
+117,d88cab3d9ddb838618668d83d8a39f27a2192e57,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+118,d88cab3d9ddb838618668d83d8a39f27a2192e57,/Dockerfile,# gosu-$(dpkg --print-architecture)
+119,d88cab3d9ddb838618668d83d8a39f27a2192e57,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
+#		go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+120,7ae54ff1bdeda6311075d04b781f4e5bcea2aa50,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc"
+121,7ae54ff1bdeda6311075d04b781f4e5bcea2aa50,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+122,7ae54ff1bdeda6311075d04b781f4e5bcea2aa50,/Dockerfile,# gosu-$(dpkg --print-architecture)
+123,7ae54ff1bdeda6311075d04b781f4e5bcea2aa50,/Dockerfile,"# boo Raspberry Pi, making life hard
 #RUN set -x \
 #	&& eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" \
-#	&& file /go/bin/gosu-armhf
-"
-123,c4e0b3073e0b20a163a1b373e86a2e342a538acd,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-124,c4e0b3073e0b20a163a1b373e86a2e342a538acd,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-125,c4e0b3073e0b20a163a1b373e86a2e342a538acd,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
-#		go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard
-"
-126,ee543c08761798e7c6b7d67b1bd5e789091161c9,/Dockerfile,"# cache-fill
-"
-127,f20b057ec4e2f9d9782111e29201e2e839510dfc,/Dockerfile,"# https://github.com/opencontainers/runc/releases
-"
-128,f20b057ec4e2f9d9782111e29201e2e839510dfc,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-129,f20b057ec4e2f9d9782111e29201e2e839510dfc,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-130,f20b057ec4e2f9d9782111e29201e2e839510dfc,/Dockerfile,"# boo Raspberry Pi, making life hard (armhf-is-v7 vs armhf-is-v6 ...)
+#	&& file /go/bin/gosu-armhf"
+124,c4e0b3073e0b20a163a1b373e86a2e342a538acd,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+125,c4e0b3073e0b20a163a1b373e86a2e342a538acd,/Dockerfile,# gosu-$(dpkg --print-architecture)
+126,c4e0b3073e0b20a163a1b373e86a2e342a538acd,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
+#		go build $BUILD_FLAGS -o /go/bin/gosu-armhf # boo Raspberry Pi, making life hard"
+127,ee543c08761798e7c6b7d67b1bd5e789091161c9,/Dockerfile,# cache-fill
+128,f20b057ec4e2f9d9782111e29201e2e839510dfc,/Dockerfile,# https://github.com/opencontainers/runc/releases
+129,f20b057ec4e2f9d9782111e29201e2e839510dfc,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+130,f20b057ec4e2f9d9782111e29201e2e839510dfc,/Dockerfile,# gosu-$(dpkg --print-architecture)
+131,f20b057ec4e2f9d9782111e29201e2e839510dfc,/Dockerfile,"# boo Raspberry Pi, making life hard (armhf-is-v7 vs armhf-is-v6 ...)
 #RUN set -eux; \
 #	eval ""GOARCH=arm GOARM=7 go build $BUILD_FLAGS -o /go/bin/gosu-armhf""; \
-#	file /go/bin/gosu-armhf
-
-"
-131,84bd68d4a39ae379829fed50936277014f30c6d2,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc
-
-"
-132,84bd68d4a39ae379829fed50936277014f30c6d2,/Dockerfile,"# disable CGO for ALL THE THINGS (to help ensure no libc)
-"
-133,84bd68d4a39ae379829fed50936277014f30c6d2,/Dockerfile,"# gosu-$(dpkg --print-architecture)
-"
-134,84bd68d4a39ae379829fed50936277014f30c6d2,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
-#		eval ""go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" # boo Raspberry Pi, making life hard
-"
+#	file /go/bin/gosu-armhf"
+132,84bd68d4a39ae379829fed50936277014f30c6d2,/Dockerfile,"#v}"" /go/src/github.com/opencontainers/runc"
+133,84bd68d4a39ae379829fed50936277014f30c6d2,/Dockerfile,# disable CGO for ALL THE THINGS (to help ensure no libc)
+134,84bd68d4a39ae379829fed50936277014f30c6d2,/Dockerfile,# gosu-$(dpkg --print-architecture)
+135,84bd68d4a39ae379829fed50936277014f30c6d2,/Dockerfile,"#RUN set -x && GOARCH=arm GOARM=7 \
+#		eval ""go build $BUILD_FLAGS -o /go/bin/gosu-armhf"" # boo Raspberry Pi, making life hard"

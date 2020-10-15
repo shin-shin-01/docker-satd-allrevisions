@@ -1,302 +1,165 @@
 ,CommitID,Dockerfile,Comment
-0,7d1c32fb965d82501ba90270574c6185ceacbd65,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-1,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-2,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# copy binary into image
-"
-3,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# Add influxd to the PATH
-"
-4,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# Generate a default config
-"
-5,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# Use /data for all disk storage
-"
-6,dff34939f8e2176955052de7ace2c47c08e7fd19,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
-"
-7,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,"# Needed for Yarn steps to veryify the keys
-"
-8,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,"# Now update index with Yarn
-"
+0,7d1c32fb965d82501ba90270574c6185ceacbd65,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+1,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+2,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,# copy binary into image
+3,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,# Add influxd to the PATH
+4,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,# Generate a default config
+5,15ab23c17e6de37a76076ccf093a1de6d1eb6932,/Dockerfile,# Use /data for all disk storage
+6,dff34939f8e2176955052de7ace2c47c08e7fd19,/releng/source-tarball/Dockerfile,# Build the dep binary and then clean out /go.
+7,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,# Needed for Yarn steps to veryify the keys
+8,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,# Now update index with Yarn
 9,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,"##
 # InfluxDB Image (Monolith)
-##
-"
+##"
 10,7964f86ffc15be2d18fcc5eb031222440b3d8aa4,/Dockerfile,"##
 # InfluxDB UI Image
-##
-"
-11,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Install node deps
-"
-12,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Build assets to ./dist
-"
-13,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Run the image as a non-root user
-"
+##"
+11,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,# Install node deps
+12,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,# Build assets to ./dist
+13,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,# Run the image as a non-root user
 14,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
-# in the future we'd start the go process here.
-"
-15,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-16,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# copy binary into image
-"
-17,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# Add influxd to the PATH
-"
-18,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# Generate a default config
-"
-19,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# Use /data for all disk storage
-"
-20,a446134d6fd89642d208446886696333da576874,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
-"
-21,940da04a346979d531ee17d7a7d33794defd715e,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-22,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-23,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# copy binary into image
-"
-24,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# Add influxd to the PATH
-"
-25,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# Generate a default config
-"
-26,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# Use /data for all disk storage
-"
-27,f8e85e6df5d9ff53a4c14d2a1d3756afbab0b344,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-28,f292dda8471b3f0ae95f995875453b0711be7aec,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-29,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,"# Install node deps
-"
-30,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,"# Build assets to ./dist
-"
-31,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,"# Run the image as a non-root user
-"
+# in the future we'd start the go process here."
+15,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+16,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,# copy binary into image
+17,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,# Add influxd to the PATH
+18,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,# Generate a default config
+19,56e478e05c782139116d37cc454be4abfe477ffd,/Dockerfile,# Use /data for all disk storage
+20,a446134d6fd89642d208446886696333da576874,/releng/source-tarball/Dockerfile,# Build the dep binary and then clean out /go.
+21,940da04a346979d531ee17d7a7d33794defd715e,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+22,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+23,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,# copy binary into image
+24,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,# Add influxd to the PATH
+25,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,# Generate a default config
+26,8ef9eb435b90b6993d01deebaf569eaf5015b924,/Dockerfile,# Use /data for all disk storage
+27,f8e85e6df5d9ff53a4c14d2a1d3756afbab0b344,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+28,f292dda8471b3f0ae95f995875453b0711be7aec,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+29,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,# Install node deps
+30,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,# Build assets to ./dist
+31,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,# Run the image as a non-root user
 32,8d9fec8228a3b784c3a1b4c1ebd7755ab7f41688,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
-# in the future we'd start the go process here.
-"
-33,13eff5dbc52c8258052df29f091bcdc962184b5d,/Dockerfile,"# ENV PORT ||= 8888
-
-"
-34,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,"# Needed for Yarn steps to veryify the keys
-"
-35,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,"# Now update index with Yarn
-"
+# in the future we'd start the go process here."
+33,13eff5dbc52c8258052df29f091bcdc962184b5d,/Dockerfile,# ENV PORT ||= 8888
+34,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,# Needed for Yarn steps to veryify the keys
+35,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,# Now update index with Yarn
 36,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,"##
 # InfluxDB Image (Monolith)
-##
-"
+##"
 37,4b5ac0871d04e6f519b70c5a0f5a5cda57dd406e,/Dockerfile,"##
 # InfluxDB UI Image
-##
-"
-38,3e7c80dd6681a3c5adcb599485147533c94ae39d,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
-"
-39,e415d0b10ffe372a706690646ed79578949c502b,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-40,a89def234944fd2646fd73dbf8c7a345d95b8385,/Dockerfile,"# Build assets to ./ui/build
-"
-41,a89def234944fd2646fd73dbf8c7a345d95b8385,/Dockerfile,"# Run the image as a non-root user
-"
+##"
+38,3e7c80dd6681a3c5adcb599485147533c94ae39d,/releng/source-tarball/Dockerfile,# Build the dep binary and then clean out /go.
+39,e415d0b10ffe372a706690646ed79578949c502b,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+40,a89def234944fd2646fd73dbf8c7a345d95b8385,/Dockerfile,# Build assets to ./ui/build
+41,a89def234944fd2646fd73dbf8c7a345d95b8385,/Dockerfile,# Run the image as a non-root user
 42,a89def234944fd2646fd73dbf8c7a345d95b8385,/Dockerfile,"# Start the server.
-# in the future we'd start the go process here and serve the static assets in /build
-"
-43,dc9e43101fb3d896a51515462e1fc6ff099f5e98,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-44,d227d240e92edacead9069cb65e03810b8c7058b,/Dockerfile,"# Build assets to ./ui/build
-"
-45,d227d240e92edacead9069cb65e03810b8c7058b,/Dockerfile,"# Run the image as a non-root user
-"
+# in the future we'd start the go process here and serve the static assets in /build"
+43,dc9e43101fb3d896a51515462e1fc6ff099f5e98,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+44,d227d240e92edacead9069cb65e03810b8c7058b,/Dockerfile,# Build assets to ./ui/build
+45,d227d240e92edacead9069cb65e03810b8c7058b,/Dockerfile,# Run the image as a non-root user
 46,d227d240e92edacead9069cb65e03810b8c7058b,/Dockerfile,"# Start the server.
-# in the future we'd start the go process here and serve the static assets in /build
-"
-47,3c7e62bcd5ad241d6fec76b43579375c3e352d9a,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-48,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-49,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# copy binary into image
-"
-50,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# Add influxd to the PATH
-"
-51,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# Generate a default config
-"
-52,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# Use /data for all disk storage
-"
-53,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,"# Needed for Yarn steps to veryify the keys
-"
-54,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,"# Now update index with Yarn
-"
+# in the future we'd start the go process here and serve the static assets in /build"
+47,3c7e62bcd5ad241d6fec76b43579375c3e352d9a,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+48,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+49,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,# copy binary into image
+50,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,# Add influxd to the PATH
+51,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,# Generate a default config
+52,7f35d65412159c25e69e0944f64b8162c7eec2c3,/Dockerfile,# Use /data for all disk storage
+53,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,# Needed for Yarn steps to veryify the keys
+54,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,# Now update index with Yarn
 55,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,"##
 # InfluxDB Image (Monolith)
-##
-"
+##"
 56,deb99b38850494524bfe86bc1bf38b42ccef391b,/Dockerfile,"##
 # InfluxDB UI Image
-##
-"
-57,6d0d7aa1cc4d63edea7e6fd4f67cb1e298a12ff5,/Dockerfile,"# Build assets to ./ui/build
-"
-58,6d0d7aa1cc4d63edea7e6fd4f67cb1e298a12ff5,/Dockerfile,"# Run the image as a non-root user
-"
+##"
+57,6d0d7aa1cc4d63edea7e6fd4f67cb1e298a12ff5,/Dockerfile,# Build assets to ./ui/build
+58,6d0d7aa1cc4d63edea7e6fd4f67cb1e298a12ff5,/Dockerfile,# Run the image as a non-root user
 59,6d0d7aa1cc4d63edea7e6fd4f67cb1e298a12ff5,/Dockerfile,"# Start the server.
-# in the future we'd start the go process here and serve the static assets in /build
-"
-60,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-61,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# copy binary into image
-"
-62,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# Add influxd to the PATH
-"
-63,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# Generate a default config
-"
-64,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# Use /data for all disk storage
-"
-65,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-66,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# copy binary into image
-"
-67,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# Add influxd to the PATH
-"
-68,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# Generate a default config
-"
-69,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# Use /data for all disk storage
-"
-70,44691847e997c502ff5f0990fe92781563442e58,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-71,365866ca306c96763be40f780be7fc98f0e3a201,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-72,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,"# Needed for Yarn steps to veryify the keys
-"
-73,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,"# Now update index with Yarn
-"
+# in the future we'd start the go process here and serve the static assets in /build"
+60,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+61,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,# copy binary into image
+62,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,# Add influxd to the PATH
+63,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,# Generate a default config
+64,9ece632791a4fb62be81d826a77b9937fe67c3ce,/Dockerfile,# Use /data for all disk storage
+65,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+66,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,# copy binary into image
+67,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,# Add influxd to the PATH
+68,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,# Generate a default config
+69,e5704e4ea1a031150eb1fc60633289c5c5bbf621,/Dockerfile,# Use /data for all disk storage
+70,44691847e997c502ff5f0990fe92781563442e58,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+71,365866ca306c96763be40f780be7fc98f0e3a201,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+72,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,# Needed for Yarn steps to veryify the keys
+73,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,# Now update index with Yarn
 74,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,"##
 # InfluxDB Image (Monolith)
-##
-"
+##"
 75,876a89a348d901236db53c74dceeaee989bd9e21,/Dockerfile,"##
 # InfluxDB UI Image
-##
-"
-76,7e2b22f8d4970195b90b13f728ef0208123ee385,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-77,defb81413e82abfb235564146101aed84a07c96a,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-78,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-79,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# copy binary into image
-"
-80,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# Add influxd to the PATH
-"
-81,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# Generate a default config
-"
-82,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# Use /data for all disk storage
-"
-83,8c70cfd74b6c48c0e26617ef6cad52c1d3026902,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-84,e39de3e427d3bf04328ec8c4829c2a2df03332c7,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-85,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-86,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# copy binary into image
-"
-87,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# Add influxd to the PATH
-"
-88,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# Generate a default config
-"
-89,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# Use /data for all disk storage
-"
-90,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-91,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# copy binary into image
-"
-92,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# Add influxd to the PATH
-"
-93,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# Generate a default config
-"
-94,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# Use /data for all disk storage
-"
-95,f910e6aaba27398c3b6c2440a4795b740a9d71e1,/Dockerfile,"# Build assets to ./ui/build
-"
-96,f910e6aaba27398c3b6c2440a4795b740a9d71e1,/Dockerfile,"# Run the image as a non-root user
-"
+##"
+76,7e2b22f8d4970195b90b13f728ef0208123ee385,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+77,defb81413e82abfb235564146101aed84a07c96a,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+78,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+79,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,# copy binary into image
+80,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,# Add influxd to the PATH
+81,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,# Generate a default config
+82,e0261a41113e5cd84d8f7c1b7e1be891ad185e2b,/Dockerfile,# Use /data for all disk storage
+83,8c70cfd74b6c48c0e26617ef6cad52c1d3026902,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+84,e39de3e427d3bf04328ec8c4829c2a2df03332c7,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+85,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+86,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,# copy binary into image
+87,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,# Add influxd to the PATH
+88,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,# Generate a default config
+89,41733f6817ca4a3e00d4319d9f4b40303548e7c9,/Dockerfile,# Use /data for all disk storage
+90,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+91,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,# copy binary into image
+92,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,# Add influxd to the PATH
+93,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,# Generate a default config
+94,1037b177f06e0246b105847a7a5d1953b5f5b970,/Dockerfile,# Use /data for all disk storage
+95,f910e6aaba27398c3b6c2440a4795b740a9d71e1,/Dockerfile,# Build assets to ./ui/build
+96,f910e6aaba27398c3b6c2440a4795b740a9d71e1,/Dockerfile,# Run the image as a non-root user
 97,f910e6aaba27398c3b6c2440a4795b740a9d71e1,/Dockerfile,"# Start the server.
-# in the future we'd start the go process here and serve the static assets in /build
-"
-98,6bd2ae05d49d023ff0f53587b2dbf706c84ec74a,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-99,4d6672fa66ad0ac4e9620afc3c1c5491a7d9ae8e,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-100,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-101,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# copy binary into image
-"
-102,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# Add influxd to the PATH
-"
-103,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# Generate a default config
-"
-104,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# Use /data for all disk storage
-"
-105,6820dd8d1337d2bba0598d31c2d3ad7224837013,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
-"
-106,6e636264f2c1f0155e59879ad26222862ea4941d,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-107,9cb3fbd8dad524256eefaf1c7fbda894b9bbdcce,/Dockerfile,"# Build assets to ./ui/build
-"
-108,9cb3fbd8dad524256eefaf1c7fbda894b9bbdcce,/Dockerfile,"# Run the image as a non-root user
-"
+# in the future we'd start the go process here and serve the static assets in /build"
+98,6bd2ae05d49d023ff0f53587b2dbf706c84ec74a,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+99,4d6672fa66ad0ac4e9620afc3c1c5491a7d9ae8e,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+100,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+101,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,# copy binary into image
+102,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,# Add influxd to the PATH
+103,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,# Generate a default config
+104,e5e782d13d38201c1b8c435bbafe35da9bcf0d34,/Dockerfile,# Use /data for all disk storage
+105,6820dd8d1337d2bba0598d31c2d3ad7224837013,/releng/source-tarball/Dockerfile,# Build the dep binary and then clean out /go.
+106,6e636264f2c1f0155e59879ad26222862ea4941d,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+107,9cb3fbd8dad524256eefaf1c7fbda894b9bbdcce,/Dockerfile,# Build assets to ./ui/build
+108,9cb3fbd8dad524256eefaf1c7fbda894b9bbdcce,/Dockerfile,# Run the image as a non-root user
 109,9cb3fbd8dad524256eefaf1c7fbda894b9bbdcce,/Dockerfile,"# Start the server.
-# in the future we'd start the go process here and serve the static assets in /build
-"
-110,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,"# Needed for Yarn steps to veryify the keys
-"
-111,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,"# Now update index with Yarn
-"
+# in the future we'd start the go process here and serve the static assets in /build"
+110,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,# Needed for Yarn steps to veryify the keys
+111,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,# Now update index with Yarn
 112,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,"##
 # InfluxDB Image (Monolith)
-##
-"
+##"
 113,0bb847b7e7fe88491811aef742d2c455dbdee1b4,/Dockerfile,"##
 # InfluxDB UI Image
-##
-"
-114,920b2bee2e0f9532b12440c0e37512c5caa06bca,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-115,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Install node deps
-"
-116,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Build assets to ./dist
-"
-117,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Run the image as a non-root user
-"
+##"
+114,920b2bee2e0f9532b12440c0e37512c5caa06bca,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+115,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,# Install node deps
+116,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,# Build assets to ./dist
+117,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,# Run the image as a non-root user
 118,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
-# in the future we'd start the go process here.
-"
-119,9ed4770700bbc75269967c1d8e6de308028d9eb7,/e2e/scripts/Dockerfile,"#Use and official Python runtime as a base image
-"
-120,9ed4770700bbc75269967c1d8e6de308028d9eb7,/e2e/scripts/Dockerfile,"#ADD entrypoint.sh /entrypoint.sh
-
-#Run app.py when the container launches
-"
-121,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-122,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# copy binary into image
-"
-123,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# Add influxd to the PATH
-"
-124,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# Generate a default config
-"
-125,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# Use /data for all disk storage
-"
-126,b5a248802e71050f4ca2eeb026934cf66279e1ba,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-127,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-128,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# copy binary into image
-"
-129,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# Add influxd to the PATH
-"
-130,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# Generate a default config
-"
-131,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# Use /data for all disk storage
-"
-132,066d53f99da9d6ecd448deac3a0d366097a6feea,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
-"
-133,aa7ae36880ffc21de46d910026e155733a9e8816,/releng/source-tarball/Dockerfile,"# Build the gdm binary and then clean out /go.
-"
-134,677552f093180f9431249d6d9087e1ee2547410c,/releng/source-tarball/Dockerfile,"# Build the dep binary and then clean out /go.
-"
+# in the future we'd start the go process here."
+119,9ed4770700bbc75269967c1d8e6de308028d9eb7,/e2e/scripts/Dockerfile,#Use and official Python runtime as a base image
+120,9ed4770700bbc75269967c1d8e6de308028d9eb7,/e2e/scripts/Dockerfile,#ADD entrypoint.sh /entrypoint.sh
+121,9ed4770700bbc75269967c1d8e6de308028d9eb7,/e2e/scripts/Dockerfile,#Run app.py when the container launches
+122,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+123,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,# copy binary into image
+124,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,# Add influxd to the PATH
+125,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,# Generate a default config
+126,bb6de3b8f3fa8cfe7ae2f63c80e8d9a741d8a0cb,/Dockerfile,# Use /data for all disk storage
+127,b5a248802e71050f4ca2eeb026934cf66279e1ba,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+128,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+129,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,# copy binary into image
+130,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,# Add influxd to the PATH
+131,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,# Generate a default config
+132,bdce79fe57789d0d928c269f47faec6d270fbf3b,/Dockerfile,# Use /data for all disk storage
+133,066d53f99da9d6ecd448deac3a0d366097a6feea,/releng/source-tarball/Dockerfile,# Build the dep binary and then clean out /go.
+134,aa7ae36880ffc21de46d910026e155733a9e8816,/releng/source-tarball/Dockerfile,# Build the gdm binary and then clean out /go.
+135,677552f093180f9431249d6d9087e1ee2547410c,/releng/source-tarball/Dockerfile,# Build the dep binary and then clean out /go.

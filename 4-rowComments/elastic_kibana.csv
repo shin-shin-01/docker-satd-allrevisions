@@ -1,187 +1,121 @@
 ,CommitID,Dockerfile,Comment
 0,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"#
 # example Dockerfile for http://docs.docker.io/en/latest/examples/postgresql_service/
-#
-
-"
+#"
 1,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Add the PostgreSQL PGP key to verify their Debian packages.
-# It should be the same key as https://www.postgresql.org/media/keys/ACCC4CF8.asc 
-"
+# It should be the same key as https://www.postgresql.org/media/keys/ACCC4CF8.asc "
 2,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Add PostgreSQL's repository. It contains the most recent stable release
-#     of PostgreSQL, ``9.3``.
-"
-3,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Update the Ubuntu and PostgreSQL repository indexes
-"
+#     of PostgreSQL, ``9.3``."
+3,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,# Update the Ubuntu and PostgreSQL repository indexes
 4,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Install ``python-software-properties``, ``software-properties-common`` and PostgreSQL 9.3
 #  There are some warnings (in red) that show up during the build. You can hide
-#  them by prefixing each apt-get statement with DEBIAN_FRONTEND=noninteractive
-"
+#  them by prefixing each apt-get statement with DEBIAN_FRONTEND=noninteractive"
 5,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Note: The official Debian and Ubuntu images automatically ``apt-get clean``
-# after each ``apt-get`` 
-
-# Run the rest of the commands as the ``postgres`` user created by the ``postgres-9.3`` package when it was ``apt-get installed``
-"
-6,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Create a PostgreSQL role named ``docker`` with ``docker`` as the password and
+# after each ``apt-get`` "
+6,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,# Run the rest of the commands as the ``postgres`` user created by the ``postgres-9.3`` package when it was ``apt-get installed``
+7,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Create a PostgreSQL role named ``docker`` with ``docker`` as the password and
 # then create a database `docker` owned by the ``docker`` role.
 # Note: here we use ``&&\`` to run commands one after the other - the ``\``
-#       allows the RUN command to span multiple lines.
-"
-7,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Adjust PostgreSQL configuration so that remote connections to the
-# database are possible. 
-"
-8,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# And add ``listen_addresses`` to ``/etc/postgresql/9.3/main/postgresql.conf``
-"
-9,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Expose the PostgreSQL port
-"
-10,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Add VOLUMEs to allow backup of config, logs and databases
-"
-11,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Set the default command to run when starting the container
-"
-12,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"#
+#       allows the RUN command to span multiple lines."
+8,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Adjust PostgreSQL configuration so that remote connections to the
+# database are possible. "
+9,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,# And add ``listen_addresses`` to ``/etc/postgresql/9.3/main/postgresql.conf``
+10,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,# Expose the PostgreSQL port
+11,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Add VOLUMEs to allow backup of config, logs and databases"
+12,28d76056858c6aa80da84bc767c1e9aee0836c38,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,# Set the default command to run when starting the container
+13,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"#
 # example Dockerfile for http://docs.docker.io/en/latest/examples/postgresql_service/
-#
-
-"
-13,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Add the PostgreSQL PGP key to verify their Debian packages.
-# It should be the same key as https://www.postgresql.org/media/keys/ACCC4CF8.asc 
-"
-14,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Add PostgreSQL's repository. It contains the most recent stable release
-#     of PostgreSQL, ``9.3``.
-"
-15,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Update the Ubuntu and PostgreSQL repository indexes
-"
-16,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Install ``python-software-properties``, ``software-properties-common`` and PostgreSQL 9.3
+#"
+14,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Add the PostgreSQL PGP key to verify their Debian packages.
+# It should be the same key as https://www.postgresql.org/media/keys/ACCC4CF8.asc "
+15,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Add PostgreSQL's repository. It contains the most recent stable release
+#     of PostgreSQL, ``9.3``."
+16,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,# Update the Ubuntu and PostgreSQL repository indexes
+17,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Install ``python-software-properties``, ``software-properties-common`` and PostgreSQL 9.3
 #  There are some warnings (in red) that show up during the build. You can hide
-#  them by prefixing each apt-get statement with DEBIAN_FRONTEND=noninteractive
-"
-17,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Note: The official Debian and Ubuntu images automatically ``apt-get clean``
-# after each ``apt-get`` 
-
-# Run the rest of the commands as the ``postgres`` user created by the ``postgres-9.3`` package when it was ``apt-get installed``
-"
-18,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Create a PostgreSQL role named ``docker`` with ``docker`` as the password and
+#  them by prefixing each apt-get statement with DEBIAN_FRONTEND=noninteractive"
+18,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Note: The official Debian and Ubuntu images automatically ``apt-get clean``
+# after each ``apt-get`` "
+19,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,# Run the rest of the commands as the ``postgres`` user created by the ``postgres-9.3`` package when it was ``apt-get installed``
+20,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Create a PostgreSQL role named ``docker`` with ``docker`` as the password and
 # then create a database `docker` owned by the ``docker`` role.
 # Note: here we use ``&&\`` to run commands one after the other - the ``\``
-#       allows the RUN command to span multiple lines.
-"
-19,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Adjust PostgreSQL configuration so that remote connections to the
-# database are possible. 
-"
-20,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# And add ``listen_addresses`` to ``/etc/postgresql/9.3/main/postgresql.conf``
-"
-21,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Expose the PostgreSQL port
-"
-22,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Add VOLUMEs to allow backup of config, logs and databases
-"
-23,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Set the default command to run when starting the container
-"
-24,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"################################################################################
+#       allows the RUN command to span multiple lines."
+21,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Adjust PostgreSQL configuration so that remote connections to the
+# database are possible. "
+22,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,# And add ``listen_addresses`` to ``/etc/postgresql/9.3/main/postgresql.conf``
+23,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,# Expose the PostgreSQL port
+24,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,"# Add VOLUMEs to allow backup of config, logs and databases"
+25,49017ee7cf6efdf6f4d5bd905a83aed0da14b86c,/src/kibana/bower_components/ace-builds/demo/kitchen-sink/docs/Dockerfile,# Set the default command to run when starting the container
+26,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"################################################################################
 # This Dockerfile was generated from the template at:
 #   src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile
 #
 # Beginning of multi stage Dockerfile
-################################################################################
-
-################################################################################
+################################################################################"
+27,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"################################################################################
 # Build stage 0 `builder`:
 # Extract Kibana artifact
-################################################################################
-"
-25,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"#ubi}}
-"
-26,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"#usePublicArtifact}}
-"
-27,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Ensure that group permissions are the same as user permissions.
+################################################################################"
+28,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,#ubi}}
+29,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,#usePublicArtifact}}
+30,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Ensure that group permissions are the same as user permissions.
 # This will help when relying on GID-0 to run Kibana, rather than UID-1000.
 # OpenShift does this, for example.
-# REF: https://docs.openshift.org/latest/creating_images/guidelines.html
-"
-28,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"################################################################################
+# REF: https://docs.openshift.org/latest/creating_images/guidelines.html"
+31,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"################################################################################
 # Build stage 1 (the actual Kibana image):
 #
 # Copy kibana from stage 0
 # Add entrypoint
-################################################################################
-"
-29,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"#ubi}}findutils{{/ubi}} && \
-"
-30,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Add an init process, check the checksum to make sure it's a match
-"
-31,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Bring in Kibana from the initial stage.
-"
-32,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Set some Kibana configuration defaults.
-"
-33,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Add the launcher/wrapper script. It knows how to interpret environment
-# variables and translate them to Kibana CLI options.
-"
-34,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Ensure gid 0 write permissions for OpenShift.
-"
-35,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Remove the suid bit everywhere to mitigate ""Stack Clash""
-"
-36,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Provide a non-root user to run the process.
-"
-37,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"#ubi}}
-"
-38,0ca8e99a9f62435e05f6af0b9af2586a3b02b3cd,/.ci/Dockerfile,"# NOTE: This Dockerfile is ONLY used to run certain tasks in CI. It is not used to run Kibana or as a distributable.
-# If you're looking for the Kibana Docker image distributable, please see: src/dev/build/tasks/os_packages/docker_generator/templates/dockerfile.template.ts
-
-"
-39,ee4897713496d2f97d01b4dcb13c992041012d46,/x-pack/legacy/plugins/apm/cypress/ci/Dockerfile,"## Add host.docker.internal to localhost
-"
-40,d27b6c05d33c3274ba43986ba3a722e26b69d2b2,/x-pack/legacy/plugins/apm/e2e/ci/Dockerfile,"## Add host.docker.internal to localhost
-"
-41,9ee67fb6a13e7424ccede7f4fd77cdc1c2324a24,/x-pack/legacy/plugins/apm/cypress/ci/Dockerfile,"## Add host.docker.internal to localhost
-"
-42,37f4f28040d657b90c7a9f2119e242e529c41dd9,/.ci/Dockerfile,"# NOTE: This Dockerfile is ONLY used to run certain tasks in CI. It is not used to run Kibana or as a distributable.
-# If you're looking for the Kibana Docker image distributable, please see: src/dev/build/tasks/os_packages/docker_generator/templates/dockerfile.template.ts
-
-"
-43,16ba937bae63c9925b80285ad076325ee1a63569,/x-pack/plugins/apm/e2e/ci/Dockerfile,"## Add host.docker.internal to localhost
-"
-44,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"################################################################################
+################################################################################"
+32,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,#ubi}}findutils{{/ubi}} && \
+33,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Add an init process, check the checksum to make sure it's a match"
+34,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,# Bring in Kibana from the initial stage.
+35,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,# Set some Kibana configuration defaults.
+36,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Add the launcher/wrapper script. It knows how to interpret environment
+# variables and translate them to Kibana CLI options."
+37,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,# Ensure gid 0 write permissions for OpenShift.
+38,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Remove the suid bit everywhere to mitigate ""Stack Clash"""
+39,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,# Provide a non-root user to run the process.
+40,83678e1388f059a7c400d045e707ecc68124063e,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,#ubi}}
+41,0ca8e99a9f62435e05f6af0b9af2586a3b02b3cd,/.ci/Dockerfile,"# NOTE: This Dockerfile is ONLY used to run certain tasks in CI. It is not used to run Kibana or as a distributable.
+# If you're looking for the Kibana Docker image distributable, please see: src/dev/build/tasks/os_packages/docker_generator/templates/dockerfile.template.ts"
+42,ee4897713496d2f97d01b4dcb13c992041012d46,/x-pack/legacy/plugins/apm/cypress/ci/Dockerfile,## Add host.docker.internal to localhost
+43,d27b6c05d33c3274ba43986ba3a722e26b69d2b2,/x-pack/legacy/plugins/apm/e2e/ci/Dockerfile,## Add host.docker.internal to localhost
+44,9ee67fb6a13e7424ccede7f4fd77cdc1c2324a24,/x-pack/legacy/plugins/apm/cypress/ci/Dockerfile,## Add host.docker.internal to localhost
+45,37f4f28040d657b90c7a9f2119e242e529c41dd9,/.ci/Dockerfile,"# NOTE: This Dockerfile is ONLY used to run certain tasks in CI. It is not used to run Kibana or as a distributable.
+# If you're looking for the Kibana Docker image distributable, please see: src/dev/build/tasks/os_packages/docker_generator/templates/dockerfile.template.ts"
+46,16ba937bae63c9925b80285ad076325ee1a63569,/x-pack/plugins/apm/e2e/ci/Dockerfile,## Add host.docker.internal to localhost
+47,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"################################################################################
 # This Dockerfile was generated from the template at:
 #   src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile
 #
 # Beginning of multi stage Dockerfile
-################################################################################
-
-################################################################################
-# Build stage 0 `builder`:
-# Extract Kibana artifact
-################################################################################
-"
-45,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"#ubi}}
-"
-46,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"#usePublicArtifact}}
-"
-47,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Ensure that group permissions are the same as user permissions.
-# This will help when relying on GID-0 to run Kibana, rather than UID-1000.
-# OpenShift does this, for example.
-# REF: https://docs.openshift.org/latest/creating_images/guidelines.html
-"
+################################################################################"
 48,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"################################################################################
+# Build stage 0 `builder`:
+# Extract Kibana artifact
+################################################################################"
+49,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,#ubi}}
+50,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,#usePublicArtifact}}
+51,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Ensure that group permissions are the same as user permissions.
+# This will help when relying on GID-0 to run Kibana, rather than UID-1000.
+# OpenShift does this, for example.
+# REF: https://docs.openshift.org/latest/creating_images/guidelines.html"
+52,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"################################################################################
 # Build stage 1 (the actual Kibana image):
 #
 # Copy kibana from stage 0
 # Add entrypoint
-################################################################################
-"
-49,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"#ubi}}findutils{{/ubi}} && \
-"
-50,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Add an init process, check the checksum to make sure it's a match
-"
-51,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Bring in Kibana from the initial stage.
-"
-52,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Set some Kibana configuration defaults.
-"
-53,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Add the launcher/wrapper script. It knows how to interpret environment
-# variables and translate them to Kibana CLI options.
-"
-54,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Ensure gid 0 write permissions for OpenShift.
-"
-55,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Remove the suid bit everywhere to mitigate ""Stack Clash""
-"
-56,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Provide a non-root user to run the process.
-"
-57,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"#ubi}}
-"
+################################################################################"
+53,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,#ubi}}findutils{{/ubi}} && \
+54,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Add an init process, check the checksum to make sure it's a match"
+55,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,# Bring in Kibana from the initial stage.
+56,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,# Set some Kibana configuration defaults.
+57,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Add the launcher/wrapper script. It knows how to interpret environment
+# variables and translate them to Kibana CLI options."
+58,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,# Ensure gid 0 write permissions for OpenShift.
+59,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,"# Remove the suid bit everywhere to mitigate ""Stack Clash"""
+60,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,# Provide a non-root user to run the process.
+61,0707e29de38b7ba05d8e1903ad0ac94a98169b8b,/src/dev/build/tasks/os_packages/docker_generator/templates/Dockerfile,#ubi}}

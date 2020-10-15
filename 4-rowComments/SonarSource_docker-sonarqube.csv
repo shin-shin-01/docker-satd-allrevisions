@@ -1,2732 +1,1883 @@
 ,CommitID,Dockerfile,Comment
 0,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/enterprise/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 1,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/enterprise/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 2,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/enterprise/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 3,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/enterprise/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-4,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
+    # sub   2048R/06855C1D 2015-05-25"
+4,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
 5,56f47f2c9e7f8f4954dd945335e90bc8fc5ae9a3,/5.4-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-6,56f47f2c9e7f8f4954dd945335e90bc8fc5ae9a3,/5.4-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+6,56f47f2c9e7f8f4954dd945335e90bc8fc5ae9a3,/5.4-alpine/Dockerfile,# Http port
 7,56f47f2c9e7f8f4954dd945335e90bc8fc5ae9a3,/5.4-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 8,2cf123a68480c31cddb81885a001cb8496f50353,/5.6.5/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-9,2cf123a68480c31cddb81885a001cb8496f50353,/5.6.5/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+9,2cf123a68480c31cddb81885a001cb8496f50353,/5.6.5/Dockerfile,# Http port
 10,2cf123a68480c31cddb81885a001cb8496f50353,/5.6.5/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 11,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/community/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 12,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/community/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 13,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/community/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 14,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-15,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
-16,0a973ae1f201cf8c73ae507d80a898e38e51d73b,/5.1/Dockerfile,"# Http port
-"
-17,0a973ae1f201cf8c73ae507d80a898e38e51d73b,/5.1/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+15,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
+16,0a973ae1f201cf8c73ae507d80a898e38e51d73b,/5.1/Dockerfile,# Http port
+17,0a973ae1f201cf8c73ae507d80a898e38e51d73b,/5.1/Dockerfile,# H2 Database port
 18,0a973ae1f201cf8c73ae507d80a898e38e51d73b,/5.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 19,0a973ae1f201cf8c73ae507d80a898e38e51d73b,/5.1/Dockerfile,"# pub   2048R/0C1F120F 2015-03-19
 #       Key fingerprint = F19F 217F A669 DEFA 9E51  4B64 F67E 93C6 0C1F 120F
 # uid                  sonartech <sonartech@sonarsource.com>
-# sub   2048R/5C6BEEA6 2015-03-19
-"
+# sub   2048R/5C6BEEA6 2015-03-19"
 20,6d94c15966517ca6bdc7a17a757993b61f09214e,/7/community/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 21,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/community/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 22,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/community/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 23,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/community/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 24,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-25,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
-26,8f373d457375e75431d528e24353b8c4d92e4454,/5.6.6-alpine/Dockerfile,"# note that something in later base image versions causes failure of certificate verification when downloading SonarQube
-
-"
+    # sub   2048R/06855C1D 2015-05-25"
+25,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
+26,8f373d457375e75431d528e24353b8c4d92e4454,/5.6.6-alpine/Dockerfile,# note that something in later base image versions causes failure of certificate verification when downloading SonarQube
 27,8f373d457375e75431d528e24353b8c4d92e4454,/5.6.6-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-28,8f373d457375e75431d528e24353b8c4d92e4454,/5.6.6-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+28,8f373d457375e75431d528e24353b8c4d92e4454,/5.6.6-alpine/Dockerfile,# Http port
 29,8f373d457375e75431d528e24353b8c4d92e4454,/5.6.6-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-30,d60a352fc201811735bd6338314400333aaa94bc,/5.1/Dockerfile,"# Http port
-"
-31,d60a352fc201811735bd6338314400333aaa94bc,/5.1/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+30,d60a352fc201811735bd6338314400333aaa94bc,/5.1/Dockerfile,# Http port
+31,d60a352fc201811735bd6338314400333aaa94bc,/5.1/Dockerfile,# H2 Database port
 32,d60a352fc201811735bd6338314400333aaa94bc,/5.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 33,d60a352fc201811735bd6338314400333aaa94bc,/5.1/Dockerfile,"# pub   2048R/0C1F120F 2015-03-19
 #       Key fingerprint = F19F 217F A669 DEFA 9E51  4B64 F67E 93C6 0C1F 120F
 # uid                  sonartech <sonartech@sonarsource.com>
-# sub   2048R/5C6BEEA6 2015-03-19
-"
+# sub   2048R/5C6BEEA6 2015-03-19"
 34,f63921d773162fde17179f9cc5e78640c88b2ae6,/6.2-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-35,f63921d773162fde17179f9cc5e78640c88b2ae6,/6.2-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+35,f63921d773162fde17179f9cc5e78640c88b2ae6,/6.2-alpine/Dockerfile,# Http port
 36,f63921d773162fde17179f9cc5e78640c88b2ae6,/6.2-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-37,638f4208653e35fd82867cd8c5bf984658b13a53,/7/community/Dockerfile,"# Http port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+37,638f4208653e35fd82867cd8c5bf984658b13a53,/7/community/Dockerfile,# Http port
 38,638f4208653e35fd82867cd8c5bf984658b13a53,/7/community/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
-39,ad5b23145e9522d0d44733079e1e9f25b337718c,/5.1/Dockerfile,"# Database configuration
-"
+# sub   2048R/06855C1D 2015-05-25"
+39,ad5b23145e9522d0d44733079e1e9f25b337718c,/5.1/Dockerfile,# Database configuration
 40,ad5b23145e9522d0d44733079e1e9f25b337718c,/5.1/Dockerfile,"# pub   2048R/0C1F120F 2015-03-19
 #       Key fingerprint = F19F 217F A669 DEFA 9E51  4B64 F67E 93C6 0C1F 120F
 # uid                  sonartech <sonartech@sonarsource.com>
-# sub   2048R/5C6BEEA6 2015-03-19
-"
-41,8bebc73fe7be96df6acfc6ec5ed9113236ff0aff,/5.1/Dockerfile,"# Http port
-"
-42,8bebc73fe7be96df6acfc6ec5ed9113236ff0aff,/5.1/Dockerfile,"# H2 Database port
-"
+# sub   2048R/5C6BEEA6 2015-03-19"
+41,8bebc73fe7be96df6acfc6ec5ed9113236ff0aff,/5.1/Dockerfile,# Http port
+42,8bebc73fe7be96df6acfc6ec5ed9113236ff0aff,/5.1/Dockerfile,# H2 Database port
 43,8bebc73fe7be96df6acfc6ec5ed9113236ff0aff,/5.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 44,8bebc73fe7be96df6acfc6ec5ed9113236ff0aff,/5.1/Dockerfile,"# pub   2048R/0C1F120F 2015-03-19
 #       Key fingerprint = F19F 217F A669 DEFA 9E51  4B64 F67E 93C6 0C1F 120F
 # uid                  sonartech <sonartech@sonarsource.com>
-# sub   2048R/5C6BEEA6 2015-03-19
-"
-45,d5b815d6e0c7dd9a5a7440011b16310965a92693,/5.1.1/Dockerfile,"# Http port
-"
-46,d5b815d6e0c7dd9a5a7440011b16310965a92693,/5.1.1/Dockerfile,"# H2 Database port
-"
+# sub   2048R/5C6BEEA6 2015-03-19"
+45,d5b815d6e0c7dd9a5a7440011b16310965a92693,/5.1.1/Dockerfile,# Http port
+46,d5b815d6e0c7dd9a5a7440011b16310965a92693,/5.1.1/Dockerfile,# H2 Database port
 47,d5b815d6e0c7dd9a5a7440011b16310965a92693,/5.1.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 48,d5b815d6e0c7dd9a5a7440011b16310965a92693,/5.1.1/Dockerfile,"# pub   2048R/24452160 2011-11-01 [expires: 2016-12-15]
 #       Key fingerprint = A58D 5AF5 4809 A8A6 3F45  8BBD 56CD 8D5D 2445 2160
 # uid                  Eric Hartmann <eric.hartmann@sonarsource.com>
-# sub   2048R/562C56C0 2011-11-01 [expires: 2016-12-15]
-"
+# sub   2048R/562C56C0 2011-11-01 [expires: 2016-12-15]"
 49,03360969e395af585971e43971a84202baa87321,/6.7.6-community-alpine/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-50,03360969e395af585971e43971a84202baa87321,/6.7.6-community-alpine/Dockerfile,"# Http port
-"
+    # Drop these in the next release, also in the run script"
+50,03360969e395af585971e43971a84202baa87321,/6.7.6-community-alpine/Dockerfile,# Http port
 51,03360969e395af585971e43971a84202baa87321,/6.7.6-community-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-52,0a973ae1f201cf8c73ae507d80a898e38e51d73b,/4.5.4/Dockerfile,"# Http port
-"
-53,0a973ae1f201cf8c73ae507d80a898e38e51d73b,/4.5.4/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+52,0a973ae1f201cf8c73ae507d80a898e38e51d73b,/4.5.4/Dockerfile,# Http port
+53,0a973ae1f201cf8c73ae507d80a898e38e51d73b,/4.5.4/Dockerfile,# H2 Database port
 54,0a973ae1f201cf8c73ae507d80a898e38e51d73b,/4.5.4/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 55,0a973ae1f201cf8c73ae507d80a898e38e51d73b,/4.5.4/Dockerfile,"# pub   4096R/F0EA05E3 2014-06-25 [expires: 2019-06-24]
 #       Key fingerprint = E5C6 7B40 77AD A450 D209  2D4D 2B2E E179 F0EA 05E3
 # uid                  Thomas Vérin <thomas.verin@sonarsource.com>
-# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]
-"
+# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]"
 56,03360969e395af585971e43971a84202baa87321,/6.7.6-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-57,03360969e395af585971e43971a84202baa87321,/6.7.6-community/Dockerfile,"# Http port
-"
-58,03360969e395af585971e43971a84202baa87321,/6.7.6-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+57,03360969e395af585971e43971a84202baa87321,/6.7.6-community/Dockerfile,# Http port
+58,03360969e395af585971e43971a84202baa87321,/6.7.6-community/Dockerfile,# grab gosu for easy step-down from root
 59,03360969e395af585971e43971a84202baa87321,/6.7.6-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 60,82aff0792a91eb1a58baea66e7651c8e69fa18ce,/7.9.1-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-61,82aff0792a91eb1a58baea66e7651c8e69fa18ce,/7.9.1-community/Dockerfile,"# Http port
-"
-62,82aff0792a91eb1a58baea66e7651c8e69fa18ce,/7.9.1-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+61,82aff0792a91eb1a58baea66e7651c8e69fa18ce,/7.9.1-community/Dockerfile,# Http port
+62,82aff0792a91eb1a58baea66e7651c8e69fa18ce,/7.9.1-community/Dockerfile,# grab gosu for easy step-down from root
 63,82aff0792a91eb1a58baea66e7651c8e69fa18ce,/7.9.1-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 64,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/7.1/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-65,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/7.1/Dockerfile,"# Http port
-"
-66,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/7.1/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+65,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/7.1/Dockerfile,# Http port
+66,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/7.1/Dockerfile,# grab gosu for easy step-down from root
 67,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/7.1/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-68,8a264c7eeafcb53ce29db20faa9763c2980bbe96,/8/developer/Dockerfile,"# Http port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+68,8a264c7eeafcb53ce29db20faa9763c2980bbe96,/8/developer/Dockerfile,# Http port
 69,8a264c7eeafcb53ce29db20faa9763c2980bbe96,/8/developer/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
-70,7f1d131f4371e432336d569b5a8fa8c06cfe7da8,/5.1.2/Dockerfile,"# Http port
-"
-71,7f1d131f4371e432336d569b5a8fa8c06cfe7da8,/5.1.2/Dockerfile,"# H2 Database port
-"
+# sub   2048R/06855C1D 2015-05-25"
+70,7f1d131f4371e432336d569b5a8fa8c06cfe7da8,/5.1.2/Dockerfile,# Http port
+71,7f1d131f4371e432336d569b5a8fa8c06cfe7da8,/5.1.2/Dockerfile,# H2 Database port
 72,7f1d131f4371e432336d569b5a8fa8c06cfe7da8,/5.1.2/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 73,7f1d131f4371e432336d569b5a8fa8c06cfe7da8,/5.1.2/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #      Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid       [ unknown] sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
-74,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/community/Dockerfile,"# Http port
-"
-75,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/community/Dockerfile,"# download and unzip SQ
-"
+# sub   2048R/06855C1D 2015-05-25"
+74,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/community/Dockerfile,# Http port
+75,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/community/Dockerfile,# download and unzip SQ
 76,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/community/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 77,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/community/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-78,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/community/Dockerfile,"# create symlinks to volume directories
-"
-79,5d2078684be9db8ffa601ae9d63a12b8432122b7,/4.5.4/Dockerfile,"# Http port
-"
-80,5d2078684be9db8ffa601ae9d63a12b8432122b7,/4.5.4/Dockerfile,"# H2 Database port
-"
-81,5d2078684be9db8ffa601ae9d63a12b8432122b7,/4.5.4/Dockerfile,"# Database configuration
-"
+# initialization is implemented in 'run.sh' for these cases"
+78,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/community/Dockerfile,# create symlinks to volume directories
+79,5d2078684be9db8ffa601ae9d63a12b8432122b7,/4.5.4/Dockerfile,# Http port
+80,5d2078684be9db8ffa601ae9d63a12b8432122b7,/4.5.4/Dockerfile,# H2 Database port
+81,5d2078684be9db8ffa601ae9d63a12b8432122b7,/4.5.4/Dockerfile,# Database configuration
 82,5d2078684be9db8ffa601ae9d63a12b8432122b7,/4.5.4/Dockerfile,"# pub   4096R/F0EA05E3 2014-06-25 [expires: 2019-06-24]
 #       Key fingerprint = E5C6 7B40 77AD A450 D209  2D4D 2B2E E179 F0EA 05E3
 # uid                  Thomas Vérin <thomas.verin@sonarsource.com>
-# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]
-"
+# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]"
 83,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/developer/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 84,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/developer/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 85,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/developer/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 86,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/developer/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-87,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
+    # sub   2048R/06855C1D 2015-05-25"
+87,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
 88,4a000ca34edd38b26752ae89181a25cdb649f10c,/5.6.6-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-89,4a000ca34edd38b26752ae89181a25cdb649f10c,/5.6.6-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+89,4a000ca34edd38b26752ae89181a25cdb649f10c,/5.6.6-alpine/Dockerfile,# Http port
 90,4a000ca34edd38b26752ae89181a25cdb649f10c,/5.6.6-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 91,a9d733a435bc9e1ca782c07b19a277ed59667392,/5.6/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-92,a9d733a435bc9e1ca782c07b19a277ed59667392,/5.6/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+92,a9d733a435bc9e1ca782c07b19a277ed59667392,/5.6/Dockerfile,# Http port
 93,a9d733a435bc9e1ca782c07b19a277ed59667392,/5.6/Dockerfile,"    # see https://bugs.debian.org/812708
-    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499
-"
+    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499"
 94,a9d733a435bc9e1ca782c07b19a277ed59667392,/5.6/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 95,0de6481da3d5e8cf41ee7aa67738ef07a5b6f6b0,/4.5.7-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-96,0de6481da3d5e8cf41ee7aa67738ef07a5b6f6b0,/4.5.7-alpine/Dockerfile,"# Http port
-"
-97,0de6481da3d5e8cf41ee7aa67738ef07a5b6f6b0,/4.5.7-alpine/Dockerfile,"# H2 Database port
-"
+    # Defaults to using H2"
+96,0de6481da3d5e8cf41ee7aa67738ef07a5b6f6b0,/4.5.7-alpine/Dockerfile,# Http port
+97,0de6481da3d5e8cf41ee7aa67738ef07a5b6f6b0,/4.5.7-alpine/Dockerfile,# H2 Database port
 98,0de6481da3d5e8cf41ee7aa67738ef07a5b6f6b0,/4.5.7-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-99,27217fb0cfcd9469571eff710eae434a92a26f72,/8/developer/Dockerfile,"# Http port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+99,27217fb0cfcd9469571eff710eae434a92a26f72,/8/developer/Dockerfile,# Http port
 100,27217fb0cfcd9469571eff710eae434a92a26f72,/8/developer/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 101,a0b588131c7729c8156936a4521740228fe682c6,/5.6/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-102,a0b588131c7729c8156936a4521740228fe682c6,/5.6/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+102,a0b588131c7729c8156936a4521740228fe682c6,/5.6/Dockerfile,# Http port
 103,a0b588131c7729c8156936a4521740228fe682c6,/5.6/Dockerfile,"    # see https://bugs.debian.org/812708
-    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499
-"
+    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499"
 104,a0b588131c7729c8156936a4521740228fe682c6,/5.6/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-105,27217fb0cfcd9469571eff710eae434a92a26f72,/8/enterprise/Dockerfile,"# Http port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+105,27217fb0cfcd9469571eff710eae434a92a26f72,/8/enterprise/Dockerfile,# Http port
 106,27217fb0cfcd9469571eff710eae434a92a26f72,/8/enterprise/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 107,b3cb018a78ad7879bf1e07e2516f1497eb15a0c2,/7.4-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-108,b3cb018a78ad7879bf1e07e2516f1497eb15a0c2,/7.4-community/Dockerfile,"# Http port
-"
-109,b3cb018a78ad7879bf1e07e2516f1497eb15a0c2,/7.4-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+108,b3cb018a78ad7879bf1e07e2516f1497eb15a0c2,/7.4-community/Dockerfile,# Http port
+109,b3cb018a78ad7879bf1e07e2516f1497eb15a0c2,/7.4-community/Dockerfile,# grab gosu for easy step-down from root
 110,b3cb018a78ad7879bf1e07e2516f1497eb15a0c2,/7.4-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 111,bdf21686f162c5493bbd7388c666225fa16e3bd1,/5.6.4-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-112,bdf21686f162c5493bbd7388c666225fa16e3bd1,/5.6.4-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+112,bdf21686f162c5493bbd7388c666225fa16e3bd1,/5.6.4-alpine/Dockerfile,# Http port
 113,bdf21686f162c5493bbd7388c666225fa16e3bd1,/5.6.4-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 114,bf7fd60804e83a848149a82b244f3d25f1eb995e,/5.6.3/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-115,bf7fd60804e83a848149a82b244f3d25f1eb995e,/5.6.3/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+115,bf7fd60804e83a848149a82b244f3d25f1eb995e,/5.6.3/Dockerfile,# Http port
 116,bf7fd60804e83a848149a82b244f3d25f1eb995e,/5.6.3/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-117,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/5.1/Dockerfile,"# Http port
-"
-118,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/5.1/Dockerfile,"# H2 Database port
-"
-119,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/5.1/Dockerfile,"# Database configuration
-"
+    # sub   2048R/06855C1D 2015-05-25"
+117,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/5.1/Dockerfile,# Http port
+118,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/5.1/Dockerfile,# H2 Database port
+119,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/5.1/Dockerfile,# Database configuration
 120,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/5.1/Dockerfile,"# pub   2048R/0C1F120F 2015-03-19
 #       Key fingerprint = F19F 217F A669 DEFA 9E51  4B64 F67E 93C6 0C1F 120F
 # uid                  sonartech <sonartech@sonarsource.com>
-# sub   2048R/5C6BEEA6 2015-03-19
-"
+# sub   2048R/5C6BEEA6 2015-03-19"
 121,c2111c7c7fc3b4defb4d054dfa05a42e57a91cd8,/7/community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-122,c2111c7c7fc3b4defb4d054dfa05a42e57a91cd8,/7/community/Dockerfile,"# Http port
-"
-123,c2111c7c7fc3b4defb4d054dfa05a42e57a91cd8,/7/community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+122,c2111c7c7fc3b4defb4d054dfa05a42e57a91cd8,/7/community/Dockerfile,# Http port
+123,c2111c7c7fc3b4defb4d054dfa05a42e57a91cd8,/7/community/Dockerfile,# grab gosu for easy step-down from root
 124,c2111c7c7fc3b4defb4d054dfa05a42e57a91cd8,/7/community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-125,db8c43301fd26fe5653a93f9deb5ade107e87d25,/4.5.4/Dockerfile,"# Database configuration
-"
-126,3a05ee24f884e671b565fc0820c594d2994e4994,/8/enterprise/Dockerfile,"# Http port
-"
-127,3a05ee24f884e671b565fc0820c594d2994e4994,/8/enterprise/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+125,db8c43301fd26fe5653a93f9deb5ade107e87d25,/4.5.4/Dockerfile,# Database configuration
+126,3a05ee24f884e671b565fc0820c594d2994e4994,/8/enterprise/Dockerfile,# Http port
+127,3a05ee24f884e671b565fc0820c594d2994e4994,/8/enterprise/Dockerfile,# download and unzip SQ
 128,3a05ee24f884e671b565fc0820c594d2994e4994,/8/enterprise/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 129,3a05ee24f884e671b565fc0820c594d2994e4994,/8/enterprise/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-130,3a05ee24f884e671b565fc0820c594d2994e4994,/8/enterprise/Dockerfile,"# create symlinks to volume directories
-"
+# initialization is implemented in 'run.sh' for these cases"
+130,3a05ee24f884e671b565fc0820c594d2994e4994,/8/enterprise/Dockerfile,# create symlinks to volume directories
 131,57305ecffce7b13b400b7291faac29a7580d2ec1,/7.4-community-alpine/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-132,57305ecffce7b13b400b7291faac29a7580d2ec1,/7.4-community-alpine/Dockerfile,"# Http port
-"
+    # Drop these in the next release, also in the run script"
+132,57305ecffce7b13b400b7291faac29a7580d2ec1,/7.4-community-alpine/Dockerfile,# Http port
 133,57305ecffce7b13b400b7291faac29a7580d2ec1,/7.4-community-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 134,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/community/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 135,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/community/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 136,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/community/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 137,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-138,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
-139,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.3/Dockerfile,"# Http port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+138,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
+139,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.3/Dockerfile,# Http port
 140,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.3/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 141,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.3/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 142,07c6de2865dbe91361e2ab9220ce2166cb52e92e,/6.7.7-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-143,07c6de2865dbe91361e2ab9220ce2166cb52e92e,/6.7.7-community/Dockerfile,"# Http port
-"
-144,07c6de2865dbe91361e2ab9220ce2166cb52e92e,/6.7.7-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+143,07c6de2865dbe91361e2ab9220ce2166cb52e92e,/6.7.7-community/Dockerfile,# Http port
+144,07c6de2865dbe91361e2ab9220ce2166cb52e92e,/6.7.7-community/Dockerfile,# grab gosu for easy step-down from root
 145,07c6de2865dbe91361e2ab9220ce2166cb52e92e,/6.7.7-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 146,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/6.7.5-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-147,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/6.7.5-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+147,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/6.7.5-alpine/Dockerfile,# Http port
 148,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/6.7.5-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-149,5e36588f804ac136784b6d9209e341ea9abfd130,/5.1/Dockerfile,"# Database configuration
-"
-150,b0b72a73f0b6b47645ef38f5862e68ca4bd56dde,/4.5.4/Dockerfile,"# Database configuration
-"
+    # sub   2048R/06855C1D 2015-05-25"
+149,5e36588f804ac136784b6d9209e341ea9abfd130,/5.1/Dockerfile,# Database configuration
+150,b0b72a73f0b6b47645ef38f5862e68ca4bd56dde,/4.5.4/Dockerfile,# Database configuration
 151,b0b72a73f0b6b47645ef38f5862e68ca4bd56dde,/4.5.4/Dockerfile,"# pub   4096R/F0EA05E3 2014-06-25 [expires: 2019-06-24]
 #       Key fingerprint = E5C6 7B40 77AD A450 D209  2D4D 2B2E E179 F0EA 05E3
 # uid                  Thomas Vérin <thomas.verin@sonarsource.com>
-# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]
-"
-152,04724565f3e5cffc63a6d273564fc3d94cd6e6dd,/5.1/Dockerfile,"# Http port
-"
-153,04724565f3e5cffc63a6d273564fc3d94cd6e6dd,/5.1/Dockerfile,"# H2 Database port
-"
+# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]"
+152,04724565f3e5cffc63a6d273564fc3d94cd6e6dd,/5.1/Dockerfile,# Http port
+153,04724565f3e5cffc63a6d273564fc3d94cd6e6dd,/5.1/Dockerfile,# H2 Database port
 154,04724565f3e5cffc63a6d273564fc3d94cd6e6dd,/5.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 155,04724565f3e5cffc63a6d273564fc3d94cd6e6dd,/5.1/Dockerfile,"# pub   2048R/0C1F120F 2015-03-19
 #       Key fingerprint = F19F 217F A669 DEFA 9E51  4B64 F67E 93C6 0C1F 120F
 # uid                  sonartech <sonartech@sonarsource.com>
-# sub   2048R/5C6BEEA6 2015-03-19
-"
+# sub   2048R/5C6BEEA6 2015-03-19"
 156,181a02c77f782d9628a609c2f8b861d70a8d9c87,/6.7.3-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-157,181a02c77f782d9628a609c2f8b861d70a8d9c87,/6.7.3-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+157,181a02c77f782d9628a609c2f8b861d70a8d9c87,/6.7.3-alpine/Dockerfile,# Http port
 158,181a02c77f782d9628a609c2f8b861d70a8d9c87,/6.7.3-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-159,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/community/Dockerfile,"# Http port
-"
-160,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/community/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+159,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/community/Dockerfile,# Http port
+160,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/community/Dockerfile,# download and unzip SQ
 161,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/community/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 162,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/community/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-163,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/community/Dockerfile,"# create symlinks to volume directories
-"
-164,a0400d6cf462a37d67b12bf638e381820dd06e82,/4.5.4/Dockerfile,"# Http port
-"
-165,a0400d6cf462a37d67b12bf638e381820dd06e82,/4.5.4/Dockerfile,"# H2 Database port
-"
+# initialization is implemented in 'run.sh' for these cases"
+163,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/community/Dockerfile,# create symlinks to volume directories
+164,a0400d6cf462a37d67b12bf638e381820dd06e82,/4.5.4/Dockerfile,# Http port
+165,a0400d6cf462a37d67b12bf638e381820dd06e82,/4.5.4/Dockerfile,# H2 Database port
 166,a0400d6cf462a37d67b12bf638e381820dd06e82,/4.5.4/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 167,a0400d6cf462a37d67b12bf638e381820dd06e82,/4.5.4/Dockerfile,"# pub   4096R/F0EA05E3 2014-06-25 [expires: 2019-06-24]
 #       Key fingerprint = E5C6 7B40 77AD A450 D209  2D4D 2B2E E179 F0EA 05E3
 # uid                  Thomas Vérin <thomas.verin@sonarsource.com>
-# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]
-"
+# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]"
 168,57305ecffce7b13b400b7291faac29a7580d2ec1,/7.4-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-169,57305ecffce7b13b400b7291faac29a7580d2ec1,/7.4-community/Dockerfile,"# Http port
-"
-170,57305ecffce7b13b400b7291faac29a7580d2ec1,/7.4-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+169,57305ecffce7b13b400b7291faac29a7580d2ec1,/7.4-community/Dockerfile,# Http port
+170,57305ecffce7b13b400b7291faac29a7580d2ec1,/7.4-community/Dockerfile,# grab gosu for easy step-down from root
 171,57305ecffce7b13b400b7291faac29a7580d2ec1,/7.4-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 172,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.1.2/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-173,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.1.2/Dockerfile,"# Http port
-"
-174,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.1.2/Dockerfile,"# H2 Database port
-"
+    # Defaults to using H2"
+173,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.1.2/Dockerfile,# Http port
+174,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.1.2/Dockerfile,# H2 Database port
 175,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.1.2/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #      Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid       [ unknown] sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-176,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/community/Dockerfile,"# Http port
-"
-177,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/community/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+176,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/community/Dockerfile,# Http port
+177,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/community/Dockerfile,# download and unzip SQ
 178,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/community/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 179,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/community/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-180,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/community/Dockerfile,"# create symlinks to volume directories
-"
-181,842fb44a7ccfef5a0ee4ea40c4a149794f7fea45,/6.3-alpine/Dockerfile,"# note that something in later base image versions causes failure of certificate verification when downloading SonarQube
-
-"
+# initialization is implemented in 'run.sh' for these cases"
+180,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/community/Dockerfile,# create symlinks to volume directories
+181,842fb44a7ccfef5a0ee4ea40c4a149794f7fea45,/6.3-alpine/Dockerfile,# note that something in later base image versions causes failure of certificate verification when downloading SonarQube
 182,842fb44a7ccfef5a0ee4ea40c4a149794f7fea45,/6.3-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-183,842fb44a7ccfef5a0ee4ea40c4a149794f7fea45,/6.3-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+183,842fb44a7ccfef5a0ee4ea40c4a149794f7fea45,/6.3-alpine/Dockerfile,# Http port
 184,842fb44a7ccfef5a0ee4ea40c4a149794f7fea45,/6.3-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 185,65090c41e5e8157e656e6a7fd3853f5e09f6eae6,/5.6.7/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-186,65090c41e5e8157e656e6a7fd3853f5e09f6eae6,/5.6.7/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+186,65090c41e5e8157e656e6a7fd3853f5e09f6eae6,/5.6.7/Dockerfile,# Http port
 187,65090c41e5e8157e656e6a7fd3853f5e09f6eae6,/5.6.7/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 188,80366e3419d698b4bba4447f153418ef64b3b705,/5.6.4/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-189,80366e3419d698b4bba4447f153418ef64b3b705,/5.6.4/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+189,80366e3419d698b4bba4447f153418ef64b3b705,/5.6.4/Dockerfile,# Http port
 190,80366e3419d698b4bba4447f153418ef64b3b705,/5.6.4/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 191,56f47f2c9e7f8f4954dd945335e90bc8fc5ae9a3,/4.5.7-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-192,56f47f2c9e7f8f4954dd945335e90bc8fc5ae9a3,/4.5.7-alpine/Dockerfile,"# Http port
-"
-193,56f47f2c9e7f8f4954dd945335e90bc8fc5ae9a3,/4.5.7-alpine/Dockerfile,"# H2 Database port
-"
+    # Defaults to using H2"
+192,56f47f2c9e7f8f4954dd945335e90bc8fc5ae9a3,/4.5.7-alpine/Dockerfile,# Http port
+193,56f47f2c9e7f8f4954dd945335e90bc8fc5ae9a3,/4.5.7-alpine/Dockerfile,# H2 Database port
 194,56f47f2c9e7f8f4954dd945335e90bc8fc5ae9a3,/4.5.7-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 195,a9d733a435bc9e1ca782c07b19a277ed59667392,/5.6-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-196,a9d733a435bc9e1ca782c07b19a277ed59667392,/5.6-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+196,a9d733a435bc9e1ca782c07b19a277ed59667392,/5.6-alpine/Dockerfile,# Http port
 197,a9d733a435bc9e1ca782c07b19a277ed59667392,/5.6-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 198,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/enterprise/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 199,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/enterprise/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 200,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/enterprise/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 201,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/enterprise/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-202,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
-203,148fbea430fd68b1b9d6de927ff1274a10198b94,/5.1.1/Dockerfile,"# Http port
-"
-204,148fbea430fd68b1b9d6de927ff1274a10198b94,/5.1.1/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+202,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
+203,148fbea430fd68b1b9d6de927ff1274a10198b94,/5.1.1/Dockerfile,# Http port
+204,148fbea430fd68b1b9d6de927ff1274a10198b94,/5.1.1/Dockerfile,# H2 Database port
 205,148fbea430fd68b1b9d6de927ff1274a10198b94,/5.1.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 206,148fbea430fd68b1b9d6de927ff1274a10198b94,/5.1.1/Dockerfile,"# pub   2048R/0C1F120F 2015-03-19
 #       Key fingerprint = F19F 217F A669 DEFA 9E51  4B64 F67E 93C6 0C1F 120F
 # uid                  sonartech <sonartech@sonarsource.com>
-# sub   2048R/5C6BEEA6 2015-03-19
-"
-207,5a339b0ab8ea7e899405acb06c8e71a095e4bc97,/5.1/Dockerfile,"# Database configuration
-"
+# sub   2048R/5C6BEEA6 2015-03-19"
+207,5a339b0ab8ea7e899405acb06c8e71a095e4bc97,/5.1/Dockerfile,# Database configuration
 208,a0b588131c7729c8156936a4521740228fe682c6,/5.6-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-209,a0b588131c7729c8156936a4521740228fe682c6,/5.6-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+209,a0b588131c7729c8156936a4521740228fe682c6,/5.6-alpine/Dockerfile,# Http port
 210,a0b588131c7729c8156936a4521740228fe682c6,/5.6-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 211,fc89d1c1786137cb1ab98b338a61898ac5b54ae4,/7.0-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-212,fc89d1c1786137cb1ab98b338a61898ac5b54ae4,/7.0-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+212,fc89d1c1786137cb1ab98b338a61898ac5b54ae4,/7.0-alpine/Dockerfile,# Http port
 213,fc89d1c1786137cb1ab98b338a61898ac5b54ae4,/7.0-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 214,c35201fefbbb4ec261b8950ba7d075d8da094801,/6.6-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-215,c35201fefbbb4ec261b8950ba7d075d8da094801,/6.6-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+215,c35201fefbbb4ec261b8950ba7d075d8da094801,/6.6-alpine/Dockerfile,# Http port
 216,c35201fefbbb4ec261b8950ba7d075d8da094801,/6.6-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-217,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.1.2/Dockerfile,"# Http port
-"
-218,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.1.2/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+217,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.1.2/Dockerfile,# Http port
+218,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.1.2/Dockerfile,# H2 Database port
 219,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.1.2/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 220,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.1.2/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #      Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid       [ unknown] sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
-221,9620585a8bf0091ec74de0dc3949eac646794d82,/7/community/Dockerfile,"# Http port
-"
+# sub   2048R/06855C1D 2015-05-25"
+221,9620585a8bf0091ec74de0dc3949eac646794d82,/7/community/Dockerfile,# Http port
 222,9620585a8bf0091ec74de0dc3949eac646794d82,/7/community/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 223,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/community/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 224,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/community/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 225,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/community/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 226,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-227,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
-228,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/enterprise/Dockerfile,"# Http port
-"
-229,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/enterprise/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+227,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
+228,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/enterprise/Dockerfile,# Http port
+229,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/enterprise/Dockerfile,# download and unzip SQ
 230,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/enterprise/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 231,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/enterprise/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-232,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/enterprise/Dockerfile,"# create symlinks to volume directories
-"
+# initialization is implemented in 'run.sh' for these cases"
+232,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/enterprise/Dockerfile,# create symlinks to volume directories
 233,b3cb018a78ad7879bf1e07e2516f1497eb15a0c2,/6.7.6-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-234,b3cb018a78ad7879bf1e07e2516f1497eb15a0c2,/6.7.6-community/Dockerfile,"# Http port
-"
-235,b3cb018a78ad7879bf1e07e2516f1497eb15a0c2,/6.7.6-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+234,b3cb018a78ad7879bf1e07e2516f1497eb15a0c2,/6.7.6-community/Dockerfile,# Http port
+235,b3cb018a78ad7879bf1e07e2516f1497eb15a0c2,/6.7.6-community/Dockerfile,# grab gosu for easy step-down from root
 236,b3cb018a78ad7879bf1e07e2516f1497eb15a0c2,/6.7.6-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-237,b5f32a33be438950168ce4aa80c66e0f43d89f4f,/5.1/Dockerfile,"# Database configuration
-"
+    # sub   2048R/06855C1D 2015-05-25"
+237,b5f32a33be438950168ce4aa80c66e0f43d89f4f,/5.1/Dockerfile,# Database configuration
 238,d73a971436d36a56f53145aa3490ad9addfc4ec6,/6.1/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-239,d73a971436d36a56f53145aa3490ad9addfc4ec6,/6.1/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+239,d73a971436d36a56f53145aa3490ad9addfc4ec6,/6.1/Dockerfile,# Http port
 240,d73a971436d36a56f53145aa3490ad9addfc4ec6,/6.1/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 241,1fd8217f7ad0e3dfdfd07a9a944e755bda64deee,/5.6.6/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-242,1fd8217f7ad0e3dfdfd07a9a944e755bda64deee,/5.6.6/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+242,1fd8217f7ad0e3dfdfd07a9a944e755bda64deee,/5.6.6/Dockerfile,# Http port
 243,1fd8217f7ad0e3dfdfd07a9a944e755bda64deee,/5.6.6/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 244,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/enterprise/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 245,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/enterprise/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 246,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/enterprise/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 247,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/enterprise/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-248,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
+    # sub   2048R/06855C1D 2015-05-25"
+248,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
 249,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/enterprise/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 250,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/enterprise/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 251,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/enterprise/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 252,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/enterprise/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-253,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
-254,a0400d6cf462a37d67b12bf638e381820dd06e82,/5.1/Dockerfile,"# Http port
-"
-255,a0400d6cf462a37d67b12bf638e381820dd06e82,/5.1/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+253,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
+254,a0400d6cf462a37d67b12bf638e381820dd06e82,/5.1/Dockerfile,# Http port
+255,a0400d6cf462a37d67b12bf638e381820dd06e82,/5.1/Dockerfile,# H2 Database port
 256,a0400d6cf462a37d67b12bf638e381820dd06e82,/5.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 257,a0400d6cf462a37d67b12bf638e381820dd06e82,/5.1/Dockerfile,"# pub   2048R/0C1F120F 2015-03-19
 #       Key fingerprint = F19F 217F A669 DEFA 9E51  4B64 F67E 93C6 0C1F 120F
 # uid                  sonartech <sonartech@sonarsource.com>
-# sub   2048R/5C6BEEA6 2015-03-19
-"
+# sub   2048R/5C6BEEA6 2015-03-19"
 258,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/enterprise/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 259,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/enterprise/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 260,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/enterprise/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 261,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/enterprise/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-262,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
-263,5c63be5caaf8d0999192c357abd37edf3d341eeb,/4.5.4/Dockerfile,"# Http port
-"
-264,5c63be5caaf8d0999192c357abd37edf3d341eeb,/4.5.4/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+262,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
+263,5c63be5caaf8d0999192c357abd37edf3d341eeb,/4.5.4/Dockerfile,# Http port
+264,5c63be5caaf8d0999192c357abd37edf3d341eeb,/4.5.4/Dockerfile,# H2 Database port
 265,5c63be5caaf8d0999192c357abd37edf3d341eeb,/4.5.4/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 266,5c63be5caaf8d0999192c357abd37edf3d341eeb,/4.5.4/Dockerfile,"# pub   4096R/F0EA05E3 2014-06-25 [expires: 2019-06-24]
 #       Key fingerprint = E5C6 7B40 77AD A450 D209  2D4D 2B2E E179 F0EA 05E3
 # uid                  Thomas Vérin <thomas.verin@sonarsource.com>
-# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]
-"
+# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]"
 267,77b12b561f3ed8ef6308a9d2e1adb25e17704b69,/5.5/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-268,77b12b561f3ed8ef6308a9d2e1adb25e17704b69,/5.5/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+268,77b12b561f3ed8ef6308a9d2e1adb25e17704b69,/5.5/Dockerfile,# Http port
 269,77b12b561f3ed8ef6308a9d2e1adb25e17704b69,/5.5/Dockerfile,"    # see https://bugs.debian.org/812708
-    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499
-"
+    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499"
 270,77b12b561f3ed8ef6308a9d2e1adb25e17704b69,/5.5/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-271,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/4.5.4/Dockerfile,"# Http port
-"
-272,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/4.5.4/Dockerfile,"# H2 Database port
-"
-273,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/4.5.4/Dockerfile,"# Database configuration
-"
+    # sub   2048R/06855C1D 2015-05-25"
+271,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/4.5.4/Dockerfile,# Http port
+272,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/4.5.4/Dockerfile,# H2 Database port
+273,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/4.5.4/Dockerfile,# Database configuration
 274,a87cf3524f7fc558c749a071ba636d1c0cfe55e9,/4.5.4/Dockerfile,"# pub   4096R/F0EA05E3 2014-06-25 [expires: 2019-06-24]
 #       Key fingerprint = E5C6 7B40 77AD A450 D209  2D4D 2B2E E179 F0EA 05E3
 # uid                  Thomas Vérin <thomas.verin@sonarsource.com>
-# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]
-"
+# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]"
 275,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/5.6.3/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-276,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/5.6.3/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+276,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/5.6.3/Dockerfile,# Http port
 277,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/5.6.3/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-278,da3e0e22ebdb367ef731d34e63290c97a374572d,/4.5.4/Dockerfile,"# Database configuration
-"
-279,8a5c8f2c5cb0387239fffa12d204d7246251487b,/8/community/Dockerfile,"# Http port
-"
-280,8a5c8f2c5cb0387239fffa12d204d7246251487b,/8/enterprise/Dockerfile,"# Http port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+278,da3e0e22ebdb367ef731d34e63290c97a374572d,/4.5.4/Dockerfile,# Database configuration
+279,8a5c8f2c5cb0387239fffa12d204d7246251487b,/8/community/Dockerfile,# Http port
+280,8a5c8f2c5cb0387239fffa12d204d7246251487b,/8/enterprise/Dockerfile,# Http port
 281,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/6.7.5-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-282,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/6.7.5-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+282,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/6.7.5-alpine/Dockerfile,# Http port
 283,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/6.7.5-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-284,da3e0e22ebdb367ef731d34e63290c97a374572d,/5.1/Dockerfile,"# Database configuration
-"
+    # sub   2048R/06855C1D 2015-05-25"
+284,da3e0e22ebdb367ef731d34e63290c97a374572d,/5.1/Dockerfile,# Database configuration
 285,80366e3419d698b4bba4447f153418ef64b3b705,/6.1-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-286,80366e3419d698b4bba4447f153418ef64b3b705,/6.1-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+286,80366e3419d698b4bba4447f153418ef64b3b705,/6.1-alpine/Dockerfile,# Http port
 287,80366e3419d698b4bba4447f153418ef64b3b705,/6.1-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 288,485e83c6354c984cf86dd2da08fb8de441df89f7,/7.1-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-289,485e83c6354c984cf86dd2da08fb8de441df89f7,/7.1-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+289,485e83c6354c984cf86dd2da08fb8de441df89f7,/7.1-alpine/Dockerfile,# Http port
 290,485e83c6354c984cf86dd2da08fb8de441df89f7,/7.1-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-291,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/4.5.6/Dockerfile,"# Http port
-"
-292,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/4.5.6/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+291,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/4.5.6/Dockerfile,# Http port
+292,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/4.5.6/Dockerfile,# H2 Database port
 293,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/4.5.6/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 294,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/4.5.6/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 295,52981f8b2efdbfe18ffacaae687af7a4f05c15a5,/7.7-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-296,52981f8b2efdbfe18ffacaae687af7a4f05c15a5,/7.7-community/Dockerfile,"# Http port
-"
-297,52981f8b2efdbfe18ffacaae687af7a4f05c15a5,/7.7-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+296,52981f8b2efdbfe18ffacaae687af7a4f05c15a5,/7.7-community/Dockerfile,# Http port
+297,52981f8b2efdbfe18ffacaae687af7a4f05c15a5,/7.7-community/Dockerfile,# grab gosu for easy step-down from root
 298,52981f8b2efdbfe18ffacaae687af7a4f05c15a5,/7.7-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 299,84a3016c3c8565764cec7cdb024e39de70817481,/5.6.2/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-300,84a3016c3c8565764cec7cdb024e39de70817481,/5.6.2/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+300,84a3016c3c8565764cec7cdb024e39de70817481,/5.6.2/Dockerfile,# Http port
 301,84a3016c3c8565764cec7cdb024e39de70817481,/5.6.2/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 302,b90dca71939bb6b9160d7999c56bcd1c6e88d59d,/8/developer/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-303,b90dca71939bb6b9160d7999c56bcd1c6e88d59d,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values) 
-"
+    # sub   2048R/06855C1D 2015-05-25"
+303,b90dca71939bb6b9160d7999c56bcd1c6e88d59d,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values) "
 304,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.4/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-305,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.4/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+305,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.4/Dockerfile,# Http port
 306,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.4/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 307,fafddfda0dd42ffee391f41c6d02d548158d18c2,/7.4-community-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-308,fafddfda0dd42ffee391f41c6d02d548158d18c2,/7.4-community-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+308,fafddfda0dd42ffee391f41c6d02d548158d18c2,/7.4-community-alpine/Dockerfile,# Http port
 309,fafddfda0dd42ffee391f41c6d02d548158d18c2,/7.4-community-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 310,445337a0bbe87afd8ba745ba4bcabf75d3bf002e,/5.5/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-311,445337a0bbe87afd8ba745ba4bcabf75d3bf002e,/5.5/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+311,445337a0bbe87afd8ba745ba4bcabf75d3bf002e,/5.5/Dockerfile,# Http port
 312,445337a0bbe87afd8ba745ba4bcabf75d3bf002e,/5.5/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-313,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/developer/Dockerfile,"# Http port
-"
-314,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/developer/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+313,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/developer/Dockerfile,# Http port
+314,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/developer/Dockerfile,# download and unzip SQ
 315,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/developer/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 316,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/developer/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-317,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/developer/Dockerfile,"# create symlinks to volume directories
-"
-318,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.2/Dockerfile,"# Http port
-"
+# initialization is implemented in 'run.sh' for these cases"
+317,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/developer/Dockerfile,# create symlinks to volume directories
+318,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.2/Dockerfile,# Http port
 319,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.2/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 320,bbacf479c9c6aa95085f13639a66c8640c468fdc,/5.2/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
-321,62bf9864e14e439dcd0019e3205668d62f623169,/7/community/Dockerfile,"# Http port
-"
+# sub   2048R/06855C1D 2015-05-25"
+321,62bf9864e14e439dcd0019e3205668d62f623169,/7/community/Dockerfile,# Http port
 322,62bf9864e14e439dcd0019e3205668d62f623169,/7/community/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 323,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/5.6.3-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-324,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/5.6.3-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+324,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/5.6.3-alpine/Dockerfile,# Http port
 325,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/5.6.3-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 326,c0cae340838f57fb2af7b6441daaf3d2987a4d34,/6.4/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-327,c0cae340838f57fb2af7b6441daaf3d2987a4d34,/6.4/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+327,c0cae340838f57fb2af7b6441daaf3d2987a4d34,/6.4/Dockerfile,# Http port
 328,c0cae340838f57fb2af7b6441daaf3d2987a4d34,/6.4/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-329,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/developer/Dockerfile,"# Http port
-"
-330,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/developer/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+329,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/developer/Dockerfile,# Http port
+330,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/developer/Dockerfile,# download and unzip SQ
 331,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/developer/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 332,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/developer/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-333,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/developer/Dockerfile,"# create symlinks to volume directories
-"
-334,b738cb8ebe2a86a3b02111ead254ac9bc16bf850,/7/community/Dockerfile,"# Http port
-"
+# initialization is implemented in 'run.sh' for these cases"
+333,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/developer/Dockerfile,# create symlinks to volume directories
+334,b738cb8ebe2a86a3b02111ead254ac9bc16bf850,/7/community/Dockerfile,# Http port
 335,b738cb8ebe2a86a3b02111ead254ac9bc16bf850,/7/community/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 336,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/6.7.5/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-337,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/6.7.5/Dockerfile,"# Http port
-"
-338,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/6.7.5/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+337,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/6.7.5/Dockerfile,# Http port
+338,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/6.7.5/Dockerfile,# grab gosu for easy step-down from root
 339,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/6.7.5/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 340,fafddfda0dd42ffee391f41c6d02d548158d18c2,/7.4-community/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-341,fafddfda0dd42ffee391f41c6d02d548158d18c2,/7.4-community/Dockerfile,"# Http port
-"
-342,fafddfda0dd42ffee391f41c6d02d548158d18c2,/7.4-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+341,fafddfda0dd42ffee391f41c6d02d548158d18c2,/7.4-community/Dockerfile,# Http port
+342,fafddfda0dd42ffee391f41c6d02d548158d18c2,/7.4-community/Dockerfile,# grab gosu for easy step-down from root
 343,fafddfda0dd42ffee391f41c6d02d548158d18c2,/7.4-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-344,5a339b0ab8ea7e899405acb06c8e71a095e4bc97,/4.5.4/Dockerfile,"# Database configuration
-"
-345,48588014cb51043324a7753a9eaec1e609e0f957,/4.5.4/Dockerfile,"# Http port
-"
-346,48588014cb51043324a7753a9eaec1e609e0f957,/4.5.4/Dockerfile,"# H2 Database port
-"
-347,48588014cb51043324a7753a9eaec1e609e0f957,/4.5.4/Dockerfile,"# Database configuration
-"
+    # sub   2048R/06855C1D 2015-05-25"
+344,5a339b0ab8ea7e899405acb06c8e71a095e4bc97,/4.5.4/Dockerfile,# Database configuration
+345,48588014cb51043324a7753a9eaec1e609e0f957,/4.5.4/Dockerfile,# Http port
+346,48588014cb51043324a7753a9eaec1e609e0f957,/4.5.4/Dockerfile,# H2 Database port
+347,48588014cb51043324a7753a9eaec1e609e0f957,/4.5.4/Dockerfile,# Database configuration
 348,48588014cb51043324a7753a9eaec1e609e0f957,/4.5.4/Dockerfile,"# pub   4096R/F0EA05E3 2014-06-25 [expires: 2019-06-24]
 #       Key fingerprint = E5C6 7B40 77AD A450 D209  2D4D 2B2E E179 F0EA 05E3
 # uid                  Thomas Vérin <thomas.verin@sonarsource.com>
-# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]
-"
+# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]"
 349,73534fd899d29eb1373ea073edbfe7a4074ede6e,/6.0/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-350,73534fd899d29eb1373ea073edbfe7a4074ede6e,/6.0/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+350,73534fd899d29eb1373ea073edbfe7a4074ede6e,/6.0/Dockerfile,# Http port
 351,73534fd899d29eb1373ea073edbfe7a4074ede6e,/6.0/Dockerfile,"    # see https://bugs.debian.org/812708
-    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499
-"
+    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499"
 352,73534fd899d29eb1373ea073edbfe7a4074ede6e,/6.0/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 353,c35201fefbbb4ec261b8950ba7d075d8da094801,/6.6/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-354,c35201fefbbb4ec261b8950ba7d075d8da094801,/6.6/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+354,c35201fefbbb4ec261b8950ba7d075d8da094801,/6.6/Dockerfile,# Http port
 355,c35201fefbbb4ec261b8950ba7d075d8da094801,/6.6/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-356,3a05ee24f884e671b565fc0820c594d2994e4994,/8/developer/Dockerfile,"# Http port
-"
-357,3a05ee24f884e671b565fc0820c594d2994e4994,/8/developer/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+356,3a05ee24f884e671b565fc0820c594d2994e4994,/8/developer/Dockerfile,# Http port
+357,3a05ee24f884e671b565fc0820c594d2994e4994,/8/developer/Dockerfile,# download and unzip SQ
 358,3a05ee24f884e671b565fc0820c594d2994e4994,/8/developer/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 359,3a05ee24f884e671b565fc0820c594d2994e4994,/8/developer/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-360,3a05ee24f884e671b565fc0820c594d2994e4994,/8/developer/Dockerfile,"# create symlinks to volume directories
-"
+# initialization is implemented in 'run.sh' for these cases"
+360,3a05ee24f884e671b565fc0820c594d2994e4994,/8/developer/Dockerfile,# create symlinks to volume directories
 361,fc89d1c1786137cb1ab98b338a61898ac5b54ae4,/7.0/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-362,fc89d1c1786137cb1ab98b338a61898ac5b54ae4,/7.0/Dockerfile,"# Http port
-"
-363,fc89d1c1786137cb1ab98b338a61898ac5b54ae4,/7.0/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+362,fc89d1c1786137cb1ab98b338a61898ac5b54ae4,/7.0/Dockerfile,# Http port
+363,fc89d1c1786137cb1ab98b338a61898ac5b54ae4,/7.0/Dockerfile,# grab gosu for easy step-down from root
 364,fc89d1c1786137cb1ab98b338a61898ac5b54ae4,/7.0/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 365,7f8fd12c45f4c7801e08d6b938c3869e0ceebd96,/7.9-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-366,7f8fd12c45f4c7801e08d6b938c3869e0ceebd96,/7.9-community/Dockerfile,"# Http port
-"
-367,7f8fd12c45f4c7801e08d6b938c3869e0ceebd96,/7.9-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+366,7f8fd12c45f4c7801e08d6b938c3869e0ceebd96,/7.9-community/Dockerfile,# Http port
+367,7f8fd12c45f4c7801e08d6b938c3869e0ceebd96,/7.9-community/Dockerfile,# grab gosu for easy step-down from root
 368,7f8fd12c45f4c7801e08d6b938c3869e0ceebd96,/7.9-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 369,df10e8c9d58d09653100d96d823d8f96e08705cb,/6.3-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-370,df10e8c9d58d09653100d96d823d8f96e08705cb,/6.3-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+370,df10e8c9d58d09653100d96d823d8f96e08705cb,/6.3-alpine/Dockerfile,# Http port
 371,df10e8c9d58d09653100d96d823d8f96e08705cb,/6.3-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 372,1d696886185a5f8aa345b3040153ba92769c34e4,/4.5.7-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-373,1d696886185a5f8aa345b3040153ba92769c34e4,/4.5.7-alpine/Dockerfile,"# Http port
-"
-374,1d696886185a5f8aa345b3040153ba92769c34e4,/4.5.7-alpine/Dockerfile,"# H2 Database port
-"
+    # Defaults to using H2"
+373,1d696886185a5f8aa345b3040153ba92769c34e4,/4.5.7-alpine/Dockerfile,# Http port
+374,1d696886185a5f8aa345b3040153ba92769c34e4,/4.5.7-alpine/Dockerfile,# H2 Database port
 375,1d696886185a5f8aa345b3040153ba92769c34e4,/4.5.7-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-376,1d696886185a5f8aa345b3040153ba92769c34e4,/4.5.7-alpine/Dockerfile,"    # clean apk cache
-"
+    # sub   2048R/06855C1D 2015-05-25"
+376,1d696886185a5f8aa345b3040153ba92769c34e4,/4.5.7-alpine/Dockerfile,    # clean apk cache
 377,1fd8217f7ad0e3dfdfd07a9a944e755bda64deee,/5.6.6-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-378,1fd8217f7ad0e3dfdfd07a9a944e755bda64deee,/5.6.6-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+378,1fd8217f7ad0e3dfdfd07a9a944e755bda64deee,/5.6.6-alpine/Dockerfile,# Http port
 379,1fd8217f7ad0e3dfdfd07a9a944e755bda64deee,/5.6.6-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 380,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/6.7.5/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-381,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/6.7.5/Dockerfile,"# Http port
-"
-382,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/6.7.5/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+381,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/6.7.5/Dockerfile,# Http port
+382,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/6.7.5/Dockerfile,# grab gosu for easy step-down from root
 383,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/6.7.5/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-384,29d8089232433be2d5381d791234c4d6f325b8e6,/8/community/Dockerfile,"# Http port
-"
-385,29d8089232433be2d5381d791234c4d6f325b8e6,/8/community/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+384,29d8089232433be2d5381d791234c4d6f325b8e6,/8/community/Dockerfile,# Http port
+385,29d8089232433be2d5381d791234c4d6f325b8e6,/8/community/Dockerfile,# download and unzip SQ
 386,29d8089232433be2d5381d791234c4d6f325b8e6,/8/community/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 387,29d8089232433be2d5381d791234c4d6f325b8e6,/8/community/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-388,29d8089232433be2d5381d791234c4d6f325b8e6,/8/community/Dockerfile,"# create symlinks to volume directories
-"
+# initialization is implemented in 'run.sh' for these cases"
+388,29d8089232433be2d5381d791234c4d6f325b8e6,/8/community/Dockerfile,# create symlinks to volume directories
 389,03360969e395af585971e43971a84202baa87321,/7.4-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-390,03360969e395af585971e43971a84202baa87321,/7.4-community/Dockerfile,"# Http port
-"
-391,03360969e395af585971e43971a84202baa87321,/7.4-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+390,03360969e395af585971e43971a84202baa87321,/7.4-community/Dockerfile,# Http port
+391,03360969e395af585971e43971a84202baa87321,/7.4-community/Dockerfile,# grab gosu for easy step-down from root
 392,03360969e395af585971e43971a84202baa87321,/7.4-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-393,d5b815d6e0c7dd9a5a7440011b16310965a92693,/5.1/Dockerfile,"# Http port
-"
-394,d5b815d6e0c7dd9a5a7440011b16310965a92693,/5.1/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+393,d5b815d6e0c7dd9a5a7440011b16310965a92693,/5.1/Dockerfile,# Http port
+394,d5b815d6e0c7dd9a5a7440011b16310965a92693,/5.1/Dockerfile,# H2 Database port
 395,d5b815d6e0c7dd9a5a7440011b16310965a92693,/5.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 396,d5b815d6e0c7dd9a5a7440011b16310965a92693,/5.1/Dockerfile,"# pub   2048R/0C1F120F 2015-03-19
 #       Key fingerprint = F19F 217F A669 DEFA 9E51  4B64 F67E 93C6 0C1F 120F
 # uid                  sonartech <sonartech@sonarsource.com>
-# sub   2048R/5C6BEEA6 2015-03-19
-"
-397,e09a66a5a2e6337e2852c4f36659632ea505fdb1,/4.5.5/Dockerfile,"# Http port
-"
-398,e09a66a5a2e6337e2852c4f36659632ea505fdb1,/4.5.5/Dockerfile,"# H2 Database port
-"
+# sub   2048R/5C6BEEA6 2015-03-19"
+397,e09a66a5a2e6337e2852c4f36659632ea505fdb1,/4.5.5/Dockerfile,# Http port
+398,e09a66a5a2e6337e2852c4f36659632ea505fdb1,/4.5.5/Dockerfile,# H2 Database port
 399,e09a66a5a2e6337e2852c4f36659632ea505fdb1,/4.5.5/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 400,e09a66a5a2e6337e2852c4f36659632ea505fdb1,/4.5.5/Dockerfile,"# pub   4096R/F0EA05E3 2014-06-25 [expires: 2019-06-24]
 #       Key fingerprint = E5C6 7B40 77AD A450 D209  2D4D 2B2E E179 F0EA 05E3
 # uid                  Thomas Vérin <thomas.verin@sonarsource.com>
-# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]
-"
+# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]"
 401,57305ecffce7b13b400b7291faac29a7580d2ec1,/6.7.6-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-402,57305ecffce7b13b400b7291faac29a7580d2ec1,/6.7.6-community/Dockerfile,"# Http port
-"
-403,57305ecffce7b13b400b7291faac29a7580d2ec1,/6.7.6-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+402,57305ecffce7b13b400b7291faac29a7580d2ec1,/6.7.6-community/Dockerfile,# Http port
+403,57305ecffce7b13b400b7291faac29a7580d2ec1,/6.7.6-community/Dockerfile,# grab gosu for easy step-down from root
 404,57305ecffce7b13b400b7291faac29a7580d2ec1,/6.7.6-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 405,0697dfe652397fc2990e5002292f5e32c851738f,/5.6.7-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-406,0697dfe652397fc2990e5002292f5e32c851738f,/5.6.7-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+406,0697dfe652397fc2990e5002292f5e32c851738f,/5.6.7-alpine/Dockerfile,# Http port
 407,0697dfe652397fc2990e5002292f5e32c851738f,/5.6.7-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-408,cd5b8c2dfe886444ae857dcf5b25704c9e1cd5e4,/5.1.1/Dockerfile,"# Http port
-"
-409,cd5b8c2dfe886444ae857dcf5b25704c9e1cd5e4,/5.1.1/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+408,cd5b8c2dfe886444ae857dcf5b25704c9e1cd5e4,/5.1.1/Dockerfile,# Http port
+409,cd5b8c2dfe886444ae857dcf5b25704c9e1cd5e4,/5.1.1/Dockerfile,# H2 Database port
 410,cd5b8c2dfe886444ae857dcf5b25704c9e1cd5e4,/5.1.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 411,cd5b8c2dfe886444ae857dcf5b25704c9e1cd5e4,/5.1.1/Dockerfile,"# pub   2048R/24452160 2011-11-01 [expires: 2016-12-15]
 #       Key fingerprint = A58D 5AF5 4809 A8A6 3F45  8BBD 56CD 8D5D 2445 2160
 # uid                  Eric Hartmann <eric.hartmann@sonarsource.com>
-# sub   2048R/562C56C0 2011-11-01 [expires: 2016-12-15]
-"
+# sub   2048R/562C56C0 2011-11-01 [expires: 2016-12-15]"
 412,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/developer/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 413,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/developer/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 414,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/developer/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 415,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/developer/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-416,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
+    # sub   2048R/06855C1D 2015-05-25"
+416,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
 417,65090c41e5e8157e656e6a7fd3853f5e09f6eae6,/5.6.7-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-418,65090c41e5e8157e656e6a7fd3853f5e09f6eae6,/5.6.7-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+418,65090c41e5e8157e656e6a7fd3853f5e09f6eae6,/5.6.7-alpine/Dockerfile,# Http port
 419,65090c41e5e8157e656e6a7fd3853f5e09f6eae6,/5.6.7-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-420,ad5b23145e9522d0d44733079e1e9f25b337718c,/4.5.4/Dockerfile,"# Database configuration
-"
+    # sub   2048R/06855C1D 2015-05-25"
+420,ad5b23145e9522d0d44733079e1e9f25b337718c,/4.5.4/Dockerfile,# Database configuration
 421,ad5b23145e9522d0d44733079e1e9f25b337718c,/4.5.4/Dockerfile,"# pub   4096R/F0EA05E3 2014-06-25 [expires: 2019-06-24]
 #       Key fingerprint = E5C6 7B40 77AD A450 D209  2D4D 2B2E E179 F0EA 05E3
 # uid                  Thomas Vérin <thomas.verin@sonarsource.com>
-# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]
-"
+# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]"
 422,df10e8c9d58d09653100d96d823d8f96e08705cb,/5.6.6-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-423,df10e8c9d58d09653100d96d823d8f96e08705cb,/5.6.6-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+423,df10e8c9d58d09653100d96d823d8f96e08705cb,/5.6.6-alpine/Dockerfile,# Http port
 424,df10e8c9d58d09653100d96d823d8f96e08705cb,/5.6.6-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-425,d60a352fc201811735bd6338314400333aaa94bc,/4.5.4/Dockerfile,"# Http port
-"
-426,d60a352fc201811735bd6338314400333aaa94bc,/4.5.4/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+425,d60a352fc201811735bd6338314400333aaa94bc,/4.5.4/Dockerfile,# Http port
+426,d60a352fc201811735bd6338314400333aaa94bc,/4.5.4/Dockerfile,# H2 Database port
 427,d60a352fc201811735bd6338314400333aaa94bc,/4.5.4/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 428,d60a352fc201811735bd6338314400333aaa94bc,/4.5.4/Dockerfile,"# pub   4096R/F0EA05E3 2014-06-25 [expires: 2019-06-24]
 #       Key fingerprint = E5C6 7B40 77AD A450 D209  2D4D 2B2E E179 F0EA 05E3
 # uid                  Thomas Vérin <thomas.verin@sonarsource.com>
-# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]
-"
+# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]"
 429,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/7.1/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-430,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/7.1/Dockerfile,"# Http port
-"
-431,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/7.1/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+430,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/7.1/Dockerfile,# Http port
+431,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/7.1/Dockerfile,# grab gosu for easy step-down from root
 432,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/7.1/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 433,38b99435a056fed2e57523967a9cc7824e4e8921,/6.7.1/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-434,38b99435a056fed2e57523967a9cc7824e4e8921,/6.7.1/Dockerfile,"# Http port
-"
-435,38b99435a056fed2e57523967a9cc7824e4e8921,/6.7.1/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+434,38b99435a056fed2e57523967a9cc7824e4e8921,/6.7.1/Dockerfile,# Http port
+435,38b99435a056fed2e57523967a9cc7824e4e8921,/6.7.1/Dockerfile,# grab gosu for easy step-down from root
 436,38b99435a056fed2e57523967a9cc7824e4e8921,/6.7.1/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 437,0de6481da3d5e8cf41ee7aa67738ef07a5b6f6b0,/5.4-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-438,0de6481da3d5e8cf41ee7aa67738ef07a5b6f6b0,/5.4-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+438,0de6481da3d5e8cf41ee7aa67738ef07a5b6f6b0,/5.4-alpine/Dockerfile,# Http port
 439,0de6481da3d5e8cf41ee7aa67738ef07a5b6f6b0,/5.4-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 440,d11f76c6d010ba1fd8d37f0c42a18671128ca533,/5.6.7-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-441,d11f76c6d010ba1fd8d37f0c42a18671128ca533,/5.6.7-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+441,d11f76c6d010ba1fd8d37f0c42a18671128ca533,/5.6.7-alpine/Dockerfile,# Http port
 442,d11f76c6d010ba1fd8d37f0c42a18671128ca533,/5.6.7-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-443,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/community/Dockerfile,"# Http port
-"
-444,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/community/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+443,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/community/Dockerfile,# Http port
+444,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/community/Dockerfile,# download and unzip SQ
 445,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/community/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 446,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/community/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-447,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/community/Dockerfile,"# create symlinks to volume directories
-"
+# initialization is implemented in 'run.sh' for these cases"
+447,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/community/Dockerfile,# create symlinks to volume directories
 448,9d17a3ec5908a5bc20fe99039ee0be3ef4dada07,/7.9-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-449,9d17a3ec5908a5bc20fe99039ee0be3ef4dada07,/7.9-community/Dockerfile,"# Http port
-"
-450,9d17a3ec5908a5bc20fe99039ee0be3ef4dada07,/7.9-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+449,9d17a3ec5908a5bc20fe99039ee0be3ef4dada07,/7.9-community/Dockerfile,# Http port
+450,9d17a3ec5908a5bc20fe99039ee0be3ef4dada07,/7.9-community/Dockerfile,# grab gosu for easy step-down from root
 451,9d17a3ec5908a5bc20fe99039ee0be3ef4dada07,/7.9-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 452,faffed54f0edbd736d6f95132b5dc076e2f613c5,/6.7.2-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-453,faffed54f0edbd736d6f95132b5dc076e2f613c5,/6.7.2-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+453,faffed54f0edbd736d6f95132b5dc076e2f613c5,/6.7.2-alpine/Dockerfile,# Http port
 454,faffed54f0edbd736d6f95132b5dc076e2f613c5,/6.7.2-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 455,4a000ca34edd38b26752ae89181a25cdb649f10c,/5.6.6/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-456,4a000ca34edd38b26752ae89181a25cdb649f10c,/5.6.6/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+456,4a000ca34edd38b26752ae89181a25cdb649f10c,/5.6.6/Dockerfile,# Http port
 457,4a000ca34edd38b26752ae89181a25cdb649f10c,/5.6.6/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 458,1d696886185a5f8aa345b3040153ba92769c34e4,/5.4-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-459,1d696886185a5f8aa345b3040153ba92769c34e4,/5.4-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+459,1d696886185a5f8aa345b3040153ba92769c34e4,/5.4-alpine/Dockerfile,# Http port
 460,1d696886185a5f8aa345b3040153ba92769c34e4,/5.4-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-461,1d696886185a5f8aa345b3040153ba92769c34e4,/5.4-alpine/Dockerfile,"    # clean apk cache
-"
-462,0cb8aef5609055553b388200878a49e18060d49d,/5.1.2/Dockerfile,"# Http port
-"
-463,0cb8aef5609055553b388200878a49e18060d49d,/5.1.2/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+461,1d696886185a5f8aa345b3040153ba92769c34e4,/5.4-alpine/Dockerfile,    # clean apk cache
+462,0cb8aef5609055553b388200878a49e18060d49d,/5.1.2/Dockerfile,# Http port
+463,0cb8aef5609055553b388200878a49e18060d49d,/5.1.2/Dockerfile,# H2 Database port
 464,0cb8aef5609055553b388200878a49e18060d49d,/5.1.2/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 465,0cb8aef5609055553b388200878a49e18060d49d,/5.1.2/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #      Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid       [ unknown] sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 466,2a00a59b94b64d52ce202f104c816d4ab73a5837,/7.8-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-467,2a00a59b94b64d52ce202f104c816d4ab73a5837,/7.8-community/Dockerfile,"# Http port
-"
-468,2a00a59b94b64d52ce202f104c816d4ab73a5837,/7.8-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+467,2a00a59b94b64d52ce202f104c816d4ab73a5837,/7.8-community/Dockerfile,# Http port
+468,2a00a59b94b64d52ce202f104c816d4ab73a5837,/7.8-community/Dockerfile,# grab gosu for easy step-down from root
 469,2a00a59b94b64d52ce202f104c816d4ab73a5837,/7.8-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-470,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.3/Dockerfile,"# Http port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+470,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.3/Dockerfile,# Http port
 471,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.3/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 472,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.3/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
-473,e3500f26e706b239e43bc7b5b2712ac7e4d58974,/4.5.6/Dockerfile,"# Http port
-"
-474,e3500f26e706b239e43bc7b5b2712ac7e4d58974,/4.5.6/Dockerfile,"# H2 Database port
-"
+# sub   2048R/06855C1D 2015-05-25"
+473,e3500f26e706b239e43bc7b5b2712ac7e4d58974,/4.5.6/Dockerfile,# Http port
+474,e3500f26e706b239e43bc7b5b2712ac7e4d58974,/4.5.6/Dockerfile,# H2 Database port
 475,e3500f26e706b239e43bc7b5b2712ac7e4d58974,/4.5.6/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 476,e3500f26e706b239e43bc7b5b2712ac7e4d58974,/4.5.6/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
-477,bbacf479c9c6aa95085f13639a66c8640c468fdc,/4.5.6/Dockerfile,"# Http port
-"
-478,bbacf479c9c6aa95085f13639a66c8640c468fdc,/4.5.6/Dockerfile,"# H2 Database port
-"
+# sub   2048R/06855C1D 2015-05-25"
+477,bbacf479c9c6aa95085f13639a66c8640c468fdc,/4.5.6/Dockerfile,# Http port
+478,bbacf479c9c6aa95085f13639a66c8640c468fdc,/4.5.6/Dockerfile,# H2 Database port
 479,bbacf479c9c6aa95085f13639a66c8640c468fdc,/4.5.6/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 480,bbacf479c9c6aa95085f13639a66c8640c468fdc,/4.5.6/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 481,445337a0bbe87afd8ba745ba4bcabf75d3bf002e,/5.5-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-482,445337a0bbe87afd8ba745ba4bcabf75d3bf002e,/5.5-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+482,445337a0bbe87afd8ba745ba4bcabf75d3bf002e,/5.5-alpine/Dockerfile,# Http port
 483,445337a0bbe87afd8ba745ba4bcabf75d3bf002e,/5.5-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-484,3a05ee24f884e671b565fc0820c594d2994e4994,/8/community/Dockerfile,"# Http port
-"
-485,3a05ee24f884e671b565fc0820c594d2994e4994,/8/community/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+484,3a05ee24f884e671b565fc0820c594d2994e4994,/8/community/Dockerfile,# Http port
+485,3a05ee24f884e671b565fc0820c594d2994e4994,/8/community/Dockerfile,# download and unzip SQ
 486,3a05ee24f884e671b565fc0820c594d2994e4994,/8/community/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 487,3a05ee24f884e671b565fc0820c594d2994e4994,/8/community/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-488,3a05ee24f884e671b565fc0820c594d2994e4994,/8/community/Dockerfile,"# create symlinks to volume directories
-"
+# initialization is implemented in 'run.sh' for these cases"
+488,3a05ee24f884e671b565fc0820c594d2994e4994,/8/community/Dockerfile,# create symlinks to volume directories
 489,5dc27334bbf784f63f209e83b2c9b9023a75ee7f,/6.0/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-490,5dc27334bbf784f63f209e83b2c9b9023a75ee7f,/6.0/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+490,5dc27334bbf784f63f209e83b2c9b9023a75ee7f,/6.0/Dockerfile,# Http port
 491,5dc27334bbf784f63f209e83b2c9b9023a75ee7f,/6.0/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 492,fafddfda0dd42ffee391f41c6d02d548158d18c2,/6.7.6-community-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-493,fafddfda0dd42ffee391f41c6d02d548158d18c2,/6.7.6-community-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+493,fafddfda0dd42ffee391f41c6d02d548158d18c2,/6.7.6-community-alpine/Dockerfile,# Http port
 494,fafddfda0dd42ffee391f41c6d02d548158d18c2,/6.7.6-community-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-495,5c63be5caaf8d0999192c357abd37edf3d341eeb,/5.1/Dockerfile,"# Http port
-"
-496,5c63be5caaf8d0999192c357abd37edf3d341eeb,/5.1/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+495,5c63be5caaf8d0999192c357abd37edf3d341eeb,/5.1/Dockerfile,# Http port
+496,5c63be5caaf8d0999192c357abd37edf3d341eeb,/5.1/Dockerfile,# H2 Database port
 497,5c63be5caaf8d0999192c357abd37edf3d341eeb,/5.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 498,5c63be5caaf8d0999192c357abd37edf3d341eeb,/5.1/Dockerfile,"# pub   2048R/0C1F120F 2015-03-19
 #       Key fingerprint = F19F 217F A669 DEFA 9E51  4B64 F67E 93C6 0C1F 120F
 # uid                  sonartech <sonartech@sonarsource.com>
-# sub   2048R/5C6BEEA6 2015-03-19
-"
-499,d5b815d6e0c7dd9a5a7440011b16310965a92693,/4.5.4/Dockerfile,"# Http port
-"
-500,d5b815d6e0c7dd9a5a7440011b16310965a92693,/4.5.4/Dockerfile,"# H2 Database port
-"
+# sub   2048R/5C6BEEA6 2015-03-19"
+499,d5b815d6e0c7dd9a5a7440011b16310965a92693,/4.5.4/Dockerfile,# Http port
+500,d5b815d6e0c7dd9a5a7440011b16310965a92693,/4.5.4/Dockerfile,# H2 Database port
 501,d5b815d6e0c7dd9a5a7440011b16310965a92693,/4.5.4/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 502,d5b815d6e0c7dd9a5a7440011b16310965a92693,/4.5.4/Dockerfile,"# pub   4096R/F0EA05E3 2014-06-25 [expires: 2019-06-24]
 #       Key fingerprint = E5C6 7B40 77AD A450 D209  2D4D 2B2E E179 F0EA 05E3
 # uid                  Thomas Vérin <thomas.verin@sonarsource.com>
-# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]
-"
-503,442f950dae232fca8e1e919e017270971cee46f6,/5.4/Dockerfile,"# Http port
-"
+# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]"
+503,442f950dae232fca8e1e919e017270971cee46f6,/5.4/Dockerfile,# Http port
 504,442f950dae232fca8e1e919e017270971cee46f6,/5.4/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 505,442f950dae232fca8e1e919e017270971cee46f6,/5.4/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 506,c6aa0bbe967999f37cfa64522b3ae6ff0fda04de,/6.5-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-507,c6aa0bbe967999f37cfa64522b3ae6ff0fda04de,/6.5-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+507,c6aa0bbe967999f37cfa64522b3ae6ff0fda04de,/6.5-alpine/Dockerfile,# Http port
 508,c6aa0bbe967999f37cfa64522b3ae6ff0fda04de,/6.5-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 509,5d695dae7e2c5565e6dd09991a719fae5f5cefec,/6.7.4/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-510,5d695dae7e2c5565e6dd09991a719fae5f5cefec,/6.7.4/Dockerfile,"# Http port
-"
-511,5d695dae7e2c5565e6dd09991a719fae5f5cefec,/6.7.4/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+510,5d695dae7e2c5565e6dd09991a719fae5f5cefec,/6.7.4/Dockerfile,# Http port
+511,5d695dae7e2c5565e6dd09991a719fae5f5cefec,/6.7.4/Dockerfile,# grab gosu for easy step-down from root
 512,5d695dae7e2c5565e6dd09991a719fae5f5cefec,/6.7.4/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 513,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/5.6.7-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-514,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/5.6.7-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+514,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/5.6.7-alpine/Dockerfile,# Http port
 515,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/5.6.7-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 516,0ec821bd348170d7d8b5d312ab218fd58aeaebf3,/5.5/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-517,0ec821bd348170d7d8b5d312ab218fd58aeaebf3,/5.5/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+517,0ec821bd348170d7d8b5d312ab218fd58aeaebf3,/5.5/Dockerfile,# Http port
 518,0ec821bd348170d7d8b5d312ab218fd58aeaebf3,/5.5/Dockerfile,"    # see https://bugs.debian.org/812708
-    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499
-"
+    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499"
 519,0ec821bd348170d7d8b5d312ab218fd58aeaebf3,/5.5/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 520,476d459572e062e8e005647cc82e9f322f7a4b52,/6.3.1/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-521,476d459572e062e8e005647cc82e9f322f7a4b52,/6.3.1/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+521,476d459572e062e8e005647cc82e9f322f7a4b52,/6.3.1/Dockerfile,# Http port
 522,476d459572e062e8e005647cc82e9f322f7a4b52,/6.3.1/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 523,0697dfe652397fc2990e5002292f5e32c851738f,/5.6.7/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-524,0697dfe652397fc2990e5002292f5e32c851738f,/5.6.7/Dockerfile,"# Http port
-"
-525,0697dfe652397fc2990e5002292f5e32c851738f,/5.6.7/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+524,0697dfe652397fc2990e5002292f5e32c851738f,/5.6.7/Dockerfile,# Http port
+525,0697dfe652397fc2990e5002292f5e32c851738f,/5.6.7/Dockerfile,# grab gosu for easy step-down from root
 526,0697dfe652397fc2990e5002292f5e32c851738f,/5.6.7/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-527,9ce023d5dd687765ec1b61bc9523223ee8d9329d,/5.1/Dockerfile,"# Database configuration
-"
+    # sub   2048R/06855C1D 2015-05-25"
+527,9ce023d5dd687765ec1b61bc9523223ee8d9329d,/5.1/Dockerfile,# Database configuration
 528,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/6.1/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-529,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/6.1/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+529,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/6.1/Dockerfile,# Http port
 530,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/6.1/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-531,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.1.2/Dockerfile,"# Http port
-"
-532,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.1.2/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+531,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.1.2/Dockerfile,# Http port
+532,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.1.2/Dockerfile,# H2 Database port
 533,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.1.2/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 534,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.1.2/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #      Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid       [ unknown] sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 535,476d459572e062e8e005647cc82e9f322f7a4b52,/6.3.1-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-536,476d459572e062e8e005647cc82e9f322f7a4b52,/6.3.1-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+536,476d459572e062e8e005647cc82e9f322f7a4b52,/6.3.1-alpine/Dockerfile,# Http port
 537,476d459572e062e8e005647cc82e9f322f7a4b52,/6.3.1-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-538,5d2078684be9db8ffa601ae9d63a12b8432122b7,/5.1/Dockerfile,"# Http port
-"
-539,5d2078684be9db8ffa601ae9d63a12b8432122b7,/5.1/Dockerfile,"# H2 Database port
-"
-540,5d2078684be9db8ffa601ae9d63a12b8432122b7,/5.1/Dockerfile,"# Database configuration
-"
+    # sub   2048R/06855C1D 2015-05-25"
+538,5d2078684be9db8ffa601ae9d63a12b8432122b7,/5.1/Dockerfile,# Http port
+539,5d2078684be9db8ffa601ae9d63a12b8432122b7,/5.1/Dockerfile,# H2 Database port
+540,5d2078684be9db8ffa601ae9d63a12b8432122b7,/5.1/Dockerfile,# Database configuration
 541,5d2078684be9db8ffa601ae9d63a12b8432122b7,/5.1/Dockerfile,"# pub   2048R/0C1F120F 2015-03-19
 #       Key fingerprint = F19F 217F A669 DEFA 9E51  4B64 F67E 93C6 0C1F 120F
 # uid                  sonartech <sonartech@sonarsource.com>
-# sub   2048R/5C6BEEA6 2015-03-19
-"
+# sub   2048R/5C6BEEA6 2015-03-19"
 542,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/community/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 543,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/community/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 544,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/community/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 545,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-546,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
-547,b5f32a33be438950168ce4aa80c66e0f43d89f4f,/4.5.4/Dockerfile,"# Database configuration
-"
+    # sub   2048R/06855C1D 2015-05-25"
+546,3e6b5de2843988ae8fd97daba19c67637eb6472c,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
+547,b5f32a33be438950168ce4aa80c66e0f43d89f4f,/4.5.4/Dockerfile,# Database configuration
 548,bdf21686f162c5493bbd7388c666225fa16e3bd1,/6.2-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-549,bdf21686f162c5493bbd7388c666225fa16e3bd1,/6.2-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+549,bdf21686f162c5493bbd7388c666225fa16e3bd1,/6.2-alpine/Dockerfile,# Http port
 550,bdf21686f162c5493bbd7388c666225fa16e3bd1,/6.2-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 551,0ec821bd348170d7d8b5d312ab218fd58aeaebf3,/4.5.7/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-552,0ec821bd348170d7d8b5d312ab218fd58aeaebf3,/4.5.7/Dockerfile,"# Http port
-"
-553,0ec821bd348170d7d8b5d312ab218fd58aeaebf3,/4.5.7/Dockerfile,"# H2 Database port
-"
+    # Defaults to using H2"
+552,0ec821bd348170d7d8b5d312ab218fd58aeaebf3,/4.5.7/Dockerfile,# Http port
+553,0ec821bd348170d7d8b5d312ab218fd58aeaebf3,/4.5.7/Dockerfile,# H2 Database port
 554,0ec821bd348170d7d8b5d312ab218fd58aeaebf3,/4.5.7/Dockerfile,"    # see https://bugs.debian.org/812708
-    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499
-"
+    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499"
 555,0ec821bd348170d7d8b5d312ab218fd58aeaebf3,/4.5.7/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 556,4ea09231a5a1ce4af97dd62c9c9bf30588324f57,/6.7-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-557,4ea09231a5a1ce4af97dd62c9c9bf30588324f57,/6.7-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+557,4ea09231a5a1ce4af97dd62c9c9bf30588324f57,/6.7-alpine/Dockerfile,# Http port
 558,4ea09231a5a1ce4af97dd62c9c9bf30588324f57,/6.7-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 559,38b99435a056fed2e57523967a9cc7824e4e8921,/6.7.1-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-560,38b99435a056fed2e57523967a9cc7824e4e8921,/6.7.1-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+560,38b99435a056fed2e57523967a9cc7824e4e8921,/6.7.1-alpine/Dockerfile,# Http port
 561,38b99435a056fed2e57523967a9cc7824e4e8921,/6.7.1-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 562,b5764382c51063841d24dbe33e18cf605fc1f08d,/7.5-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-563,b5764382c51063841d24dbe33e18cf605fc1f08d,/7.5-community/Dockerfile,"# Http port
-"
-564,b5764382c51063841d24dbe33e18cf605fc1f08d,/7.5-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+563,b5764382c51063841d24dbe33e18cf605fc1f08d,/7.5-community/Dockerfile,# Http port
+564,b5764382c51063841d24dbe33e18cf605fc1f08d,/7.5-community/Dockerfile,# grab gosu for easy step-down from root
 565,b5764382c51063841d24dbe33e18cf605fc1f08d,/7.5-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 566,266a3131671f0993af1a2b72b2123dbb507db898,/5.6.4-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-567,266a3131671f0993af1a2b72b2123dbb507db898,/5.6.4-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+567,266a3131671f0993af1a2b72b2123dbb507db898,/5.6.4-alpine/Dockerfile,# Http port
 568,266a3131671f0993af1a2b72b2123dbb507db898,/5.6.4-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 569,4d76dfe9fb4c5d41ba1852cd5072dbff15ca5a20,/6.7.5-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-570,4d76dfe9fb4c5d41ba1852cd5072dbff15ca5a20,/6.7.5-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+570,4d76dfe9fb4c5d41ba1852cd5072dbff15ca5a20,/6.7.5-alpine/Dockerfile,# Http port
 571,4d76dfe9fb4c5d41ba1852cd5072dbff15ca5a20,/6.7.5-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 572,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/developer/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 573,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/developer/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 574,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/developer/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 575,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/developer/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-576,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
+    # sub   2048R/06855C1D 2015-05-25"
+576,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
 577,c210439c9e6389d64e43f65ab3404bf55c1ed9b7,/7.6-community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-578,c210439c9e6389d64e43f65ab3404bf55c1ed9b7,/7.6-community/Dockerfile,"# Http port
-"
-579,c210439c9e6389d64e43f65ab3404bf55c1ed9b7,/7.6-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Drop these in the next release, also in the run script"
+578,c210439c9e6389d64e43f65ab3404bf55c1ed9b7,/7.6-community/Dockerfile,# Http port
+579,c210439c9e6389d64e43f65ab3404bf55c1ed9b7,/7.6-community/Dockerfile,# grab gosu for easy step-down from root
 580,c210439c9e6389d64e43f65ab3404bf55c1ed9b7,/7.6-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 581,f63921d773162fde17179f9cc5e78640c88b2ae6,/6.2/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-582,f63921d773162fde17179f9cc5e78640c88b2ae6,/6.2/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+582,f63921d773162fde17179f9cc5e78640c88b2ae6,/6.2/Dockerfile,# Http port
 583,f63921d773162fde17179f9cc5e78640c88b2ae6,/6.2/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 584,17ef8ffea9ccafa597667d59e6cc11794f4198fe,/6.6/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-585,17ef8ffea9ccafa597667d59e6cc11794f4198fe,/6.6/Dockerfile,"# Http port
-"
-586,17ef8ffea9ccafa597667d59e6cc11794f4198fe,/6.6/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+585,17ef8ffea9ccafa597667d59e6cc11794f4198fe,/6.6/Dockerfile,# Http port
+586,17ef8ffea9ccafa597667d59e6cc11794f4198fe,/6.6/Dockerfile,# grab gosu for easy step-down from root
 587,17ef8ffea9ccafa597667d59e6cc11794f4198fe,/6.6/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-588,f5df63fb4197c87c1a617995441264e74dbe0d2a,/5.1.1/Dockerfile,"# Http port
-"
-589,f5df63fb4197c87c1a617995441264e74dbe0d2a,/5.1.1/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+588,f5df63fb4197c87c1a617995441264e74dbe0d2a,/5.1.1/Dockerfile,# Http port
+589,f5df63fb4197c87c1a617995441264e74dbe0d2a,/5.1.1/Dockerfile,# H2 Database port
 590,f5df63fb4197c87c1a617995441264e74dbe0d2a,/5.1.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 591,f5df63fb4197c87c1a617995441264e74dbe0d2a,/5.1.1/Dockerfile,"# pub   2048R/24452160 2011-11-01 [expires: 2016-12-15]
 #       Key fingerprint = A58D 5AF5 4809 A8A6 3F45  8BBD 56CD 8D5D 2445 2160
 # uid                  Eric Hartmann <eric.hartmann@sonarsource.com>
-# sub   2048R/562C56C0 2011-11-01 [expires: 2016-12-15]
-"
+# sub   2048R/562C56C0 2011-11-01 [expires: 2016-12-15]"
 592,d11f76c6d010ba1fd8d37f0c42a18671128ca533,/5.6.7/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-593,d11f76c6d010ba1fd8d37f0c42a18671128ca533,/5.6.7/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+593,d11f76c6d010ba1fd8d37f0c42a18671128ca533,/5.6.7/Dockerfile,# Http port
 594,d11f76c6d010ba1fd8d37f0c42a18671128ca533,/5.6.7/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 595,bdf21686f162c5493bbd7388c666225fa16e3bd1,/5.6.4/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-596,bdf21686f162c5493bbd7388c666225fa16e3bd1,/5.6.4/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+596,bdf21686f162c5493bbd7388c666225fa16e3bd1,/5.6.4/Dockerfile,# Http port
 597,bdf21686f162c5493bbd7388c666225fa16e3bd1,/5.6.4/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-598,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/enterprise/Dockerfile,"# Http port
-"
-599,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/enterprise/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+598,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/enterprise/Dockerfile,# Http port
+599,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/enterprise/Dockerfile,# download and unzip SQ
 600,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/enterprise/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 601,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/enterprise/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-602,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/enterprise/Dockerfile,"# create symlinks to volume directories
-"
+# initialization is implemented in 'run.sh' for these cases"
+602,c20f8a400d3ed2faccd0e419512879b0a5ce0b2c,/8/enterprise/Dockerfile,# create symlinks to volume directories
 603,5d695dae7e2c5565e6dd09991a719fae5f5cefec,/6.7.4-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-604,5d695dae7e2c5565e6dd09991a719fae5f5cefec,/6.7.4-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+604,5d695dae7e2c5565e6dd09991a719fae5f5cefec,/6.7.4-alpine/Dockerfile,# Http port
 605,5d695dae7e2c5565e6dd09991a719fae5f5cefec,/6.7.4-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-606,e318180c18b607f22967b7066b88d29454d535b6,/5.1.1/Dockerfile,"# Http port
-"
-607,e318180c18b607f22967b7066b88d29454d535b6,/5.1.1/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+606,e318180c18b607f22967b7066b88d29454d535b6,/5.1.1/Dockerfile,# Http port
+607,e318180c18b607f22967b7066b88d29454d535b6,/5.1.1/Dockerfile,# H2 Database port
 608,e318180c18b607f22967b7066b88d29454d535b6,/5.1.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 609,e318180c18b607f22967b7066b88d29454d535b6,/5.1.1/Dockerfile,"# pub   2048R/24452160 2011-11-01 [expires: 2016-12-15]
 #       Key fingerprint = A58D 5AF5 4809 A8A6 3F45  8BBD 56CD 8D5D 2445 2160
 # uid                  Eric Hartmann <eric.hartmann@sonarsource.com>
-# sub   2048R/562C56C0 2011-11-01 [expires: 2016-12-15]
-"
+# sub   2048R/562C56C0 2011-11-01 [expires: 2016-12-15]"
 610,2cf123a68480c31cddb81885a001cb8496f50353,/5.6.5-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-611,2cf123a68480c31cddb81885a001cb8496f50353,/5.6.5-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+611,2cf123a68480c31cddb81885a001cb8496f50353,/5.6.5-alpine/Dockerfile,# Http port
 612,2cf123a68480c31cddb81885a001cb8496f50353,/5.6.5-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 613,03360969e395af585971e43971a84202baa87321,/7.4-community-alpine/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-614,03360969e395af585971e43971a84202baa87321,/7.4-community-alpine/Dockerfile,"# Http port
-"
+    # Drop these in the next release, also in the run script"
+614,03360969e395af585971e43971a84202baa87321,/7.4-community-alpine/Dockerfile,# Http port
 615,03360969e395af585971e43971a84202baa87321,/7.4-community-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-616,f13192265920c40f8a50ec55f7c2af7a412c4c88,/5.3/Dockerfile,"# Http port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+616,f13192265920c40f8a50ec55f7c2af7a412c4c88,/5.3/Dockerfile,# Http port
 617,f13192265920c40f8a50ec55f7c2af7a412c4c88,/5.3/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 618,f13192265920c40f8a50ec55f7c2af7a412c4c88,/5.3/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 619,06fcdc6ef062f43a5513bd327a79e7c5011fb0a3,/5.6.1-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-620,06fcdc6ef062f43a5513bd327a79e7c5011fb0a3,/5.6.1-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+620,06fcdc6ef062f43a5513bd327a79e7c5011fb0a3,/5.6.1-alpine/Dockerfile,# Http port
 621,06fcdc6ef062f43a5513bd327a79e7c5011fb0a3,/5.6.1-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 622,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/enterprise/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 623,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/enterprise/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 624,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/enterprise/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 625,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/enterprise/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-626,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
+    # sub   2048R/06855C1D 2015-05-25"
+626,2908701e165041cd2ffc9b618effb3345d4c60e9,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
 627,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/4.5.7/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-628,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/4.5.7/Dockerfile,"# Http port
-"
-629,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/4.5.7/Dockerfile,"# H2 Database port
-"
+    # Defaults to using H2"
+628,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/4.5.7/Dockerfile,# Http port
+629,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/4.5.7/Dockerfile,# H2 Database port
 630,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/4.5.7/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 631,77b12b561f3ed8ef6308a9d2e1adb25e17704b69,/4.5.7/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-632,77b12b561f3ed8ef6308a9d2e1adb25e17704b69,/4.5.7/Dockerfile,"# Http port
-"
-633,77b12b561f3ed8ef6308a9d2e1adb25e17704b69,/4.5.7/Dockerfile,"# H2 Database port
-"
+    # Defaults to using H2"
+632,77b12b561f3ed8ef6308a9d2e1adb25e17704b69,/4.5.7/Dockerfile,# Http port
+633,77b12b561f3ed8ef6308a9d2e1adb25e17704b69,/4.5.7/Dockerfile,# H2 Database port
 634,77b12b561f3ed8ef6308a9d2e1adb25e17704b69,/4.5.7/Dockerfile,"    # see https://bugs.debian.org/812708
-    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499
-"
+    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499"
 635,77b12b561f3ed8ef6308a9d2e1adb25e17704b69,/4.5.7/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-636,8a264c7eeafcb53ce29db20faa9763c2980bbe96,/8/enterprise/Dockerfile,"# Http port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+636,8a264c7eeafcb53ce29db20faa9763c2980bbe96,/8/enterprise/Dockerfile,# Http port
 637,8a264c7eeafcb53ce29db20faa9763c2980bbe96,/8/enterprise/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
-638,c2ec0708e5c20c4bed02606c3b626dede5e3b8a7,/7/community/Dockerfile,"# Http port
-"
+# sub   2048R/06855C1D 2015-05-25"
+638,c2ec0708e5c20c4bed02606c3b626dede5e3b8a7,/7/community/Dockerfile,# Http port
 639,c2ec0708e5c20c4bed02606c3b626dede5e3b8a7,/7/community/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
-640,8a5c8f2c5cb0387239fffa12d204d7246251487b,/8/developer/Dockerfile,"# Http port
-"
-641,8f373d457375e75431d528e24353b8c4d92e4454,/6.2-alpine/Dockerfile,"# note that something in later base image versions causes failure of certificate verification when downloading SonarQube
-
-"
+# sub   2048R/06855C1D 2015-05-25"
+640,8a5c8f2c5cb0387239fffa12d204d7246251487b,/8/developer/Dockerfile,# Http port
+641,8f373d457375e75431d528e24353b8c4d92e4454,/6.2-alpine/Dockerfile,# note that something in later base image versions causes failure of certificate verification when downloading SonarQube
 642,8f373d457375e75431d528e24353b8c4d92e4454,/6.2-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-643,8f373d457375e75431d528e24353b8c4d92e4454,/6.2-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+643,8f373d457375e75431d528e24353b8c4d92e4454,/6.2-alpine/Dockerfile,# Http port
 644,8f373d457375e75431d528e24353b8c4d92e4454,/6.2-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-645,b0b72a73f0b6b47645ef38f5862e68ca4bd56dde,/5.1/Dockerfile,"# Database configuration
-"
+    # sub   2048R/06855C1D 2015-05-25"
+645,b0b72a73f0b6b47645ef38f5862e68ca4bd56dde,/5.1/Dockerfile,# Database configuration
 646,b0b72a73f0b6b47645ef38f5862e68ca4bd56dde,/5.1/Dockerfile,"# pub   2048R/0C1F120F 2015-03-19
 #       Key fingerprint = F19F 217F A669 DEFA 9E51  4B64 F67E 93C6 0C1F 120F
 # uid                  sonartech <sonartech@sonarsource.com>
-# sub   2048R/5C6BEEA6 2015-03-19
-"
+# sub   2048R/5C6BEEA6 2015-03-19"
 647,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.3/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-648,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.3/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+648,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.3/Dockerfile,# Http port
 649,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.3/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-650,48588014cb51043324a7753a9eaec1e609e0f957,/5.1/Dockerfile,"# Http port
-"
-651,48588014cb51043324a7753a9eaec1e609e0f957,/5.1/Dockerfile,"# H2 Database port
-"
-652,48588014cb51043324a7753a9eaec1e609e0f957,/5.1/Dockerfile,"# Database configuration
-"
+    # sub   2048R/06855C1D 2015-05-25"
+650,48588014cb51043324a7753a9eaec1e609e0f957,/5.1/Dockerfile,# Http port
+651,48588014cb51043324a7753a9eaec1e609e0f957,/5.1/Dockerfile,# H2 Database port
+652,48588014cb51043324a7753a9eaec1e609e0f957,/5.1/Dockerfile,# Database configuration
 653,48588014cb51043324a7753a9eaec1e609e0f957,/5.1/Dockerfile,"# pub   2048R/0C1F120F 2015-03-19
 #       Key fingerprint = F19F 217F A669 DEFA 9E51  4B64 F67E 93C6 0C1F 120F
 # uid                  sonartech <sonartech@sonarsource.com>
-# sub   2048R/5C6BEEA6 2015-03-19
-"
+# sub   2048R/5C6BEEA6 2015-03-19"
 654,181a02c77f782d9628a609c2f8b861d70a8d9c87,/6.7.3/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-655,181a02c77f782d9628a609c2f8b861d70a8d9c87,/6.7.3/Dockerfile,"# Http port
-"
-656,181a02c77f782d9628a609c2f8b861d70a8d9c87,/6.7.3/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+655,181a02c77f782d9628a609c2f8b861d70a8d9c87,/6.7.3/Dockerfile,# Http port
+656,181a02c77f782d9628a609c2f8b861d70a8d9c87,/6.7.3/Dockerfile,# grab gosu for easy step-down from root
 657,181a02c77f782d9628a609c2f8b861d70a8d9c87,/6.7.3/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-658,1953a7cbde123be10152258c4d4dbcfbaf7c2679,/7/community/Dockerfile,"# Http port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+658,1953a7cbde123be10152258c4d4dbcfbaf7c2679,/7/community/Dockerfile,# Http port
 659,1953a7cbde123be10152258c4d4dbcfbaf7c2679,/7/community/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 660,b90dca71939bb6b9160d7999c56bcd1c6e88d59d,/8/community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-661,b90dca71939bb6b9160d7999c56bcd1c6e88d59d,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values) 
-"
+    # sub   2048R/06855C1D 2015-05-25"
+661,b90dca71939bb6b9160d7999c56bcd1c6e88d59d,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values) "
 662,266a3131671f0993af1a2b72b2123dbb507db898,/5.6.4/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-663,266a3131671f0993af1a2b72b2123dbb507db898,/5.6.4/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+663,266a3131671f0993af1a2b72b2123dbb507db898,/5.6.4/Dockerfile,# Http port
 664,266a3131671f0993af1a2b72b2123dbb507db898,/5.6.4/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 665,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/community/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 666,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/community/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 667,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/community/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 668,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-669,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
+    # sub   2048R/06855C1D 2015-05-25"
+669,fea13bf2bcabb72685f411c3e4bc4f18af789b20,/8/community/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
 670,4d76dfe9fb4c5d41ba1852cd5072dbff15ca5a20,/6.7.5/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-671,4d76dfe9fb4c5d41ba1852cd5072dbff15ca5a20,/6.7.5/Dockerfile,"# Http port
-"
-672,4d76dfe9fb4c5d41ba1852cd5072dbff15ca5a20,/6.7.5/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+671,4d76dfe9fb4c5d41ba1852cd5072dbff15ca5a20,/6.7.5/Dockerfile,# Http port
+672,4d76dfe9fb4c5d41ba1852cd5072dbff15ca5a20,/6.7.5/Dockerfile,# grab gosu for easy step-down from root
 673,4d76dfe9fb4c5d41ba1852cd5072dbff15ca5a20,/6.7.5/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-674,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.2/Dockerfile,"# Http port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+674,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.2/Dockerfile,# Http port
 675,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.2/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 676,22423d6af65fbf54fcc8ce498c4cfe126d74b42f,/5.2/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
-677,27217fb0cfcd9469571eff710eae434a92a26f72,/8/community/Dockerfile,"# Http port
-"
+# sub   2048R/06855C1D 2015-05-25"
+677,27217fb0cfcd9469571eff710eae434a92a26f72,/8/community/Dockerfile,# Http port
 678,27217fb0cfcd9469571eff710eae434a92a26f72,/8/community/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 679,bf7fd60804e83a848149a82b244f3d25f1eb995e,/5.6.3-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-680,bf7fd60804e83a848149a82b244f3d25f1eb995e,/5.6.3-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+680,bf7fd60804e83a848149a82b244f3d25f1eb995e,/5.6.3-alpine/Dockerfile,# Http port
 681,bf7fd60804e83a848149a82b244f3d25f1eb995e,/5.6.3-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-682,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/enterprise/Dockerfile,"# Http port
-"
-683,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/enterprise/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+682,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/enterprise/Dockerfile,# Http port
+683,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/enterprise/Dockerfile,# download and unzip SQ
 684,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/enterprise/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 685,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/enterprise/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-686,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/enterprise/Dockerfile,"# create symlinks to volume directories
-"
+# initialization is implemented in 'run.sh' for these cases"
+686,9a1bf984a1de2aa23d9a48aa44a452a8b46abcc5,/8/enterprise/Dockerfile,# create symlinks to volume directories
 687,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/6.1-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-688,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/6.1-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+688,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/6.1-alpine/Dockerfile,# Http port
 689,69fca2e7f32dd62ddfc271b7d4a791c75dc11745,/6.1-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-690,17283d996375bbd5d167865e23a772c6f5636706,/5.1.2/Dockerfile,"# Http port
-"
-691,17283d996375bbd5d167865e23a772c6f5636706,/5.1.2/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+690,17283d996375bbd5d167865e23a772c6f5636706,/5.1.2/Dockerfile,# Http port
+691,17283d996375bbd5d167865e23a772c6f5636706,/5.1.2/Dockerfile,# H2 Database port
 692,17283d996375bbd5d167865e23a772c6f5636706,/5.1.2/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 693,17283d996375bbd5d167865e23a772c6f5636706,/5.1.2/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #      Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid       [ unknown] sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 694,842fb44a7ccfef5a0ee4ea40c4a149794f7fea45,/6.3/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-695,842fb44a7ccfef5a0ee4ea40c4a149794f7fea45,/6.3/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+695,842fb44a7ccfef5a0ee4ea40c4a149794f7fea45,/6.3/Dockerfile,# Http port
 696,842fb44a7ccfef5a0ee4ea40c4a149794f7fea45,/6.3/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 697,c6aa0bbe967999f37cfa64522b3ae6ff0fda04de,/6.5/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-698,c6aa0bbe967999f37cfa64522b3ae6ff0fda04de,/6.5/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+698,c6aa0bbe967999f37cfa64522b3ae6ff0fda04de,/6.5/Dockerfile,# Http port
 699,c6aa0bbe967999f37cfa64522b3ae6ff0fda04de,/6.5/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 700,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/7.1-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-701,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/7.1-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+701,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/7.1-alpine/Dockerfile,# Http port
 702,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/7.1-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 703,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/developer/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 704,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/developer/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 705,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/developer/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 706,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/developer/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-707,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
+    # sub   2048R/06855C1D 2015-05-25"
+707,8e20fb49201cbf29bfdb152e08a38524afc26b15,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
 708,80366e3419d698b4bba4447f153418ef64b3b705,/5.6.4-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-709,80366e3419d698b4bba4447f153418ef64b3b705,/5.6.4-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+709,80366e3419d698b4bba4447f153418ef64b3b705,/5.6.4-alpine/Dockerfile,# Http port
 710,80366e3419d698b4bba4447f153418ef64b3b705,/5.6.4-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-711,5c63be5caaf8d0999192c357abd37edf3d341eeb,/5.1.1/Dockerfile,"# Http port
-"
-712,5c63be5caaf8d0999192c357abd37edf3d341eeb,/5.1.1/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+711,5c63be5caaf8d0999192c357abd37edf3d341eeb,/5.1.1/Dockerfile,# Http port
+712,5c63be5caaf8d0999192c357abd37edf3d341eeb,/5.1.1/Dockerfile,# H2 Database port
 713,5c63be5caaf8d0999192c357abd37edf3d341eeb,/5.1.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 714,5c63be5caaf8d0999192c357abd37edf3d341eeb,/5.1.1/Dockerfile,"# pub   2048R/24452160 2011-11-01 [expires: 2016-12-15]
 #       Key fingerprint = A58D 5AF5 4809 A8A6 3F45  8BBD 56CD 8D5D 2445 2160
 # uid                  Eric Hartmann <eric.hartmann@sonarsource.com>
-# sub   2048R/562C56C0 2011-11-01 [expires: 2016-12-15]
-"
-715,f8baccb64f41ca126781db6a700d738d004fd0b0,/4.5.7/Dockerfile,"# Http port
-"
-716,f8baccb64f41ca126781db6a700d738d004fd0b0,/4.5.7/Dockerfile,"# H2 Database port
-"
+# sub   2048R/562C56C0 2011-11-01 [expires: 2016-12-15]"
+715,f8baccb64f41ca126781db6a700d738d004fd0b0,/4.5.7/Dockerfile,# Http port
+716,f8baccb64f41ca126781db6a700d738d004fd0b0,/4.5.7/Dockerfile,# H2 Database port
 717,f8baccb64f41ca126781db6a700d738d004fd0b0,/4.5.7/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 718,f8baccb64f41ca126781db6a700d738d004fd0b0,/4.5.7/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 719,06fcdc6ef062f43a5513bd327a79e7c5011fb0a3,/5.6.1/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-720,06fcdc6ef062f43a5513bd327a79e7c5011fb0a3,/5.6.1/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+720,06fcdc6ef062f43a5513bd327a79e7c5011fb0a3,/5.6.1/Dockerfile,# Http port
 721,06fcdc6ef062f43a5513bd327a79e7c5011fb0a3,/5.6.1/Dockerfile,"    # see https://bugs.debian.org/812708
-    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499
-"
+    # and https://github.com/SonarSource/docker-sonarqube/pull/18#issuecomment-194045499"
 722,06fcdc6ef062f43a5513bd327a79e7c5011fb0a3,/5.6.1/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-723,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/developer/Dockerfile,"# Http port
-"
-724,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/developer/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+723,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/developer/Dockerfile,# Http port
+724,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/developer/Dockerfile,# download and unzip SQ
 725,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/developer/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 726,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/developer/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-727,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/developer/Dockerfile,"# create symlinks to volume directories
-"
-728,6d818c3d2773810c23f6aaea2023e9c822317227,/5.1.1/Dockerfile,"# Http port
-"
-729,6d818c3d2773810c23f6aaea2023e9c822317227,/5.1.1/Dockerfile,"# H2 Database port
-"
+# initialization is implemented in 'run.sh' for these cases"
+727,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/developer/Dockerfile,# create symlinks to volume directories
+728,6d818c3d2773810c23f6aaea2023e9c822317227,/5.1.1/Dockerfile,# Http port
+729,6d818c3d2773810c23f6aaea2023e9c822317227,/5.1.1/Dockerfile,# H2 Database port
 730,6d818c3d2773810c23f6aaea2023e9c822317227,/5.1.1/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 731,6d818c3d2773810c23f6aaea2023e9c822317227,/5.1.1/Dockerfile,"# pub   2048R/24452160 2011-11-01 [expires: 2016-12-15]
 #       Key fingerprint = A58D 5AF5 4809 A8A6 3F45  8BBD 56CD 8D5D 2445 2160
 # uid                  Eric Hartmann <eric.hartmann@sonarsource.com>
-# sub   2048R/562C56C0 2011-11-01 [expires: 2016-12-15]
-"
+# sub   2048R/562C56C0 2011-11-01 [expires: 2016-12-15]"
 732,485e83c6354c984cf86dd2da08fb8de441df89f7,/7.1/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-733,485e83c6354c984cf86dd2da08fb8de441df89f7,/7.1/Dockerfile,"# Http port
-"
-734,485e83c6354c984cf86dd2da08fb8de441df89f7,/7.1/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+733,485e83c6354c984cf86dd2da08fb8de441df89f7,/7.1/Dockerfile,# Http port
+734,485e83c6354c984cf86dd2da08fb8de441df89f7,/7.1/Dockerfile,# grab gosu for easy step-down from root
 735,485e83c6354c984cf86dd2da08fb8de441df89f7,/7.1/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-736,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/developer/Dockerfile,"# Http port
-"
-737,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/developer/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+736,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/developer/Dockerfile,# Http port
+737,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/developer/Dockerfile,# download and unzip SQ
 738,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/developer/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 739,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/developer/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-740,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/developer/Dockerfile,"# create symlinks to volume directories
-"
+# initialization is implemented in 'run.sh' for these cases"
+740,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/developer/Dockerfile,# create symlinks to volume directories
 741,fafddfda0dd42ffee391f41c6d02d548158d18c2,/6.7.6-community/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-742,fafddfda0dd42ffee391f41c6d02d548158d18c2,/6.7.6-community/Dockerfile,"# Http port
-"
-743,fafddfda0dd42ffee391f41c6d02d548158d18c2,/6.7.6-community/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+742,fafddfda0dd42ffee391f41c6d02d548158d18c2,/6.7.6-community/Dockerfile,# Http port
+743,fafddfda0dd42ffee391f41c6d02d548158d18c2,/6.7.6-community/Dockerfile,# grab gosu for easy step-down from root
 744,fafddfda0dd42ffee391f41c6d02d548158d18c2,/6.7.6-community/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 745,57305ecffce7b13b400b7291faac29a7580d2ec1,/6.7.6-community-alpine/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-746,57305ecffce7b13b400b7291faac29a7580d2ec1,/6.7.6-community-alpine/Dockerfile,"# Http port
-"
+    # Drop these in the next release, also in the run script"
+746,57305ecffce7b13b400b7291faac29a7580d2ec1,/6.7.6-community-alpine/Dockerfile,# Http port
 747,57305ecffce7b13b400b7291faac29a7580d2ec1,/6.7.6-community-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-748,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/enterprise/Dockerfile,"# Http port
-"
-749,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/enterprise/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+748,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/enterprise/Dockerfile,# Http port
+749,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/enterprise/Dockerfile,# download and unzip SQ
 750,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/enterprise/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 751,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/enterprise/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-752,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/enterprise/Dockerfile,"# create symlinks to volume directories
-"
+# initialization is implemented in 'run.sh' for these cases"
+752,b90818761ff7e70df9f20a0ae86044c191aeec03,/8/enterprise/Dockerfile,# create symlinks to volume directories
 753,73534fd899d29eb1373ea073edbfe7a4074ede6e,/6.0-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-754,73534fd899d29eb1373ea073edbfe7a4074ede6e,/6.0-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+754,73534fd899d29eb1373ea073edbfe7a4074ede6e,/6.0-alpine/Dockerfile,# Http port
 755,73534fd899d29eb1373ea073edbfe7a4074ede6e,/6.0-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 756,4a000ca34edd38b26752ae89181a25cdb649f10c,/6.3.1/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-757,4a000ca34edd38b26752ae89181a25cdb649f10c,/6.3.1/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+757,4a000ca34edd38b26752ae89181a25cdb649f10c,/6.3.1/Dockerfile,# Http port
 758,4a000ca34edd38b26752ae89181a25cdb649f10c,/6.3.1/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 759,bdf21686f162c5493bbd7388c666225fa16e3bd1,/6.2/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-760,bdf21686f162c5493bbd7388c666225fa16e3bd1,/6.2/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+760,bdf21686f162c5493bbd7388c666225fa16e3bd1,/6.2/Dockerfile,# Http port
 761,bdf21686f162c5493bbd7388c666225fa16e3bd1,/6.2/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 762,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/7.1-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-763,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/7.1-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+763,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/7.1-alpine/Dockerfile,# Http port
 764,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/7.1-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 765,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/developer/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 766,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/developer/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 767,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/developer/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 768,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/developer/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-769,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
+    # sub   2048R/06855C1D 2015-05-25"
+769,2618ed9a5371c30736de1e0d5dbcc9e7aa05f105,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
 770,143c32fd7c249f67b2973539c4c9237f93a53bda,/7/community/Dockerfile,"    # Database configuration
     # Defaults to using H2
     # DEPRECATED. Use -v sonar.jdbc.username=... instead
-    # Drop these in the next release, also in the run script
-"
-771,143c32fd7c249f67b2973539c4c9237f93a53bda,/7/community/Dockerfile,"# Http port
-"
+    # Drop these in the next release, also in the run script"
+771,143c32fd7c249f67b2973539c4c9237f93a53bda,/7/community/Dockerfile,# Http port
 772,143c32fd7c249f67b2973539c4c9237f93a53bda,/7/community/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
-773,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/enterprise/Dockerfile,"# Http port
-"
-774,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/enterprise/Dockerfile,"# download and unzip SQ
-"
+# sub   2048R/06855C1D 2015-05-25"
+773,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/enterprise/Dockerfile,# Http port
+774,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/enterprise/Dockerfile,# download and unzip SQ
 775,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/enterprise/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 776,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/enterprise/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-777,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/enterprise/Dockerfile,"# create symlinks to volume directories
-"
+# initialization is implemented in 'run.sh' for these cases"
+777,f83b900c97a9a4139f4b16110173f4e2b4abae29,/8/enterprise/Dockerfile,# create symlinks to volume directories
 778,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/developer/Dockerfile,"#
 # glibc setup
-#
-"
+#"
 779,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/developer/Dockerfile,"#
 # AdoptOpenJDK/openjdk11 setup
-#
-"
+#"
 780,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/developer/Dockerfile,"#
 # SonarQube setup
-#
-"
+#"
 781,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/developer/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-782,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)
-"
+    # sub   2048R/06855C1D 2015-05-25"
+782,db5225f43c0d29e5aca482681aebc382cc4eb28d,/8/developer/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values)"
 783,faffed54f0edbd736d6f95132b5dc076e2f613c5,/6.7.2/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-784,faffed54f0edbd736d6f95132b5dc076e2f613c5,/6.7.2/Dockerfile,"# Http port
-"
-785,faffed54f0edbd736d6f95132b5dc076e2f613c5,/6.7.2/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+784,faffed54f0edbd736d6f95132b5dc076e2f613c5,/6.7.2/Dockerfile,# Http port
+785,faffed54f0edbd736d6f95132b5dc076e2f613c5,/6.7.2/Dockerfile,# grab gosu for easy step-down from root
 786,faffed54f0edbd736d6f95132b5dc076e2f613c5,/6.7.2/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 787,80366e3419d698b4bba4447f153418ef64b3b705,/6.1/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-788,80366e3419d698b4bba4447f153418ef64b3b705,/6.1/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+788,80366e3419d698b4bba4447f153418ef64b3b705,/6.1/Dockerfile,# Http port
 789,80366e3419d698b4bba4447f153418ef64b3b705,/6.1/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 790,d73a971436d36a56f53145aa3490ad9addfc4ec6,/6.1-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-791,d73a971436d36a56f53145aa3490ad9addfc4ec6,/6.1-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+791,d73a971436d36a56f53145aa3490ad9addfc4ec6,/6.1-alpine/Dockerfile,# Http port
 792,d73a971436d36a56f53145aa3490ad9addfc4ec6,/6.1-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 793,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/5.6.7/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-794,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/5.6.7/Dockerfile,"# Http port
-"
-795,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/5.6.7/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+794,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/5.6.7/Dockerfile,# Http port
+795,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/5.6.7/Dockerfile,# grab gosu for easy step-down from root
 796,5d738964cc4b857ca5b399d6f0bb626b6710bac6,/5.6.7/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 797,17ef8ffea9ccafa597667d59e6cc11794f4198fe,/6.6-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-798,17ef8ffea9ccafa597667d59e6cc11794f4198fe,/6.6-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+798,17ef8ffea9ccafa597667d59e6cc11794f4198fe,/6.6-alpine/Dockerfile,# Http port
 799,17ef8ffea9ccafa597667d59e6cc11794f4198fe,/6.6-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 800,4ea09231a5a1ce4af97dd62c9c9bf30588324f57,/6.7/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-801,4ea09231a5a1ce4af97dd62c9c9bf30588324f57,/6.7/Dockerfile,"# Http port
-"
-802,4ea09231a5a1ce4af97dd62c9c9bf30588324f57,/6.7/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+801,4ea09231a5a1ce4af97dd62c9c9bf30588324f57,/6.7/Dockerfile,# Http port
+802,4ea09231a5a1ce4af97dd62c9c9bf30588324f57,/6.7/Dockerfile,# grab gosu for easy step-down from root
 803,4ea09231a5a1ce4af97dd62c9c9bf30588324f57,/6.7/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-804,04724565f3e5cffc63a6d273564fc3d94cd6e6dd,/4.5.4/Dockerfile,"# Http port
-"
-805,04724565f3e5cffc63a6d273564fc3d94cd6e6dd,/4.5.4/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+804,04724565f3e5cffc63a6d273564fc3d94cd6e6dd,/4.5.4/Dockerfile,# Http port
+805,04724565f3e5cffc63a6d273564fc3d94cd6e6dd,/4.5.4/Dockerfile,# H2 Database port
 806,04724565f3e5cffc63a6d273564fc3d94cd6e6dd,/4.5.4/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 807,04724565f3e5cffc63a6d273564fc3d94cd6e6dd,/4.5.4/Dockerfile,"# pub   4096R/F0EA05E3 2014-06-25 [expires: 2019-06-24]
 #       Key fingerprint = E5C6 7B40 77AD A450 D209  2D4D 2B2E E179 F0EA 05E3
 # uid                  Thomas Vérin <thomas.verin@sonarsource.com>
-# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]
-"
+# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]"
 808,4a000ca34edd38b26752ae89181a25cdb649f10c,/6.3.1-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-809,4a000ca34edd38b26752ae89181a25cdb649f10c,/6.3.1-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+809,4a000ca34edd38b26752ae89181a25cdb649f10c,/6.3.1-alpine/Dockerfile,# Http port
 810,4a000ca34edd38b26752ae89181a25cdb649f10c,/6.3.1-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 811,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/5.6.7-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-812,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/5.6.7-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+812,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/5.6.7-alpine/Dockerfile,# Http port
 813,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/5.6.7-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-814,8bebc73fe7be96df6acfc6ec5ed9113236ff0aff,/4.5.4/Dockerfile,"# Http port
-"
-815,8bebc73fe7be96df6acfc6ec5ed9113236ff0aff,/4.5.4/Dockerfile,"# H2 Database port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+814,8bebc73fe7be96df6acfc6ec5ed9113236ff0aff,/4.5.4/Dockerfile,# Http port
+815,8bebc73fe7be96df6acfc6ec5ed9113236ff0aff,/4.5.4/Dockerfile,# H2 Database port
 816,8bebc73fe7be96df6acfc6ec5ed9113236ff0aff,/4.5.4/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 817,8bebc73fe7be96df6acfc6ec5ed9113236ff0aff,/4.5.4/Dockerfile,"# pub   4096R/F0EA05E3 2014-06-25 [expires: 2019-06-24]
 #       Key fingerprint = E5C6 7B40 77AD A450 D209  2D4D 2B2E E179 F0EA 05E3
 # uid                  Thomas Vérin <thomas.verin@sonarsource.com>
-# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]
-"
+# sub   4096R/A0D97B83 2014-06-25 [expires: 2019-06-24]"
 818,c0cae340838f57fb2af7b6441daaf3d2987a4d34,/6.4-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-819,c0cae340838f57fb2af7b6441daaf3d2987a4d34,/6.4-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+819,c0cae340838f57fb2af7b6441daaf3d2987a4d34,/6.4-alpine/Dockerfile,# Http port
 820,c0cae340838f57fb2af7b6441daaf3d2987a4d34,/6.4-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 821,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.2/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-822,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.2/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+822,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.2/Dockerfile,# Http port
 823,e7a075a946d8b92dfa8fe707407d5ccd994c0d46,/5.2/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 824,84a3016c3c8565764cec7cdb024e39de70817481,/5.6.2-alpine/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-825,84a3016c3c8565764cec7cdb024e39de70817481,/5.6.2-alpine/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+825,84a3016c3c8565764cec7cdb024e39de70817481,/5.6.2-alpine/Dockerfile,# Http port
 826,84a3016c3c8565764cec7cdb024e39de70817481,/5.6.2-alpine/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 827,5dc27334bbf784f63f209e83b2c9b9023a75ee7f,/5.6.1/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-828,5dc27334bbf784f63f209e83b2c9b9023a75ee7f,/5.6.1/Dockerfile,"# Http port
-"
+    # Defaults to using H2"
+828,5dc27334bbf784f63f209e83b2c9b9023a75ee7f,/5.6.1/Dockerfile,# Http port
 829,5dc27334bbf784f63f209e83b2c9b9023a75ee7f,/5.6.1/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-830,370c06940b65af900414efc9d74a2dd796b441a7,/5.2/Dockerfile,"# Http port
-"
+    # sub   2048R/06855C1D 2015-05-25"
+830,370c06940b65af900414efc9d74a2dd796b441a7,/5.2/Dockerfile,# Http port
 831,370c06940b65af900414efc9d74a2dd796b441a7,/5.2/Dockerfile,"# Database configuration
-# Defaults to using H2
-"
+# Defaults to using H2"
 832,370c06940b65af900414efc9d74a2dd796b441a7,/5.2/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
-833,8a264c7eeafcb53ce29db20faa9763c2980bbe96,/8/community/Dockerfile,"# Http port
-"
+# sub   2048R/06855C1D 2015-05-25"
+833,8a264c7eeafcb53ce29db20faa9763c2980bbe96,/8/community/Dockerfile,# Http port
 834,8a264c7eeafcb53ce29db20faa9763c2980bbe96,/8/community/Dockerfile,"# pub   2048R/D26468DE 2015-05-25
 #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
 # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-# sub   2048R/06855C1D 2015-05-25
-"
+# sub   2048R/06855C1D 2015-05-25"
 835,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/5.6.7/Dockerfile,"    # Database configuration
-    # Defaults to using H2
-"
-836,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/5.6.7/Dockerfile,"# Http port
-"
-837,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/5.6.7/Dockerfile,"# grab gosu for easy step-down from root
-"
+    # Defaults to using H2"
+836,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/5.6.7/Dockerfile,# Http port
+837,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/5.6.7/Dockerfile,# grab gosu for easy step-down from root
 838,b4e20d9213aeabe0c9f274d9cf2fdb67350339c8,/5.6.7/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
+    # sub   2048R/06855C1D 2015-05-25"
 839,b90dca71939bb6b9160d7999c56bcd1c6e88d59d,/8/enterprise/Dockerfile,"    # pub   2048R/D26468DE 2015-05-25
     #       Key fingerprint = F118 2E81 C792 9289 21DB  CAB4 CFCA 4A29 D264 68DE
     # uid                  sonarsource_deployer (Sonarsource Deployer) <infra@sonarsource.com>
-    # sub   2048R/06855C1D 2015-05-25
-"
-840,b90dca71939bb6b9160d7999c56bcd1c6e88d59d,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values) 
-"
-841,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/developer/Dockerfile,"# Http port
-"
-842,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/developer/Dockerfile,"# download and unzip SQ
-"
+    # sub   2048R/06855C1D 2015-05-25"
+840,b90dca71939bb6b9160d7999c56bcd1c6e88d59d,/8/enterprise/Dockerfile,"    # this 777 will be replaced by 700 at runtime (allows semi-arbitrary ""--user"" values) "
+841,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/developer/Dockerfile,# Http port
+842,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/developer/Dockerfile,# download and unzip SQ
 843,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/developer/Dockerfile,"# empty bin directory from useless scripts
-# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks
-"
+# create copies or delete directories allowed to be mounted as volumes, original directories will be recreated below as symlinks"
 844,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/developer/Dockerfile,"# create directories to be declared as volumes
 # copy into them to ensure they are initialized by 'docker run' when new volume is created
 # 'docker run' initialization will not work if volume is bound to the host's filesystem or when volume already exists
-# initialization is implemented in 'run.sh' for these cases
-"
-845,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/developer/Dockerfile,"# create symlinks to volume directories
-"
+# initialization is implemented in 'run.sh' for these cases"
+845,c1d0f7dd213db92f89a31f5ea39d4e9af4d7ce7e,/8/developer/Dockerfile,# create symlinks to volume directories

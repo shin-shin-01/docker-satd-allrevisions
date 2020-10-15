@@ -1,346 +1,228 @@
 ,CommitID,Dockerfile,Comment
-0,7dc03f77fa3ece9f12f3a2bb6276f55e3f89195b,/Dockerfile,"# Install the NGINX Amplify Agent
-"
-1,7dc03f77fa3ece9f12f3a2bb6276f55e3f89195b,/Dockerfile,"# Keep the nginx logs inside the container
-"
-2,7dc03f77fa3ece9f12f3a2bb6276f55e3f89195b,/Dockerfile,"# Copy nginx stub_status config
-"
+0,7dc03f77fa3ece9f12f3a2bb6276f55e3f89195b,/Dockerfile,# Install the NGINX Amplify Agent
+1,7dc03f77fa3ece9f12f3a2bb6276f55e3f89195b,/Dockerfile,# Keep the nginx logs inside the container
+2,7dc03f77fa3ece9f12f3a2bb6276f55e3f89195b,/Dockerfile,# Copy nginx stub_status config
 3,7dc03f77fa3ece9f12f3a2bb6276f55e3f89195b,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
 # It could be your real API key for NGINX Amplify here if you wanted
 # to build your own image to host it in a private registry.
 # However, including private keys in the Dockerfile is not recommended.
-# Use the environment variables at runtime as described below.
-
-#ENV API_KEY 1234567890
-
-# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
+# Use the environment variables at runtime as described below."
+4,7dc03f77fa3ece9f12f3a2bb6276f55e3f89195b,/Dockerfile,#ENV API_KEY 1234567890
+5,7dc03f77fa3ece9f12f3a2bb6276f55e3f89195b,/Dockerfile,"# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
 # generate the 'imagename' to put in the /etc/amplify-agent/agent.conf
 # If several instances use the same 'imagename', the metrics will
 # be aggregated into a single object in NGINX Amplify. Otherwise Amplify
 # will create separate objects for monitoring (an object per instance).
 # AMPLIFY_IMAGENAME can also be passed to the instance at runtime as
-# described below.
-
-#ENV AMPLIFY_IMAGENAME my-docker-instance-123
-
-# The /entrypoint.sh script will launch nginx and the Amplify Agent.
+# described below."
+6,7dc03f77fa3ece9f12f3a2bb6276f55e3f89195b,/Dockerfile,#ENV AMPLIFY_IMAGENAME my-docker-instance-123
+7,7dc03f77fa3ece9f12f3a2bb6276f55e3f89195b,/Dockerfile,"# The /entrypoint.sh script will launch nginx and the Amplify Agent.
 # The script honors API_KEY and AMPLIFY_IMAGENAME environment
-# variables, and updates /etc/amplify-agent/agent.conf accordingly.
-
-"
-4,7dc03f77fa3ece9f12f3a2bb6276f55e3f89195b,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
-# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify
-
-"
-5,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,"# Install the NGINX Amplify Agent
-"
-6,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,"# Keep the nginx logs inside the container
-"
-7,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,"# Copy nginx stub_status config
-"
-8,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
+# variables, and updates /etc/amplify-agent/agent.conf accordingly."
+8,7dc03f77fa3ece9f12f3a2bb6276f55e3f89195b,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
+# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify"
+9,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,# Install the NGINX Amplify Agent
+10,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,# Keep the nginx logs inside the container
+11,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,# Copy nginx stub_status config
+12,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
 # It could be your real API key for NGINX Amplify here if you wanted
 # to build your own image to host it in a private registry.
 # However, including private keys in the Dockerfile is not recommended.
-# Use the environment variables at runtime as described below.
-
-#ENV API_KEY 1234567890
-
-# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
+# Use the environment variables at runtime as described below."
+13,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,#ENV API_KEY 1234567890
+14,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,"# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
 # generate the 'imagename' to put in the /etc/amplify-agent/agent.conf
 # If several instances use the same 'imagename', the metrics will
 # be aggregated into a single object in NGINX Amplify. Otherwise Amplify
 # will create separate objects for monitoring (an object per instance).
 # AMPLIFY_IMAGENAME can also be passed to the instance at runtime as
-# described below.
-
-#ENV AMPLIFY_IMAGENAME my-docker-instance-123
-
-# The /entrypoint.sh script will launch nginx and the Amplify Agent.
+# described below."
+15,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,#ENV AMPLIFY_IMAGENAME my-docker-instance-123
+16,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,"# The /entrypoint.sh script will launch nginx and the Amplify Agent.
 # The script honors API_KEY and AMPLIFY_IMAGENAME environment
-# variables, and updates /etc/amplify-agent/agent.conf accordingly.
-
-"
-9,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
-# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify
-
-"
-10,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,"# Install the NGINX Amplify Agent
-"
-11,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,"# Keep the nginx logs inside the container
-"
-12,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,"# Copy nginx stub_status config
-"
-13,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
+# variables, and updates /etc/amplify-agent/agent.conf accordingly."
+17,3f60a899a6435d78f4b669b208f097fd3c78a969,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
+# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify"
+18,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,# Install the NGINX Amplify Agent
+19,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,# Keep the nginx logs inside the container
+20,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,# Copy nginx stub_status config
+21,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
 # It could be your real API key for NGINX Amplify here if you wanted
 # to build your own image to host it in a private registry.
 # However, including private keys in the Dockerfile is not recommended.
-# Use the environment variables at runtime as described below.
-
-#ENV API_KEY 1234567890
-
-# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
+# Use the environment variables at runtime as described below."
+22,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,#ENV API_KEY 1234567890
+23,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,"# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
 # generate the 'imagename' to put in the /etc/amplify-agent/agent.conf
 # If several instances use the same 'imagename', the metrics will
 # be aggregated into a single object in NGINX Amplify. Otherwise Amplify
 # will create separate objects for monitoring (an object per instance).
 # AMPLIFY_IMAGENAME can also be passed to the instance at runtime as
-# described below.
-
-#ENV AMPLIFY_IMAGENAME my-docker-instance-123
-
-# The /entrypoint.sh script will launch nginx and the Amplify Agent.
+# described below."
+24,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,#ENV AMPLIFY_IMAGENAME my-docker-instance-123
+25,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,"# The /entrypoint.sh script will launch nginx and the Amplify Agent.
 # The script honors API_KEY and AMPLIFY_IMAGENAME environment
-# variables, and updates /etc/amplify-agent/agent.conf accordingly.
-
-"
-14,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
-# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify
-
-"
-15,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,"# Install the NGINX Amplify Agent
-"
-16,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,"# Keep the nginx logs inside the container
-"
-17,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,"# Copy nginx stub_status config
-"
-18,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
+# variables, and updates /etc/amplify-agent/agent.conf accordingly."
+26,2d5705485f69f71004a90bd4682bc35f72b59047,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
+# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify"
+27,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,# Install the NGINX Amplify Agent
+28,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,# Keep the nginx logs inside the container
+29,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,# Copy nginx stub_status config
+30,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
 # It could be your real API key for NGINX Amplify here if you wanted
 # to build your own image to host it in a private registry.
 # However, including private keys in the Dockerfile is not recommended.
-# Use the environment variables at runtime as described below.
-
-#ENV API_KEY 1234567890
-
-# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
+# Use the environment variables at runtime as described below."
+31,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,#ENV API_KEY 1234567890
+32,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,"# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
 # generate the 'imagename' to put in the /etc/amplify-agent/agent.conf
 # If several instances use the same 'imagename', the metrics will
 # be aggregated into a single object in NGINX Amplify. Otherwise Amplify
 # will create separate objects for monitoring (an object per instance).
 # AMPLIFY_IMAGENAME can also be passed to the instance at runtime as
-# described below.
-
-#ENV AMPLIFY_IMAGENAME my-docker-instance-123
-
-# The /entrypoint.sh script will launch nginx and the Amplify Agent.
+# described below."
+33,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,#ENV AMPLIFY_IMAGENAME my-docker-instance-123
+34,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,"# The /entrypoint.sh script will launch nginx and the Amplify Agent.
 # The script honors API_KEY and AMPLIFY_IMAGENAME environment
-# variables, and updates /etc/amplify-agent/agent.conf accordingly.
-
-"
-19,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
-# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify
-
-"
-20,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,"	# Bring in gettext so we can get `envsubst`, then throw
+# variables, and updates /etc/amplify-agent/agent.conf accordingly."
+35,0d37d1fd7528e189fb93262f22d1f5ad224b2be5,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
+# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify"
+36,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,"	# Bring in gettext so we can get `envsubst`, then throw
 	# the rest away. To do this, we need to install `gettext`
 	# then move `envsubst` out of the way so `gettext` can
-	# be deleted completely, then move `envsubst` back.
-"
-21,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,"#p' /usr/sbin/nginx /usr/lib/nginx/modules/*.so /tmp/envsubst \
-"
-22,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,"	# Bring in tzdata so users could set the timezones through the environment
-	# variables
-"
-23,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,"        ### Amplify specific section starts here
-        # make sure log files are agent-readable
-"
-24,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,"        # Install packages required by agent
-"
-25,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,"        # install packages required for agent build
-"
-26,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,"        # clone latest agent from repository and build it
-"
-27,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,"        # make sure agent log exists
-"
-28,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,"        # create agent config file
-"
-29,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,"        # Cleanup
-"
-30,7025f46d4321aa60188d2bc22f991f8160f3de9f,/Dockerfile,"# Install the NGINX Amplify Agent
-"
-31,7025f46d4321aa60188d2bc22f991f8160f3de9f,/Dockerfile,"# Copy nginx stub_status config
-"
-32,7025f46d4321aa60188d2bc22f991f8160f3de9f,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
+	# be deleted completely, then move `envsubst` back."
+37,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,#p' /usr/sbin/nginx /usr/lib/nginx/modules/*.so /tmp/envsubst \
+38,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,"	# Bring in tzdata so users could set the timezones through the environment
+	# variables"
+39,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,"        ### Amplify specific section starts here
+        # make sure log files are agent-readable"
+40,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,        # Install packages required by agent
+41,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,        # install packages required for agent build
+42,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,        # clone latest agent from repository and build it
+43,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,        # make sure agent log exists
+44,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,        # create agent config file
+45,db334588aff54c9aaafd81896308a3a182a01f28,/Alpine/Dockerfile,        # Cleanup
+46,7025f46d4321aa60188d2bc22f991f8160f3de9f,/Dockerfile,# Install the NGINX Amplify Agent
+47,7025f46d4321aa60188d2bc22f991f8160f3de9f,/Dockerfile,# Copy nginx stub_status config
+48,7025f46d4321aa60188d2bc22f991f8160f3de9f,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
 # It could be your real API key for NGINX Amplify here if you wanted
 # to build your own image to host it in a private registry.
 # However, including private keys in the Dockerfile is not recommended.
-# Use the environment variables at runtime as described below.
-
-#ENV API_KEY 1234567890
-
-# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
+# Use the environment variables at runtime as described below."
+49,7025f46d4321aa60188d2bc22f991f8160f3de9f,/Dockerfile,#ENV API_KEY 1234567890
+50,7025f46d4321aa60188d2bc22f991f8160f3de9f,/Dockerfile,"# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
 # generate the 'imagename' to put in the /etc/amplify-agent/agent.conf
 # If several instances use the same 'imagename', the metrics will
 # be aggregated into a single object in NGINX Amplify. Otherwise Amplify
 # will create separate objects for monitoring (an object per instance).
 # AMPLIFY_IMAGENAME can also be passed to the instance at runtime as
-# described below.
-
-#ENV AMPLIFY_IMAGENAME my-docker-instance-123
-
-# The /entrypoint.sh script will launch nginx and the Amplify Agent.
+# described below."
+51,7025f46d4321aa60188d2bc22f991f8160f3de9f,/Dockerfile,#ENV AMPLIFY_IMAGENAME my-docker-instance-123
+52,7025f46d4321aa60188d2bc22f991f8160f3de9f,/Dockerfile,"# The /entrypoint.sh script will launch nginx and the Amplify Agent.
 # The script honors API_KEY and AMPLIFY_IMAGENAME environment
-# variables, and updates /etc/amplify-agent/agent.conf accordingly.
-
-"
-33,7025f46d4321aa60188d2bc22f991f8160f3de9f,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
-# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify
-
-"
-34,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,"# Install the NGINX Amplify Agent
-"
-35,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,"# Keep the nginx logs inside the container
-"
-36,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,"# Copy nginx stub_status config
-"
-37,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
+# variables, and updates /etc/amplify-agent/agent.conf accordingly."
+53,7025f46d4321aa60188d2bc22f991f8160f3de9f,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
+# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify"
+54,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,# Install the NGINX Amplify Agent
+55,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,# Keep the nginx logs inside the container
+56,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,# Copy nginx stub_status config
+57,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
 # It could be your real API key for NGINX Amplify here if you wanted
 # to build your own image to host it in a private registry.
 # However, including private keys in the Dockerfile is not recommended.
-# Use the environment variables at runtime as described below.
-
-#ENV API_KEY 1234567890
-
-# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
+# Use the environment variables at runtime as described below."
+58,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,#ENV API_KEY 1234567890
+59,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,"# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
 # generate the 'imagename' to put in the /etc/amplify-agent/agent.conf
 # If several instances use the same 'imagename', the metrics will
 # be aggregated into a single object in NGINX Amplify. Otherwise Amplify
 # will create separate objects for monitoring (an object per instance).
 # AMPLIFY_IMAGENAME can also be passed to the instance at runtime as
-# described below.
-
-#ENV AMPLIFY_IMAGENAME my-docker-instance-123
-
-# The /entrypoint.sh script will launch nginx and the Amplify Agent.
+# described below."
+60,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,#ENV AMPLIFY_IMAGENAME my-docker-instance-123
+61,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,"# The /entrypoint.sh script will launch nginx and the Amplify Agent.
 # The script honors API_KEY and AMPLIFY_IMAGENAME environment
-# variables, and updates /etc/amplify-agent/agent.conf accordingly.
-
-"
-38,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
-# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify
-
-"
-39,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,"# Install the NGINX Amplify Agent
-"
-40,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,"# Keep the nginx logs inside the container
-"
-41,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,"# Copy nginx stub_status config
-"
-42,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
+# variables, and updates /etc/amplify-agent/agent.conf accordingly."
+62,142425bc64bdbffebede19035c73d46057085c74,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
+# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify"
+63,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,# Install the NGINX Amplify Agent
+64,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,# Keep the nginx logs inside the container
+65,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,# Copy nginx stub_status config
+66,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
 # It could be your real API key for NGINX Amplify here if you wanted
 # to build your own image to host it in a private registry.
 # However, including private keys in the Dockerfile is not recommended.
-# Use the environment variables at runtime as described below.
-
-#ENV API_KEY 1234567890
-
-# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
+# Use the environment variables at runtime as described below."
+67,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,#ENV API_KEY 1234567890
+68,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,"# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
 # generate the 'imagename' to put in the /etc/amplify-agent/agent.conf
 # If several instances use the same 'imagename', the metrics will
 # be aggregated into a single object in NGINX Amplify. Otherwise Amplify
 # will create separate objects for monitoring (an object per instance).
 # AMPLIFY_IMAGENAME can also be passed to the instance at runtime as
-# described below.
-
-#ENV AMPLIFY_IMAGENAME my-docker-instance-123
-
-# The /entrypoint.sh script will launch nginx and the Amplify Agent.
+# described below."
+69,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,#ENV AMPLIFY_IMAGENAME my-docker-instance-123
+70,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,"# The /entrypoint.sh script will launch nginx and the Amplify Agent.
 # The script honors API_KEY and AMPLIFY_IMAGENAME environment
-# variables, and updates /etc/amplify-agent/agent.conf accordingly.
-
-"
-43,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
-# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify
-
-"
-44,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,"# Install the NGINX Amplify Agent
-"
-45,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,"# Keep the nginx logs inside the container
-"
-46,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,"# Copy nginx stub_status config
-"
-47,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
+# variables, and updates /etc/amplify-agent/agent.conf accordingly."
+71,bedbc39ae0e20268d76d0c93f59a62ba01b6cb5d,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
+# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify"
+72,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,# Install the NGINX Amplify Agent
+73,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,# Keep the nginx logs inside the container
+74,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,# Copy nginx stub_status config
+75,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,"# API_KEY is required for configuring the NGINX Amplify Agent.
 # It could be your real API key for NGINX Amplify here if you wanted
 # to build your own image to host it in a private registry.
 # However, including private keys in the Dockerfile is not recommended.
-# Use the environment variables at runtime as described below.
-
-#ENV API_KEY 1234567890
-
-# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
+# Use the environment variables at runtime as described below."
+76,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,#ENV API_KEY 1234567890
+77,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,"# If AMPLIFY_IMAGENAME is set, the startup wrapper script will use it to
 # generate the 'imagename' to put in the /etc/amplify-agent/agent.conf
 # If several instances use the same 'imagename', the metrics will
 # be aggregated into a single object in NGINX Amplify. Otherwise Amplify
 # will create separate objects for monitoring (an object per instance).
 # AMPLIFY_IMAGENAME can also be passed to the instance at runtime as
-# described below.
-
-#ENV AMPLIFY_IMAGENAME my-docker-instance-123
-
-# The /entrypoint.sh script will launch nginx and the Amplify Agent.
+# described below."
+78,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,#ENV AMPLIFY_IMAGENAME my-docker-instance-123
+79,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,"# The /entrypoint.sh script will launch nginx and the Amplify Agent.
 # The script honors API_KEY and AMPLIFY_IMAGENAME environment
-# variables, and updates /etc/amplify-agent/agent.conf accordingly.
-
-"
-48,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
-# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify
-
-"
-49,257d9b5a3830ac94be6ad8a27e81801fcfbcd7d6,/Dockerfile,"# API_KEY is required for amplify-install.sh to generate the initial
+# variables, and updates /etc/amplify-agent/agent.conf accordingly."
+80,7970197103bfabef9ed550a22951a9b31946de94,/Dockerfile,"# TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
+# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME=""service-name"" -d nginx-amplify"
+81,257d9b5a3830ac94be6ad8a27e81801fcfbcd7d6,/Dockerfile,"# API_KEY is required for amplify-install.sh to generate the initial
 # configuration file for the Amplify Agent.
 # It could be your real API key for Amplify here, or a dummy one.
 # If left as 1234567890 in the image build, the real API_KEY should
-# be passed to the container via ""docker run -e 'API_KEY=..'""
-
-"
-50,257d9b5a3830ac94be6ad8a27e81801fcfbcd7d6,/Dockerfile,"# If AMPLIFY_HOSTNAME is set, the launch.sh script will use it to generate
+# be passed to the container via ""docker run -e 'API_KEY=..'"""
+82,257d9b5a3830ac94be6ad8a27e81801fcfbcd7d6,/Dockerfile,"# If AMPLIFY_HOSTNAME is set, the launch.sh script will use it to generate
 # the 'hostname' to put in the /etc/amplify-agent/agent.conf
 # If several instances use the same hostname, the metrics will
 # be aggregated into a single object in Amplify. Otherwise Amplify
 # will create separate objects for monitoring (an object per instance).
 # AMPLIFY_HOSTNAME can also be passed to the instance through
-# the use of """"docker run -e 'AMPLIFY_HOSTNAME=..'""
-
-#ENV AMPLIFY_HOSTNAME my-docker-instance-123
-
-# Copy nginx stub_status config
-"
-51,257d9b5a3830ac94be6ad8a27e81801fcfbcd7d6,/Dockerfile,"# The /opt/bin/launch.sh script will launch nginx and the Amplify Agent.
+# the use of """"docker run -e 'AMPLIFY_HOSTNAME=..'"""
+83,257d9b5a3830ac94be6ad8a27e81801fcfbcd7d6,/Dockerfile,#ENV AMPLIFY_HOSTNAME my-docker-instance-123
+84,257d9b5a3830ac94be6ad8a27e81801fcfbcd7d6,/Dockerfile,# Copy nginx stub_status config
+85,257d9b5a3830ac94be6ad8a27e81801fcfbcd7d6,/Dockerfile,"# The /opt/bin/launch.sh script will launch nginx and the Amplify Agent.
 # The script honors API_KEY and AMPLIFY_HOSTNAME environment
-# variables, and updates /etc/amplify-agent/agent.conf accordingly.
-
-"
-52,257d9b5a3830ac94be6ad8a27e81801fcfbcd7d6,/Dockerfile,"# Install the Amplify Agent
-
-"
-53,257d9b5a3830ac94be6ad8a27e81801fcfbcd7d6,/Dockerfile,"# launch.sh will start nginx and Amplify Agent
+# variables, and updates /etc/amplify-agent/agent.conf accordingly."
+86,257d9b5a3830ac94be6ad8a27e81801fcfbcd7d6,/Dockerfile,# Install the Amplify Agent
+87,257d9b5a3830ac94be6ad8a27e81801fcfbcd7d6,/Dockerfile,"# launch.sh will start nginx and Amplify Agent
 #
 # TO set/override API_KEY and AMPLIFY_HOSTNAME when starting an instance:
-# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_HOSTNAME=""service-name"" -d nginx-amplify
-
-"
-54,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,"	# Bring in gettext so we can get `envsubst`, then throw
+# docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_HOSTNAME=""service-name"" -d nginx-amplify"
+88,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,"	# Bring in gettext so we can get `envsubst`, then throw
 	# the rest away. To do this, we need to install `gettext`
 	# then move `envsubst` out of the way so `gettext` can
-	# be deleted completely, then move `envsubst` back.
-"
-55,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,"#p' /usr/sbin/nginx /usr/lib/nginx/modules/*.so /tmp/envsubst \
-"
-56,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,"	# Bring in tzdata so users could set the timezones through the environment
-	# variables
-"
-57,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,"        ### Amplify specific section starts here
-        # make sure log files are agent-readable
-"
-58,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,"        # Install packages required by agent
-"
-59,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,"        # install packages required for agent build
-"
-60,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,"        # clone latest agent from repository and build it
-"
-61,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,"        # make sure agent log exists
-"
-62,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,"        # create agent config file
-"
-63,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,"        # Cleanup
-"
+	# be deleted completely, then move `envsubst` back."
+89,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,#p' /usr/sbin/nginx /usr/lib/nginx/modules/*.so /tmp/envsubst \
+90,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,"	# Bring in tzdata so users could set the timezones through the environment
+	# variables"
+91,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,"        ### Amplify specific section starts here
+        # make sure log files are agent-readable"
+92,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,        # Install packages required by agent
+93,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,        # install packages required for agent build
+94,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,        # clone latest agent from repository and build it
+95,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,        # make sure agent log exists
+96,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,        # create agent config file
+97,ab0dddad89d2dd1554a7bdca44906acd0350feab,/Alpine/Dockerfile,        # Cleanup

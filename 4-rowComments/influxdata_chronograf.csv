@@ -14,15 +14,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-"
-1,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"# Basic OS utilities
-"
-2,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"# install conda in /home/ubuntu/miniconda
-"
+#"
+1,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,# Basic OS utilities
+2,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,# install conda in /home/ubuntu/miniconda
 3,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"# BUILD: $ docker build -f arrow/dev/spark_integration/Dockerfile -t spark-arrow .
-# RUN:   $ docker run -v $HOME/.m2:/root/.m2 spark-arrow
-"
+# RUN:   $ docker run -v $HOME/.m2:/root/.m2 spark-arrow"
 4,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/yum/centos-7/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -38,19 +34,12 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-5,a8df2ca3fe3bb115c437ebe1b29b13dd05944ff6,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-6,a8df2ca3fe3bb115c437ebe1b29b13dd05944ff6,/vendor/github.com/influxdata/influxdb/Dockerfile,"# copy binary into image
-"
-7,a8df2ca3fe3bb115c437ebe1b29b13dd05944ff6,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Add influxd to the PATH
-"
-8,a8df2ca3fe3bb115c437ebe1b29b13dd05944ff6,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Generate a default config
-"
-9,a8df2ca3fe3bb115c437ebe1b29b13dd05944ff6,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Use /data for all disk storage
-"
+# under the License."
+5,a8df2ca3fe3bb115c437ebe1b29b13dd05944ff6,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+6,a8df2ca3fe3bb115c437ebe1b29b13dd05944ff6,/vendor/github.com/influxdata/influxdb/Dockerfile,# copy binary into image
+7,a8df2ca3fe3bb115c437ebe1b29b13dd05944ff6,/vendor/github.com/influxdata/influxdb/Dockerfile,# Add influxd to the PATH
+8,a8df2ca3fe3bb115c437ebe1b29b13dd05944ff6,/vendor/github.com/influxdata/influxdb/Dockerfile,# Generate a default config
+9,a8df2ca3fe3bb115c437ebe1b29b13dd05944ff6,/vendor/github.com/influxdata/influxdb/Dockerfile,# Use /data for all disk storage
 10,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -66,44 +55,28 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-11,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,"# Configure
-"
-12,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,"# r-base includes tzdata. Get around interactive stop in that package
-"
+# under the License."
+11,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,# Configure
+12,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,# r-base includes tzdata. Get around interactive stop in that package
 13,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,"# Build R
 # [1] https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04
-# [2] https://linuxize.com/post/how-to-install-r-on-ubuntu-18-04/#installing-r-packages-from-cran
-"
-14,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,"    # system libs needed by core R packages
-"
-15,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,"    # install clang to mirror what was done on Travis
-"
-16,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,"    # R CMD CHECK --as-cran needs pdflatex to build the package manual
-"
-17,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,"    # Install vctrs from Github
-"
-18,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,"    # R is not good at picking up dependencies and installing them automatically
-"
-19,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,"# Tell R where it can find the source code for arrow
-"
-20,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,"# build, install, test R package
-"
+# [2] https://linuxize.com/post/how-to-install-r-on-ubuntu-18-04/#installing-r-packages-from-cran"
+14,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,    # system libs needed by core R packages
+15,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,    # install clang to mirror what was done on Travis
+16,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,    # R CMD CHECK --as-cran needs pdflatex to build the package manual
+17,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,    # Install vctrs from Github
+18,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,    # R is not good at picking up dependencies and installing them automatically
+19,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,# Tell R where it can find the source code for arrow
+20,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/r/Dockerfile,"# build, install, test R package"
 21,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
 # See the Makefile for how to tag it. If Docker and that image is found, the
 # Go tests use this curl binary for integration tests.
-#
-
-"
-22,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
-"
-23,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
-"
+#"
+22,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/net/http2/Dockerfile,# The list of packages nghttp2 recommends for h2load:
+23,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:"
 24,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/yum/centos-6/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -119,62 +92,39 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-25,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Use the most recent ubuntu sources
-"
-26,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Dependencies to get the git sources and go binaries
-"
-27,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Get the git sources. If not cached, this takes O(5 minutes).
-"
-28,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Linux Kernel: Released 03 Sep 2017
-"
-29,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# GNU C library: Released 02 Aug 2017 (we should try to get a secure way to clone this)
-"
-30,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Get Go 1.9.2
-"
-31,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Linux and Glibc build dependencies
-"
-32,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Emulator and cross compilers
-"
-33,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Let the scripts know they are in the docker environment
-"
+# under the License."
+25,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Use the most recent ubuntu sources
+26,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Dependencies to get the git sources and go binaries
+27,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Get the git sources. If not cached, this takes O(5 minutes)."
+28,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Linux Kernel: Released 03 Sep 2017
+29,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# GNU C library: Released 02 Aug 2017 (we should try to get a secure way to clone this)
+30,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Get Go 1.9.2
+31,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Linux and Glibc build dependencies
+32,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Emulator and cross compilers
+33,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Let the scripts know they are in the docker environment
 34,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
 # See the Makefile for how to tag it. If Docker and that image is found, the
 # Go tests use this curl binary for integration tests.
-#
-
-"
-35,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
-"
-36,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
-"
-37,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Install node deps
-"
-38,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Build assets to ./dist
-"
-39,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Run the image as a non-root user
-"
+#"
+35,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/net/http2/Dockerfile,# The list of packages nghttp2 recommends for h2load:
+36,423c0e38acb493894b52b01fa7682c85b70d17a1,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:"
+37,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,# Install node deps
+38,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,# Build assets to ./dist
+39,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,# Run the image as a non-root user
 40,a4c4f6ad9211d5390d169084366dbbeda6174524,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
-# in the future we'd start the go process here.
-"
+# in the future we'd start the go process here."
 41,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
 # See the Makefile for how to tag it. If Docker and that image is found, the
 # Go tests use this curl binary for integration tests.
-#
-
-"
-42,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
-"
-43,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
-"
+#"
+42,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/net/http2/Dockerfile,# The list of packages nghttp2 recommends for h2load:
+43,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:"
 44,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/java/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -190,9 +140,7 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
+# under the License."
 45,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-trusty/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -208,9 +156,7 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
+# under the License."
 46,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-bionic/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -226,13 +172,9 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-47,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/getgo/Dockerfile,"# undo the adding of GOPATH to env for testing
-"
-48,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/getgo/Dockerfile,"# delete /go and /usr/local/go for testing
-"
+# under the License."
+47,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/getgo/Dockerfile,# undo the adding of GOPATH to env for testing
+48,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/getgo/Dockerfile,# delete /go and /usr/local/go for testing
 49,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/release/binary/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -248,9 +190,7 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
+# under the License."
 50,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/pandas/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -266,11 +206,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-51,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/pandas/Dockerfile,"# test against pandas' master
-"
+# under the License."
+51,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/pandas/Dockerfile,# test against pandas' master
 52,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -286,13 +223,9 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-53,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# build cpp
-"
-54,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# build, install and test
-"
+# under the License."
+53,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/c_glib/Dockerfile,# build cpp
+54,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# build, install and test"
 55,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/release/binary/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -308,9 +241,7 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
+# under the License."
 56,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/python/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -326,13 +257,9 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-57,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/python/Dockerfile,"# install python specific packages
-"
-58,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/python/Dockerfile,"# build and test
-"
+# under the License."
+57,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/python/Dockerfile,# install python specific packages
+58,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/python/Dockerfile,# build and test
 59,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/debian-stretch/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -348,9 +275,7 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
+# under the License."
 60,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/release/binary/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -366,9 +291,7 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
+# under the License."
 61,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/rust/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -384,15 +307,10 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
+# under the License."
 62,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/rust/Dockerfile,"# sadly cargo doesn't have a command to fetch and build the
-# dependencies without building the library itself
-"
-63,9d871efdd4b1c92b1f5ef45544470e2e16e3ee38,/Dockerfile,"# ENV PORT ||= 8888
-
-"
+# dependencies without building the library itself"
+63,9d871efdd4b1c92b1f5ef45544470e2e16e3ee38,/Dockerfile,# ENV PORT ||= 8888
 64,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/go/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -408,9 +326,7 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
+# under the License."
 65,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-xenial/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -426,71 +342,39 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-66,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# For implicit GOCACHE (Issues 29243 and 29251), set HOME:
-"
-67,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# golang puts its go install here (weird but true)
-"
-68,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# BEGIN deps (run `make update-deps` to update)
-
-# Repo cloud.google.com/go at b5eca92 (2018-10-23)
-"
-69,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 7 other pkgs` &&\
-"
-70,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo github.com/golang/protobuf at b4deda0 (2018-04-30)
-"
-71,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 6 other pkgs` &&\
-"
-72,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo github.com/googleapis/gax-go at 317e000 (2017-09-15)
-"
-73,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo go.opencensus.io at ebd8d31 (2018-05-16)
-"
-74,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 12 other pkgs` &&\
-"
-75,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/build at 7b78c20 (2018-12-13)
-"
-76,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/crypto at e4dc69e (2018-11-06)
-"
-77,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 2 other pkgs` &&\
-"
-78,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/net at 891ebc4 (2018-12-13)
-"
-79,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 8 other pkgs` &&\
-"
-80,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/oauth2 at f42d051 (2018-11-06)
-"
-81,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 5 other pkgs` &&\
-"
-82,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/sys at 4d1cda0 (2018-12-13)
-"
-83,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/text at 6f44c5a (2018-10-30)
-"
-84,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 4 other pkgs` &&\
-"
-85,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo google.golang.org/api at 20530fd (2018-05-06)
-"
-86,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 9 other pkgs` &&\
-"
-87,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo google.golang.org/genproto at 86e600f (2018-04-27)
-"
-88,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 4 other pkgs` &&\
-"
-89,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo google.golang.org/grpc at 07ef407 (2018-08-06)
-"
-90,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 26 other pkgs` &&\
-"
-91,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Optimization to speed up iterative development, not necessary for correctness:
-"
-92,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# END deps.
-
-# golang sets GOPATH=/go
-"
-93,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# We listen on 8080 (for historical reasons). The service.yaml maps public port 80 to 8080.
-# We also listen on 443 for LetsEncrypt TLS.
-"
-94,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/js/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+66,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# For implicit GOCACHE (Issues 29243 and 29251), set HOME:"
+67,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# golang puts its go install here (weird but true)
+68,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# BEGIN deps (run `make update-deps` to update)
+69,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo cloud.google.com/go at b5eca92 (2018-10-23)
+70,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 7 other pkgs` &&\
+71,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo github.com/golang/protobuf at b4deda0 (2018-04-30)
+72,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 6 other pkgs` &&\
+73,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo github.com/googleapis/gax-go at 317e000 (2017-09-15)
+74,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo go.opencensus.io at ebd8d31 (2018-05-16)
+75,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 12 other pkgs` &&\
+76,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/build at 7b78c20 (2018-12-13)
+77,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/crypto at e4dc69e (2018-11-06)
+78,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 2 other pkgs` &&\
+79,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/net at 891ebc4 (2018-12-13)
+80,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 8 other pkgs` &&\
+81,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/oauth2 at f42d051 (2018-11-06)
+82,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 5 other pkgs` &&\
+83,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/sys at 4d1cda0 (2018-12-13)
+84,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/text at 6f44c5a (2018-10-30)
+85,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 4 other pkgs` &&\
+86,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo google.golang.org/api at 20530fd (2018-05-06)
+87,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 9 other pkgs` &&\
+88,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo google.golang.org/genproto at 86e600f (2018-04-27)
+89,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 4 other pkgs` &&\
+90,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo google.golang.org/grpc at 07ef407 (2018-08-06)
+91,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 26 other pkgs` &&\
+92,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Optimization to speed up iterative development, not necessary for correctness:"
+93,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# END deps.
+94,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# golang sets GOPATH=/go
+95,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# We listen on 8080 (for historical reasons). The service.yaml maps public port 80 to 8080.
+# We also listen on 443 for LetsEncrypt TLS."
+96,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/js/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -505,14 +389,10 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-95,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/js/Dockerfile,"# install dependencies
-"
-96,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/js/Dockerfile,"# build
-"
-97,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-cosmic/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+97,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/js/Dockerfile,# install dependencies
+98,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/js/Dockerfile,# build
+99,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-cosmic/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -527,10 +407,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-98,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/gen_apidocs/Dockerfile,"#
+# under the License."
+100,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/gen_apidocs/Dockerfile,"#
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
@@ -545,13 +423,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-"
-99,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/gen_apidocs/Dockerfile,"# Basic OS dependencies
+#"
+101,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/gen_apidocs/Dockerfile,"# Basic OS dependencies
 # First install JDK 8, then do a second apt call to install maven.
-# Otherwise this will install openjdk 8 and openjdk 11 at once.
-"
-100,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/js/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# Otherwise this will install openjdk 8 and openjdk 11 at once."
+102,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/js/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -566,14 +442,10 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-101,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/js/Dockerfile,"# install dependencies
-"
-102,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/js/Dockerfile,"# build
-"
-103,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/pandas/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+103,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/js/Dockerfile,# install dependencies
+104,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/js/Dockerfile,# build
+105,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/pandas/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -588,12 +460,9 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-104,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/pandas/Dockerfile,"# test against pandas' master
-"
-105,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/go/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+106,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/pandas/Dockerfile,# test against pandas' master
+107,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/go/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -608,10 +477,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-106,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/hiveserver2/Dockerfile,"#
+# under the License."
+108,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/hiveserver2/Dockerfile,"#
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
@@ -626,10 +493,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-
-"
-107,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"#
+#"
+109,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"#
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
@@ -644,16 +509,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-"
-108,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"# Basic OS utilities
-"
-109,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"# install conda in /home/ubuntu/miniconda
-"
-110,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"# BUILD: $ docker build -f arrow/dev/spark_integration/Dockerfile -t spark-arrow .
-# RUN:   $ docker run -v $HOME/.m2:/root/.m2 spark-arrow
-"
-111,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+#"
+110,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,# Basic OS utilities
+111,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,# install conda in /home/ubuntu/miniconda
+112,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"# BUILD: $ docker build -f arrow/dev/spark_integration/Dockerfile -t spark-arrow .
+# RUN:   $ docker run -v $HOME/.m2:/root/.m2 spark-arrow"
+113,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -668,14 +529,10 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-112,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# build cpp
-"
-113,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# build, install and test
-"
-114,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/go/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+114,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/c_glib/Dockerfile,# build cpp
+115,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# build, install and test"
+116,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/go/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -690,10 +547,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-115,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/python/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+117,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/python/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -708,21 +563,14 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-116,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/python/Dockerfile,"# install python specific packages
-"
-117,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/python/Dockerfile,"# build and test
-"
-118,66981ea5ce5f8c460b6127b2f60bf119a0568581,/Dockerfile,"# Build assets to ./ui/build
-"
-119,66981ea5ce5f8c460b6127b2f60bf119a0568581,/Dockerfile,"# Run the image as a non-root user
-"
-120,66981ea5ce5f8c460b6127b2f60bf119a0568581,/Dockerfile,"# Start the server.
-# in the future we'd start the go process here and serve the static assets in /build
-"
-121,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/lint/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+118,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/python/Dockerfile,# install python specific packages
+119,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/python/Dockerfile,# build and test
+120,66981ea5ce5f8c460b6127b2f60bf119a0568581,/Dockerfile,# Build assets to ./ui/build
+121,66981ea5ce5f8c460b6127b2f60bf119a0568581,/Dockerfile,# Run the image as a non-root user
+122,66981ea5ce5f8c460b6127b2f60bf119a0568581,/Dockerfile,"# Start the server.
+# in the future we'd start the go process here and serve the static assets in /build"
+123,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/lint/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -737,12 +585,9 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-122,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/lint/Dockerfile,"# https://bugs.launchpad.net/ubuntu/+source/iwyu/+bug/1769334
-"
-123,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/js/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+124,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/lint/Dockerfile,# https://bugs.launchpad.net/ubuntu/+source/iwyu/+bug/1769334
+125,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/js/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -757,14 +602,10 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-124,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/js/Dockerfile,"# install dependencies
-"
-125,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/js/Dockerfile,"# build
-"
-126,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/yum/centos-7/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+126,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/js/Dockerfile,# install dependencies
+127,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/js/Dockerfile,# build
+128,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/yum/centos-7/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -779,10 +620,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-127,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+129,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -797,16 +636,11 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-128,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# install build essentials
-"
-129,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# install conda and required packages
-"
-130,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# build and test
-"
-131,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/hiveserver2/Dockerfile,"#
+# under the License."
+130,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/cpp/Dockerfile,# install build essentials
+131,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/cpp/Dockerfile,# install conda and required packages
+132,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/cpp/Dockerfile,# build and test
+133,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/hiveserver2/Dockerfile,"#
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
@@ -821,10 +655,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-
-"
-132,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/yum/centos-6/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+#"
+134,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/yum/centos-6/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -839,10 +671,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-133,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/release/source/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+135,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/release/source/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -857,91 +687,49 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-134,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# For implicit GOCACHE (Issues 29243 and 29251), set HOME:
-"
-135,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# golang puts its go install here (weird but true)
-"
-136,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# BEGIN deps (run `make update-deps` to update)
-
-# Repo cloud.google.com/go at b5eca92 (2018-10-23)
-"
-137,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 7 other pkgs` &&\
-"
-138,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo github.com/golang/protobuf at b4deda0 (2018-04-30)
-"
-139,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 6 other pkgs` &&\
-"
-140,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo github.com/googleapis/gax-go at 317e000 (2017-09-15)
-"
-141,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo go.opencensus.io at ebd8d31 (2018-05-16)
-"
-142,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 12 other pkgs` &&\
-"
-143,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/build at 7b78c20 (2018-12-13)
-"
-144,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/crypto at e4dc69e (2018-11-06)
-"
-145,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 2 other pkgs` &&\
-"
-146,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/net at 891ebc4 (2018-12-13)
-"
-147,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 8 other pkgs` &&\
-"
-148,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/oauth2 at f42d051 (2018-11-06)
-"
-149,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 5 other pkgs` &&\
-"
-150,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/sys at 4d1cda0 (2018-12-13)
-"
-151,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/text at 6f44c5a (2018-10-30)
-"
-152,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 4 other pkgs` &&\
-"
-153,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo google.golang.org/api at 20530fd (2018-05-06)
-"
-154,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 9 other pkgs` &&\
-"
-155,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo google.golang.org/genproto at 86e600f (2018-04-27)
-"
-156,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 4 other pkgs` &&\
-"
-157,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo google.golang.org/grpc at 07ef407 (2018-08-06)
-"
-158,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 26 other pkgs` &&\
-"
-159,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Optimization to speed up iterative development, not necessary for correctness:
-"
-160,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# END deps.
-
-# golang sets GOPATH=/go
-"
-161,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# We listen on 8080 (for historical reasons). The service.yaml maps public port 80 to 8080.
-# We also listen on 443 for LetsEncrypt TLS.
-"
-162,9ef79e66f6c60e225fa6310e151d74d30f3235a1,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-163,9ef79e66f6c60e225fa6310e151d74d30f3235a1,/vendor/github.com/influxdata/influxdb/Dockerfile,"# copy binary into image
-"
-164,9ef79e66f6c60e225fa6310e151d74d30f3235a1,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Add influxd to the PATH
-"
-165,9ef79e66f6c60e225fa6310e151d74d30f3235a1,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Generate a default config
-"
-166,9ef79e66f6c60e225fa6310e151d74d30f3235a1,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Use /data for all disk storage
-"
-167,f4a21c94ba77b0d4c4711a433f0ddf205ac06dd5,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-168,f4a21c94ba77b0d4c4711a433f0ddf205ac06dd5,/vendor/github.com/influxdata/influxdb/Dockerfile,"# copy binary into image
-"
-169,f4a21c94ba77b0d4c4711a433f0ddf205ac06dd5,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Add influxd to the PATH
-"
-170,f4a21c94ba77b0d4c4711a433f0ddf205ac06dd5,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Generate a default config
-"
-171,f4a21c94ba77b0d4c4711a433f0ddf205ac06dd5,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Use /data for all disk storage
-"
-172,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/docs/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+136,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# For implicit GOCACHE (Issues 29243 and 29251), set HOME:"
+137,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# golang puts its go install here (weird but true)
+138,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# BEGIN deps (run `make update-deps` to update)
+139,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo cloud.google.com/go at b5eca92 (2018-10-23)
+140,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 7 other pkgs` &&\
+141,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo github.com/golang/protobuf at b4deda0 (2018-04-30)
+142,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 6 other pkgs` &&\
+143,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo github.com/googleapis/gax-go at 317e000 (2017-09-15)
+144,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo go.opencensus.io at ebd8d31 (2018-05-16)
+145,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 12 other pkgs` &&\
+146,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/build at 7b78c20 (2018-12-13)
+147,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/crypto at e4dc69e (2018-11-06)
+148,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 2 other pkgs` &&\
+149,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/net at 891ebc4 (2018-12-13)
+150,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 8 other pkgs` &&\
+151,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/oauth2 at f42d051 (2018-11-06)
+152,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 5 other pkgs` &&\
+153,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/sys at 4d1cda0 (2018-12-13)
+154,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/text at 6f44c5a (2018-10-30)
+155,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 4 other pkgs` &&\
+156,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo google.golang.org/api at 20530fd (2018-05-06)
+157,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 9 other pkgs` &&\
+158,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo google.golang.org/genproto at 86e600f (2018-04-27)
+159,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 4 other pkgs` &&\
+160,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo google.golang.org/grpc at 07ef407 (2018-08-06)
+161,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 26 other pkgs` &&\
+162,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Optimization to speed up iterative development, not necessary for correctness:"
+163,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# END deps.
+164,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# golang sets GOPATH=/go
+165,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# We listen on 8080 (for historical reasons). The service.yaml maps public port 80 to 8080.
+# We also listen on 443 for LetsEncrypt TLS."
+166,9ef79e66f6c60e225fa6310e151d74d30f3235a1,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+167,9ef79e66f6c60e225fa6310e151d74d30f3235a1,/vendor/github.com/influxdata/influxdb/Dockerfile,# copy binary into image
+168,9ef79e66f6c60e225fa6310e151d74d30f3235a1,/vendor/github.com/influxdata/influxdb/Dockerfile,# Add influxd to the PATH
+169,9ef79e66f6c60e225fa6310e151d74d30f3235a1,/vendor/github.com/influxdata/influxdb/Dockerfile,# Generate a default config
+170,9ef79e66f6c60e225fa6310e151d74d30f3235a1,/vendor/github.com/influxdata/influxdb/Dockerfile,# Use /data for all disk storage
+171,f4a21c94ba77b0d4c4711a433f0ddf205ac06dd5,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+172,f4a21c94ba77b0d4c4711a433f0ddf205ac06dd5,/vendor/github.com/influxdata/influxdb/Dockerfile,# copy binary into image
+173,f4a21c94ba77b0d4c4711a433f0ddf205ac06dd5,/vendor/github.com/influxdata/influxdb/Dockerfile,# Add influxd to the PATH
+174,f4a21c94ba77b0d4c4711a433f0ddf205ac06dd5,/vendor/github.com/influxdata/influxdb/Dockerfile,# Generate a default config
+175,f4a21c94ba77b0d4c4711a433f0ddf205ac06dd5,/vendor/github.com/influxdata/influxdb/Dockerfile,# Use /data for all disk storage
+176,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/docs/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -956,10 +744,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-173,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"#
+# under the License."
+177,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"#
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
@@ -974,14 +760,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-
-"
-174,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"# Miniconda - Python 3.6, 64-bit, x86, latest
-"
-175,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"# create conda env with deps
-"
-176,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/release/source/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+#"
+178,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"# Miniconda - Python 3.6, 64-bit, x86, latest"
+179,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/container/Dockerfile,# create conda env with deps
+180,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/release/source/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -996,10 +778,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-177,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/release/source/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+181,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/release/source/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1014,24 +794,15 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-178,6ff37c59197da6c32d8ca5f694597cef7793fa20,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-179,6ff37c59197da6c32d8ca5f694597cef7793fa20,/vendor/github.com/influxdata/influxdb/Dockerfile,"# copy binary into image
-"
-180,6ff37c59197da6c32d8ca5f694597cef7793fa20,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Add influxd to the PATH
-"
-181,6ff37c59197da6c32d8ca5f694597cef7793fa20,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Generate a default config
-"
-182,6ff37c59197da6c32d8ca5f694597cef7793fa20,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Use /data for all disk storage
-"
-183,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/getgo/Dockerfile,"# undo the adding of GOPATH to env for testing
-"
-184,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/getgo/Dockerfile,"# delete /go and /usr/local/go for testing
-"
-185,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/pandas/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+182,6ff37c59197da6c32d8ca5f694597cef7793fa20,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+183,6ff37c59197da6c32d8ca5f694597cef7793fa20,/vendor/github.com/influxdata/influxdb/Dockerfile,# copy binary into image
+184,6ff37c59197da6c32d8ca5f694597cef7793fa20,/vendor/github.com/influxdata/influxdb/Dockerfile,# Add influxd to the PATH
+185,6ff37c59197da6c32d8ca5f694597cef7793fa20,/vendor/github.com/influxdata/influxdb/Dockerfile,# Generate a default config
+186,6ff37c59197da6c32d8ca5f694597cef7793fa20,/vendor/github.com/influxdata/influxdb/Dockerfile,# Use /data for all disk storage
+187,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/getgo/Dockerfile,# undo the adding of GOPATH to env for testing
+188,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/golang.org/x/tools/cmd/getgo/Dockerfile,# delete /go and /usr/local/go for testing
+189,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/pandas/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1046,12 +817,9 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-186,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/pandas/Dockerfile,"# test against pandas' master
-"
-187,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+190,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/pandas/Dockerfile,# test against pandas' master
+191,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1066,18 +834,12 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-188,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# installing libhdfs3, it needs to be pinned, see ARROW-1465 and ARROW-1445
-"
-189,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# installing libhdfs (JNI)
-"
-190,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# build cpp with tests
-"
-191,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# build and test
-"
-192,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+192,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# installing libhdfs3, it needs to be pinned, see ARROW-1465 and ARROW-1445"
+193,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,# installing libhdfs (JNI)
+194,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,# build cpp with tests
+195,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,# build and test
+196,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1092,16 +854,11 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-193,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# setup /etc/localtime
-"
-194,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# install dask release from conda
-"
-195,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# build and test
-"
-196,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one or more
+# under the License."
+197,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,# setup /etc/localtime
+198,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,# install dask release from conda
+199,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,# build and test
+200,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
 # The ASF licenses this file to You under the Apache License, Version 2.0
@@ -1115,16 +872,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-
-"
-197,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# Prerequsites for apt-add-repository
-"
-198,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# Set up Ruby repository
-"
-199,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# The publication tools
-"
-200,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/debian-stretch/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+#"
+201,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,# Prerequsites for apt-add-repository
+202,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,# Set up Ruby repository
+203,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,# The publication tools
+204,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/debian-stretch/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1139,10 +891,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-201,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one or more
+# under the License."
+205,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
 # The ASF licenses this file to You under the Apache License, Version 2.0
@@ -1156,26 +906,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-
-"
-202,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# Prerequsites for apt-add-repository
-"
-203,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# Set up Ruby repository
-"
-204,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# The publication tools
-"
-205,302292b24fbdcca157915df7bc6be5a7b4c970c9,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-206,302292b24fbdcca157915df7bc6be5a7b4c970c9,/vendor/github.com/influxdata/influxdb/Dockerfile,"# copy binary into image
-"
-207,302292b24fbdcca157915df7bc6be5a7b4c970c9,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Add influxd to the PATH
-"
-208,302292b24fbdcca157915df7bc6be5a7b4c970c9,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Generate a default config
-"
-209,302292b24fbdcca157915df7bc6be5a7b4c970c9,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Use /data for all disk storage
-"
-210,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"#
+#"
+206,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,# Prerequsites for apt-add-repository
+207,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,# Set up Ruby repository
+208,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,# The publication tools
+209,302292b24fbdcca157915df7bc6be5a7b4c970c9,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+210,302292b24fbdcca157915df7bc6be5a7b4c970c9,/vendor/github.com/influxdata/influxdb/Dockerfile,# copy binary into image
+211,302292b24fbdcca157915df7bc6be5a7b4c970c9,/vendor/github.com/influxdata/influxdb/Dockerfile,# Add influxd to the PATH
+212,302292b24fbdcca157915df7bc6be5a7b4c970c9,/vendor/github.com/influxdata/influxdb/Dockerfile,# Generate a default config
+213,302292b24fbdcca157915df7bc6be5a7b4c970c9,/vendor/github.com/influxdata/influxdb/Dockerfile,# Use /data for all disk storage
+214,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"#
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
@@ -1190,16 +930,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-"
-211,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"# Basic OS utilities
-"
-212,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"# install conda in /home/ubuntu/miniconda
-"
-213,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"# BUILD: $ docker build -f arrow/dev/spark_integration/Dockerfile -t spark-arrow .
-# RUN:   $ docker run -v $HOME/.m2:/root/.m2 spark-arrow
-"
-214,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+#"
+215,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,# Basic OS utilities
+216,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,# install conda in /home/ubuntu/miniconda
+217,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/spark_integration/Dockerfile,"# BUILD: $ docker build -f arrow/dev/spark_integration/Dockerfile -t spark-arrow .
+# RUN:   $ docker run -v $HOME/.m2:/root/.m2 spark-arrow"
+218,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1214,16 +950,11 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-215,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# setup /etc/localtime
-"
-216,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# install dask release from conda
-"
-217,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# build and test
-"
-218,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/lint/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+219,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,# setup /etc/localtime
+220,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,# install dask release from conda
+221,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,# build and test
+222,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/lint/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1238,12 +969,9 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-219,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/lint/Dockerfile,"# https://bugs.launchpad.net/ubuntu/+source/iwyu/+bug/1769334
-"
-220,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/docs/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+223,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/lint/Dockerfile,# https://bugs.launchpad.net/ubuntu/+source/iwyu/+bug/1769334
+224,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/docs/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1258,10 +986,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-221,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/rust/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+225,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/rust/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1276,13 +1002,10 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-222,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/rust/Dockerfile,"# sadly cargo doesn't have a command to fetch and build the
-# dependencies without building the library itself
-"
-223,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+226,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/rust/Dockerfile,"# sadly cargo doesn't have a command to fetch and build the
+# dependencies without building the library itself"
+227,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1297,16 +1020,11 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-224,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# install build essentials
-"
-225,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# install conda and required packages
-"
-226,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# build and test
-"
-227,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/hiveserver2/Dockerfile,"#
+# under the License."
+228,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/cpp/Dockerfile,# install build essentials
+229,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/cpp/Dockerfile,# install conda and required packages
+230,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/cpp/Dockerfile,# build and test
+231,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/hiveserver2/Dockerfile,"#
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
@@ -1321,10 +1039,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-
-"
-228,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/java/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+#"
+232,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/java/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1339,10 +1055,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-229,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/debian-stretch/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+233,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/debian-stretch/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1357,55 +1071,31 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-230,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Use the most recent ubuntu sources
-"
-231,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Dependencies to get the git sources and go binaries
-"
-232,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Get the git sources. If not cached, this takes O(5 minutes).
-"
-233,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Linux Kernel: Released 03 Sep 2017
-"
-234,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# GNU C library: Released 02 Aug 2017 (we should try to get a secure way to clone this)
-"
-235,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Get Go 1.9.2
-"
-236,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Linux and Glibc build dependencies
-"
-237,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Emulator and cross compilers
-"
-238,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Let the scripts know they are in the docker environment
-"
-239,848b32479683b9315cb87af9d70f4f45aa34608c,/Dockerfile,"# Install node deps
-"
-240,848b32479683b9315cb87af9d70f4f45aa34608c,/Dockerfile,"# Build assets to ./dist
-"
-241,848b32479683b9315cb87af9d70f4f45aa34608c,/Dockerfile,"# Run the image as a non-root user
-"
-242,848b32479683b9315cb87af9d70f4f45aa34608c,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
-# in the future we'd start the go process here.
-"
-243,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Use the most recent ubuntu sources
-"
-244,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Dependencies to get the git sources and go binaries
-"
-245,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Get the git sources. If not cached, this takes O(5 minutes).
-"
-246,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Linux Kernel: Released 03 Sep 2017
-"
-247,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# GNU C library: Released 02 Aug 2017 (we should try to get a secure way to clone this)
-"
-248,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Get Go 1.9.2
-"
-249,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Linux and Glibc build dependencies
-"
-250,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Emulator and cross compilers
-"
-251,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Let the scripts know they are in the docker environment
-"
-252,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/lint/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+234,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Use the most recent ubuntu sources
+235,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Dependencies to get the git sources and go binaries
+236,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Get the git sources. If not cached, this takes O(5 minutes)."
+237,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Linux Kernel: Released 03 Sep 2017
+238,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# GNU C library: Released 02 Aug 2017 (we should try to get a secure way to clone this)
+239,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Get Go 1.9.2
+240,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Linux and Glibc build dependencies
+241,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Emulator and cross compilers
+242,89e2ebfd75164a80960536b187144eb8f7a4b64c,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Let the scripts know they are in the docker environment
+243,848b32479683b9315cb87af9d70f4f45aa34608c,/Dockerfile,# Install node deps
+244,848b32479683b9315cb87af9d70f4f45aa34608c,/Dockerfile,# Build assets to ./dist
+245,848b32479683b9315cb87af9d70f4f45aa34608c,/Dockerfile,# Run the image as a non-root user
+246,848b32479683b9315cb87af9d70f4f45aa34608c,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
+# in the future we'd start the go process here."
+247,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Use the most recent ubuntu sources
+248,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Dependencies to get the git sources and go binaries
+249,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,"# Get the git sources. If not cached, this takes O(5 minutes)."
+250,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Linux Kernel: Released 03 Sep 2017
+251,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# GNU C library: Released 02 Aug 2017 (we should try to get a secure way to clone this)
+252,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Get Go 1.9.2
+253,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Linux and Glibc build dependencies
+254,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Emulator and cross compilers
+255,c4e40b76432794aa71cdf48661fe00c4207a1e26,/vendor/golang.org/x/sys/unix/linux/Dockerfile,# Let the scripts know they are in the docker environment
+256,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/lint/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1420,12 +1110,9 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-253,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/lint/Dockerfile,"# https://bugs.launchpad.net/ubuntu/+source/iwyu/+bug/1769334
-"
-254,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+257,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/lint/Dockerfile,# https://bugs.launchpad.net/ubuntu/+source/iwyu/+bug/1769334
+258,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1440,32 +1127,20 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-255,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"# Configure
-"
-256,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"# r-base includes tzdata. Get around interactive stop in that package
-"
-257,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"# Build R
+# under the License."
+259,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,# Configure
+260,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,# r-base includes tzdata. Get around interactive stop in that package
+261,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"# Build R
 # [1] https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04
-# [2] https://linuxize.com/post/how-to-install-r-on-ubuntu-18-04/#installing-r-packages-from-cran
-"
-258,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"    # system libs needed by core R packages
-"
-259,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"    # install clang to mirror what was done on Travis
-"
-260,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"    # R CMD CHECK --as-cran needs pdflatex to build the package manual
-"
-261,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"    # Install vctrs from Github
-"
-262,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"    # R is not good at picking up dependencies and installing them automatically
-"
-263,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"# Tell R where it can find the source code for arrow
-"
-264,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"# build, install, test R package
-"
-265,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/yum/centos-7/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# [2] https://linuxize.com/post/how-to-install-r-on-ubuntu-18-04/#installing-r-packages-from-cran"
+262,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,    # system libs needed by core R packages
+263,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,    # install clang to mirror what was done on Travis
+264,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,    # R CMD CHECK --as-cran needs pdflatex to build the package manual
+265,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,    # Install vctrs from Github
+266,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,    # R is not good at picking up dependencies and installing them automatically
+267,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,# Tell R where it can find the source code for arrow
+268,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/r/Dockerfile,"# build, install, test R package"
+269,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/yum/centos-7/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1480,20 +1155,13 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-266,f9602792af8703e46e3f699a63d483be61a4cedd,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-267,f9602792af8703e46e3f699a63d483be61a4cedd,/vendor/github.com/influxdata/influxdb/Dockerfile,"# copy binary into image
-"
-268,f9602792af8703e46e3f699a63d483be61a4cedd,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Add influxd to the PATH
-"
-269,f9602792af8703e46e3f699a63d483be61a4cedd,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Generate a default config
-"
-270,f9602792af8703e46e3f699a63d483be61a4cedd,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Use /data for all disk storage
-"
-271,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-trusty/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+270,f9602792af8703e46e3f699a63d483be61a4cedd,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+271,f9602792af8703e46e3f699a63d483be61a4cedd,/vendor/github.com/influxdata/influxdb/Dockerfile,# copy binary into image
+272,f9602792af8703e46e3f699a63d483be61a4cedd,/vendor/github.com/influxdata/influxdb/Dockerfile,# Add influxd to the PATH
+273,f9602792af8703e46e3f699a63d483be61a4cedd,/vendor/github.com/influxdata/influxdb/Dockerfile,# Generate a default config
+274,f9602792af8703e46e3f699a63d483be61a4cedd,/vendor/github.com/influxdata/influxdb/Dockerfile,# Use /data for all disk storage
+275,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-trusty/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1508,27 +1176,17 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-272,af3e09180d41724eea666451e689833e26dcead1,/Dockerfile,"# Build assets to ./ui/build
-"
-273,af3e09180d41724eea666451e689833e26dcead1,/Dockerfile,"# Run the image as a non-root user
-"
-274,af3e09180d41724eea666451e689833e26dcead1,/Dockerfile,"# Start the server.
-# in the future we'd start the go process here and serve the static assets in /build
-"
-275,df9ef1c604ddaaebd2868e2ffc8c1690aa5b5ecf,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-276,df9ef1c604ddaaebd2868e2ffc8c1690aa5b5ecf,/vendor/github.com/influxdata/influxdb/Dockerfile,"# copy binary into image
-"
-277,df9ef1c604ddaaebd2868e2ffc8c1690aa5b5ecf,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Add influxd to the PATH
-"
-278,df9ef1c604ddaaebd2868e2ffc8c1690aa5b5ecf,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Generate a default config
-"
-279,df9ef1c604ddaaebd2868e2ffc8c1690aa5b5ecf,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Use /data for all disk storage
-"
-280,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"#
+# under the License."
+276,af3e09180d41724eea666451e689833e26dcead1,/Dockerfile,# Build assets to ./ui/build
+277,af3e09180d41724eea666451e689833e26dcead1,/Dockerfile,# Run the image as a non-root user
+278,af3e09180d41724eea666451e689833e26dcead1,/Dockerfile,"# Start the server.
+# in the future we'd start the go process here and serve the static assets in /build"
+279,df9ef1c604ddaaebd2868e2ffc8c1690aa5b5ecf,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+280,df9ef1c604ddaaebd2868e2ffc8c1690aa5b5ecf,/vendor/github.com/influxdata/influxdb/Dockerfile,# copy binary into image
+281,df9ef1c604ddaaebd2868e2ffc8c1690aa5b5ecf,/vendor/github.com/influxdata/influxdb/Dockerfile,# Add influxd to the PATH
+282,df9ef1c604ddaaebd2868e2ffc8c1690aa5b5ecf,/vendor/github.com/influxdata/influxdb/Dockerfile,# Generate a default config
+283,df9ef1c604ddaaebd2868e2ffc8c1690aa5b5ecf,/vendor/github.com/influxdata/influxdb/Dockerfile,# Use /data for all disk storage
+284,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"#
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
@@ -1543,21 +1201,14 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-
-"
-281,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"# Miniconda - Python 3.6, 64-bit, x86, latest
-"
-282,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"# create conda env with deps
-"
-283,baf41951ea0fd36720c279d7dc6b792f1068fcb3,/Dockerfile,"# Build assets to ./ui/build
-"
-284,baf41951ea0fd36720c279d7dc6b792f1068fcb3,/Dockerfile,"# Run the image as a non-root user
-"
-285,baf41951ea0fd36720c279d7dc6b792f1068fcb3,/Dockerfile,"# Start the server.
-# in the future we'd start the go process here and serve the static assets in /build
-"
-286,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-bionic/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+#"
+285,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"# Miniconda - Python 3.6, 64-bit, x86, latest"
+286,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/container/Dockerfile,# create conda env with deps
+287,baf41951ea0fd36720c279d7dc6b792f1068fcb3,/Dockerfile,# Build assets to ./ui/build
+288,baf41951ea0fd36720c279d7dc6b792f1068fcb3,/Dockerfile,# Run the image as a non-root user
+289,baf41951ea0fd36720c279d7dc6b792f1068fcb3,/Dockerfile,"# Start the server.
+# in the future we'd start the go process here and serve the static assets in /build"
+290,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-bionic/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1572,17 +1223,12 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-287,f85c5e343543e5a3cc200c47f7e0e13066871c0c,/Dockerfile,"# Build assets to ./ui/build
-"
-288,f85c5e343543e5a3cc200c47f7e0e13066871c0c,/Dockerfile,"# Run the image as a non-root user
-"
-289,f85c5e343543e5a3cc200c47f7e0e13066871c0c,/Dockerfile,"# Start the server.
-# in the future we'd start the go process here and serve the static assets in /build
-"
-290,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"#
+# under the License."
+291,f85c5e343543e5a3cc200c47f7e0e13066871c0c,/Dockerfile,# Build assets to ./ui/build
+292,f85c5e343543e5a3cc200c47f7e0e13066871c0c,/Dockerfile,# Run the image as a non-root user
+293,f85c5e343543e5a3cc200c47f7e0e13066871c0c,/Dockerfile,"# Start the server.
+# in the future we'd start the go process here and serve the static assets in /build"
+294,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"#
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
@@ -1597,18 +1243,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-
-"
-291,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"# Miniconda - Python 3.6, 64-bit, x86, latest
-"
-292,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"# create conda env with deps
-"
-293,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/getgo/Dockerfile,"# undo the adding of GOPATH to env for testing
-"
-294,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/getgo/Dockerfile,"# delete /go and /usr/local/go for testing
-"
-295,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-bionic/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+#"
+295,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/container/Dockerfile,"# Miniconda - Python 3.6, 64-bit, x86, latest"
+296,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/container/Dockerfile,# create conda env with deps
+297,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/getgo/Dockerfile,# undo the adding of GOPATH to env for testing
+298,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/getgo/Dockerfile,# delete /go and /usr/local/go for testing
+299,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-bionic/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1623,10 +1263,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-296,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-trusty/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+300,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-trusty/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1641,10 +1279,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-297,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/java/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+301,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/java/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1659,10 +1295,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-298,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-cosmic/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+302,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-cosmic/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1677,10 +1311,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-299,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+303,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1695,16 +1327,11 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-300,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# install build essentials
-"
-301,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# install conda and required packages
-"
-302,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/cpp/Dockerfile,"# build and test
-"
-303,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/rust/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+304,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/cpp/Dockerfile,# install build essentials
+305,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/cpp/Dockerfile,# install conda and required packages
+306,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/cpp/Dockerfile,# build and test
+307,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/rust/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1719,13 +1346,10 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-304,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/rust/Dockerfile,"# sadly cargo doesn't have a command to fetch and build the
-# dependencies without building the library itself
-"
-305,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+308,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/rust/Dockerfile,"# sadly cargo doesn't have a command to fetch and build the
+# dependencies without building the library itself"
+309,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1740,41 +1364,25 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-306,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"# Configure
-"
-307,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"# r-base includes tzdata. Get around interactive stop in that package
-"
-308,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"# Build R
+# under the License."
+310,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,# Configure
+311,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,# r-base includes tzdata. Get around interactive stop in that package
+312,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"# Build R
 # [1] https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04
-# [2] https://linuxize.com/post/how-to-install-r-on-ubuntu-18-04/#installing-r-packages-from-cran
-"
-309,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"    # system libs needed by core R packages
-"
-310,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"    # install clang to mirror what was done on Travis
-"
-311,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"    # R CMD CHECK --as-cran needs pdflatex to build the package manual
-"
-312,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"    # Install vctrs from Github
-"
-313,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"    # R is not good at picking up dependencies and installing them automatically
-"
-314,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"# Tell R where it can find the source code for arrow
-"
-315,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"# build, install, test R package
-"
-316,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Install node deps
-"
-317,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Build assets to ./dist
-"
-318,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Run the image as a non-root user
-"
-319,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
-# in the future we'd start the go process here.
-"
-320,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/docs/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# [2] https://linuxize.com/post/how-to-install-r-on-ubuntu-18-04/#installing-r-packages-from-cran"
+313,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,    # system libs needed by core R packages
+314,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,    # install clang to mirror what was done on Travis
+315,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,    # R CMD CHECK --as-cran needs pdflatex to build the package manual
+316,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,    # Install vctrs from Github
+317,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,    # R is not good at picking up dependencies and installing them automatically
+318,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,# Tell R where it can find the source code for arrow
+319,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/r/Dockerfile,"# build, install, test R package"
+320,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,# Install node deps
+321,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,# Build assets to ./dist
+322,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,# Run the image as a non-root user
+323,e0e83c0a9eea6f71e69d2c375fdfc9b3eaac1f99,/Dockerfile,"# Start the server. Currently this is just a webpack dev server
+# in the future we'd start the go process here."
+324,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/docs/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1789,10 +1397,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-321,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-xenial/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+325,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-xenial/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1807,10 +1413,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-322,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/gen_apidocs/Dockerfile,"#
+# under the License."
+326,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/gen_apidocs/Dockerfile,"#
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
@@ -1825,13 +1429,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-"
-323,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/gen_apidocs/Dockerfile,"# Basic OS dependencies
+#"
+327,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/gen_apidocs/Dockerfile,"# Basic OS dependencies
 # First install JDK 8, then do a second apt call to install maven.
-# Otherwise this will install openjdk 8 and openjdk 11 at once.
-"
-324,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one or more
+# Otherwise this will install openjdk 8 and openjdk 11 at once."
+328,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
 # The ASF licenses this file to You under the Apache License, Version 2.0
@@ -1845,16 +1447,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-
-"
-325,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# Prerequsites for apt-add-repository
-"
-326,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# Set up Ruby repository
-"
-327,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,"# The publication tools
-"
-328,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/python/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+#"
+329,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,# Prerequsites for apt-add-repository
+330,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,# Set up Ruby repository
+331,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/run_site/Dockerfile,# The publication tools
+332,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/python/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1869,14 +1466,10 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-329,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/python/Dockerfile,"# install python specific packages
-"
-330,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/python/Dockerfile,"# build and test
-"
-331,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+333,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/python/Dockerfile,# install python specific packages
+334,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/python/Dockerfile,# build and test
+335,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1891,18 +1484,12 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-332,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# installing libhdfs3, it needs to be pinned, see ARROW-1465 and ARROW-1445
-"
-333,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# installing libhdfs (JNI)
-"
-334,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# build cpp with tests
-"
-335,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# build and test
-"
-336,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/gen_apidocs/Dockerfile,"#
+# under the License."
+336,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# installing libhdfs3, it needs to be pinned, see ARROW-1465 and ARROW-1445"
+337,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,# installing libhdfs (JNI)
+338,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,# build cpp with tests
+339,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,# build and test
+340,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/gen_apidocs/Dockerfile,"#
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
@@ -1917,13 +1504,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-"
-337,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/gen_apidocs/Dockerfile,"# Basic OS dependencies
+#"
+341,97b8334d2e5a493babc9c39e7a2aaabbd6e70c0f,/vendor/github.com/apache/arrow/dev/gen_apidocs/Dockerfile,"# Basic OS dependencies
 # First install JDK 8, then do a second apt call to install maven.
-# Otherwise this will install openjdk 8 and openjdk 11 at once.
-"
-338,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# Otherwise this will install openjdk 8 and openjdk 11 at once."
+342,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1938,21 +1523,14 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-339,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# build cpp
-"
-340,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# build, install and test
-"
-341,b57562855388c5f099da571fac7ce2bb7c0564b2,/Dockerfile,"# Build assets to ./ui/build
-"
-342,b57562855388c5f099da571fac7ce2bb7c0564b2,/Dockerfile,"# Run the image as a non-root user
-"
-343,b57562855388c5f099da571fac7ce2bb7c0564b2,/Dockerfile,"# Start the server.
-# in the future we'd start the go process here and serve the static assets in /build
-"
-344,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/yum/centos-6/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+343,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/c_glib/Dockerfile,# build cpp
+344,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/c_glib/Dockerfile,"# build, install and test"
+345,b57562855388c5f099da571fac7ce2bb7c0564b2,/Dockerfile,# Build assets to ./ui/build
+346,b57562855388c5f099da571fac7ce2bb7c0564b2,/Dockerfile,# Run the image as a non-root user
+347,b57562855388c5f099da571fac7ce2bb7c0564b2,/Dockerfile,"# Start the server.
+# in the future we'd start the go process here and serve the static assets in /build"
+348,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/yum/centos-6/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1967,20 +1545,13 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-345,c7618acd2eac0ee6fd4b345969688bebffcf4a48,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd
-"
-346,c7618acd2eac0ee6fd4b345969688bebffcf4a48,/vendor/github.com/influxdata/influxdb/Dockerfile,"# copy binary into image
-"
-347,c7618acd2eac0ee6fd4b345969688bebffcf4a48,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Add influxd to the PATH
-"
-348,c7618acd2eac0ee6fd4b345969688bebffcf4a48,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Generate a default config
-"
-349,c7618acd2eac0ee6fd4b345969688bebffcf4a48,/vendor/github.com/influxdata/influxdb/Dockerfile,"# Use /data for all disk storage
-"
-350,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+349,c7618acd2eac0ee6fd4b345969688bebffcf4a48,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+350,c7618acd2eac0ee6fd4b345969688bebffcf4a48,/vendor/github.com/influxdata/influxdb/Dockerfile,# copy binary into image
+351,c7618acd2eac0ee6fd4b345969688bebffcf4a48,/vendor/github.com/influxdata/influxdb/Dockerfile,# Add influxd to the PATH
+352,c7618acd2eac0ee6fd4b345969688bebffcf4a48,/vendor/github.com/influxdata/influxdb/Dockerfile,# Generate a default config
+353,c7618acd2eac0ee6fd4b345969688bebffcf4a48,/vendor/github.com/influxdata/influxdb/Dockerfile,# Use /data for all disk storage
+354,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -1995,18 +1566,12 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-351,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# installing libhdfs3, it needs to be pinned, see ARROW-1465 and ARROW-1445
-"
-352,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# installing libhdfs (JNI)
-"
-353,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# build cpp with tests
-"
-354,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# build and test
-"
-355,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+355,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,"# installing libhdfs3, it needs to be pinned, see ARROW-1465 and ARROW-1445"
+356,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,# installing libhdfs (JNI)
+357,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,# build cpp with tests
+358,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/integration/hdfs/Dockerfile,# build and test
+359,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -2021,16 +1586,11 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-356,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# setup /etc/localtime
-"
-357,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# install dask release from conda
-"
-358,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,"# build and test
-"
-359,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-cosmic/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+360,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,# setup /etc/localtime
+361,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,# install dask release from conda
+362,38c7739062f2a9a0160cb2f3b3c2150dc7d453ad,/vendor/github.com/apache/arrow/integration/dask/Dockerfile,# build and test
+363,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-cosmic/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -2045,10 +1605,8 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-360,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-xenial/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
+# under the License."
+364,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/github.com/apache/arrow/dev/tasks/linux-packages/apt/ubuntu-xenial/Dockerfile,"# Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
 # regarding copyright ownership.  The ASF licenses this file
@@ -2063,67 +1621,35 @@
 # ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
-# under the License.
-
-"
-361,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# For implicit GOCACHE (Issues 29243 and 29251), set HOME:
-"
-362,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# golang puts its go install here (weird but true)
-"
-363,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# BEGIN deps (run `make update-deps` to update)
-
-# Repo cloud.google.com/go at b5eca92 (2018-10-23)
-"
-364,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 7 other pkgs` &&\
-"
-365,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo github.com/golang/protobuf at b4deda0 (2018-04-30)
-"
-366,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 6 other pkgs` &&\
-"
-367,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo github.com/googleapis/gax-go at 317e000 (2017-09-15)
-"
-368,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo go.opencensus.io at ebd8d31 (2018-05-16)
-"
-369,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 12 other pkgs` &&\
-"
-370,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/build at 7b78c20 (2018-12-13)
-"
-371,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/crypto at e4dc69e (2018-11-06)
-"
-372,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 2 other pkgs` &&\
-"
-373,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/net at 891ebc4 (2018-12-13)
-"
-374,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 8 other pkgs` &&\
-"
-375,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/oauth2 at f42d051 (2018-11-06)
-"
-376,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 5 other pkgs` &&\
-"
-377,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/sys at 4d1cda0 (2018-12-13)
-"
-378,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo golang.org/x/text at 6f44c5a (2018-10-30)
-"
-379,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 4 other pkgs` &&\
-"
-380,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo google.golang.org/api at 20530fd (2018-05-06)
-"
-381,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 9 other pkgs` &&\
-"
-382,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo google.golang.org/genproto at 86e600f (2018-04-27)
-"
-383,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 4 other pkgs` &&\
-"
-384,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Repo google.golang.org/grpc at 07ef407 (2018-08-06)
-"
-385,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"#and 26 other pkgs` &&\
-"
-386,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Optimization to speed up iterative development, not necessary for correctness:
-"
-387,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# END deps.
-
-# golang sets GOPATH=/go
-"
-388,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# We listen on 8080 (for historical reasons). The service.yaml maps public port 80 to 8080.
-# We also listen on 443 for LetsEncrypt TLS.
-"
+# under the License."
+365,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# For implicit GOCACHE (Issues 29243 and 29251), set HOME:"
+366,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# golang puts its go install here (weird but true)
+367,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# BEGIN deps (run `make update-deps` to update)
+368,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo cloud.google.com/go at b5eca92 (2018-10-23)
+369,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 7 other pkgs` &&\
+370,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo github.com/golang/protobuf at b4deda0 (2018-04-30)
+371,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 6 other pkgs` &&\
+372,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo github.com/googleapis/gax-go at 317e000 (2017-09-15)
+373,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo go.opencensus.io at ebd8d31 (2018-05-16)
+374,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 12 other pkgs` &&\
+375,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/build at 7b78c20 (2018-12-13)
+376,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/crypto at e4dc69e (2018-11-06)
+377,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 2 other pkgs` &&\
+378,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/net at 891ebc4 (2018-12-13)
+379,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 8 other pkgs` &&\
+380,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/oauth2 at f42d051 (2018-11-06)
+381,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 5 other pkgs` &&\
+382,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/sys at 4d1cda0 (2018-12-13)
+383,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo golang.org/x/text at 6f44c5a (2018-10-30)
+384,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 4 other pkgs` &&\
+385,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo google.golang.org/api at 20530fd (2018-05-06)
+386,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 9 other pkgs` &&\
+387,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo google.golang.org/genproto at 86e600f (2018-04-27)
+388,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 4 other pkgs` &&\
+389,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# Repo google.golang.org/grpc at 07ef407 (2018-08-06)
+390,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,#and 26 other pkgs` &&\
+391,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# Optimization to speed up iterative development, not necessary for correctness:"
+392,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# END deps.
+393,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,# golang sets GOPATH=/go
+394,9f036cd0ae9fdecdeb3a2fb646f59a8c5f0766ec,/vendor/golang.org/x/tools/cmd/tip/Dockerfile,"# We listen on 8080 (for historical reasons). The service.yaml maps public port 80 to 8080.
+# We also listen on 443 for LetsEncrypt TLS."

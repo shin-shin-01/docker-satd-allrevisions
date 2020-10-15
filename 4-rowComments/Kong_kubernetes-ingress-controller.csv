@@ -11,59 +11,36 @@
 # distributed under the License is distributed on an ""AS IS"" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
-# limitations under the License.
-
-"
+# limitations under the License."
 1,1d09e1c66fde94cc95e1d86efefcf5f641dcee26,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
 # See the Makefile for how to tag it. If Docker and that image is found, the
 # Go tests use this curl binary for integration tests.
-#
-
-"
-2,1d09e1c66fde94cc95e1d86efefcf5f641dcee26,/vendor/golang.org/x/net/http2/Dockerfile,"# The list of packages nghttp2 recommends for h2load:
-"
-3,1d09e1c66fde94cc95e1d86efefcf5f641dcee26,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:
-"
-4,0f5b86d8d732c77d32de4ff5e8f01c06c282a2ee,/Dockerfile,"# Final stage: the running container.
-"
+#"
+2,1d09e1c66fde94cc95e1d86efefcf5f641dcee26,/vendor/golang.org/x/net/http2/Dockerfile,# The list of packages nghttp2 recommends for h2load:
+3,1d09e1c66fde94cc95e1d86efefcf5f641dcee26,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:"
+4,0f5b86d8d732c77d32de4ff5e8f01c06c282a2ee,/Dockerfile,# Final stage: the running container.
 5,0f5b86d8d732c77d32de4ff5e8f01c06c282a2ee,/Dockerfile,"# Create the user (ID 1000) and group that will be used in the
-# running container to run the process as an unprivileged user.
-"
-6,0f5b86d8d732c77d32de4ff5e8f01c06c282a2ee,/Dockerfile,"# Import the compiled executable from the second stage.
-"
-7,0f5b86d8d732c77d32de4ff5e8f01c06c282a2ee,/Dockerfile,"# Perform any further action as an unprivileged user.
-"
-8,0f5b86d8d732c77d32de4ff5e8f01c06c282a2ee,/Dockerfile,"# Run the compiled binary.
-"
-9,c82a8c25fdea6ffd62e2351befc05db22e5302fa,/Dockerfile,"# Final stage: the running container.
-"
+# running container to run the process as an unprivileged user."
+6,0f5b86d8d732c77d32de4ff5e8f01c06c282a2ee,/Dockerfile,# Import the compiled executable from the second stage.
+7,0f5b86d8d732c77d32de4ff5e8f01c06c282a2ee,/Dockerfile,# Perform any further action as an unprivileged user.
+8,0f5b86d8d732c77d32de4ff5e8f01c06c282a2ee,/Dockerfile,# Run the compiled binary.
+9,c82a8c25fdea6ffd62e2351befc05db22e5302fa,/Dockerfile,# Final stage: the running container.
 10,c82a8c25fdea6ffd62e2351befc05db22e5302fa,/Dockerfile,"# Create the user (ID 1000) and group that will be used in the
-# running container to run the process as an unprivileged user.
-"
-11,c82a8c25fdea6ffd62e2351befc05db22e5302fa,/Dockerfile,"# Import the compiled executable from the second stage.
-"
-12,c82a8c25fdea6ffd62e2351befc05db22e5302fa,/Dockerfile,"# Only for backwards compatibility
-"
-13,c82a8c25fdea6ffd62e2351befc05db22e5302fa,/Dockerfile,"# Perform any further action as an unprivileged user.
-"
-14,c82a8c25fdea6ffd62e2351befc05db22e5302fa,/Dockerfile,"# Run the compiled binary.
-"
-15,b6c6fe68a316322d019fc7ef660d5db182d245ed,/Dockerfile,"# Final stage: the running container.
-"
+# running container to run the process as an unprivileged user."
+11,c82a8c25fdea6ffd62e2351befc05db22e5302fa,/Dockerfile,# Import the compiled executable from the second stage.
+12,c82a8c25fdea6ffd62e2351befc05db22e5302fa,/Dockerfile,# Only for backwards compatibility
+13,c82a8c25fdea6ffd62e2351befc05db22e5302fa,/Dockerfile,# Perform any further action as an unprivileged user.
+14,c82a8c25fdea6ffd62e2351befc05db22e5302fa,/Dockerfile,# Run the compiled binary.
+15,b6c6fe68a316322d019fc7ef660d5db182d245ed,/Dockerfile,# Final stage: the running container.
 16,b6c6fe68a316322d019fc7ef660d5db182d245ed,/Dockerfile,"# Create the user (ID 1000) and group that will be used in the
-# running container to run the process as an unprivileged user.
-"
-17,b6c6fe68a316322d019fc7ef660d5db182d245ed,/Dockerfile,"# Import the compiled executable from the second stage.
-"
-18,b6c6fe68a316322d019fc7ef660d5db182d245ed,/Dockerfile,"# Only for backwards compatibility
-"
-19,b6c6fe68a316322d019fc7ef660d5db182d245ed,/Dockerfile,"# Perform any further action as an unprivileged user.
-"
-20,b6c6fe68a316322d019fc7ef660d5db182d245ed,/Dockerfile,"# Run the compiled binary.
-"
+# running container to run the process as an unprivileged user."
+17,b6c6fe68a316322d019fc7ef660d5db182d245ed,/Dockerfile,# Import the compiled executable from the second stage.
+18,b6c6fe68a316322d019fc7ef660d5db182d245ed,/Dockerfile,# Only for backwards compatibility
+19,b6c6fe68a316322d019fc7ef660d5db182d245ed,/Dockerfile,# Perform any further action as an unprivileged user.
+20,b6c6fe68a316322d019fc7ef660d5db182d245ed,/Dockerfile,# Run the compiled binary.
 21,9cca300a07a74a3e177eff96edadd5967f3813b9,/rootfs/Dockerfile,"# Copyright 2015 The Kubernetes Authors. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the ""License"");
@@ -76,32 +53,18 @@
 # distributed under the License is distributed on an ""AS IS"" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
-# limitations under the License.
-
-"
-22,babcef129a0031b4eca56058706053376afc6d4f,/Dockerfile,"# Final stage: the running container.
-"
+# limitations under the License."
+22,babcef129a0031b4eca56058706053376afc6d4f,/Dockerfile,# Final stage: the running container.
 23,babcef129a0031b4eca56058706053376afc6d4f,/Dockerfile,"# Create the user (ID 1000) and group that will be used in the
-# running container to run the process as an unprivileged user.
-"
-24,babcef129a0031b4eca56058706053376afc6d4f,/Dockerfile,"# Import the compiled executable from the second stage.
-"
-25,babcef129a0031b4eca56058706053376afc6d4f,/Dockerfile,"# Only for backwards compatibility
-"
-26,babcef129a0031b4eca56058706053376afc6d4f,/Dockerfile,"# Perform any further action as an unprivileged user.
-"
-27,babcef129a0031b4eca56058706053376afc6d4f,/Dockerfile,"# Run the compiled binary.
-"
-28,a8c4c4e08a8ad63c54ffa6f89a428016f7084d0a,/Dockerfile,"# Final stage: the running container.
-"
+# running container to run the process as an unprivileged user."
+24,babcef129a0031b4eca56058706053376afc6d4f,/Dockerfile,# Import the compiled executable from the second stage.
+25,babcef129a0031b4eca56058706053376afc6d4f,/Dockerfile,# Only for backwards compatibility
+26,babcef129a0031b4eca56058706053376afc6d4f,/Dockerfile,# Perform any further action as an unprivileged user.
+27,babcef129a0031b4eca56058706053376afc6d4f,/Dockerfile,# Run the compiled binary.
+28,a8c4c4e08a8ad63c54ffa6f89a428016f7084d0a,/Dockerfile,# Final stage: the running container.
 29,a8c4c4e08a8ad63c54ffa6f89a428016f7084d0a,/Dockerfile,"# Create the user (ID 1000) and group that will be used in the
-# running container to run the process as an unprivileged user.
-"
-30,a8c4c4e08a8ad63c54ffa6f89a428016f7084d0a,/Dockerfile,"# Import the compiled executable from the second stage.
-"
-31,a8c4c4e08a8ad63c54ffa6f89a428016f7084d0a,/Dockerfile,"# Only for backwards compatibility
-"
-32,a8c4c4e08a8ad63c54ffa6f89a428016f7084d0a,/Dockerfile,"# Perform any further action as an unprivileged user.
-"
-33,a8c4c4e08a8ad63c54ffa6f89a428016f7084d0a,/Dockerfile,"# Run the compiled binary.
-"
+# running container to run the process as an unprivileged user."
+30,a8c4c4e08a8ad63c54ffa6f89a428016f7084d0a,/Dockerfile,# Import the compiled executable from the second stage.
+31,a8c4c4e08a8ad63c54ffa6f89a428016f7084d0a,/Dockerfile,# Only for backwards compatibility
+32,a8c4c4e08a8ad63c54ffa6f89a428016f7084d0a,/Dockerfile,# Perform any further action as an unprivileged user.
+33,a8c4c4e08a8ad63c54ffa6f89a428016f7084d0a,/Dockerfile,# Run the compiled binary.

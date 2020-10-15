@@ -1,1344 +1,691 @@
 ,CommitID,Dockerfile,Comment
-0,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,"# Set the base image
-"
-1,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,"# Import Lighstreamer's public key
-"
-2,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-3,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,"# Set the temporary working dir
-"
+0,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,# Set the base image
+1,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,# Import Lighstreamer's public key
+2,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+3,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,# Set the temporary working dir
 4,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
-# the JAVA_HOME environment variable in the launch script file.
-"
-5,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,"# Export TCP port 8080
-"
-6,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,"# Set the final working dir
-"
-7,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,"# Define the entry point
-"
-8,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Set the base image
-"
-9,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-10,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Set the temporary working dir
-"
-11,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Install the required packages
-"
-12,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key
-"
-13,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack
-"
-14,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-15,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Adjust the logging configuration in order to log only on standard output.
-"
-16,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files
-"
-17,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Export TCP port 8080
-"
-18,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Set the final working dir
-"
-19,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Start the server
-"
-20,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,"# Set the base image
-"
-21,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,"# Import Lighstreamer's public key
-"
-22,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-23,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,"# Set the temporary working dir
-"
-24,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-25,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-26,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-27,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files
-"
-28,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,"# Export TCP port 8080
-"
-29,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,"# Set the final working dir
-"
-30,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,"# Start the server
-"
-31,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,"# Set the base image
-"
-32,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,"# Import Lighstreamer's public key
-"
-33,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-34,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,"# Set the temporary working dir
-"
-35,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-36,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,"# Replace replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-37,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-38,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files
-"
-39,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,"# Export TCP port 8080
-"
-40,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,"# Set the final working dir
-"
-41,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,"# Start the server
-"
-42,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,"# Set the base image
-"
-43,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,"# Set JAVA_HOME environment variable to openjdk location
-"
-44,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-45,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,"# Set the temporary working dir
-"
-46,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,"# Download the package from the Lightstreamer site
-"
-47,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file.
-"
-48,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,"# Replace the factory TCP port (8080) in the configuration file.
-"
-49,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,"# Export TCP port 80
-"
-50,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,"# Set the final working dir
-"
-51,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,"# Define the entry point
-"
-52,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,"# Set the base image
-"
-53,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,"# Import Lighstreamer's public key
-"
-54,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-55,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,"# Set the temporary working dir
-"
+# the JAVA_HOME environment variable in the launch script file."
+5,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,# Export TCP port 8080
+6,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,# Set the final working dir
+7,a4dbd7c3a58c91267f7dce17c961cf2cc93aeb20,/6.0.1_20150730/Dockerfile,# Define the entry point
+8,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,# Set the base image
+9,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+10,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,# Set the temporary working dir
+11,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,# Install the required packages
+12,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,# Import Lighstreamer's public key
+13,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack"
+14,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+15,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,# Adjust the logging configuration in order to log only on standard output.
+16,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files"
+17,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,# Export TCP port 8080
+18,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,# Set the final working dir
+19,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8-alpine/Dockerfile,# Start the server
+20,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,# Set the base image
+21,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,# Import Lighstreamer's public key
+22,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+23,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,# Set the temporary working dir
+24,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+25,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+26,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+27,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files"
+28,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,# Export TCP port 8080
+29,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,# Set the final working dir
+30,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8/Dockerfile,# Start the server
+31,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,# Set the base image
+32,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,# Import Lighstreamer's public key
+33,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+34,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,# Set the temporary working dir
+35,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+36,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,# Replace replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+37,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+38,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files"
+39,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,# Export TCP port 8080
+40,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,# Set the final working dir
+41,6052ee3b655573261803af5600c391726c844a57,/7.0/jre8/Dockerfile,# Start the server
+42,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,# Set the base image
+43,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,# Set JAVA_HOME environment variable to openjdk location
+44,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+45,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,# Set the temporary working dir
+46,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,# Download the package from the Lightstreamer site
+47,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file.
+48,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,# Replace the factory TCP port (8080) in the configuration file.
+49,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,# Export TCP port 80
+50,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,# Set the final working dir
+51,260424d6d724d3baac877ec0dd39a78361762672,/Dockerfile,# Define the entry point
+52,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,# Set the base image
+53,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,# Import Lighstreamer's public key
+54,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+55,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,# Set the temporary working dir
 56,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-57,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,"# Export TCP port 8080
-"
-58,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,"# Set the final working dir
-"
-59,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,"# Start the server
-"
-60,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Set the base image
-"
-61,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-62,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Set the temporary working dir
-"
-63,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Install the required packages
-"
-64,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key
-"
-65,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack
-"
-66,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"#         && gpg --batch --verify Lightstreamer.tar.gz.asc Lightstreamer.tar.gz \
-"
-67,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-68,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Adjust the logging configuration in order to log only on standard output.
-"
-69,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files
-"
-70,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Export TCP port 8080
-"
-71,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Set the final working dir
-"
-72,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Start the server
-"
-73,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,"# Set the base image
-"
-74,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,"# Import Lighstreamer's public key
-"
-75,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-76,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+57,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,# Export TCP port 8080
+58,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,# Set the final working dir
+59,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.0/Dockerfile,# Start the server
+60,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,# Set the base image
+61,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+62,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,# Set the temporary working dir
+63,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,# Install the required packages
+64,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,# Import Lighstreamer's public key
+65,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack"
+66,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,#         && gpg --batch --verify Lightstreamer.tar.gz.asc Lightstreamer.tar.gz \
+67,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+68,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,# Adjust the logging configuration in order to log only on standard output.
+69,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files"
+70,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,# Export TCP port 8080
+71,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,# Set the final working dir
+72,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8-alpine/Dockerfile,# Start the server
+73,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,# Set the base image
+74,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,# Import Lighstreamer's public key
+75,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+76,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,# Set the temporary working dir
 77,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-78,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,"# Export TCP port 8080
-"
-79,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,"# Set the final working dir
-"
-80,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,"# Start the server
-"
-81,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Set the base image
-"
-82,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-83,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Set the temporary working dir
-"
-84,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Install the required packages
-"
-85,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key
-"
-86,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack
-"
-87,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-88,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Adjust the logging configuration in order to log only on standard output.
-"
-89,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files
-"
-90,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Export TCP port 8080
-"
-91,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Set the final working dir
-"
-92,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Start the server
-"
-93,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Set the base image
-"
-94,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-95,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Set the temporary working dir
-"
-96,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Install the required packages
-"
-97,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Import Lighstreamer's public key
-"
-98,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack
-"
-99,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"#         && gpg --batch --verify Lightstreamer.tar.gz.asc Lightstreamer.tar.gz \
-"
-100,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-101,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Adjust the logging configuration in order to log only on standard output.
-"
-102,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Finally, remove no longer needed packages and files
-"
-103,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Export TCP port 8080
-"
-104,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Set the final working dir
-"
-105,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Start the server
-"
-106,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,"# Set the base image
-"
-107,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,"# Import Lighstreamer's public key
-"
-108,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-109,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,"# Set the temporary working dir
-"
-110,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-111,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,"# Replace replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-112,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-113,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files
-"
-114,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,"# Export TCP port 8080
-"
-115,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,"# Set the final working dir
-"
-116,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,"# Start the server
-"
-117,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Set the base image
-"
-118,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-119,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Set the temporary working dir
-"
-120,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Install the required packages
-"
-121,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key
-"
-122,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack
-"
-123,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"#         && gpg --batch --verify Lightstreamer.tar.gz.asc Lightstreamer.tar.gz \
-"
-124,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-125,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Adjust the logging configuration in order to log only on standard output.
-"
-126,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files
-"
-127,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Export TCP port 8080
-"
-128,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Set the final working dir
-"
-129,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Start the server
-"
-130,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Set the base image
-"
-131,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Import Lighstreamer's public key
-"
-132,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-133,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-134,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-135,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-136,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Remove unneeded folder
-"
-137,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Add new user and group
-"
-138,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Change ownership of tye lightstreamer folder
-"
-139,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Finally, remove no longer needed files
-"
-140,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Export TCP port 8080
-"
-141,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Set the final working dir
-"
-142,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Start the server
-"
-143,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,"# Set the base image
-"
-144,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,"# Import Lighstreamer's public key
-"
-145,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-146,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+78,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,# Export TCP port 8080
+79,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,# Set the final working dir
+80,24a1702f2dd1d9624526433f0c772fde798b16a0,/6.0.1/Dockerfile,# Start the server
+81,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,# Set the base image
+82,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+83,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,# Set the temporary working dir
+84,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,# Install the required packages
+85,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,# Import Lighstreamer's public key
+86,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack"
+87,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+88,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,# Adjust the logging configuration in order to log only on standard output.
+89,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files"
+90,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,# Export TCP port 8080
+91,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,# Set the final working dir
+92,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8-alpine/Dockerfile,# Start the server
+93,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,# Set the base image
+94,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+95,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,# Set the temporary working dir
+96,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,# Install the required packages
+97,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,# Import Lighstreamer's public key
+98,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack"
+99,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,#         && gpg --batch --verify Lightstreamer.tar.gz.asc Lightstreamer.tar.gz \
+100,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+101,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,# Adjust the logging configuration in order to log only on standard output.
+102,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,"# Finally, remove no longer needed packages and files"
+103,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,# Export TCP port 8080
+104,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,# Set the final working dir
+105,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0-alpine/Dockerfile,# Start the server
+106,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,# Set the base image
+107,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,# Import Lighstreamer's public key
+108,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+109,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,# Set the temporary working dir
+110,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+111,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,# Replace replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+112,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+113,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files"
+114,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,# Export TCP port 8080
+115,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,# Set the final working dir
+116,838df2587f1ada7cab82349c07be23bb6ed6ef65,/7.0/jre8/Dockerfile,# Start the server
+117,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,# Set the base image
+118,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+119,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,# Set the temporary working dir
+120,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,# Install the required packages
+121,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,# Import Lighstreamer's public key
+122,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack"
+123,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,#         && gpg --batch --verify Lightstreamer.tar.gz.asc Lightstreamer.tar.gz \
+124,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+125,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,# Adjust the logging configuration in order to log only on standard output.
+126,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files"
+127,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,# Export TCP port 8080
+128,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,# Set the final working dir
+129,63bc927be55c80583fe155fd15ba29c8d915d493,/7.0/jre8-alpine/Dockerfile,# Start the server
+130,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,# Set the base image
+131,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,# Import Lighstreamer's public key
+132,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+133,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+134,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+135,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+136,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,# Remove unneeded folder
+137,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,# Add new user and group
+138,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,# Change ownership of tye lightstreamer folder
+139,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,"# Finally, remove no longer needed files"
+140,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,# Export TCP port 8080
+141,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,# Set the final working dir
+142,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk8/Dockerfile,# Start the server
+143,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,# Set the base image
+144,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,# Import Lighstreamer's public key
+145,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+146,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,# Set the temporary working dir
 147,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-148,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,"# Export TCP port 8080
-"
-149,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,"# Set the final working dir
-"
-150,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,"# Start the server
-"
-151,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Set the base image
-"
-152,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-153,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Set the temporary working dir
-"
-154,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Install the required packages
-"
-155,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key
-"
-156,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack
-"
-157,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-158,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Adjust the logging configuration in order to log only on standard output.
-"
-159,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files
-"
-160,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Export TCP port 8080
-"
-161,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Set the final working dir
-"
-162,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Start the server
-"
-163,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,"# Set the base image
-"
-164,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,"# Import Lighstreamer's public key
-"
-165,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-166,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+148,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,# Export TCP port 8080
+149,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,# Set the final working dir
+150,ac09cec81d3dacc9175371815e42a2b7495473b4,/6.0/Dockerfile,# Start the server
+151,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,# Set the base image
+152,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+153,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,# Set the temporary working dir
+154,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,# Install the required packages
+155,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,# Import Lighstreamer's public key
+156,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack"
+157,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+158,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,# Adjust the logging configuration in order to log only on standard output.
+159,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files"
+160,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,# Export TCP port 8080
+161,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,# Set the final working dir
+162,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre8-alpine/Dockerfile,# Start the server
+163,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,# Set the base image
+164,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,# Import Lighstreamer's public key
+165,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+166,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,# Set the temporary working dir
 167,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-168,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,"# Export TCP port 8080
-"
-169,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,"# Set the final working dir
-"
-170,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,"# Start the server
-"
-171,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,"# Set the base image
-"
-172,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,"# Import Lighstreamer's public key
-"
-173,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-174,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,"# Set the temporary working dir
-"
-175,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-176,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-177,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-178,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,"# Finally, remove no longer needed files
-"
-179,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,"# Export TCP port 8080
-"
-180,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,"# Set the final working dir
-"
-181,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,"# Start the server
-"
-182,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,"# Set the base image
-"
-183,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,"# Import Lighstreamer's public key
-"
-184,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-185,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+168,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,# Export TCP port 8080
+169,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,# Set the final working dir
+170,22d6045bab9625ea9f8b3e1e53c4c34383335ed3,/6.1/Dockerfile,# Start the server
+171,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,# Set the base image
+172,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,# Import Lighstreamer's public key
+173,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+174,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,# Set the temporary working dir
+175,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+176,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+177,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+178,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,"# Finally, remove no longer needed files"
+179,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,# Export TCP port 8080
+180,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,# Set the final working dir
+181,1d7b7f6279b6425d4fa95d49311b85e8f94c41ed,/7.0/jre11/Dockerfile,# Start the server
+182,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,# Set the base image
+183,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,# Import Lighstreamer's public key
+184,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+185,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,# Set the temporary working dir
 186,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-187,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,"# Export TCP port 8080
-"
-188,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,"# Set the final working dir
-"
-189,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,"# Define the entry point
-"
-190,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Set the base image
-"
-191,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Import Lighstreamer's public key
-"
-192,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-193,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-194,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-195,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-196,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Remove unneeded folder
-"
-197,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Add new user and group
-"
-198,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Change ownership of tye lightstreamer folder
-"
-199,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Finally, remove no longer needed files
-"
-200,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Export TCP port 8080
-"
-201,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Set the final working dir
-"
-202,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Start the server
-"
-203,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,"# Set the base image
-"
-204,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,"# Import Lighstreamer's public key
-"
-205,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-206,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,"# Set the temporary working dir
-"
-207,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-208,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,"# Replace replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-209,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-210,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files
-"
-211,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,"# Export TCP port 8080
-"
-212,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,"# Set the final working dir
-"
-213,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,"# Start the server
-"
-214,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,"# Set the base image
-"
-215,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,"# Import Lighstreamer's public key
-"
-216,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-217,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+187,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,# Export TCP port 8080
+188,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,# Set the final working dir
+189,cf65a89fb9845b99dd80d2b702f514999306011b,/6.0.1_20150730/Dockerfile,# Define the entry point
+190,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,# Set the base image
+191,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,# Import Lighstreamer's public key
+192,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+193,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+194,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+195,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+196,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,# Remove unneeded folder
+197,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,# Add new user and group
+198,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,# Change ownership of tye lightstreamer folder
+199,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,"# Finally, remove no longer needed files"
+200,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,# Export TCP port 8080
+201,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,# Set the final working dir
+202,4ffe8753677fe6d6fea3c0e8cdc44383b278a0b7,/7.0/jdk8/Dockerfile,# Start the server
+203,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,# Set the base image
+204,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,# Import Lighstreamer's public key
+205,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+206,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,# Set the temporary working dir
+207,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+208,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,# Replace replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+209,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+210,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files"
+211,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,# Export TCP port 8080
+212,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,# Set the final working dir
+213,0842a9d0397d1d4d6fbe157c9ffbbbd574c0c53b,/7.0/jre8/Dockerfile,# Start the server
+214,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,# Set the base image
+215,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,# Import Lighstreamer's public key
+216,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+217,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,# Set the temporary working dir
 218,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-219,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,"# Export TCP port 8080
-"
-220,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,"# Set the final working dir
-"
-221,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,"# Start the server
-"
-222,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,"# Set the base image
-"
-223,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,"# Import Lighstreamer's public key
-"
-224,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-225,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+219,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,# Export TCP port 8080
+220,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,# Set the final working dir
+221,ffe420ea048c5d5f374e774db78ec93bccc8d43d,/6.0/Dockerfile,# Start the server
+222,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,# Set the base image
+223,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,# Import Lighstreamer's public key
+224,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+225,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,# Set the temporary working dir
 226,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-227,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,"# Export TCP port 8080
-"
-228,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,"# Set the final working dir
-"
-229,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,"# Start the server
-"
-230,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,"# Set the base image
-"
-231,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,"# Import Lighstreamer's public key
-"
-232,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-233,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+227,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,# Export TCP port 8080
+228,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,# Set the final working dir
+229,d2df5f749133cd18f88d094f382c7f9ad866ac54,/6.0/Dockerfile,# Start the server
+230,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,# Set the base image
+231,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,# Import Lighstreamer's public key
+232,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+233,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,# Set the temporary working dir
 234,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-235,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,"# Export TCP port 8080
-"
-236,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,"# Set the final working dir
-"
-237,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,"# Start the server
-"
-238,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Set the base image
-"
-239,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Import Lighstreamer's public key
-"
-240,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-241,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-242,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-243,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-244,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Remove unneeded folder
-"
-245,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Add new user and group
-"
-246,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Change ownership of the lightstreamer folder
-"
-247,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Finally, remove no longer needed files
-"
-248,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Export TCP port 8080
-"
-249,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Set the final working dir
-"
-250,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Start the server
-"
-251,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,"# Set the base image
-"
-252,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,"# Set JAVA_HOME environment variable to openjdk location
-"
-253,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-254,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,"# Set the temporary working dir
-"
-255,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,"# Download the package from the Lightstreamer site
-"
-256,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file.
-"
-257,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,"# Replace the factory TCP port (8080) in the configuration file.
-"
-258,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,"# Export TCP port 80
-"
-259,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,"# Set the final working dir
-"
-260,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,"# Define the entry point
-"
-261,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,"# Set the base image
-"
-262,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,"# Import Lighstreamer's public key
-"
-263,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-264,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,"# Set the temporary working dir
-"
-265,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-266,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-267,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-268,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files
-"
-269,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,"# Export TCP port 8080
-"
-270,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,"# Set the final working dir
-"
-271,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,"# Start the server
-"
-272,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Set the base image
-"
-273,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Import Lighstreamer's public key
-"
-274,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-275,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-276,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-277,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-278,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Remove unneeded folder
-"
-279,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Add new user and group
-"
-280,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Change ownership of tye lightstreamer folder
-"
-281,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Finally, remove no longer needed files
-"
-282,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Export TCP port 8080
-"
-283,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Set the final working dir
-"
-284,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Start the server
-"
-285,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,"# Set the base image
-"
-286,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,"# Import Lighstreamer's public key
-"
-287,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-288,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+235,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,# Export TCP port 8080
+236,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,# Set the final working dir
+237,476e817232cc26d4b821b60cf8d28e4c9eb2cbeb,/6.1/Dockerfile,# Start the server
+238,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,# Set the base image
+239,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,# Import Lighstreamer's public key
+240,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+241,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+242,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+243,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+244,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,# Remove unneeded folder
+245,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,# Add new user and group
+246,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,# Change ownership of the lightstreamer folder
+247,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,"# Finally, remove no longer needed files"
+248,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,# Export TCP port 8080
+249,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,# Set the final working dir
+250,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk11/Dockerfile,# Start the server
+251,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,# Set the base image
+252,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,# Set JAVA_HOME environment variable to openjdk location
+253,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+254,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,# Set the temporary working dir
+255,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,# Download the package from the Lightstreamer site
+256,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file.
+257,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,# Replace the factory TCP port (8080) in the configuration file.
+258,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,# Export TCP port 80
+259,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,# Set the final working dir
+260,7d62407c6db95e6bcfa7fdd5211c7d67f095ecba,/6.0.1_20150730/Dockerfile,# Define the entry point
+261,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,# Set the base image
+262,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,# Import Lighstreamer's public key
+263,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+264,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,# Set the temporary working dir
+265,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+266,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+267,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+268,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files"
+269,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,# Export TCP port 8080
+270,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,# Set the final working dir
+271,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8/Dockerfile,# Start the server
+272,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,# Set the base image
+273,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,# Import Lighstreamer's public key
+274,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+275,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+276,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+277,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+278,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,# Remove unneeded folder
+279,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,# Add new user and group
+280,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,# Change ownership of tye lightstreamer folder
+281,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,"# Finally, remove no longer needed files"
+282,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,# Export TCP port 8080
+283,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,# Set the final working dir
+284,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk8/Dockerfile,# Start the server
+285,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,# Set the base image
+286,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,# Import Lighstreamer's public key
+287,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+288,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,# Set the temporary working dir
 289,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-290,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,"# Export TCP port 8080
-"
-291,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,"# Set the final working dir
-"
-292,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,"# Start the server
-"
-293,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Set the base image
-"
-294,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Import Lighstreamer's public key
-"
-295,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-296,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-297,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-298,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-299,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Remove unneeded folder
-"
-300,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Add new user and group
-"
-301,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Change ownership of tye lightstreamer folder
-"
-302,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Finally, remove no longer needed files
-"
-303,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Export TCP port 8080
-"
-304,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Set the final working dir
-"
-305,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Start the server
-"
-306,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,"# Set the base image
-"
-307,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-308,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,"# Set the temporary working dir
-"
-309,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,"# Finally, adjust logging configuration to log only on standard output.
-"
-310,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,"# Install required packages
-"
-311,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,"# Import Lighstreamer's public key (it seems that current gpg version has an issue while contacting keyserver, therefore a workaround is required)
-"
+# Finally, adjust logging configuration to log only on standard output."
+290,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,# Export TCP port 8080
+291,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,# Set the final working dir
+292,784b417d4415e12f1bb1b15f7f697273de3a7ded,/6.0/Dockerfile,# Start the server
+293,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,# Set the base image
+294,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,# Import Lighstreamer's public key
+295,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+296,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+297,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+298,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+299,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,# Remove unneeded folder
+300,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,# Add new user and group
+301,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,# Change ownership of tye lightstreamer folder
+302,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,"# Finally, remove no longer needed files"
+303,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,# Export TCP port 8080
+304,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,# Set the final working dir
+305,78ea3b282a6fc536512a8ba6a78735a18b06c95f,/7.1/jdk8/Dockerfile,# Start the server
+306,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,# Set the base image
+307,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+308,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,# Set the temporary working dir
+309,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,"# Finally, adjust logging configuration to log only on standard output."
+310,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,# Install required packages
+311,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,"# Import Lighstreamer's public key (it seems that current gpg version has an issue while contacting keyserver, therefore a workaround is required)"
 312,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
-# the JAVA_HOME environment variable in the launch script file.
-
-"
-313,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,"# Export TCP port 8080
-"
-314,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,"# Set the final working dir
-"
-315,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,"# Start the server
-"
-316,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,"# Set the base image
-"
-317,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-318,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,"# Set the temporary working dir
-"
-319,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,"# Finally, adjust logging configuration to log only on standard output.
-"
-320,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,"# Install required packages
-"
-321,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key (it seems that current gpg version has an issue while contacting keyserver, therefore a workaround is required)
-"
+# the JAVA_HOME environment variable in the launch script file."
+313,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,# Export TCP port 8080
+314,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,# Set the final working dir
+315,a5850826f5f9c614a7d1dd8dc6f8d37b139d8a03,/7.0/Dockerfile,# Start the server
+316,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,# Set the base image
+317,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+318,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,# Set the temporary working dir
+319,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,"# Finally, adjust logging configuration to log only on standard output."
+320,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,# Install required packages
+321,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key (it seems that current gpg version has an issue while contacting keyserver, therefore a workaround is required)"
 322,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
-# the JAVA_HOME environment variable in the launch script file.
-
-"
-323,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,"# Export TCP port 8080
-"
-324,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,"# Set the final working dir
-"
-325,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,"# Start the server
-"
-326,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,"# Set the base image
-"
-327,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-328,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,"# Set the temporary working dir
-"
-329,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file.
-"
-330,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,"# Export TCP port 8080
-"
-331,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,"# Set the final working dir
-"
-332,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,"# Define the entry point
-"
-333,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,"# Set the base image
-"
-334,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,"# Import Lighstreamer's public key
-"
-335,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-336,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,"# Set the temporary working dir
-"
+# the JAVA_HOME environment variable in the launch script file."
+323,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,# Export TCP port 8080
+324,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,# Set the final working dir
+325,fc39aa4d58926c91f1d5c75f9c477f0a9c558ce6,/7.0/jre8-alpine/Dockerfile,# Start the server
+326,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,# Set the base image
+327,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+328,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,# Set the temporary working dir
+329,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,# Download the package from the Lightstreamer site and replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file.
+330,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,# Export TCP port 8080
+331,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,# Set the final working dir
+332,f3f807754cbf827966db5d103223b8291783bbe9,/6.0.1_20150730/Dockerfile,# Define the entry point
+333,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,# Set the base image
+334,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,# Import Lighstreamer's public key
+335,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+336,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,# Set the temporary working dir
 337,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration in order to log only on standard output.
-"
-338,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,"# Export TCP port 8080
-"
-339,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,"# Set the final working dir
-"
-340,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,"# Start the server
-"
-341,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,"# Set the base image
-"
-342,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,"# Import Lighstreamer's public key
-"
-343,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-344,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration in order to log only on standard output."
+338,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,# Export TCP port 8080
+339,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,# Set the final working dir
+340,8025d05da59ad3c0de915ea7c57226f6b681b04d,/7.0/jre8/Dockerfile,# Start the server
+341,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,# Set the base image
+342,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,# Import Lighstreamer's public key
+343,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+344,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,# Set the temporary working dir
 345,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-346,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,"# Export TCP port 8080
-"
-347,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,"# Set the final working dir
-"
-348,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,"# Start the server
-"
-349,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,"# Set the base image
-"
-350,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,"# Import Lighstreamer's public key
-"
-351,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-352,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+346,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,# Export TCP port 8080
+347,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,# Set the final working dir
+348,5cb379d682574ad2170166d93306124c633a644f,/6.0/Dockerfile,# Start the server
+349,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,# Set the base image
+350,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,# Import Lighstreamer's public key
+351,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+352,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,# Set the temporary working dir
 353,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-354,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,"# Export TCP port 8080
-"
-355,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,"# Set the final working dir
-"
-356,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,"# Start the server
-"
-357,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Set the base image
-"
-358,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-359,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Set the temporary working dir
-"
-360,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Install the required packages
-"
-361,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key
-"
-362,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack
-"
-363,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-364,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Adjust the logging configuration in order to log only on standard output.
-"
-365,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files
-"
-366,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Export TCP port 8080
-"
-367,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Set the final working dir
-"
-368,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Start the server
-"
-369,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,"# Set the base image
-"
-370,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,"# Import Lighstreamer's public key
-"
-371,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-372,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+354,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,# Export TCP port 8080
+355,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,# Set the final working dir
+356,ca600ed95f9fa8ec632ef2ad0526c15d917a52b7,/6.0/Dockerfile,# Start the server
+357,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,# Set the base image
+358,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+359,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,# Set the temporary working dir
+360,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,# Install the required packages
+361,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,# Import Lighstreamer's public key
+362,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack"
+363,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+364,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,# Adjust the logging configuration in order to log only on standard output.
+365,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files"
+366,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,# Export TCP port 8080
+367,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,# Set the final working dir
+368,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8-alpine/Dockerfile,# Start the server
+369,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,# Set the base image
+370,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,# Import Lighstreamer's public key
+371,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+372,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,# Set the temporary working dir
 373,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-374,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,"# Export TCP port 8080
-"
-375,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,"# Set the final working dir
-"
-376,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,"# Start the server
-"
-377,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Set the base image
-"
-378,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-379,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Set the temporary working dir
-"
-380,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Install the required packages
-"
-381,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key
-"
-382,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack
-"
-383,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-384,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Adjust the logging configuration in order to log only on standard output.
-"
-385,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files
-"
-386,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Export TCP port 8080
-"
-387,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Set the final working dir
-"
-388,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Start the server
-"
-389,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Set the base image
-"
-390,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Import Lighstreamer's public key
-"
-391,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-392,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-393,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-394,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-395,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Remove unneeded folder
-"
-396,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Add new user and group
-"
-397,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Change ownership of tye lightstreamer folder
-"
-398,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Finally, remove no longer needed files
-"
-399,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Export TCP port 8080
-"
-400,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Set the final working dir
-"
-401,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Start the server
-"
-402,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,"# Set the base image
-"
-403,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,"# Import Lighstreamer's public key
-"
-404,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-405,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,"# Set the temporary working dir
-"
-406,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-407,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-408,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-409,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files
-"
-410,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,"# Export TCP port 8080
-"
-411,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,"# Set the final working dir
-"
-412,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,"# Start the server
-"
-413,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Set the base image
-"
-414,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-415,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Set the temporary working dir
-"
-416,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Install the required packages
-"
-417,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key
-"
-418,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack
-"
-419,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-420,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Adjust the logging configuration in order to log only on standard output.
-"
-421,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files
-"
-422,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Export TCP port 8080
-"
-423,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Set the final working dir
-"
-424,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Start the server
-"
-425,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,"# Set the base image
-"
-426,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,"# Import Lighstreamer's public key
-"
-427,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-428,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+374,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,# Export TCP port 8080
+375,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,# Set the final working dir
+376,0d3270ca3d37ba33a1ec693920e9856f90f8276a,/6.0.1_20150730/Dockerfile,# Start the server
+377,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,# Set the base image
+378,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+379,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,# Set the temporary working dir
+380,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,# Install the required packages
+381,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,# Import Lighstreamer's public key
+382,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack"
+383,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+384,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,# Adjust the logging configuration in order to log only on standard output.
+385,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files"
+386,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,# Export TCP port 8080
+387,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,# Set the final working dir
+388,2f9cbde5e8ee0f2f160136d9584d4c6e0702f0ce,/7.0/jre8-alpine/Dockerfile,# Start the server
+389,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,# Set the base image
+390,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,# Import Lighstreamer's public key
+391,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+392,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+393,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+394,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+395,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,# Remove unneeded folder
+396,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,# Add new user and group
+397,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,# Change ownership of tye lightstreamer folder
+398,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,"# Finally, remove no longer needed files"
+399,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,# Export TCP port 8080
+400,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,# Set the final working dir
+401,3efee7177cc5213bf17ad12ff1ba518f5b58c1f0,/7.0/jdk11/Dockerfile,# Start the server
+402,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,# Set the base image
+403,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,# Import Lighstreamer's public key
+404,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+405,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,# Set the temporary working dir
+406,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+407,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+408,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+409,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files"
+410,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,# Export TCP port 8080
+411,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,# Set the final working dir
+412,728f86c2e364d1b4e803f31ed1abc520b4943248,/7.0/jre8/Dockerfile,# Start the server
+413,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,# Set the base image
+414,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+415,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,# Set the temporary working dir
+416,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,# Install the required packages
+417,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,# Import Lighstreamer's public key
+418,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack"
+419,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+420,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,# Adjust the logging configuration in order to log only on standard output.
+421,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files"
+422,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,# Export TCP port 8080
+423,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,# Set the final working dir
+424,141622b57c5697b2a00a71274a3c1c27e0708e50,/7.0/jre8-alpine/Dockerfile,# Start the server
+425,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,# Set the base image
+426,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,# Import Lighstreamer's public key
+427,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+428,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,# Set the temporary working dir
 429,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-430,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,"# Export TCP port 8080
-"
-431,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,"# Set the final working dir
-"
-432,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,"# Start the server
-"
-433,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,"# Set the base image
-"
-434,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,"# Import Lighstreamer's public key
-"
-435,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-436,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+430,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,# Export TCP port 8080
+431,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,# Set the final working dir
+432,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.0/Dockerfile,# Start the server
+433,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,# Set the base image
+434,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,# Import Lighstreamer's public key
+435,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+436,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,# Set the temporary working dir
 437,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-438,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,"# Export TCP port 8080
-"
-439,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,"# Set the final working dir
-"
-440,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,"# Start the server
-"
-441,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,"# Set the base image
-"
-442,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,"# Set JAVA_HOME environment variable to openjdk location
-"
-443,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-444,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,"# Set the temporary working dir
-"
-445,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,"# Download the package from the Lightstreamer site
-"
-446,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file.
-"
-447,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,"# Replace the factory TCP port (8080) in the configuration file.
-"
-448,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,"# Export TCP port 80
-"
-449,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,"# Set the final working dir
-"
-450,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,"# Define the entry point
-"
-451,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Set the base image
-"
-452,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-453,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Set the temporary working dir
-"
-454,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Install the required packages
-"
-455,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key
-"
-456,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack
-"
-457,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-458,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Adjust the logging configuration in order to log only on standard output.
-"
-459,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files
-"
-460,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Export TCP port 8080
-"
-461,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Set the final working dir
-"
-462,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Start the server
-"
-463,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,"# Set the base image
-"
-464,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,"# Import Lighstreamer's public key
-"
-465,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-466,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,"# Set the temporary working dir
-"
-467,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-468,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-469,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-470,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,"# Finally, remove no longer needed files
-"
-471,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,"# Export TCP port 8080
-"
-472,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,"# Set the final working dir
-"
-473,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,"# Start the server
-"
-474,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,"# Set the base image
-"
-475,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,"# Import Lighstreamer's public key
-"
-476,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-477,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,"# Set the temporary working dir
-"
-478,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-479,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-480,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-481,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files
-"
-482,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,"# Export TCP port 8080
-"
-483,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,"# Set the final working dir
-"
-484,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,"# Start the server
-"
-485,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,"# Set the base image
-"
-486,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,"# Import Lighstreamer's public key
-"
-487,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-488,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+438,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,# Export TCP port 8080
+439,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,# Set the final working dir
+440,bc07c14a87843fbc9baed08dfab416ac1f20554e,/6.0/Dockerfile,# Start the server
+441,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,# Set the base image
+442,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,# Set JAVA_HOME environment variable to openjdk location
+443,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+444,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,# Set the temporary working dir
+445,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,# Download the package from the Lightstreamer site
+446,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file.
+447,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,# Replace the factory TCP port (8080) in the configuration file.
+448,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,# Export TCP port 80
+449,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,# Set the final working dir
+450,116b51a48cf390b23d0d86410a80df7b2fc576a6,/6.0.1_20150730/Dockerfile,# Define the entry point
+451,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,# Set the base image
+452,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+453,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,# Set the temporary working dir
+454,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,# Install the required packages
+455,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,# Import Lighstreamer's public key
+456,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack"
+457,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+458,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,# Adjust the logging configuration in order to log only on standard output.
+459,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files"
+460,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,# Export TCP port 8080
+461,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,# Set the final working dir
+462,7654573208c6fa4247815f5b3b5faba818220b97,/7.0/jre8-alpine/Dockerfile,# Start the server
+463,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,# Set the base image
+464,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,# Import Lighstreamer's public key
+465,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+466,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,# Set the temporary working dir
+467,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+468,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+469,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+470,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,"# Finally, remove no longer needed files"
+471,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,# Export TCP port 8080
+472,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,# Set the final working dir
+473,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre11/Dockerfile,# Start the server
+474,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,# Set the base image
+475,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,# Import Lighstreamer's public key
+476,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+477,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,# Set the temporary working dir
+478,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+479,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+480,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+481,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files"
+482,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,# Export TCP port 8080
+483,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,# Set the final working dir
+484,db18f37e9da49a859943e5a1156a19b01e441dc5,/7.0/jre8/Dockerfile,# Start the server
+485,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,# Set the base image
+486,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,# Import Lighstreamer's public key
+487,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+488,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,# Set the temporary working dir
 489,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration in order to log only on standard output.
-"
-490,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,"# Export TCP port 8080
-"
-491,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,"# Set the final working dir
-"
-492,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,"# Start the server
-"
-493,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Set the base image
-"
-494,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-495,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Set the temporary working dir
-"
-496,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Install the required packages
-"
-497,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key
-"
-498,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack
-"
-499,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-500,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Adjust the logging configuration in order to log only on standard output.
-"
-501,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files
-"
-502,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Export TCP port 8080
-"
-503,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Set the final working dir
-"
-504,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Start the server
-"
-505,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Set the base image
-"
-506,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Import Lighstreamer's public key
-"
-507,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-508,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-509,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-510,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-511,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Remove unneeded folder
-"
-512,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Add new user and group
-"
-513,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Change ownership of the lightstreamer folder
-"
-514,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Finally, remove no longer needed files
-"
-515,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Export TCP port 8080
-"
-516,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Set the final working dir
-"
-517,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Start the server
-"
-518,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,"# Set the base image
-"
-519,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,"# Import Lighstreamer's public key
-"
-520,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-521,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,"# Set the temporary working dir
-"
-522,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-523,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,"# Replace replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-524,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-525,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files
-"
-526,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,"# Export TCP port 8080
-"
-527,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,"# Set the final working dir
-"
-528,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,"# Start the server
-"
-529,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Set the base image
-"
-530,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Import Lighstreamer's public key
-"
-531,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-532,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-533,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-534,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-535,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Remove unneeded folder
-"
-536,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Add new user and group
-"
-537,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Change ownership of tye lightstreamer folder
-"
-538,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Finally, remove no longer needed files
-"
-539,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Export TCP port 8080
-"
-540,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Set the final working dir
-"
-541,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Start the server
-"
-542,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Set the base image
-"
-543,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-544,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Set the temporary working dir
-"
-545,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Install the required packages
-"
-546,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key
-"
-547,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack
-"
-548,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-549,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Adjust the logging configuration in order to log only on standard output.
-"
-550,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files
-"
-551,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Export TCP port 8080
-"
-552,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Set the final working dir
-"
-553,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Start the server
-"
-554,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Set the base image
-"
-555,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Import Lighstreamer's public key
-"
-556,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-557,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-558,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-559,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-560,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Remove unneeded folder
-"
-561,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Add new user and group
-"
-562,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Change ownership of tye lightstreamer folder
-"
-563,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Finally, remove no longer needed files
-"
-564,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Export TCP port 8080
-"
-565,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Set the final working dir
-"
-566,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Start the server
-"
-567,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,"# Set the base image
-"
-568,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,"# Set JAVA_HOME environment variable to openjdk location
-"
-569,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-570,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,"# Set the temporary working dir
-"
-571,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,"# Download the package from the Lightstreamer site
-"
-572,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file.
-"
-573,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,"# Replace the factory TCP port (8080) in the configuration file.
-"
-574,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,"# Export TCP port 80
-"
-575,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,"# Set the final working dir
-"
-576,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,"# Define the entry point
-"
-577,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Set the base image
-"
-578,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Import Lighstreamer's public key
-"
-579,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-580,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-581,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-582,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-583,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Remove unneeded folder
-"
-584,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Add new user and group
-"
-585,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Change ownership of tye lightstreamer folder
-"
-586,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Finally, remove no longer needed files
-"
-587,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Export TCP port 8080
-"
-588,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Set the final working dir
-"
-589,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Start the server
-"
-590,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Set the base image
-"
-591,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Set environment variables to identify the right Lightstreamer version
-"
-592,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Set the temporary working dir
-"
-593,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Install the required packages
-"
-594,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Import Lighstreamer's public key
-"
-595,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack
-"
-596,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-597,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Adjust the logging configuration in order to log only on standard output.
-"
-598,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files
-"
-599,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Export TCP port 8080
-"
-600,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Set the final working dir
-"
-601,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Start the server
-"
-602,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,"# Set the base image
-"
-603,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,"# Import Lighstreamer's public key
-"
-604,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-605,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,"# Set the temporary working dir
-"
-606,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-607,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-608,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-609,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,"# Finally, remove no longer needed files
-"
-610,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,"# Export TCP port 8080
-"
-611,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,"# Set the final working dir
-"
-612,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,"# Start the server
-"
-613,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,"# Set the base image
-"
-614,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,"# Import Lighstreamer's public key
-"
-615,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-616,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,"# Set the temporary working dir
-"
-617,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-618,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,"# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-619,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-620,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,"# Finally, remove no longer needed files
-"
-621,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,"# Export TCP port 8080
-"
-622,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,"# Set the final working dir
-"
-623,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,"# Start the server
-"
-624,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,"# Set the base image
-"
-625,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,"# Import Lighstreamer's public key
-"
-626,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-627,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,"# Set the temporary working dir
-"
-628,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack
-"
-629,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,"# Replace replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
-"
-630,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,"# Adjust the logging configuration in order to log only on standard output
-"
-631,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files
-"
-632,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,"# Export TCP port 8080
-"
-633,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,"# Set the final working dir
-"
-634,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,"# Start the server
-"
-635,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,"# Set the base image
-"
-636,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,"# Import Lighstreamer's public key
-"
-637,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-638,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration in order to log only on standard output."
+490,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,# Export TCP port 8080
+491,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,# Set the final working dir
+492,62c60bd6fba5c274abfdc6e7817bc6c4a5b7f8cf,/7.0/jre8/Dockerfile,# Start the server
+493,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,# Set the base image
+494,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+495,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,# Set the temporary working dir
+496,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,# Install the required packages
+497,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,# Import Lighstreamer's public key
+498,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack"
+499,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+500,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,# Adjust the logging configuration in order to log only on standard output.
+501,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files"
+502,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,# Export TCP port 8080
+503,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,# Set the final working dir
+504,74135bdf4ac57d3c6a23d402ee847577d5db7ea5,/7.0/jre8-alpine/Dockerfile,# Start the server
+505,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,# Set the base image
+506,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,# Import Lighstreamer's public key
+507,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+508,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+509,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+510,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+511,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,# Remove unneeded folder
+512,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,# Add new user and group
+513,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,# Change ownership of the lightstreamer folder
+514,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,"# Finally, remove no longer needed files"
+515,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,# Export TCP port 8080
+516,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,# Set the final working dir
+517,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.1/jdk11/Dockerfile,# Start the server
+518,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,# Set the base image
+519,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,# Import Lighstreamer's public key
+520,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+521,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,# Set the temporary working dir
+522,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+523,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,# Replace replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+524,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+525,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files"
+526,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,# Export TCP port 8080
+527,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,# Set the final working dir
+528,a73c3dc4ad2ca291200bb0fcb6cea4af267b6dd5,/7.0/jre8/Dockerfile,# Start the server
+529,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,# Set the base image
+530,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,# Import Lighstreamer's public key
+531,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+532,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+533,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+534,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+535,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,# Remove unneeded folder
+536,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,# Add new user and group
+537,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,# Change ownership of tye lightstreamer folder
+538,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,"# Finally, remove no longer needed files"
+539,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,# Export TCP port 8080
+540,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,# Set the final working dir
+541,45001c033ed1837a9374a9285b7d2e8acfee6dca,/7.1/jdk11/Dockerfile,# Start the server
+542,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,# Set the base image
+543,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+544,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,# Set the temporary working dir
+545,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,# Install the required packages
+546,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,# Import Lighstreamer's public key
+547,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack"
+548,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+549,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,# Adjust the logging configuration in order to log only on standard output.
+550,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files"
+551,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,# Export TCP port 8080
+552,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,# Set the final working dir
+553,2b4e86c1319f6b35bcf6a596bdc58053cf4f8b47,/7.0/jre8-alpine/Dockerfile,# Start the server
+554,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,# Set the base image
+555,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,# Import Lighstreamer's public key
+556,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+557,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+558,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+559,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+560,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,# Remove unneeded folder
+561,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,# Add new user and group
+562,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,# Change ownership of tye lightstreamer folder
+563,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,"# Finally, remove no longer needed files"
+564,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,# Export TCP port 8080
+565,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,# Set the final working dir
+566,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk8/Dockerfile,# Start the server
+567,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,# Set the base image
+568,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,# Set JAVA_HOME environment variable to openjdk location
+569,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+570,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,# Set the temporary working dir
+571,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,# Download the package from the Lightstreamer site
+572,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file.
+573,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,# Replace the factory TCP port (8080) in the configuration file.
+574,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,# Export TCP port 80
+575,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,# Set the final working dir
+576,b63f919e8fab22aae3e88e41c7c266feb8f901e4,/Dockerfile,# Define the entry point
+577,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,# Set the base image
+578,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,# Import Lighstreamer's public key
+579,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+580,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+581,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+582,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+583,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,# Remove unneeded folder
+584,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,# Add new user and group
+585,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,# Change ownership of tye lightstreamer folder
+586,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,"# Finally, remove no longer needed files"
+587,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,# Export TCP port 8080
+588,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,# Set the final working dir
+589,f3aaece15133b9405aef20c5d378c5a83aba7585,/7.0/jdk11/Dockerfile,# Start the server
+590,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,# Set the base image
+591,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,# Set environment variables to identify the right Lightstreamer version
+592,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,# Set the temporary working dir
+593,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,# Install the required packages
+594,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,# Import Lighstreamer's public key
+595,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Download the distribution from the Lightstreamer site, verify the signature, and unpack"
+596,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+597,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,# Adjust the logging configuration in order to log only on standard output.
+598,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,"# Finally, remove no longer needed packages and files"
+599,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,# Export TCP port 8080
+600,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,# Set the final working dir
+601,9fd75574635715f44e32ba523487a95c733a8a69,/7.0/jre8-alpine/Dockerfile,# Start the server
+602,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,# Set the base image
+603,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,# Import Lighstreamer's public key
+604,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+605,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,# Set the temporary working dir
+606,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+607,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+608,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+609,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,"# Finally, remove no longer needed files"
+610,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,# Export TCP port 8080
+611,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,# Set the final working dir
+612,e55c75942b52545d3dac9b395757bbcc33c6c369,/7.0/jdk8/Dockerfile,# Start the server
+613,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,# Set the base image
+614,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,# Import Lighstreamer's public key
+615,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+616,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,# Set the temporary working dir
+617,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+618,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,# Replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+619,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+620,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,"# Finally, remove no longer needed files"
+621,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,# Export TCP port 8080
+622,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,# Set the final working dir
+623,c14ba89f5fc6a161bbd4588da2dd24dd4a5fdbaa,/7.0/jre10/Dockerfile,# Start the server
+624,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,# Set the base image
+625,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,# Import Lighstreamer's public key
+626,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+627,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,# Set the temporary working dir
+628,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,"# Download the package from the Lightstreamer site, verify the signature, and unpack"
+629,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,# Replace replace the fictitious jdk path with the JAVA_HOME environment variable in the launch script file
+630,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,# Adjust the logging configuration in order to log only on standard output
+631,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,"# Finally, remove no longer needed files"
+632,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,# Export TCP port 8080
+633,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,# Set the final working dir
+634,4ff7201107c1a256ccd705c65aa0aae436750667,/7.0/jre8/Dockerfile,# Start the server
+635,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,# Set the base image
+636,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,# Import Lighstreamer's public key
+637,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+638,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,# Set the temporary working dir
 639,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-640,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,"# Export TCP port 8080
-"
-641,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,"# Set the final working dir
-"
-642,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,"# Start the server
-"
-643,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,"# Set the base image
-"
-644,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,"# Import Lighstreamer's public key
-"
-645,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,"# Set environment variables to identify the right Lightstreamer version and edition
-"
-646,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,"# Set the temporary working dir
-"
+# Finally, adjust logging configuration to log only on standard output."
+640,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,# Export TCP port 8080
+641,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,# Set the final working dir
+642,eeab1ae534273b1b05c973e577a1f3eec8d58427,/6.1/Dockerfile,# Start the server
+643,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,# Set the base image
+644,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,# Import Lighstreamer's public key
+645,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,# Set environment variables to identify the right Lightstreamer version and edition
+646,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,# Set the temporary working dir
 647,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,"# Download the package from the Lightstreamer site and replace the fictitious jdk path with 
 # the JAVA_HOME environment variable in the launch script file.
-# Finally, adjust logging configuration to log only on standard output.
-"
-648,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,"# Export TCP port 8080
-"
-649,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,"# Set the final working dir
-"
-650,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,"# Start the server
-"
+# Finally, adjust logging configuration to log only on standard output."
+648,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,# Export TCP port 8080
+649,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,# Set the final working dir
+650,94415d471c10c4e64ca1bae2d753cbe94fd5fa61,/6.1/Dockerfile,# Start the server

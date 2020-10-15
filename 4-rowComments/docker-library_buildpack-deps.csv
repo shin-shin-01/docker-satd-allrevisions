@@ -1,1427 +1,795 @@
 ,CommitID,Dockerfile,Comment
-0,69601d868c1743a8d4053f6abba1b12126691aad,/yakkety/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-1,69601d868c1743a8d4053f6abba1b12126691aad,/yakkety/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-2,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-3,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-4,ff09b5c5288f4643056bd7938268d749e9f8a2db,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-5,ff09b5c5288f4643056bd7938268d749e9f8a2db,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-6,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/trusty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-7,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+0,69601d868c1743a8d4053f6abba1b12126691aad,/yakkety/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+1,69601d868c1743a8d4053f6abba1b12126691aad,/yakkety/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+2,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+3,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+4,ff09b5c5288f4643056bd7938268d749e9f8a2db,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+5,ff09b5c5288f4643056bd7938268d749e9f8a2db,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+6,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/trusty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+7,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 8,cefbc60464f691036d540684fde7388ccaf5608b,/debian/sid/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-9,cefbc60464f691036d540684fde7388ccaf5608b,/debian/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-10,cefbc60464f691036d540684fde7388ccaf5608b,/debian/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-11,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-12,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-13,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/jessie/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-14,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-15,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-16,172cde0939735a9ca1960e6622ad68e7d11b4104,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-17,172cde0939735a9ca1960e6622ad68e7d11b4104,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+9,cefbc60464f691036d540684fde7388ccaf5608b,/debian/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+10,cefbc60464f691036d540684fde7388ccaf5608b,/debian/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+11,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+12,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+13,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/jessie/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+14,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+15,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+16,172cde0939735a9ca1960e6622ad68e7d11b4104,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+17,172cde0939735a9ca1960e6622ad68e7d11b4104,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 18,cefbc60464f691036d540684fde7388ccaf5608b,/debian/stretch/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-19,cefbc60464f691036d540684fde7388ccaf5608b,/debian/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-20,cefbc60464f691036d540684fde7388ccaf5608b,/debian/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-21,e0a5ed778b7140700d29bc445394f906946fbcd0,/bionic/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-22,e0a5ed778b7140700d29bc445394f906946fbcd0,/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-23,e0a5ed778b7140700d29bc445394f906946fbcd0,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-24,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/xenial/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+19,cefbc60464f691036d540684fde7388ccaf5608b,/debian/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+20,cefbc60464f691036d540684fde7388ccaf5608b,/debian/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+21,e0a5ed778b7140700d29bc445394f906946fbcd0,/bionic/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+22,e0a5ed778b7140700d29bc445394f906946fbcd0,/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+23,e0a5ed778b7140700d29bc445394f906946fbcd0,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+24,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/xenial/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 25,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/jessie/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-26,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/jessie/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-27,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-28,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/sid/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-29,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-30,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-31,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/bionic/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-32,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-33,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-34,3c71697594e9eef1d673df9f1d379fdc0f7ff111,/bullseye/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-35,5181b8f38fb9b9cb107d0b993e5b5dc09a1fe64e,/disco/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-36,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-37,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-38,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-39,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+26,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/jessie/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+27,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+28,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/sid/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+29,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+30,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+31,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/bionic/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+32,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+33,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+34,3c71697594e9eef1d673df9f1d379fdc0f7ff111,/bullseye/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+35,5181b8f38fb9b9cb107d0b993e5b5dc09a1fe64e,/disco/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+36,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+37,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+38,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+39,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 40,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/xenial/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-41,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/xenial/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-42,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-43,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+41,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/xenial/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+42,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+43,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 44,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/groovy/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-45,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/groovy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-46,836ce86503a1853779236c976a66468aeb245d3b,/groovy/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-47,836ce86503a1853779236c976a66468aeb245d3b,/groovy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-48,836ce86503a1853779236c976a66468aeb245d3b,/groovy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-49,5d86449454958f224035b5b200bfd3be9c088ff3,/wheezy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-50,5d86449454958f224035b5b200bfd3be9c088ff3,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-51,5d86449454958f224035b5b200bfd3be9c088ff3,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-52,5d86449454958f224035b5b200bfd3be9c088ff3,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-53,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/wheezy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-54,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-55,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/sid/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-56,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-57,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-58,587934fb063d770d0611e94b57c9dd7a38edf928,/precise/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-59,587934fb063d770d0611e94b57c9dd7a38edf928,/precise/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+45,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/groovy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+46,836ce86503a1853779236c976a66468aeb245d3b,/groovy/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+47,836ce86503a1853779236c976a66468aeb245d3b,/groovy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+48,836ce86503a1853779236c976a66468aeb245d3b,/groovy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+49,5d86449454958f224035b5b200bfd3be9c088ff3,/wheezy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+50,5d86449454958f224035b5b200bfd3be9c088ff3,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+51,5d86449454958f224035b5b200bfd3be9c088ff3,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+52,5d86449454958f224035b5b200bfd3be9c088ff3,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+53,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/wheezy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+54,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+55,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/sid/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+56,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+57,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+58,587934fb063d770d0611e94b57c9dd7a38edf928,/precise/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+59,587934fb063d770d0611e94b57c9dd7a38edf928,/precise/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 60,cefbc60464f691036d540684fde7388ccaf5608b,/debian/buster/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-61,cefbc60464f691036d540684fde7388ccaf5608b,/debian/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-62,cefbc60464f691036d540684fde7388ccaf5608b,/debian/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-63,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/artful/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-64,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-65,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/trusty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-66,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-67,1845b3f918f69b4c97912b0d4d68a5658458e84f,/vivid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-68,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-69,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-70,52e615ec908697828cab993370e5c47a70f920cd,/cosmic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-71,172cde0939735a9ca1960e6622ad68e7d11b4104,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-72,172cde0939735a9ca1960e6622ad68e7d11b4104,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-73,e0a5ed778b7140700d29bc445394f906946fbcd0,/xenial/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-74,e0a5ed778b7140700d29bc445394f906946fbcd0,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-75,e0a5ed778b7140700d29bc445394f906946fbcd0,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-76,5181b8f38fb9b9cb107d0b993e5b5dc09a1fe64e,/disco/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-77,5181b8f38fb9b9cb107d0b993e5b5dc09a1fe64e,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-78,9aa327dcc582d5384affbc5a19672e3077489e97,/zesty/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-79,172cde0939735a9ca1960e6622ad68e7d11b4104,/wheezy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-80,172cde0939735a9ca1960e6622ad68e7d11b4104,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-81,36018aca7e9637c9c04ff623625e59de12d7f161,/artful/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-82,36018aca7e9637c9c04ff623625e59de12d7f161,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-83,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-84,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/xenial/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-85,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-86,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-87,ff09b5c5288f4643056bd7938268d749e9f8a2db,/wheezy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-88,ff09b5c5288f4643056bd7938268d749e9f8a2db,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-89,e0a5ed778b7140700d29bc445394f906946fbcd0,/sid/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-90,e0a5ed778b7140700d29bc445394f906946fbcd0,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-91,e0a5ed778b7140700d29bc445394f906946fbcd0,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-92,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-93,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+61,cefbc60464f691036d540684fde7388ccaf5608b,/debian/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+62,cefbc60464f691036d540684fde7388ccaf5608b,/debian/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+63,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/artful/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+64,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+65,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/trusty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+66,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+67,1845b3f918f69b4c97912b0d4d68a5658458e84f,/vivid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+68,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+69,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+70,52e615ec908697828cab993370e5c47a70f920cd,/cosmic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+71,172cde0939735a9ca1960e6622ad68e7d11b4104,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+72,172cde0939735a9ca1960e6622ad68e7d11b4104,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+73,e0a5ed778b7140700d29bc445394f906946fbcd0,/xenial/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+74,e0a5ed778b7140700d29bc445394f906946fbcd0,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+75,e0a5ed778b7140700d29bc445394f906946fbcd0,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+76,5181b8f38fb9b9cb107d0b993e5b5dc09a1fe64e,/disco/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+77,5181b8f38fb9b9cb107d0b993e5b5dc09a1fe64e,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+78,9aa327dcc582d5384affbc5a19672e3077489e97,/zesty/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+79,172cde0939735a9ca1960e6622ad68e7d11b4104,/wheezy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+80,172cde0939735a9ca1960e6622ad68e7d11b4104,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+81,36018aca7e9637c9c04ff623625e59de12d7f161,/artful/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+82,36018aca7e9637c9c04ff623625e59de12d7f161,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+83,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+84,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/xenial/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+85,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+86,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+87,ff09b5c5288f4643056bd7938268d749e9f8a2db,/wheezy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+88,ff09b5c5288f4643056bd7938268d749e9f8a2db,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+89,e0a5ed778b7140700d29bc445394f906946fbcd0,/sid/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+90,e0a5ed778b7140700d29bc445394f906946fbcd0,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+91,e0a5ed778b7140700d29bc445394f906946fbcd0,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+92,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+93,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 94,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/stretch/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-95,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-96,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-97,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/eoan/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+95,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+96,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+97,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/eoan/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 98,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/groovy/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-99,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/groovy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-100,1845b3f918f69b4c97912b0d4d68a5658458e84f,/trusty/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-101,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-102,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-103,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/sid/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-104,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-105,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-106,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/buster/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-107,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-108,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+99,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/groovy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+100,1845b3f918f69b4c97912b0d4d68a5658458e84f,/trusty/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+101,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+102,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+103,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/sid/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+104,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+105,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+106,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/buster/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+107,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+108,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 109,cefbc60464f691036d540684fde7388ccaf5608b,/debian/jessie/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-110,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/eoan/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-111,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/bullseye/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-112,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+110,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/eoan/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+111,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/bullseye/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+112,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 113,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/sid/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-114,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-115,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-116,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/eoan/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-117,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/eoan/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-118,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+114,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+115,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+116,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/eoan/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+117,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/eoan/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+118,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 119,cefbc60464f691036d540684fde7388ccaf5608b,/debian/jessie/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-120,cefbc60464f691036d540684fde7388ccaf5608b,/debian/jessie/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-121,1449b1e7ba5a389167893e6edb6245ca94cd4fd6,/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-122,5d86449454958f224035b5b200bfd3be9c088ff3,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-123,5d86449454958f224035b5b200bfd3be9c088ff3,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-124,e0a5ed778b7140700d29bc445394f906946fbcd0,/focal/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-125,e0a5ed778b7140700d29bc445394f906946fbcd0,/focal/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-126,e0a5ed778b7140700d29bc445394f906946fbcd0,/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-127,aa76cb2bf10b325a04fab9f0b01fbde1c9d0048d,/bullseye/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-128,172cde0939735a9ca1960e6622ad68e7d11b4104,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-129,172cde0939735a9ca1960e6622ad68e7d11b4104,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-130,e0a5ed778b7140700d29bc445394f906946fbcd0,/stretch/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-131,e0a5ed778b7140700d29bc445394f906946fbcd0,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-132,e0a5ed778b7140700d29bc445394f906946fbcd0,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-133,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/wheezy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-134,ff09b5c5288f4643056bd7938268d749e9f8a2db,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-135,ff09b5c5288f4643056bd7938268d749e9f8a2db,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+120,cefbc60464f691036d540684fde7388ccaf5608b,/debian/jessie/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+121,1449b1e7ba5a389167893e6edb6245ca94cd4fd6,/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+122,5d86449454958f224035b5b200bfd3be9c088ff3,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+123,5d86449454958f224035b5b200bfd3be9c088ff3,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+124,e0a5ed778b7140700d29bc445394f906946fbcd0,/focal/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+125,e0a5ed778b7140700d29bc445394f906946fbcd0,/focal/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+126,e0a5ed778b7140700d29bc445394f906946fbcd0,/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+127,aa76cb2bf10b325a04fab9f0b01fbde1c9d0048d,/bullseye/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+128,172cde0939735a9ca1960e6622ad68e7d11b4104,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+129,172cde0939735a9ca1960e6622ad68e7d11b4104,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+130,e0a5ed778b7140700d29bc445394f906946fbcd0,/stretch/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+131,e0a5ed778b7140700d29bc445394f906946fbcd0,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+132,e0a5ed778b7140700d29bc445394f906946fbcd0,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+133,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/wheezy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+134,ff09b5c5288f4643056bd7938268d749e9f8a2db,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+135,ff09b5c5288f4643056bd7938268d749e9f8a2db,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 136,cefbc60464f691036d540684fde7388ccaf5608b,/debian/sid/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-137,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-138,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-139,836ce86503a1853779236c976a66468aeb245d3b,/groovy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-140,204fa8b6e741573d3c5f58e902b9cffaa9e2b019,/groovy/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-141,204fa8b6e741573d3c5f58e902b9cffaa9e2b019,/groovy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-142,204fa8b6e741573d3c5f58e902b9cffaa9e2b019,/groovy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+137,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+138,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+139,836ce86503a1853779236c976a66468aeb245d3b,/groovy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+140,204fa8b6e741573d3c5f58e902b9cffaa9e2b019,/groovy/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+141,204fa8b6e741573d3c5f58e902b9cffaa9e2b019,/groovy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+142,204fa8b6e741573d3c5f58e902b9cffaa9e2b019,/groovy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 143,cefbc60464f691036d540684fde7388ccaf5608b,/debian/buster/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-144,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-145,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-146,7f5fa2e64174be2821552587b23f7d84b1dae71c,/eoan/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-147,7f5fa2e64174be2821552587b23f7d84b1dae71c,/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+144,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+145,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+146,7f5fa2e64174be2821552587b23f7d84b1dae71c,/eoan/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+147,7f5fa2e64174be2821552587b23f7d84b1dae71c,/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 148,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/bionic/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-149,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/bionic/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-150,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-151,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-152,698002f003f26bf291cd5663b869c0fc33c3f667,/eoan/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-153,698002f003f26bf291cd5663b869c0fc33c3f667,/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-154,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-155,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+149,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/bionic/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+150,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+151,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+152,698002f003f26bf291cd5663b869c0fc33c3f667,/eoan/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+153,698002f003f26bf291cd5663b869c0fc33c3f667,/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+154,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+155,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 156,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/stretch/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-157,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/stretch/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-158,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/cosmic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-159,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-160,587934fb063d770d0611e94b57c9dd7a38edf928,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-161,587934fb063d770d0611e94b57c9dd7a38edf928,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-162,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/stretch/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-163,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-164,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-165,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-166,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-167,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/trusty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-168,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-169,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-170,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-171,69601d868c1743a8d4053f6abba1b12126691aad,/trusty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-172,69601d868c1743a8d4053f6abba1b12126691aad,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+157,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/stretch/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+158,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/cosmic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+159,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+160,587934fb063d770d0611e94b57c9dd7a38edf928,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+161,587934fb063d770d0611e94b57c9dd7a38edf928,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+162,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/stretch/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+163,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+164,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+165,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+166,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+167,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/trusty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+168,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+169,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+170,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+171,69601d868c1743a8d4053f6abba1b12126691aad,/trusty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+172,69601d868c1743a8d4053f6abba1b12126691aad,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 173,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/groovy/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-174,1845b3f918f69b4c97912b0d4d68a5658458e84f,/wheezy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-175,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/jessie/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-176,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-177,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-178,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-179,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-180,99cd78063b47546242cf4e94ba7607b803ad22b6,/xenial/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-181,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-182,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+174,1845b3f918f69b4c97912b0d4d68a5658458e84f,/wheezy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+175,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/jessie/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+176,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+177,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+178,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+179,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+180,99cd78063b47546242cf4e94ba7607b803ad22b6,/xenial/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+181,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+182,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 183,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/bullseye/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-184,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/eoan/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-185,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+184,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/eoan/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+185,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 186,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/bionic/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-187,698002f003f26bf291cd5663b869c0fc33c3f667,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-188,698002f003f26bf291cd5663b869c0fc33c3f667,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+187,698002f003f26bf291cd5663b869c0fc33c3f667,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+188,698002f003f26bf291cd5663b869c0fc33c3f667,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 189,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/bionic/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-190,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/bionic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-191,0db0cf15f1c507b17e7edc6dfbe301b8e357568f,/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-192,0db0cf15f1c507b17e7edc6dfbe301b8e357568f,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-193,36018aca7e9637c9c04ff623625e59de12d7f161,/artful/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-194,587934fb063d770d0611e94b57c9dd7a38edf928,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-195,587934fb063d770d0611e94b57c9dd7a38edf928,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+190,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/bionic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+191,0db0cf15f1c507b17e7edc6dfbe301b8e357568f,/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+192,0db0cf15f1c507b17e7edc6dfbe301b8e357568f,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+193,36018aca7e9637c9c04ff623625e59de12d7f161,/artful/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+194,587934fb063d770d0611e94b57c9dd7a38edf928,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+195,587934fb063d770d0611e94b57c9dd7a38edf928,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 196,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/jessie/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-197,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-198,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-199,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-200,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-201,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-202,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-203,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/bullseye/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-204,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/bullseye/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-205,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-206,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/stretch/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-207,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/groovy/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-208,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/groovy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-209,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/groovy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-210,69601d868c1743a8d4053f6abba1b12126691aad,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-211,69601d868c1743a8d4053f6abba1b12126691aad,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-212,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/cosmic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-213,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+197,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+198,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+199,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+200,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+201,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+202,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+203,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/bullseye/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+204,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/bullseye/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+205,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+206,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/stretch/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+207,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/groovy/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+208,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/groovy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+209,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/groovy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+210,69601d868c1743a8d4053f6abba1b12126691aad,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+211,69601d868c1743a8d4053f6abba1b12126691aad,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+212,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/cosmic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+213,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 214,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/focal/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-215,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-216,99a1c33fda559272e9322b02a5d778bbd04154e7,/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-217,92e7c302f26c2b6470a111e5339f142773a81e0b,/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-218,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/stretch/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-219,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-220,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-221,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/xenial/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-222,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/trusty/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-223,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-224,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-225,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-226,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-227,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/stretch/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-228,698002f003f26bf291cd5663b869c0fc33c3f667,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-229,698002f003f26bf291cd5663b869c0fc33c3f667,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+215,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+216,99a1c33fda559272e9322b02a5d778bbd04154e7,/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+217,92e7c302f26c2b6470a111e5339f142773a81e0b,/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+218,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/stretch/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+219,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+220,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+221,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/xenial/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+222,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/trusty/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+223,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+224,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+225,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+226,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+227,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/stretch/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+228,698002f003f26bf291cd5663b869c0fc33c3f667,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+229,698002f003f26bf291cd5663b869c0fc33c3f667,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 230,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/focal/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-231,1845b3f918f69b4c97912b0d4d68a5658458e84f,/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-232,698002f003f26bf291cd5663b869c0fc33c3f667,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-233,698002f003f26bf291cd5663b869c0fc33c3f667,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-234,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/artful/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-235,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-236,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-237,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-238,587934fb063d770d0611e94b57c9dd7a38edf928,/yakkety/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-239,587934fb063d770d0611e94b57c9dd7a38edf928,/yakkety/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-240,69601d868c1743a8d4053f6abba1b12126691aad,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-241,69601d868c1743a8d4053f6abba1b12126691aad,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-242,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-243,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-244,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/wheezy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-245,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-246,698002f003f26bf291cd5663b869c0fc33c3f667,/bullseye/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-247,698002f003f26bf291cd5663b869c0fc33c3f667,/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+231,1845b3f918f69b4c97912b0d4d68a5658458e84f,/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+232,698002f003f26bf291cd5663b869c0fc33c3f667,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+233,698002f003f26bf291cd5663b869c0fc33c3f667,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+234,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/artful/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+235,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+236,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+237,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+238,587934fb063d770d0611e94b57c9dd7a38edf928,/yakkety/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+239,587934fb063d770d0611e94b57c9dd7a38edf928,/yakkety/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+240,69601d868c1743a8d4053f6abba1b12126691aad,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+241,69601d868c1743a8d4053f6abba1b12126691aad,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+242,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+243,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+244,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/wheezy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+245,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+246,698002f003f26bf291cd5663b869c0fc33c3f667,/bullseye/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+247,698002f003f26bf291cd5663b869c0fc33c3f667,/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 248,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/xenial/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-249,587934fb063d770d0611e94b57c9dd7a38edf928,/trusty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-250,587934fb063d770d0611e94b57c9dd7a38edf928,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-251,5d86449454958f224035b5b200bfd3be9c088ff3,/artful/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-252,5d86449454958f224035b5b200bfd3be9c088ff3,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-253,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/zesty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-254,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+249,587934fb063d770d0611e94b57c9dd7a38edf928,/trusty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+250,587934fb063d770d0611e94b57c9dd7a38edf928,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+251,5d86449454958f224035b5b200bfd3be9c088ff3,/artful/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+252,5d86449454958f224035b5b200bfd3be9c088ff3,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+253,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/zesty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+254,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 255,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/groovy/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-256,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/groovy/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-257,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/groovy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-258,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/groovy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-259,486ed502e4db9c50018b101041c6a80ec33dd8ba,/yakkety/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+256,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/groovy/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+257,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/groovy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+258,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/groovy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+259,486ed502e4db9c50018b101041c6a80ec33dd8ba,/yakkety/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 260,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/sid/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-261,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-262,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/bullseye/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-263,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/bullseye/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-264,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-265,1845b3f918f69b4c97912b0d4d68a5658458e84f,/stretch/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+261,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+262,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/bullseye/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+263,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/bullseye/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+264,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+265,1845b3f918f69b4c97912b0d4d68a5658458e84f,/stretch/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 266,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/bionic/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-267,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/bionic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-268,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-269,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-270,6c5fb18985ac5a2c5c3f6c85314b1df41863898d,/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-271,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/zesty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-272,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-273,69601d868c1743a8d4053f6abba1b12126691aad,/precise/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-274,69601d868c1743a8d4053f6abba1b12126691aad,/precise/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-275,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/trusty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-276,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-277,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-278,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-279,e0a5ed778b7140700d29bc445394f906946fbcd0,/buster/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-280,e0a5ed778b7140700d29bc445394f906946fbcd0,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-281,e0a5ed778b7140700d29bc445394f906946fbcd0,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-282,5d86449454958f224035b5b200bfd3be9c088ff3,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-283,5d86449454958f224035b5b200bfd3be9c088ff3,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+267,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/bionic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+268,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+269,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+270,6c5fb18985ac5a2c5c3f6c85314b1df41863898d,/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+271,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/zesty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+272,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+273,69601d868c1743a8d4053f6abba1b12126691aad,/precise/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+274,69601d868c1743a8d4053f6abba1b12126691aad,/precise/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+275,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/trusty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+276,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+277,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+278,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+279,e0a5ed778b7140700d29bc445394f906946fbcd0,/buster/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+280,e0a5ed778b7140700d29bc445394f906946fbcd0,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+281,e0a5ed778b7140700d29bc445394f906946fbcd0,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+282,5d86449454958f224035b5b200bfd3be9c088ff3,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+283,5d86449454958f224035b5b200bfd3be9c088ff3,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 284,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/focal/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-285,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/focal/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-286,1bf287b61b2c02d8890f4806a9bfb2c7042b308d,/focal/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-287,1bf287b61b2c02d8890f4806a9bfb2c7042b308d,/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-288,92a7886c634c5e4d4fdeaaf16f074c8a2a5a74a7,/bionic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-289,69601d868c1743a8d4053f6abba1b12126691aad,/zesty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-290,69601d868c1743a8d4053f6abba1b12126691aad,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-291,5d86449454958f224035b5b200bfd3be9c088ff3,/trusty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-292,5d86449454958f224035b5b200bfd3be9c088ff3,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-293,a3bdba8b3675c0f820f2ce7bd88e79e4aac2fb8c,/cosmic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-294,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/cosmic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-295,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-296,dad73efaa10245757e58d28742cb7ed35fcd31f2,/disco/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-297,dad73efaa10245757e58d28742cb7ed35fcd31f2,/disco/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-298,dad73efaa10245757e58d28742cb7ed35fcd31f2,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+285,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/focal/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+286,1bf287b61b2c02d8890f4806a9bfb2c7042b308d,/focal/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+287,1bf287b61b2c02d8890f4806a9bfb2c7042b308d,/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+288,92a7886c634c5e4d4fdeaaf16f074c8a2a5a74a7,/bionic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+289,69601d868c1743a8d4053f6abba1b12126691aad,/zesty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+290,69601d868c1743a8d4053f6abba1b12126691aad,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+291,5d86449454958f224035b5b200bfd3be9c088ff3,/trusty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+292,5d86449454958f224035b5b200bfd3be9c088ff3,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+293,a3bdba8b3675c0f820f2ce7bd88e79e4aac2fb8c,/cosmic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+294,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/cosmic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+295,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+296,dad73efaa10245757e58d28742cb7ed35fcd31f2,/disco/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+297,dad73efaa10245757e58d28742cb7ed35fcd31f2,/disco/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+298,dad73efaa10245757e58d28742cb7ed35fcd31f2,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 299,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/groovy/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-300,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-301,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-302,2583ce5f75af115a0a9eaf948e19d99bcb17f4dc,/focal/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-303,2583ce5f75af115a0a9eaf948e19d99bcb17f4dc,/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-304,1bf287b61b2c02d8890f4806a9bfb2c7042b308d,/focal/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+300,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+301,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+302,2583ce5f75af115a0a9eaf948e19d99bcb17f4dc,/focal/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+303,2583ce5f75af115a0a9eaf948e19d99bcb17f4dc,/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+304,1bf287b61b2c02d8890f4806a9bfb2c7042b308d,/focal/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 305,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/xenial/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-306,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/xenial/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+306,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/xenial/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 307,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/bionic/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-308,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-309,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-310,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/buster/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-311,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-312,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-313,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-314,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-315,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/wheezy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-316,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-317,3636a36558f3f413ba10bfcffe4a60341a9abb79,/artful/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-318,3636a36558f3f413ba10bfcffe4a60341a9abb79,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-319,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/trusty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-320,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-321,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-322,172cde0939735a9ca1960e6622ad68e7d11b4104,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-323,172cde0939735a9ca1960e6622ad68e7d11b4104,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-324,1845b3f918f69b4c97912b0d4d68a5658458e84f,/precise/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-325,7f5fa2e64174be2821552587b23f7d84b1dae71c,/eoan/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+308,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+309,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+310,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/buster/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+311,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+312,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+313,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+314,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+315,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/wheezy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+316,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+317,3636a36558f3f413ba10bfcffe4a60341a9abb79,/artful/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+318,3636a36558f3f413ba10bfcffe4a60341a9abb79,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+319,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/trusty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+320,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+321,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+322,172cde0939735a9ca1960e6622ad68e7d11b4104,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+323,172cde0939735a9ca1960e6622ad68e7d11b4104,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+324,1845b3f918f69b4c97912b0d4d68a5658458e84f,/precise/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+325,7f5fa2e64174be2821552587b23f7d84b1dae71c,/eoan/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 326,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/stretch/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-327,ff09b5c5288f4643056bd7938268d749e9f8a2db,/cosmic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-328,ff09b5c5288f4643056bd7938268d749e9f8a2db,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-329,172cde0939735a9ca1960e6622ad68e7d11b4104,/cosmic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-330,172cde0939735a9ca1960e6622ad68e7d11b4104,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-331,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/wheezy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-332,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-333,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/bionic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+327,ff09b5c5288f4643056bd7938268d749e9f8a2db,/cosmic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+328,ff09b5c5288f4643056bd7938268d749e9f8a2db,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+329,172cde0939735a9ca1960e6622ad68e7d11b4104,/cosmic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+330,172cde0939735a9ca1960e6622ad68e7d11b4104,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+331,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/wheezy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+332,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+333,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/bionic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 334,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/xenial/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-335,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/xenial/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-336,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-337,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-338,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/bullseye/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-339,ff09b5c5288f4643056bd7938268d749e9f8a2db,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-340,ff09b5c5288f4643056bd7938268d749e9f8a2db,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+335,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/xenial/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+336,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+337,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+338,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/bullseye/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+339,ff09b5c5288f4643056bd7938268d749e9f8a2db,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+340,ff09b5c5288f4643056bd7938268d749e9f8a2db,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 341,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/sid/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-342,172cde0939735a9ca1960e6622ad68e7d11b4104,/disco/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-343,172cde0939735a9ca1960e6622ad68e7d11b4104,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-344,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/bullseye/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+342,172cde0939735a9ca1960e6622ad68e7d11b4104,/disco/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+343,172cde0939735a9ca1960e6622ad68e7d11b4104,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+344,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/bullseye/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 345,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/buster/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-346,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-347,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-348,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/focal/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-349,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/focal/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-350,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-351,ff09b5c5288f4643056bd7938268d749e9f8a2db,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-352,ff09b5c5288f4643056bd7938268d749e9f8a2db,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-353,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/groovy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-354,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-355,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-356,5d86449454958f224035b5b200bfd3be9c088ff3,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-357,5d86449454958f224035b5b200bfd3be9c088ff3,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-358,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/bullseye/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-359,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/bullseye/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-360,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+346,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+347,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+348,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/focal/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+349,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/focal/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+350,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+351,ff09b5c5288f4643056bd7938268d749e9f8a2db,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+352,ff09b5c5288f4643056bd7938268d749e9f8a2db,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+353,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/groovy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+354,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+355,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+356,5d86449454958f224035b5b200bfd3be9c088ff3,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+357,5d86449454958f224035b5b200bfd3be9c088ff3,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+358,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/bullseye/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+359,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/bullseye/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+360,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 361,cefbc60464f691036d540684fde7388ccaf5608b,/debian/bullseye/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-362,cefbc60464f691036d540684fde7388ccaf5608b,/debian/bullseye/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+362,cefbc60464f691036d540684fde7388ccaf5608b,/debian/bullseye/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 363,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/focal/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-364,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/focal/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-365,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/focal/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-366,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-367,fa587a0d10fd627c1890345db640d1a55cfab3fc,/eoan/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-368,fa587a0d10fd627c1890345db640d1a55cfab3fc,/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-369,698002f003f26bf291cd5663b869c0fc33c3f667,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-370,698002f003f26bf291cd5663b869c0fc33c3f667,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-371,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-372,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-373,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/zesty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-374,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+364,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/focal/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+365,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/focal/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+366,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+367,fa587a0d10fd627c1890345db640d1a55cfab3fc,/eoan/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+368,fa587a0d10fd627c1890345db640d1a55cfab3fc,/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+369,698002f003f26bf291cd5663b869c0fc33c3f667,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+370,698002f003f26bf291cd5663b869c0fc33c3f667,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+371,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+372,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+373,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/zesty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+374,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 375,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/xenial/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-376,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/wily/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-377,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-378,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-379,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/artful/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-380,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-381,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-382,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+376,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/wily/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+377,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+378,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+379,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/artful/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+380,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+381,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+382,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 383,cefbc60464f691036d540684fde7388ccaf5608b,/debian/bullseye/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-384,1845b3f918f69b4c97912b0d4d68a5658458e84f,/jessie/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-385,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-386,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-387,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-388,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-389,698002f003f26bf291cd5663b869c0fc33c3f667,/disco/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-390,698002f003f26bf291cd5663b869c0fc33c3f667,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-391,1845b3f918f69b4c97912b0d4d68a5658458e84f,/wily/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-392,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-393,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-394,ff09b5c5288f4643056bd7938268d749e9f8a2db,/trusty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-395,ff09b5c5288f4643056bd7938268d749e9f8a2db,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-396,172cde0939735a9ca1960e6622ad68e7d11b4104,/trusty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-397,172cde0939735a9ca1960e6622ad68e7d11b4104,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-398,e0a5ed778b7140700d29bc445394f906946fbcd0,/jessie/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-399,e0a5ed778b7140700d29bc445394f906946fbcd0,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-400,e0a5ed778b7140700d29bc445394f906946fbcd0,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+384,1845b3f918f69b4c97912b0d4d68a5658458e84f,/jessie/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+385,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+386,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+387,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+388,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+389,698002f003f26bf291cd5663b869c0fc33c3f667,/disco/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+390,698002f003f26bf291cd5663b869c0fc33c3f667,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+391,1845b3f918f69b4c97912b0d4d68a5658458e84f,/wily/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+392,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+393,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+394,ff09b5c5288f4643056bd7938268d749e9f8a2db,/trusty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+395,ff09b5c5288f4643056bd7938268d749e9f8a2db,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+396,172cde0939735a9ca1960e6622ad68e7d11b4104,/trusty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+397,172cde0939735a9ca1960e6622ad68e7d11b4104,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+398,e0a5ed778b7140700d29bc445394f906946fbcd0,/jessie/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+399,e0a5ed778b7140700d29bc445394f906946fbcd0,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+400,e0a5ed778b7140700d29bc445394f906946fbcd0,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 401,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/focal/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-402,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/focal/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-403,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/focal/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-404,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+402,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/focal/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+403,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/focal/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+404,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 405,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/focal/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-406,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/focal/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-407,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/disco/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-408,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-409,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/focal/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-410,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/focal/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-411,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-412,172cde0939735a9ca1960e6622ad68e7d11b4104,/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-413,172cde0939735a9ca1960e6622ad68e7d11b4104,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-414,ff09b5c5288f4643056bd7938268d749e9f8a2db,/disco/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-415,ff09b5c5288f4643056bd7938268d749e9f8a2db,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-416,204fa8b6e741573d3c5f58e902b9cffaa9e2b019,/groovy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-417,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/focal/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+406,cefbc60464f691036d540684fde7388ccaf5608b,/ubuntu/focal/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+407,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/disco/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+408,6543d0442faeb910f9b4fe0078ce04dd45f0f0c6,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+409,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/focal/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+410,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/focal/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+411,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+412,172cde0939735a9ca1960e6622ad68e7d11b4104,/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+413,172cde0939735a9ca1960e6622ad68e7d11b4104,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+414,ff09b5c5288f4643056bd7938268d749e9f8a2db,/disco/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+415,ff09b5c5288f4643056bd7938268d749e9f8a2db,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+416,204fa8b6e741573d3c5f58e902b9cffaa9e2b019,/groovy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+417,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/focal/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 418,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/xenial/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-419,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/xenial/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-420,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/jessie/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-421,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/groovy/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-422,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/groovy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-423,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/groovy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-424,ff09b5c5288f4643056bd7938268d749e9f8a2db,/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-425,ff09b5c5288f4643056bd7938268d749e9f8a2db,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-426,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/precise/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+419,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/xenial/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+420,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/jessie/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+421,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/groovy/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+422,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/groovy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+423,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/groovy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+424,ff09b5c5288f4643056bd7938268d749e9f8a2db,/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+425,ff09b5c5288f4643056bd7938268d749e9f8a2db,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+426,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/precise/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 427,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/bionic/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-428,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/bionic/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-429,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-430,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-431,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/bionic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-432,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/xenial/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-433,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-434,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-435,1449b1e7ba5a389167893e6edb6245ca94cd4fd6,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-436,1449b1e7ba5a389167893e6edb6245ca94cd4fd6,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-437,587934fb063d770d0611e94b57c9dd7a38edf928,/zesty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-438,587934fb063d770d0611e94b57c9dd7a38edf928,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-439,587934fb063d770d0611e94b57c9dd7a38edf928,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-440,587934fb063d770d0611e94b57c9dd7a38edf928,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-441,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/groovy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-442,92e7c302f26c2b6470a111e5339f142773a81e0b,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-443,92e7c302f26c2b6470a111e5339f142773a81e0b,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-444,3636a36558f3f413ba10bfcffe4a60341a9abb79,/artful/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-445,a94a81caf4d56853baade2cdd794dbe0c93396b2,/yakkety/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-446,e0a5ed778b7140700d29bc445394f906946fbcd0,/bullseye/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-447,e0a5ed778b7140700d29bc445394f906946fbcd0,/bullseye/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-448,e0a5ed778b7140700d29bc445394f906946fbcd0,/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+428,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/bionic/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+429,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+430,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+431,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/bionic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+432,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/xenial/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+433,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+434,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+435,1449b1e7ba5a389167893e6edb6245ca94cd4fd6,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+436,1449b1e7ba5a389167893e6edb6245ca94cd4fd6,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+437,587934fb063d770d0611e94b57c9dd7a38edf928,/zesty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+438,587934fb063d770d0611e94b57c9dd7a38edf928,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+439,587934fb063d770d0611e94b57c9dd7a38edf928,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+440,587934fb063d770d0611e94b57c9dd7a38edf928,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+441,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/groovy/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+442,92e7c302f26c2b6470a111e5339f142773a81e0b,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+443,92e7c302f26c2b6470a111e5339f142773a81e0b,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+444,3636a36558f3f413ba10bfcffe4a60341a9abb79,/artful/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+445,a94a81caf4d56853baade2cdd794dbe0c93396b2,/yakkety/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+446,e0a5ed778b7140700d29bc445394f906946fbcd0,/bullseye/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+447,e0a5ed778b7140700d29bc445394f906946fbcd0,/bullseye/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+448,e0a5ed778b7140700d29bc445394f906946fbcd0,/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 449,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/bullseye/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-450,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/bullseye/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-451,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-452,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/focal/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-453,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/focal/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-454,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-455,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/focal/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-456,ff09b5c5288f4643056bd7938268d749e9f8a2db,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-457,ff09b5c5288f4643056bd7938268d749e9f8a2db,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-458,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-459,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-460,2583ce5f75af115a0a9eaf948e19d99bcb17f4dc,/focal/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-461,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/buster/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-462,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-463,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-464,6c5fb18985ac5a2c5c3f6c85314b1df41863898d,/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-465,172cde0939735a9ca1960e6622ad68e7d11b4104,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-466,172cde0939735a9ca1960e6622ad68e7d11b4104,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-467,92a7886c634c5e4d4fdeaaf16f074c8a2a5a74a7,/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-468,92a7886c634c5e4d4fdeaaf16f074c8a2a5a74a7,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-469,3c71697594e9eef1d673df9f1d379fdc0f7ff111,/bullseye/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-470,3c71697594e9eef1d673df9f1d379fdc0f7ff111,/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-471,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/eoan/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-472,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/eoan/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-473,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-474,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/stretch/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+450,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/bullseye/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+451,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+452,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/focal/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+453,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/focal/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+454,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/ubuntu/focal/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+455,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/focal/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+456,ff09b5c5288f4643056bd7938268d749e9f8a2db,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+457,ff09b5c5288f4643056bd7938268d749e9f8a2db,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+458,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+459,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+460,2583ce5f75af115a0a9eaf948e19d99bcb17f4dc,/focal/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+461,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/buster/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+462,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+463,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+464,6c5fb18985ac5a2c5c3f6c85314b1df41863898d,/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+465,172cde0939735a9ca1960e6622ad68e7d11b4104,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+466,172cde0939735a9ca1960e6622ad68e7d11b4104,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+467,92a7886c634c5e4d4fdeaaf16f074c8a2a5a74a7,/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+468,92a7886c634c5e4d4fdeaaf16f074c8a2a5a74a7,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+469,3c71697594e9eef1d673df9f1d379fdc0f7ff111,/bullseye/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+470,3c71697594e9eef1d673df9f1d379fdc0f7ff111,/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+471,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/eoan/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+472,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/eoan/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+473,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+474,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/stretch/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 475,cefbc60464f691036d540684fde7388ccaf5608b,/debian/stretch/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-476,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-477,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+476,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+477,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 478,cefbc60464f691036d540684fde7388ccaf5608b,/debian/jessie/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-479,cefbc60464f691036d540684fde7388ccaf5608b,/debian/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-480,cefbc60464f691036d540684fde7388ccaf5608b,/debian/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-481,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/xenial/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-482,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-483,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-484,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/wheezy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-485,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-486,69601d868c1743a8d4053f6abba1b12126691aad,/wheezy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-487,69601d868c1743a8d4053f6abba1b12126691aad,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-488,2da658b9a1b91fa61d63ffad2ea52685cac6c702,/xenial/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+479,cefbc60464f691036d540684fde7388ccaf5608b,/debian/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+480,cefbc60464f691036d540684fde7388ccaf5608b,/debian/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+481,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/xenial/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+482,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+483,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+484,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/wheezy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+485,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+486,69601d868c1743a8d4053f6abba1b12126691aad,/wheezy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+487,69601d868c1743a8d4053f6abba1b12126691aad,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+488,2da658b9a1b91fa61d63ffad2ea52685cac6c702,/xenial/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 489,cefbc60464f691036d540684fde7388ccaf5608b,/debian/buster/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-490,cefbc60464f691036d540684fde7388ccaf5608b,/debian/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+490,cefbc60464f691036d540684fde7388ccaf5608b,/debian/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 491,cefbc60464f691036d540684fde7388ccaf5608b,/debian/bullseye/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-492,cefbc60464f691036d540684fde7388ccaf5608b,/debian/bullseye/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-493,cefbc60464f691036d540684fde7388ccaf5608b,/debian/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-494,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/eoan/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-495,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/eoan/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-496,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-497,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/vivid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-498,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-499,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-500,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/zesty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-501,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-502,587934fb063d770d0611e94b57c9dd7a38edf928,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-503,587934fb063d770d0611e94b57c9dd7a38edf928,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-504,52e615ec908697828cab993370e5c47a70f920cd,/cosmic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-505,52e615ec908697828cab993370e5c47a70f920cd,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-506,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/jessie/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-507,698002f003f26bf291cd5663b869c0fc33c3f667,/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-508,698002f003f26bf291cd5663b869c0fc33c3f667,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-509,69601d868c1743a8d4053f6abba1b12126691aad,/sid/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-510,69601d868c1743a8d4053f6abba1b12126691aad,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-511,0db0cf15f1c507b17e7edc6dfbe301b8e357568f,/bionic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-512,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/jessie/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-513,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-514,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-515,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+492,cefbc60464f691036d540684fde7388ccaf5608b,/debian/bullseye/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+493,cefbc60464f691036d540684fde7388ccaf5608b,/debian/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+494,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/eoan/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+495,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/eoan/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+496,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+497,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/vivid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+498,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+499,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+500,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/zesty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+501,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+502,587934fb063d770d0611e94b57c9dd7a38edf928,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+503,587934fb063d770d0611e94b57c9dd7a38edf928,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+504,52e615ec908697828cab993370e5c47a70f920cd,/cosmic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+505,52e615ec908697828cab993370e5c47a70f920cd,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+506,2e5713a9b803f9b15b2d220300cda797b8d15a2a,/jessie/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+507,698002f003f26bf291cd5663b869c0fc33c3f667,/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+508,698002f003f26bf291cd5663b869c0fc33c3f667,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+509,69601d868c1743a8d4053f6abba1b12126691aad,/sid/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+510,69601d868c1743a8d4053f6abba1b12126691aad,/sid/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+511,0db0cf15f1c507b17e7edc6dfbe301b8e357568f,/bionic/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+512,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/jessie/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+513,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+514,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+515,f84f6184d79f2cb7ab94c365ac4f47915e7ca2a8,/debian/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 516,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/jessie/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-517,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/bionic/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-518,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-519,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-520,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/disco/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-521,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-522,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/jessie/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-523,aa76cb2bf10b325a04fab9f0b01fbde1c9d0048d,/bullseye/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-524,aa76cb2bf10b325a04fab9f0b01fbde1c9d0048d,/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+517,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/bionic/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+518,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+519,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/ubuntu/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+520,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/disco/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+521,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+522,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/jessie/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+523,aa76cb2bf10b325a04fab9f0b01fbde1c9d0048d,/bullseye/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+524,aa76cb2bf10b325a04fab9f0b01fbde1c9d0048d,/bullseye/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 525,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/groovy/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-526,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/groovy/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-527,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/groovy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-528,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/groovy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-529,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/wheezy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-530,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+526,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/groovy/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+527,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/groovy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+528,65d69325ad741cea6dee20781c1faaab2e003d87,/ubuntu/groovy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+529,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/wheezy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+530,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 531,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/buster/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-532,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+532,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/buster/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 533,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/bullseye/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-534,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/bullseye/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-535,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/artful/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-536,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-537,99a1c33fda559272e9322b02a5d778bbd04154e7,/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-538,69601d868c1743a8d4053f6abba1b12126691aad,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-539,69601d868c1743a8d4053f6abba1b12126691aad,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-540,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/trusty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-541,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-542,698002f003f26bf291cd5663b869c0fc33c3f667,/cosmic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-543,698002f003f26bf291cd5663b869c0fc33c3f667,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-544,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-545,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-546,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/jessie/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-547,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-548,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/stretch/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-549,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/stretch/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-550,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-551,e0a5ed778b7140700d29bc445394f906946fbcd0,/eoan/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-552,e0a5ed778b7140700d29bc445394f906946fbcd0,/eoan/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-553,e0a5ed778b7140700d29bc445394f906946fbcd0,/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-554,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/disco/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-555,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-556,698002f003f26bf291cd5663b869c0fc33c3f667,/xenial/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-557,698002f003f26bf291cd5663b869c0fc33c3f667,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-558,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-559,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-560,5d86449454958f224035b5b200bfd3be9c088ff3,/buster/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-561,5d86449454958f224035b5b200bfd3be9c088ff3,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+534,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/bullseye/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+535,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/artful/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+536,f2eef65cac94de675b69d8cc5c86727fa34cefd1,/artful/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+537,99a1c33fda559272e9322b02a5d778bbd04154e7,/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+538,69601d868c1743a8d4053f6abba1b12126691aad,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+539,69601d868c1743a8d4053f6abba1b12126691aad,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+540,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/trusty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+541,2a09efacb4cf4f1cc50f79ace10ffa3426305e3b,/trusty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+542,698002f003f26bf291cd5663b869c0fc33c3f667,/cosmic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+543,698002f003f26bf291cd5663b869c0fc33c3f667,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+544,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+545,3fd6bc9602ab42ec1f11dd5680e528d2266f3325,/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+546,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/jessie/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+547,d7da72aaf3bb93fecf5fcb7c6ff154cb0c55d1d1,/jessie/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+548,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/stretch/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+549,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/stretch/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+550,4d7c3e93fd1cafae3e319925fb6dcf43537e1ca9,/debian/stretch/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+551,e0a5ed778b7140700d29bc445394f906946fbcd0,/eoan/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+552,e0a5ed778b7140700d29bc445394f906946fbcd0,/eoan/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+553,e0a5ed778b7140700d29bc445394f906946fbcd0,/eoan/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+554,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/disco/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+555,cd0058f0893008c7ffa8e9cb9d3d5208cf5f2f75,/disco/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+556,698002f003f26bf291cd5663b869c0fc33c3f667,/xenial/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+557,698002f003f26bf291cd5663b869c0fc33c3f667,/xenial/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+558,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+559,91a74a4c54211e2cfe5431b8e6d21e81a966799c,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+560,5d86449454958f224035b5b200bfd3be9c088ff3,/buster/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+561,5d86449454958f224035b5b200bfd3be9c088ff3,/buster/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 562,cefbc60464f691036d540684fde7388ccaf5608b,/debian/sid/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-563,cefbc60464f691036d540684fde7388ccaf5608b,/debian/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
+#"
+563,cefbc60464f691036d540684fde7388ccaf5608b,/debian/sid/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
 564,65d69325ad741cea6dee20781c1faaab2e003d87,/debian/buster/curl/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-565,fa587a0d10fd627c1890345db640d1a55cfab3fc,/eoan/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-566,5d86449454958f224035b5b200bfd3be9c088ff3,/zesty/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-567,5d86449454958f224035b5b200bfd3be9c088ff3,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-568,587934fb063d770d0611e94b57c9dd7a38edf928,/wheezy/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-569,587934fb063d770d0611e94b57c9dd7a38edf928,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
-570,a3bdba8b3675c0f820f2ce7bd88e79e4aac2fb8c,/cosmic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-571,a3bdba8b3675c0f820f2ce7bd88e79e4aac2fb8c,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+565,fa587a0d10fd627c1890345db640d1a55cfab3fc,/eoan/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+566,5d86449454958f224035b5b200bfd3be9c088ff3,/zesty/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+567,5d86449454958f224035b5b200bfd3be9c088ff3,/zesty/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+568,587934fb063d770d0611e94b57c9dd7a38edf928,/wheezy/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+569,587934fb063d770d0611e94b57c9dd7a38edf928,/wheezy/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
+570,a3bdba8b3675c0f820f2ce7bd88e79e4aac2fb8c,/cosmic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+571,a3bdba8b3675c0f820f2ce7bd88e79e4aac2fb8c,/cosmic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
 572,cefbc60464f691036d540684fde7388ccaf5608b,/debian/stretch/scm/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
-#
-
-"
-573,cefbc60464f691036d540684fde7388ccaf5608b,/debian/stretch/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-574,8421075eb99350a28273bcb0010da6cd7bbd20f4,/zesty/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package
-"
-575,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/bionic/Dockerfile,"# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
-"
-576,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/bionic/Dockerfile,"# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
-"
-577,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep
-"
+#"
+573,cefbc60464f691036d540684fde7388ccaf5608b,/debian/stretch/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+574,8421075eb99350a28273bcb0010da6cd7bbd20f4,/zesty/scm/Dockerfile,"# procps is very common in build systems, and is a reasonably small package"
+575,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/bionic/Dockerfile,# make sure debconf doesn't try to prompt (e.g. tzdata on Ubuntu)
+576,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/bionic/Dockerfile,# https://lists.debian.org/debian-devel-announce/2016/09/msg00000.html
+577,b26561e02c96fc42c9001edc1ecb1c4477fbab90,/bionic/Dockerfile,"# if we use just ""apt-cache show"" here, it returns zero because ""Can't select versions from package 'libmysqlclient-dev' as it is purely virtual"", hence the pipe to grep"
