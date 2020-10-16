@@ -1,9 +1,10 @@
-from setting import PATH_OF_UNIQUE_SATD_INFO, PATH_OF_ALLPROJECT_CSV
+from setting import PATH_OF_UNIQUE_SATD_INFO, PATH_OF_ALLPROJECT_CSV, PATH_OF_GITCLONE
 from tqdm import tqdm
 import os
 import re
 import pandas as pd
 from datetime import datetime
+import subprocess
 import hashlib
 
 """
@@ -107,23 +108,106 @@ def addBlob(df):
 
 def addDiff(df):
     df["追加時ファイル"] = df["gitPath"] + '/commit/' + df['CommitID'] + "#diff-" + df["Dockerfile"].apply(lambda f: hashlib.md5(f.encode()).hexdigest())
-    df["削除時ファイル"] = df["gitPath"] + '/commit/' + df['Deleted CommitID'] + "#diff-" + df["LatestDockerfile"].apply(lambda f: hashlib.md5(f.encode()).hexdigest())
+    df["削除時ファイル"] = df["gitPath"] + '/commit/' + df['Deleted CommitID'] + "#diff-" + df["Deleted Filename"].apply(lambda f: hashlib.md5(f.encode()).hexdigest())
     return df
+
+def addDiff_withLine(df):
+    df = calculate_line(df, "added")
+    df = calculate_line(df, "deleted")
+
+    df["追加時ファイル"] = df["gitPath"] + '/commit/' + df['CommitID'] + "#diff-" + df["Dockerfile"].apply(lambda f: hashlib.sha256(f.encode()).hexdigest()) + "R" + df["added_line"]
+    # deleted filter
+    mask = df["Deleted CommitID"].apply(lambda s: str(s) != "nan")
+    df.loc[mask, "削除時ファイル"] = df.loc[mask, "gitPath"] + '/commit/' + df.loc[mask, 'Deleted CommitID'] + "#diff-" + df.loc[mask, "Deleted Filename"].apply(lambda f: hashlib.sha256(f.encode()).hexdigest()) + "L" + df.loc[mask, "deleted_line"]
+    return df
+
+
+def calculate_line(df, add_delete):
+    line_list = []
+
+    for idx, row in df.iterrows():
+        if add_delete == "added":
+            plus_minus = "+"
+            filename = row["Dockerfile"]
+            commit_id = row["CommitID"]
+        elif add_delete == "deleted":
+            plus_minus = "-"
+            filename = row["Deleted Filename"]
+            commit_id = row["Deleted CommitID"]
+
+        # 削除が存在していない場合
+        if str(commit_id) == "nan":
+            line_list.append(None)
+            continue
+        
+        txtGitdiff = git_difference(commit_id, filename, row["project"])
+        line = get_targetComment_line(txtGitdiff, row["Comment"], plus_minus)
+        line_list.append(line)
+
+    df[f"{add_delete}_line"] = line_list
+    return df
+
+
+def git_difference(commit_id, filename, project):
+    repository = project.splitlines()[0] + "_" + project.splitlines()[1]
+
+    # git dif
+    command = f'git diff -U10000 {commit_id}^..{commit_id} -- {filename}'
+    cwd = f'./{PATH_OF_GITCLONE}/{repository}/'
+
+    # ignore utf-8 Error
+    txtGitdiff = subprocess.run(command, cwd=cwd, encoding='utf-8', stdout=subprocess.PIPE, errors="ignore", shell=True)
+    txtGitdiff = str(txtGitdiff.stdout)
+
+    return txtGitdiff
+
+def get_targetComment_line(txtGitdiff, comment, plus_minus):
+    start = False
+    count = 0 # 過去のファイルの行数カウント
+
+    if plus_minus == "+":
+        rev = "-"
+    else:
+        rev = "+"
+    
+    for diffrow in txtGitdiff.splitlines():
+        if diffrow[0] == "@":
+            start = True
+            continue
+        elif not start:
+            continue
+
+        if (diffrow[0] == rev):
+            continue
+        elif (diffrow[0] == plus_minus):
+            count += 1
+            if diffrow[1:] == "#":
+                continue
+            elif (diffrow[1:] in comment):
+                return str(count)
+        else:
+            count += 1
+
+    # print("="*30)
+    # print(comment)
+    # print('-'*20)
+    # print(txtGitdiff)
+    print("No targetComment in txtGitdiff")
+    return "Error"
         
 
 if __name__ == "__main__":
     csvfiles = getTargetCSV()
     result = modifyColumnName()
 
-    for csvfile in tqdm(csvfiles):
+    for csvfile in csvfiles:
         df = ReadCSV_addGitPath(csvfile)
         result = pd.concat([result, df], ignore_index=True)
-
 
     result = convertDateTime(result)
     result = renameColumns(result)
     result = addDateCalculatedInfo(result)
-    result = addDiff(result)
+    result = addDiff_withLine(result)
 
     result.to_csv(f'{PATH_OF_ALLPROJECT_CSV}/result.csv')
 
