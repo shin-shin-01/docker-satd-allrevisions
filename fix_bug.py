@@ -40,13 +40,13 @@ def getCommentDeleteDate(repository, renameList, latestCommitDate):
             break
 
     if len(df) == 0: # 存在していなかったら削除されていない
-        return np.nan, np.nan
+        return np.nan, np.nan, np.nan
 
     # 削除に関しては 最後を残して全て削除
     delete_index = df[df["Status"] == "D"].index.tolist()
     df.drop(index=delete_index[:-1], inplace=True)
 
-    return df.head(1).iloc[0, :]["Date"], df.head(1).iloc[0, :]["CommitID"]
+    return df.head(1).iloc[0, :]["Date"], df.head(1).iloc[0, :]["CommitID"], filename
 
 
 if __name__ == "__main__":

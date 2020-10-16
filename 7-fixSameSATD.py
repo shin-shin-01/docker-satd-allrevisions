@@ -68,13 +68,15 @@ def removeSameSATDofSameFile(csvfile):
 
             # tmp_df (SATD のみのDataFrame) であるため、完全に削除されたあとは git log から コミット日時・ファイル名 を元に次のコミット日時 を取得
             if len(tmp_date) == 0:
-                deleted_date, commit_id = getCommentDeleteDate(repository, LatestCommentRow["RenameList"], LatestCommentRow["Date"])
+                deleted_date, commit_id, filename = getCommentDeleteDate(repository, LatestCommentRow["RenameList"], LatestCommentRow["Date"])
                 firstCommitRow["DeletedComment Date"] = deleted_date
                 firstCommitRow["Deleted CommitID"] = commit_id
+                firstCommitRow["Deleted Filename"] = filename
             else:
                 # コメントが削除された日
                 firstCommitRow["DeletedComment Date"] = tmp_date.head(1).iloc[0, :]["Date"]
                 firstCommitRow["Deleted CommitID"] = tmp_date.head(1).iloc[0, :]["CommitID"]
+                firstCommitRow["Deleted Filename"] = tmp_date.head(1).iloc[0, :]["Dockerfile"]
 
 
             result = result.append(firstCommitRow)
