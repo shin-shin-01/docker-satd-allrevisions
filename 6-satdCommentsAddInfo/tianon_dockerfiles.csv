@@ -7,7 +7,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-05-19 13:32:17-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-2,5f8503098c5d10cfcec33a94fbd558ff4df6fd3b,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2018-01-03 10:32:34-08:00,2014-09-20 01:00:11-06:00,2019-01-17 14:41:37-08:00,qemu/Dockerfile
+2,5f8503098c5d10cfcec33a94fbd558ff4df6fd3b,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2018-01-03 10:32:34-08:00,2014-09-20 01:00:11-06:00,2019-01-17 14:42:19-08:00,qemu/Dockerfile
 3,5ea5fed6b95f3f266e1bce2d70d6ac3dd4844bd3,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -99,12 +99,12 @@
 #ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
 #ONBUILD RUN cd /apps/rails && bundle install --deployment
 #ONBUILD ADD . /apps/rails
-#ONBUILD RUN chown -R www-data:www-data /apps/rails",2014-03-28 17:19:41-06:00,2014-03-28 17:19:41-06:00,2019-09-13 14:33:29-07:00,ruby-passenger/Dockerfile
+#ONBUILD RUN chown -R www-data:www-data /apps/rails",2014-03-28 17:19:41-06:00,2014-03-28 17:19:41-06:00,2019-09-13 14:33:46-07:00,ruby-passenger/Dockerfile
 27,0c8e2e576017b4c8285b24ca229ab358258bf080,ruby-unicorn/Dockerfile,ruby-unicorn/Dockerfile,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
 #ONBUILD ADD Gemfile /apps/rails/Gemfile
 #ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
 #ONBUILD RUN bundle install --deployment
-#ONBUILD ADD . /apps/rails",2014-04-01 15:56:13-06:00,2014-03-28 17:29:46-06:00,2019-09-13 14:33:29-07:00,ruby-unicorn/Dockerfile
+#ONBUILD ADD . /apps/rails",2014-04-01 15:56:13-06:00,2014-03-28 17:29:46-06:00,2019-09-13 14:33:46-07:00,ruby-unicorn/Dockerfile
 28,7fc9067e0099fb67237dfb7dae38127b68018a41,docker/experimental/dind/Dockerfile,docker/experimental/dind/Dockerfile,# TODO aufs-tools,2016-04-06 21:33:57-07:00,2015-08-27 15:47:39-07:00,2016-11-12 08:12:05-08:00,docker/experimental/dind/Dockerfile
 29,7fc9067e0099fb67237dfb7dae38127b68018a41,docker/master/dind/Dockerfile,docker-master/dind/Dockerfile,# TODO aufs-tools,2016-04-06 21:33:57-07:00,2015-08-27 15:47:39-07:00,,docker/master/dind/Dockerfile
 30,c6fb1477c0c13e8973445fd3dbf14a4fc75bc43c,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
@@ -116,15 +116,15 @@
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-12-25 21:57:21-08:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
 32,b09752397d170fa90d308e08b9cf387fff2c5523,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.12 (if it makes it out of edge)
-# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2020-08-21 13:21:12-07:00,2016-09-07 14:32:37-07:00,,network-toolbox/alpine/Dockerfile
+# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2020-08-21 13:21:12-07:00,2016-09-07 14:32:53-07:00,,network-toolbox/alpine/Dockerfile
 33,b09752397d170fa90d308e08b9cf387fff2c5523,docker-master/dind/Dockerfile,docker-master/dind/Dockerfile,# TODO aufs-tools,2020-08-21 13:21:12-07:00,2015-08-27 15:47:39-07:00,,docker-master/dind/Dockerfile
 34,b09752397d170fa90d308e08b9cf387fff2c5523,docker-master/dind/Dockerfile,docker-master/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2020-08-21 13:21:12-07:00,2015-08-27 15:47:39-07:00,,docker-master/dind/Dockerfile
 35,b09752397d170fa90d308e08b9cf387fff2c5523,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2020-08-21 13:21:12-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-36,b09752397d170fa90d308e08b9cf387fff2c5523,speedtest/Dockerfile,speedtest/Dockerfile,"# TODO verify that ookla's ""armhf"" really is armv6",2020-08-21 13:21:12-07:00,2014-07-11 19:24:04-06:00,,speedtest/Dockerfile
-37,b09752397d170fa90d308e08b9cf387fff2c5523,speedtest/Dockerfile,speedtest/Dockerfile,"# TODO figure out what ookla means by their bare ""arm"" arch",2020-08-21 13:21:12-07:00,2014-07-11 19:24:04-06:00,,speedtest/Dockerfile
+36,b09752397d170fa90d308e08b9cf387fff2c5523,speedtest/Dockerfile,speedtest/Dockerfile,"# TODO verify that ookla's ""armhf"" really is armv6",2020-08-21 13:21:12-07:00,2014-07-11 19:24:12-06:00,,speedtest/Dockerfile
+37,b09752397d170fa90d308e08b9cf387fff2c5523,speedtest/Dockerfile,speedtest/Dockerfile,"# TODO figure out what ookla means by their bare ""arm"" arch",2020-08-21 13:21:12-07:00,2014-07-11 19:24:12-06:00,,speedtest/Dockerfile
 38,51f0eb74e0e33c2a5ea5c4ac780268ff40fb109e,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -242,7 +242,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-04-10 13:32:18-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-71,3209786f6c1c80f4e436d87eaa265057bd815e08,nylas/sync-engine/Dockerfile,nylas/sync-engine/Dockerfile, # TODO inbox-api or inbox-start,2016-02-15 15:41:38-08:00,2016-01-28 15:18:37-08:00,2019-06-24 21:10:32-07:00,nylas/sync-engine/Dockerfile
+71,3209786f6c1c80f4e436d87eaa265057bd815e08,nylas/sync-engine/Dockerfile,nylas/sync-engine/Dockerfile, # TODO inbox-api or inbox-start,2016-02-15 16:10:22-08:00,2016-01-28 15:18:37-08:00,2019-06-24 21:10:32-07:00,nylas/sync-engine/Dockerfile
 72,7fdc462c03eeceb1b4b4d4cdc640b4438e204350,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -272,7 +272,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-05-17 13:32:17-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-80,8cfd903d3f1ffc976206ff75dab4dbfcd5274ca4,makemkv/Dockerfile,makemkv/Dockerfile,# TODO find some way to include ccextractor (currently buster-only),2018-12-25 21:52:42-08:00,2017-04-01 23:53:46-07:00,,makemkv/Dockerfile
+80,8cfd903d3f1ffc976206ff75dab4dbfcd5274ca4,makemkv/Dockerfile,makemkv/Dockerfile,# TODO find some way to include ccextractor (currently buster-only),2018-12-25 21:52:42-08:00,2017-04-01 23:54:17-07:00,,makemkv/Dockerfile
 81,272d594b8604170cc1d41f88fe6bf146f897054c,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -326,13 +326,13 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-11-02 09:07:25-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-95,5cbbf847fe07a7d9aa80d912ad59311920ec89fd,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2018-05-23 13:20:26-07:00,2014-09-20 01:00:11-06:00,2019-01-17 14:41:37-08:00,qemu/Dockerfile
+95,5cbbf847fe07a7d9aa80d912ad59311920ec89fd,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2018-05-23 13:20:26-07:00,2014-09-20 01:00:11-06:00,2019-01-17 14:42:19-08:00,qemu/Dockerfile
 96,b53061db9705867cb331fbef691fd3f3b04b0e87,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-03-09 13:32:17-08:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-97,87b99df183f09b842b49ea7009ba7b6e2c1894f2,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO use links to get a redis server/database instead (since that's where configuration actually goes),2014-02-07 21:56:03-07:00,2013-11-01 23:34:15-06:00,,xen-orchestra/Dockerfile
-98,87b99df183f09b842b49ea7009ba7b6e2c1894f2,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO see note above about redis,2014-02-07 21:56:03-07:00,2013-11-01 23:34:15-06:00,,xen-orchestra/Dockerfile
+97,87b99df183f09b842b49ea7009ba7b6e2c1894f2,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO use links to get a redis server/database instead (since that's where configuration actually goes),2014-02-07 21:56:03-07:00,2013-11-01 23:34:48-06:00,,xen-orchestra/Dockerfile
+98,87b99df183f09b842b49ea7009ba7b6e2c1894f2,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO see note above about redis,2014-02-07 21:56:03-07:00,2013-11-01 23:34:48-06:00,,xen-orchestra/Dockerfile
 99,dc2aac00c92b56ff4e00eb832260daca8ac80161,docker-master/dind/Dockerfile,docker-master/dind/Dockerfile,# TODO aufs-tools,2018-10-04 13:50:17-07:00,2015-08-27 15:47:39-07:00,,docker-master/dind/Dockerfile
 100,dc2aac00c92b56ff4e00eb832260daca8ac80161,docker-master/dind/Dockerfile,docker-master/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2018-10-04 13:50:17-07:00,2015-08-27 15:47:39-07:00,,docker-master/dind/Dockerfile
 101,dc2aac00c92b56ff4e00eb832260daca8ac80161,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
@@ -418,7 +418,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-01-05 13:32:16-08:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-124,277a6c9db8301713bf30afa54baff18635fef604,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.9 (if it makes it out of edge for 3.9)",2018-07-03 18:52:06-07:00,2016-09-07 14:32:37-07:00,,network-toolbox/alpine/Dockerfile
+124,277a6c9db8301713bf30afa54baff18635fef604,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.9 (if it makes it out of edge for 3.9)",2018-07-03 18:52:06-07:00,2016-09-07 14:32:53-07:00,,network-toolbox/alpine/Dockerfile
 125,4347d61abe09578dd559d836358e59a918def5f9,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -448,7 +448,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-12-20 13:32:16-08:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-133,de7f1e9a07750b47345b2a1b6136bcd86a0667bd,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2018-05-25 09:30:09-07:00,2014-09-20 01:00:11-06:00,2019-01-17 14:41:37-08:00,qemu/Dockerfile
+133,de7f1e9a07750b47345b2a1b6136bcd86a0667bd,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2018-05-25 09:30:09-07:00,2014-09-20 01:00:11-06:00,2019-01-17 14:42:19-08:00,qemu/Dockerfile
 134,086fe7886aa24a3693817cb807c3e4d25bd631d7,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -511,7 +511,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-05-12 13:32:17-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-151,4651c8e65b80e0acc3d2f7df2de980ee28a03c7a,familysearch-indexing/Dockerfile,familysearch-indexing/Dockerfile,# TODO add a very lightweight browser for opening help and/or registration,2014-02-22 23:47:56-07:00,2014-02-22 23:47:56-07:00,2019-08-01 22:47:38-07:00,familysearch-indexing/Dockerfile
+151,4651c8e65b80e0acc3d2f7df2de980ee28a03c7a,familysearch-indexing/Dockerfile,familysearch-indexing/Dockerfile,# TODO add a very lightweight browser for opening help and/or registration,2014-02-22 23:47:56-07:00,2014-02-22 23:47:56-07:00,2019-08-01 22:48:18-07:00,familysearch-indexing/Dockerfile
 152,924d3bc607044dfac90dff7f52fc0f17c770adcd,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -520,16 +520,16 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-03-13 13:32:17-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-154,c1610b96ffcea268495de6bc01aa9d72c59f9392,docker-master/dind/Dockerfile,docker-master/dind/Dockerfile,# TODO aufs-tools,2020-06-11 01:35:40+02:00,2015-08-27 15:47:39-07:00,,docker-master/dind/Dockerfile
-155,c1610b96ffcea268495de6bc01aa9d72c59f9392,docker-master/dind/Dockerfile,docker-master/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2020-06-11 01:35:40+02:00,2015-08-27 15:47:39-07:00,,docker-master/dind/Dockerfile
-156,c1610b96ffcea268495de6bc01aa9d72c59f9392,speedtest/Dockerfile,speedtest/Dockerfile,"# TODO verify that ookla's ""armhf"" really is armv6",2020-06-11 01:35:40+02:00,2014-07-11 19:24:04-06:00,,speedtest/Dockerfile
-157,c1610b96ffcea268495de6bc01aa9d72c59f9392,speedtest/Dockerfile,speedtest/Dockerfile,"# TODO figure out what ookla means by their bare ""arm"" arch",2020-06-11 01:35:40+02:00,2014-07-11 19:24:04-06:00,,speedtest/Dockerfile
+154,c1610b96ffcea268495de6bc01aa9d72c59f9392,docker-master/dind/Dockerfile,docker-master/dind/Dockerfile,# TODO aufs-tools,2020-08-06 22:52:34+02:00,2015-08-27 15:47:39-07:00,,docker-master/dind/Dockerfile
+155,c1610b96ffcea268495de6bc01aa9d72c59f9392,docker-master/dind/Dockerfile,docker-master/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2020-08-06 22:52:34+02:00,2015-08-27 15:47:39-07:00,,docker-master/dind/Dockerfile
+156,c1610b96ffcea268495de6bc01aa9d72c59f9392,speedtest/Dockerfile,speedtest/Dockerfile,"# TODO verify that ookla's ""armhf"" really is armv6",2020-08-06 22:52:34+02:00,2014-07-11 19:24:12-06:00,,speedtest/Dockerfile
+157,c1610b96ffcea268495de6bc01aa9d72c59f9392,speedtest/Dockerfile,speedtest/Dockerfile,"# TODO figure out what ookla means by their bare ""arm"" arch",2020-08-06 22:52:34+02:00,2014-07-11 19:24:12-06:00,,speedtest/Dockerfile
 158,c1610b96ffcea268495de6bc01aa9d72c59f9392,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
-# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2020-06-11 01:35:40+02:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
+# - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2020-08-06 22:52:34+02:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
 159,c1610b96ffcea268495de6bc01aa9d72c59f9392,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.12 (if it makes it out of edge)
-# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2020-06-11 01:35:40+02:00,2016-09-07 14:32:37-07:00,,network-toolbox/alpine/Dockerfile
+# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2020-08-06 22:52:34+02:00,2016-09-07 14:32:53-07:00,,network-toolbox/alpine/Dockerfile
 160,df966bd85ec8ee2d918eef64d6a93eeee3cf4930,docker/master/dind/Dockerfile,docker-master/dind/Dockerfile,# TODO aufs-tools,2015-08-27 15:47:39-07:00,2015-08-27 15:47:39-07:00,,docker/master/dind/Dockerfile
 161,df966bd85ec8ee2d918eef64d6a93eeee3cf4930,docker/experimental/dind/Dockerfile,docker/experimental/dind/Dockerfile,# TODO aufs-tools,2015-08-27 15:47:39-07:00,2015-08-27 15:47:39-07:00,2016-11-12 08:12:05-08:00,docker/experimental/dind/Dockerfile
 162,a28355d960f6fd0e14ba0d68f7ec5428129558f9,grafana/Dockerfile,grafana/Dockerfile,"# TODO verify sha256 values! (add "".sha256"" to the end of this URL)",2018-12-05 07:55:26-08:00,2017-01-04 08:50:02-08:00,,grafana/Dockerfile
@@ -675,8 +675,8 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-04-19 13:32:18-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-203,0bff268b4aeac80fff2ca0c209f42bc4c2fab383,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO use links to get a redis server/database instead (since that's where configuration actually goes),2013-12-28 07:07:57-07:00,2013-11-01 23:34:15-06:00,,xen-orchestra/Dockerfile
-204,0bff268b4aeac80fff2ca0c209f42bc4c2fab383,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO see note above about redis,2013-12-28 07:07:57-07:00,2013-11-01 23:34:15-06:00,,xen-orchestra/Dockerfile
+203,0bff268b4aeac80fff2ca0c209f42bc4c2fab383,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO use links to get a redis server/database instead (since that's where configuration actually goes),2013-12-28 07:07:57-07:00,2013-11-01 23:34:48-06:00,,xen-orchestra/Dockerfile
+204,0bff268b4aeac80fff2ca0c209f42bc4c2fab383,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO see note above about redis,2013-12-28 07:07:57-07:00,2013-11-01 23:34:48-06:00,,xen-orchestra/Dockerfile
 205,95ddd97cea14dbcb863c46e020cb66f2fe7bb81f,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -691,7 +691,7 @@
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-01-11 13:32:17-08:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
 208,745b91b7a95066392e6d85fc0a986b6919fa724e,docker-master/dind/Dockerfile,docker-master/dind/Dockerfile,# TODO aufs-tools,2019-01-11 13:32:17-08:00,2015-08-27 15:47:39-07:00,,docker-master/dind/Dockerfile
 209,745b91b7a95066392e6d85fc0a986b6919fa724e,docker-master/dind/Dockerfile,docker-master/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2019-01-11 13:32:17-08:00,2015-08-27 15:47:39-07:00,,docker-master/dind/Dockerfile
-210,ef37f15cb29feedfd2eab2d695cd25cdf8a312c2,makemkv/Dockerfile,makemkv/Dockerfile,# TODO find some way to include ccextractor (currently buster-only),2019-03-26 22:51:44-07:00,2017-04-01 23:53:46-07:00,,makemkv/Dockerfile
+210,ef37f15cb29feedfd2eab2d695cd25cdf8a312c2,makemkv/Dockerfile,makemkv/Dockerfile,# TODO find some way to include ccextractor (currently buster-only),2019-03-26 22:51:44-07:00,2017-04-01 23:54:17-07:00,,makemkv/Dockerfile
 211,ad9c4ebd1c0dd5e60a2be23a8d427c396a769e2b,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -803,8 +803,8 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-05-18 13:32:32-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-243,c866f7b66070f5c17d1de7cda922c55dbea5b5ca,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO use links to get a redis server/database instead (since that's where configuration actually goes),2013-11-25 10:32:23-07:00,2013-11-01 23:34:15-06:00,,xen-orchestra/Dockerfile
-244,c866f7b66070f5c17d1de7cda922c55dbea5b5ca,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO see note above about redis,2013-11-25 10:32:23-07:00,2013-11-01 23:34:15-06:00,,xen-orchestra/Dockerfile
+243,c866f7b66070f5c17d1de7cda922c55dbea5b5ca,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO use links to get a redis server/database instead (since that's where configuration actually goes),2013-11-25 10:32:23-07:00,2013-11-01 23:34:48-06:00,,xen-orchestra/Dockerfile
+244,c866f7b66070f5c17d1de7cda922c55dbea5b5ca,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO see note above about redis,2013-11-25 10:32:23-07:00,2013-11-01 23:34:48-06:00,,xen-orchestra/Dockerfile
 245,8757b79b6ab500d26c9441848d2dd53e279bc02d,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -817,8 +817,8 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-05-29 08:12:27-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-248,638f9731883af92eaf6daa54eb4660f3cf74f6d5,docker-master/dind/Dockerfile,docker-master/dind/Dockerfile,# TODO aufs-tools,2017-03-10 23:18:54-08:00,2015-08-27 15:47:39-07:00,,docker-master/dind/Dockerfile
-249,0730449d5a13f92aeecadc2686f27dc2e446082d,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.10 (if it makes it out of edge for 3.10)",2019-05-17 16:25:09-07:00,2016-09-07 14:32:37-07:00,,network-toolbox/alpine/Dockerfile
+248,638f9731883af92eaf6daa54eb4660f3cf74f6d5,docker-master/dind/Dockerfile,docker-master/dind/Dockerfile,# TODO aufs-tools,2017-03-10 23:20:24-08:00,2015-08-27 15:47:39-07:00,,docker-master/dind/Dockerfile
+249,0730449d5a13f92aeecadc2686f27dc2e446082d,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.10 (if it makes it out of edge for 3.10)",2019-05-17 16:25:09-07:00,2016-09-07 14:32:53-07:00,,network-toolbox/alpine/Dockerfile
 250,fb791c2c19d45dce36486ef851505a53afc5e109,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -844,8 +844,8 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-06-09 13:32:18-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-257,a5d820803f01e2582d45be1b00a2808ede979951,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO use links to get a redis server/database instead (since that's where configuration actually goes),2013-11-01 23:34:15-06:00,2013-11-01 23:34:15-06:00,,xen-orchestra/Dockerfile
-258,a5d820803f01e2582d45be1b00a2808ede979951,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO see note above about redis,2013-11-01 23:34:15-06:00,2013-11-01 23:34:15-06:00,,xen-orchestra/Dockerfile
+257,a5d820803f01e2582d45be1b00a2808ede979951,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO use links to get a redis server/database instead (since that's where configuration actually goes),2013-11-01 23:34:48-06:00,2013-11-01 23:34:48-06:00,,xen-orchestra/Dockerfile
+258,a5d820803f01e2582d45be1b00a2808ede979951,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO see note above about redis,2013-11-01 23:34:48-06:00,2013-11-01 23:34:48-06:00,,xen-orchestra/Dockerfile
 259,c338e5d6d98b124a45ad16e06ca3d7f0ca7c4908,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -884,7 +884,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-09-29 13:32:16-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-270,5588e89d15eaa032223a1f0c05ed9a5733382bcf,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2018-08-30 13:46:35-07:00,2014-09-20 01:00:11-06:00,2019-01-17 14:41:37-08:00,qemu/Dockerfile
+270,5588e89d15eaa032223a1f0c05ed9a5733382bcf,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2018-08-30 13:46:47-07:00,2014-09-20 01:00:11-06:00,2019-01-17 14:42:19-08:00,qemu/Dockerfile
 271,adaa95f093734795175b24bc3a3c6a8ec4cba912,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -954,7 +954,7 @@
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-08-29 13:32:18-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
 288,31979a9190b03db5f3dfda253606bed5bc72112d,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.12 (if it makes it out of edge)
-# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2020-05-04 10:11:48-07:00,2016-09-07 14:32:37-07:00,,network-toolbox/alpine/Dockerfile
+# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2020-05-04 10:11:48-07:00,2016-09-07 14:32:53-07:00,,network-toolbox/alpine/Dockerfile
 289,89fa61933bd1dfa5101b1523428e2b9a84b2edfb,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -967,7 +967,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-11-08 13:32:16-08:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-292,9e8ac7f01d20bc0263c0ab3f13f3f2a3be59a54b,familysearch-indexing/Dockerfile,familysearch-indexing/Dockerfile,# TODO add a very lightweight browser for opening help and/or registration,2019-06-14 13:03:47-07:00,2014-02-22 23:47:56-07:00,2019-08-01 22:47:38-07:00,familysearch-indexing/Dockerfile
+292,9e8ac7f01d20bc0263c0ab3f13f3f2a3be59a54b,familysearch-indexing/Dockerfile,familysearch-indexing/Dockerfile,# TODO add a very lightweight browser for opening help and/or registration,2019-06-14 13:03:47-07:00,2014-02-22 23:47:56-07:00,2019-08-01 22:48:18-07:00,familysearch-indexing/Dockerfile
 293,03c351859fd6a80d65ee4a35a4bb71d7510a6041,nylas/sync-engine/Dockerfile,nylas/sync-engine/Dockerfile, # TODO inbox-api or inbox-start,2016-01-28 15:18:37-08:00,2016-01-28 15:18:37-08:00,2019-06-24 21:10:32-07:00,nylas/sync-engine/Dockerfile
 294,55b5683d4fa9fc7804e239bc1130731f7cccfe65,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
@@ -996,7 +996,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-03-28 13:32:19-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-304,da6b50da70a8dca2eada0563c3ebc4a126e42a5d,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.9 (if it makes it out of edge for 3.9)",2019-01-03 16:44:15-08:00,2016-09-07 14:32:37-07:00,,network-toolbox/alpine/Dockerfile
+304,da6b50da70a8dca2eada0563c3ebc4a126e42a5d,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.9 (if it makes it out of edge for 3.9)",2019-01-03 16:44:15-08:00,2016-09-07 14:32:53-07:00,,network-toolbox/alpine/Dockerfile
 305,611bcfef0265eeb461754095663b7f7a7cf75aa6,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1061,7 +1061,7 @@
 #ONBUILD ADD Gemfile /apps/rails/Gemfile
 #ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
 #ONBUILD RUN bundle install --deployment
-#ONBUILD ADD . /apps/rails",2014-04-02 11:56:47-06:00,2014-03-28 17:29:46-06:00,2019-09-13 14:33:29-07:00,ruby-unicorn/Dockerfile
+#ONBUILD ADD . /apps/rails",2014-04-02 11:56:47-06:00,2014-03-28 17:29:46-06:00,2019-09-13 14:33:46-07:00,ruby-unicorn/Dockerfile
 321,366a3004f85b9cce5d1bdeafe414c32e1620f646,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1131,7 +1131,7 @@
 #ONBUILD ADD Gemfile /apps/rails/Gemfile
 #ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
 #ONBUILD RUN bundle install --deployment
-#ONBUILD ADD . /apps/rails",2014-03-28 17:29:46-06:00,2014-03-28 17:29:46-06:00,2019-09-13 14:33:29-07:00,ruby-unicorn/Dockerfile
+#ONBUILD ADD . /apps/rails",2014-03-28 17:29:46-06:00,2014-03-28 17:29:46-06:00,2019-09-13 14:33:46-07:00,ruby-unicorn/Dockerfile
 339,f2eeed62198e7337221667ba9d347026adcfa62e,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1174,12 +1174,12 @@
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-06-30 22:37:26-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
 350,ddf64adf1a6c26d5adf9c8fa1c895d01da9834ca,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.12 (if it makes it out of edge)
-# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2020-02-15 02:49:09+01:00,2016-09-07 14:32:37-07:00,,network-toolbox/alpine/Dockerfile
+# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2020-02-15 02:49:09+01:00,2016-09-07 14:32:53-07:00,,network-toolbox/alpine/Dockerfile
 351,ef30e1a74a2208b78f6bea3c64201fd332d2bb86,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-04-24 13:32:24-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-352,02042c331baf96a01030574465fdb4f519108e06,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2017-12-18 13:21:01-08:00,2014-09-20 01:00:11-06:00,2019-01-17 14:41:37-08:00,qemu/Dockerfile
+352,02042c331baf96a01030574465fdb4f519108e06,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2017-12-18 13:21:01-08:00,2014-09-20 01:00:11-06:00,2019-01-17 14:42:19-08:00,qemu/Dockerfile
 353,0cbcd9ce34cce9552175eebdbc7677222aec7fe7,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1192,8 +1192,8 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-02-02 13:32:17-08:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-356,bf73c530da22ad7985bbf9ade5d23be68a903fbb,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO use links to get a redis server/database instead (since that's where configuration actually goes),2014-01-04 13:59:21-07:00,2013-11-01 23:34:15-06:00,,xen-orchestra/Dockerfile
-357,bf73c530da22ad7985bbf9ade5d23be68a903fbb,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO see note above about redis,2014-01-04 13:59:21-07:00,2013-11-01 23:34:15-06:00,,xen-orchestra/Dockerfile
+356,bf73c530da22ad7985bbf9ade5d23be68a903fbb,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO use links to get a redis server/database instead (since that's where configuration actually goes),2014-01-04 13:59:21-07:00,2013-11-01 23:34:48-06:00,,xen-orchestra/Dockerfile
+357,bf73c530da22ad7985bbf9ade5d23be68a903fbb,xen-orchestra/Dockerfile,xen-orchestra/Dockerfile,# TODO see note above about redis,2014-01-04 13:59:21-07:00,2013-11-01 23:34:48-06:00,,xen-orchestra/Dockerfile
 358,968d6ab3e87045113fdae3bfd4f6c64883ed9e5e,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1223,7 +1223,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-10-05 11:22:24-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-366,525015fb28dc52ca19bedfecad4460d271f6aee0,makemkv/Dockerfile,makemkv/Dockerfile,# TODO find some way to include ccextractor (currently buster-only),2019-06-17 12:37:53-07:00,2017-04-01 23:53:46-07:00,,makemkv/Dockerfile
+366,525015fb28dc52ca19bedfecad4460d271f6aee0,makemkv/Dockerfile,makemkv/Dockerfile,# TODO find some way to include ccextractor (currently buster-only),2019-06-17 12:37:53-07:00,2017-04-01 23:54:17-07:00,,makemkv/Dockerfile
 367,2b3b9ed7ad5e76ff28e78b0d4736760dfc4124e6,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1308,7 +1308,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-09-13 13:32:23-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-391,03a8272a06f76fa23512ccb7083d45f0bd71aefb,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2017-12-21 10:07:44-08:00,2014-09-20 01:00:11-06:00,2019-01-17 14:41:37-08:00,qemu/Dockerfile
+391,03a8272a06f76fa23512ccb7083d45f0bd71aefb,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2017-12-21 10:07:44-08:00,2014-09-20 01:00:11-06:00,2019-01-17 14:42:19-08:00,qemu/Dockerfile
 392,c42418329661fb6cc280f4278f90bb47a55aca6b,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1342,7 +1342,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-10-30 13:33:03-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-401,e3872662187caddf9bf72536532a2e197df12b51,makemkv/Dockerfile,makemkv/Dockerfile,# TODO find some way to include ccextractor (currently buster-only),2019-06-21 07:30:33-07:00,2017-04-01 23:53:46-07:00,,makemkv/Dockerfile
+401,e3872662187caddf9bf72536532a2e197df12b51,makemkv/Dockerfile,makemkv/Dockerfile,# TODO find some way to include ccextractor (currently buster-only),2019-06-21 07:30:33-07:00,2017-04-01 23:54:17-07:00,,makemkv/Dockerfile
 402,d17b242c3198b6be8174beaf33fb5a1a865960dd,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1401,7 +1401,7 @@
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-08-14 13:32:39-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
 416,f84280ef47393b585e38e86994de77d605f11028,containerd/Dockerfile,containerd/Dockerfile,# TODO .asc / .sha256sum,2020-03-26 16:17:35-07:00,2020-03-26 16:17:35-07:00,,containerd/Dockerfile
 417,b6144573262026530b06e311ac1b62e3081e4ecb,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.11 (if it makes it out of edge)
-# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2019-07-02 23:24:46-07:00,2016-09-07 14:32:37-07:00,,network-toolbox/alpine/Dockerfile
+# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2019-07-02 23:24:46-07:00,2016-09-07 14:32:53-07:00,,network-toolbox/alpine/Dockerfile
 418,e056e65a80ab89aa2e6e8e0a97b2a910a5a9c8de,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1434,13 +1434,13 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-08-25 13:32:19-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-426,5ec89c6f5ac25040733739f34bab266c1618f83b,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.9 (if it makes it out of edge for 3.9)",2018-08-12 14:26:11-07:00,2016-09-07 14:32:37-07:00,,network-toolbox/alpine/Dockerfile
+426,5ec89c6f5ac25040733739f34bab266c1618f83b,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.9 (if it makes it out of edge for 3.9)",2018-08-12 14:26:24-07:00,2016-09-07 14:32:53-07:00,,network-toolbox/alpine/Dockerfile
 427,bc02ee1af3ddd77ede2498d95d340a9de7feb176,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-11-28 13:32:16-08:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
 428,babbe8e59860265db6cc27b93c10422aeac9e8ef,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.12 (if it makes it out of edge)
-# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2020-03-07 07:27:56-08:00,2016-09-07 14:32:37-07:00,,network-toolbox/alpine/Dockerfile
+# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2020-03-07 07:27:56-08:00,2016-09-07 14:32:53-07:00,,network-toolbox/alpine/Dockerfile
 429,291449b9d10911a54c0483f60850d37ae9b2725e,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1474,7 +1474,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-08-24 13:32:27-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-438,4bc9e1a50ee138a12cef4333288ef4d8a1c16344,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.10 (if it makes it out of edge for 3.10)",2019-04-23 13:58:03-07:00,2016-09-07 14:32:37-07:00,,network-toolbox/alpine/Dockerfile
+438,4bc9e1a50ee138a12cef4333288ef4d8a1c16344,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.10 (if it makes it out of edge for 3.10)",2019-04-23 13:58:51-07:00,2016-09-07 14:32:53-07:00,,network-toolbox/alpine/Dockerfile
 439,a6a54908654cf1b71e017edbf57e886a8e58a8dd,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1519,7 +1519,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-11-05 19:07:25-08:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-450,5b58c47c7bda28d60a4391360a51eb4d7236b408,familysearch-indexing/Dockerfile,familysearch-indexing/Dockerfile,# TODO add a very lightweight browser for opening help and/or registration,2017-06-21 07:55:23-07:00,2014-02-22 23:47:56-07:00,2019-08-01 22:47:38-07:00,familysearch-indexing/Dockerfile
+450,5b58c47c7bda28d60a4391360a51eb4d7236b408,familysearch-indexing/Dockerfile,familysearch-indexing/Dockerfile,# TODO add a very lightweight browser for opening help and/or registration,2017-06-21 07:55:23-07:00,2014-02-22 23:47:56-07:00,2019-08-01 22:48:18-07:00,familysearch-indexing/Dockerfile
 451,d50f9b27f7180df087038088f7a384799149a7a8,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1684,7 +1684,7 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-04-11 13:32:18-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-495,e8ff394e8f8040bb55d0d34f1df6a2ebac60be38,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2018-01-03 12:44:57-08:00,2014-09-20 01:00:11-06:00,2019-01-17 14:41:37-08:00,qemu/Dockerfile
+495,e8ff394e8f8040bb55d0d34f1df6a2ebac60be38,qemu/Dockerfile,qemu/Dockerfile,# TODO verify signature,2018-01-03 12:44:57-08:00,2014-09-20 01:00:11-06:00,2019-01-17 14:42:19-08:00,qemu/Dockerfile
 496,7732b1f22b125108bfad4e6e5e7f5a8d959b072c,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1694,7 +1694,7 @@
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019-05-07 13:32:17-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
 498,bfed2767f3e52dde34a62f03294d71346859a7b5,network-toolbox/alpine/Dockerfile,network-toolbox/alpine/Dockerfile,"# TODO add ""nbtscan"" when we get to Alpine 3.11 (if it makes it out of edge)
-# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2019-10-19 13:37:00-07:00,2016-09-07 14:32:37-07:00,,network-toolbox/alpine/Dockerfile
+# https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64",2019-10-19 13:37:00-07:00,2016-09-07 14:32:53-07:00,,network-toolbox/alpine/Dockerfile
 499,5b2ba61e2241b22c89786d73ab47216160b89b36,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1752,8 +1752,8 @@
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018-06-21 13:32:18-07:00,2015-08-27 15:47:39-07:00,,docker-master/Dockerfile
-514,16243eae94d9f611d158fb2dc03a0393630c47cc,speedtest/Dockerfile,speedtest/Dockerfile,"# TODO verify that ookla's ""armhf"" really is armv6",2020-04-29 16:18:08-07:00,2014-07-11 19:24:04-06:00,,speedtest/Dockerfile
-515,16243eae94d9f611d158fb2dc03a0393630c47cc,speedtest/Dockerfile,speedtest/Dockerfile,"# TODO figure out what ookla means by their bare ""arm"" arch",2020-04-29 16:18:08-07:00,2014-07-11 19:24:04-06:00,,speedtest/Dockerfile
+514,16243eae94d9f611d158fb2dc03a0393630c47cc,speedtest/Dockerfile,speedtest/Dockerfile,"# TODO verify that ookla's ""armhf"" really is armv6",2020-04-29 16:18:08-07:00,2014-07-11 19:24:12-06:00,,speedtest/Dockerfile
+515,16243eae94d9f611d158fb2dc03a0393630c47cc,speedtest/Dockerfile,speedtest/Dockerfile,"# TODO figure out what ookla means by their bare ""arm"" arch",2020-04-29 16:18:08-07:00,2014-07-11 19:24:12-06:00,,speedtest/Dockerfile
 516,e854b648841f28e11087c810a4588fbf5e71f244,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
@@ -1767,7 +1767,7 @@
 519,2733bf5befe88d52b6e4126956499f97441871a6,docker-tianon/Dockerfile,docker-tianon/Dockerfile,"#RUN set -eux; \
 #	wget -O /usr/local/bin/dind ""https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind""; \
 #	chmod +x /usr/local/bin/dind",2020-04-18 10:20:29-07:00,2017-09-18 10:59:13-07:00,,docker-tianon/Dockerfile
-520,baf2dfc13afcee35d9b2e8e5779b79947ba6bf31,nylas/sync-engine/Dockerfile,nylas/sync-engine/Dockerfile, # TODO inbox-api or inbox-start,2017-12-27 13:49:00-08:00,2016-01-28 15:18:37-08:00,2019-06-24 21:10:32-07:00,nylas/sync-engine/Dockerfile
+520,baf2dfc13afcee35d9b2e8e5779b79947ba6bf31,nylas/sync-engine/Dockerfile,nylas/sync-engine/Dockerfile, # TODO inbox-api or inbox-start,2017-12-27 13:49:50-08:00,2016-01-28 15:18:37-08:00,2019-06-24 21:10:32-07:00,nylas/sync-engine/Dockerfile
 521,382fc87134265f58231d55943c5906d7ae23bf84,docker-master/Dockerfile,docker-master/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275

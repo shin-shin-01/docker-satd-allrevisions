@@ -33,8 +33,10 @@ def GitlogFileStatus(repository):
     - A : Added
     """
 
-    # -mオプションは、マージコミットを通常のコミットと同じように扱うオプション。
-    command = f'git log --name-status -m'
+    # -m: マージコミットを通常のコミットと同じように扱うオプション。
+    # --pretty=fuller: commit日とpush(rebaseなど)日を明確に表示する機能だと思ってる（たぶん）
+    # https://vividcode.hatenablog.com/entry/git/author-date-and-committer-date
+    command = f'git log --name-status -m --pretty=fuller'
     cwd = f'./{PATH_OF_GITCLONE}/{repository}/'
 
     # ignore utf-8 Error
@@ -100,8 +102,8 @@ def RevisionsHaveDocker(repository, txtGitFileStatus):
         elif txt[:7] == "Author:":
             tmp["Author"] = txt[8:]
 
-        elif txt[:5] == "Date:":
-            tmp["Date"] = txt[8:]
+        elif txt[:11] == "CommitDate:":
+            tmp["Date"] = txt[12:]
 
         elif ("Dockerfile" == txt[-10:]) or ("dockerfile" == txt[-10:]):
 

@@ -162,6 +162,7 @@ def git_difference(commit_id, filename, project):
     return txtGitdiff
 
 def get_targetComment_line(txtGitdiff, comment, plus_minus):
+    print("="*10, plus_minus)
     start = False
     count = 0 # 過去のファイルの行数カウント
 
@@ -188,10 +189,10 @@ def get_targetComment_line(txtGitdiff, comment, plus_minus):
         else:
             count += 1
 
-    # print("="*30)
-    # print(comment)
-    # print('-'*20)
-    # print(txtGitdiff)
+    print("="*30)
+    print(comment)
+    print('-'*20)
+    print(txtGitdiff)
     print("No targetComment in txtGitdiff")
     return "Error"
         
