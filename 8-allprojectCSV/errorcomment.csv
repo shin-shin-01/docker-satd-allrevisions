@@ -781,8 +781,7 @@ index 77aecd9ba3..cd327aa499 100644
  # Upload docker source
  COPY	.	/go/src/github.com/docker/docker
 "
-4,+,# TODO verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc,
-5,+,## Start Hack,"diff --git a/Dockerfile b/Dockerfile
+4,+,## Start Hack,"diff --git a/Dockerfile b/Dockerfile
 index 024065d..685d09e 100644
 --- a/Dockerfile
 +++ b/Dockerfile
@@ -886,12 +885,7 @@ index 024065d..685d09e 100644
 \ No newline at end of file
 +CMD [""node"", ""main.js""]
 "
-6,+,"# TODO:
-# - version as a variable (both php and ZS)",
-7,+,# TODO use this MD5,
-8,+,# TODO use links to get a redis server/database instead (since that's where configuration actually goes),
-9,+,# TODO see note above about redis,
-10,+,"# # Make a dockerd binary.
+5,+,"# # Make a dockerd binary.
 # # hack/make.sh binary
 #
 # # Install dockerd to /usr/local/bin
@@ -1159,7 +1153,7 @@ index c4651b7b50..4db75a6722 100644
  # Upload docker source
  COPY . /go/src/github.com/docker/docker
 "
-11,+,"# This file describes the standard way to build Docker, using docker
+6,+,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -1282,15 +1276,15 @@ index 77aecd9ba3..cd327aa499 100644
  # Upload docker source
  COPY	.	/go/src/github.com/docker/docker
 "
-12,-,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
+7,-,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
 # http://erlang.org/pipermail/erlang-questions/2019-January/097067.html",
-13,-,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
+8,-,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
 # http://erlang.org/pipermail/erlang-questions/2019-January/097067.html",
-14,-,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
+9,-,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
 # http://erlang.org/pipermail/erlang-questions/2019-January/097067.html",
-15,-,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
+10,-,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
 # http://erlang.org/pipermail/erlang-questions/2019-January/097067.html",
-16,-,"# This file describes the standard way to build Docker, using docker
+11,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -1379,7 +1373,7 @@ index 0f04035ec4..122346c0dd 100644
  # Upload docker source
  add	.       /go/src/github.com/dotcloud/docker
 "
-17,-,"# This file describes the standard way to build Docker, using docker
+12,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -1402,8 +1396,81 @@ index 0f04035ec4..122346c0dd 100644
 #  -e AWS_SECRET_KEY=bar \
 #  -e GPG_PASSPHRASE=gloubiboulga \
 #  docker hack/release.sh
-#",
-18,-,"# This file describes the standard way to build Docker, using docker
+#","diff --git a/Dockerfile b/Dockerfile
+new file mode 100644
+index 0000000000..9bfa266a22
+--- /dev/null
++++ b/Dockerfile
+@@ -0,0 +1,67 @@
++# This file describes the standard way to build Docker, using docker
++#
++# Usage:
++#
++# # Assemble the full dev environment. This is slow the first time.
++# docker build -t docker .
++#
++# # Mount your source in an interactive container for quick testing:
++# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -i -t docker bash
++#
++# # Run the test suite:
++# docker run -privileged docker hack/make.sh test
++#
++# # Publish a release:
++# docker run -privileged \
++#  -e AWS_S3_BUCKET=baz \
++#  -e AWS_ACCESS_KEY=foo \
++#  -e AWS_SECRET_KEY=bar \
++#  -e GPG_PASSPHRASE=gloubiboulga \
++#  docker hack/release.sh
++#
++# Note: Apparmor used to mess with privileged mode, but this is no longer
++# the case. Therefore, you don't have to disable it anymore.
++#
++
++docker-version 0.6.1
++from	ubuntu:12.04
++maintainer	Solomon Hykes <solomon@dotcloud.com>
++
++# Build dependencies
++run	echo 'deb http://archive.ubuntu.com/ubuntu precise main universe' > /etc/apt/sources.list
++run	apt-get update
++run	apt-get install -y -q curl
++run	apt-get install -y -q git
++run	apt-get install -y -q mercurial
++run apt-get install -y -q build-essential libsqlite3-dev
++
++# Install Go
++run	curl -s https://go.googlecode.com/files/go1.2rc3.src.tar.gz | tar -v -C /usr/local -xz
++env	PATH	/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
++env	GOPATH	/go:/go/src/github.com/dotcloud/docker/vendor
++run cd /usr/local/go/src && ./make.bash && go install -ldflags '-w -linkmode external -extldflags ""-static -Wl,--unresolved-symbols=ignore-in-shared-libs""' -tags netgo -a std
++
++# Ubuntu stuff
++run	apt-get install -y -q ruby1.9.3 rubygems libffi-dev
++run	gem install --no-rdoc --no-ri fpm
++run	apt-get install -y -q reprepro dpkg-sig
++
++# Install s3cmd 1.0.1 (earlier versions don't support env variables in the config)
++run	apt-get install -y -q python-pip
++run	pip install s3cmd
++run	pip install python-magic
++run	/bin/echo -e '[default]\naccess_key=$AWS_ACCESS_KEY\nsecret_key=$AWS_SECRET_KEY\n' > /.s3cfg
++
++# Runtime dependencies
++run	apt-get install -y -q iptables
++run	apt-get install -y -q lxc
++run	apt-get install -y -q aufs-tools
++
++volume	/var/lib/docker
++workdir	/go/src/github.com/dotcloud/docker
++
++# Wrap all commands in the ""docker-in-docker"" script to allow nested containers
++entrypoint [""hack/dind""]
++
++# Upload docker source
++add	.       /go/src/github.com/dotcloud/docker
+"
+13,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -1698,7 +1765,7 @@ index 0e425ca819..210db41e7c 100644
  # Upload docker source
  COPY . /go/src/github.com/docker/docker
 "
-19,-,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)","diff --git a/Dockerfile b/Dockerfile
+14,-,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)","diff --git a/Dockerfile b/Dockerfile
 index c52476c637..27608c4f5f 100644
 --- a/Dockerfile
 +++ b/Dockerfile
@@ -1963,8 +2030,8 @@ index c52476c637..27608c4f5f 100644
  # Upload docker source
  COPY . /go/src/github.com/docker/docker
 "
-20,-,# TODO replace FPM with some very minimal debhelper stuff,
-21,-,"# This file describes the standard way to build Docker, using docker
+15,-,# TODO replace FPM with some very minimal debhelper stuff,
+16,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -1980,7 +2047,7 @@ index c52476c637..27608c4f5f 100644
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #",
-22,-,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released,"diff --git a/docs/Dockerfile b/docs/Dockerfile
+17,-,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released,"diff --git a/docs/Dockerfile b/docs/Dockerfile
 index caa291dffb..0b5b33b29f 100644
 --- a/docs/Dockerfile
 +++ b/docs/Dockerfile
@@ -2035,7 +2102,7 @@ index caa291dffb..0b5b33b29f 100644
  # Then build everything together, ready for mkdocs
  RUN /docs/build.sh
 "
-23,-,#### FIXME. Temporarily install docker with proper apparmor handling,"diff --git a/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile b/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile
+18,-,#### FIXME. Temporarily install docker with proper apparmor handling,"diff --git a/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile b/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile
 index 953d7c11cc..6762cb4686 100644
 --- a/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile
 +++ b/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile
@@ -2076,7 +2143,7 @@ index 953d7c11cc..6762cb4686 100644
  # Add release credentials
  add ./release_credentials.json /root/release_credentials.json
 "
-24,-,"# This file describes the standard way to build Docker, using docker
+19,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2165,7 +2232,7 @@ index 0f04035ec4..122346c0dd 100644
  # Upload docker source
  add	.       /go/src/github.com/dotcloud/docker
 "
-25,-,"# This file describes the standard way to build Docker, using docker
+20,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2188,8 +2255,81 @@ index 0f04035ec4..122346c0dd 100644
 #  -e AWS_SECRET_KEY=bar \
 #  -e GPG_PASSPHRASE=gloubiboulga \
 #  docker hack/release.sh
-#",
-26,-,"# This file describes the standard way to build Docker, using docker
+#","diff --git a/components/engine/Dockerfile b/components/engine/Dockerfile
+new file mode 100644
+index 0000000000..9bfa266a22
+--- /dev/null
++++ b/components/engine/Dockerfile
+@@ -0,0 +1,67 @@
++# This file describes the standard way to build Docker, using docker
++#
++# Usage:
++#
++# # Assemble the full dev environment. This is slow the first time.
++# docker build -t docker .
++#
++# # Mount your source in an interactive container for quick testing:
++# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -i -t docker bash
++#
++# # Run the test suite:
++# docker run -privileged docker hack/make.sh test
++#
++# # Publish a release:
++# docker run -privileged \
++#  -e AWS_S3_BUCKET=baz \
++#  -e AWS_ACCESS_KEY=foo \
++#  -e AWS_SECRET_KEY=bar \
++#  -e GPG_PASSPHRASE=gloubiboulga \
++#  docker hack/release.sh
++#
++# Note: Apparmor used to mess with privileged mode, but this is no longer
++# the case. Therefore, you don't have to disable it anymore.
++#
++
++docker-version 0.6.1
++from	ubuntu:12.04
++maintainer	Solomon Hykes <solomon@dotcloud.com>
++
++# Build dependencies
++run	echo 'deb http://archive.ubuntu.com/ubuntu precise main universe' > /etc/apt/sources.list
++run	apt-get update
++run	apt-get install -y -q curl
++run	apt-get install -y -q git
++run	apt-get install -y -q mercurial
++run apt-get install -y -q build-essential libsqlite3-dev
++
++# Install Go
++run	curl -s https://go.googlecode.com/files/go1.2rc3.src.tar.gz | tar -v -C /usr/local -xz
++env	PATH	/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
++env	GOPATH	/go:/go/src/github.com/dotcloud/docker/vendor
++run cd /usr/local/go/src && ./make.bash && go install -ldflags '-w -linkmode external -extldflags ""-static -Wl,--unresolved-symbols=ignore-in-shared-libs""' -tags netgo -a std
++
++# Ubuntu stuff
++run	apt-get install -y -q ruby1.9.3 rubygems libffi-dev
++run	gem install --no-rdoc --no-ri fpm
++run	apt-get install -y -q reprepro dpkg-sig
++
++# Install s3cmd 1.0.1 (earlier versions don't support env variables in the config)
++run	apt-get install -y -q python-pip
++run	pip install s3cmd
++run	pip install python-magic
++run	/bin/echo -e '[default]\naccess_key=$AWS_ACCESS_KEY\nsecret_key=$AWS_SECRET_KEY\n' > /.s3cfg
++
++# Runtime dependencies
++run	apt-get install -y -q iptables
++run	apt-get install -y -q lxc
++run	apt-get install -y -q aufs-tools
++
++volume	/var/lib/docker
++workdir	/go/src/github.com/dotcloud/docker
++
++# Wrap all commands in the ""docker-in-docker"" script to allow nested containers
++entrypoint [""hack/dind""]
++
++# Upload docker source
++add	.       /go/src/github.com/dotcloud/docker
+"
+21,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2484,7 +2624,7 @@ index 0e425ca819..210db41e7c 100644
  # Upload docker source
  COPY . /go/src/github.com/docker/docker
 "
-27,-,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)","diff --git a/components/engine/Dockerfile b/components/engine/Dockerfile
+22,-,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)","diff --git a/components/engine/Dockerfile b/components/engine/Dockerfile
 index c52476c637..27608c4f5f 100644
 --- a/components/engine/Dockerfile
 +++ b/components/engine/Dockerfile
@@ -2749,7 +2889,7 @@ index c52476c637..27608c4f5f 100644
  # Upload docker source
  COPY . /go/src/github.com/docker/docker
 "
-28,-,"# This file describes the standard way to build Docker, using docker
+23,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2772,9 +2912,244 @@ index c52476c637..27608c4f5f 100644
 #
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#",
-29,-,# TODO replace FPM with some very minimal debhelper stuff,
-30,-,"# This file describes the standard way to build Docker, using docker
+#","diff --git a/components/engine/Dockerfile b/components/engine/Dockerfile
+new file mode 100644
+index 0000000000..a26468201b
+--- /dev/null
++++ b/components/engine/Dockerfile
+@@ -0,0 +1,229 @@
++# This file describes the standard way to build Docker, using docker
++#
++# Usage:
++#
++# # Assemble the full dev environment. This is slow the first time.
++# docker build -t docker .
++#
++# # Mount your source in an interactive container for quick testing:
++# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
++#
++# # Run the test suite:
++# docker run -e DOCKER_GITCOMMIT=foo --privileged docker hack/make.sh test-unit test-integration test-docker-py
++#
++# # Publish a release:
++# docker run --privileged \
++#  -e AWS_S3_BUCKET=baz \
++#  -e AWS_ACCESS_KEY=foo \
++#  -e AWS_SECRET_KEY=bar \
++#  -e GPG_PASSPHRASE=gloubiboulga \
++#  docker hack/release.sh
++#
++# Note: AppArmor used to mess with privileged mode, but this is no longer
++# the case. Therefore, you don't have to disable it anymore.
++#
++
++FROM debian:jessie
++
++# allow replacing httpredir or deb mirror
++ARG APT_MIRROR=deb.debian.org
++RUN sed -ri ""s/(httpredir|deb).debian.org/$APT_MIRROR/g"" /etc/apt/sources.list
++
++# Packaged dependencies
++RUN apt-get update && apt-get install -y \
++	apparmor \
++	apt-utils \
++	aufs-tools \
++	automake \
++	bash-completion \
++	binutils-mingw-w64 \
++	bsdmainutils \
++	btrfs-tools \
++	build-essential \
++	cmake \
++	createrepo \
++	curl \
++	dpkg-sig \
++	gcc-mingw-w64 \
++	git \
++	iptables \
++	jq \
++	less \
++	libapparmor-dev \
++	libcap-dev \
++	libnl-3-dev \
++	libprotobuf-c0-dev \
++	libprotobuf-dev \
++	libsystemd-journal-dev \
++	libtool \
++	mercurial \
++	net-tools \
++	pkg-config \
++	protobuf-compiler \
++	protobuf-c-compiler \
++	python-dev \
++	python-mock \
++	python-pip \
++	python-websocket \
++	tar \
++	vim \
++	vim-common \
++	xfsprogs \
++	zip \
++	--no-install-recommends \
++	&& pip install awscli==1.10.15
++
++# Get lvm2 sources to build statically linked devmapper library
++ENV LVM2_VERSION 2.02.173
++RUN mkdir -p /usr/local/lvm2 \
++	&& curl -fsSL ""https://mirrors.kernel.org/sourceware/lvm2/LVM2.${LVM2_VERSION}.tgz"" \
++		| tar -xzC /usr/local/lvm2 --strip-components=1
++
++# Compile and install (only the needed library)
++RUN cd /usr/local/lvm2 \
++	&& ./configure \
++		--build=""$(gcc -print-multiarch)"" \
++		--enable-static_link \
++		--enable-pkgconfig \
++	&& make -C include \
++	&& make -C libdm install_device-mapper
++
++# Install seccomp: the version shipped upstream is too old
++ENV SECCOMP_VERSION 2.3.2
++RUN set -x \
++	&& export SECCOMP_PATH=""$(mktemp -d)"" \
++	&& curl -fsSL ""https://github.com/seccomp/libseccomp/releases/download/v${SECCOMP_VERSION}/libseccomp-${SECCOMP_VERSION}.tar.gz"" \
++		| tar -xzC ""$SECCOMP_PATH"" --strip-components=1 \
++	&& ( \
++		cd ""$SECCOMP_PATH"" \
++		&& ./configure --prefix=/usr/local \
++		&& make \
++		&& make install \
++		&& ldconfig \
++	) \
++	&& rm -rf ""$SECCOMP_PATH""
++
++# Install Go
++# IMPORTANT: If the version of Go is updated, the Windows to Linux CI machines
++#            will need updating, to avoid errors. Ping #docker-maintainers on IRC
++#            with a heads-up.
++# IMPORTANT: When updating this please note that stdlib archive/tar pkg is vendored
++ENV GO_VERSION 1.8.3
++RUN curl -fsSL ""https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz"" \
++	| tar -xzC /usr/local
++
++ENV PATH /go/bin:/usr/local/go/bin:$PATH
++ENV GOPATH /go
++
++# Dependency for golint
++ENV GO_TOOLS_COMMIT 823804e1ae08dbb14eb807afc7db9993bc9e3cc3
++RUN git clone https://github.com/golang/tools.git /go/src/golang.org/x/tools \
++	&& (cd /go/src/golang.org/x/tools && git checkout -q $GO_TOOLS_COMMIT)
++
++# Grab Go's lint tool
++ENV GO_LINT_COMMIT 32a87160691b3c96046c0c678fe57c5bef761456
++RUN git clone https://github.com/golang/lint.git /go/src/github.com/golang/lint \
++	&& (cd /go/src/github.com/golang/lint && git checkout -q $GO_LINT_COMMIT) \
++	&& go install -v github.com/golang/lint/golint
++
++# Install CRIU for checkpoint/restore support
++ENV CRIU_VERSION 2.12.1
++# Install dependancy packages specific to criu
++RUN apt-get install libnet-dev -y && \
++	mkdir -p /usr/src/criu \
++	&& curl -sSL https://github.com/xemul/criu/archive/v${CRIU_VERSION}.tar.gz | tar -v -C /usr/src/criu/ -xz --strip-components=1 \
++	&& cd /usr/src/criu \
++	&& make \
++	&& make install-criu
++
++# Install two versions of the registry. The first is an older version that
++# only supports schema1 manifests. The second is a newer version that supports
++# both. This allows integration-cli tests to cover push/pull with both schema1
++# and schema2 manifests.
++ENV REGISTRY_COMMIT_SCHEMA1 ec87e9b6971d831f0eff752ddb54fb64693e51cd
++ENV REGISTRY_COMMIT 47a064d4195a9b56133891bbb13620c3ac83a827
++RUN set -x \
++	&& export GOPATH=""$(mktemp -d)"" \
++	&& git clone https://github.com/docker/distribution.git ""$GOPATH/src/github.com/docker/distribution"" \
++	&& (cd ""$GOPATH/src/github.com/docker/distribution"" && git checkout -q ""$REGISTRY_COMMIT"") \
++	&& GOPATH=""$GOPATH/src/github.com/docker/distribution/Godeps/_workspace:$GOPATH"" \
++		go build -o /usr/local/bin/registry-v2 github.com/docker/distribution/cmd/registry \
++	&& (cd ""$GOPATH/src/github.com/docker/distribution"" && git checkout -q ""$REGISTRY_COMMIT_SCHEMA1"") \
++	&& GOPATH=""$GOPATH/src/github.com/docker/distribution/Godeps/_workspace:$GOPATH"" \
++		go build -o /usr/local/bin/registry-v2-schema1 github.com/docker/distribution/cmd/registry \
++	&& rm -rf ""$GOPATH""
++
++# Install notary and notary-server
++ENV NOTARY_VERSION v0.5.0
++RUN set -x \
++	&& export GOPATH=""$(mktemp -d)"" \
++	&& git clone https://github.com/docker/notary.git ""$GOPATH/src/github.com/docker/notary"" \
++	&& (cd ""$GOPATH/src/github.com/docker/notary"" && git checkout -q ""$NOTARY_VERSION"") \
++	&& GOPATH=""$GOPATH/src/github.com/docker/notary/vendor:$GOPATH"" \
++		go build -o /usr/local/bin/notary-server github.com/docker/notary/cmd/notary-server \
++	&& GOPATH=""$GOPATH/src/github.com/docker/notary/vendor:$GOPATH"" \
++		go build -o /usr/local/bin/notary github.com/docker/notary/cmd/notary \
++	&& rm -rf ""$GOPATH""
++
++# Get the ""docker-py"" source so we can run their integration tests
++ENV DOCKER_PY_COMMIT a962578e515185cf06506050b2200c0b81aa84ef
++# To run integration tests docker-pycreds is required.
++# Before running the integration tests conftest.py is
++# loaded which results in loads auth.py that
++# imports the docker-pycreds module.
++RUN git clone https://github.com/docker/docker-py.git /docker-py \
++	&& cd /docker-py \
++	&& git checkout -q $DOCKER_PY_COMMIT \
++	&& pip install docker-pycreds==0.2.1 \
++	&& pip install -r test-requirements.txt
++
++# Install yamllint for validating swagger.yaml
++RUN pip install yamllint==1.5.0
++
++# Install go-swagger for validating swagger.yaml
++ENV GO_SWAGGER_COMMIT c28258affb0b6251755d92489ef685af8d4ff3eb
++RUN git clone https://github.com/go-swagger/go-swagger.git /go/src/github.com/go-swagger/go-swagger \
++	&& (cd /go/src/github.com/go-swagger/go-swagger && git checkout -q $GO_SWAGGER_COMMIT) \
++	&& go install -v github.com/go-swagger/go-swagger/cmd/swagger
++
++# Set user.email so crosbymichael's in-container merge commits go smoothly
++RUN git config --global user.email 'docker-dummy@example.com'
++
++# Add an unprivileged user to be used for tests which need it
++RUN groupadd -r docker
++RUN useradd --create-home --gid docker unprivilegeduser
++
++VOLUME /var/lib/docker
++WORKDIR /go/src/github.com/docker/docker
++ENV DOCKER_BUILDTAGS apparmor seccomp selinux
++
++# Let us use a .bashrc file
++RUN ln -sfv $PWD/.bashrc ~/.bashrc
++# Add integration helps to bashrc
++RUN echo ""source $PWD/hack/make/.integration-test-helpers"" >> /etc/bash.bashrc
++
++# Get useful and necessary Hub images so we can ""docker load"" locally instead of pulling
++COPY contrib/download-frozen-image-v2.sh /go/src/github.com/docker/docker/contrib/
++RUN ./contrib/download-frozen-image-v2.sh /docker-frozen-images \
++	buildpack-deps:jessie@sha256:85b379ec16065e4fe4127eb1c5fb1bcc03c559bd36dbb2e22ff496de55925fa6 \
++	busybox:latest@sha256:32f093055929dbc23dec4d03e09dfe971f5973a9ca5cf059cbfb644c206aa83f \
++	debian:jessie@sha256:72f784399fd2719b4cb4e16ef8e369a39dc67f53d978cd3e2e7bf4e502c7b793 \
++	hello-world:latest@sha256:c5515758d4c5e1e838e9cd307f6c6a0d620b5e07e6f927b07d05f6d12a1ac8d7
++# See also ensureFrozenImagesLinux() in ""integration-cli/fixtures_linux_daemon_test.go"" (which needs to be updated when adding images to this list)
++
++# Install tomlv, vndr, runc, containerd, tini, docker-proxy dockercli
++# Please edit hack/dockerfile/install-binaries.sh to update them.
++COPY hack/dockerfile/binaries-commits /tmp/binaries-commits
++COPY hack/dockerfile/install-binaries.sh /tmp/install-binaries.sh
++RUN /tmp/install-binaries.sh tomlv vndr runc containerd tini proxy dockercli
++ENV PATH=/usr/local/cli:$PATH
++
++# Activate bash completion and include Docker's completion if mounted with DOCKER_BASH_COMPLETION_PATH
++RUN echo ""source /usr/share/bash-completion/bash_completion"" >> /etc/bash.bashrc
++RUN ln -s /usr/local/completion/bash/docker /etc/bash_completion.d/docker
++
++# Wrap all commands in the ""docker-in-docker"" script to allow nested containers
++ENTRYPOINT [""hack/dind""]
++
++# Upload docker source
++COPY . /go/src/github.com/docker/docker
+"
+24,-,# TODO replace FPM with some very minimal debhelper stuff,
+25,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -2790,7 +3165,7 @@ index c52476c637..27608c4f5f 100644
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #",
-31,-,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released,"diff --git a/components/engine/docs/Dockerfile b/components/engine/docs/Dockerfile
+26,-,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released,"diff --git a/components/engine/docs/Dockerfile b/components/engine/docs/Dockerfile
 index caa291dffb..0b5b33b29f 100644
 --- a/components/engine/docs/Dockerfile
 +++ b/components/engine/docs/Dockerfile
@@ -2845,7 +3220,7 @@ index caa291dffb..0b5b33b29f 100644
  # Then build everything together, ready for mkdocs
  RUN /docs/build.sh
 "
-32,-,"# Todo: remove build dependencies
+27,-,"# Todo: remove build dependencies
 #	runDeps=""$( \
 #		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems \
 #		| tr ',' '\n' \
@@ -2971,7 +3346,7 @@ index 2e9f1c5..23673d3 100644
  EXPOSE 3000
  CMD [""rails"", ""server"", ""-b"", ""0.0.0.0""]
 "
-33,-,"# Todo: remove build dependencies
+28,-,"# Todo: remove build dependencies
 #	runDeps=""$( \
 #		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems \
 #		| tr ',' '\n' \
@@ -3097,7 +3472,7 @@ index 7e256cb..2e3e03d 100644
  EXPOSE 3000
  CMD [""rails"", ""server"", ""-b"", ""0.0.0.0""]
 "
-34,-,"# TODO should we leave these installed, or remove them too?","diff --git a/9.0/jdk8/corretto/Dockerfile b/9.0/jdk8/corretto/Dockerfile
+29,-,"# TODO should we leave these installed, or remove them too?","diff --git a/9.0/jdk8/corretto/Dockerfile b/9.0/jdk8/corretto/Dockerfile
 index 9e4304a..05c5ab7 100644
 --- a/9.0/jdk8/corretto/Dockerfile
 +++ b/9.0/jdk8/corretto/Dockerfile
@@ -3275,7 +3650,7 @@ index 9e4304a..05c5ab7 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-35,-,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
+30,-,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
 # TODO find a better/cleaner way to generically interact with the yumdb for the purposes of marking things as automatically/manually installed","diff --git a/9.0/jdk8/corretto/Dockerfile b/9.0/jdk8/corretto/Dockerfile
 index 9e4304a..05c5ab7 100644
 --- a/9.0/jdk8/corretto/Dockerfile
@@ -3454,7 +3829,7 @@ index 9e4304a..05c5ab7 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-36,-,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?","diff --git a/9.0/jdk8/corretto/Dockerfile b/9.0/jdk8/corretto/Dockerfile
+31,-,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?","diff --git a/9.0/jdk8/corretto/Dockerfile b/9.0/jdk8/corretto/Dockerfile
 index 9e4304a..05c5ab7 100644
 --- a/9.0/jdk8/corretto/Dockerfile
 +++ b/9.0/jdk8/corretto/Dockerfile
@@ -3632,7 +4007,7 @@ index 9e4304a..05c5ab7 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-37,-,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?","diff --git a/7/jdk8/corretto/Dockerfile b/7/jdk8/corretto/Dockerfile
+32,-,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?","diff --git a/7/jdk8/corretto/Dockerfile b/7/jdk8/corretto/Dockerfile
 index 5dea29e..e652c5a 100644
 --- a/7/jdk8/corretto/Dockerfile
 +++ b/7/jdk8/corretto/Dockerfile
@@ -3810,7 +4185,7 @@ index 5dea29e..e652c5a 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-38,-,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
+33,-,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
 # TODO find a better/cleaner way to generically interact with the yumdb for the purposes of marking things as automatically/manually installed","diff --git a/7/jdk8/corretto/Dockerfile b/7/jdk8/corretto/Dockerfile
 index 5dea29e..e652c5a 100644
 --- a/7/jdk8/corretto/Dockerfile
@@ -3989,7 +4364,7 @@ index 5dea29e..e652c5a 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-39,-,"# TODO should we leave these installed, or remove them too?","diff --git a/7/jdk8/corretto/Dockerfile b/7/jdk8/corretto/Dockerfile
+34,-,"# TODO should we leave these installed, or remove them too?","diff --git a/7/jdk8/corretto/Dockerfile b/7/jdk8/corretto/Dockerfile
 index 5dea29e..e652c5a 100644
 --- a/7/jdk8/corretto/Dockerfile
 +++ b/7/jdk8/corretto/Dockerfile
@@ -4167,7 +4542,7 @@ index 5dea29e..e652c5a 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-40,-,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?","diff --git a/8.5/jdk11/corretto/Dockerfile b/8.5/jdk11/corretto/Dockerfile
+35,-,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?","diff --git a/8.5/jdk11/corretto/Dockerfile b/8.5/jdk11/corretto/Dockerfile
 index 2675b83..4ce32de 100644
 --- a/8.5/jdk11/corretto/Dockerfile
 +++ b/8.5/jdk11/corretto/Dockerfile
@@ -4345,7 +4720,7 @@ index 2675b83..4ce32de 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-41,-,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
+36,-,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
 # TODO find a better/cleaner way to generically interact with the yumdb for the purposes of marking things as automatically/manually installed","diff --git a/8.5/jdk11/corretto/Dockerfile b/8.5/jdk11/corretto/Dockerfile
 index 2675b83..4ce32de 100644
 --- a/8.5/jdk11/corretto/Dockerfile
@@ -4524,7 +4899,7 @@ index 2675b83..4ce32de 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-42,-,"# TODO should we leave these installed, or remove them too?","diff --git a/8.5/jdk11/corretto/Dockerfile b/8.5/jdk11/corretto/Dockerfile
+37,-,"# TODO should we leave these installed, or remove them too?","diff --git a/8.5/jdk11/corretto/Dockerfile b/8.5/jdk11/corretto/Dockerfile
 index 2675b83..4ce32de 100644
 --- a/8.5/jdk11/corretto/Dockerfile
 +++ b/8.5/jdk11/corretto/Dockerfile
@@ -4702,7 +5077,7 @@ index 2675b83..4ce32de 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-43,-,"# TODO should we leave these installed, or remove them too?","diff --git a/9.0/jdk11/corretto/Dockerfile b/9.0/jdk11/corretto/Dockerfile
+38,-,"# TODO should we leave these installed, or remove them too?","diff --git a/9.0/jdk11/corretto/Dockerfile b/9.0/jdk11/corretto/Dockerfile
 index f6cfa88..80a37ae 100644
 --- a/9.0/jdk11/corretto/Dockerfile
 +++ b/9.0/jdk11/corretto/Dockerfile
@@ -4880,7 +5255,7 @@ index f6cfa88..80a37ae 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-44,-,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
+39,-,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
 # TODO find a better/cleaner way to generically interact with the yumdb for the purposes of marking things as automatically/manually installed","diff --git a/9.0/jdk11/corretto/Dockerfile b/9.0/jdk11/corretto/Dockerfile
 index f6cfa88..80a37ae 100644
 --- a/9.0/jdk11/corretto/Dockerfile
@@ -5059,7 +5434,7 @@ index f6cfa88..80a37ae 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-45,-,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?","diff --git a/9.0/jdk11/corretto/Dockerfile b/9.0/jdk11/corretto/Dockerfile
+40,-,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?","diff --git a/9.0/jdk11/corretto/Dockerfile b/9.0/jdk11/corretto/Dockerfile
 index f6cfa88..80a37ae 100644
 --- a/9.0/jdk11/corretto/Dockerfile
 +++ b/9.0/jdk11/corretto/Dockerfile
@@ -5237,7 +5612,7 @@ index f6cfa88..80a37ae 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-46,-,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?","diff --git a/8.5/jdk8/corretto/Dockerfile b/8.5/jdk8/corretto/Dockerfile
+41,-,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?","diff --git a/8.5/jdk8/corretto/Dockerfile b/8.5/jdk8/corretto/Dockerfile
 index f0abb76..782ad35 100644
 --- a/8.5/jdk8/corretto/Dockerfile
 +++ b/8.5/jdk8/corretto/Dockerfile
@@ -5415,7 +5790,7 @@ index f0abb76..782ad35 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-47,-,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
+42,-,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
 # TODO find a better/cleaner way to generically interact with the yumdb for the purposes of marking things as automatically/manually installed","diff --git a/8.5/jdk8/corretto/Dockerfile b/8.5/jdk8/corretto/Dockerfile
 index f0abb76..782ad35 100644
 --- a/8.5/jdk8/corretto/Dockerfile
@@ -5594,7 +5969,7 @@ index f0abb76..782ad35 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-48,-,"# TODO should we leave these installed, or remove them too?","diff --git a/8.5/jdk8/corretto/Dockerfile b/8.5/jdk8/corretto/Dockerfile
+43,-,"# TODO should we leave these installed, or remove them too?","diff --git a/8.5/jdk8/corretto/Dockerfile b/8.5/jdk8/corretto/Dockerfile
 index f0abb76..782ad35 100644
 --- a/8.5/jdk8/corretto/Dockerfile
 +++ b/8.5/jdk8/corretto/Dockerfile
@@ -5772,7 +6147,7 @@ index f0abb76..782ad35 100644
  EXPOSE 8080
  CMD [""catalina.sh"", ""run""]
 "
-49,-,## haskell package versions; can be overriden via context hacks,"diff --git a/7.8/Dockerfile b/7.8/Dockerfile
+44,-,## haskell package versions; can be overriden via context hacks,"diff --git a/7.8/Dockerfile b/7.8/Dockerfile
 index 7ed374f..b2eab57 100644
 --- a/7.8/Dockerfile
 +++ b/7.8/Dockerfile
@@ -5845,7 +6220,7 @@ index 7ed374f..b2eab57 100644
  ## run ghci by default unless a command is specified
  CMD [""ghci""]
 "
-50,-,# TODO use this MD5,"diff --git a/7/apache/Dockerfile b/7/apache/Dockerfile
+45,-,# TODO use this MD5,"diff --git a/7/apache/Dockerfile b/7/apache/Dockerfile
 index b6299c4..1488731 100644
 --- a/7/apache/Dockerfile
 +++ b/7/apache/Dockerfile
@@ -5926,7 +6301,7 @@ index b6299c4..1488731 100644
  
  # vim:set ft=dockerfile:
 "
-51,-,"    # VisualEditor
+46,-,"    # VisualEditor
     # TODO: make submodules shallow clones?","diff --git a/Dockerfile b/Dockerfile
 index 6b5ffb3..1051e1e 100644
 --- a/Dockerfile
@@ -6001,7 +6376,7 @@ index 6b5ffb3..1051e1e 100644
  ENTRYPOINT [""/entrypoint.sh""]
  CMD [""apachectl"", ""-e"", ""info"", ""-D"", ""FOREGROUND""]
 "
-52,-,"# FIXME This is a workaround for pytest not found causing builds to fail
+47,-,"# FIXME This is a workaround for pytest not found causing builds to fail
 # Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722","diff --git a/ros2/nightly/nightly/Dockerfile b/ros2/nightly/nightly/Dockerfile
 index f3f5f37..a04e35c 100644
 --- a/ros2/nightly/nightly/Dockerfile
@@ -6131,7 +6506,7 @@ index f3f5f37..a04e35c 100644
  ENTRYPOINT [""/ros_entrypoint.sh""]
  CMD [""bash""]
 "
-53,-,"# HACK, replacing shell with bash for later docker build commands","diff --git a/sros/kinetic/Dockerfile b/sros/kinetic/Dockerfile
+48,-,"# HACK, replacing shell with bash for later docker build commands","diff --git a/sros/kinetic/Dockerfile b/sros/kinetic/Dockerfile
 index 7772c03..f26624b 100644
 --- a/sros/kinetic/Dockerfile
 +++ b/sros/kinetic/Dockerfile
@@ -6227,7 +6602,7 @@ index 7772c03..f26624b 100644
  ENTRYPOINT [""/ros_entrypoint.sh""]
  CMD [""bash""]
 "
-54,-,"# This file describes the standard way to build Docker, using docker
+49,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -6316,7 +6691,7 @@ index 0f04035ec4..122346c0dd 100644
  # Upload docker source
  add	.       /go/src/github.com/dotcloud/docker
 "
-55,-,"# This file describes the standard way to build Docker, using docker
+50,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -6339,8 +6714,81 @@ index 0f04035ec4..122346c0dd 100644
 #  -e AWS_SECRET_KEY=bar \
 #  -e GPG_PASSPHRASE=gloubiboulga \
 #  docker hack/release.sh
-#",
-56,-,"# This file describes the standard way to build Docker, using docker
+#","diff --git a/Dockerfile b/Dockerfile
+new file mode 100644
+index 0000000000..9bfa266a22
+--- /dev/null
++++ b/Dockerfile
+@@ -0,0 +1,67 @@
++# This file describes the standard way to build Docker, using docker
++#
++# Usage:
++#
++# # Assemble the full dev environment. This is slow the first time.
++# docker build -t docker .
++#
++# # Mount your source in an interactive container for quick testing:
++# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -i -t docker bash
++#
++# # Run the test suite:
++# docker run -privileged docker hack/make.sh test
++#
++# # Publish a release:
++# docker run -privileged \
++#  -e AWS_S3_BUCKET=baz \
++#  -e AWS_ACCESS_KEY=foo \
++#  -e AWS_SECRET_KEY=bar \
++#  -e GPG_PASSPHRASE=gloubiboulga \
++#  docker hack/release.sh
++#
++# Note: Apparmor used to mess with privileged mode, but this is no longer
++# the case. Therefore, you don't have to disable it anymore.
++#
++
++docker-version 0.6.1
++from	ubuntu:12.04
++maintainer	Solomon Hykes <solomon@dotcloud.com>
++
++# Build dependencies
++run	echo 'deb http://archive.ubuntu.com/ubuntu precise main universe' > /etc/apt/sources.list
++run	apt-get update
++run	apt-get install -y -q curl
++run	apt-get install -y -q git
++run	apt-get install -y -q mercurial
++run apt-get install -y -q build-essential libsqlite3-dev
++
++# Install Go
++run	curl -s https://go.googlecode.com/files/go1.2rc3.src.tar.gz | tar -v -C /usr/local -xz
++env	PATH	/usr/local/go/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
++env	GOPATH	/go:/go/src/github.com/dotcloud/docker/vendor
++run cd /usr/local/go/src && ./make.bash && go install -ldflags '-w -linkmode external -extldflags ""-static -Wl,--unresolved-symbols=ignore-in-shared-libs""' -tags netgo -a std
++
++# Ubuntu stuff
++run	apt-get install -y -q ruby1.9.3 rubygems libffi-dev
++run	gem install --no-rdoc --no-ri fpm
++run	apt-get install -y -q reprepro dpkg-sig
++
++# Install s3cmd 1.0.1 (earlier versions don't support env variables in the config)
++run	apt-get install -y -q python-pip
++run	pip install s3cmd
++run	pip install python-magic
++run	/bin/echo -e '[default]\naccess_key=$AWS_ACCESS_KEY\nsecret_key=$AWS_SECRET_KEY\n' > /.s3cfg
++
++# Runtime dependencies
++run	apt-get install -y -q iptables
++run	apt-get install -y -q lxc
++run	apt-get install -y -q aufs-tools
++
++volume	/var/lib/docker
++workdir	/go/src/github.com/dotcloud/docker
++
++# Wrap all commands in the ""docker-in-docker"" script to allow nested containers
++entrypoint [""hack/dind""]
++
++# Upload docker source
++add	.       /go/src/github.com/dotcloud/docker
+"
+51,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -6635,7 +7083,7 @@ index 0e425ca819..210db41e7c 100644
  # Upload docker source
  COPY . /go/src/github.com/docker/docker
 "
-57,-,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)","diff --git a/Dockerfile b/Dockerfile
+52,-,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)","diff --git a/Dockerfile b/Dockerfile
 index c52476c637..27608c4f5f 100644
 --- a/Dockerfile
 +++ b/Dockerfile
@@ -6900,8 +7348,8 @@ index c52476c637..27608c4f5f 100644
  # Upload docker source
  COPY . /go/src/github.com/docker/docker
 "
-58,-,# TODO replace FPM with some very minimal debhelper stuff,
-59,-,"# This file describes the standard way to build Docker, using docker
+53,-,# TODO replace FPM with some very minimal debhelper stuff,
+54,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -6917,7 +7365,7 @@ index c52476c637..27608c4f5f 100644
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #",
-60,-,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released,"diff --git a/docs/Dockerfile b/docs/Dockerfile
+55,-,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released,"diff --git a/docs/Dockerfile b/docs/Dockerfile
 index caa291dffb..0b5b33b29f 100644
 --- a/docs/Dockerfile
 +++ b/docs/Dockerfile
@@ -6972,7 +7420,7 @@ index caa291dffb..0b5b33b29f 100644
  # Then build everything together, ready for mkdocs
  RUN /docs/build.sh
 "
-61,-,#### FIXME. Temporarily install docker with proper apparmor handling,"diff --git a/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile b/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile
+56,-,#### FIXME. Temporarily install docker with proper apparmor handling,"diff --git a/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile b/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile
 index 953d7c11cc..6762cb4686 100644
 --- a/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile
 +++ b/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile
@@ -7013,11 +7461,11 @@ index 953d7c11cc..6762cb4686 100644
  # Add release credentials
  add ./release_credentials.json /root/release_credentials.json
 "
-62,-,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+57,-,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
 #RUN cpanm Digest::SHA Module::Signature
 # TODO find a way to make --verify work with backpan as well :'(
 #ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify",
-63,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/11/jre/slim/Dockerfile b/11/jre/slim/Dockerfile
+58,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/11/jre/slim/Dockerfile b/11/jre/slim/Dockerfile
 index 8ba124d..7592298 100644
 --- a/11/jre/slim/Dockerfile
 +++ b/11/jre/slim/Dockerfile
@@ -7128,7 +7576,7 @@ index 8ba124d..7592298 100644
  # ""jshell"" is an interactive REPL for Java (see https://en.wikipedia.org/wiki/JShell)
  CMD [""jshell""]
 "
-64,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/8/jdk/Dockerfile b/8/jdk/Dockerfile
+59,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/8/jdk/Dockerfile b/8/jdk/Dockerfile
 index 48c0ba3..c70df07 100644
 --- a/8/jdk/Dockerfile
 +++ b/8/jdk/Dockerfile
@@ -7233,7 +7681,7 @@ index 48c0ba3..c70df07 100644
  	javac -version; \
  	java -version
 "
-65,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/8/jdk/slim/Dockerfile b/8/jdk/slim/Dockerfile
+60,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/8/jdk/slim/Dockerfile b/8/jdk/slim/Dockerfile
 index 0917def..610d21b 100644
 --- a/8/jdk/slim/Dockerfile
 +++ b/8/jdk/slim/Dockerfile
@@ -7342,7 +7790,7 @@ index 0917def..610d21b 100644
  	javac -version; \
  	java -version
 "
-66,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/11/jdk/Dockerfile b/11/jdk/Dockerfile
+61,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/11/jdk/Dockerfile b/11/jdk/Dockerfile
 index 6eb3b0d..83f1549 100644
 --- a/11/jdk/Dockerfile
 +++ b/11/jdk/Dockerfile
@@ -7450,7 +7898,7 @@ index 6eb3b0d..83f1549 100644
  # ""jshell"" is an interactive REPL for Java (see https://en.wikipedia.org/wiki/JShell)
  CMD [""jshell""]
 "
-67,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/8/jre/Dockerfile b/8/jre/Dockerfile
+62,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/8/jre/Dockerfile b/8/jre/Dockerfile
 index 316d4a1..ad35fb7 100644
 --- a/8/jre/Dockerfile
 +++ b/8/jre/Dockerfile
@@ -7554,7 +8002,7 @@ index 316d4a1..ad35fb7 100644
  # basic smoke test
  	java -version
 "
-68,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/11/jdk/slim/Dockerfile b/11/jdk/slim/Dockerfile
+63,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/11/jdk/slim/Dockerfile b/11/jdk/slim/Dockerfile
 index 4e75b3a..a467bb8 100644
 --- a/11/jdk/slim/Dockerfile
 +++ b/11/jdk/slim/Dockerfile
@@ -7666,7 +8114,7 @@ index 4e75b3a..a467bb8 100644
  # ""jshell"" is an interactive REPL for Java (see https://en.wikipedia.org/wiki/JShell)
  CMD [""jshell""]
 "
-69,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/11/jre/Dockerfile b/11/jre/Dockerfile
+64,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/11/jre/Dockerfile b/11/jre/Dockerfile
 index 0e53832..ad96985 100644
 --- a/11/jre/Dockerfile
 +++ b/11/jre/Dockerfile
@@ -7773,7 +8221,7 @@ index 0e53832..ad96985 100644
  # ""jshell"" is an interactive REPL for Java (see https://en.wikipedia.org/wiki/JShell)
  CMD [""jshell""]
 "
-70,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/8/jre/slim/Dockerfile b/8/jre/slim/Dockerfile
+65,-,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,"diff --git a/8/jre/slim/Dockerfile b/8/jre/slim/Dockerfile
 index b68fd9a..2b3a19a 100644
 --- a/8/jre/slim/Dockerfile
 +++ b/8/jre/slim/Dockerfile
@@ -7881,23 +8329,23 @@ index b68fd9a..2b3a19a 100644
  # basic smoke test
  	java -version
 "
-71,-,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+66,-,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",
-72,-,"# TODO ENV DOCKER_SHA256
+67,-,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",
-73,-,"# TODO ENV DOCKER_SHA256
+68,-,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",
-74,-,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+69,-,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",
-75,-,# TODO aufs-tools,
-76,-,# https://github.com/docker/docker/tree/master/hack/dind,
-77,-,# TODO ENV DOCKER_SHA256,"diff --git a/17.06-rc/Dockerfile b/17.06-rc/Dockerfile
+70,-,# TODO aufs-tools,
+71,-,# https://github.com/docker/docker/tree/master/hack/dind,
+72,-,# TODO ENV DOCKER_SHA256,"diff --git a/17.06-rc/Dockerfile b/17.06-rc/Dockerfile
 index bb18886..1539b96 100644
 --- a/17.06-rc/Dockerfile
 +++ b/17.06-rc/Dockerfile
@@ -7957,9 +8405,9 @@ index bb18886..1539b96 100644
  ENTRYPOINT [""docker-entrypoint.sh""]
  CMD [""sh""]
 "
-78,-,# TODO aufs-tools,
-79,-,# https://github.com/docker/docker/tree/master/hack/dind,
-80,-,# TODO ENV DOCKER_SHA256,"diff --git a/17.05/Dockerfile b/17.05/Dockerfile
+73,-,# TODO aufs-tools,
+74,-,# https://github.com/docker/docker/tree/master/hack/dind,
+75,-,# TODO ENV DOCKER_SHA256,"diff --git a/17.05/Dockerfile b/17.05/Dockerfile
 index 78a3699..35a58fc 100644
 --- a/17.05/Dockerfile
 +++ b/17.05/Dockerfile
@@ -8017,7 +8465,7 @@ index 78a3699..35a58fc 100644
  ENTRYPOINT [""docker-entrypoint.sh""]
  CMD [""sh""]
 "
-81,-,# TODO ENV DOCKER_SHA256,"diff --git a/17.03/Dockerfile b/17.03/Dockerfile
+76,-,# TODO ENV DOCKER_SHA256,"diff --git a/17.03/Dockerfile b/17.03/Dockerfile
 index 710ed71..e1c29f6 100644
 --- a/17.03/Dockerfile
 +++ b/17.03/Dockerfile
@@ -8075,7 +8523,7 @@ index 710ed71..e1c29f6 100644
  ENTRYPOINT [""docker-entrypoint.sh""]
  CMD [""sh""]
 "
-82,-,# TODO ENV DOCKER_SHA256,"diff --git a/17.03-rc/Dockerfile b/17.03-rc/Dockerfile
+77,-,# TODO ENV DOCKER_SHA256,"diff --git a/17.03-rc/Dockerfile b/17.03-rc/Dockerfile
 index 0ca1d78..e4f528d 100644
 --- a/17.03-rc/Dockerfile
 +++ b/17.03-rc/Dockerfile

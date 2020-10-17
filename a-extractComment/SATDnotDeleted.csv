@@ -3,78 +3,78 @@
 # http://erlang.org/pipermail/erlang-questions/2019-January/097067.html"
 29,"# hack in ""ENABLE_PATH_CHECK"" disabling to suppress:
 #   warning: Insecure world writable dir"
-86,"# TODO: Some of this is only really needed for testing, it would be nice to split this up"
+87,"# TODO: Some of this is only really needed for testing, it would be nice to split this up"
+90,"# Install go-swagger for validating swagger.yaml
+# This is https://github.com/kolyshkin/go-swagger/tree/golang-1.13-fix
+# TODO: move to under moby/ or fix upstream go-swagger to work for us."
 91,"# TODO: This is here because hack/make.sh binary copies these extras binaries
 # from $PATH into the bundles dir.
 # It would be nice to handle this in a different way."
-92,"# Install go-swagger for validating swagger.yaml
-# This is https://github.com/kolyshkin/go-swagger/tree/golang-1.13-fix
-# TODO: move to under moby/ or fix upstream go-swagger to work for us."
-93,"# Switch to use iptables instead of nftables (to match the CI hosts)
+92,"# Switch to use iptables instead of nftables (to match the CI hosts)
 # TODO use some kind of runtime auto-detection instead if/when nftables is supported (https://github.com/moby/moby/issues/26824)"
-159,"# docker-init - TODO move this out, last time we bumped was 2016!"
-160,"# docker-proxy
+158,"# docker-init - TODO move this out, last time we bumped was 2016!"
+159,"# docker-proxy
 # TODO if libnetwork folds into the docker tree this can be combined above"
-161,# TODO The way we set the version could easily be simplified not to depend on hack/...
-162,#COPY hack/dockerfile/binaries-commits /
-166,"# TODO https://github.com/redis/redis/pull/3494 (deduplicate ""redis-server"" copies)"
-185,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed"
-200,"# TODO there's an odd bug on Oracle Linux where installing ""cpp"" (which gets pulled in as a dependency of ""gcc"") and then marking it as automatically-installed will result in the ""filesystem"" package being removed during ""yum autoremove"" (which then fails), so we set it as manually-installed to compensate"
-232,"#Copy Zray docker plugin
+160,# TODO The way we set the version could easily be simplified not to depend on hack/...
+161,#COPY hack/dockerfile/binaries-commits /
+165,"# TODO https://github.com/redis/redis/pull/3494 (deduplicate ""redis-server"" copies)"
+184,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed"
+199,"# TODO there's an odd bug on Oracle Linux where installing ""cpp"" (which gets pulled in as a dependency of ""gcc"") and then marking it as automatically-installed will result in the ""filesystem"" package being removed during ""yum autoremove"" (which then fails), so we set it as manually-installed to compensate"
+231,"#Copy Zray docker plugin
 #TODO: Integrate Zray docker plugin into Zend Server"
-250,"# TODO https://github.com/memcached/memcached/issues/382 ""t/chunked-extstore.t is flaky on arm32v6"""
-252,"# TODO: Once bootstrapped, use 'crux:latest'"
+238,# TODO:
+249,"# TODO https://github.com/memcached/memcached/issues/382 ""t/chunked-extstore.t is flaky on arm32v6"""
+251,"# TODO: Once bootstrapped, use 'crux:latest'"
+252,# TODO find a way to make --mirror-only / SSL work with backpan too :(
 253,"# TODO find a way to make --verify work with backpan as well :'(
 #ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify"
-254,# TODO find a way to make --mirror-only / SSL work with backpan too :(
-264,"#These settings are needed so that we can run as a different user than 1001 after server warmup
+263,"#These settings are needed so that we can run as a different user than 1001 after server warmup
 # TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it"
-265,"# These settings are needed so that we can run as a different user than 1001 after server warmup
+264,"# These settings are needed so that we can run as a different user than 1001 after server warmup
 # TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it"
-275,# TODO rebuild other cffi modules here too? (other _*_build.py files)
-281,# TODO switch to buster once https://github.com/docker-library/php/issues/865 is resolved in a clean way (either in the PHP image or in PHP itself)
-288,"# By default you'll get a single-node development server that stores everything
+274,# TODO rebuild other cffi modules here too? (other _*_build.py files)
+287,"# By default you'll get a single-node development server that stores everything
 # in RAM and bootstraps itself. Don't use this configuration for production."
-304,"# https://github.com/docker-library/postgres/issues/484 (clang-6.0 required, only available in stretch-backports)
+303,"# https://github.com/docker-library/postgres/issues/484 (clang-6.0 required, only available in stretch-backports)
 # TODO remove this once we hit buster+"
-316,"	# Extensions
+315,"	# Extensions
 	# TODO: make submodules shallow clones?"
-318,"# By default you'll get an insecure single-node development server that stores
+317,"# By default you'll get an insecure single-node development server that stores
 # everything in RAM, exposes a web UI and HTTP endpoints, and bootstraps itself.
 # Don't use this configuration for production."
-328,"# TODO for some reason, libgo + i386 fails on https://github.com/gcc-mirror/gcc/blob/gcc-7_1_0-release/libgo/runtime/proc.c#L154
+327,"# TODO for some reason, libgo + i386 fails on https://github.com/gcc-mirror/gcc/blob/gcc-7_1_0-release/libgo/runtime/proc.c#L154
 # ""error unknown case for SETCONTEXT_CLOBBERS_TLS"""
-334,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+333,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf"
-336,# TODO .asc / .sha256sum
-337,# TODO aufs-tools
-338,# https://github.com/docker/docker/tree/master/hack/dind
-345,"# TODO add ""nbtscan"" when we get to Alpine 3.12 (if it makes it out of edge)
+335,# TODO .asc / .sha256sum
+336,# TODO aufs-tools
+337,# https://github.com/docker/docker/tree/master/hack/dind
+344,"# TODO add ""nbtscan"" when we get to Alpine 3.12 (if it makes it out of edge)
 # https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64"
-350,"# TODO copy/steal ""browser.sh"" stuff from slack"
-353,"# https://github.com/docker/docker/tree/master/hack/dind
+349,"# TODO copy/steal ""browser.sh"" stuff from slack"
+352,"# https://github.com/docker/docker/tree/master/hack/dind
 #ENV DIND_COMMIT 130b0bc6032cc675d064e1cc62626cacc9c07a57"
-354,"#RUN set -eux; \
+353,"#RUN set -eux; \
 #	wget -O /usr/local/bin/dind ""https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind""; \
 #	chmod +x /usr/local/bin/dind"
-356,"# TODO verify sha256 values! (add "".sha256"" to the end of this URL)"
-364,# TODO pin a version
-365,# TODO pin versions
-366,"# FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
+355,"# TODO verify sha256 values! (add "".sha256"" to the end of this URL)"
+363,# TODO pin a version
+364,# TODO pin versions
+365,"# FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
 # ignore installed rosdep keys"
-368,"# FIXME Remove this once ament_export_interfaces respects COLCON_CURRENT_PREFIX https://github.com/ament/ament_cmake/issues/173
+367,"# FIXME Remove this once ament_export_interfaces respects COLCON_CURRENT_PREFIX https://github.com/ament/ament_cmake/issues/173
 #Workaround hard coded paths in nightly tarball setup scripts"
-371,"# FIXME renaming manifest.xml is a workaround for rosdep misbehaving when both
+370,"# FIXME renaming manifest.xml is a workaround for rosdep misbehaving when both
 # manifest.xml and package.xml are present
 # install dependencies"
-424,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")"
-426,# TODO some sort of download verification here
-463,# TODO signature? checksum?
-465,"# TODO strip ""demo"" and ""man"" folders?"
-467,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
+423,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")"
+425,# TODO some sort of download verification here
+462,# TODO signature? checksum?
+464,"# TODO strip ""demo"" and ""man"" folders?"
+466,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 # no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07"
-521,"# TODO ENV DOCKER_SHA256
+520,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)"

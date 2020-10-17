@@ -31,8 +31,6 @@ def get_azuma_count(df):
     df = df[df["コメント追加からコメント削除までの日数"] == "削除されていません"]
     df = df[df["LatestDockerfile"].apply(lambda filename: filename[-10:] == "Dockerfile")]
 
-    df[["project", "Comment"]].drop_duplicates().to_csv("./a-extractComment/SATD_NOT_DELETED_ONLY_DOCKERFILE.csv")
-
     print("東さんのデータに合わせた整形→行数 : ", len(df[["project", "Comment"]].drop_duplicates()))
 
 if __name__ == "__main__":
