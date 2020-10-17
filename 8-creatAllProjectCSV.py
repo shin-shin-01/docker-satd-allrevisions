@@ -159,6 +159,16 @@ def git_difference(commit_id, filename, project):
     txtGitdiff = subprocess.run(command, cwd=cwd, encoding='utf-8', stdout=subprocess.PIPE, errors="ignore", shell=True)
     txtGitdiff = str(txtGitdiff.stdout)
 
+    # 最初のコミットだった時
+    if txtGitdiff == "":
+        # git dif
+        command = f'git diff -U10000 4b825dc642cb6eb9a060e54bf8d69288fbee4904..{commit_id} -- {filename}'
+        cwd = f'./{PATH_OF_GITCLONE}/{repository}/'
+
+        # ignore utf-8 Error
+        txtGitdiff = subprocess.run(command, cwd=cwd, encoding='utf-8', stdout=subprocess.PIPE, errors="ignore", shell=True)
+        txtGitdiff = str(txtGitdiff.stdout)
+
     return txtGitdiff
 
 def get_targetComment_line(txtGitdiff, comment, plus_minus):
