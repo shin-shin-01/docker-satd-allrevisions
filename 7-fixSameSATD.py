@@ -58,7 +58,8 @@ def removeSameSATDofSameFile(csvfile):
         for comment in uniqueCommentList:
             # Dockerfile ごとのユニークなコメント
             df_FileCommentunique = df_Fileunique[ df_Fileunique["Comment"].apply(lambda st: st.lower() == comment) ]
-            df_FileCommentunique = df_FileCommentunique.sort_values('Date') # 定期的にソートしておく
+            # 同一日付 は git log の index を元に判断する 
+            df_FileCommentunique = df_FileCommentunique.sort_values(['Date', 'logIndex'], ascending=[True, False]) # 定期的にソートしておく
 
             firstCommitRow = df_FileCommentunique.head(1).iloc[0, :]
             LatestCommentRow = df_FileCommentunique.tail(1).iloc[0, :]

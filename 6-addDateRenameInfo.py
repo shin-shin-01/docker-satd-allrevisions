@@ -25,7 +25,7 @@ def getTargetSatdCSV():
 
 def getDataFrame(csvfile):
     df = pd.read_csv(f'{PATH_OF_SATD_COMMENTFILE}/{csvfile}', index_col=0, encoding='utf-8-sig')
-    gitlog = pd.read_csv(f'{PATH_OF_GITLOGCSV}/{csvfile}', index_col=0, encoding='utf-8-sig')
+    gitlog = pd.read_csv(f'{PATH_OF_GITLOGCSV}/{csvfile}', encoding='utf-8-sig')
 
     try:
         df["Dockerfile"] = df["Dockerfile"].apply(lambda fileName: fileName[1:] if fileName[0] == "/" else fileName)
@@ -43,6 +43,7 @@ def getDataFrame(csvfile):
 def addCommitDate(df, gitlog):
     gitlog = gitlog[["CommitID", "Date"]]
     gitlog = gitlog.drop_duplicates() # 重複削除
+    gitlog["logIndex"] = gitlog.index
     df = pd.merge(df, gitlog, on=["CommitID"])
     return df
 
@@ -171,5 +172,5 @@ if __name__ == "__main__":
             print(errorlog)
             writeError(errorlog)
 
-        df = df.reindex(columns=['CommitID', 'Dockerfile', 'LatestDockerfile', 'Comment', 'Date', 'FirstCommit Date', 'Deleted Date', 'RenameList'])
+        df = df.reindex(columns=['CommitID', 'Dockerfile', 'LatestDockerfile', 'Comment', 'Date', 'FirstCommit Date', 'Deleted Date', 'RenameList', "logIndex"])
         df.to_csv(f'{PATH_OF_SATD_COMMENTFILE_ADDINFO}/{csvfile}')
