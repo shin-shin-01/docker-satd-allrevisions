@@ -162,7 +162,7 @@ def git_difference(commit_id, filename, project):
     return txtGitdiff
 
 def get_targetComment_line(txtGitdiff, comment, plus_minus):
-    print("="*10, plus_minus)
+    global error
     start = False
     count = 0 # 過去のファイルの行数カウント
 
@@ -189,17 +189,20 @@ def get_targetComment_line(txtGitdiff, comment, plus_minus):
         else:
             count += 1
 
-    print("="*30)
-    print(comment)
-    print('-'*20)
-    print(txtGitdiff)
-    print("No targetComment in txtGitdiff")
+    # print("="*30)
+    # print(comment)
+    # print('-'*20)
+    # print(txtGitdiff)
+    # print("No targetComment in txtGitdiff")
+    error = error.append({"type": plus_minus, "comment": comment, "diff": txtGitdiff}, ignore_index=True)
+    # print(error)
     return "Error"
         
 
 if __name__ == "__main__":
     csvfiles = getTargetCSV()
     result = modifyColumnName()
+    error = pd.DataFrame(columns=["type", "comment", "diff"])
 
     for csvfile in csvfiles:
         df = ReadCSV_addGitPath(csvfile)
@@ -211,6 +214,7 @@ if __name__ == "__main__":
     result = addDiff_withLine(result)
 
     result.to_csv(f'{PATH_OF_ALLPROJECT_CSV}/result.csv')
+    error.to_csv(f'{PATH_OF_ALLPROJECT_CSV}/errorcomment.csv')
 
 
 
