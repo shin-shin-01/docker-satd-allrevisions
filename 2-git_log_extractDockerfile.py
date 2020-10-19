@@ -93,11 +93,25 @@ def saveRevisonFileToShow(revisionFileList, repository):
 def RevisionsHaveDocker(repository, txtGitFileStatus):
     result = { "CommitID":[], "Author":[], "Date":[], "Dockerfile":[], "Status":[] }
     tmp = { "CommitID":"", "Author":"", "Date":"" }
+    merge = []
+    merge_from = "no-merge"
     revisionFileList = []
 
     for i, txt in enumerate(txtGitFileStatus.splitlines()):
         if txt[:6] == "commit":
             tmp["CommitID"] = txt[7:47]
+            if "from" in txt[47:]:
+                merge_from = txt[54:94]
+            else:
+                merge_from = "no-merge"
+
+        elif txt[:6] == "Merge:":
+            # Master, Dev
+            merge = txt[7:].split()
+
+        elif merge_from != "no-merge": # masterの変更のみ取得
+            if merge_from[:8] == merge[1]:
+                continue
 
         elif txt[:7] == "Author:":
             tmp["Author"] = txt[8:]
