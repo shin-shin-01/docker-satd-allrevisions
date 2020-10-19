@@ -67,18 +67,24 @@ def removeSameSATDofSameFile(csvfile):
             # 同一Dockerfile のコミット履歴に対して、対象SATDの最終コミット日より後で直近の日付を '削除された日' として取得したい
             tmp_date = df_Fileunique[ df_Fileunique["Date"] > LatestCommentRow["Date"] ]
 
+
+            deleted_date, commit_id, filename = getCommentDeleteDate(repository, LatestCommentRow["RenameList"], LatestCommentRow["Date"])
+
             # tmp_df (SATD のみのDataFrame) であるため、完全に削除されたあとは git log から コミット日時・ファイル名 を元に次のコミット日時 を取得
             if len(tmp_date) == 0:
-                deleted_date, commit_id, filename = getCommentDeleteDate(repository, LatestCommentRow["RenameList"], LatestCommentRow["Date"])
-                firstCommitRow["DeletedComment Date"] = deleted_date
-                firstCommitRow["Deleted CommitID"] = commit_id
-                firstCommitRow["Deleted Filename"] = filename
-            else:
-                # コメントが削除された日
-                firstCommitRow["DeletedComment Date"] = tmp_date.head(1).iloc[0, :]["Date"]
-                firstCommitRow["Deleted CommitID"] = tmp_date.head(1).iloc[0, :]["CommitID"]
-                firstCommitRow["Deleted Filename"] = tmp_date.head(1).iloc[0, :]["Dockerfile"]
-
+                pass
+            elif str(deleted_date) == "nan":
+                deleted_date = tmp_date.head(1).iloc[0, :]["Date"]
+                commit_id = tmp_date.head(1).iloc[0, :]["CommitID"]
+                filename = tmp_date.head(1).iloc[0, :]["Dockerfile"]
+            elif tmp_date.head(1).iloc[0, :]["Date"] <= deleted_date:
+                deleted_date = tmp_date.head(1).iloc[0, :]["Date"]
+                commit_id = tmp_date.head(1).iloc[0, :]["CommitID"]
+                filename = tmp_date.head(1).iloc[0, :]["Dockerfile"]     
+            
+            firstCommitRow["DeletedComment Date"] = deleted_date
+            firstCommitRow["Deleted CommitID"] = commit_id
+            firstCommitRow["Deleted Filename"] = filename
 
             result = result.append(firstCommitRow)
     result.to_csv(f'{PATH_OF_UNIQUE_SATD_INFO}/{csvfile}')
