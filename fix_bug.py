@@ -22,7 +22,7 @@ def getTargetDataFrame(repository):
     return df
 
 
-def getCommentDeleteDate(repository, renameList, latestCommitDate):
+def getCommentDeleteDate(repository, renameList, latestCommitDate, latestCommitID):
     """
     File Delete は D でコミット日時を取れるので大丈夫
     → 複数回 Delete されていたら最初の Delete を取得するが
@@ -34,7 +34,7 @@ def getCommentDeleteDate(repository, renameList, latestCommitDate):
     for filename in renameList.splitlines():
         df = df[df["Dockerfile"].apply(lambda file: filename == file)]
         # LatestCommit日(SATDが含まれる最終コミット日) よりあとのコミット情報を取得する。 
-        df = df[ df["Date"] > latestCommitDate ]
+        df = df[ (df["CommitID"] != latestCommitID) & (df["Date"] >= latestCommitDate) ]
 
         if len(df) > 0: # 存在していたらその時点で renamelist 終了
             break

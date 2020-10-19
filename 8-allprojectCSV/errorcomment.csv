@@ -631,137 +631,7 @@ index 0e425ca819..210db41e7c 100644
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #",
-10,-,"# FIXME This is a workaround for pytest not found causing builds to fail
-# Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722","diff --git a/ros2/nightly/nightly/Dockerfile b/ros2/nightly/nightly/Dockerfile
-index f3f5f37..a04e35c 100644
---- a/ros2/nightly/nightly/Dockerfile
-+++ b/ros2/nightly/nightly/Dockerfile
-@@ -1,121 +1,121 @@
- # This is an auto generated Dockerfile for ros:nightly
- # generated from docker_images_ros2/nightly/create_ros_image.Dockerfile.em
- FROM ubuntu:bionic
- 
- # setup timezone
- RUN echo 'Etc/UTC' > /etc/timezone && \
-     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
-     apt-get update && apt-get install -q -y tzdata && rm -rf /var/lib/apt/lists/*
- 
- # install packages
- RUN apt-get update && apt-get install -q -y \
-     bash-completion \
-     cmake \
-     dirmngr \
-     git \
-     gnupg2 \
-     lsb-release \
-     python3-pip \
-     wget \
-     && rm -rf /var/lib/apt/lists/*
- 
- # setup ros2 keys
- RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
- 
- # setup sources.list
- RUN echo ""deb http://packages.ros.org/ros2-testing/ubuntu `lsb_release -sc` main"" > /etc/apt/sources.list.d/ros2-testing.list
- 
- # install bootstrap tools
- RUN apt-get update && apt-get install --no-install-recommends -y \
-     git \
-+    python3-colcon-common-extensions \
-+    python3-colcon-mixin \
-     python3-rosdep \
-     python3-vcstool \
-     && rm -rf /var/lib/apt/lists/*
- 
- # setup environment
- ENV LANG C.UTF-8
- ENV LC_ALL C.UTF-8
- ENV ROSDISTRO_INDEX_URL https://raw.githubusercontent.com/osrf/docker_images/master/ros2/nightly/nightly/index-v4.yaml
- 
- # install python packages
- RUN pip3 install -U \
-     argcomplete \
--    colcon-common-extensions \
--    colcon-mixin \
-     flake8 \
-     flake8-blind-except \
-     flake8-builtins \
-     flake8-class-newline \
-     flake8-comprehensions \
-     flake8-deprecated \
-     flake8-docstrings \
-     flake8-import-order \
-     flake8-quotes \
-     pytest-repeat \
-     pytest-rerunfailures
- # This is a workaround for pytest not found causing builds to fail
- # Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722
- RUN pip3 freeze | grep pytest \
-     && python3 -m pytest --version
- 
- # install ros2 packages
- ENV ROS_DISTRO foxy
- RUN mkdir -p /opt/ros/$ROS_DISTRO
- ARG ROS2_BINARY_URL=https://ci.ros2.org/view/packaging/job/packaging_linux/lastSuccessfulBuild/artifact/ws/ros2-package-linux-x86_64.tar.bz2
- RUN wget -q $ROS2_BINARY_URL -O - | \
-     tar -xj --strip-components=1 -C /opt/ros/$ROS_DISTRO
- 
- # Overwrite setup scripts with ones that point to /opt/ros/$ROS_DISTRO
- RUN mkdir -p /tmp/dir/build \
-  && cd /tmp/dir \
-  && git clone --depth 1 https://github.com/ros2/ros_workspace.git -b latest \
-  && cd /tmp/dir/build \
-  && COLCON_CURRENT_PREFIX=/opt/ros/$ROS_DISTRO . /opt/ros/$ROS_DISTRO/local_setup.sh \
-  && cmake -DCMAKE_INSTALL_PREFIX=/opt/ros/$ROS_DISTRO ../ros_workspace \
-  && make install \
-  && rm -r /tmp/dir
- 
- # setup colcon mixin and metadata
- RUN colcon mixin add default \
-       https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && \
-     colcon mixin update && \
-     colcon metadata add default \
-       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
-     colcon metadata update
- 
- # bootstrap rosdep
- RUN rosdep init
- 
- # add custom rosdep rule files
- COPY prereqs.yaml /etc/ros/rosdep/
- RUN echo ""yaml file:///etc/ros/rosdep/prereqs.yaml"" | \
-     cat - /etc/ros/rosdep/sources.list.d/20-default.list > temp && \
-     mv temp /etc/ros/rosdep/sources.list.d/20-default.list
- RUN rosdep update
- 
- # install dependencies
- RUN . /opt/ros/$ROS_DISTRO/setup.sh \
-     && apt-get update \
-     && rosdep install -y \
-     --from-paths /opt/ros/$ROS_DISTRO/share \
-     --ignore-src \
-     --skip-keys "" \
-       cyclonedds \
-       libopensplice69 \
-       rti-connext-dds-5.3.1"" \
-     && rm -rf /var/lib/apt/lists/*
- 
- # FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
- # ignore installed rosdep keys
- ENV ROS_PACKAGE_PATH /opt/ros/$ROS_DISTRO/share
- 
- # FIXME Remove this once ament_export_interfaces respects COLCON_CURRENT_PREFIX https://github.com/ament/ament_cmake/issues/173
- #Workaround hard coded paths in nightly tarball setup scripts
- ARG UPSTREAM_CI_WS=/home/jenkins-agent/workspace/packaging_linux/ws
- RUN mkdir -p $UPSTREAM_CI_WS && ln -s /opt/ros/$ROS_DISTRO $UPSTREAM_CI_WS/install
- 
- # setup entrypoint
- COPY ./ros_entrypoint.sh /
- 
- ENTRYPOINT [""/ros_entrypoint.sh""]
- CMD [""bash""]
-"
-11,-,"# This file describes the standard way to build Docker, using docker
+10,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -1056,8 +926,8 @@ index 0e425ca819..210db41e7c 100644
  # Upload docker source
  COPY . /go/src/github.com/docker/docker
 "
-12,-,# TODO replace FPM with some very minimal debhelper stuff,
-13,-,"# This file describes the standard way to build Docker, using docker
+11,-,# TODO replace FPM with some very minimal debhelper stuff,
+12,-,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -1073,25 +943,25 @@ index 0e425ca819..210db41e7c 100644
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #",
-14,-,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+13,-,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
 #RUN cpanm Digest::SHA Module::Signature
 # TODO find a way to make --verify work with backpan as well :'(
 #ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify",
-15,-,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+14,-,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",
+15,-,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",
 16,-,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",
-17,-,"# TODO ENV DOCKER_SHA256
-# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
-# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",
-18,-,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+17,-,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",
-19,-,# TODO aufs-tools,
-20,-,# https://github.com/docker/docker/tree/master/hack/dind,
-21,-,# TODO aufs-tools,
-22,-,# https://github.com/docker/docker/tree/master/hack/dind,
+18,-,# TODO aufs-tools,
+19,-,# https://github.com/docker/docker/tree/master/hack/dind,
+20,-,# TODO aufs-tools,
+21,-,# https://github.com/docker/docker/tree/master/hack/dind,
