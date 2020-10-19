@@ -1675,367 +1675,341 @@
 ## change HTTP port the historic Convertigo port 28080"
 721,fb5ac90d57ebb78b00fe1bdb306bef7ad268cce5,/7.4/7.4.6/web-connector/Dockerfile,## download and extract the convertigo webapps
 722,fb5ac90d57ebb78b00fe1bdb306bef7ad268cce5,/7.4/7.4.6/web-connector/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-723,d8d86bfe1eb09260e540a9528e72e6b8d77f969f,/7.4/7.4.4/web-connector/Dockerfile,"# Copyright (c) 2001-2017 Convertigo SA.
+723,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-724,d8d86bfe1eb09260e540a9528e72e6b8d77f969f,/7.4/7.4.4/web-connector/Dockerfile,"# This program is distributed in the hope that it will be useful,
+724,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-725,d8d86bfe1eb09260e540a9528e72e6b8d77f969f,/7.4/7.4.4/web-connector/Dockerfile,"# You should have received a copy of the GNU General Public License
+725,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-726,d8d86bfe1eb09260e540a9528e72e6b8d77f969f,/7.4/7.4.4/web-connector/Dockerfile,"## from debian instead of tomcat or openjdk because
-## convertigo have an annoying bug with tomcat 7.0.43
-## and the web-connector mode need a i386 openjdk"
-727,d8d86bfe1eb09260e540a9528e72e6b8d77f969f,/7.4/7.4.4/web-connector/Dockerfile,"## install the latest openjdk:i386 for security fixes
-## and remove the unnecessary openjdk:amd64"
-728,d8d86bfe1eb09260e540a9528e72e6b8d77f969f,/7.4/7.4.4/web-connector/Dockerfile,"# see https://bugs.debian.org/775775
-# and https://github.com/docker-library/java/issues/19#issuecomment-70546872"
-729,d8d86bfe1eb09260e540a9528e72e6b8d77f969f,/7.4/7.4.4/web-connector/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-730,d8d86bfe1eb09260e540a9528e72e6b8d77f969f,/7.4/7.4.4/web-connector/Dockerfile,## create a 'convertigo' user and fix some rights
-731,d8d86bfe1eb09260e540a9528e72e6b8d77f969f,/7.4/7.4.4/web-connector/Dockerfile,"## download tomcat 7.0.72 because the 7.0.73 cause an annoying bug
-## disable unused AJP, APR and Jasper features
+726,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+727,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
+728,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-732,d8d86bfe1eb09260e540a9528e72e6b8d77f969f,/7.4/7.4.4/web-connector/Dockerfile,## download and extract the convertigo webapps
-733,d8d86bfe1eb09260e540a9528e72e6b8d77f969f,/7.4/7.4.4/web-connector/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-734,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
-#
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Affero General Public License
-# as published by the Free Software Foundation; either version 3
-# of the License, or (at your option) any later version."
-735,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU General Public License for more details."
-736,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
-# along with this program; if not, see<http://www.gnu.org/licenses/>."
-737,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-738,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
-739,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
-## change HTTP port the historic Convertigo port 28080"
-740,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,"## download and extract the convertigo webapps
+729,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-741,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-742,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
+730,ade9f4f55e8cefa91200b9b8e58e5b48dd1ccd16,/7.4/7.4.7/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+731,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-743,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
+732,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-744,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
+733,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-745,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-746,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
-747,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+734,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+735,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
+736,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-748,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,"## download and extract the convertigo webapps
+737,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-749,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-750,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
+738,7a231c19a6f6a8f2d9899c6f064d2ab3933e61f6,/7.4/7.4.7/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+739,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-751,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
+740,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-752,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
+741,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-753,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-754,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
-755,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+742,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+743,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
+744,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-756,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,"## download and extract the convertigo webapps
+745,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-757,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-758,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,"# Copyright (c) 2001-2017 Convertigo SA.
+746,b4d83c0a41fbf4993d8c8ab9de0628dc64fe3f08,/7.4/7.4.8/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+747,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,"# Copyright (c) 2001-2017 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-759,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,"# This program is distributed in the hope that it will be useful,
+748,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-760,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,"# You should have received a copy of the GNU General Public License
+749,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-761,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-762,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,## create a 'convertigo' user and fix some rights
-763,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,"## disable unused AJP, APR and Jasper features
+750,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+751,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,## create a 'convertigo' user and fix some rights
+752,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-764,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,"## download and extract the convertigo webapps
+753,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-765,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-766,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
+754,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+755,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-767,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
+756,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-768,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
+757,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-769,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-770,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
-771,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+758,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+759,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
+760,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-772,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,"## download and extract the convertigo webapps
+761,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-773,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-774,0e9758c71efc0c3e27ac98cebd79fe0d94e8cca8,/Dockerfile,"# Copyright (c) 2001-2017 Convertigo SA.
+762,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.4/7.4.8/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+763,0e9758c71efc0c3e27ac98cebd79fe0d94e8cca8,/Dockerfile,"# Copyright (c) 2001-2017 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-775,0e9758c71efc0c3e27ac98cebd79fe0d94e8cca8,/Dockerfile,"# This program is distributed in the hope that it will be useful,
+764,0e9758c71efc0c3e27ac98cebd79fe0d94e8cca8,/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-776,0e9758c71efc0c3e27ac98cebd79fe0d94e8cca8,/Dockerfile,"# You should have received a copy of the GNU General Public License
+765,0e9758c71efc0c3e27ac98cebd79fe0d94e8cca8,/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-777,0e9758c71efc0c3e27ac98cebd79fe0d94e8cca8,/Dockerfile,# grab gosu for easy step-down from root and tini for signal handling
-778,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
+766,0e9758c71efc0c3e27ac98cebd79fe0d94e8cca8,/Dockerfile,# grab gosu for easy step-down from root and tini for signal handling
+767,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-779,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,"# This program is distributed in the hope that it will be useful,
+768,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-780,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,"# You should have received a copy of the GNU General Public License
+769,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-781,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-782,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,## create a 'convertigo' user and fix some rights
-783,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,"## disable unused AJP, APR and Jasper features
+770,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+771,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,## create a 'convertigo' user and fix some rights
+772,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-784,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,"## download and extract the convertigo webapps
+773,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-785,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-786,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
-787,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,"# Copyright (c) 2001-2017 Convertigo SA.
+774,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+775,47b52b65b34091f3c7db0dadd7d037e08b79518e,/7.5/7.5.0/Dockerfile,## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+776,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,"# Copyright (c) 2001-2017 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-788,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,"# This program is distributed in the hope that it will be useful,
+777,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-789,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,"# You should have received a copy of the GNU General Public License
+778,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-790,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,"## from openjdk instead of tomcat because
+779,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,"## from openjdk instead of tomcat because
 ## convertigo have an annoying bug with tomcat 7.0.43"
-791,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-792,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,"## download tomcat 7.0.72 because the 7.0.73 cause an annoying bug
+780,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+781,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,"## download tomcat 7.0.72 because the 7.0.73 cause an annoying bug
 ## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-793,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,"## download and extract the convertigo webapps
+782,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-794,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-795,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,## create a 'convertigo' user and fix some rights
-796,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,"# Copyright (c) 2001-2017 Convertigo SA.
+783,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+784,50b30db85fe30a331fa39d24e44c6e7b1a39f202,/7.4/7.4.3/Dockerfile,## create a 'convertigo' user and fix some rights
+785,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,"# Copyright (c) 2001-2017 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-797,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,"# This program is distributed in the hope that it will be useful,
+786,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-798,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,"# You should have received a copy of the GNU General Public License
+787,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-799,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-800,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,## create a 'convertigo' user and fix some rights
-801,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,"## disable unused AJP, APR and Jasper features
+788,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+789,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,## create a 'convertigo' user and fix some rights
+790,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-802,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,"## download and extract the convertigo webapps
+791,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-803,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-804,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
+792,d483ceb34668145393284203185cc17703e1d709,/7.4/7.4.7/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+793,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-805,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,"# This program is distributed in the hope that it will be useful,
+794,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-806,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,"# You should have received a copy of the GNU General Public License
+795,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-807,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-808,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,## create a 'convertigo' user and fix some rights
-809,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,"## disable unused AJP, APR and Jasper features
+796,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+797,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,## create a 'convertigo' user and fix some rights
+798,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-810,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,"## download and extract the convertigo webapps
+799,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-811,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-812,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
-813,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
+800,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+801,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/Dockerfile,## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+802,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-814,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
+803,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-815,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
+804,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-816,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-817,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
-818,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+805,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+806,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
+807,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-819,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,"## download and extract the convertigo webapps
+808,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-820,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-821,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
+809,1b3f1092aae7fbfd1094fb169be1e74f0902a164,/7.5/7.5.0/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+810,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-822,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
+811,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-823,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
+812,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-824,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-825,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
-826,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+813,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+814,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
+815,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-827,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,"## download and extract the convertigo webapps
+816,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-828,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-829,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
+817,d5486570282dd55682209273f195e2165837b71e,/7.5/7.5.5/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+818,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-830,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
+819,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-831,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
+820,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-832,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-833,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
-834,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+821,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+822,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
+823,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-835,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,"## download and extract the convertigo webapps
+824,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-836,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-837,d7503cda42c8bfcda1dbb801958dba4341ba1237,/Dockerfile,"# Copyright (c) 2001-2011 Convertigo SA.
+825,5ab824d1764d35780e26dd4cef8169eee30dcba8,/7.5/7.5.1/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+826,d7503cda42c8bfcda1dbb801958dba4341ba1237,/Dockerfile,"# Copyright (c) 2001-2011 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-838,d7503cda42c8bfcda1dbb801958dba4341ba1237,/Dockerfile,"# This program is distributed in the hope that it will be useful,
+827,d7503cda42c8bfcda1dbb801958dba4341ba1237,/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-839,d7503cda42c8bfcda1dbb801958dba4341ba1237,/Dockerfile,"# You should have received a copy of the GNU General Public License
+828,d7503cda42c8bfcda1dbb801958dba4341ba1237,/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-840,d7503cda42c8bfcda1dbb801958dba4341ba1237,/Dockerfile,# grab gosu for easy step-down from root and tini for signal handling
-841,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
+829,d7503cda42c8bfcda1dbb801958dba4341ba1237,/Dockerfile,# grab gosu for easy step-down from root and tini for signal handling
+830,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-842,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,"# This program is distributed in the hope that it will be useful,
+831,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-843,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,"# You should have received a copy of the GNU General Public License
+832,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-844,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-845,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,## create a 'convertigo' user and fix some rights
-846,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,"## disable unused AJP, APR and Jasper features
+833,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+834,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,## create a 'convertigo' user and fix some rights
+835,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-847,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,"## download and extract the convertigo webapps
+836,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-848,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-849,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
-850,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
+837,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+838,e1118bd13bac081d52353270344d918bf3194373,/7.5/7.5.0/Dockerfile,## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+839,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-851,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
+840,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-852,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
+841,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-853,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-854,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
-855,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
+842,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+843,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,## create a 'convertigo' user and fix some rights
+844,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-856,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,"## download and extract the convertigo webapps
+845,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-857,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-858,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
+846,44b59de97f1bc69dd7d9ae35bc67277106825f96,/7.5/7.5.0/alpine/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+847,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,"# Copyright (c) 2001-2018 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-859,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,"# This program is distributed in the hope that it will be useful,
+848,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-860,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,"# You should have received a copy of the GNU General Public License
+849,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-861,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-862,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,## create a 'convertigo' user and fix some rights
-863,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,"## disable unused AJP, APR and Jasper features
+850,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+851,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,## create a 'convertigo' user and fix some rights
+852,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-864,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,"## download and extract the convertigo webapps
+853,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,"## download and extract the convertigo webapps
 ## and remove unnecessary components for the mbaas version"
-865,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-866,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
-867,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,"# Copyright (c) 2001-2017 Convertigo SA.
+854,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+855,87484faf204b8ce4ad702c459c0e2ff6d72bbd01,/7.5/7.5.0/i386/Dockerfile,## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+856,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,"# Copyright (c) 2001-2017 Convertigo SA.
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Affero General Public License
 # as published by the Free Software Foundation; either version 3
 # of the License, or (at your option) any later version."
-868,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,"# This program is distributed in the hope that it will be useful,
+857,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,"# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details."
-869,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,"# You should have received a copy of the GNU General Public License
+858,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,"# You should have received a copy of the GNU General Public License
 # along with this program; if not, see<http://www.gnu.org/licenses/>."
-870,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,## the web-connector mode need a i386 openjdk
-871,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
-872,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,## create a 'convertigo' user and fix some rights
-873,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,"## disable unused AJP, APR and Jasper features
+859,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,## the web-connector mode need a i386 openjdk
+860,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,## grab gosu for easy step-down from root and tini for signal handling
+861,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,## create a 'convertigo' user and fix some rights
+862,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,"## disable unused AJP, APR and Jasper features
 ## change HTTP port the historic Convertigo port 28080"
-874,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,## download and extract the convertigo webapps
-875,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
-876,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)
+863,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,## download and extract the convertigo webapps
+864,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,## copy the ROOT index that redirect to the 'convertigo' webapps
+865,683332f38ad3e1b6b0792f0b9b4e9162ee94a408,/7.4/7.4.7/web-connector/Dockerfile,## force SWT to use GTK2 instead of GTK3 (no Xulrunner support)

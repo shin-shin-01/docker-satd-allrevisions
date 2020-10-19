@@ -3,7 +3,7 @@
 # http://erlang.org/pipermail/erlang-questions/2019-January/097067.html"
 29,"# hack in ""ENABLE_PATH_CHECK"" disabling to suppress:
 #   warning: Insecure world writable dir"
-87,"# TODO: Some of this is only really needed for testing, it would be nice to split this up"
+86,"# TODO: Some of this is only really needed for testing, it would be nice to split this up"
 90,"# Install go-swagger for validating swagger.yaml
 # This is https://github.com/kolyshkin/go-swagger/tree/golang-1.13-fix
 # TODO: move to under moby/ or fix upstream go-swagger to work for us."
@@ -12,11 +12,11 @@
 # It would be nice to handle this in a different way."
 92,"# Switch to use iptables instead of nftables (to match the CI hosts)
 # TODO use some kind of runtime auto-detection instead if/when nftables is supported (https://github.com/moby/moby/issues/26824)"
-158,"# docker-init - TODO move this out, last time we bumped was 2016!"
-159,"# docker-proxy
+158,#COPY hack/dockerfile/binaries-commits /
+159,# TODO The way we set the version could easily be simplified not to depend on hack/...
+160,"# docker-proxy
 # TODO if libnetwork folds into the docker tree this can be combined above"
-160,# TODO The way we set the version could easily be simplified not to depend on hack/...
-161,#COPY hack/dockerfile/binaries-commits /
+161,"# docker-init - TODO move this out, last time we bumped was 2016!"
 165,"# TODO https://github.com/redis/redis/pull/3494 (deduplicate ""redis-server"" copies)"
 184,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed"
 199,"# TODO there's an odd bug on Oracle Linux where installing ""cpp"" (which gets pulled in as a dependency of ""gcc"") and then marking it as automatically-installed will result in the ""filesystem"" package being removed during ""yum autoremove"" (which then fails), so we set it as manually-installed to compensate"

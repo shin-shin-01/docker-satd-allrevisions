@@ -394,54 +394,48 @@
 # see https://secure.php.net/manual/en/opcache.installation.php"
 209,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-210,5268c9f7200743a9b0220b3ac86607b995c75625,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-211,5268c9f7200743a9b0220b3ac86607b995c75625,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-212,5268c9f7200743a9b0220b3ac86607b995c75625,/apache/Dockerfile,"# set recommended PHP.ini settings
+210,b5782462cddfd5c5ff7da5e19bb83b901e079781,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+211,7ac7fe7a33569545bb595dbc8f925c03a8b79e55,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+212,a538fdaf346572064aa40a5ba32baf985fa64dab,/Dockerfile,"# WORKDIR is /var/www/html (inhertied via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+213,89d38796efe1063e84d8dee3e7c74d04cb240abc,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+214,89d38796efe1063e84d8dee3e7c74d04cb240abc,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+215,89d38796efe1063e84d8dee3e7c74d04cb240abc,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+216,34492362a0532626416f17d339321a764c76c697,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+217,34492362a0532626416f17d339321a764c76c697,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+218,ed86be5a1fedc8b6826240c653be2fb13114843b,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+219,965f0e8de2f06f6a771fe8c5827222233c0ffbec,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+220,965f0e8de2f06f6a771fe8c5827222233c0ffbec,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+221,965f0e8de2f06f6a771fe8c5827222233c0ffbec,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+222,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+223,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+224,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-213,5268c9f7200743a9b0220b3ac86607b995c75625,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+225,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-214,b5782462cddfd5c5ff7da5e19bb83b901e079781,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-215,7ac7fe7a33569545bb595dbc8f925c03a8b79e55,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-216,a538fdaf346572064aa40a5ba32baf985fa64dab,/Dockerfile,"# WORKDIR is /var/www/html (inhertied via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-217,89d38796efe1063e84d8dee3e7c74d04cb240abc,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-218,89d38796efe1063e84d8dee3e7c74d04cb240abc,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-219,89d38796efe1063e84d8dee3e7c74d04cb240abc,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-220,34492362a0532626416f17d339321a764c76c697,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-221,34492362a0532626416f17d339321a764c76c697,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-222,ed86be5a1fedc8b6826240c653be2fb13114843b,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-223,965f0e8de2f06f6a771fe8c5827222233c0ffbec,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-224,965f0e8de2f06f6a771fe8c5827222233c0ffbec,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-225,965f0e8de2f06f6a771fe8c5827222233c0ffbec,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-226,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-227,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-228,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+226,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+227,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+228,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-229,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+229,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-230,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-231,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-232,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+230,3a1b4686bbc52691655e73aa1c65a8a0ed037459,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+231,3a1b4686bbc52691655e73aa1c65a8a0ed037459,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+232,3a1b4686bbc52691655e73aa1c65a8a0ed037459,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-233,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+233,3a1b4686bbc52691655e73aa1c65a8a0ed037459,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-234,3a1b4686bbc52691655e73aa1c65a8a0ed037459,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-235,3a1b4686bbc52691655e73aa1c65a8a0ed037459,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-236,3a1b4686bbc52691655e73aa1c65a8a0ed037459,/fpm/Dockerfile,"# set recommended PHP.ini settings
+234,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+235,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+236,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-237,3a1b4686bbc52691655e73aa1c65a8a0ed037459,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-238,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-239,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-240,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php"
-241,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+237,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -452,24 +446,24 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-242,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+238,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-243,fecf2cb2613bd3e57de7efd66cdab858eeee6fe9,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-244,fecf2cb2613bd3e57de7efd66cdab858eeee6fe9,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-245,fecf2cb2613bd3e57de7efd66cdab858eeee6fe9,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+239,fecf2cb2613bd3e57de7efd66cdab858eeee6fe9,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+240,fecf2cb2613bd3e57de7efd66cdab858eeee6fe9,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+241,fecf2cb2613bd3e57de7efd66cdab858eeee6fe9,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-246,31c9f0a2f86a70152ca0219029b16170130cb26b,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-247,31c9f0a2f86a70152ca0219029b16170130cb26b,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-248,31c9f0a2f86a70152ca0219029b16170130cb26b,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+242,31c9f0a2f86a70152ca0219029b16170130cb26b,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+243,31c9f0a2f86a70152ca0219029b16170130cb26b,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+244,31c9f0a2f86a70152ca0219029b16170130cb26b,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-249,0fb206725237f82b90a612e68cbc50139326363c,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-250,0fb206725237f82b90a612e68cbc50139326363c,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+245,0fb206725237f82b90a612e68cbc50139326363c,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+246,0fb206725237f82b90a612e68cbc50139326363c,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-251,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-252,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-253,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/apache/Dockerfile,"# set recommended PHP.ini settings
+247,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+248,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+249,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-254,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+250,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -480,17 +474,17 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-255,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+251,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-256,70341240d23107eb7b0f8b00bb12d5ac091b7431,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-257,70341240d23107eb7b0f8b00bb12d5ac091b7431,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-258,70341240d23107eb7b0f8b00bb12d5ac091b7431,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+252,70341240d23107eb7b0f8b00bb12d5ac091b7431,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+253,70341240d23107eb7b0f8b00bb12d5ac091b7431,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+254,70341240d23107eb7b0f8b00bb12d5ac091b7431,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-259,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-260,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-261,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+255,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+256,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+257,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-262,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+258,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -501,41 +495,41 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-263,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+259,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-264,b00cca0f4bce10167cda80c6ca640ffc771812df,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+260,b00cca0f4bce10167cda80c6ca640ffc771812df,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-265,559e39834b96623c863ca0dc193300c7b2248cda,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+261,559e39834b96623c863ca0dc193300c7b2248cda,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-266,689757368fff698888c004265e4de99d2bb70265,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-267,689757368fff698888c004265e4de99d2bb70265,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-268,689757368fff698888c004265e4de99d2bb70265,/fpm/Dockerfile,"# set recommended PHP.ini settings
+262,689757368fff698888c004265e4de99d2bb70265,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+263,689757368fff698888c004265e4de99d2bb70265,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+264,689757368fff698888c004265e4de99d2bb70265,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-269,689757368fff698888c004265e4de99d2bb70265,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+265,689757368fff698888c004265e4de99d2bb70265,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-270,89d38796efe1063e84d8dee3e7c74d04cb240abc,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-271,89d38796efe1063e84d8dee3e7c74d04cb240abc,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-272,89d38796efe1063e84d8dee3e7c74d04cb240abc,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+266,89d38796efe1063e84d8dee3e7c74d04cb240abc,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+267,89d38796efe1063e84d8dee3e7c74d04cb240abc,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+268,89d38796efe1063e84d8dee3e7c74d04cb240abc,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-273,48df09819f971acd2b323bc5ae55dfc9e0d476a5,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-274,48df09819f971acd2b323bc5ae55dfc9e0d476a5,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-275,48df09819f971acd2b323bc5ae55dfc9e0d476a5,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+269,48df09819f971acd2b323bc5ae55dfc9e0d476a5,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+270,48df09819f971acd2b323bc5ae55dfc9e0d476a5,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+271,48df09819f971acd2b323bc5ae55dfc9e0d476a5,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-276,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-277,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-278,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm/Dockerfile,"# set recommended PHP.ini settings
+272,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+273,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+274,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-279,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+275,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-280,f4dbc9c44474da8fd55ca413dfb093605d15250f,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-281,f4dbc9c44474da8fd55ca413dfb093605d15250f,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-282,f4dbc9c44474da8fd55ca413dfb093605d15250f,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+276,f4dbc9c44474da8fd55ca413dfb093605d15250f,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+277,f4dbc9c44474da8fd55ca413dfb093605d15250f,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+278,f4dbc9c44474da8fd55ca413dfb093605d15250f,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-283,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-284,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-285,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/apache/Dockerfile,"# set recommended PHP.ini settings
+279,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+280,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+281,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-286,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+282,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -546,20 +540,20 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-287,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+283,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-288,e2bb14b2d91fd64be4edd9ce2feb91b172c84511,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-289,e2bb14b2d91fd64be4edd9ce2feb91b172c84511,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-290,e2bb14b2d91fd64be4edd9ce2feb91b172c84511,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+284,e2bb14b2d91fd64be4edd9ce2feb91b172c84511,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+285,e2bb14b2d91fd64be4edd9ce2feb91b172c84511,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+286,e2bb14b2d91fd64be4edd9ce2feb91b172c84511,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-291,5c658b823d5687b4a259fe35de87542db0b6ec4e,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-292,5c658b823d5687b4a259fe35de87542db0b6ec4e,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+287,5c658b823d5687b4a259fe35de87542db0b6ec4e,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+288,5c658b823d5687b4a259fe35de87542db0b6ec4e,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-293,ec2666e802babe1f886b88217ff321895ead2f26,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-294,ec2666e802babe1f886b88217ff321895ead2f26,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-295,ec2666e802babe1f886b88217ff321895ead2f26,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+289,ec2666e802babe1f886b88217ff321895ead2f26,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+290,ec2666e802babe1f886b88217ff321895ead2f26,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+291,ec2666e802babe1f886b88217ff321895ead2f26,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-296,ec2666e802babe1f886b88217ff321895ead2f26,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+292,ec2666e802babe1f886b88217ff321895ead2f26,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -570,19 +564,19 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-297,ec2666e802babe1f886b88217ff321895ead2f26,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+293,ec2666e802babe1f886b88217ff321895ead2f26,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-298,15c48dba053c52bcfe9a2ec67c9d28825283654a,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-299,15c48dba053c52bcfe9a2ec67c9d28825283654a,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-300,15c48dba053c52bcfe9a2ec67c9d28825283654a,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+294,15c48dba053c52bcfe9a2ec67c9d28825283654a,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+295,15c48dba053c52bcfe9a2ec67c9d28825283654a,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+296,15c48dba053c52bcfe9a2ec67c9d28825283654a,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-301,dddf0af92dc1a1e5c6bfd4ac26b884aaaad56dd7,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+297,dddf0af92dc1a1e5c6bfd4ac26b884aaaad56dd7,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-302,6342c0d540c313cd62a8ac076df39b7add4d3fff,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-303,6342c0d540c313cd62a8ac076df39b7add4d3fff,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-304,6342c0d540c313cd62a8ac076df39b7add4d3fff,/apache/Dockerfile,"# set recommended PHP.ini settings
+298,6342c0d540c313cd62a8ac076df39b7add4d3fff,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+299,6342c0d540c313cd62a8ac076df39b7add4d3fff,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+300,6342c0d540c313cd62a8ac076df39b7add4d3fff,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-305,6342c0d540c313cd62a8ac076df39b7add4d3fff,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+301,6342c0d540c313cd62a8ac076df39b7add4d3fff,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -593,32 +587,32 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-306,6342c0d540c313cd62a8ac076df39b7add4d3fff,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+302,6342c0d540c313cd62a8ac076df39b7add4d3fff,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-307,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-308,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-309,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+303,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+304,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+305,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-310,a5c3cf6d171882b5809c8477d7f8a6dc5c54597d,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-311,a5c3cf6d171882b5809c8477d7f8a6dc5c54597d,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+306,a5c3cf6d171882b5809c8477d7f8a6dc5c54597d,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+307,a5c3cf6d171882b5809c8477d7f8a6dc5c54597d,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-312,fb43ebe0f8a671782d4363743971aa1b079cf9db,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-313,fb43ebe0f8a671782d4363743971aa1b079cf9db,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-314,fb43ebe0f8a671782d4363743971aa1b079cf9db,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+308,fb43ebe0f8a671782d4363743971aa1b079cf9db,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+309,fb43ebe0f8a671782d4363743971aa1b079cf9db,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+310,fb43ebe0f8a671782d4363743971aa1b079cf9db,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-315,225c0fc9fc15b892484dada2a4583ba286688492,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+311,225c0fc9fc15b892484dada2a4583ba286688492,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-316,c481dd16ebe081c6822bce1a8d0133ed46240f13,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-317,c481dd16ebe081c6822bce1a8d0133ed46240f13,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-318,c481dd16ebe081c6822bce1a8d0133ed46240f13,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+312,c481dd16ebe081c6822bce1a8d0133ed46240f13,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+313,c481dd16ebe081c6822bce1a8d0133ed46240f13,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+314,c481dd16ebe081c6822bce1a8d0133ed46240f13,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-319,0bd91c7ae944cf69bed4515413fe9442976e3dbc,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+315,0bd91c7ae944cf69bed4515413fe9442976e3dbc,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-320,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-321,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-322,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/apache/Dockerfile,"# set recommended PHP.ini settings
+316,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+317,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+318,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-323,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+319,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -629,32 +623,32 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-324,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+320,b7a16d10abd85dd9bf6cbcf24843cf9d5cc7dbe7,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-325,f394d812abb1d8a6fdc24864655eae687072a901,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-326,f394d812abb1d8a6fdc24864655eae687072a901,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-327,f394d812abb1d8a6fdc24864655eae687072a901,/fpm/Dockerfile,"# set recommended PHP.ini settings
+321,f394d812abb1d8a6fdc24864655eae687072a901,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+322,f394d812abb1d8a6fdc24864655eae687072a901,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+323,f394d812abb1d8a6fdc24864655eae687072a901,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-328,f394d812abb1d8a6fdc24864655eae687072a901,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+324,f394d812abb1d8a6fdc24864655eae687072a901,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-329,c985c710bcd7ff07a79efd60433bc7f0d1674c28,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-330,c985c710bcd7ff07a79efd60433bc7f0d1674c28,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+325,c985c710bcd7ff07a79efd60433bc7f0d1674c28,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+326,c985c710bcd7ff07a79efd60433bc7f0d1674c28,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-331,f4dbc9c44474da8fd55ca413dfb093605d15250f,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-332,f4dbc9c44474da8fd55ca413dfb093605d15250f,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-333,f4dbc9c44474da8fd55ca413dfb093605d15250f,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+327,f4dbc9c44474da8fd55ca413dfb093605d15250f,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+328,f4dbc9c44474da8fd55ca413dfb093605d15250f,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+329,f4dbc9c44474da8fd55ca413dfb093605d15250f,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-334,e31357a72b36016f5b59cae9e13890c67522f3c8,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-335,e31357a72b36016f5b59cae9e13890c67522f3c8,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-336,e31357a72b36016f5b59cae9e13890c67522f3c8,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+330,e31357a72b36016f5b59cae9e13890c67522f3c8,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+331,e31357a72b36016f5b59cae9e13890c67522f3c8,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+332,e31357a72b36016f5b59cae9e13890c67522f3c8,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-337,e7f16a1855c60fda3792bb277e12b3eee60d80e8,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+333,e7f16a1855c60fda3792bb277e12b3eee60d80e8,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-338,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-339,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-340,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm/Dockerfile,"# set recommended PHP.ini settings
+334,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+335,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+336,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-341,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+337,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -665,45 +659,45 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-342,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+338,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-343,ff4908d348b3bf08ac3e6fa82ff76b3f69790e6d,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-344,ff4908d348b3bf08ac3e6fa82ff76b3f69790e6d,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-345,ff4908d348b3bf08ac3e6fa82ff76b3f69790e6d,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+339,ff4908d348b3bf08ac3e6fa82ff76b3f69790e6d,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+340,ff4908d348b3bf08ac3e6fa82ff76b3f69790e6d,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+341,ff4908d348b3bf08ac3e6fa82ff76b3f69790e6d,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-346,334185afd9977d3896c02e942d093eebe11d79c9,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+342,334185afd9977d3896c02e942d093eebe11d79c9,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-347,e96a89c10de0c61ee930232fd452b60b025ba7bf,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-348,e96a89c10de0c61ee930232fd452b60b025ba7bf,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+343,e96a89c10de0c61ee930232fd452b60b025ba7bf,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+344,e96a89c10de0c61ee930232fd452b60b025ba7bf,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-349,950acb8dee92e429835fbeaa5a6b3259a09874eb,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+345,950acb8dee92e429835fbeaa5a6b3259a09874eb,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-350,4dd5f77d3aa8081deea1e66007bf5983ab8c91a5,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+346,4dd5f77d3aa8081deea1e66007bf5983ab8c91a5,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-351,e96a89c10de0c61ee930232fd452b60b025ba7bf,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-352,e96a89c10de0c61ee930232fd452b60b025ba7bf,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+347,e96a89c10de0c61ee930232fd452b60b025ba7bf,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+348,e96a89c10de0c61ee930232fd452b60b025ba7bf,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-353,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-354,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-355,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/apache/Dockerfile,"# set recommended PHP.ini settings
+349,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+350,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+351,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-356,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+352,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-357,9a8a264487faab73e332e1ea9d950155c5799693,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-358,9a8a264487faab73e332e1ea9d950155c5799693,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-359,9a8a264487faab73e332e1ea9d950155c5799693,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+353,9a8a264487faab73e332e1ea9d950155c5799693,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+354,9a8a264487faab73e332e1ea9d950155c5799693,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+355,9a8a264487faab73e332e1ea9d950155c5799693,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-360,812bf1de972151f4b9f1aba5ac9520983929d7b0,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-361,812bf1de972151f4b9f1aba5ac9520983929d7b0,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-362,812bf1de972151f4b9f1aba5ac9520983929d7b0,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+356,812bf1de972151f4b9f1aba5ac9520983929d7b0,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+357,812bf1de972151f4b9f1aba5ac9520983929d7b0,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+358,812bf1de972151f4b9f1aba5ac9520983929d7b0,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-363,2f8892a595e78b966141d70d51fdef5e6d627298,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+359,2f8892a595e78b966141d70d51fdef5e6d627298,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-364,ec2666e802babe1f886b88217ff321895ead2f26,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-365,ec2666e802babe1f886b88217ff321895ead2f26,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-366,ec2666e802babe1f886b88217ff321895ead2f26,/fpm/Dockerfile,"# set recommended PHP.ini settings
+360,ec2666e802babe1f886b88217ff321895ead2f26,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+361,ec2666e802babe1f886b88217ff321895ead2f26,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+362,ec2666e802babe1f886b88217ff321895ead2f26,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-367,ec2666e802babe1f886b88217ff321895ead2f26,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+363,ec2666e802babe1f886b88217ff321895ead2f26,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -714,39 +708,39 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-368,ec2666e802babe1f886b88217ff321895ead2f26,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+364,ec2666e802babe1f886b88217ff321895ead2f26,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-369,70bb9d02587964baee0e652cebc4fb85ac553f38,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+365,70bb9d02587964baee0e652cebc4fb85ac553f38,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-370,0563b5002bde3017d69d85b8f3ea2b6791754113,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-371,0563b5002bde3017d69d85b8f3ea2b6791754113,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-372,0563b5002bde3017d69d85b8f3ea2b6791754113,/apache/Dockerfile,"# set recommended PHP.ini settings
+366,0563b5002bde3017d69d85b8f3ea2b6791754113,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+367,0563b5002bde3017d69d85b8f3ea2b6791754113,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+368,0563b5002bde3017d69d85b8f3ea2b6791754113,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-373,0563b5002bde3017d69d85b8f3ea2b6791754113,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+369,0563b5002bde3017d69d85b8f3ea2b6791754113,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-374,89d38796efe1063e84d8dee3e7c74d04cb240abc,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-375,89d38796efe1063e84d8dee3e7c74d04cb240abc,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-376,89d38796efe1063e84d8dee3e7c74d04cb240abc,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+370,89d38796efe1063e84d8dee3e7c74d04cb240abc,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+371,89d38796efe1063e84d8dee3e7c74d04cb240abc,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+372,89d38796efe1063e84d8dee3e7c74d04cb240abc,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-377,532cc24f64fb859b3e40032f3277e2701f65ca16,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+373,532cc24f64fb859b3e40032f3277e2701f65ca16,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-378,cb64313bea0a5ce3a592b8f41a70dd5358daca72,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-379,cb64313bea0a5ce3a592b8f41a70dd5358daca72,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-380,cb64313bea0a5ce3a592b8f41a70dd5358daca72,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+374,cb64313bea0a5ce3a592b8f41a70dd5358daca72,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+375,cb64313bea0a5ce3a592b8f41a70dd5358daca72,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+376,cb64313bea0a5ce3a592b8f41a70dd5358daca72,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-381,9a8a264487faab73e332e1ea9d950155c5799693,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-382,9a8a264487faab73e332e1ea9d950155c5799693,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-383,9a8a264487faab73e332e1ea9d950155c5799693,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+377,9a8a264487faab73e332e1ea9d950155c5799693,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+378,9a8a264487faab73e332e1ea9d950155c5799693,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+379,9a8a264487faab73e332e1ea9d950155c5799693,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-384,81307d6595087a0a79f73d69f6b3fd195772f164,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-385,81307d6595087a0a79f73d69f6b3fd195772f164,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-386,81307d6595087a0a79f73d69f6b3fd195772f164,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+380,81307d6595087a0a79f73d69f6b3fd195772f164,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+381,81307d6595087a0a79f73d69f6b3fd195772f164,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+382,81307d6595087a0a79f73d69f6b3fd195772f164,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-387,ec2666e802babe1f886b88217ff321895ead2f26,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-388,ec2666e802babe1f886b88217ff321895ead2f26,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-389,ec2666e802babe1f886b88217ff321895ead2f26,/apache/Dockerfile,"# set recommended PHP.ini settings
+383,ec2666e802babe1f886b88217ff321895ead2f26,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+384,ec2666e802babe1f886b88217ff321895ead2f26,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+385,ec2666e802babe1f886b88217ff321895ead2f26,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-390,ec2666e802babe1f886b88217ff321895ead2f26,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+386,ec2666e802babe1f886b88217ff321895ead2f26,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -757,36 +751,36 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-391,ec2666e802babe1f886b88217ff321895ead2f26,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+387,ec2666e802babe1f886b88217ff321895ead2f26,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-392,f394d812abb1d8a6fdc24864655eae687072a901,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-393,f394d812abb1d8a6fdc24864655eae687072a901,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-394,f394d812abb1d8a6fdc24864655eae687072a901,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+388,f394d812abb1d8a6fdc24864655eae687072a901,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+389,f394d812abb1d8a6fdc24864655eae687072a901,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+390,f394d812abb1d8a6fdc24864655eae687072a901,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-395,f394d812abb1d8a6fdc24864655eae687072a901,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+391,f394d812abb1d8a6fdc24864655eae687072a901,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-396,fc947cb3c9552877ccca710cce4ceef42a7c59d0,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-397,fc947cb3c9552877ccca710cce4ceef42a7c59d0,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-398,fc947cb3c9552877ccca710cce4ceef42a7c59d0,/fpm/Dockerfile,"# set recommended PHP.ini settings
+392,fc947cb3c9552877ccca710cce4ceef42a7c59d0,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+393,fc947cb3c9552877ccca710cce4ceef42a7c59d0,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+394,fc947cb3c9552877ccca710cce4ceef42a7c59d0,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-399,fc947cb3c9552877ccca710cce4ceef42a7c59d0,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+395,fc947cb3c9552877ccca710cce4ceef42a7c59d0,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-400,32f54107672ac53d18aede1238e6f582fc370b4a,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-401,32f54107672ac53d18aede1238e6f582fc370b4a,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+396,32f54107672ac53d18aede1238e6f582fc370b4a,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+397,32f54107672ac53d18aede1238e6f582fc370b4a,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-402,df34b1a0ce248d124adedd91dd02736950e0ba4e,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-403,df34b1a0ce248d124adedd91dd02736950e0ba4e,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-404,df34b1a0ce248d124adedd91dd02736950e0ba4e,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+398,df34b1a0ce248d124adedd91dd02736950e0ba4e,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+399,df34b1a0ce248d124adedd91dd02736950e0ba4e,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+400,df34b1a0ce248d124adedd91dd02736950e0ba4e,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-405,c481dd16ebe081c6822bce1a8d0133ed46240f13,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-406,c481dd16ebe081c6822bce1a8d0133ed46240f13,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-407,c481dd16ebe081c6822bce1a8d0133ed46240f13,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+401,c481dd16ebe081c6822bce1a8d0133ed46240f13,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+402,c481dd16ebe081c6822bce1a8d0133ed46240f13,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+403,c481dd16ebe081c6822bce1a8d0133ed46240f13,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-408,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-409,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-410,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/apache/Dockerfile,"# set recommended PHP.ini settings
+404,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+405,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+406,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-411,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+407,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -797,33 +791,33 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-412,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+408,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-413,baf563abb7b48d9cb852c37713080f3e979097c3,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+409,baf563abb7b48d9cb852c37713080f3e979097c3,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-414,9edf48da19743553837a1d2f5a27a5ef5878b71b,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-415,9edf48da19743553837a1d2f5a27a5ef5878b71b,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-416,9edf48da19743553837a1d2f5a27a5ef5878b71b,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+410,9edf48da19743553837a1d2f5a27a5ef5878b71b,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+411,9edf48da19743553837a1d2f5a27a5ef5878b71b,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+412,9edf48da19743553837a1d2f5a27a5ef5878b71b,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-417,fe963578bbb0a335026aa9ef8a4d541635f10216,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+413,fe963578bbb0a335026aa9ef8a4d541635f10216,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-418,a144c1f29560f114ec299ab8388060719ffd99f9,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-419,a144c1f29560f114ec299ab8388060719ffd99f9,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-420,a144c1f29560f114ec299ab8388060719ffd99f9,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+414,a144c1f29560f114ec299ab8388060719ffd99f9,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+415,a144c1f29560f114ec299ab8388060719ffd99f9,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+416,a144c1f29560f114ec299ab8388060719ffd99f9,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-421,a144c1f29560f114ec299ab8388060719ffd99f9,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+417,a144c1f29560f114ec299ab8388060719ffd99f9,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-422,24c9d522d3b44ca6a6af1f4c2de9353bd1c216fd,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+418,24c9d522d3b44ca6a6af1f4c2de9353bd1c216fd,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-423,4d9eadce21a4900442b16a3ef4c8ab7582cc7c83,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+419,4d9eadce21a4900442b16a3ef4c8ab7582cc7c83,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-424,b5782462cddfd5c5ff7da5e19bb83b901e079781,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+420,b5782462cddfd5c5ff7da5e19bb83b901e079781,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-425,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-426,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-427,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+421,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+422,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+423,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-428,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+424,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -834,65 +828,59 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-429,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+425,1982726c8a349ea97abe0ff3a5354b8faa1afe19,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-430,158158a6bff06e2987432173b1e246e826c7a098,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-431,158158a6bff06e2987432173b1e246e826c7a098,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-432,158158a6bff06e2987432173b1e246e826c7a098,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+426,158158a6bff06e2987432173b1e246e826c7a098,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+427,158158a6bff06e2987432173b1e246e826c7a098,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+428,158158a6bff06e2987432173b1e246e826c7a098,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-433,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-434,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-435,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/apache/Dockerfile,"# set recommended PHP.ini settings
+429,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+430,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+431,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-436,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+432,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-437,e31357a72b36016f5b59cae9e13890c67522f3c8,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-438,e31357a72b36016f5b59cae9e13890c67522f3c8,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-439,e31357a72b36016f5b59cae9e13890c67522f3c8,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+433,e31357a72b36016f5b59cae9e13890c67522f3c8,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+434,e31357a72b36016f5b59cae9e13890c67522f3c8,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+435,e31357a72b36016f5b59cae9e13890c67522f3c8,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-440,459645d12f552e3a408a66add8539b8036da3655,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-441,459645d12f552e3a408a66add8539b8036da3655,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+436,459645d12f552e3a408a66add8539b8036da3655,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+437,459645d12f552e3a408a66add8539b8036da3655,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-442,f394d812abb1d8a6fdc24864655eae687072a901,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-443,f394d812abb1d8a6fdc24864655eae687072a901,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-444,f394d812abb1d8a6fdc24864655eae687072a901,/apache/Dockerfile,"# set recommended PHP.ini settings
+438,f394d812abb1d8a6fdc24864655eae687072a901,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+439,f394d812abb1d8a6fdc24864655eae687072a901,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+440,f394d812abb1d8a6fdc24864655eae687072a901,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-445,f394d812abb1d8a6fdc24864655eae687072a901,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+441,f394d812abb1d8a6fdc24864655eae687072a901,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-446,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-447,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-448,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+442,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+443,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+444,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-449,32f54107672ac53d18aede1238e6f582fc370b4a,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-450,32f54107672ac53d18aede1238e6f582fc370b4a,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+445,32f54107672ac53d18aede1238e6f582fc370b4a,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+446,32f54107672ac53d18aede1238e6f582fc370b4a,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-451,aed48b8acc50f51317a6fad386d61cb9845c11c6,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+447,aed48b8acc50f51317a6fad386d61cb9845c11c6,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-452,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-453,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-454,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/apache/Dockerfile,"# set recommended PHP.ini settings
+448,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+449,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+450,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-455,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+451,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-456,2ace08433de6485106ee66f41b81d82ca702d335,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+452,2ace08433de6485106ee66f41b81d82ca702d335,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-457,a144c1f29560f114ec299ab8388060719ffd99f9,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-458,a144c1f29560f114ec299ab8388060719ffd99f9,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-459,a144c1f29560f114ec299ab8388060719ffd99f9,/apache/Dockerfile,"# set recommended PHP.ini settings
+453,a144c1f29560f114ec299ab8388060719ffd99f9,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+454,a144c1f29560f114ec299ab8388060719ffd99f9,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+455,a144c1f29560f114ec299ab8388060719ffd99f9,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-460,a144c1f29560f114ec299ab8388060719ffd99f9,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+456,a144c1f29560f114ec299ab8388060719ffd99f9,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-461,5268c9f7200743a9b0220b3ac86607b995c75625,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-462,5268c9f7200743a9b0220b3ac86607b995c75625,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-463,5268c9f7200743a9b0220b3ac86607b995c75625,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+457,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+458,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+459,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-464,5268c9f7200743a9b0220b3ac86607b995c75625,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-465,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-466,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-467,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php"
-468,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+460,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -903,43 +891,43 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-469,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+461,3fd369b97d9274706e4f0a3a5999523ec68ce79e,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-470,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-471,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-472,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+462,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+463,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+464,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-473,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+465,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-474,dddf0af92dc1a1e5c6bfd4ac26b884aaaad56dd7,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+466,dddf0af92dc1a1e5c6bfd4ac26b884aaaad56dd7,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-475,fde849de55fa31f0676de532ce14b3e08acaa796,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-476,fde849de55fa31f0676de532ce14b3e08acaa796,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-477,fde849de55fa31f0676de532ce14b3e08acaa796,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+467,fde849de55fa31f0676de532ce14b3e08acaa796,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+468,fde849de55fa31f0676de532ce14b3e08acaa796,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+469,fde849de55fa31f0676de532ce14b3e08acaa796,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-478,b00cca0f4bce10167cda80c6ca640ffc771812df,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+470,b00cca0f4bce10167cda80c6ca640ffc771812df,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-479,5268c9f7200743a9b0220b3ac86607b995c75625,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-480,5268c9f7200743a9b0220b3ac86607b995c75625,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-481,5268c9f7200743a9b0220b3ac86607b995c75625,/fpm/Dockerfile,"# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php"
-482,5268c9f7200743a9b0220b3ac86607b995c75625,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+471,3e95d27597d5d5d387ffb85235f7484170725334,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+472,3e95d27597d5d5d387ffb85235f7484170725334,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+473,3e95d27597d5d5d387ffb85235f7484170725334,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+474,8cd5d3055703316bc95c47d5be17a642ad221ace,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+475,b711c66be5de3caade38361bd974134e1291a929,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+476,b711c66be5de3caade38361bd974134e1291a929,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+477,b711c66be5de3caade38361bd974134e1291a929,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+478,e31357a72b36016f5b59cae9e13890c67522f3c8,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+479,e31357a72b36016f5b59cae9e13890c67522f3c8,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+480,e31357a72b36016f5b59cae9e13890c67522f3c8,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-483,3e95d27597d5d5d387ffb85235f7484170725334,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-484,3e95d27597d5d5d387ffb85235f7484170725334,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-485,3e95d27597d5d5d387ffb85235f7484170725334,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+481,7ac7fe7a33569545bb595dbc8f925c03a8b79e55,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-486,8cd5d3055703316bc95c47d5be17a642ad221ace,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-487,b711c66be5de3caade38361bd974134e1291a929,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-488,b711c66be5de3caade38361bd974134e1291a929,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-489,b711c66be5de3caade38361bd974134e1291a929,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-490,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-491,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-492,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/fpm/Dockerfile,"# set recommended PHP.ini settings
+482,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+483,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+484,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-493,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+485,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -950,19 +938,39 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-494,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+486,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-495,e31357a72b36016f5b59cae9e13890c67522f3c8,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-496,e31357a72b36016f5b59cae9e13890c67522f3c8,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-497,e31357a72b36016f5b59cae9e13890c67522f3c8,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-498,7ac7fe7a33569545bb595dbc8f925c03a8b79e55,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+487,75dd0c05c8b0ec3e309f3d383a89f346d69e8e1a,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+488,75dd0c05c8b0ec3e309f3d383a89f346d69e8e1a,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-499,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-500,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-501,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/apache/Dockerfile,"# set recommended PHP.ini settings
+489,4b910a5efc204c3cd509f465f7d8307e896db2d5,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+490,4b910a5efc204c3cd509f465f7d8307e896db2d5,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+491,8cd5d3055703316bc95c47d5be17a642ad221ace,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+492,15c48dba053c52bcfe9a2ec67c9d28825283654a,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+493,15c48dba053c52bcfe9a2ec67c9d28825283654a,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+494,15c48dba053c52bcfe9a2ec67c9d28825283654a,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+495,c8cdbda1ffd4f6b7da05f3d77e293274c09ae224,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+496,c8cdbda1ffd4f6b7da05f3d77e293274c09ae224,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+497,d435b8771db1778cdbaf61778c6c19d77dc9cb58,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+498,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+499,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+500,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-502,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+501,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
+502,72bf7cd7dbe96b7caf38330e8e6f80d8596ab749,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+503,72bf7cd7dbe96b7caf38330e8e6f80d8596ab749,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+504,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+505,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+506,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+# see https://secure.php.net/manual/en/opcache.installation.php"
+507,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -973,39 +981,39 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-503,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+508,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-504,75dd0c05c8b0ec3e309f3d383a89f346d69e8e1a,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-505,75dd0c05c8b0ec3e309f3d383a89f346d69e8e1a,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+509,9a8a264487faab73e332e1ea9d950155c5799693,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+510,9a8a264487faab73e332e1ea9d950155c5799693,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+511,9a8a264487faab73e332e1ea9d950155c5799693,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-506,4b910a5efc204c3cd509f465f7d8307e896db2d5,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-507,4b910a5efc204c3cd509f465f7d8307e896db2d5,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-508,8cd5d3055703316bc95c47d5be17a642ad221ace,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-509,15c48dba053c52bcfe9a2ec67c9d28825283654a,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-510,15c48dba053c52bcfe9a2ec67c9d28825283654a,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-511,15c48dba053c52bcfe9a2ec67c9d28825283654a,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-512,c8cdbda1ffd4f6b7da05f3d77e293274c09ae224,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-513,c8cdbda1ffd4f6b7da05f3d77e293274c09ae224,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-514,d435b8771db1778cdbaf61778c6c19d77dc9cb58,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-515,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-516,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-517,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+512,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+513,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+514,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-518,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+515,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-519,72bf7cd7dbe96b7caf38330e8e6f80d8596ab749,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-520,72bf7cd7dbe96b7caf38330e8e6f80d8596ab749,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+516,ac7ac3f5ed86f42c20f29d7bebf2cd6f01fa338e,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-521,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-522,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-523,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+517,4dd5f77d3aa8081deea1e66007bf5983ab8c91a5,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+518,0b2fed55bdead8254694c8e63f7b1eb5e89c022e,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+519,0b2fed55bdead8254694c8e63f7b1eb5e89c022e,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+520,0b2fed55bdead8254694c8e63f7b1eb5e89c022e,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+521,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+522,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+523,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-524,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+524,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
+525,5e0bb9e49ae72291cf357c9ef1b4671c4ae25f9c,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+526,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+527,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+528,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm/Dockerfile,"# set recommended PHP.ini settings
+# see https://secure.php.net/manual/en/opcache.installation.php"
+529,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -1016,39 +1024,13 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-525,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+530,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-526,9a8a264487faab73e332e1ea9d950155c5799693,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-527,9a8a264487faab73e332e1ea9d950155c5799693,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-528,9a8a264487faab73e332e1ea9d950155c5799693,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-529,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-530,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-531,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm/Dockerfile,"# set recommended PHP.ini settings
+531,5f0966ed08cf055472793309e070fd3caef5af2b,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+532,5f0966ed08cf055472793309e070fd3caef5af2b,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+533,5f0966ed08cf055472793309e070fd3caef5af2b,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-532,1c6d233c84265f768aafb39925ccdc7e0431ae9f,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-533,ac7ac3f5ed86f42c20f29d7bebf2cd6f01fa338e,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-534,4dd5f77d3aa8081deea1e66007bf5983ab8c91a5,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-535,0b2fed55bdead8254694c8e63f7b1eb5e89c022e,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-536,0b2fed55bdead8254694c8e63f7b1eb5e89c022e,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-537,0b2fed55bdead8254694c8e63f7b1eb5e89c022e,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-538,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-539,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-540,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm/Dockerfile,"# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php"
-541,0563b5002bde3017d69d85b8f3ea2b6791754113,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-542,5e0bb9e49ae72291cf357c9ef1b4671c4ae25f9c,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-543,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-544,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-545,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm/Dockerfile,"# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php"
-546,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+534,5f0966ed08cf055472793309e070fd3caef5af2b,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -1059,13 +1041,13 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-547,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+535,5f0966ed08cf055472793309e070fd3caef5af2b,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-548,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-549,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-550,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+536,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+537,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+538,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-551,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+539,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -1076,13 +1058,13 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-552,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+540,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-553,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-554,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-555,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/apache/Dockerfile,"# set recommended PHP.ini settings
+541,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+542,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+543,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-556,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+544,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -1093,13 +1075,39 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-557,cf90c9d40d3cdbd66839edc297266b4c8a5e20fa,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+545,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-558,5f0966ed08cf055472793309e070fd3caef5af2b,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-559,5f0966ed08cf055472793309e070fd3caef5af2b,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-560,5f0966ed08cf055472793309e070fd3caef5af2b,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+546,1f844a0de9e1ef018cdf8541a90620fd22a8c7a7,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+547,0bd91c7ae944cf69bed4515413fe9442976e3dbc,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+548,ff70d5e3917d449a8a302577c5e274a42361d662,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+549,ff70d5e3917d449a8a302577c5e274a42361d662,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+550,ff70d5e3917d449a8a302577c5e274a42361d662,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+551,225c0fc9fc15b892484dada2a4583ba286688492,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+552,ead2c41aa8b929d1d6e9d03eacb6f76731167784,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+553,ead2c41aa8b929d1d6e9d03eacb6f76731167784,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+554,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+555,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+556,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-561,5f0966ed08cf055472793309e070fd3caef5af2b,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+557,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
+558,75dd0c05c8b0ec3e309f3d383a89f346d69e8e1a,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+559,75dd0c05c8b0ec3e309f3d383a89f346d69e8e1a,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+560,fde849de55fa31f0676de532ce14b3e08acaa796,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+561,fde849de55fa31f0676de532ce14b3e08acaa796,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+562,fde849de55fa31f0676de532ce14b3e08acaa796,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+563,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+564,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+565,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm/Dockerfile,"# set recommended PHP.ini settings
+# see https://secure.php.net/manual/en/opcache.installation.php"
+566,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -1110,13 +1118,17 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-562,5f0966ed08cf055472793309e070fd3caef5af2b,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+567,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-563,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-564,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-565,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm/Dockerfile,"# set recommended PHP.ini settings
+568,aa9d5d3876564b3969b5947002696792546f3884,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+569,aa9d5d3876564b3969b5947002696792546f3884,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+570,aa9d5d3876564b3969b5947002696792546f3884,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+571,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+572,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+573,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-566,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+574,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -1127,13 +1139,17 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-567,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+575,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-568,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-569,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-570,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm/Dockerfile,"# set recommended PHP.ini settings
+576,70341240d23107eb7b0f8b00bb12d5ac091b7431,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+577,70341240d23107eb7b0f8b00bb12d5ac091b7431,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+578,70341240d23107eb7b0f8b00bb12d5ac091b7431,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+579,5f0966ed08cf055472793309e070fd3caef5af2b,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+580,5f0966ed08cf055472793309e070fd3caef5af2b,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+581,5f0966ed08cf055472793309e070fd3caef5af2b,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-571,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+582,5f0966ed08cf055472793309e070fd3caef5af2b,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -1144,41 +1160,78 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-572,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+583,5f0966ed08cf055472793309e070fd3caef5af2b,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-573,1f844a0de9e1ef018cdf8541a90620fd22a8c7a7,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-574,0bd91c7ae944cf69bed4515413fe9442976e3dbc,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-575,ff70d5e3917d449a8a302577c5e274a42361d662,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-576,ff70d5e3917d449a8a302577c5e274a42361d662,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-577,ff70d5e3917d449a8a302577c5e274a42361d662,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-578,225c0fc9fc15b892484dada2a4583ba286688492,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-579,ead2c41aa8b929d1d6e9d03eacb6f76731167784,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-580,ead2c41aa8b929d1d6e9d03eacb6f76731167784,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-581,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-582,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-583,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/fpm/Dockerfile,"# set recommended PHP.ini settings
+584,689757368fff698888c004265e4de99d2bb70265,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+585,689757368fff698888c004265e4de99d2bb70265,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+586,689757368fff698888c004265e4de99d2bb70265,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-584,3cb80def34ef00f44ccf5cd6e3b640faf0683280,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+587,689757368fff698888c004265e4de99d2bb70265,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-585,75dd0c05c8b0ec3e309f3d383a89f346d69e8e1a,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-586,75dd0c05c8b0ec3e309f3d383a89f346d69e8e1a,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+588,fecf2cb2613bd3e57de7efd66cdab858eeee6fe9,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+589,fecf2cb2613bd3e57de7efd66cdab858eeee6fe9,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+590,fecf2cb2613bd3e57de7efd66cdab858eeee6fe9,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-587,fde849de55fa31f0676de532ce14b3e08acaa796,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-588,fde849de55fa31f0676de532ce14b3e08acaa796,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-589,fde849de55fa31f0676de532ce14b3e08acaa796,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+591,15c48dba053c52bcfe9a2ec67c9d28825283654a,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+592,15c48dba053c52bcfe9a2ec67c9d28825283654a,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+593,15c48dba053c52bcfe9a2ec67c9d28825283654a,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-590,79eef8edba32dcbbea15b7645a969aaec9003345,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+594,b511e57a17ab57d9f2e947fc391f004990d7f1d3,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-591,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-592,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-593,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm/Dockerfile,"# set recommended PHP.ini settings
+595,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+596,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+597,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-594,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+598,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
+599,136976a34f2d49ca8ebb2d8394728eed4d229e70,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+600,4d4d11249aaa7e649255da678e67762b9b504c1d,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+601,4d4d11249aaa7e649255da678e67762b9b504c1d,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+602,4d4d11249aaa7e649255da678e67762b9b504c1d,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+603,d0bd45e666485f923769b238e3dee9c423488fad,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+604,d0bd45e666485f923769b238e3dee9c423488fad,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+605,d0bd45e666485f923769b238e3dee9c423488fad,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+606,559e39834b96623c863ca0dc193300c7b2248cda,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+607,c9002a87f0103ad52fd095cd202be31efdb84b64,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+608,64fd9b96c18f509d0252121fccd11d19ac9a3a4f,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+609,64fd9b96c18f509d0252121fccd11d19ac9a3a4f,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+610,7e2efa6e592517e0cfcb4393721b2b0ce8045531,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+611,7e2efa6e592517e0cfcb4393721b2b0ce8045531,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+612,3e95d27597d5d5d387ffb85235f7484170725334,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+613,3e95d27597d5d5d387ffb85235f7484170725334,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+614,3e95d27597d5d5d387ffb85235f7484170725334,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+615,e666783f057824b799b2a874ace38ff22e99308a,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+616,e666783f057824b799b2a874ace38ff22e99308a,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+617,e666783f057824b799b2a874ace38ff22e99308a,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+618,6b775a4197b55169bd9ebc8f20a1d74b09fc61ad,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+619,6b775a4197b55169bd9ebc8f20a1d74b09fc61ad,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+620,6b775a4197b55169bd9ebc8f20a1d74b09fc61ad,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
+621,cc86c302f51fc76f323e9d06610c574158a0263c,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+622,cc86c302f51fc76f323e9d06610c574158a0263c,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+623,cc86c302f51fc76f323e9d06610c574158a0263c,/apache/Dockerfile,"# set recommended PHP.ini settings
+# see https://secure.php.net/manual/en/opcache.installation.php"
+624,cc86c302f51fc76f323e9d06610c574158a0263c,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
+625,72bf7cd7dbe96b7caf38330e8e6f80d8596ab749,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+626,72bf7cd7dbe96b7caf38330e8e6f80d8596ab749,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+627,7aaf9aa7d9ce37ad586f7385ca0fa82a3d5b47ae,/Dockerfile,"# WORKDIR is /var/www/html (inhertied via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+628,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+629,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+630,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+# see https://secure.php.net/manual/en/opcache.installation.php"
+631,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -1189,17 +1242,34 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-595,6d8ca27229625c42cc3314b9eeb3054185ef632d,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+632,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-596,aa9d5d3876564b3969b5947002696792546f3884,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-597,aa9d5d3876564b3969b5947002696792546f3884,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-598,aa9d5d3876564b3969b5947002696792546f3884,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+633,df34b1a0ce248d124adedd91dd02736950e0ba4e,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+634,df34b1a0ce248d124adedd91dd02736950e0ba4e,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+635,df34b1a0ce248d124adedd91dd02736950e0ba4e,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-599,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-600,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-601,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm/Dockerfile,"# set recommended PHP.ini settings
+636,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+637,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+638,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-602,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+639,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
+640,81307d6595087a0a79f73d69f6b3fd195772f164,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+641,81307d6595087a0a79f73d69f6b3fd195772f164,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+642,81307d6595087a0a79f73d69f6b3fd195772f164,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+643,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+644,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+645,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+646,edd76a3640e34e8318f7dbb08b4875838cb83e0c,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+647,edd76a3640e34e8318f7dbb08b4875838cb83e0c,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+648,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+649,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+650,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+# see https://secure.php.net/manual/en/opcache.installation.php"
+651,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -1210,17 +1280,44 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-603,31145793bded9b1440c5bcc8b4bfd906b484d992,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+652,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-604,70341240d23107eb7b0f8b00bb12d5ac091b7431,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-605,70341240d23107eb7b0f8b00bb12d5ac091b7431,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-606,70341240d23107eb7b0f8b00bb12d5ac091b7431,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+653,d0bd45e666485f923769b238e3dee9c423488fad,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+654,d0bd45e666485f923769b238e3dee9c423488fad,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+655,d0bd45e666485f923769b238e3dee9c423488fad,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-607,5f0966ed08cf055472793309e070fd3caef5af2b,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-608,5f0966ed08cf055472793309e070fd3caef5af2b,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-609,5f0966ed08cf055472793309e070fd3caef5af2b,/apache/Dockerfile,"# set recommended PHP.ini settings
+656,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+657,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+658,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+659,965f0e8de2f06f6a771fe8c5827222233c0ffbec,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+660,965f0e8de2f06f6a771fe8c5827222233c0ffbec,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+661,965f0e8de2f06f6a771fe8c5827222233c0ffbec,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+662,ff70d5e3917d449a8a302577c5e274a42361d662,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+663,ff70d5e3917d449a8a302577c5e274a42361d662,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+664,ff70d5e3917d449a8a302577c5e274a42361d662,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+665,48df09819f971acd2b323bc5ae55dfc9e0d476a5,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+666,48df09819f971acd2b323bc5ae55dfc9e0d476a5,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+667,48df09819f971acd2b323bc5ae55dfc9e0d476a5,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+668,01882f7d963f83097dffa9dfd7375de362b98034,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+669,01882f7d963f83097dffa9dfd7375de362b98034,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+670,e7f16a1855c60fda3792bb277e12b3eee60d80e8,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+671,487bc8f8efca0114a763afc194818db878c0f45c,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+672,487bc8f8efca0114a763afc194818db878c0f45c,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+673,487bc8f8efca0114a763afc194818db878c0f45c,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-610,5f0966ed08cf055472793309e070fd3caef5af2b,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+674,487bc8f8efca0114a763afc194818db878c0f45c,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
+675,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+676,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+677,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+# see https://secure.php.net/manual/en/opcache.installation.php"
+678,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -1231,78 +1328,53 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-611,5f0966ed08cf055472793309e070fd3caef5af2b,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+679,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-612,689757368fff698888c004265e4de99d2bb70265,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-613,689757368fff698888c004265e4de99d2bb70265,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-614,689757368fff698888c004265e4de99d2bb70265,/apache/Dockerfile,"# set recommended PHP.ini settings
+680,459645d12f552e3a408a66add8539b8036da3655,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+681,459645d12f552e3a408a66add8539b8036da3655,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+682,79eef8edba32dcbbea15b7645a969aaec9003345,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+683,fb43ebe0f8a671782d4363743971aa1b079cf9db,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+684,fb43ebe0f8a671782d4363743971aa1b079cf9db,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+685,fb43ebe0f8a671782d4363743971aa1b079cf9db,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
+686,6b775a4197b55169bd9ebc8f20a1d74b09fc61ad,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+687,6b775a4197b55169bd9ebc8f20a1d74b09fc61ad,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+688,6b775a4197b55169bd9ebc8f20a1d74b09fc61ad,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
+689,ff4908d348b3bf08ac3e6fa82ff76b3f69790e6d,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+690,ff4908d348b3bf08ac3e6fa82ff76b3f69790e6d,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+691,ff4908d348b3bf08ac3e6fa82ff76b3f69790e6d,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+692,0fb206725237f82b90a612e68cbc50139326363c,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+693,0fb206725237f82b90a612e68cbc50139326363c,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+694,487bc8f8efca0114a763afc194818db878c0f45c,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+695,487bc8f8efca0114a763afc194818db878c0f45c,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+696,487bc8f8efca0114a763afc194818db878c0f45c,/fpm/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-615,689757368fff698888c004265e4de99d2bb70265,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+697,487bc8f8efca0114a763afc194818db878c0f45c,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-616,fecf2cb2613bd3e57de7efd66cdab858eeee6fe9,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-617,fecf2cb2613bd3e57de7efd66cdab858eeee6fe9,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-618,fecf2cb2613bd3e57de7efd66cdab858eeee6fe9,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+698,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+699,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+700,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-619,15c48dba053c52bcfe9a2ec67c9d28825283654a,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-620,15c48dba053c52bcfe9a2ec67c9d28825283654a,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-621,15c48dba053c52bcfe9a2ec67c9d28825283654a,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+701,4d4d11249aaa7e649255da678e67762b9b504c1d,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+702,4d4d11249aaa7e649255da678e67762b9b504c1d,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+703,4d4d11249aaa7e649255da678e67762b9b504c1d,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-622,b511e57a17ab57d9f2e947fc391f004990d7f1d3,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+704,ddc78a24c43759a671d27054f20b15644a36af45,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-623,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-624,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-625,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+705,ff70d5e3917d449a8a302577c5e274a42361d662,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+706,ff70d5e3917d449a8a302577c5e274a42361d662,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+707,ff70d5e3917d449a8a302577c5e274a42361d662,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+708,31145793bded9b1440c5bcc8b4bfd906b484d992,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+709,31145793bded9b1440c5bcc8b4bfd906b484d992,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+710,31145793bded9b1440c5bcc8b4bfd906b484d992,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-626,c3bc18c223ee4327acf5506eed3f2ffe517a027a,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-627,136976a34f2d49ca8ebb2d8394728eed4d229e70,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-628,4d4d11249aaa7e649255da678e67762b9b504c1d,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-629,4d4d11249aaa7e649255da678e67762b9b504c1d,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-630,4d4d11249aaa7e649255da678e67762b9b504c1d,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-631,d0bd45e666485f923769b238e3dee9c423488fad,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-632,d0bd45e666485f923769b238e3dee9c423488fad,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-633,d0bd45e666485f923769b238e3dee9c423488fad,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-634,559e39834b96623c863ca0dc193300c7b2248cda,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-635,c9002a87f0103ad52fd095cd202be31efdb84b64,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-636,64fd9b96c18f509d0252121fccd11d19ac9a3a4f,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-637,64fd9b96c18f509d0252121fccd11d19ac9a3a4f,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-638,7e2efa6e592517e0cfcb4393721b2b0ce8045531,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-639,7e2efa6e592517e0cfcb4393721b2b0ce8045531,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-640,3e95d27597d5d5d387ffb85235f7484170725334,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-641,3e95d27597d5d5d387ffb85235f7484170725334,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-642,3e95d27597d5d5d387ffb85235f7484170725334,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-643,e666783f057824b799b2a874ace38ff22e99308a,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-644,e666783f057824b799b2a874ace38ff22e99308a,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-645,e666783f057824b799b2a874ace38ff22e99308a,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-646,6b775a4197b55169bd9ebc8f20a1d74b09fc61ad,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-647,6b775a4197b55169bd9ebc8f20a1d74b09fc61ad,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-648,6b775a4197b55169bd9ebc8f20a1d74b09fc61ad,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-649,cc86c302f51fc76f323e9d06610c574158a0263c,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-650,cc86c302f51fc76f323e9d06610c574158a0263c,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-651,cc86c302f51fc76f323e9d06610c574158a0263c,/apache/Dockerfile,"# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php"
-652,cc86c302f51fc76f323e9d06610c574158a0263c,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-653,72bf7cd7dbe96b7caf38330e8e6f80d8596ab749,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-654,72bf7cd7dbe96b7caf38330e8e6f80d8596ab749,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-655,7aaf9aa7d9ce37ad586f7385ca0fa82a3d5b47ae,/Dockerfile,"# WORKDIR is /var/www/html (inhertied via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-656,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-657,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-658,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php"
-659,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+711,31145793bded9b1440c5bcc8b4bfd906b484d992,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -1313,34 +1385,54 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-660,a234085c46cadb87b352e16fe8081a5ee4ef5e94,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+712,31145793bded9b1440c5bcc8b4bfd906b484d992,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-661,df34b1a0ce248d124adedd91dd02736950e0ba4e,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-662,df34b1a0ce248d124adedd91dd02736950e0ba4e,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-663,df34b1a0ce248d124adedd91dd02736950e0ba4e,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+713,8d1838e0fffbb95c387ae9318bc5fb91302eb1d2,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+714,8d1838e0fffbb95c387ae9318bc5fb91302eb1d2,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+715,8d1838e0fffbb95c387ae9318bc5fb91302eb1d2,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-664,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-665,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-666,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm/Dockerfile,"# set recommended PHP.ini settings
+716,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+717,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+718,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/apache/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-667,53f01718fdfaf900f2f48d089a6cd70fff8d5f4b,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+719,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-668,81307d6595087a0a79f73d69f6b3fd195772f164,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-669,81307d6595087a0a79f73d69f6b3fd195772f164,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-670,81307d6595087a0a79f73d69f6b3fd195772f164,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+720,70341240d23107eb7b0f8b00bb12d5ac091b7431,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+721,70341240d23107eb7b0f8b00bb12d5ac091b7431,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+722,70341240d23107eb7b0f8b00bb12d5ac091b7431,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-671,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-672,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-673,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+723,6f2902040d5bb7137e37e49d12d429b8687d9177,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-674,edd76a3640e34e8318f7dbb08b4875838cb83e0c,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-675,edd76a3640e34e8318f7dbb08b4875838cb83e0c,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+724,31c9f0a2f86a70152ca0219029b16170130cb26b,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+725,31c9f0a2f86a70152ca0219029b16170130cb26b,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+726,31c9f0a2f86a70152ca0219029b16170130cb26b,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-676,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-677,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-678,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
+727,5c88b4089d841cfa26ca9fe4b884cfce64f95c11,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+728,5c88b4089d841cfa26ca9fe4b884cfce64f95c11,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+729,cb64313bea0a5ce3a592b8f41a70dd5358daca72,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+730,cb64313bea0a5ce3a592b8f41a70dd5358daca72,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+731,cb64313bea0a5ce3a592b8f41a70dd5358daca72,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+732,b711c66be5de3caade38361bd974134e1291a929,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+733,b711c66be5de3caade38361bd974134e1291a929,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+734,b711c66be5de3caade38361bd974134e1291a929,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+735,4d9eadce21a4900442b16a3ef4c8ab7582cc7c83,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+736,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+737,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+738,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+739,9edf48da19743553837a1d2f5a27a5ef5878b71b,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+740,9edf48da19743553837a1d2f5a27a5ef5878b71b,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+741,9edf48da19743553837a1d2f5a27a5ef5878b71b,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
+742,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+743,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+744,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php"
-679,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
+745,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
 #RUN set -ex; \
 #	curl -fsSL -o GeoIPCity.tar.gz \
 #		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
@@ -1351,176 +1443,13 @@
 #	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
 #	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
 #	rm -rf GeoIPCity*"
-680,bb8c948d7c5cbf6ce23958d14549a0e157952dab,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+746,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-681,d0bd45e666485f923769b238e3dee9c423488fad,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-682,d0bd45e666485f923769b238e3dee9c423488fad,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-683,d0bd45e666485f923769b238e3dee9c423488fad,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+747,0b2fed55bdead8254694c8e63f7b1eb5e89c022e,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+748,0b2fed55bdead8254694c8e63f7b1eb5e89c022e,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
+749,0b2fed55bdead8254694c8e63f7b1eb5e89c022e,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-684,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-685,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-686,c0d412d1acbab2ede9ff46346d1c87fce09023bb,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-687,965f0e8de2f06f6a771fe8c5827222233c0ffbec,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-688,965f0e8de2f06f6a771fe8c5827222233c0ffbec,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-689,965f0e8de2f06f6a771fe8c5827222233c0ffbec,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-690,ff70d5e3917d449a8a302577c5e274a42361d662,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-691,ff70d5e3917d449a8a302577c5e274a42361d662,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-692,ff70d5e3917d449a8a302577c5e274a42361d662,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-693,48df09819f971acd2b323bc5ae55dfc9e0d476a5,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-694,48df09819f971acd2b323bc5ae55dfc9e0d476a5,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-695,48df09819f971acd2b323bc5ae55dfc9e0d476a5,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-696,01882f7d963f83097dffa9dfd7375de362b98034,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-697,01882f7d963f83097dffa9dfd7375de362b98034,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-698,e7f16a1855c60fda3792bb277e12b3eee60d80e8,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-699,487bc8f8efca0114a763afc194818db878c0f45c,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-700,487bc8f8efca0114a763afc194818db878c0f45c,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-701,487bc8f8efca0114a763afc194818db878c0f45c,/apache/Dockerfile,"# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php"
-702,487bc8f8efca0114a763afc194818db878c0f45c,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-703,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-704,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-705,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php"
-706,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
-#RUN set -ex; \
-#	curl -fsSL -o GeoIPCity.tar.gz \
-#		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
-#	curl -fsSL -o GeoIPCity.tar.gz.md5 \
-#		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz.md5""; \
-#	echo ""$(cat GeoIPCity.tar.gz.md5)  GeoIPCity.tar.gz"" | md5sum -c -; \
-#	mkdir /usr/src/GeoIPCity; \
-#	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
-#	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
-#	rm -rf GeoIPCity*"
-707,6342c0d540c313cd62a8ac076df39b7add4d3fff,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-708,459645d12f552e3a408a66add8539b8036da3655,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-709,459645d12f552e3a408a66add8539b8036da3655,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-710,79eef8edba32dcbbea15b7645a969aaec9003345,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-711,fb43ebe0f8a671782d4363743971aa1b079cf9db,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-712,fb43ebe0f8a671782d4363743971aa1b079cf9db,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-713,fb43ebe0f8a671782d4363743971aa1b079cf9db,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-714,6b775a4197b55169bd9ebc8f20a1d74b09fc61ad,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-715,6b775a4197b55169bd9ebc8f20a1d74b09fc61ad,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-716,6b775a4197b55169bd9ebc8f20a1d74b09fc61ad,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-717,ff4908d348b3bf08ac3e6fa82ff76b3f69790e6d,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-718,ff4908d348b3bf08ac3e6fa82ff76b3f69790e6d,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-719,ff4908d348b3bf08ac3e6fa82ff76b3f69790e6d,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-720,0fb206725237f82b90a612e68cbc50139326363c,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-721,0fb206725237f82b90a612e68cbc50139326363c,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-722,487bc8f8efca0114a763afc194818db878c0f45c,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-723,487bc8f8efca0114a763afc194818db878c0f45c,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-724,487bc8f8efca0114a763afc194818db878c0f45c,/fpm/Dockerfile,"# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php"
-725,487bc8f8efca0114a763afc194818db878c0f45c,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-726,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-727,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-728,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-729,4d4d11249aaa7e649255da678e67762b9b504c1d,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-730,4d4d11249aaa7e649255da678e67762b9b504c1d,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-731,4d4d11249aaa7e649255da678e67762b9b504c1d,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-732,ddc78a24c43759a671d27054f20b15644a36af45,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-733,ff70d5e3917d449a8a302577c5e274a42361d662,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-734,ff70d5e3917d449a8a302577c5e274a42361d662,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-735,ff70d5e3917d449a8a302577c5e274a42361d662,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-736,31145793bded9b1440c5bcc8b4bfd906b484d992,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-737,31145793bded9b1440c5bcc8b4bfd906b484d992,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-738,31145793bded9b1440c5bcc8b4bfd906b484d992,/apache/Dockerfile,"# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php"
-739,31145793bded9b1440c5bcc8b4bfd906b484d992,/apache/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
-#RUN set -ex; \
-#	curl -fsSL -o GeoIPCity.tar.gz \
-#		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
-#	curl -fsSL -o GeoIPCity.tar.gz.md5 \
-#		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz.md5""; \
-#	echo ""$(cat GeoIPCity.tar.gz.md5)  GeoIPCity.tar.gz"" | md5sum -c -; \
-#	mkdir /usr/src/GeoIPCity; \
-#	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
-#	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
-#	rm -rf GeoIPCity*"
-740,31145793bded9b1440c5bcc8b4bfd906b484d992,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-741,8d1838e0fffbb95c387ae9318bc5fb91302eb1d2,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-742,8d1838e0fffbb95c387ae9318bc5fb91302eb1d2,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-743,8d1838e0fffbb95c387ae9318bc5fb91302eb1d2,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-744,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-745,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-746,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/apache/Dockerfile,"# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php"
-747,2b454506ddc4ae786b53df86da35c4fcbc6a6337,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-748,70341240d23107eb7b0f8b00bb12d5ac091b7431,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-749,70341240d23107eb7b0f8b00bb12d5ac091b7431,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-750,70341240d23107eb7b0f8b00bb12d5ac091b7431,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-751,6f2902040d5bb7137e37e49d12d429b8687d9177,/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-752,31c9f0a2f86a70152ca0219029b16170130cb26b,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-753,31c9f0a2f86a70152ca0219029b16170130cb26b,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-754,31c9f0a2f86a70152ca0219029b16170130cb26b,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-755,5c88b4089d841cfa26ca9fe4b884cfce64f95c11,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-756,5c88b4089d841cfa26ca9fe4b884cfce64f95c11,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-757,cb64313bea0a5ce3a592b8f41a70dd5358daca72,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-758,cb64313bea0a5ce3a592b8f41a70dd5358daca72,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-759,cb64313bea0a5ce3a592b8f41a70dd5358daca72,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-760,b711c66be5de3caade38361bd974134e1291a929,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-761,b711c66be5de3caade38361bd974134e1291a929,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-762,b711c66be5de3caade38361bd974134e1291a929,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-763,4d9eadce21a4900442b16a3ef4c8ab7582cc7c83,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-764,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-765,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-766,2125140c0481fa39e5f1add28bcc45fd9f36e75e,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-767,9edf48da19743553837a1d2f5a27a5ef5878b71b,/apache/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-768,9edf48da19743553837a1d2f5a27a5ef5878b71b,/apache/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-769,9edf48da19743553837a1d2f5a27a5ef5878b71b,/apache/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-770,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-771,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-772,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm-alpine/Dockerfile,"# set recommended PHP.ini settings
-# see https://secure.php.net/manual/en/opcache.installation.php"
-773,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm-alpine/Dockerfile,"# https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases/
-#RUN set -ex; \
-#	curl -fsSL -o GeoIPCity.tar.gz \
-#		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz""; \
-#	curl -fsSL -o GeoIPCity.tar.gz.md5 \
-#		""https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz.md5""; \
-#	echo ""$(cat GeoIPCity.tar.gz.md5)  GeoIPCity.tar.gz"" | md5sum -c -; \
-#	mkdir /usr/src/GeoIPCity; \
-#	tar -xf GeoIPCity.tar.gz -C /usr/src/GeoIPCity --strip-components=1; \
-#	mv /usr/src/GeoIPCity/GeoLite2-City.mmdb /usr/src/matomo/misc/GeoLite2-City.mmdb; \
-#	rm -rf GeoIPCity*"
-774,ec16ac06900a6a163220184b2ba310a8980dbfe9,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/matomo"
-775,0b2fed55bdead8254694c8e63f7b1eb5e89c022e,/fpm/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-776,0b2fed55bdead8254694c8e63f7b1eb5e89c022e,/fpm/Dockerfile,"# reset apt-mark's ""manual"" list so that ""purge --auto-remove"" will remove all build dependencies"
-777,0b2fed55bdead8254694c8e63f7b1eb5e89c022e,/fpm/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
-# ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"
-778,9edf48da19743553837a1d2f5a27a5ef5878b71b,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
-779,9edf48da19743553837a1d2f5a27a5ef5878b71b,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
-780,9edf48da19743553837a1d2f5a27a5ef5878b71b,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
+750,9edf48da19743553837a1d2f5a27a5ef5878b71b,/fpm-alpine/Dockerfile,"# pecl will claim success even if one install fails, so we need to perform each install separately"
+751,9edf48da19743553837a1d2f5a27a5ef5878b71b,/fpm-alpine/Dockerfile,#p' --recursive /usr/local/lib/php/extensions \
+752,9edf48da19743553837a1d2f5a27a5ef5878b71b,/fpm-alpine/Dockerfile,"# WORKDIR is /var/www/html (inherited via ""FROM php"")
 # ""/entrypoint.sh"" will populate it at container startup from /usr/src/piwik"

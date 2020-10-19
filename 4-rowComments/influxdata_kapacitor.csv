@@ -9,33 +9,19 @@
 7,b87cee34b6fba9d7ddac02f9adbb793f5a273209,/Godeps/_workspace/src/github.com/influxdb/influxdb/Dockerfile,# Add influxd to the PATH
 8,b87cee34b6fba9d7ddac02f9adbb793f5a273209,/Godeps/_workspace/src/github.com/influxdb/influxdb/Dockerfile,# Generate a default config
 9,b87cee34b6fba9d7ddac02f9adbb793f5a273209,/Godeps/_workspace/src/github.com/influxdb/influxdb/Dockerfile,# Use /data for all disk storage
-10,fc57b47fc8b7c3fc0a0675c8ae86b50710c62ed9,/vendor/golang.org/x/net/http2/Dockerfile,"#
+10,23fd3d3fb0fd5c1915ab5080a4dacb2a6d6c01bf,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
+11,23fd3d3fb0fd5c1915ab5080a4dacb2a6d6c01bf,/Dockerfile,# Install deps
+12,23fd3d3fb0fd5c1915ab5080a4dacb2a6d6c01bf,/Dockerfile,# Install go
+13,6eb087a62296214282f655d5a5ad4db9b2f781b1,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
 # See the Makefile for how to tag it. If Docker and that image is found, the
 # Go tests use this curl binary for integration tests.
 #"
-11,fc57b47fc8b7c3fc0a0675c8ae86b50710c62ed9,/vendor/golang.org/x/net/http2/Dockerfile,# The list of packages nghttp2 recommends for h2load:
-12,fc57b47fc8b7c3fc0a0675c8ae86b50710c62ed9,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:"
-13,23fd3d3fb0fd5c1915ab5080a4dacb2a6d6c01bf,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
-14,23fd3d3fb0fd5c1915ab5080a4dacb2a6d6c01bf,/Dockerfile,# Install deps
-15,23fd3d3fb0fd5c1915ab5080a4dacb2a6d6c01bf,/Dockerfile,# Install go
-16,c043293b2974e312031e9f704cd730d5da16c303,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
-17,c043293b2974e312031e9f704cd730d5da16c303,/vendor/github.com/influxdata/influxdb/Dockerfile,# copy binary into image
-18,c043293b2974e312031e9f704cd730d5da16c303,/vendor/github.com/influxdata/influxdb/Dockerfile,# Add influxd to the PATH
-19,c043293b2974e312031e9f704cd730d5da16c303,/vendor/github.com/influxdata/influxdb/Dockerfile,# Generate a default config
-20,c043293b2974e312031e9f704cd730d5da16c303,/vendor/github.com/influxdata/influxdb/Dockerfile,# Use /data for all disk storage
-21,6eb087a62296214282f655d5a5ad4db9b2f781b1,/vendor/golang.org/x/net/http2/Dockerfile,"#
-# This Dockerfile builds a recent curl with HTTP/2 client support, using
-# a recent nghttp2 build.
-#
-# See the Makefile for how to tag it. If Docker and that image is found, the
-# Go tests use this curl binary for integration tests.
-#"
-22,6eb087a62296214282f655d5a5ad4db9b2f781b1,/vendor/golang.org/x/net/http2/Dockerfile,# The list of packages nghttp2 recommends for h2load:
-23,6eb087a62296214282f655d5a5ad4db9b2f781b1,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:"
-24,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+14,6eb087a62296214282f655d5a5ad4db9b2f781b1,/vendor/golang.org/x/net/http2/Dockerfile,# The list of packages nghttp2 recommends for h2load:
+15,6eb087a62296214282f655d5a5ad4db9b2f781b1,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:"
+16,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -59,43 +45,49 @@
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #"
-25,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# allow replacing httpredir or deb mirror
-26,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Add zfs ppa
-27,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Packaged dependencies
-28,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Get lvm2 source for compiling statically
-29,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# See https://git.fedorahosted.org/cgit/lvm2.git/refs/tags for release tags
-30,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Compile and install lvm2
-31,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# See https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-32,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Configure the container for OSX cross compilation
-33,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Install seccomp: the version shipped in trusty is too old
-34,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,"# Install Go
+17,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# allow replacing httpredir or deb mirror
+18,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Add zfs ppa
+19,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Packaged dependencies
+20,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Get lvm2 source for compiling statically
+21,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# See https://git.fedorahosted.org/cgit/lvm2.git/refs/tags for release tags
+22,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Compile and install lvm2
+23,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# See https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
+24,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Configure the container for OSX cross compilation
+25,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Install seccomp: the version shipped in trusty is too old
+26,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# Install Go
 # IMPORTANT: If the version of Go is updated, the Windows to Linux CI machines
 #            will need updating, to avoid errors. Ping #docker-maintainers on IRC
 #            with a heads-up."
-35,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Compile Go for cross compilation
-36,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Dependency for golint
-37,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Grab Go's lint tool
-38,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Install CRIU for checkpoint/restore support
-39,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,"# Install two versions of the registry. The first is an older version that
+27,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Compile Go for cross compilation
+28,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Dependency for golint
+29,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Grab Go's lint tool
+30,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Install CRIU for checkpoint/restore support
+31,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# Install two versions of the registry. The first is an older version that
 # only supports schema1 manifests. The second is a newer version that supports
 # both. This allows integration-cli tests to cover push/pull with both schema1
 # and schema2 manifests."
-40,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Install notary and notary-server
-41,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,"# Get the ""docker-py"" source so we can run their integration tests"
-42,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Install yamllint for validating swagger.yaml
-43,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Install go-swagger for validating swagger.yaml
-44,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Set user.email so crosbymichael's in-container merge commits go smoothly
-45,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Add an unprivileged user to be used for tests which need it
-46,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Let us use a .bashrc file
-47,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Add integration helps to bashrc
-48,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Register Docker's bash completion.
-49,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,"# Get useful and necessary Hub images so we can ""docker load"" locally instead of pulling"
-50,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
-51,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+32,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Install notary and notary-server
+33,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# Get the ""docker-py"" source so we can run their integration tests"
+34,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Install yamllint for validating swagger.yaml
+35,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Install go-swagger for validating swagger.yaml
+36,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Set user.email so crosbymichael's in-container merge commits go smoothly
+37,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Add an unprivileged user to be used for tests which need it
+38,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Let us use a .bashrc file
+39,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Add integration helps to bashrc
+40,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Register Docker's bash completion.
+41,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# Get useful and necessary Hub images so we can ""docker load"" locally instead of pulling"
+42,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
+43,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them."
-52,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,"# Wrap all commands in the ""docker-in-docker"" script to allow nested containers"
-53,d4b0fb4ec795bc46b7acc7125d6543e866eda1a9,/vendor/github.com/docker/docker/Dockerfile,# Upload docker source
-54,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+44,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# Wrap all commands in the ""docker-in-docker"" script to allow nested containers"
+45,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Upload docker source
+46,96687f60072b6981c51a7d46640ffe08f7bdbf06,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
+47,96687f60072b6981c51a7d46640ffe08f7bdbf06,/Dockerfile,# Install deps
+48,96687f60072b6981c51a7d46640ffe08f7bdbf06,/Dockerfile,# Install go
+49,2e2a4eb76c9575371bbb4a1801e5d281c8f92668,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
+50,2e2a4eb76c9575371bbb4a1801e5d281c8f92668,/Dockerfile,# Install deps
+51,2e2a4eb76c9575371bbb4a1801e5d281c8f92668,/Dockerfile,# Install go
+52,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -119,242 +111,102 @@
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #"
-55,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# allow replacing httpredir or deb mirror
-56,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Add zfs ppa
-57,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Packaged dependencies
-58,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Get lvm2 source for compiling statically
-59,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# See https://git.fedorahosted.org/cgit/lvm2.git/refs/tags for release tags
-60,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Compile and install lvm2
-61,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# See https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-62,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Configure the container for OSX cross compilation
-63,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Install seccomp: the version shipped in trusty is too old
-64,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# Install Go
+53,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# allow replacing httpredir or deb mirror
+54,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Add zfs ppa
+55,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Packaged dependencies
+56,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Get lvm2 source for compiling statically
+57,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# See https://git.fedorahosted.org/cgit/lvm2.git/refs/tags for release tags
+58,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Compile and install lvm2
+59,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# See https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
+60,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Configure the container for OSX cross compilation
+61,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Install seccomp: the version shipped in trusty is too old
+62,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# Install Go
 # IMPORTANT: If the version of Go is updated, the Windows to Linux CI machines
 #            will need updating, to avoid errors. Ping #docker-maintainers on IRC
 #            with a heads-up."
-65,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Compile Go for cross compilation
-66,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Dependency for golint
-67,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Grab Go's lint tool
-68,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Install CRIU for checkpoint/restore support
-69,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# Install two versions of the registry. The first is an older version that
+63,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Compile Go for cross compilation
+64,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Dependency for golint
+65,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Grab Go's lint tool
+66,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Install CRIU for checkpoint/restore support
+67,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# Install two versions of the registry. The first is an older version that
 # only supports schema1 manifests. The second is a newer version that supports
 # both. This allows integration-cli tests to cover push/pull with both schema1
 # and schema2 manifests."
-70,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Install notary and notary-server
-71,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# Get the ""docker-py"" source so we can run their integration tests"
-72,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Install yamllint for validating swagger.yaml
-73,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Install go-swagger for validating swagger.yaml
-74,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Set user.email so crosbymichael's in-container merge commits go smoothly
-75,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Add an unprivileged user to be used for tests which need it
-76,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Let us use a .bashrc file
-77,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Add integration helps to bashrc
-78,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Register Docker's bash completion.
-79,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# Get useful and necessary Hub images so we can ""docker load"" locally instead of pulling"
-80,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
-81,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+68,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Install notary and notary-server
+69,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# Get the ""docker-py"" source so we can run their integration tests"
+70,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Install yamllint for validating swagger.yaml
+71,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Install go-swagger for validating swagger.yaml
+72,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Set user.email so crosbymichael's in-container merge commits go smoothly
+73,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Add an unprivileged user to be used for tests which need it
+74,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Let us use a .bashrc file
+75,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Add integration helps to bashrc
+76,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Register Docker's bash completion.
+77,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# Get useful and necessary Hub images so we can ""docker load"" locally instead of pulling"
+78,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
+79,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them."
-82,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,"# Wrap all commands in the ""docker-in-docker"" script to allow nested containers"
-83,5dd218345c6ac415de818984998112a9ecad5167,/vendor/github.com/docker/docker/Dockerfile,# Upload docker source
-84,96687f60072b6981c51a7d46640ffe08f7bdbf06,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
-85,96687f60072b6981c51a7d46640ffe08f7bdbf06,/Dockerfile,# Install deps
-86,96687f60072b6981c51a7d46640ffe08f7bdbf06,/Dockerfile,# Install go
-87,2e2a4eb76c9575371bbb4a1801e5d281c8f92668,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
-88,2e2a4eb76c9575371bbb4a1801e5d281c8f92668,/Dockerfile,# Install deps
-89,2e2a4eb76c9575371bbb4a1801e5d281c8f92668,/Dockerfile,# Install go
-90,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#"
-91,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# allow replacing httpredir or deb mirror
-92,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Add zfs ppa
-93,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Packaged dependencies
-94,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Get lvm2 source for compiling statically
-95,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# See https://git.fedorahosted.org/cgit/lvm2.git/refs/tags for release tags
-96,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Compile and install lvm2
-97,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# See https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-98,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Configure the container for OSX cross compilation
-99,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Install seccomp: the version shipped in trusty is too old
-100,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# Install Go
-# IMPORTANT: If the version of Go is updated, the Windows to Linux CI machines
-#            will need updating, to avoid errors. Ping #docker-maintainers on IRC
-#            with a heads-up."
-101,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Compile Go for cross compilation
-102,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Dependency for golint
-103,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Grab Go's lint tool
-104,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Install CRIU for checkpoint/restore support
-105,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# Install two versions of the registry. The first is an older version that
-# only supports schema1 manifests. The second is a newer version that supports
-# both. This allows integration-cli tests to cover push/pull with both schema1
-# and schema2 manifests."
-106,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Install notary and notary-server
-107,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# Get the ""docker-py"" source so we can run their integration tests"
-108,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Install yamllint for validating swagger.yaml
-109,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Install go-swagger for validating swagger.yaml
-110,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Set user.email so crosbymichael's in-container merge commits go smoothly
-111,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Add an unprivileged user to be used for tests which need it
-112,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Let us use a .bashrc file
-113,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Add integration helps to bashrc
-114,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Register Docker's bash completion.
-115,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# Get useful and necessary Hub images so we can ""docker load"" locally instead of pulling"
-116,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
-117,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them."
-118,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# Wrap all commands in the ""docker-in-docker"" script to allow nested containers"
-119,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Upload docker source
-120,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#"
-121,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# allow replacing httpredir or deb mirror
-122,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Add zfs ppa
-123,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Packaged dependencies
-124,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Get lvm2 source for compiling statically
-125,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# See https://git.fedorahosted.org/cgit/lvm2.git/refs/tags for release tags
-126,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Compile and install lvm2
-127,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# See https://git.fedorahosted.org/cgit/lvm2.git/tree/INSTALL
-128,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Configure the container for OSX cross compilation
-129,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Install seccomp: the version shipped in trusty is too old
-130,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,"# Install Go
-# IMPORTANT: If the version of Go is updated, the Windows to Linux CI machines
-#            will need updating, to avoid errors. Ping #docker-maintainers on IRC
-#            with a heads-up."
-131,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Compile Go for cross compilation
-132,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Dependency for golint
-133,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Grab Go's lint tool
-134,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Install CRIU for checkpoint/restore support
-135,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,"# Install two versions of the registry. The first is an older version that
-# only supports schema1 manifests. The second is a newer version that supports
-# both. This allows integration-cli tests to cover push/pull with both schema1
-# and schema2 manifests."
-136,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Install notary and notary-server
-137,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,"# Get the ""docker-py"" source so we can run their integration tests"
-138,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Install yamllint for validating swagger.yaml
-139,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Install go-swagger for validating swagger.yaml
-140,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Set user.email so crosbymichael's in-container merge commits go smoothly
-141,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Add an unprivileged user to be used for tests which need it
-142,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Let us use a .bashrc file
-143,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Add integration helps to bashrc
-144,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Register Docker's bash completion.
-145,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,"# Get useful and necessary Hub images so we can ""docker load"" locally instead of pulling"
-146,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
-147,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them."
-148,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,"# Wrap all commands in the ""docker-in-docker"" script to allow nested containers"
-149,3b873a214f311cffd66ae721347b84cf89b15375,/vendor/github.com/docker/docker/Dockerfile,# Upload docker source
-150,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
-151,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# Install deps
-152,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# Install protobuf3
-153,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# Download and compile protoc
-154,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# Install Python Protobuf3
-155,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# Install go
-156,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# Get gogo for golang protobuf
-157,41304b2e2cc760985cd07af18002ab7ee94866d1,/vendor/github.com/influxdb/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
-158,41304b2e2cc760985cd07af18002ab7ee94866d1,/vendor/github.com/influxdb/influxdb/Dockerfile,# copy binary into image
-159,41304b2e2cc760985cd07af18002ab7ee94866d1,/vendor/github.com/influxdb/influxdb/Dockerfile,# Add influxd to the PATH
-160,41304b2e2cc760985cd07af18002ab7ee94866d1,/vendor/github.com/influxdb/influxdb/Dockerfile,# Generate a default config
-161,41304b2e2cc760985cd07af18002ab7ee94866d1,/vendor/github.com/influxdb/influxdb/Dockerfile,# Use /data for all disk storage
-162,1ef32d40747048b804882a26399bd6d0f2a38953,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
-163,1ef32d40747048b804882a26399bd6d0f2a38953,/Dockerfile,# Install deps
-164,1ef32d40747048b804882a26399bd6d0f2a38953,/Dockerfile,# Install go
-165,f5d995b6a1d32d775084f0e3ea78bf98d9de419c,/vendor/github.com/influxdb/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
-166,f5d995b6a1d32d775084f0e3ea78bf98d9de419c,/vendor/github.com/influxdb/influxdb/Dockerfile,# copy binary into image
-167,f5d995b6a1d32d775084f0e3ea78bf98d9de419c,/vendor/github.com/influxdb/influxdb/Dockerfile,# Add influxd to the PATH
-168,f5d995b6a1d32d775084f0e3ea78bf98d9de419c,/vendor/github.com/influxdb/influxdb/Dockerfile,# Generate a default config
-169,f5d995b6a1d32d775084f0e3ea78bf98d9de419c,/vendor/github.com/influxdb/influxdb/Dockerfile,# Use /data for all disk storage
-170,8795327cb7b51990c8090d7e4a5840a5ca576c7b,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
-171,8795327cb7b51990c8090d7e4a5840a5ca576c7b,/Dockerfile,# Install deps
-172,8795327cb7b51990c8090d7e4a5840a5ca576c7b,/Dockerfile,# Install go
-173,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
-174,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# Install deps
-175,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# Install protobuf3
-176,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# Download and compile protoc
-177,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# Install Python Protobuf3
-178,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# Install go
-179,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# Get gogo for golang protobuf
-180,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,"# Initialize git, needed to stash changes before 'go get ./...'"
-181,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
-182,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# Install deps
-183,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# Install protobuf3
-184,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# Download and compile protoc
-185,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# Install Python Protobuf3
-186,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# Install go
-187,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# Get gogo for golang protobuf
-188,ed4ef1e81f39ec9d8453979750140f2af381bc85,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
-189,ed4ef1e81f39ec9d8453979750140f2af381bc85,/vendor/github.com/influxdata/influxdb/Dockerfile,# copy binary into image
-190,ed4ef1e81f39ec9d8453979750140f2af381bc85,/vendor/github.com/influxdata/influxdb/Dockerfile,# Add influxd to the PATH
-191,ed4ef1e81f39ec9d8453979750140f2af381bc85,/vendor/github.com/influxdata/influxdb/Dockerfile,# Generate a default config
-192,ed4ef1e81f39ec9d8453979750140f2af381bc85,/vendor/github.com/influxdata/influxdb/Dockerfile,# Use /data for all disk storage
-193,d8e94d78e363b7918cd989748038d5592bf65d61,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
-194,d8e94d78e363b7918cd989748038d5592bf65d61,/vendor/github.com/influxdata/influxdb/Dockerfile,# copy binary into image
-195,d8e94d78e363b7918cd989748038d5592bf65d61,/vendor/github.com/influxdata/influxdb/Dockerfile,# Add influxd to the PATH
-196,d8e94d78e363b7918cd989748038d5592bf65d61,/vendor/github.com/influxdata/influxdb/Dockerfile,# Generate a default config
-197,d8e94d78e363b7918cd989748038d5592bf65d61,/vendor/github.com/influxdata/influxdb/Dockerfile,# Use /data for all disk storage
-198,e99e5cf2b4f178a495b906c3b23368b5b3ef5563,/vendor/golang.org/x/net/http2/Dockerfile,"#
+80,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,"# Wrap all commands in the ""docker-in-docker"" script to allow nested containers"
+81,afbe3c589fd61aa4fedd5900ef41d566a7a4f177,/vendor/github.com/docker/docker/Dockerfile,# Upload docker source
+82,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
+83,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# Install deps
+84,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# Install protobuf3
+85,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# Download and compile protoc
+86,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# Install Python Protobuf3
+87,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# Install go
+88,33f8274c65d944c79302af275a7ccde3a0e3f9be,/Dockerfile,# Get gogo for golang protobuf
+89,41304b2e2cc760985cd07af18002ab7ee94866d1,/vendor/github.com/influxdb/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+90,41304b2e2cc760985cd07af18002ab7ee94866d1,/vendor/github.com/influxdb/influxdb/Dockerfile,# copy binary into image
+91,41304b2e2cc760985cd07af18002ab7ee94866d1,/vendor/github.com/influxdb/influxdb/Dockerfile,# Add influxd to the PATH
+92,41304b2e2cc760985cd07af18002ab7ee94866d1,/vendor/github.com/influxdb/influxdb/Dockerfile,# Generate a default config
+93,41304b2e2cc760985cd07af18002ab7ee94866d1,/vendor/github.com/influxdb/influxdb/Dockerfile,# Use /data for all disk storage
+94,1ef32d40747048b804882a26399bd6d0f2a38953,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
+95,1ef32d40747048b804882a26399bd6d0f2a38953,/Dockerfile,# Install deps
+96,1ef32d40747048b804882a26399bd6d0f2a38953,/Dockerfile,# Install go
+97,f5d995b6a1d32d775084f0e3ea78bf98d9de419c,/vendor/github.com/influxdb/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+98,f5d995b6a1d32d775084f0e3ea78bf98d9de419c,/vendor/github.com/influxdb/influxdb/Dockerfile,# copy binary into image
+99,f5d995b6a1d32d775084f0e3ea78bf98d9de419c,/vendor/github.com/influxdb/influxdb/Dockerfile,# Add influxd to the PATH
+100,f5d995b6a1d32d775084f0e3ea78bf98d9de419c,/vendor/github.com/influxdb/influxdb/Dockerfile,# Generate a default config
+101,f5d995b6a1d32d775084f0e3ea78bf98d9de419c,/vendor/github.com/influxdb/influxdb/Dockerfile,# Use /data for all disk storage
+102,8795327cb7b51990c8090d7e4a5840a5ca576c7b,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
+103,8795327cb7b51990c8090d7e4a5840a5ca576c7b,/Dockerfile,# Install deps
+104,8795327cb7b51990c8090d7e4a5840a5ca576c7b,/Dockerfile,# Install go
+105,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
+106,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# Install deps
+107,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# Install protobuf3
+108,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# Download and compile protoc
+109,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# Install Python Protobuf3
+110,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# Install go
+111,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,# Get gogo for golang protobuf
+112,1cf0d346b9dfd6fa8c0c062d1a22ed7c097edde5,/Dockerfile,"# Initialize git, needed to stash changes before 'go get ./...'"
+113,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
+114,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# Install deps
+115,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# Install protobuf3
+116,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# Download and compile protoc
+117,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# Install Python Protobuf3
+118,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# Install go
+119,8137a7677c064846e20cab8167a5154957066094,/Dockerfile,# Get gogo for golang protobuf
+120,d8e94d78e363b7918cd989748038d5592bf65d61,/vendor/github.com/influxdata/influxdb/Dockerfile,"# admin, http, udp, cluster, graphite, opentsdb, collectd"
+121,d8e94d78e363b7918cd989748038d5592bf65d61,/vendor/github.com/influxdata/influxdb/Dockerfile,# copy binary into image
+122,d8e94d78e363b7918cd989748038d5592bf65d61,/vendor/github.com/influxdata/influxdb/Dockerfile,# Add influxd to the PATH
+123,d8e94d78e363b7918cd989748038d5592bf65d61,/vendor/github.com/influxdata/influxdb/Dockerfile,# Generate a default config
+124,d8e94d78e363b7918cd989748038d5592bf65d61,/vendor/github.com/influxdata/influxdb/Dockerfile,# Use /data for all disk storage
+125,e99e5cf2b4f178a495b906c3b23368b5b3ef5563,/vendor/golang.org/x/net/http2/Dockerfile,"#
 # This Dockerfile builds a recent curl with HTTP/2 client support, using
 # a recent nghttp2 build.
 #
 # See the Makefile for how to tag it. If Docker and that image is found, the
 # Go tests use this curl binary for integration tests.
 #"
-199,e99e5cf2b4f178a495b906c3b23368b5b3ef5563,/vendor/golang.org/x/net/http2/Dockerfile,# The list of packages nghttp2 recommends for h2load:
-200,e99e5cf2b4f178a495b906c3b23368b5b3ef5563,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:"
-201,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
-202,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# Install deps
-203,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# Install protobuf3
-204,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# Download and compile protoc
-205,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# Install Python Protobuf3
-206,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# Install go
-207,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# Get gogo for golang protobuf
-208,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,"# Initialize git, needed to stash changes before 'go get ./...'"
-209,c86ed03482779c245f73411eb2989465e70a938e,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
-210,c86ed03482779c245f73411eb2989465e70a938e,/Dockerfile,# Install deps
-211,c86ed03482779c245f73411eb2989465e70a938e,/Dockerfile,# Install go
-212,4548593cd1ab8cc0ba6db4712c775d2b7ffe78bb,/vendor/golang.org/x/net/http2/Dockerfile,"#
-# This Dockerfile builds a recent curl with HTTP/2 client support, using
-# a recent nghttp2 build.
-#
-# See the Makefile for how to tag it. If Docker and that image is found, the
-# Go tests use this curl binary for integration tests.
-#"
-213,4548593cd1ab8cc0ba6db4712c775d2b7ffe78bb,/vendor/golang.org/x/net/http2/Dockerfile,# The list of packages nghttp2 recommends for h2load:
-214,4548593cd1ab8cc0ba6db4712c775d2b7ffe78bb,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:"
+126,e99e5cf2b4f178a495b906c3b23368b5b3ef5563,/vendor/golang.org/x/net/http2/Dockerfile,# The list of packages nghttp2 recommends for h2load:
+127,e99e5cf2b4f178a495b906c3b23368b5b3ef5563,/vendor/golang.org/x/net/http2/Dockerfile,"# Note: setting NGHTTP2_VER before the git clone, so an old git clone isn't cached:"
+128,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
+129,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# Install deps
+130,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# Install protobuf3
+131,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# Download and compile protoc
+132,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# Install Python Protobuf3
+133,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# Install go
+134,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,# Get gogo for golang protobuf
+135,4dcf49ba744e6a9fe3df0d140ee20c9b6dcba061,/Dockerfile,"# Initialize git, needed to stash changes before 'go get ./...'"
+136,c86ed03482779c245f73411eb2989465e70a938e,/Dockerfile,# This Dockerfile provides the needed environment to build Kapacitor.
+137,c86ed03482779c245f73411eb2989465e70a938e,/Dockerfile,# Install deps
+138,c86ed03482779c245f73411eb2989465e70a938e,/Dockerfile,# Install go

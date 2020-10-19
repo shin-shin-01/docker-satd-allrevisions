@@ -6,8 +6,36 @@
 19,"# TODO CMD [""rabbitmq-server""]"
 20,"# hack in ""ENABLE_PATH_CHECK"" disabling to suppress:
 #   warning: Insecure world writable dir"
-94,# TODO replace FPM with some very minimal debhelper stuff
-97,"# This file describes the standard way to build Docker, using docker
+98,"# VERSION:        0.4
+# DOCKER-VERSION  0.6.6
+# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
+# DESCRIPTION:    Testing docker PRs and commits on top of master using
+# REFERENCES:     This code reuses the excellent implementation of
+#                 Docker in Docker made by Jerome Petazzoni.
+#                 https://github.com/jpetazzo/dind
+# COMMENTS:
+#   This Dockerfile adapts /Dockerfile to enable docker PRs and commits testing
+#   Optional arguments:
+#       [commit]  (default: 'HEAD')
+#       [repo]    (default: 'http://github.com/dotcloud/docker')
+#       [branch]  (default: 'master')
+# TO_BUILD:       docker build -t test_docker .
+# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]"
+102,"# VERSION:        1.6
+# DOCKER-VERSION  0.6.6
+# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
+# DESCRIPTION:    Build docker nightly release using Docker in Docker.
+# REFERENCES:     This code reuses the excellent implementation of docker in docker
+#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
+# COMMENTS:
+#   release_credentials.json is a base64 json encoded file containing:
+#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
+#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
+#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
+# TO_BUILD:       docker build -t dockerbuilder .
+# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh"
+103,# TODO replace FPM with some very minimal debhelper stuff
+107,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -23,34 +51,6 @@
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #"
-103,"# VERSION:        0.4
-# DOCKER-VERSION  0.6.6
-# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
-# DESCRIPTION:    Testing docker PRs and commits on top of master using
-# REFERENCES:     This code reuses the excellent implementation of
-#                 Docker in Docker made by Jerome Petazzoni.
-#                 https://github.com/jpetazzo/dind
-# COMMENTS:
-#   This Dockerfile adapts /Dockerfile to enable docker PRs and commits testing
-#   Optional arguments:
-#       [commit]  (default: 'HEAD')
-#       [repo]    (default: 'http://github.com/dotcloud/docker')
-#       [branch]  (default: 'master')
-# TO_BUILD:       docker build -t test_docker .
-# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]"
-107,"# VERSION:        1.6
-# DOCKER-VERSION  0.6.6
-# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
-# DESCRIPTION:    Build docker nightly release using Docker in Docker.
-# REFERENCES:     This code reuses the excellent implementation of docker in docker
-#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
-# COMMENTS:
-#   release_credentials.json is a base64 json encoded file containing:
-#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
-#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
-#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
-# TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh"
 163,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)"
 181,## All of this needed because of missing 8.11.x tag.  Once we update to 8.15+ we can resume using Dockerfile.old or remove hack and use FROM node:8-slim
 182,## Start Hack
@@ -120,7 +120,7 @@
 460,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
 461,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them."
-499,# TODO signature? checksum?
+498,# TODO signature? checksum?
 503,"# Default to UTF-8 file.encoding
 #ENV LANG C.UTF-8
 # TODO oraclelinux doesn't have C.UTF-8 by default??"

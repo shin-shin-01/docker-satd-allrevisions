@@ -7,7 +7,7 @@
 8,"# TODO
 # Install RabbitMQ
 # Ensure RabbitMQ starts & rabbitmqctl works correctly"
-9,"# Delete all src dirs to keep the final image size down, they add an extra 19MB
+10,"# Delete all src dirs to keep the final image size down, they add an extra 19MB
 # TODO Could this be done better?"
 11,"# Add RabbitMQ to PATH, send all logs to TTY
 # TODO @tianon is sbin a problem? Notice that I'm installing generic-unix, not the Debian package"
@@ -324,7 +324,7 @@
 84,"# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
 # Please edit hack/dockerfile/install/<name>.installer to update them."
 85,"# Just a little hack so we don't have to install these deps twice, once for runc and once for dockerd"
-86,"# TODO: This is for the docker-py tests, which shouldn't really be needed for
+87,"# TODO: This is for the docker-py tests, which shouldn't really be needed for
 # this image, but currently CI is expecting to run this image. This should be
 # split out into a separate image, including all the `python-*` deps installed
 # above."
@@ -345,7 +345,40 @@
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #"
-96,"# This file describes the standard way to build Docker, using docker
+93,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released
+94,# TODO: don't do this - look at merging the yml file in build.sh
+95,# TODO: need the full repo source to get the git version info
+96,"# VERSION:        0.3
+# DOCKER-VERSION  0.6.3
+# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
+# DESCRIPTION:    Testing docker PRs and commits on top of master using
+# REFERENCES:     This code reuses the excellent implementation of
+#                 Docker in Docker made by Jerome Petazzoni.
+#                 https://github.com/jpetazzo/dind
+# COMMENTS:
+#   This Dockerfile adapts /Dockerfile to enable docker PRs and commits testing
+#   Optional arguments:
+#       [commit]  (default: 'HEAD')
+#       [repo]    (default: 'http://github.com/dotcloud/docker')
+#       [branch]  (default: 'master')
+# TO_BUILD:       docker build -t test_docker .
+# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]"
+97,#### FIXME. Temporarily install docker and dind with proper apparmor handling
+99,#### FIXME. Temporarily install docker with proper apparmor handling
+100,"# VERSION:        1.5
+# DOCKER-VERSION  0.6.4
+# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
+# DESCRIPTION:    Build docker nightly release using Docker in Docker.
+# REFERENCES:     This code reuses the excellent implementation of docker in docker
+#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
+# COMMENTS:
+#   release_credentials.json is a base64 json encoded file containing:
+#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
+#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
+#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
+# TO_BUILD:       docker build -t dockerbuilder .
+# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh"
+106,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -369,39 +402,6 @@
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #"
-98,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released
-99,# TODO: don't do this - look at merging the yml file in build.sh
-100,# TODO: need the full repo source to get the git version info
-101,"# VERSION:        0.3
-# DOCKER-VERSION  0.6.3
-# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
-# DESCRIPTION:    Testing docker PRs and commits on top of master using
-# REFERENCES:     This code reuses the excellent implementation of
-#                 Docker in Docker made by Jerome Petazzoni.
-#                 https://github.com/jpetazzo/dind
-# COMMENTS:
-#   This Dockerfile adapts /Dockerfile to enable docker PRs and commits testing
-#   Optional arguments:
-#       [commit]  (default: 'HEAD')
-#       [repo]    (default: 'http://github.com/dotcloud/docker')
-#       [branch]  (default: 'master')
-# TO_BUILD:       docker build -t test_docker .
-# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]"
-102,#### FIXME. Temporarily install docker and dind with proper apparmor handling
-104,#### FIXME. Temporarily install docker with proper apparmor handling
-106,"# VERSION:        1.5
-# DOCKER-VERSION  0.6.4
-# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
-# DESCRIPTION:    Build docker nightly release using Docker in Docker.
-# REFERENCES:     This code reuses the excellent implementation of docker in docker
-#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
-# COMMENTS:
-#   release_credentials.json is a base64 json encoded file containing:
-#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
-#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
-#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
-# TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh"
 162,# TODO verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
 164,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)"
 177,# TODO pin specific commit
@@ -477,4 +477,4 @@
 497,"# Default to UTF-8 file.encoding
 #ENV LANG C.UTF-8
 # TODO oraclelinux doesn't have C.UTF-8 by default??"
-535,# TODO ENV DOCKER_SHA256
+549,# TODO ENV DOCKER_SHA256
