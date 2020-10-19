@@ -115,10 +115,10 @@ def addDiff_withLine(df):
     df = calculate_line(df, "added")
     df = calculate_line(df, "deleted")
 
-    df["追加時ファイル"] = df["gitPath"] + '/commit/' + df['CommitID'] + "#diff-" + df["Dockerfile"].apply(lambda f: hashlib.sha256(f.encode()).hexdigest()) + "R" + df["added_line"]
+    df["追加時ファイル"] = df["gitPath"] + '/commit/' + df['CommitID'] + "#diff-" + df["Dockerfile"].apply(lambda f: hashlib.sha256(f.encode()).hexdigest()) + df["added_line"]
     # deleted filter
     mask = df["Deleted CommitID"].apply(lambda s: str(s) != "nan")
-    df.loc[mask, "削除時ファイル"] = df.loc[mask, "gitPath"] + '/commit/' + df.loc[mask, 'Deleted CommitID'] + "#diff-" + df.loc[mask, "Deleted Filename"].apply(lambda f: hashlib.sha256(f.encode()).hexdigest()) + "L" + df.loc[mask, "deleted_line"]
+    df.loc[mask, "削除時ファイル"] = df.loc[mask, "gitPath"] + '/commit/' + df.loc[mask, 'Deleted CommitID'] + "#diff-" + df.loc[mask, "Deleted Filename"].apply(lambda f: hashlib.sha256(f.encode()).hexdigest()) + df.loc[mask, "deleted_line"]
     return df
 
 
@@ -176,10 +176,13 @@ def get_targetComment_line(txtGitdiff, comment, plus_minus):
     start = False
     count = 0 # 過去のファイルの行数カウント
 
+
     if plus_minus == "+":
         rev = "-"
+        LR = "R"
     else:
         rev = "+"
+        LR = "L"
     
     for diffrow in txtGitdiff.splitlines():
         if diffrow[0] == "@":
@@ -195,17 +198,44 @@ def get_targetComment_line(txtGitdiff, comment, plus_minus):
             if diffrow[1:] == "#":
                 continue
             elif (diffrow[1:] in comment):
-                return str(count)
+                return f"{LR}{count}"
         else:
             count += 1
 
-    # print("="*30)
-    # print(comment)
-    # print('-'*20)
-    # print(txtGitdiff)
-    # print("No targetComment in txtGitdiff")
+    # SATD 自体が変更されずに　コメント削除になったもの
+    targetCommentflg = False
+    diffCommentflg = False
+    start = False
+    count = 0
+    for diffrow in txtGitdiff.splitlines():
+        if diffrow[0] == "@":
+            start = True
+            continue
+        elif not start:
+            continue
+
+        if diffrow[1:] != "#" and (diffrow[1:] in comment):
+            count += 1
+            targetCommentflg = True
+            if diffCommentflg:
+                return f"R{count}"
+
+        elif diffrow[0] == "+":
+            count += 1
+            diffCommentflg = True
+            if targetCommentflg:
+                return f"R{count - 1}"
+
+        elif diffrow[0] == "-":
+            diffCommentflg = True
+            if targetCommentflg:
+                return f"R{count}"
+        else:
+            count += 1
+            targetCommentflg = False
+            diffCommentflg = False
+
     error = error.append({"type": plus_minus, "comment": comment, "diff": txtGitdiff}, ignore_index=True)
-    # print(error)
     return "Error"
         
 
