@@ -11,18 +11,20 @@
 import pandas as pd
 import numpy as np
 import os
+from setting import PATH_OF_GITLOGCSV
 
 
 def getTargetDataFrame(repository):
-    df = pd.read_csv(f"./2-gitlogsCSV/{repository}.csv", index_col=0)
-    df = df.dropna(subset=['Dockerfile'])
-    df = df[["CommitID", "Date", "Dockerfile", "Status"]]
+    df = pd.read_csv(f"./{PATH_OF_GITLOGCSV}/{repository}.csv", index_col=0)
+    df["logIndex"] = df.index
+    df = df. dropna(subset=['Dockerfile'])
+    df = df[["CommitID", "Date", "Dockerfile", "Status", "logIndex"]]
     df["Date"] = pd.to_datetime(df["Date"])
     df = df.sort_values("Date")
     return df
 
 
-def getCommentDeleteDate(repository, renameList, latestCommitDate, latestCommitID):
+def getCommentDeleteDate(repository, renameList, latestCommitDate, latestCommitID, latestLogIndex):
     """
     File Delete は D でコミット日時を取れるので大丈夫
     → 複数回 Delete されていたら最初の Delete を取得するが
@@ -34,7 +36,7 @@ def getCommentDeleteDate(repository, renameList, latestCommitDate, latestCommitI
     for filename in renameList.splitlines():
         df = df[df["Dockerfile"].apply(lambda file: filename == file)]
         # LatestCommit日(SATDが含まれる最終コミット日) よりあとのコミット情報を取得する。 
-        df = df[ (df["CommitID"] != latestCommitID) & (df["Date"] >= latestCommitDate) ]
+        df = df[ (df["logIndex"] < latestLogIndex) & (df["CommitID"] != latestCommitID) & (df["Date"] >= latestCommitDate) ]
 
         if len(df) > 0: # 存在していたらその時点で renamelist 終了
             break

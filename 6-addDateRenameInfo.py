@@ -42,8 +42,8 @@ def getDataFrame(csvfile):
 # コミットIDとコミット日の紐付け
 def addCommitDate(df, gitlog):
     gitlog = gitlog[["CommitID", "Date"]]
-    gitlog = gitlog.drop_duplicates() # 重複削除
     gitlog["logIndex"] = gitlog.index
+    gitlog = gitlog.drop_duplicates(["CommitID", "Date"]) # 重複削除
     df = pd.merge(df, gitlog, on=["CommitID"])
     return df
 
