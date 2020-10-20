@@ -1811,620 +1811,82 @@ docker_images",https://github.com/osrf/docker_images,802c63f18487abd4e9b0fc95c09
 caddy-docker",https://github.com/caddyserver/caddy-docker,dbdd5294d5172438253ed6b5793b26e26ef30eb5,e57e714a75e86e3ba872b0d3885056155f25a237,alpine/Dockerfile,2.0/alpine/Dockerfile,# TODO: alter filename after v2 relese (version will be taken out of name),2020/03/11 10:38,2020/03/15 21:30,2019/10/19 05:34,2020/06/30 03:37,,alpine/Dockerfile,129.0,alpine/Dockerfile,144 days 05:04:00.000000000,"4 days, 10:52:00",R21,L21,https://github.com/caddyserver/caddy-docker/commit/dbdd5294d5172438253ed6b5793b26e26ef30eb5#diff-86bf175f2e6e05c2f1307ec16481ae84c75506c1261e550fa8212e380d25eadbR21,https://github.com/caddyserver/caddy-docker/commit/e57e714a75e86e3ba872b0d3885056155f25a237#diff-86bf175f2e6e05c2f1307ec16481ae84c75506c1261e550fa8212e380d25eadbL21
 372,"caddyserver
 caddy-docker",https://github.com/caddyserver/caddy-docker,e57e714a75e86e3ba872b0d3885056155f25a237,b665b72798e3e26c9483d3df80af3515e1c0c016,alpine/Dockerfile,2.0/alpine/Dockerfile,# TODO: alter filename after v2 release (version will be taken out of name),2020/03/15 21:30,2020/04/14 11:56,2019/10/19 05:34,2020/06/30 03:37,,alpine/Dockerfile,123.0,alpine/Dockerfile,148 days 15:56:00.000000000,"29 days, 14:26:00",R21,L21,https://github.com/caddyserver/caddy-docker/commit/e57e714a75e86e3ba872b0d3885056155f25a237#diff-86bf175f2e6e05c2f1307ec16481ae84c75506c1261e550fa8212e380d25eadbR21,https://github.com/caddyserver/caddy-docker/commit/b665b72798e3e26c9483d3df80af3515e1c0c016#diff-86bf175f2e6e05c2f1307ec16481ae84c75506c1261e550fa8212e380d25eadbL21
-373,"docker
-docker",https://github.com/docker/docker,fa806f26aff927eb0d98b41e79786ae98987da5b,47838051be695a4e74c80690ceef811dcd3ef62c,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-# -e AWS_S3_BUCKET=baz \
-# -e AWS_ACCESS_KEY=foo \
-# -e AWS_SECRET_KEY=bar \
-# -e GPG_PASSPHRASE=gloubiboulga \
-# -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release/release.sh
-# ",2013/09/07 11:58,2013/09/07 12:14,2013/07/09 13:30,,,Dockerfile,3892.0,Dockerfile,59 days 22:28:00.000000000,0:16:00,R3,L19,https://github.com/docker/docker/commit/fa806f26aff927eb0d98b41e79786ae98987da5b#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R3,https://github.com/docker/docker/commit/47838051be695a4e74c80690ceef811dcd3ef62c#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L19
-374,"docker
-docker",https://github.com/docker/docker,47838051be695a4e74c80690ceef811dcd3ef62c,d757bd0904b71346b6c83622ae5685bc0c0d4349,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-# -e AWS_S3_BUCKET=baz \
-# -e AWS_ACCESS_KEY=foo \
-# -e AWS_SECRET_KEY=bar \
-# -e GPG_PASSPHRASE=gloubiboulga \
-# -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release.sh
-# ",2013/09/07 12:14,2013/09/07 12:16,2013/07/09 13:30,,,Dockerfile,3891.0,Dockerfile,59 days 22:44:00.000000000,0:02:00,R19,R14,https://github.com/docker/docker/commit/47838051be695a4e74c80690ceef811dcd3ef62c#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R19,https://github.com/docker/docker/commit/d757bd0904b71346b6c83622ae5685bc0c0d4349#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R14
-375,"docker
-docker",https://github.com/docker/docker,d757bd0904b71346b6c83622ae5685bc0c0d4349,ccefe47897bdcef8b56bf54d4bd324989855f3b5,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -lxc-conf=lxc.aa_profile=unconfined -i -t docker bash
-#
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-# -e AWS_S3_BUCKET=baz \
-# -e AWS_ACCESS_KEY=foo \
-# -e AWS_SECRET_KEY=bar \
-# -e GPG_PASSPHRASE=gloubiboulga \
-# -lxc-conf=lxc.aa_profile=unconfined -privileged docker hack/release.sh
-# ",2013/09/07 12:16,2013/10/01 04:57,2013/07/09 13:30,,,Dockerfile,3890.0,Dockerfile,59 days 22:46:00.000000000,"23 days, 16:41:00",R10,L19,https://github.com/docker/docker/commit/d757bd0904b71346b6c83622ae5685bc0c0d4349#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R10,https://github.com/docker/docker/commit/ccefe47897bdcef8b56bf54d4bd324989855f3b5#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L19
-376,"docker
-docker",https://github.com/docker/docker,ccefe47897bdcef8b56bf54d4bd324989855f3b5,ee7d9b0bdec40d02ba5ef25f557cca9444a19669,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -lxc-conf=lxc.aa_profile=unconfined -i -t docker bash
-#
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker go test -v
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#",2013/10/01 04:57,2013/10/16 09:31,2013/07/09 13:30,,,Dockerfile,3880.0,Dockerfile,83 days 15:27:00.000000000,"15 days, 4:34:00",R19,L15,https://github.com/docker/docker/commit/ccefe47897bdcef8b56bf54d4bd324989855f3b5#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R19,https://github.com/docker/docker/commit/ee7d9b0bdec40d02ba5ef25f557cca9444a19669#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L15
-377,"docker
-docker",https://github.com/docker/docker,ee7d9b0bdec40d02ba5ef25f557cca9444a19669,6d420407caf533f89b60d78c54e0ddc2d307e942,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -lxc-conf=lxc.aa_profile=unconfined -i -t docker bash
-#
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker hack/make.sh test
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#",2013/10/16 09:31,2013/11/07 05:03,2013/07/09 13:30,,,Dockerfile,3865.0,Dockerfile,98 days 20:01:00.000000000,"21 days, 19:32:00",R15,L7,https://github.com/docker/docker/commit/ee7d9b0bdec40d02ba5ef25f557cca9444a19669#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R15,https://github.com/docker/docker/commit/6d420407caf533f89b60d78c54e0ddc2d307e942#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L7
-378,"docker
-docker",https://github.com/docker/docker,31638ab2ad2a5380d447780f05f7aa078c9421f5,44fe8cbbd174b5d85d4a063ed270f6b9d2279b70,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run -privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run -privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: Apparmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2013/11/02 05:55,2014/03/14 02:46,2013/07/09 13:30,,,Dockerfile,3827.0,Dockerfile,115 days 16:25:00.000000000,"131 days, 20:51:00",R9,L9,https://github.com/docker/docker/commit/31638ab2ad2a5380d447780f05f7aa078c9421f5#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R9,https://github.com/docker/docker/commit/44fe8cbbd174b5d85d4a063ed270f6b9d2279b70#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L9
-379,"docker
-docker",https://github.com/docker/docker,62a81370fffb3cfdb15ef19702f0ea07ab2f4c36,523341d994265b9f72e4869f0fd094fd15f1b480,Dockerfile,Dockerfile,# TODO add linux/386 and linux/arm,2013/12/20 03:33,2014/02/01 04:48,2013/07/09 13:30,,,Dockerfile,3725.0,Dockerfile,163 days 14:03:00.000000000,"43 days, 1:15:00",R46,L72,https://github.com/docker/docker/commit/62a81370fffb3cfdb15ef19702f0ea07ab2f4c36#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R46,https://github.com/docker/docker/commit/523341d994265b9f72e4869f0fd094fd15f1b480#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L72
-380,"docker
-docker",https://github.com/docker/docker,484a75f3549239d0489cb0ad518d79ed6783584a,8b9856dbd7a1981aaa76fcf0fc10b37d1141c9af,Dockerfile,Dockerfile,# TODO replace FPM with some very minimal debhelper stuff,2013/12/30 15:27,2015/11/13 02:51,2013/07/09 13:30,,,Dockerfile,3722.0,Dockerfile,174 days 01:57:00.000000000,"682 days, 11:24:00",R74,L110,https://github.com/docker/docker/commit/484a75f3549239d0489cb0ad518d79ed6783584a#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R74,https://github.com/docker/docker/commit/8b9856dbd7a1981aaa76fcf0fc10b37d1141c9af#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L110
-381,"docker
-docker",https://github.com/docker/docker,44fe8cbbd174b5d85d4a063ed270f6b9d2279b70,b3ee9ac74e171e00f14027e39278013629e681b8,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/dotcloud/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: Apparmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2014/03/14 02:46,2014/07/25 07:19,2013/07/09 13:30,,,Dockerfile,3625.0,Dockerfile,247 days 13:16:00.000000000,"133 days, 4:33:00",R9,L9,https://github.com/docker/docker/commit/44fe8cbbd174b5d85d4a063ed270f6b9d2279b70#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R9,https://github.com/docker/docker/commit/b3ee9ac74e171e00f14027e39278013629e681b8#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L9
-382,"docker
-docker",https://github.com/docker/docker,b3ee9ac74e171e00f14027e39278013629e681b8,37302bbb3f4889e9de2a95d5ea018acdab9e4447,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: Apparmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2014/07/25 07:19,2016/08/17 06:18,2013/07/09 13:30,,,Dockerfile,3371.0,Dockerfile,380 days 17:49:00.000000000,"753 days, 22:59:00",R9,Error,https://github.com/docker/docker/commit/b3ee9ac74e171e00f14027e39278013629e681b8#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R9,https://github.com/docker/docker/commit/37302bbb3f4889e9de2a95d5ea018acdab9e4447#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557Error
-383,"docker
-docker",https://github.com/docker/docker,47769994e5cba81a96529b418052afce7a6d51a3,4bc4587f05a754f52e40928c32c84ea48cc3522f,Dockerfile,Dockerfile,"# TODO when https://jenkins.dockerproject.com/job/Windows/ is green, add windows back to the list above
-#	windows/amd64 windows/386",2015/01/23 07:42,2015/02/10 07:22,2013/07/09 13:30,,,Dockerfile,2942.0,Dockerfile,562 days 18:12:00.000000000,"17 days, 23:40:00",R89,L89,https://github.com/docker/docker/commit/47769994e5cba81a96529b418052afce7a6d51a3#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R89,https://github.com/docker/docker/commit/4bc4587f05a754f52e40928c32c84ea48cc3522f#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L89
-384,"docker
-docker",https://github.com/docker/docker,09b4c2585284d1125d4d299a7d58b36c1d0baf17,1ecd8ed5186a161c1c43ae7c99b1c81b97188619,Dockerfile,Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)",2015/03/10 10:02,2017/04/11 05:05,2013/07/09 13:30,,,Dockerfile,2893.0,Dockerfile,608 days 20:32:00.000000000,"762 days, 19:03:00",R149,Error,https://github.com/docker/docker/commit/09b4c2585284d1125d4d299a7d58b36c1d0baf17#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R149,https://github.com/docker/docker/commit/1ecd8ed5186a161c1c43ae7c99b1c81b97188619#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557Error
-385,"docker
-docker",https://github.com/docker/docker,4357ed4a7363a1032edf93cf03232953c805184f,9b8d328666a6cd5313208cdf5f116825f06dccdc,Dockerfile,Dockerfile,"# install seccomp
-# TODO: switch to libseccomp-dev since dockerinit is gone",2016/01/26 21:47,2016/02/03 03:03,2013/07/09 13:30,,,Dockerfile,2177.0,Dockerfile,931 days 08:17:00.000000000,"7 days, 5:16:00",R99,L98,https://github.com/docker/docker/commit/4357ed4a7363a1032edf93cf03232953c805184f#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R99,https://github.com/docker/docker/commit/9b8d328666a6cd5313208cdf5f116825f06dccdc#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L98
-386,"docker
-docker",https://github.com/docker/docker,3b3e58b639729e0fb3227e21367fea3ff9c5ff03,40b21745cc14628fc5336fbacddf092667a70c65,Dockerfile,Dockerfile,"# !!! TEMPORARY HACK !!!
-# Because of https://github.com/golang/go/issues/15286 we have to revert to Go 1.5.3 for windows/amd64 in master
-# To change which version of Go to compile with, simply prepend PATH with /usr/local/go1.5.3/bin
-# and set GOROOT to /usr/local/go1.5.3",2016/04/16 10:00,2016/05/25 18:58,2013/07/09 13:30,,,Dockerfile,1967.0,Dockerfile,1011 days 20:30:00.000000000,"39 days, 8:58:00",R133,L134,https://github.com/docker/docker/commit/3b3e58b639729e0fb3227e21367fea3ff9c5ff03#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R133,https://github.com/docker/docker/commit/40b21745cc14628fc5336fbacddf092667a70c65#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L134
-387,"docker
-docker",https://github.com/docker/docker,11280665b45d0ac9920d17abaf6a7328f2bc77d9,a762ceace4e8c1c7ce4fb582789af9d8074be3e1,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2016/07/04 23:43,2017/05/10 00:20,2013/07/09 13:30,,,Dockerfile,1833.0,Dockerfile,1091 days 10:13:00.000000000,"309 days, 0:37:00",R12,L12,https://github.com/docker/docker/commit/11280665b45d0ac9920d17abaf6a7328f2bc77d9#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R12,https://github.com/docker/docker/commit/a762ceace4e8c1c7ce4fb582789af9d8074be3e1#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L12
-388,"docker
-docker",https://github.com/docker/docker,1b41125ad9f1a3881b71bd044d76fd285170addb,7e12c3bb99381f117be73e05c187be6ce44280b9,Dockerfile,Dockerfile,"# Install tomlv, runc, containerd.and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.",2016/09/24 01:21,2016/10/06 06:47,2013/07/09 13:30,,,Dockerfile,1705.0,Dockerfile,1172 days 11:51:00.000000000,"12 days, 5:26:00",R225,L225,https://github.com/docker/docker/commit/1b41125ad9f1a3881b71bd044d76fd285170addb#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R225,https://github.com/docker/docker/commit/7e12c3bb99381f117be73e05c187be6ce44280b9#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L225
-389,"docker
-docker",https://github.com/docker/docker,7e12c3bb99381f117be73e05c187be6ce44280b9,3996975b0840033bda3919440d122d734a4bc66b,Dockerfile,Dockerfile,"# Install tomlv, runc, containerd and grimes
-# Please edit hack/dockerfile/install-binaries.sh to update them.",2016/10/06 06:47,2016/10/25 21:13,2013/07/09 13:30,,,Dockerfile,1655.0,Dockerfile,1184 days 17:17:00.000000000,"19 days, 14:26:00",R225,L225,https://github.com/docker/docker/commit/7e12c3bb99381f117be73e05c187be6ce44280b9#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R225,https://github.com/docker/docker/commit/3996975b0840033bda3919440d122d734a4bc66b#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L225
-390,"docker
-docker",https://github.com/docker/docker,3996975b0840033bda3919440d122d734a4bc66b,f2614f2107c838d014d31b806e3b8a9f1395cb2b,Dockerfile,Dockerfile,"# Install tomlv, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.",2016/10/25 21:13,2016/11/04 07:31,2013/07/09 13:30,,,Dockerfile,1583.0,Dockerfile,1204 days 07:43:00.000000000,"9 days, 10:18:00",R225,L225,https://github.com/docker/docker/commit/3996975b0840033bda3919440d122d734a4bc66b#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R225,https://github.com/docker/docker/commit/f2614f2107c838d014d31b806e3b8a9f1395cb2b#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L225
-391,"docker
-docker",https://github.com/docker/docker,f2614f2107c838d014d31b806e3b8a9f1395cb2b,d58b47623b252803f5cd12f6d9ca584d1587ab22,Dockerfile,Dockerfile,"# Install tomlv, vndr, runc, containerd, grimes, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.",2016/11/04 07:31,2016/11/09 07:42,2013/07/09 13:30,,,Dockerfile,1551.0,Dockerfile,1213 days 18:01:00.000000000,"5 days, 0:11:00",R225,L235,https://github.com/docker/docker/commit/f2614f2107c838d014d31b806e3b8a9f1395cb2b#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R225,https://github.com/docker/docker/commit/d58b47623b252803f5cd12f6d9ca584d1587ab22#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L235
-392,"docker
-docker",https://github.com/docker/docker,d58b47623b252803f5cd12f6d9ca584d1587ab22,32915b1d0a315598edb737785d0357b5a1b8aa11,Dockerfile,Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy
-# Please edit hack/dockerfile/install-binaries.sh to update them.",2016/11/09 07:42,2017/05/06 04:14,2013/07/09 13:30,,,Dockerfile,1491.0,Dockerfile,1218 days 18:12:00.000000000,"177 days, 20:32:00",R237,L244,https://github.com/docker/docker/commit/d58b47623b252803f5cd12f6d9ca584d1587ab22#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R237,https://github.com/docker/docker/commit/32915b1d0a315598edb737785d0357b5a1b8aa11#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L244
-393,"docker
-docker",https://github.com/docker/docker,5a076d7589d7a30cc0a1e45eff6674a2c8fa1cb0,bc82b139955c4a0edb20b070926469cceea0fbbb,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run -e DOCKER_GITCOMMIT=foo --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2017/05/06 03:33,2017/08/10 00:02,2013/07/09 13:30,,,Dockerfile,1153.0,Dockerfile,1396 days 14:03:00.000000000,"95 days, 20:29:00",R12,L12,https://github.com/docker/docker/commit/5a076d7589d7a30cc0a1e45eff6674a2c8fa1cb0#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R12,https://github.com/docker/docker/commit/bc82b139955c4a0edb20b070926469cceea0fbbb#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L12
-394,"docker
-docker",https://github.com/docker/docker,32915b1d0a315598edb737785d0357b5a1b8aa11,b529d1b0936b90ae14d584c73f7332919f8d76b7,Dockerfile,Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy dockercli
-# Please edit hack/dockerfile/install-binaries.sh to update them.",2017/05/06 04:14,2018/02/22 05:39,2013/07/09 13:30,,,Dockerfile,1151.0,Dockerfile,1396 days 14:44:00.000000000,"292 days, 1:25:00",R244,L190,https://github.com/docker/docker/commit/32915b1d0a315598edb737785d0357b5a1b8aa11#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R244,https://github.com/docker/docker/commit/b529d1b0936b90ae14d584c73f7332919f8d76b7#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L190
-395,"docker
-docker",https://github.com/docker/docker,bc82b139955c4a0edb20b070926469cceea0fbbb,ba49e8c49830b69c833edff3c393716da20f897a,Dockerfile,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run -e DOCKER_GITCOMMIT=foo --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2017/08/10 00:02,2018/02/14 20:08,2013/07/09 13:30,,,Dockerfile,908.0,Dockerfile,1492 days 10:32:00.000000000,"188 days, 20:06:00",R12,L5,https://github.com/docker/docker/commit/bc82b139955c4a0edb20b070926469cceea0fbbb#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R12,https://github.com/docker/docker/commit/ba49e8c49830b69c833edff3c393716da20f897a#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L5
-396,"docker
-docker",https://github.com/docker/docker,b96093fa56a9c085cb3123010be2430753c40cbc,a464a3d51f89566b3e480d66903056004576cc85,Dockerfile,Dockerfile,# Options for hack/validate/gometalinter,2017/09/13 10:45,2019/09/11 15:58,2013/07/09 13:30,,,Dockerfile,903.0,Dockerfile,1526 days 21:15:00.000000000,"728 days, 5:13:00",R220,L284,https://github.com/docker/docker/commit/b96093fa56a9c085cb3123010be2430753c40cbc#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R220,https://github.com/docker/docker/commit/a464a3d51f89566b3e480d66903056004576cc85#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L284
-397,"docker
-docker",https://github.com/docker/docker,eaae7750efbc80314c5e028c4d43d3cd9e104edd,e3102d5055995a43b090dbc29342a1846a39edae,Dockerfile,Dockerfile,"# TODO: when issue #35963 fixed, we can upgrade the busybox to multi-arch",2018/01/11 14:14,2018/02/15 17:49,2013/07/09 13:30,,,Dockerfile,662.0,Dockerfile,1647 days 00:44:00.000000000,"35 days, 3:35:00",R170,L183,https://github.com/docker/docker/commit/eaae7750efbc80314c5e028c4d43d3cd9e104edd#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R170,https://github.com/docker/docker/commit/e3102d5055995a43b090dbc29342a1846a39edae#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L183
-398,"docker
-docker",https://github.com/docker/docker,ba49e8c49830b69c833edff3c393716da20f897a,80bc8b4766cc808186af91930152d78afb22aef8,Dockerfile,Dockerfile,"# # Make a dockerd binary.
-# # hack/make.sh binary
-#
-# # Install dockerd to /usr/local/bin
-# # make install
-#
-# # Run unit tests
-# # hack/test/unit
-#
-# # Run tests e.g. integration, py
-# # hack/make.sh binary test-integration test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2018/02/14 20:08,2018/05/19 03:28,2013/07/09 13:30,,,Dockerfile,508.0,Dockerfile,1681 days 06:38:00.000000000,"93 days, 7:20:00",R11,L23,https://github.com/docker/docker/commit/ba49e8c49830b69c833edff3c393716da20f897a#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R11,https://github.com/docker/docker/commit/80bc8b4766cc808186af91930152d78afb22aef8#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L23
-399,"docker
-docker",https://github.com/docker/docker,b529d1b0936b90ae14d584c73f7332919f8d76b7,d539038d9712daa44254412c6fcc6d78a14da691,Dockerfile,Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
-# Please edit hack/dockerfile/install/<name>.installer to update them.",2018/02/22 05:39,2018/02/26 17:10,2013/07/09 13:30,,,Dockerfile,503.0,Dockerfile,1688 days 16:09:00.000000000,"4 days, 11:31:00",R190,L190,https://github.com/docker/docker/commit/b529d1b0936b90ae14d584c73f7332919f8d76b7#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R190,https://github.com/docker/docker/commit/d539038d9712daa44254412c6fcc6d78a14da691#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L190
-400,"docker
-docker",https://github.com/docker/docker,d539038d9712daa44254412c6fcc6d78a14da691,f067a0acaa98824b5efa3b6e2c370f6e81013a35,Dockerfile,Dockerfile,"# Just a little hack so we don't have to install these deps twice, once for runc and once for dockerd",2018/02/26 17:10,2019/04/18 03:11,2013/07/09 13:30,,,Dockerfile,499.0,Dockerfile,1693 days 03:40:00.000000000,"415 days, 10:01:00",R138,L97,https://github.com/docker/docker/commit/d539038d9712daa44254412c6fcc6d78a14da691#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R138,https://github.com/docker/docker/commit/f067a0acaa98824b5efa3b6e2c370f6e81013a35#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L97
-401,"docker
-docker",https://github.com/docker/docker,d539038d9712daa44254412c6fcc6d78a14da691,,Dockerfile,Dockerfile,"# TODO: Some of this is only really needed for testing, it would be nice to split this up",2018/02/26 17:10,,2013/07/09 13:30,,,Dockerfile,499.0,,1693 days 03:40:00.000000000,削除されていません,R197,,https://github.com/docker/docker/commit/d539038d9712daa44254412c6fcc6d78a14da691#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R197,
-402,"docker
-docker",https://github.com/docker/docker,d539038d9712daa44254412c6fcc6d78a14da691,764160031e1dc165411ee6612a129bd26a9872b7,Dockerfile,Dockerfile,"# TODO: This is for the docker-py tests, which shouldn't really be needed for
-# this image, but currently CI is expecting to run this image. This should be
-# split out into a separate image, including all the `python-*` deps installed
-# above.",2018/02/26 17:10,2019/07/19 03:54,2013/07/09 13:30,,,Dockerfile,499.0,Dockerfile,1693 days 03:40:00.000000000,"507 days, 10:44:00",R250,L273,https://github.com/docker/docker/commit/d539038d9712daa44254412c6fcc6d78a14da691#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R250,https://github.com/docker/docker/commit/764160031e1dc165411ee6612a129bd26a9872b7#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L273
-403,"docker
-docker",https://github.com/docker/docker,572cb664621ca08e912a006c5c9cf2fb568ce757,10fd0516b9f9f04d0f0e2c0755e704303f1a487f,Dockerfile,Dockerfile,"# FIXME(vdemeester) this is kept for other script depending on it to not fail right away
-# Remove this once the other scripts uses something else to detect the version",2018/02/28 17:04,2018/09/07 07:24,2013/07/09 13:30,,,Dockerfile,495.0,Dockerfile,1695 days 03:34:00.000000000,"190 days, 14:20:00",R36,L28,https://github.com/docker/docker/commit/572cb664621ca08e912a006c5c9cf2fb568ce757#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R36,https://github.com/docker/docker/commit/10fd0516b9f9f04d0f0e2c0755e704303f1a487f#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L28
-404,"docker
-docker",https://github.com/docker/docker,80bc8b4766cc808186af91930152d78afb22aef8,82c56755ea9e6c0ce197fbdfd41d0c5d1724b50c,Dockerfile,Dockerfile,"# # Make a dockerd binary.
-# # hack/make.sh binary
-#
-# # Install dockerd to /usr/local/bin
-# # make install
-#
-# # Run unit tests
-# # hack/test/unit
-#
-# # Run tests e.g. integration, py
-# # hack/make.sh binary test-integration test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2018/05/19 03:28,2019/10/04 06:07,2013/07/09 13:30,,,Dockerfile,264.0,Dockerfile,1774 days 13:58:00.000000000,"503 days, 2:39:00",R23,L11,https://github.com/docker/docker/commit/80bc8b4766cc808186af91930152d78afb22aef8#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R23,https://github.com/docker/docker/commit/82c56755ea9e6c0ce197fbdfd41d0c5d1724b50c#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L11
-405,"docker
-docker",https://github.com/docker/docker,93f9b902af89f82367d750aa871d40f25ccd99ca,,Dockerfile,Dockerfile,"# Install go-swagger for validating swagger.yaml
-# This is https://github.com/kolyshkin/go-swagger/tree/golang-1.13-fix
-# TODO: move to under moby/ or fix upstream go-swagger to work for us.",2019/10/09 03:29,,2013/07/09 13:30,,,Dockerfile,98.0,,2282 days 13:59:00.000000000,削除されていません,R63,,https://github.com/docker/docker/commit/93f9b902af89f82367d750aa871d40f25ccd99ca#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R63,
-406,"docker
-docker",https://github.com/docker/docker,ccb0b0a7cc4f00c0fe79af5e5f5d0a5fa71e7fcb,,Dockerfile,Dockerfile,"# TODO: This is here because hack/make.sh binary copies these extras binaries
-# from $PATH into the bundles dir.
-# It would be nice to handle this in a different way.",2019/12/03 02:52,,2013/07/09 13:30,,,Dockerfile,79.0,,2337 days 13:22:00.000000000,削除されていません,R330,,https://github.com/docker/docker/commit/ccb0b0a7cc4f00c0fe79af5e5f5d0a5fa71e7fcb#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R330,
-407,"docker
-docker",https://github.com/docker/docker,0ce3ab679cb4ad94c81cf426d4942637a61afb85,,Dockerfile,Dockerfile,"# Switch to use iptables instead of nftables (to match the CI hosts)
-# TODO use some kind of runtime auto-detection instead if/when nftables is supported (https://github.com/moby/moby/issues/26824)",2020/02/26 08:31,,2013/07/09 13:30,,,Dockerfile,54.0,,2422 days 19:01:00.000000000,削除されていません,R289,,https://github.com/docker/docker/commit/0ce3ab679cb4ad94c81cf426d4942637a61afb85#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R289,
-408,"docker
-docker",https://github.com/docker/docker,eaa9c85511620aa82f1876e1503604f591f00d23,936a03bfddb24cd45f5f12c20a961bf2ae6ede93,docs/Dockerfile,docs/Dockerfile,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released,2014/01/15 11:23,2014/04/16 09:02,2013/08/30 09:13,2016/10/15 06:12,,docs/Dockerfile,3713.0,docs/Dockerfile,138 days 02:10:00.000000000,"90 days, 21:39:00",R7,L7,https://github.com/docker/docker/commit/eaa9c85511620aa82f1876e1503604f591f00d23#diff-325270e473e459d8ec894acac997d6558e54f0a9a51de491e81375ab58900de3R7,https://github.com/docker/docker/commit/936a03bfddb24cd45f5f12c20a961bf2ae6ede93#diff-325270e473e459d8ec894acac997d6558e54f0a9a51de491e81375ab58900de3L7
-409,"docker
-docker",https://github.com/docker/docker,3e84b9e56abdff7230e84a1830085c79c73aa3b7,f93fee5f48cc92df8668380e4edc2b7bbd6c62c6,docs/Dockerfile,docs/Dockerfile,# TODO: don't do this - look at merging the yml file in build.sh,2015/02/26 10:41,2015/06/16 05:19,2013/08/30 09:13,2016/10/15 06:12,,docs/Dockerfile,2911.0,docs/Dockerfile,545 days 01:28:00.000000000,"109 days, 18:38:00",R19,L30,https://github.com/docker/docker/commit/3e84b9e56abdff7230e84a1830085c79c73aa3b7#diff-325270e473e459d8ec894acac997d6558e54f0a9a51de491e81375ab58900de3R19,https://github.com/docker/docker/commit/f93fee5f48cc92df8668380e4edc2b7bbd6c62c6#diff-325270e473e459d8ec894acac997d6558e54f0a9a51de491e81375ab58900de3L30
-410,"docker
-docker",https://github.com/docker/docker,3e84b9e56abdff7230e84a1830085c79c73aa3b7,f93fee5f48cc92df8668380e4edc2b7bbd6c62c6,docs/Dockerfile,docs/Dockerfile,# TODO: need the full repo source to get the git version info,2015/02/26 10:41,2015/06/16 05:19,2013/08/30 09:13,2016/10/15 06:12,,docs/Dockerfile,2911.0,docs/Dockerfile,545 days 01:28:00.000000000,"109 days, 18:38:00",R7,L16,https://github.com/docker/docker/commit/3e84b9e56abdff7230e84a1830085c79c73aa3b7#diff-325270e473e459d8ec894acac997d6558e54f0a9a51de491e81375ab58900de3R7,https://github.com/docker/docker/commit/f93fee5f48cc92df8668380e4edc2b7bbd6c62c6#diff-325270e473e459d8ec894acac997d6558e54f0a9a51de491e81375ab58900de3L16
-411,"docker
-docker",https://github.com/docker/docker,95f3f77fc417bbc55f03e869136deec27e26bc51,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,hack/infrastructure/docker-ci/docker-test/Dockerfile,hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.3
-# DOCKER-VERSION  0.6.3
-# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
-# DESCRIPTION:    Testing docker PRs and commits on top of master using
-# REFERENCES:     This code reuses the excellent implementation of
-#                 Docker in Docker made by Jerome Petazzoni.
-#                 https://github.com/jpetazzo/dind
-# COMMENTS:
-#   This Dockerfile adapts /Dockerfile to enable docker PRs and commits testing
-#   Optional arguments:
-#       [commit]  (default: 'HEAD')
-#       [repo]    (default: 'http://github.com/dotcloud/docker')
-#       [branch]  (default: 'master')
-# TO_BUILD:       docker build -t test_docker .
-# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]",2013/10/19 14:33,2013/11/07 13:05,2013/10/19 14:33,2014/03/11 05:20,,hack/infrastructure/docker-ci/docker-test/Dockerfile,3845.0,hack/infrastructure/docker-ci/docker-test/Dockerfile,0 days 00:00:00.000000000,"18 days, 22:32:00",R1,L1,https://github.com/docker/docker/commit/95f3f77fc417bbc55f03e869136deec27e26bc51#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83R1,https://github.com/docker/docker/commit/249f76bebdb3c24ae0a59e3be7ae73fd1d88c065#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83L1
-412,"docker
-docker",https://github.com/docker/docker,efb4c800a7c8167cf2202466a720c0fad7001a5d,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,hack/infrastructure/docker-ci/docker-test/Dockerfile,hack/infrastructure/docker-ci/docker-test/Dockerfile,#### FIXME. Temporarily install docker and dind with proper apparmor handling,2013/11/07 12:13,2013/11/07 13:05,2013/10/19 14:33,2014/03/11 05:20,,hack/infrastructure/docker-ci/docker-test/Dockerfile,3800.0,hack/infrastructure/docker-ci/docker-test/Dockerfile,18 days 21:40:00.000000000,0:52:00,R20,L20,https://github.com/docker/docker/commit/efb4c800a7c8167cf2202466a720c0fad7001a5d#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83R20,https://github.com/docker/docker/commit/249f76bebdb3c24ae0a59e3be7ae73fd1d88c065#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83L20
-413,"docker
-docker",https://github.com/docker/docker,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,bb43761940848650c1eab3c097d826892bd5b140,hack/infrastructure/docker-ci/docker-test/Dockerfile,hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.4
-# DOCKER-VERSION  0.6.6
-# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
-# DESCRIPTION:    Testing docker PRs and commits on top of master using
-# REFERENCES:     This code reuses the excellent implementation of
-#                 Docker in Docker made by Jerome Petazzoni.
-#                 https://github.com/jpetazzo/dind
-# COMMENTS:
-#   This Dockerfile adapts /Dockerfile to enable docker PRs and commits testing
-#   Optional arguments:
-#       [commit]  (default: 'HEAD')
-#       [repo]    (default: 'http://github.com/dotcloud/docker')
-#       [branch]  (default: 'master')
-# TO_BUILD:       docker build -t test_docker .
-# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]",2013/11/07 13:05,2014/03/11 05:20,2013/10/19 14:33,2014/03/11 05:20,,hack/infrastructure/docker-ci/docker-test/Dockerfile,3795.0,hack/infrastructure/docker-ci/docker-test/Dockerfile,18 days 22:32:00.000000000,ファイル削除,R1,L1,https://github.com/docker/docker/commit/249f76bebdb3c24ae0a59e3be7ae73fd1d88c065#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83R1,https://github.com/docker/docker/commit/bb43761940848650c1eab3c097d826892bd5b140#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83L1
-414,"docker
-docker",https://github.com/docker/docker,6e3068700fb32299cf733acd74785e29609b1974,31638ab2ad2a5380d447780f05f7aa078c9421f5,testing/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,#### FIXME. Temporarily install docker with proper apparmor handling,2013/10/11 10:29,2013/11/02 05:55,2013/10/11 10:29,2014/03/11 05:20,,testing/nightlyrelease/Dockerfile,3872.0,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,0 days 00:00:00.000000000,"21 days, 19:26:00",R26,L26,https://github.com/docker/docker/commit/6e3068700fb32299cf733acd74785e29609b1974#diff-4467e3db1b818ea16aec663fe4216732c13cf768b8fe85574a0bbc1390daf6d5R26,https://github.com/docker/docker/commit/31638ab2ad2a5380d447780f05f7aa078c9421f5#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418L26
-415,"docker
-docker",https://github.com/docker/docker,17172276366fc3114ae52eb6c83aafbec004d5f3,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.5
-# DOCKER-VERSION  0.6.4
-# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
-# DESCRIPTION:    Build docker nightly release using Docker in Docker.
-# REFERENCES:     This code reuses the excellent implementation of docker in docker
-#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
-# COMMENTS:
-#   release_credentials.json is a base64 json encoded file containing:
-#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
-#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
-#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
-# TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh",2013/11/07 12:13,2013/11/07 13:05,2013/10/11 10:29,2014/03/11 05:20,,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,3802.0,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,27 days 01:44:00.000000000,0:52:00,R1,L1,https://github.com/docker/docker/commit/17172276366fc3114ae52eb6c83aafbec004d5f3#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418R1,https://github.com/docker/docker/commit/249f76bebdb3c24ae0a59e3be7ae73fd1d88c065#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418L1
-416,"docker
-docker",https://github.com/docker/docker,0cbeda73910d6d1d3336da93c5f94df0bdd5fa44,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,#### FIXME. Temporarily install docker and dind with proper apparmor handling,2013/11/07 12:13,2013/11/07 13:05,2013/10/11 10:29,2014/03/11 05:20,,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,3801.0,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,27 days 01:44:00.000000000,0:52:00,R25,L25,https://github.com/docker/docker/commit/0cbeda73910d6d1d3336da93c5f94df0bdd5fa44#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418R25,https://github.com/docker/docker/commit/249f76bebdb3c24ae0a59e3be7ae73fd1d88c065#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418L25
-417,"docker
-docker",https://github.com/docker/docker,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,bb43761940848650c1eab3c097d826892bd5b140,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.6
-# DOCKER-VERSION  0.6.6
-# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
-# DESCRIPTION:    Build docker nightly release using Docker in Docker.
-# REFERENCES:     This code reuses the excellent implementation of docker in docker
-#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
-# COMMENTS:
-#   release_credentials.json is a base64 json encoded file containing:
-#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
-#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
-#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
-# TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh",2013/11/07 13:05,2014/03/11 05:20,2013/10/11 10:29,2014/03/11 05:20,,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,3795.0,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,27 days 02:36:00.000000000,ファイル削除,R1,L1,https://github.com/docker/docker/commit/249f76bebdb3c24ae0a59e3be7ae73fd1d88c065#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418R1,https://github.com/docker/docker/commit/bb43761940848650c1eab3c097d826892bd5b140#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418L1
-418,"docker
-docker",https://github.com/docker/docker,22c46af4b358cf3ec4f7af47c701064c00cf7de4,e466f999aa9d2add9ccaca655f8d53c3112c121d,builder/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,# TODO replace FPM with some very minimal debhelper stuff,2014/08/28 10:52,2018/06/04 21:53,2014/08/28 10:52,2018/06/04 21:53,,builder/parser/testfiles/docker/Dockerfile,3292.0,builder/dockerfile/parser/testfiles/docker/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R81,L70,https://github.com/docker/docker/commit/22c46af4b358cf3ec4f7af47c701064c00cf7de4#diff-e2f2c2deb93121810375644c4e32efd5c17a1b380941fcdff75448ecfe6f43feR81,https://github.com/docker/docker/commit/e466f999aa9d2add9ccaca655f8d53c3112c121d#diff-000c02e222e8f71dcf0651b869a13e331769f3b741627b42a362a09431d13f02L70
-419,"docker
-docker",https://github.com/docker/docker,22c46af4b358cf3ec4f7af47c701064c00cf7de4,11280665b45d0ac9920d17abaf6a7328f2bc77d9,builder/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: Apparmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2014/08/28 10:52,2016/07/04 23:43,2014/08/28 10:52,2018/06/04 21:53,,builder/parser/testfiles/docker/Dockerfile,3292.0,builder/dockerfile/parser/testfiles/docker/Dockerfile,0 days 00:00:00.000000000,"676 days, 12:51:00",R1,L12,https://github.com/docker/docker/commit/22c46af4b358cf3ec4f7af47c701064c00cf7de4#diff-e2f2c2deb93121810375644c4e32efd5c17a1b380941fcdff75448ecfe6f43feR1,https://github.com/docker/docker/commit/11280665b45d0ac9920d17abaf6a7328f2bc77d9#diff-000c02e222e8f71dcf0651b869a13e331769f3b741627b42a362a09431d13f02L12
-420,"docker
-docker",https://github.com/docker/docker,11280665b45d0ac9920d17abaf6a7328f2bc77d9,b6eed3dca2e57705cb75895cad0b5337c79686d9,builder/dockerfile/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2016/07/04 23:43,2017/11/28 12:01,2014/08/28 10:52,2018/06/04 21:53,,builder/dockerfile/parser/testfiles/docker/Dockerfile,1833.0,builder/dockerfile/parser/testfiles/docker/Dockerfile,676 days 12:51:00.000000000,"511 days, 12:18:00",R12,L12,https://github.com/docker/docker/commit/11280665b45d0ac9920d17abaf6a7328f2bc77d9#diff-000c02e222e8f71dcf0651b869a13e331769f3b741627b42a362a09431d13f02R12,https://github.com/docker/docker/commit/b6eed3dca2e57705cb75895cad0b5337c79686d9#diff-000c02e222e8f71dcf0651b869a13e331769f3b741627b42a362a09431d13f02L12
-421,"docker
-docker",https://github.com/docker/docker,b6eed3dca2e57705cb75895cad0b5337c79686d9,80bc8b4766cc808186af91930152d78afb22aef8,builder/dockerfile/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2017/11/28 12:01,2018/05/19 03:28,2014/08/28 10:52,2018/06/04 21:53,,builder/dockerfile/parser/testfiles/docker/Dockerfile,668.0,builder/dockerfile/parser/testfiles/docker/Dockerfile,1188 days 01:09:00.000000000,"171 days, 15:27:00",R12,L14,https://github.com/docker/docker/commit/b6eed3dca2e57705cb75895cad0b5337c79686d9#diff-000c02e222e8f71dcf0651b869a13e331769f3b741627b42a362a09431d13f02R12,https://github.com/docker/docker/commit/80bc8b4766cc808186af91930152d78afb22aef8#diff-000c02e222e8f71dcf0651b869a13e331769f3b741627b42a362a09431d13f02L14
-422,"docker
-docker",https://github.com/docker/docker,80bc8b4766cc808186af91930152d78afb22aef8,e466f999aa9d2add9ccaca655f8d53c3112c121d,builder/dockerfile/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2018/05/19 03:28,2018/06/04 21:53,2014/08/28 10:52,2018/06/04 21:53,,builder/dockerfile/parser/testfiles/docker/Dockerfile,264.0,builder/dockerfile/parser/testfiles/docker/Dockerfile,1359 days 16:36:00.000000000,ファイル削除,R14,L1,https://github.com/docker/docker/commit/80bc8b4766cc808186af91930152d78afb22aef8#diff-000c02e222e8f71dcf0651b869a13e331769f3b741627b42a362a09431d13f02R14,https://github.com/docker/docker/commit/e466f999aa9d2add9ccaca655f8d53c3112c121d#diff-000c02e222e8f71dcf0651b869a13e331769f3b741627b42a362a09431d13f02L1
-423,"docker-library
+373,"docker-library
 mongo",https://github.com/docker-library/mongo,9ba0d6f19538d7922f62a41cea6589e366b100d3,,4.2/windows/windowsservercore-1809/Dockerfile,4.2/windows/windowsservercore-1809/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2019/12/04 02:26,,2019/12/04 02:26,,,4.2/windows/windowsservercore-1809/Dockerfile,148.0,,0 days 00:00:00.000000000,削除されていません,R46,,https://github.com/docker-library/mongo/commit/9ba0d6f19538d7922f62a41cea6589e366b100d3#diff-6505e9b38597d9cf57073bcdcd072ac9b8eb28b4c75f8f9221a822cc7c178fe2R46,
-424,"docker-library
+374,"docker-library
 mongo",https://github.com/docker-library/mongo,380200038360980631e362f964857d48489f99a2,,4.1/windows/windowsservercore-ltsc2016/Dockerfile,4.2/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2018/07/18 06:11,,2018/07/18 06:11,,,4.1/windows/windowsservercore-ltsc2016/Dockerfile,433.0,,0 days 00:00:00.000000000,削除されていません,R45,,https://github.com/docker-library/mongo/commit/380200038360980631e362f964857d48489f99a2#diff-6c238e3d88acd044af4d9b486302722395231cebb63e1e5f29a059dce1c4e6deR45,
-425,"docker-library
+375,"docker-library
 mongo",https://github.com/docker-library/mongo,380200038360980631e362f964857d48489f99a2,,4.1/Dockerfile,4.2/Dockerfile,# TODO some sort of download verification here,2018/07/18 06:11,,2018/07/18 06:11,,,4.1/Dockerfile,433.0,,0 days 00:00:00.000000000,削除されていません,R37,,https://github.com/docker-library/mongo/commit/380200038360980631e362f964857d48489f99a2#diff-ecd203acf74b47bd1963c14de22bdebf3e960d376bccbfd57314f66e23598b8aR37,
-426,"docker-library
+376,"docker-library
 mongo",https://github.com/docker-library/mongo,32bf9f7905feb2b039c623e76e66d1602e73d277,fbaaf63e240b194cc3a05b859611c26b02035abf,3.4/Dockerfile,3.4/Dockerfile,# TODO some sort of download verification here,2017/12/20 09:19,2020/02/08 08:52,2016/11/02 05:59,2020/02/08 08:52,,3.4/Dockerfile,554.0,3.4/Dockerfile,413 days 03:20:00.000000000,ファイル削除,R37,L52,https://github.com/docker-library/mongo/commit/32bf9f7905feb2b039c623e76e66d1602e73d277#diff-323297f12691596fa1b40b2b7c9ccb8af17eecadc8bfc51cff961508f09f9eb2R37,https://github.com/docker-library/mongo/commit/fbaaf63e240b194cc3a05b859611c26b02035abf#diff-323297f12691596fa1b40b2b7c9ccb8af17eecadc8bfc51cff961508f09f9eb2L52
-427,"docker-library
+377,"docker-library
 mongo",https://github.com/docker-library/mongo,daeeeccd0edd110e6341ba3ee2d699caf885fbce,fbaaf63e240b194cc3a05b859611c26b02035abf,3.4/windows/windowsservercore-ltsc2016/Dockerfile,3.4/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2017/11/23 07:27,2020/02/08 08:52,2017/11/23 07:27,2020/02/08 08:52,,3.4/windows/windowsservercore-ltsc2016/Dockerfile,590.0,3.4/windows/windowsservercore-ltsc2016/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L46,https://github.com/docker-library/mongo/commit/daeeeccd0edd110e6341ba3ee2d699caf885fbce#diff-7f54723e27ffcf6f62cb90f2c9495ba45ed947292de314968070249ef2c5d6f8R45,https://github.com/docker-library/mongo/commit/fbaaf63e240b194cc3a05b859611c26b02035abf#diff-7f54723e27ffcf6f62cb90f2c9495ba45ed947292de314968070249ef2c5d6f8L46
-428,"docker-library
+378,"docker-library
 mongo",https://github.com/docker-library/mongo,89549b2b779421c057b04858477012b7aa17f498,08737ed3a8d444b79496846e882075bfdd43edab,3.3/windows/windowsservercore/Dockerfile,3.4/windows/windowsservercore-1709/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2016/08/18 07:14,2019/04/12 08:27,2016/08/18 07:14,2019/04/12 08:27,,3.3/windows/windowsservercore/Dockerfile,737.0,3.4/windows/windowsservercore-1709/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L46,https://github.com/docker-library/mongo/commit/89549b2b779421c057b04858477012b7aa17f498#diff-94bba010aab5b500f9db290dced46444fa9af0915f2f14ea9958c2cb6699136bR45,https://github.com/docker-library/mongo/commit/08737ed3a8d444b79496846e882075bfdd43edab#diff-76a20dc99a986ab95b7cdc679de6756d19857f3a9686b1faf5fb8c1a3e16885aL46
-429,"docker-library
+379,"docker-library
 mongo",https://github.com/docker-library/mongo,32bf9f7905feb2b039c623e76e66d1602e73d277,,3.6/Dockerfile,3.6/Dockerfile,# TODO some sort of download verification here,2017/12/20 09:19,,2017/11/23 09:40,,,3.6/Dockerfile,554.0,,26 days 23:39:00.000000000,削除されていません,R37,,https://github.com/docker-library/mongo/commit/32bf9f7905feb2b039c623e76e66d1602e73d277#diff-58f1eb68cca8086d655c58e66348381d72ada1b90a60a8bab5ed27f84ece5266R37,
-430,"docker-library
+380,"docker-library
 mongo",https://github.com/docker-library/mongo,d7084920a1d3db7f50fc352c1c879845e36e48a6,,4.0-rc/Dockerfile,4.0/Dockerfile,# TODO some sort of download verification here,2018/05/23 00:18,,2018/05/23 00:18,,,4.0-rc/Dockerfile,475.0,,0 days 00:00:00.000000000,削除されていません,R37,,https://github.com/docker-library/mongo/commit/d7084920a1d3db7f50fc352c1c879845e36e48a6#diff-a1dd67796ffe0dd7c266ac9cd1644d1e5029ddc0c1c3cd6fb671a416ceca14e2R37,
-431,"docker-library
+381,"docker-library
 mongo",https://github.com/docker-library/mongo,b6a2025cd8ddf3cf15e125e208177b44dc08771f,2f757af6d12f4239cf5541455b011921ee4c06d1,4.2-rc/Dockerfile,4.2-rc/Dockerfile,# TODO some sort of download verification here,2019/06/13 08:19,2019/08/14 01:19,2019/06/13 08:19,2019/08/14 01:19,,4.2-rc/Dockerfile,223.0,4.2-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R47,L52,https://github.com/docker-library/mongo/commit/b6a2025cd8ddf3cf15e125e208177b44dc08771f#diff-26df4c6c5e4ea9ffb29b4aba6c42a8d60dc4de5fc7094d34aa1e81f390d2e208R47,https://github.com/docker-library/mongo/commit/2f757af6d12f4239cf5541455b011921ee4c06d1#diff-26df4c6c5e4ea9ffb29b4aba6c42a8d60dc4de5fc7094d34aa1e81f390d2e208L52
-432,"docker-library
+382,"docker-library
 mongo",https://github.com/docker-library/mongo,daeeeccd0edd110e6341ba3ee2d699caf885fbce,a61f8a9d50afbf43179a01eea848c0d9b95ba768,3.0/windows/windowsservercore-ltsc2016/Dockerfile,3.0/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2017/11/23 07:27,2018/05/10 04:13,2017/11/23 07:27,2018/05/10 04:13,,3.0/windows/windowsservercore-ltsc2016/Dockerfile,590.0,3.0/windows/windowsservercore-ltsc2016/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L45,https://github.com/docker-library/mongo/commit/daeeeccd0edd110e6341ba3ee2d699caf885fbce#diff-75b0cf871eeeee6cb847259c098433e22cd94392277baa2c01096b28c450b457R45,https://github.com/docker-library/mongo/commit/a61f8a9d50afbf43179a01eea848c0d9b95ba768#diff-75b0cf871eeeee6cb847259c098433e22cd94392277baa2c01096b28c450b457L45
-433,"docker-library
+383,"docker-library
 mongo",https://github.com/docker-library/mongo,17f05e95936bc3ec911446ffe4c2f5889363083d,84e53cd3fa53bbf336a4204da977e45b2ee1d0cb,3.5/windows/windowsservercore/Dockerfile,3.5/windows/windowsservercore-1709/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2017/04/01 06:11,2017/12/06 10:55,2017/04/01 06:11,2017/12/06 10:55,,3.5/windows/windowsservercore/Dockerfile,667.0,3.5/windows/windowsservercore-1709/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L45,https://github.com/docker-library/mongo/commit/17f05e95936bc3ec911446ffe4c2f5889363083d#diff-610088dd3d7be80d7def95e4ed23f8f8c7e24933a368949106e906df75a6d74dR45,https://github.com/docker-library/mongo/commit/84e53cd3fa53bbf336a4204da977e45b2ee1d0cb#diff-ee573024cd6177f13a55d3f83ef5022538401549bf8c3b1a30c88ba2252c572aL45
-434,"docker-library
+384,"docker-library
 mongo",https://github.com/docker-library/mongo,daeeeccd0edd110e6341ba3ee2d699caf885fbce,c5720ca1880815d78c3f1b58a8a30003b1724efd,3.2/windows/windowsservercore-ltsc2016/Dockerfile,3.2/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2017/11/23 07:27,2018/12/25 03:19,2017/11/23 07:27,2018/12/25 03:19,,3.2/windows/windowsservercore-ltsc2016/Dockerfile,590.0,3.2/windows/windowsservercore-ltsc2016/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L46,https://github.com/docker-library/mongo/commit/daeeeccd0edd110e6341ba3ee2d699caf885fbce#diff-61e78edf0b341579407167850f7d85a1dc3687b90c6d6685824fe1cd62374db4R45,https://github.com/docker-library/mongo/commit/c5720ca1880815d78c3f1b58a8a30003b1724efd#diff-61e78edf0b341579407167850f7d85a1dc3687b90c6d6685824fe1cd62374db4L46
-435,"docker-library
+385,"docker-library
 mongo",https://github.com/docker-library/mongo,89549b2b779421c057b04858477012b7aa17f498,c5720ca1880815d78c3f1b58a8a30003b1724efd,3.2/windows/windowsservercore/Dockerfile,3.2/windows/windowsservercore-1709/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2016/08/18 07:14,2018/12/25 03:19,2016/08/18 07:14,2018/12/25 03:19,,3.2/windows/windowsservercore/Dockerfile,737.0,3.2/windows/windowsservercore-1709/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L46,https://github.com/docker-library/mongo/commit/89549b2b779421c057b04858477012b7aa17f498#diff-53aa4756ebc1b7f092312be5c41ec0f37241831f833ffa72d76cb270ba2133aeR45,https://github.com/docker-library/mongo/commit/c5720ca1880815d78c3f1b58a8a30003b1724efd#diff-eb26e696e2df7409bb14082419a2ba5037e0ce2a004ca823ff8dff3b9df812caL46
-436,"docker-library
+386,"docker-library
 mongo",https://github.com/docker-library/mongo,daeeeccd0edd110e6341ba3ee2d699caf885fbce,84e53cd3fa53bbf336a4204da977e45b2ee1d0cb,3.5/windows/windowsservercore-ltsc2016/Dockerfile,3.5/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2017/11/23 07:27,2017/12/06 10:55,2017/11/23 07:27,2017/12/06 10:55,,3.5/windows/windowsservercore-ltsc2016/Dockerfile,590.0,3.5/windows/windowsservercore-ltsc2016/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L45,https://github.com/docker-library/mongo/commit/daeeeccd0edd110e6341ba3ee2d699caf885fbce#diff-ea13ee28d9bb9423c4573eed254fe1a8e4f29869c66c8883c86b4c004fe21105R45,https://github.com/docker-library/mongo/commit/84e53cd3fa53bbf336a4204da977e45b2ee1d0cb#diff-ea13ee28d9bb9423c4573eed254fe1a8e4f29869c66c8883c86b4c004fe21105L45
-437,"docker-library
+387,"docker-library
 mongo",https://github.com/docker-library/mongo,89549b2b779421c057b04858477012b7aa17f498,a61f8a9d50afbf43179a01eea848c0d9b95ba768,3.0/windows/windowsservercore/Dockerfile,3.0/windows/windowsservercore-1709/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2016/08/18 07:14,2018/05/10 04:13,2016/08/18 07:14,2018/05/10 04:13,,3.0/windows/windowsservercore/Dockerfile,737.0,3.0/windows/windowsservercore-1709/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L45,https://github.com/docker-library/mongo/commit/89549b2b779421c057b04858477012b7aa17f498#diff-25040ef7e9155210094b2e87d9487968ea83466f83815efdc0e2accd09506d70R45,https://github.com/docker-library/mongo/commit/a61f8a9d50afbf43179a01eea848c0d9b95ba768#diff-d0d05c681c5d0969a3c36a188fa15e2036118e0203143e4fd3d9e473c5dbab7aL45
-438,"docker-library
+388,"docker-library
 mongo",https://github.com/docker-library/mongo,375c4226fe653262306de9539bb2d3fc985dc3b4,,3.6-rc/windows/windowsservercore-ltsc2016/Dockerfile,3.6/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2017/11/23 09:40,,2017/11/23 09:40,,,3.6-rc/windows/windowsservercore-ltsc2016/Dockerfile,579.0,,0 days 00:00:00.000000000,削除されていません,R45,,https://github.com/docker-library/mongo/commit/375c4226fe653262306de9539bb2d3fc985dc3b4#diff-1a0f132964f718ea37eabd7f2e2298bf12bdc5dce02d6553d6cac84f33b758e0R45,
-439,"docker-library
+389,"docker-library
 mongo",https://github.com/docker-library/mongo,375c4226fe653262306de9539bb2d3fc985dc3b4,08737ed3a8d444b79496846e882075bfdd43edab,3.6-rc/windows/windowsservercore-1709/Dockerfile,3.6/windows/windowsservercore-1709/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2017/11/23 09:40,2019/04/12 08:27,2017/11/23 09:40,2019/04/12 08:27,,3.6-rc/windows/windowsservercore-1709/Dockerfile,579.0,3.6/windows/windowsservercore-1709/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L46,https://github.com/docker-library/mongo/commit/375c4226fe653262306de9539bb2d3fc985dc3b4#diff-5da4f3437ed51bd804f12c1b2a5a1ead065e83c316e294fad32e4c46795a184bR45,https://github.com/docker-library/mongo/commit/08737ed3a8d444b79496846e882075bfdd43edab#diff-ba33fc6db024f0997651120c7a335c7a97781efe58c881ee9bf9931376b85fbdL46
-440,"docker-library
+390,"docker-library
 mongo",https://github.com/docker-library/mongo,380200038360980631e362f964857d48489f99a2,6ac52e6a15acd1315a1a891c9e4eb3aa0a99700f,4.1/windows/windowsservercore-1803/Dockerfile,4.2/windows/windowsservercore-1803/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2018/07/18 06:11,2019/12/10 07:37,2018/07/18 06:11,2019/12/10 07:37,,4.1/windows/windowsservercore-1803/Dockerfile,433.0,4.2/windows/windowsservercore-1803/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L46,https://github.com/docker-library/mongo/commit/380200038360980631e362f964857d48489f99a2#diff-6b8dbd3f10fc210a1e2a833751f341c0ff2afab8667cd91015cf6194ffd059cfR45,https://github.com/docker-library/mongo/commit/6ac52e6a15acd1315a1a891c9e4eb3aa0a99700f#diff-68d5d8291570a645c7b4fd382924cb46224bf89eb348ea331b6d5d5b0e04b2a7L46
-441,"docker-library
+391,"docker-library
 mongo",https://github.com/docker-library/mongo,380200038360980631e362f964857d48489f99a2,6ac52e6a15acd1315a1a891c9e4eb3aa0a99700f,4.0/windows/windowsservercore-1803/Dockerfile,4.0/windows/windowsservercore-1803/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2018/07/18 06:11,2019/12/10 07:37,2018/07/18 06:11,2019/12/10 07:37,,4.0/windows/windowsservercore-1803/Dockerfile,433.0,4.0/windows/windowsservercore-1803/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L46,https://github.com/docker-library/mongo/commit/380200038360980631e362f964857d48489f99a2#diff-c4cc9a11652a188fff874badfbf4abaaa0e15ae4fe29675b702e547d656b2cbeR45,https://github.com/docker-library/mongo/commit/6ac52e6a15acd1315a1a891c9e4eb3aa0a99700f#diff-c4cc9a11652a188fff874badfbf4abaaa0e15ae4fe29675b702e547d656b2cbeL46
-442,"docker-library
+392,"docker-library
 mongo",https://github.com/docker-library/mongo,380200038360980631e362f964857d48489f99a2,08737ed3a8d444b79496846e882075bfdd43edab,4.1/windows/windowsservercore-1709/Dockerfile,4.1/windows/windowsservercore-1709/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2018/07/18 06:11,2019/04/12 08:27,2018/07/18 06:11,2019/04/12 08:27,,4.1/windows/windowsservercore-1709/Dockerfile,433.0,4.1/windows/windowsservercore-1709/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L46,https://github.com/docker-library/mongo/commit/380200038360980631e362f964857d48489f99a2#diff-4390dca372e70b404b1c53694e3133afceaa50c8eac988f6d0ca9d817cab0ce5R45,https://github.com/docker-library/mongo/commit/08737ed3a8d444b79496846e882075bfdd43edab#diff-4390dca372e70b404b1c53694e3133afceaa50c8eac988f6d0ca9d817cab0ce5L46
-443,"docker-library
+393,"docker-library
 mongo",https://github.com/docker-library/mongo,692ec82754bde8d6d4e663462669b3be2a6f8b2b,08737ed3a8d444b79496846e882075bfdd43edab,3.7/windows/windowsservercore-1709/Dockerfile,4.0/windows/windowsservercore-1709/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2018/01/17 02:12,2019/04/12 08:27,2018/01/17 02:12,2019/04/12 08:27,,3.7/windows/windowsservercore-1709/Dockerfile,539.0,4.0/windows/windowsservercore-1709/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L46,https://github.com/docker-library/mongo/commit/692ec82754bde8d6d4e663462669b3be2a6f8b2b#diff-8cd04643e78ae93bc10eaea0b6713cd3231071b705a2cfe3c1910f39d4f13479R45,https://github.com/docker-library/mongo/commit/08737ed3a8d444b79496846e882075bfdd43edab#diff-e59ae1bf61563cee3942b22ccdb429425a1dd0d0f765ae2f446bc99879bf129cL46
-444,"docker-library
+394,"docker-library
 mongo",https://github.com/docker-library/mongo,692ec82754bde8d6d4e663462669b3be2a6f8b2b,,3.7/windows/windowsservercore-ltsc2016/Dockerfile,4.0/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2018/01/17 02:12,,2018/01/17 02:12,,,3.7/windows/windowsservercore-ltsc2016/Dockerfile,539.0,,0 days 00:00:00.000000000,削除されていません,R45,,https://github.com/docker-library/mongo/commit/692ec82754bde8d6d4e663462669b3be2a6f8b2b#diff-c67dcd8221228bc9dd51d798b33a18a0e93c341e0c87314f5d316999540ad972R45,
-445,"docker-library
+395,"docker-library
 mongo",https://github.com/docker-library/mongo,32bf9f7905feb2b039c623e76e66d1602e73d277,a61f8a9d50afbf43179a01eea848c0d9b95ba768,3.0/Dockerfile,3.0/Dockerfile,# TODO some sort of download verification here,2017/12/20 09:19,2018/05/10 04:13,2014/08/19 06:43,2018/05/10 04:13,,3.0/Dockerfile,554.0,3.0/Dockerfile,1219 days 02:36:00.000000000,ファイル削除,R42,L42,https://github.com/docker-library/mongo/commit/32bf9f7905feb2b039c623e76e66d1602e73d277#diff-f13ac8db3fa74fb83c2fd39a95ba21128d9d04e7cf5358f00eedf9ba13f83b32R42,https://github.com/docker-library/mongo/commit/a61f8a9d50afbf43179a01eea848c0d9b95ba768#diff-f13ac8db3fa74fb83c2fd39a95ba21128d9d04e7cf5358f00eedf9ba13f83b32L42
-446,"docker-library
+396,"docker-library
 mongo",https://github.com/docker-library/mongo,32bf9f7905feb2b039c623e76e66d1602e73d277,c5720ca1880815d78c3f1b58a8a30003b1724efd,3.2/Dockerfile,3.2/Dockerfile,# TODO some sort of download verification here,2017/12/20 09:19,2018/12/25 03:19,2015/11/01 01:56,2018/12/25 03:19,,3.2/Dockerfile,554.0,3.2/Dockerfile,780 days 07:23:00.000000000,ファイル削除,R37,L38,https://github.com/docker-library/mongo/commit/32bf9f7905feb2b039c623e76e66d1602e73d277#diff-10d23ededd231bffdb666b885c84e355bd2b3913a3987565f7259431b19999ebR37,https://github.com/docker-library/mongo/commit/c5720ca1880815d78c3f1b58a8a30003b1724efd#diff-10d23ededd231bffdb666b885c84e355bd2b3913a3987565f7259431b19999ebL38
-447,"docker-library
+397,"docker-library
 mongo",https://github.com/docker-library/mongo,d7084920a1d3db7f50fc352c1c879845e36e48a6,281c91f0148cf73d6ee3d64c94aa5d51c9b0b4be,4.0-rc/windows/windowsservercore-ltsc2016/Dockerfile,4.0-rc/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2018/05/23 00:18,2018/06/28 02:12,2018/05/23 00:18,2018/06/28 02:12,,4.0-rc/windows/windowsservercore-ltsc2016/Dockerfile,475.0,4.0-rc/windows/windowsservercore-ltsc2016/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L45,https://github.com/docker-library/mongo/commit/d7084920a1d3db7f50fc352c1c879845e36e48a6#diff-24190adc7221f0d1de249dacbac8a9e0ec2c86547834251b437a2c24176a3a62R45,https://github.com/docker-library/mongo/commit/281c91f0148cf73d6ee3d64c94aa5d51c9b0b4be#diff-24190adc7221f0d1de249dacbac8a9e0ec2c86547834251b437a2c24176a3a62L45
-448,"docker-library
+398,"docker-library
 mongo",https://github.com/docker-library/mongo,d7084920a1d3db7f50fc352c1c879845e36e48a6,281c91f0148cf73d6ee3d64c94aa5d51c9b0b4be,4.0-rc/windows/windowsservercore-1709/Dockerfile,4.0-rc/windows/windowsservercore-1709/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2018/05/23 00:18,2018/06/28 02:12,2018/05/23 00:18,2018/06/28 02:12,,4.0-rc/windows/windowsservercore-1709/Dockerfile,475.0,4.0-rc/windows/windowsservercore-1709/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L45,https://github.com/docker-library/mongo/commit/d7084920a1d3db7f50fc352c1c879845e36e48a6#diff-7e75d29e1449c5b9c8a426a64b8a0822a0eb5606e7eef24bc4496988c3fa93a8R45,https://github.com/docker-library/mongo/commit/281c91f0148cf73d6ee3d64c94aa5d51c9b0b4be#diff-7e75d29e1449c5b9c8a426a64b8a0822a0eb5606e7eef24bc4496988c3fa93a8L45
-449,"docker-library
+399,"docker-library
 mongo",https://github.com/docker-library/mongo,ec80a4a2218babddb8b572209e45841b96c1954c,5f4bcf4bec163ef05b4fc67d5c92762989dbde06,3.4-rc/windows/windowsservercore/Dockerfile,3.4-rc/windows/windowsservercore/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2016/11/02 05:59,2016/11/30 02:51,2016/11/02 05:59,2016/11/30 02:51,,3.4-rc/windows/windowsservercore/Dockerfile,722.0,3.4-rc/windows/windowsservercore/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R45,L45,https://github.com/docker-library/mongo/commit/ec80a4a2218babddb8b572209e45841b96c1954c#diff-b802a1ea2de3afe569bb9cd104d5cc8771fdab294bb0f7d3b4c4abe0d47c5fddR45,https://github.com/docker-library/mongo/commit/5f4bcf4bec163ef05b4fc67d5c92762989dbde06#diff-b802a1ea2de3afe569bb9cd104d5cc8771fdab294bb0f7d3b4c4abe0d47c5fddL45
-450,"docker-library
+400,"docker-library
 mongo",https://github.com/docker-library/mongo,3fecc7f8e812d9dc8b03e83f47bfe544442ad9a3,,4.4-rc/Dockerfile,4.4/Dockerfile,# TODO some sort of download verification here,2020/05/28 01:57,,2020/05/28 01:57,,,4.4-rc/Dockerfile,56.0,,0 days 00:00:00.000000000,削除されていません,R49,,https://github.com/docker-library/mongo/commit/3fecc7f8e812d9dc8b03e83f47bfe544442ad9a3#diff-c7646cb8a4c62b3587a706858b1fbe4a72732c0c03693d7c2bc20dd00b4694caR49,
-451,"docker-library
+401,"docker-library
 mongo",https://github.com/docker-library/mongo,b6a2025cd8ddf3cf15e125e208177b44dc08771f,2f757af6d12f4239cf5541455b011921ee4c06d1,4.2-rc/windows/windowsservercore-1803/Dockerfile,4.2-rc/windows/windowsservercore-1803/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2019/06/13 08:19,2019/08/14 01:19,2019/06/13 08:19,2019/08/14 01:19,,4.2-rc/windows/windowsservercore-1803/Dockerfile,223.0,4.2-rc/windows/windowsservercore-1803/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R46,L46,https://github.com/docker-library/mongo/commit/b6a2025cd8ddf3cf15e125e208177b44dc08771f#diff-371cecec3a83b3da65de82c8a60f5acf54974bcf131951623d7b4b46ab9b98a9R46,https://github.com/docker-library/mongo/commit/2f757af6d12f4239cf5541455b011921ee4c06d1#diff-371cecec3a83b3da65de82c8a60f5acf54974bcf131951623d7b4b46ab9b98a9L46
-452,"docker-library
+402,"docker-library
 mongo",https://github.com/docker-library/mongo,b6a2025cd8ddf3cf15e125e208177b44dc08771f,2f757af6d12f4239cf5541455b011921ee4c06d1,4.2-rc/windows/windowsservercore-ltsc2016/Dockerfile,4.2-rc/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2019/06/13 08:19,2019/08/14 01:19,2019/06/13 08:19,2019/08/14 01:19,,4.2-rc/windows/windowsservercore-ltsc2016/Dockerfile,223.0,4.2-rc/windows/windowsservercore-ltsc2016/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R46,L46,https://github.com/docker-library/mongo/commit/b6a2025cd8ddf3cf15e125e208177b44dc08771f#diff-d08c388c794552386dfc948ace5cb8c5c2df15dd03e22b22da9459727dcf86aaR46,https://github.com/docker-library/mongo/commit/2f757af6d12f4239cf5541455b011921ee4c06d1#diff-d08c388c794552386dfc948ace5cb8c5c2df15dd03e22b22da9459727dcf86aaL46
-453,"docker-library
+403,"docker-library
 mongo",https://github.com/docker-library/mongo,9ba0d6f19538d7922f62a41cea6589e366b100d3,,4.0/windows/windowsservercore-1809/Dockerfile,4.0/windows/windowsservercore-1809/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2019/12/04 02:26,,2019/12/04 02:26,,,4.0/windows/windowsservercore-1809/Dockerfile,148.0,,0 days 00:00:00.000000000,削除されていません,R46,,https://github.com/docker-library/mongo/commit/9ba0d6f19538d7922f62a41cea6589e366b100d3#diff-2f709dbab646e62251582c94cf24167a9d390a7c09b0ac9c147cbd0821ad4d42R46,
-454,"docker-library
+404,"docker-library
 mongo",https://github.com/docker-library/mongo,3fecc7f8e812d9dc8b03e83f47bfe544442ad9a3,,4.4-rc/windows/windowsservercore-ltsc2016/Dockerfile,4.4/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2020/05/28 01:57,,2020/05/28 01:57,,,4.4-rc/windows/windowsservercore-ltsc2016/Dockerfile,56.0,,0 days 00:00:00.000000000,削除されていません,R48,,https://github.com/docker-library/mongo/commit/3fecc7f8e812d9dc8b03e83f47bfe544442ad9a3#diff-d49fab39f472b092a4559e21da344fc436e88d72e2141250e42d6ef0166f2948R48,
-455,"docker-library
+405,"docker-library
 mongo",https://github.com/docker-library/mongo,3fecc7f8e812d9dc8b03e83f47bfe544442ad9a3,,4.4-rc/windows/windowsservercore-1809/Dockerfile,4.4/windows/windowsservercore-1809/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2020/05/28 01:57,,2020/05/28 01:57,,,4.4-rc/windows/windowsservercore-1809/Dockerfile,56.0,,0 days 00:00:00.000000000,削除されていません,R48,,https://github.com/docker-library/mongo/commit/3fecc7f8e812d9dc8b03e83f47bfe544442ad9a3#diff-ff7b5422d8aa69b054605e37c15063c570e0cadaae9443848da61708a069d605R48,
-456,"docker-library
+406,"docker-library
 mongo",https://github.com/docker-library/mongo,692ec82754bde8d6d4e663462669b3be2a6f8b2b,281c91f0148cf73d6ee3d64c94aa5d51c9b0b4be,3.7/Dockerfile,3.7/Dockerfile,# TODO some sort of download verification here,2018/01/17 02:12,2018/06/28 02:12,2018/01/17 02:12,2018/06/28 02:12,,3.7/Dockerfile,539.0,3.7/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R37,L37,https://github.com/docker-library/mongo/commit/692ec82754bde8d6d4e663462669b3be2a6f8b2b#diff-a3eadee56da942e8a548a0e85735f06bb1f2462370dc55799e2dac7c4a461c34R37,https://github.com/docker-library/mongo/commit/281c91f0148cf73d6ee3d64c94aa5d51c9b0b4be#diff-a3eadee56da942e8a548a0e85735f06bb1f2462370dc55799e2dac7c4a461c34L37
-457,"docker-library
+407,"docker-library
 mongo",https://github.com/docker-library/mongo,c312dd5c0d72cfabe25fd4b1f9dab6d5fdf1d6ff,,3.6/windows/windowsservercore-1809/Dockerfile,3.6/windows/windowsservercore-1809/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2020/03/21 02:20,,2020/03/21 02:20,,,3.6/windows/windowsservercore-1809/Dockerfile,85.0,,0 days 00:00:00.000000000,削除されていません,R48,,https://github.com/docker-library/mongo/commit/c312dd5c0d72cfabe25fd4b1f9dab6d5fdf1d6ff#diff-abac82f9c512dc36a7d817092677487ba13c2baa24bb078f0c99382876217cc6R48,
-458,"docker-library
+408,"docker-library
 official-images",https://github.com/docker-library/official-images,84aa9ed158196e09a9e68f34d6a2a02ce43a0f7e,569875c80f8e7f6eb8fc1a12d65a986c351d7083,bashbrew/put-multiarch/Dockerfile,bashbrew/put-multiarch/Dockerfile,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
 #RUN cpanm Digest::SHA Module::Signature
 # TODO find a way to make --verify work with backpan as well :'(
 #ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify",2019/05/10 08:53,2019/07/23 08:40,2019/05/10 08:53,2019/07/23 08:40,,bashbrew/put-multiarch/Dockerfile,5.0,bashbrew/put-multiarch/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R13,L13,https://github.com/docker-library/official-images/commit/84aa9ed158196e09a9e68f34d6a2a02ce43a0f7e#diff-fe6a98c9debe5b15bc4a505a294c4dd2ddd58f9d0394d61f0bf161c3a7fafac8R13,https://github.com/docker-library/official-images/commit/569875c80f8e7f6eb8fc1a12d65a986c351d7083#diff-fe6a98c9debe5b15bc4a505a294c4dd2ddd58f9d0394d61f0bf161c3a7fafac8L13
-459,"influxdata
+409,"influxdata
 kapacitor",https://github.com/influxdata/kapacitor,5dd218345c6ac415de818984998112a9ecad5167,f5cf66242a6ff35df8e82b017a30e9921b72a218,vendor/github.com/docker/docker/Dockerfile,vendor/github.com/docker/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
@@ -2449,388 +1911,388 @@ kapacitor",https://github.com/influxdata/kapacitor,5dd218345c6ac415de81898499811
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #",2017/08/05 00:09,2018/03/17 04:32,2017/08/05 00:09,2018/03/17 04:32,,vendor/github.com/docker/docker/Dockerfile,11.0,vendor/github.com/docker/docker/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R1,L1,https://github.com/influxdata/kapacitor/commit/5dd218345c6ac415de818984998112a9ecad5167#diff-c2a47d790c151b6475b29a42dffbf04f1537222e1729a58909e517da108f9095R1,https://github.com/influxdata/kapacitor/commit/f5cf66242a6ff35df8e82b017a30e9921b72a218#diff-c2a47d790c151b6475b29a42dffbf04f1537222e1729a58909e517da108f9095L1
-460,"influxdata
+410,"influxdata
 kapacitor",https://github.com/influxdata/kapacitor,5dd218345c6ac415de818984998112a9ecad5167,f5cf66242a6ff35df8e82b017a30e9921b72a218,vendor/github.com/docker/docker/Dockerfile,vendor/github.com/docker/docker/Dockerfile,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)",2017/08/05 00:09,2018/03/17 04:32,2017/08/05 00:09,2018/03/17 04:32,,vendor/github.com/docker/docker/Dockerfile,11.0,vendor/github.com/docker/docker/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R234,L234,https://github.com/influxdata/kapacitor/commit/5dd218345c6ac415de818984998112a9ecad5167#diff-c2a47d790c151b6475b29a42dffbf04f1537222e1729a58909e517da108f9095R234,https://github.com/influxdata/kapacitor/commit/f5cf66242a6ff35df8e82b017a30e9921b72a218#diff-c2a47d790c151b6475b29a42dffbf04f1537222e1729a58909e517da108f9095L234
-461,"influxdata
+411,"influxdata
 kapacitor",https://github.com/influxdata/kapacitor,5dd218345c6ac415de818984998112a9ecad5167,f5cf66242a6ff35df8e82b017a30e9921b72a218,vendor/github.com/docker/docker/Dockerfile,vendor/github.com/docker/docker/Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them.",2017/08/05 00:09,2018/03/17 04:32,2017/08/05 00:09,2018/03/17 04:32,,vendor/github.com/docker/docker/Dockerfile,11.0,vendor/github.com/docker/docker/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R236,L236,https://github.com/influxdata/kapacitor/commit/5dd218345c6ac415de818984998112a9ecad5167#diff-c2a47d790c151b6475b29a42dffbf04f1537222e1729a58909e517da108f9095R236,https://github.com/influxdata/kapacitor/commit/f5cf66242a6ff35df8e82b017a30e9921b72a218#diff-c2a47d790c151b6475b29a42dffbf04f1537222e1729a58909e517da108f9095L236
-462,"docker-library
+412,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,,8/jre/windows/windowsservercore-1809/Dockerfile,8/jre/windows/windowsservercore-1809/Dockerfile,# TODO signature? checksum?,2019/05/24 05:11,,2019/05/24 05:11,,,8/jre/windows/windowsservercore-1809/Dockerfile,1130.0,,0 days 00:00:00.000000000,削除されていません,R34,,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-c3b4d8aab385aa874eb9eea7dc8293e6856c669e942aab8dd734c06be788879aR34,
-463,"docker-library
+413,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,,8/jdk/windows/windowsservercore-1809/Dockerfile,8/jdk/windows/windowsservercore-1809/Dockerfile,# TODO signature? checksum?,2019/05/24 05:11,,2019/01/16 10:40,,,8/jdk/windows/windowsservercore-1809/Dockerfile,1130.0,,127 days 18:31:00.000000000,削除されていません,R34,,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-959b09dd59bd2ea9072dfb679b3dfc776404f47de3bd669d3c49aabc1014cfefR34,
-464,"docker-library
+414,"docker-library
 openjdk",https://github.com/docker-library/openjdk,572682ed1cb951ab8d978e8015e4a910093db920,,11/jre/slim/Dockerfile,11/jre/slim-buster/Dockerfile,"# TODO strip ""demo"" and ""man"" folders?",2019/07/17 08:32,,2018/04/17 09:20,,,11/jre/slim/Dockerfile,981.0,,455 days 23:12:00.000000000,削除されていません,R66,,https://github.com/docker-library/openjdk/commit/572682ed1cb951ab8d978e8015e4a910093db920#diff-1d47c090dcecc6936bab3b5f338f8870766d658b1ba9d0d6ce43dd2edd4f1884R66,
-465,"docker-library
+415,"docker-library
 openjdk",https://github.com/docker-library/openjdk,572682ed1cb951ab8d978e8015e4a910093db920,451e66427f3c53fada288aaff950617c5864745f,11/jre/slim/Dockerfile,11/jre/slim-buster/Dockerfile,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,2019/07/17 08:32,2019/09/14 06:18,2018/04/17 09:20,,,11/jre/slim/Dockerfile,981.0,11/jre/slim/Dockerfile,455 days 23:12:00.000000000,"58 days, 21:46:00",R48,R48,https://github.com/docker-library/openjdk/commit/572682ed1cb951ab8d978e8015e4a910093db920#diff-1d47c090dcecc6936bab3b5f338f8870766d658b1ba9d0d6ce43dd2edd4f1884R48,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-1d47c090dcecc6936bab3b5f338f8870766d658b1ba9d0d6ce43dd2edd4f1884R48
-466,"docker-library
+416,"docker-library
 openjdk",https://github.com/docker-library/openjdk,451e66427f3c53fada288aaff950617c5864745f,,11/jre/slim/Dockerfile,11/jre/slim-buster/Dockerfile,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 # no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07",2019/09/14 06:18,,2018/04/17 09:20,,,11/jre/slim/Dockerfile,917.0,,514 days 20:58:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-1d47c090dcecc6936bab3b5f338f8870766d658b1ba9d0d6ce43dd2edd4f1884R49,
-467,"docker-library
+417,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,,8/jdk/Dockerfile,8/jdk/buster/Dockerfile,"# TODO strip ""demo"" and ""man"" folders?",2019/05/24 05:11,,2014/07/19 08:19,,,8/jdk/Dockerfile,1130.0,,1769 days 20:52:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-8d045626d662ea9e12a5dd99e5421c710dcfb809e4a0f87ef6a63feae1172831R49,
-468,"docker-library
+418,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,451e66427f3c53fada288aaff950617c5864745f,8/jdk/Dockerfile,8/jdk/buster/Dockerfile,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,2019/05/24 05:11,2019/09/14 06:18,2014/07/19 08:19,,,8/jdk/Dockerfile,1130.0,8/jdk/Dockerfile,1769 days 20:52:00.000000000,"113 days, 1:07:00",R40,R48,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-8d045626d662ea9e12a5dd99e5421c710dcfb809e4a0f87ef6a63feae1172831R40,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-8d045626d662ea9e12a5dd99e5421c710dcfb809e4a0f87ef6a63feae1172831R48
-469,"docker-library
+419,"docker-library
 openjdk",https://github.com/docker-library/openjdk,451e66427f3c53fada288aaff950617c5864745f,,8/jdk/Dockerfile,8/jdk/buster/Dockerfile,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 # no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07",2019/09/14 06:18,,2014/07/19 08:19,,,8/jdk/Dockerfile,917.0,,1882 days 21:59:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-8d045626d662ea9e12a5dd99e5421c710dcfb809e4a0f87ef6a63feae1172831R49,
-470,"docker-library
+420,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,,8/jdk/slim/Dockerfile,8/jdk/slim-buster/Dockerfile,"# TODO strip ""demo"" and ""man"" folders?",2019/05/24 05:11,,2017/07/22 02:32,,,8/jdk/slim/Dockerfile,1130.0,,671 days 02:39:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-aae7d8cc3e09697ffda69deef9506ea7458a40dbba0e24dc3df4c89949581aebR49,
-471,"docker-library
+421,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,451e66427f3c53fada288aaff950617c5864745f,8/jdk/slim/Dockerfile,8/jdk/slim-buster/Dockerfile,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,2019/05/24 05:11,2019/09/14 06:18,2017/07/22 02:32,,,8/jdk/slim/Dockerfile,1130.0,8/jdk/slim/Dockerfile,671 days 02:39:00.000000000,"113 days, 1:07:00",R40,R48,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-aae7d8cc3e09697ffda69deef9506ea7458a40dbba0e24dc3df4c89949581aebR40,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-aae7d8cc3e09697ffda69deef9506ea7458a40dbba0e24dc3df4c89949581aebR48
-472,"docker-library
+422,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,e715db19b8abe216948ef5b81dcb352273bd69f3,8/jdk/slim/Dockerfile,8/jdk/slim-buster/Dockerfile,# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7),2019/05/24 05:11,2019/05/24 05:11,2017/07/22 02:32,,,8/jdk/slim/Dockerfile,1130.0,8/jdk/slim/Dockerfile,671 days 02:39:00.000000000,0:00:00,R23,L23,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-aae7d8cc3e09697ffda69deef9506ea7458a40dbba0e24dc3df4c89949581aebR23,https://github.com/docker-library/openjdk/commit/e715db19b8abe216948ef5b81dcb352273bd69f3#diff-aae7d8cc3e09697ffda69deef9506ea7458a40dbba0e24dc3df4c89949581aebL23
-473,"docker-library
+423,"docker-library
 openjdk",https://github.com/docker-library/openjdk,451e66427f3c53fada288aaff950617c5864745f,,8/jdk/slim/Dockerfile,8/jdk/slim-buster/Dockerfile,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 # no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07",2019/09/14 06:18,,2017/07/22 02:32,,,8/jdk/slim/Dockerfile,917.0,,784 days 03:46:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-aae7d8cc3e09697ffda69deef9506ea7458a40dbba0e24dc3df4c89949581aebR49,
-474,"docker-library
+424,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,,11/jdk/Dockerfile,11/jdk/buster/Dockerfile,"# TODO strip ""demo"" and ""man"" folders?",2019/05/24 05:11,,2018/04/17 09:20,,,11/jdk/Dockerfile,1130.0,,401 days 19:51:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-224cb9419e4838406411359adce0e049676601d58f138921407d71c69b2d41f3R49,
-475,"docker-library
+425,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,451e66427f3c53fada288aaff950617c5864745f,11/jdk/Dockerfile,11/jdk/buster/Dockerfile,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,2019/05/24 05:11,2019/09/14 06:18,2018/04/17 09:20,,,11/jdk/Dockerfile,1130.0,11/jdk/Dockerfile,401 days 19:51:00.000000000,"113 days, 1:07:00",R40,R48,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-224cb9419e4838406411359adce0e049676601d58f138921407d71c69b2d41f3R40,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-224cb9419e4838406411359adce0e049676601d58f138921407d71c69b2d41f3R48
-476,"docker-library
+426,"docker-library
 openjdk",https://github.com/docker-library/openjdk,451e66427f3c53fada288aaff950617c5864745f,,11/jdk/Dockerfile,11/jdk/buster/Dockerfile,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 # no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07",2019/09/14 06:18,,2018/04/17 09:20,,,11/jdk/Dockerfile,917.0,,514 days 20:58:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-224cb9419e4838406411359adce0e049676601d58f138921407d71c69b2d41f3R49,
-477,"docker-library
+427,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,,8/jre/Dockerfile,8/jre/buster/Dockerfile,"# TODO strip ""demo"" and ""man"" folders?",2019/05/24 05:11,,2014/10/10 21:52,,,8/jre/Dockerfile,1130.0,,1686 days 07:19:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-e41ea2007a2e1b6b4b12c364ab82fe406206785b17ccb0d9ab957b312ff34b0dR49,
-478,"docker-library
+428,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,451e66427f3c53fada288aaff950617c5864745f,8/jre/Dockerfile,8/jre/buster/Dockerfile,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,2019/05/24 05:11,2019/09/14 06:18,2014/10/10 21:52,,,8/jre/Dockerfile,1130.0,8/jre/Dockerfile,1686 days 07:19:00.000000000,"113 days, 1:07:00",R40,R48,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-e41ea2007a2e1b6b4b12c364ab82fe406206785b17ccb0d9ab957b312ff34b0dR40,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-e41ea2007a2e1b6b4b12c364ab82fe406206785b17ccb0d9ab957b312ff34b0dR48
-479,"docker-library
+429,"docker-library
 openjdk",https://github.com/docker-library/openjdk,451e66427f3c53fada288aaff950617c5864745f,,8/jre/Dockerfile,8/jre/buster/Dockerfile,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 # no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07",2019/09/14 06:18,,2014/10/10 21:52,,,8/jre/Dockerfile,917.0,,1799 days 08:26:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-e41ea2007a2e1b6b4b12c364ab82fe406206785b17ccb0d9ab957b312ff34b0dR49,
-480,"docker-library
+430,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,,8/jdk/windows/windowsservercore-ltsc2016/Dockerfile,8/jdk/windows/windowsservercore-ltsc2016/Dockerfile,# TODO signature? checksum?,2019/05/24 05:11,,2017/11/23 07:52,,,8/jdk/windows/windowsservercore-ltsc2016/Dockerfile,1130.0,,546 days 21:19:00.000000000,削除されていません,R34,,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-63821a566579576673d3d67fbd2fc30e1b90a4c0802d7988200f9d5e9f7d20faR34,
-481,"docker-library
+431,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,,11/jdk/slim/Dockerfile,11/jdk/slim-buster/Dockerfile,"# TODO strip ""demo"" and ""man"" folders?",2019/05/24 05:11,,2018/04/17 09:20,,,11/jdk/slim/Dockerfile,1130.0,,401 days 19:51:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-5e0e9889ae2ee57397e2f611c5e3367c0966a5c628a542c11a36fdc53147a6fcR49,
-482,"docker-library
+432,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,451e66427f3c53fada288aaff950617c5864745f,11/jdk/slim/Dockerfile,11/jdk/slim-buster/Dockerfile,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,2019/05/24 05:11,2019/09/14 06:18,2018/04/17 09:20,,,11/jdk/slim/Dockerfile,1130.0,11/jdk/slim/Dockerfile,401 days 19:51:00.000000000,"113 days, 1:07:00",R40,R48,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-5e0e9889ae2ee57397e2f611c5e3367c0966a5c628a542c11a36fdc53147a6fcR40,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-5e0e9889ae2ee57397e2f611c5e3367c0966a5c628a542c11a36fdc53147a6fcR48
-483,"docker-library
+433,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,e715db19b8abe216948ef5b81dcb352273bd69f3,11/jdk/slim/Dockerfile,11/jdk/slim-buster/Dockerfile,# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7),2019/05/24 05:11,2019/05/24 05:11,2018/04/17 09:20,,,11/jdk/slim/Dockerfile,1130.0,11/jdk/slim/Dockerfile,401 days 19:51:00.000000000,0:00:00,R23,L23,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-5e0e9889ae2ee57397e2f611c5e3367c0966a5c628a542c11a36fdc53147a6fcR23,https://github.com/docker-library/openjdk/commit/e715db19b8abe216948ef5b81dcb352273bd69f3#diff-5e0e9889ae2ee57397e2f611c5e3367c0966a5c628a542c11a36fdc53147a6fcL23
-484,"docker-library
+434,"docker-library
 openjdk",https://github.com/docker-library/openjdk,451e66427f3c53fada288aaff950617c5864745f,,11/jdk/slim/Dockerfile,11/jdk/slim-buster/Dockerfile,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 # no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07",2019/09/14 06:18,,2018/04/17 09:20,,,11/jdk/slim/Dockerfile,917.0,,514 days 20:58:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-5e0e9889ae2ee57397e2f611c5e3367c0966a5c628a542c11a36fdc53147a6fcR49,
-485,"docker-library
+435,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,,11/jdk/windows/windowsservercore-ltsc2016/Dockerfile,11/jdk/windows/windowsservercore-ltsc2016/Dockerfile,# TODO signature? checksum?,2019/05/24 05:11,,2018/09/07 02:16,,,11/jdk/windows/windowsservercore-ltsc2016/Dockerfile,1130.0,,259 days 02:55:00.000000000,削除されていません,R34,,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-8dcea49de295dee17c8c2988e96cb32ec2115fd69e2d978506075dbfe5363ac8R34,
-486,"docker-library
+436,"docker-library
 openjdk",https://github.com/docker-library/openjdk,572682ed1cb951ab8d978e8015e4a910093db920,,11/jre/Dockerfile,11/jre/buster/Dockerfile,"# TODO strip ""demo"" and ""man"" folders?",2019/07/17 08:32,,2018/04/17 09:20,,,11/jre/Dockerfile,981.0,,455 days 23:12:00.000000000,削除されていません,R66,,https://github.com/docker-library/openjdk/commit/572682ed1cb951ab8d978e8015e4a910093db920#diff-6bf7c33b63442d1522da80d56f47779c9b8ad91299111d557421d867b2f4dfb2R66,
-487,"docker-library
+437,"docker-library
 openjdk",https://github.com/docker-library/openjdk,572682ed1cb951ab8d978e8015e4a910093db920,451e66427f3c53fada288aaff950617c5864745f,11/jre/Dockerfile,11/jre/buster/Dockerfile,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,2019/07/17 08:32,2019/09/14 06:18,2018/04/17 09:20,,,11/jre/Dockerfile,981.0,11/jre/Dockerfile,455 days 23:12:00.000000000,"58 days, 21:46:00",R48,R48,https://github.com/docker-library/openjdk/commit/572682ed1cb951ab8d978e8015e4a910093db920#diff-6bf7c33b63442d1522da80d56f47779c9b8ad91299111d557421d867b2f4dfb2R48,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-6bf7c33b63442d1522da80d56f47779c9b8ad91299111d557421d867b2f4dfb2R48
-488,"docker-library
+438,"docker-library
 openjdk",https://github.com/docker-library/openjdk,451e66427f3c53fada288aaff950617c5864745f,,11/jre/Dockerfile,11/jre/buster/Dockerfile,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 # no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07",2019/09/14 06:18,,2018/04/17 09:20,,,11/jre/Dockerfile,917.0,,514 days 20:58:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-6bf7c33b63442d1522da80d56f47779c9b8ad91299111d557421d867b2f4dfb2R49,
-489,"docker-library
+439,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,,8/jre/windows/windowsservercore-ltsc2016/Dockerfile,8/jre/windows/windowsservercore-ltsc2016/Dockerfile,# TODO signature? checksum?,2019/05/24 05:11,,2019/05/24 05:11,,,8/jre/windows/windowsservercore-ltsc2016/Dockerfile,1130.0,,0 days 00:00:00.000000000,削除されていません,R34,,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-c2f2f30321718d31472b260382ce2d7baaf458a16a4a5803f8bed0d3f1f6cab8R34,
-490,"docker-library
+440,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,,11/jdk/windows/windowsservercore-1809/Dockerfile,11/jdk/windows/windowsservercore-1809/Dockerfile,# TODO signature? checksum?,2019/05/24 05:11,,2019/01/16 10:40,,,11/jdk/windows/windowsservercore-1809/Dockerfile,1130.0,,127 days 18:31:00.000000000,削除されていません,R34,,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-215b08ed9696e2231e9449cedcf0af07ad7d795cf3675bd502fea0670d1f8183R34,
-491,"docker-library
+441,"docker-library
 openjdk",https://github.com/docker-library/openjdk,572682ed1cb951ab8d978e8015e4a910093db920,,11/jre/windows/windowsservercore-1809/Dockerfile,11/jre/windows/windowsservercore-1809/Dockerfile,# TODO signature? checksum?,2019/07/17 08:32,,2019/07/17 08:32,,,11/jre/windows/windowsservercore-1809/Dockerfile,981.0,,0 days 00:00:00.000000000,削除されていません,R22,,https://github.com/docker-library/openjdk/commit/572682ed1cb951ab8d978e8015e4a910093db920#diff-e8be88cfe348ebde62d3eaae107138ca47af226be763dee854599393b0930bdbR22,
-492,"docker-library
+442,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,,8/jre/slim/Dockerfile,8/jre/slim-buster/Dockerfile,"# TODO strip ""demo"" and ""man"" folders?",2019/05/24 05:11,,2017/07/22 02:32,,,8/jre/slim/Dockerfile,1130.0,,671 days 02:39:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-fc425a0e54dcb94355da29ff828f6b402f1f4cacdab90f58695a3b656775c9bcR49,
-493,"docker-library
+443,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,451e66427f3c53fada288aaff950617c5864745f,8/jre/slim/Dockerfile,8/jre/slim-buster/Dockerfile,# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?,2019/05/24 05:11,2019/09/14 06:18,2017/07/22 02:32,,,8/jre/slim/Dockerfile,1130.0,8/jre/slim/Dockerfile,671 days 02:39:00.000000000,"113 days, 1:07:00",R40,R48,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-fc425a0e54dcb94355da29ff828f6b402f1f4cacdab90f58695a3b656775c9bcR40,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-fc425a0e54dcb94355da29ff828f6b402f1f4cacdab90f58695a3b656775c9bcR48
-494,"docker-library
+444,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,e715db19b8abe216948ef5b81dcb352273bd69f3,8/jre/slim/Dockerfile,8/jre/slim-buster/Dockerfile,# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7),2019/05/24 05:11,2019/05/24 05:11,2017/07/22 02:32,,,8/jre/slim/Dockerfile,1130.0,8/jre/slim/Dockerfile,671 days 02:39:00.000000000,0:00:00,R23,L23,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-fc425a0e54dcb94355da29ff828f6b402f1f4cacdab90f58695a3b656775c9bcR23,https://github.com/docker-library/openjdk/commit/e715db19b8abe216948ef5b81dcb352273bd69f3#diff-fc425a0e54dcb94355da29ff828f6b402f1f4cacdab90f58695a3b656775c9bcL23
-495,"docker-library
+445,"docker-library
 openjdk",https://github.com/docker-library/openjdk,451e66427f3c53fada288aaff950617c5864745f,,8/jre/slim/Dockerfile,8/jre/slim-buster/Dockerfile,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 # no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07",2019/09/14 06:18,,2017/07/22 02:32,,,8/jre/slim/Dockerfile,917.0,,784 days 03:46:00.000000000,削除されていません,R49,,https://github.com/docker-library/openjdk/commit/451e66427f3c53fada288aaff950617c5864745f#diff-fc425a0e54dcb94355da29ff828f6b402f1f4cacdab90f58695a3b656775c9bcR49,
-496,"docker-library
+446,"docker-library
 openjdk",https://github.com/docker-library/openjdk,572682ed1cb951ab8d978e8015e4a910093db920,,11/jre/windows/windowsservercore-ltsc2016/Dockerfile,11/jre/windows/windowsservercore-ltsc2016/Dockerfile,# TODO signature? checksum?,2019/07/17 08:32,,2019/07/17 08:32,,,11/jre/windows/windowsservercore-ltsc2016/Dockerfile,981.0,,0 days 00:00:00.000000000,削除されていません,R22,,https://github.com/docker-library/openjdk/commit/572682ed1cb951ab8d978e8015e4a910093db920#diff-e7835e9d9078d568205a3ec10c3c5e9376dc72061c29dcb18561cb26e5041de6R22,
-497,"docker-library
+447,"docker-library
 openjdk",https://github.com/docker-library/openjdk,db97c023c9f036d5e4df5fd9d1e5d21bdbabccce,554ff38a160f896ddd7f0fdca1cd34817e253a56,13/jdk/oracle/Dockerfile,13/jdk/oracle/Dockerfile,"# Default to UTF-8 file.encoding
 #ENV LANG C.UTF-8
 # TODO oraclelinux doesn't have C.UTF-8 by default??",2019/01/02 17:24,2019/05/25 06:29,2019/01/02 17:24,2020/03/18 06:09,,13/jdk/oracle/Dockerfile,1507.0,13/jdk/oracle/Dockerfile,0 days 00:00:00.000000000,"142 days, 13:05:00",R14,L15,https://github.com/docker-library/openjdk/commit/db97c023c9f036d5e4df5fd9d1e5d21bdbabccce#diff-31ff710c1916600c32be9f16861da4912146febe4f3f07449443e7253bf11d57R14,https://github.com/docker-library/openjdk/commit/554ff38a160f896ddd7f0fdca1cd34817e253a56#diff-31ff710c1916600c32be9f16861da4912146febe4f3f07449443e7253bf11d57L15
-498,"docker-library
+448,"docker-library
 openjdk",https://github.com/docker-library/openjdk,572682ed1cb951ab8d978e8015e4a910093db920,e2fbda03b975d10f70c32858cff764f0c8606ac9,11/jre/windows/windowsservercore-1803/Dockerfile,11/jre/windows/windowsservercore-1803/Dockerfile,# TODO signature? checksum?,2019/07/17 08:32,2019/12/10 07:35,2019/07/17 08:32,2019/12/10 07:35,,11/jre/windows/windowsservercore-1803/Dockerfile,981.0,11/jre/windows/windowsservercore-1803/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R22,L32,https://github.com/docker-library/openjdk/commit/572682ed1cb951ab8d978e8015e4a910093db920#diff-0367c01d5ab6357c2b6349d857d8802564dafd06aa227cba60ea2e1d93002ee5R22,https://github.com/docker-library/openjdk/commit/e2fbda03b975d10f70c32858cff764f0c8606ac9#diff-0367c01d5ab6357c2b6349d857d8802564dafd06aa227cba60ea2e1d93002ee5L32
-499,"docker-library
+449,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,e2fbda03b975d10f70c32858cff764f0c8606ac9,11/jdk/windows/windowsservercore-1803/Dockerfile,11/jdk/windows/windowsservercore-1803/Dockerfile,# TODO signature? checksum?,2019/05/24 05:11,2019/12/10 07:35,2018/09/07 02:16,2019/12/10 07:35,,11/jdk/windows/windowsservercore-1803/Dockerfile,1130.0,11/jdk/windows/windowsservercore-1803/Dockerfile,259 days 02:55:00.000000000,ファイル削除,R34,L32,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-b62af2e32f78fa2b07bc3f9088a5d1f467802ea368c66812d962055f4d3e6be1R34,https://github.com/docker-library/openjdk/commit/e2fbda03b975d10f70c32858cff764f0c8606ac9#diff-b62af2e32f78fa2b07bc3f9088a5d1f467802ea368c66812d962055f4d3e6be1L32
-500,"docker-library
+450,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,e2fbda03b975d10f70c32858cff764f0c8606ac9,8/jre/windows/windowsservercore-1803/Dockerfile,8/jre/windows/windowsservercore-1803/Dockerfile,# TODO signature? checksum?,2019/05/24 05:11,2019/12/10 07:35,2019/05/24 05:11,2019/12/10 07:35,,8/jre/windows/windowsservercore-1803/Dockerfile,1130.0,8/jre/windows/windowsservercore-1803/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R34,L32,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-b593b4cbae8c9d41ea290ed07d6b47e6ce2cfd72c38265ce11a040f9b56072e2R34,https://github.com/docker-library/openjdk/commit/e2fbda03b975d10f70c32858cff764f0c8606ac9#diff-b593b4cbae8c9d41ea290ed07d6b47e6ce2cfd72c38265ce11a040f9b56072e2L32
-501,"docker-library
+451,"docker-library
 openjdk",https://github.com/docker-library/openjdk,3eb0351b208d739fac35345c85e3c6237c2114ec,e2fbda03b975d10f70c32858cff764f0c8606ac9,8/jdk/windows/windowsservercore-1803/Dockerfile,8/jdk/windows/windowsservercore-1803/Dockerfile,# TODO signature? checksum?,2019/05/24 05:11,2019/12/10 07:35,2018/11/08 01:22,2019/12/10 07:35,,8/jdk/windows/windowsservercore-1803/Dockerfile,1130.0,8/jdk/windows/windowsservercore-1803/Dockerfile,197 days 03:49:00.000000000,ファイル削除,R34,L32,https://github.com/docker-library/openjdk/commit/3eb0351b208d739fac35345c85e3c6237c2114ec#diff-9a360396e56b40e01aa51a88e80d626d223d4bbb9c3ebea0f770006c12e467bcR34,https://github.com/docker-library/openjdk/commit/e2fbda03b975d10f70c32858cff764f0c8606ac9#diff-9a360396e56b40e01aa51a88e80d626d223d4bbb9c3ebea0f770006c12e467bcL32
-502,"docker-library
+452,"docker-library
 openjdk",https://github.com/docker-library/openjdk,7d6b0528da55c7b74feff4f565c9dbb8907b8c9a,349703e3d620e86fb46e2a4529a810c7116a9b4e,12/jdk/oracle/Dockerfile,12/jdk/oracle/Dockerfile,"# Default to UTF-8 file.encoding
 #ENV LANG C.UTF-8
 # TODO oraclelinux doesn't have C.UTF-8 by default??",2018/10/02 04:16,2019/05/25 06:28,2018/10/02 04:16,2019/09/18 08:59,,12/jdk/oracle/Dockerfile,1676.0,12/jdk/oracle/Dockerfile,0 days 00:00:00.000000000,"235 days, 2:12:00",R14,L15,https://github.com/docker-library/openjdk/commit/7d6b0528da55c7b74feff4f565c9dbb8907b8c9a#diff-9b9bb46d238dde8bf1fb25bbebfb5d07726ebb7720b353d6ab7ebd8e6c216cffR14,https://github.com/docker-library/openjdk/commit/349703e3d620e86fb46e2a4529a810c7116a9b4e#diff-9b9bb46d238dde8bf1fb25bbebfb5d07726ebb7720b353d6ab7ebd8e6c216cffL15
-503,"docker-library
+453,"docker-library
 openjdk",https://github.com/docker-library/openjdk,7d6b0528da55c7b74feff4f565c9dbb8907b8c9a,dd945545f7ec210e1010ba247010fdbb70d64d65,11/jdk/oracle/Dockerfile,11/jdk/oracle/Dockerfile,"# Default to UTF-8 file.encoding
 #ENV LANG C.UTF-8
 # TODO oraclelinux doesn't have C.UTF-8 by default??",2018/10/02 04:16,2019/04/20 07:49,2018/10/02 04:16,2019/04/20 07:49,,11/jdk/oracle/Dockerfile,1676.0,11/jdk/oracle/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/openjdk/commit/7d6b0528da55c7b74feff4f565c9dbb8907b8c9a#diff-3755ef01d89600ed63d38d4f837e8703112d9d19434f0bf179c1c86517d54872R14,https://github.com/docker-library/openjdk/commit/dd945545f7ec210e1010ba247010fdbb70d64d65#diff-3755ef01d89600ed63d38d4f837e8703112d9d19434f0bf179c1c86517d54872L14
-504,"docker-library
+454,"docker-library
 openjdk",https://github.com/docker-library/openjdk,7d6b0528da55c7b74feff4f565c9dbb8907b8c9a,3a3c1189933c71b5f76f67befc601250f16227dd,10/jdk/oracle/Dockerfile,10/jdk/oracle/Dockerfile,"# Default to UTF-8 file.encoding
 #ENV LANG C.UTF-8
 # TODO oraclelinux doesn't have C.UTF-8 by default??",2018/10/02 04:16,2018/12/07 05:42,2018/10/02 04:16,2018/12/07 05:42,,10/jdk/oracle/Dockerfile,1676.0,10/jdk/oracle/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/openjdk/commit/7d6b0528da55c7b74feff4f565c9dbb8907b8c9a#diff-624ade85d4c2ef555bb09d7109f08b752ae2735ec2720bf2909bd494be7d7db5R14,https://github.com/docker-library/openjdk/commit/3a3c1189933c71b5f76f67befc601250f16227dd#diff-624ade85d4c2ef555bb09d7109f08b752ae2735ec2720bf2909bd494be7d7db5L14
-505,"docker-library
+455,"docker-library
 docker",https://github.com/docker-library/docker,5dd425e5b74a02bde63257e56c2bb67cbae74686,487a0ba15be708af420c13e9f0d787c89d8be372,18.09-rc/Dockerfile,18.09/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018/08/23 06:02,2019/09/05 13:23,2018/08/23 06:02,2019/09/05 13:23,,18.09-rc/Dockerfile,195.0,18.09/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R6,L6,https://github.com/docker-library/docker/commit/5dd425e5b74a02bde63257e56c2bb67cbae74686#diff-1e6a8e03c21253c04f7e7856b40f6e8bbd58cbf3c8791d01fd60a147f20ab3bfR6,https://github.com/docker-library/docker/commit/487a0ba15be708af420c13e9f0d787c89d8be372#diff-4b8decf3996b90b0b5d3d563787ebb2a901a6bd82ff2dc259c71a85dce43867dL6
-506,"docker-library
+456,"docker-library
 docker",https://github.com/docker-library/docker,5dd425e5b74a02bde63257e56c2bb67cbae74686,487a0ba15be708af420c13e9f0d787c89d8be372,18.09-rc/Dockerfile,18.09/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2018/08/23 06:02,2019/09/05 13:23,2018/08/23 06:02,2019/09/05 13:23,,18.09-rc/Dockerfile,195.0,18.09/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/5dd425e5b74a02bde63257e56c2bb67cbae74686#diff-1e6a8e03c21253c04f7e7856b40f6e8bbd58cbf3c8791d01fd60a147f20ab3bfR14,https://github.com/docker-library/docker/commit/487a0ba15be708af420c13e9f0d787c89d8be372#diff-4b8decf3996b90b0b5d3d563787ebb2a901a6bd82ff2dc259c71a85dce43867dL14
-507,"docker-library
+457,"docker-library
 docker",https://github.com/docker-library/docker,690c2cedc6c5e8a47507240b7d8a39a19f03bae6,157869f94ea90e2acb4d0f77045d99079ead821c,18.02-rc/Dockerfile,18.02-rc/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018/01/26 02:44,2018/02/09 02:29,2018/01/26 02:44,2018/02/09 02:29,,18.02-rc/Dockerfile,298.0,18.02-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R6,L6,https://github.com/docker-library/docker/commit/690c2cedc6c5e8a47507240b7d8a39a19f03bae6#diff-e52baca2590f1110e30d2c9f3f03c5f416a8cf50388c8d53583123c86a57c519R6,https://github.com/docker-library/docker/commit/157869f94ea90e2acb4d0f77045d99079ead821c#diff-e52baca2590f1110e30d2c9f3f03c5f416a8cf50388c8d53583123c86a57c519L6
-508,"docker-library
+458,"docker-library
 docker",https://github.com/docker-library/docker,690c2cedc6c5e8a47507240b7d8a39a19f03bae6,157869f94ea90e2acb4d0f77045d99079ead821c,18.02-rc/Dockerfile,18.02-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2018/01/26 02:44,2018/02/09 02:29,2018/01/26 02:44,2018/02/09 02:29,,18.02-rc/Dockerfile,298.0,18.02-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/690c2cedc6c5e8a47507240b7d8a39a19f03bae6#diff-e52baca2590f1110e30d2c9f3f03c5f416a8cf50388c8d53583123c86a57c519R14,https://github.com/docker-library/docker/commit/157869f94ea90e2acb4d0f77045d99079ead821c#diff-e52baca2590f1110e30d2c9f3f03c5f416a8cf50388c8d53583123c86a57c519L14
-509,"docker-library
+459,"docker-library
 docker",https://github.com/docker-library/docker,690c2cedc6c5e8a47507240b7d8a39a19f03bae6,d31c2d38a7ef9b58c34d35d64f168f9d5cd6a696,18.02-rc/dind/Dockerfile,18.06/dind/Dockerfile,# TODO aufs-tools,2018/01/26 02:44,2019/06/15 06:03,2018/01/26 02:44,2019/06/15 06:03,,18.02-rc/dind/Dockerfile,298.0,18.06/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R22,L22,https://github.com/docker-library/docker/commit/690c2cedc6c5e8a47507240b7d8a39a19f03bae6#diff-c086f799f28a46a788d0cf241d6ab7686b4911045972f08c3b93886b9e60a946R22,https://github.com/docker-library/docker/commit/d31c2d38a7ef9b58c34d35d64f168f9d5cd6a696#diff-4772a83b0c98165100083e6d61680bc5d01ce991502266291c21d8834e6b16f4L22
-510,"docker-library
+460,"docker-library
 docker",https://github.com/docker-library/docker,bc5d62520258cacb230485ee96754f9f9aa117c4,d31c2d38a7ef9b58c34d35d64f168f9d5cd6a696,18.03/dind/Dockerfile,18.06/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2018/05/09 03:15,2019/06/15 06:03,2018/01/26 02:44,2019/06/15 06:03,,18.03/dind/Dockerfile,246.0,18.06/dind/Dockerfile,103 days 00:31:00.000000000,ファイル削除,R31,L31,https://github.com/docker-library/docker/commit/bc5d62520258cacb230485ee96754f9f9aa117c4#diff-e6469a8c2a8537104ff04a05c246affcc045af5a6f53da00bd49b807a7221072R31,https://github.com/docker-library/docker/commit/d31c2d38a7ef9b58c34d35d64f168f9d5cd6a696#diff-4772a83b0c98165100083e6d61680bc5d01ce991502266291c21d8834e6b16f4L31
-511,"docker-library
+461,"docker-library
 docker",https://github.com/docker-library/docker,a98e0c42a96497670c36f4b2dcad2bcc81f18f35,157869f94ea90e2acb4d0f77045d99079ead821c,1.7/dind/Dockerfile,17.09/dind/Dockerfile,# TODO aufs-tools,2015/08/07 04:55,2018/02/09 02:29,2015/08/07 04:55,2018/02/09 02:29,,1.7/dind/Dockerfile,839.0,17.09/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R11,L20,https://github.com/docker-library/docker/commit/a98e0c42a96497670c36f4b2dcad2bcc81f18f35#diff-b514535e73626fb8471cfa8b569b11f9bf7c8dfd290715205ba96c30e3b6b5d8R11,https://github.com/docker-library/docker/commit/157869f94ea90e2acb4d0f77045d99079ead821c#diff-b79bb6801475670e8649b7cf4006067777ce98db1df9ca2bdf025721c077c2b9L20
-512,"docker-library
+462,"docker-library
 docker",https://github.com/docker-library/docker,168a6d227d021c6d38c3986b7c668702ec172fa7,fc032db99e903fd80be9b32ab99361650624d4cd,17.06/dind/Dockerfile,17.06/dind/Dockerfile,# TODO aufs-tools,2017/09/30 02:02,2017/11/08 23:45,2017/09/30 02:02,2017/11/08 23:45,,17.06/dind/Dockerfile,424.0,17.06/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R12,L20,https://github.com/docker-library/docker/commit/168a6d227d021c6d38c3986b7c668702ec172fa7#diff-d1aec4b99e28e41a5f003ec8774457a9b8afb0ea037577fc84e3388946530ba1R12,https://github.com/docker-library/docker/commit/fc032db99e903fd80be9b32ab99361650624d4cd#diff-d1aec4b99e28e41a5f003ec8774457a9b8afb0ea037577fc84e3388946530ba1L20
-513,"docker-library
+463,"docker-library
 docker",https://github.com/docker-library/docker,a98e0c42a96497670c36f4b2dcad2bcc81f18f35,cf3d3343f291146f9b79ccafa725a9bb28257ea0,1.8-rc/dind/Dockerfile,17.12/dind/Dockerfile,# TODO aufs-tools,2015/08/07 04:55,2018/05/11 01:18,2015/08/07 04:55,2018/05/11 01:18,,1.8-rc/dind/Dockerfile,839.0,17.12/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R11,L20,https://github.com/docker-library/docker/commit/a98e0c42a96497670c36f4b2dcad2bcc81f18f35#diff-ef990a57daf9f8dac3513fd67d4a12be382e382f8d1c6b50156589456265b2acR11,https://github.com/docker-library/docker/commit/cf3d3343f291146f9b79ccafa725a9bb28257ea0#diff-dbfed13ee0709f3d4861c7f54b7329cec7e243531cdb5d9fa3ffe166b63579f4L20
-514,"docker-library
+464,"docker-library
 docker",https://github.com/docker-library/docker,bc5d62520258cacb230485ee96754f9f9aa117c4,cf3d3343f291146f9b79ccafa725a9bb28257ea0,17.12/dind/Dockerfile,17.12/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2018/05/09 03:15,2018/05/11 01:18,2015/08/07 04:55,2018/05/11 01:18,,17.12/dind/Dockerfile,246.0,17.12/dind/Dockerfile,1005 days 22:20:00.000000000,ファイル削除,R29,L29,https://github.com/docker-library/docker/commit/bc5d62520258cacb230485ee96754f9f9aa117c4#diff-dbfed13ee0709f3d4861c7f54b7329cec7e243531cdb5d9fa3ffe166b63579f4R29,https://github.com/docker-library/docker/commit/cf3d3343f291146f9b79ccafa725a9bb28257ea0#diff-dbfed13ee0709f3d4861c7f54b7329cec7e243531cdb5d9fa3ffe166b63579f4L29
-515,"docker-library
+465,"docker-library
 docker",https://github.com/docker-library/docker,84fbcfc4cbef254dce2e7ecd7fcff788da4690df,8f4d3d5ad30e80da03c7913772039cba42c138d3,18.06-rc/dind/Dockerfile,18.06-rc/dind/Dockerfile,# TODO aufs-tools,2018/07/03 02:02,2018/08/23 01:26,2018/07/03 02:02,2018/08/23 01:26,,18.06-rc/dind/Dockerfile,230.0,18.06-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R22,L22,https://github.com/docker-library/docker/commit/84fbcfc4cbef254dce2e7ecd7fcff788da4690df#diff-2bc144f440ff0d0515ba11fba19316abbc7494c5e87cfc2303588335c53230e9R22,https://github.com/docker-library/docker/commit/8f4d3d5ad30e80da03c7913772039cba42c138d3#diff-2bc144f440ff0d0515ba11fba19316abbc7494c5e87cfc2303588335c53230e9L22
-516,"docker-library
+466,"docker-library
 docker",https://github.com/docker-library/docker,84fbcfc4cbef254dce2e7ecd7fcff788da4690df,8f4d3d5ad30e80da03c7913772039cba42c138d3,18.06-rc/dind/Dockerfile,18.06-rc/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2018/07/03 02:02,2018/08/23 01:26,2018/07/03 02:02,2018/08/23 01:26,,18.06-rc/dind/Dockerfile,230.0,18.06-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R31,L31,https://github.com/docker-library/docker/commit/84fbcfc4cbef254dce2e7ecd7fcff788da4690df#diff-2bc144f440ff0d0515ba11fba19316abbc7494c5e87cfc2303588335c53230e9R31,https://github.com/docker-library/docker/commit/8f4d3d5ad30e80da03c7913772039cba42c138d3#diff-2bc144f440ff0d0515ba11fba19316abbc7494c5e87cfc2303588335c53230e9L31
-517,"docker-library
+467,"docker-library
 docker",https://github.com/docker-library/docker,84fbcfc4cbef254dce2e7ecd7fcff788da4690df,8f4d3d5ad30e80da03c7913772039cba42c138d3,18.06-rc/Dockerfile,18.06-rc/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018/07/03 02:02,2018/08/23 01:26,2018/07/03 02:02,2018/08/23 01:26,,18.06-rc/Dockerfile,230.0,18.06-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R6,L6,https://github.com/docker-library/docker/commit/84fbcfc4cbef254dce2e7ecd7fcff788da4690df#diff-82f78064c7adcbd315de16dc6103aa2c6db449280db2e5102cdab5aa31301868R6,https://github.com/docker-library/docker/commit/8f4d3d5ad30e80da03c7913772039cba42c138d3#diff-82f78064c7adcbd315de16dc6103aa2c6db449280db2e5102cdab5aa31301868L6
-518,"docker-library
+468,"docker-library
 docker",https://github.com/docker-library/docker,84fbcfc4cbef254dce2e7ecd7fcff788da4690df,8f4d3d5ad30e80da03c7913772039cba42c138d3,18.06-rc/Dockerfile,18.06-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2018/07/03 02:02,2018/08/23 01:26,2018/07/03 02:02,2018/08/23 01:26,,18.06-rc/Dockerfile,230.0,18.06-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/84fbcfc4cbef254dce2e7ecd7fcff788da4690df#diff-82f78064c7adcbd315de16dc6103aa2c6db449280db2e5102cdab5aa31301868R14,https://github.com/docker-library/docker/commit/8f4d3d5ad30e80da03c7913772039cba42c138d3#diff-82f78064c7adcbd315de16dc6103aa2c6db449280db2e5102cdab5aa31301868L14
-519,"docker-library
+469,"docker-library
 docker",https://github.com/docker-library/docker,98ffef81ebfa7601a9ed2f0bf56d78f426bf253c,,19.03-rc/Dockerfile,19.03-rc/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019/04/06 08:09,,2019/04/06 08:09,,,19.03-rc/Dockerfile,137.0,,0 days 00:00:00.000000000,削除されていません,R6,,https://github.com/docker-library/docker/commit/98ffef81ebfa7601a9ed2f0bf56d78f426bf253c#diff-d2069e5d2d8fb0cc9dade4f4f93c72318402ca8d1e2b303af0b2170e40add77fR6,
-520,"docker-library
+470,"docker-library
 docker",https://github.com/docker-library/docker,98ffef81ebfa7601a9ed2f0bf56d78f426bf253c,,19.03-rc/Dockerfile,19.03-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2019/04/06 08:09,,2019/04/06 08:09,,,19.03-rc/Dockerfile,137.0,,0 days 00:00:00.000000000,削除されていません,R14,,https://github.com/docker-library/docker/commit/98ffef81ebfa7601a9ed2f0bf56d78f426bf253c#diff-d2069e5d2d8fb0cc9dade4f4f93c72318402ca8d1e2b303af0b2170e40add77fR14,
-521,"docker-library
+471,"docker-library
 docker",https://github.com/docker-library/docker,4975dca2dd357705c5613045348402ab664ccdf0,,19.03/Dockerfile,19.03/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2019/07/23 05:18,,2019/07/23 05:18,,,19.03/Dockerfile,96.0,,0 days 00:00:00.000000000,削除されていません,R14,,https://github.com/docker-library/docker/commit/4975dca2dd357705c5613045348402ab664ccdf0#diff-49a5d08cbf09dabfbcb054d6f198d7d03981e0117403479b9aec8f8d7ec02770R14,
-522,"docker-library
+472,"docker-library
 docker",https://github.com/docker-library/docker,4975dca2dd357705c5613045348402ab664ccdf0,,19.03/Dockerfile,19.03/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2019/07/23 05:18,,2019/07/23 05:18,,,19.03/Dockerfile,96.0,,0 days 00:00:00.000000000,削除されていません,R6,,https://github.com/docker-library/docker/commit/4975dca2dd357705c5613045348402ab664ccdf0#diff-49a5d08cbf09dabfbcb054d6f198d7d03981e0117403479b9aec8f8d7ec02770R6,
-523,"docker-library
+473,"docker-library
 docker",https://github.com/docker-library/docker,27e5adeb0597e445e3b9df951f03eaf89131184b,487a0ba15be708af420c13e9f0d787c89d8be372,18.09-rc/Dockerfile,18.09-rc/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018/12/05 06:56,2019/09/05 13:23,2018/12/05 06:56,2019/09/05 13:23,,18.09-rc/Dockerfile,170.0,18.09-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R6,L6,https://github.com/docker-library/docker/commit/27e5adeb0597e445e3b9df951f03eaf89131184b#diff-1e6a8e03c21253c04f7e7856b40f6e8bbd58cbf3c8791d01fd60a147f20ab3bfR6,https://github.com/docker-library/docker/commit/487a0ba15be708af420c13e9f0d787c89d8be372#diff-1e6a8e03c21253c04f7e7856b40f6e8bbd58cbf3c8791d01fd60a147f20ab3bfL6
-524,"docker-library
+474,"docker-library
 docker",https://github.com/docker-library/docker,27e5adeb0597e445e3b9df951f03eaf89131184b,487a0ba15be708af420c13e9f0d787c89d8be372,18.09-rc/Dockerfile,18.09-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2018/12/05 06:56,2019/09/05 13:23,2018/12/05 06:56,2019/09/05 13:23,,18.09-rc/Dockerfile,170.0,18.09-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/27e5adeb0597e445e3b9df951f03eaf89131184b#diff-1e6a8e03c21253c04f7e7856b40f6e8bbd58cbf3c8791d01fd60a147f20ab3bfR14,https://github.com/docker-library/docker/commit/487a0ba15be708af420c13e9f0d787c89d8be372#diff-1e6a8e03c21253c04f7e7856b40f6e8bbd58cbf3c8791d01fd60a147f20ab3bfL14
-525,"docker-library
+475,"docker-library
 docker",https://github.com/docker-library/docker,f522868d85d70569fb3e90bd913efa1c3394a264,5f83f231f9fc12a9a3cd214376c567de664daa2f,17.09-rc/Dockerfile,17.12-rc/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2017/12/03 23:02,2018/03/01 02:44,2017/12/03 23:02,2018/03/01 02:44,,17.09-rc/Dockerfile,327.0,17.12-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R6,L6,https://github.com/docker-library/docker/commit/f522868d85d70569fb3e90bd913efa1c3394a264#diff-7ede9f6ed64d3b8e5a9121c200a633b8ca1704bff7811df0cabee344bf3d6e0aR6,https://github.com/docker-library/docker/commit/5f83f231f9fc12a9a3cd214376c567de664daa2f#diff-995397b74f49a28205c946743a30c32f521af86680d43b2b602b50ac20fad4eeL6
-526,"docker-library
+476,"docker-library
 docker",https://github.com/docker-library/docker,f522868d85d70569fb3e90bd913efa1c3394a264,5f83f231f9fc12a9a3cd214376c567de664daa2f,17.09-rc/Dockerfile,17.12-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/12/03 23:02,2018/03/01 02:44,2017/12/03 23:02,2018/03/01 02:44,,17.09-rc/Dockerfile,327.0,17.12-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/f522868d85d70569fb3e90bd913efa1c3394a264#diff-7ede9f6ed64d3b8e5a9121c200a633b8ca1704bff7811df0cabee344bf3d6e0aR14,https://github.com/docker-library/docker/commit/5f83f231f9fc12a9a3cd214376c567de664daa2f#diff-995397b74f49a28205c946743a30c32f521af86680d43b2b602b50ac20fad4eeL14
-527,"docker-library
+477,"docker-library
 docker",https://github.com/docker-library/docker,5dd425e5b74a02bde63257e56c2bb67cbae74686,487a0ba15be708af420c13e9f0d787c89d8be372,18.09-rc/dind/Dockerfile,18.09/dind/Dockerfile,# TODO aufs-tools,2018/08/23 06:02,2019/09/05 13:23,2018/08/23 06:02,2019/09/05 13:23,,18.09-rc/dind/Dockerfile,195.0,18.09/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R22,L24,https://github.com/docker-library/docker/commit/5dd425e5b74a02bde63257e56c2bb67cbae74686#diff-b6b639e76349ab0a6274b503ef9cd580c9a44b87a2e2b49389df82028a06cb36R22,https://github.com/docker-library/docker/commit/487a0ba15be708af420c13e9f0d787c89d8be372#diff-5bc2e6f2c8d80c28d24971a96485e96491fafe8ff7fa72654ca2ff941e147cbaL24
-528,"docker-library
+478,"docker-library
 docker",https://github.com/docker-library/docker,5dd425e5b74a02bde63257e56c2bb67cbae74686,487a0ba15be708af420c13e9f0d787c89d8be372,18.09-rc/dind/Dockerfile,18.09/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2018/08/23 06:02,2019/09/05 13:23,2018/08/23 06:02,2019/09/05 13:23,,18.09-rc/dind/Dockerfile,195.0,18.09/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R31,L33,https://github.com/docker-library/docker/commit/5dd425e5b74a02bde63257e56c2bb67cbae74686#diff-b6b639e76349ab0a6274b503ef9cd580c9a44b87a2e2b49389df82028a06cb36R31,https://github.com/docker-library/docker/commit/487a0ba15be708af420c13e9f0d787c89d8be372#diff-5bc2e6f2c8d80c28d24971a96485e96491fafe8ff7fa72654ca2ff941e147cbaL33
-529,"docker-library
+479,"docker-library
 docker",https://github.com/docker-library/docker,2f6926c4fb37274b90fae3ba6c3320619a8d0289,64f6d5eba928dd79b9ca1e7e879021a2baf4c705,17.07/windows/windowsservercore/Dockerfile,17.10/windows/windowsservercore/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/10/13 08:46,2017/11/22 02:48,2017/10/13 08:46,2017/11/22 02:48,,17.07/windows/windowsservercore/Dockerfile,405.0,17.10/windows/windowsservercore/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/2f6926c4fb37274b90fae3ba6c3320619a8d0289#diff-ebddb942130fd3b346a62d409055c24b61e8e41b1b15162e030904fab683c519R14,https://github.com/docker-library/docker/commit/64f6d5eba928dd79b9ca1e7e879021a2baf4c705#diff-acc59d7d1b230d30ac3917d949925299f569f2bb9cecb2cc73d1bb5ea7d2e7a2L14
-530,"docker-library
+480,"docker-library
 docker",https://github.com/docker-library/docker,2f6926c4fb37274b90fae3ba6c3320619a8d0289,62a456489acfe7443d426cd502ccf22130d1ccf9,17.10-rc/windows/windowsservercore/Dockerfile,17.10-rc/windows/windowsservercore/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/10/13 08:46,2017/10/19 01:49,2017/10/13 08:46,2017/10/19 01:49,,17.10-rc/windows/windowsservercore/Dockerfile,405.0,17.10-rc/windows/windowsservercore/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/2f6926c4fb37274b90fae3ba6c3320619a8d0289#diff-0cd657b6ce543eeefe76a836849762f739db6b105727584a226db38834898087R14,https://github.com/docker-library/docker/commit/62a456489acfe7443d426cd502ccf22130d1ccf9#diff-0cd657b6ce543eeefe76a836849762f739db6b105727584a226db38834898087L14
-531,"docker-library
+481,"docker-library
 docker",https://github.com/docker-library/docker,2f6926c4fb37274b90fae3ba6c3320619a8d0289,b1141312eeb02c7d9fb0815f7cfaf6827d434007,17.09/windows/windowsservercore/Dockerfile,17.09/windows/windowsservercore-1709/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/10/13 08:46,2017/12/09 03:26,2017/10/13 08:46,2017/12/09 03:26,,17.09/windows/windowsservercore/Dockerfile,405.0,17.09/windows/windowsservercore-1709/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/2f6926c4fb37274b90fae3ba6c3320619a8d0289#diff-c662ffe7577612941c626a39ab006171cfc31fad14cd181c5ae344f3176d9221R14,https://github.com/docker-library/docker/commit/b1141312eeb02c7d9fb0815f7cfaf6827d434007#diff-f884f06a6bf2930de9c3201b276253077cd2a8727f626927756022a442cd38d7L14
-532,"docker-library
+482,"docker-library
 docker",https://github.com/docker-library/docker,2f6926c4fb37274b90fae3ba6c3320619a8d0289,fc032db99e903fd80be9b32ab99361650624d4cd,17.06/windows/windowsservercore/Dockerfile,17.06/windows/windowsservercore/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/10/13 08:46,2017/11/08 23:45,2017/10/13 08:46,2017/11/08 23:45,,17.06/windows/windowsservercore/Dockerfile,405.0,17.06/windows/windowsservercore/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/2f6926c4fb37274b90fae3ba6c3320619a8d0289#diff-84091d31ca5f8cedf0892aff7d7ea8b7dacb2b64d168bc1a5706e92fe5a79686R14,https://github.com/docker-library/docker/commit/fc032db99e903fd80be9b32ab99361650624d4cd#diff-84091d31ca5f8cedf0892aff7d7ea8b7dacb2b64d168bc1a5706e92fe5a79686L14
-533,"docker-library
+483,"docker-library
 docker",https://github.com/docker-library/docker,5d58870994d0ba33a5228af06876fe2026752924,cf3d3343f291146f9b79ccafa725a9bb28257ea0,18.03-rc/dind/Dockerfile,18.05-rc/dind/Dockerfile,# TODO aufs-tools,2018/02/23 03:05,2018/05/11 01:18,2018/02/23 03:05,2018/05/11 01:18,,18.03-rc/dind/Dockerfile,277.0,18.05-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R22,L22,https://github.com/docker-library/docker/commit/5d58870994d0ba33a5228af06876fe2026752924#diff-fb7109e53e7aacdc868fce2a147d87d94c0327b44d1ce667dcca21b87a625cf7R22,https://github.com/docker-library/docker/commit/cf3d3343f291146f9b79ccafa725a9bb28257ea0#diff-2c839533729812fb844bd992be00f3554931f5253e862b7f0d66da42afa4d13dL22
-534,"docker-library
+484,"docker-library
 docker",https://github.com/docker-library/docker,bc5d62520258cacb230485ee96754f9f9aa117c4,cf3d3343f291146f9b79ccafa725a9bb28257ea0,18.05-rc/dind/Dockerfile,18.05-rc/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2018/05/09 03:15,2018/05/11 01:18,2018/02/23 03:05,2018/05/11 01:18,,18.05-rc/dind/Dockerfile,246.0,18.05-rc/dind/Dockerfile,75 days 00:10:00.000000000,ファイル削除,R31,L31,https://github.com/docker-library/docker/commit/bc5d62520258cacb230485ee96754f9f9aa117c4#diff-2c839533729812fb844bd992be00f3554931f5253e862b7f0d66da42afa4d13dR31,https://github.com/docker-library/docker/commit/cf3d3343f291146f9b79ccafa725a9bb28257ea0#diff-2c839533729812fb844bd992be00f3554931f5253e862b7f0d66da42afa4d13dL31
-535,"docker-library
+485,"docker-library
 docker",https://github.com/docker-library/docker,045fbbc0ac44b1db42ef8b499f2bef1db8dcfe61,4782798943949422d73ebc94407d277424afa58b,18.04-rc/dind/Dockerfile,18.05/dind/Dockerfile,# TODO aufs-tools,2018/04/04 02:45,2018/07/20 05:53,2018/04/04 02:45,2018/07/20 05:53,,18.04-rc/dind/Dockerfile,262.0,18.05/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R22,L22,https://github.com/docker-library/docker/commit/045fbbc0ac44b1db42ef8b499f2bef1db8dcfe61#diff-ab78b503cc9e8092d7899fedf0ac2019d57c19f93f3eb684b8652954fddab2adR22,https://github.com/docker-library/docker/commit/4782798943949422d73ebc94407d277424afa58b#diff-79e98b5306c7ecaaf3e03d2767fbb1f2292622fbd03dc4eb809b51342d5f10b8L22
-536,"docker-library
+486,"docker-library
 docker",https://github.com/docker-library/docker,bc5d62520258cacb230485ee96754f9f9aa117c4,4782798943949422d73ebc94407d277424afa58b,18.04/dind/Dockerfile,18.05/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2018/05/09 03:15,2018/07/20 05:53,2018/04/04 02:45,2018/07/20 05:53,,18.04/dind/Dockerfile,246.0,18.05/dind/Dockerfile,35 days 00:30:00.000000000,ファイル削除,R31,L31,https://github.com/docker-library/docker/commit/bc5d62520258cacb230485ee96754f9f9aa117c4#diff-517be1af06b537b414967ee719e70edc0287c4776db00a22a7294b4c70b192d5R31,https://github.com/docker-library/docker/commit/4782798943949422d73ebc94407d277424afa58b#diff-79e98b5306c7ecaaf3e03d2767fbb1f2292622fbd03dc4eb809b51342d5f10b8L31
-537,"docker-library
+487,"docker-library
 docker",https://github.com/docker-library/docker,5235be1da9e2347f1efbbc2a6689726cb72569ce,85c10e110faeb56a8b7ce51908cf58562195d795,17.11-rc/windows/windowsservercore/Dockerfile,17.11-rc/windows/windowsservercore/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/10/31 23:21,2017/11/17 04:22,2017/10/31 23:21,2017/11/17 04:22,,17.11-rc/windows/windowsservercore/Dockerfile,383.0,17.11-rc/windows/windowsservercore/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/5235be1da9e2347f1efbbc2a6689726cb72569ce#diff-2d371adf7d9d27a883584aa84b0a74e60cb08c663e378cc628ab4e561a47db5dR14,https://github.com/docker-library/docker/commit/85c10e110faeb56a8b7ce51908cf58562195d795#diff-2d371adf7d9d27a883584aa84b0a74e60cb08c663e378cc628ab4e561a47db5dL14
-538,"docker-library
+488,"docker-library
 docker",https://github.com/docker-library/docker,5235be1da9e2347f1efbbc2a6689726cb72569ce,64f6d5eba928dd79b9ca1e7e879021a2baf4c705,17.11-rc/dind/Dockerfile,17.11-rc/dind/Dockerfile,# TODO aufs-tools,2017/10/31 23:21,2017/11/22 02:48,2017/10/31 23:21,2017/11/22 02:48,,17.11-rc/dind/Dockerfile,383.0,17.11-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R13,L20,https://github.com/docker-library/docker/commit/5235be1da9e2347f1efbbc2a6689726cb72569ce#diff-3f56f222b3f71a1b4a9972cf1d560a0d6fc81b717570c2aea0d118eaef3dd1a9R13,https://github.com/docker-library/docker/commit/64f6d5eba928dd79b9ca1e7e879021a2baf4c705#diff-3f56f222b3f71a1b4a9972cf1d560a0d6fc81b717570c2aea0d118eaef3dd1a9L20
-539,"docker-library
+489,"docker-library
 docker",https://github.com/docker-library/docker,5235be1da9e2347f1efbbc2a6689726cb72569ce,64f6d5eba928dd79b9ca1e7e879021a2baf4c705,17.11-rc/Dockerfile,17.11-rc/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2017/10/31 23:21,2017/11/22 02:48,2017/10/31 23:21,2017/11/22 02:48,,17.11-rc/Dockerfile,383.0,17.11-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R6,L6,https://github.com/docker-library/docker/commit/5235be1da9e2347f1efbbc2a6689726cb72569ce#diff-3ec7f53867adc8649c6580c5d9d66e33dd371a7bd7209818229b5b870a7cef8cR6,https://github.com/docker-library/docker/commit/64f6d5eba928dd79b9ca1e7e879021a2baf4c705#diff-3ec7f53867adc8649c6580c5d9d66e33dd371a7bd7209818229b5b870a7cef8cL6
-540,"docker-library
+490,"docker-library
 docker",https://github.com/docker-library/docker,5235be1da9e2347f1efbbc2a6689726cb72569ce,64f6d5eba928dd79b9ca1e7e879021a2baf4c705,17.11-rc/Dockerfile,17.11-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/10/31 23:21,2017/11/22 02:48,2017/10/31 23:21,2017/11/22 02:48,,17.11-rc/Dockerfile,383.0,17.11-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/5235be1da9e2347f1efbbc2a6689726cb72569ce#diff-3ec7f53867adc8649c6580c5d9d66e33dd371a7bd7209818229b5b870a7cef8cR14,https://github.com/docker-library/docker/commit/64f6d5eba928dd79b9ca1e7e879021a2baf4c705#diff-3ec7f53867adc8649c6580c5d9d66e33dd371a7bd7209818229b5b870a7cef8cL14
-541,"docker-library
+491,"docker-library
 docker",https://github.com/docker-library/docker,737f83092a47b012d09a0cbf0ed72759550301cb,765f60eed4036b5c06f0e33967443f80b5251e09,1.13-rc/experimental/dind/Dockerfile,1.13-rc/experimental/dind/Dockerfile,# TODO aufs-tools,2016/11/12 10:36,2016/11/13 01:13,2016/11/12 10:36,2016/11/13 01:13,,1.13-rc/experimental/dind/Dockerfile,628.0,1.13-rc/experimental/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R12,L12,https://github.com/docker-library/docker/commit/737f83092a47b012d09a0cbf0ed72759550301cb#diff-2c02fdce73305e84ba52176222dbaf686f353eb2610457d355c327dda482f800R12,https://github.com/docker-library/docker/commit/765f60eed4036b5c06f0e33967443f80b5251e09#diff-2c02fdce73305e84ba52176222dbaf686f353eb2610457d355c327dda482f800L12
-542,"docker-library
+492,"docker-library
 docker",https://github.com/docker-library/docker,737f83092a47b012d09a0cbf0ed72759550301cb,b202ec7e529f5426e2ad7e8c0a8b82cacd406573,1.13-rc/dind/Dockerfile,1.13-rc/dind/Dockerfile,# TODO aufs-tools,2016/11/12 10:36,2017/01/19 03:43,2016/11/12 10:36,2017/01/19 03:43,,1.13-rc/dind/Dockerfile,628.0,1.13-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R12,L12,https://github.com/docker-library/docker/commit/737f83092a47b012d09a0cbf0ed72759550301cb#diff-c7cccbf85660c79d1c879145a82386aa946d71dd4da1f48fd7f94f267064db77R12,https://github.com/docker-library/docker/commit/b202ec7e529f5426e2ad7e8c0a8b82cacd406573#diff-c7cccbf85660c79d1c879145a82386aa946d71dd4da1f48fd7f94f267064db77L12
-543,"docker-library
+493,"docker-library
 docker",https://github.com/docker-library/docker,f1341e1e9a099073463b1e8192c45435ce3e6760,10835a2d936bb711d451de63b27c780a9f9a84e3,1.2/dind/Dockerfile,1.2/dind/Dockerfile,# TODO aufs-tools,2015/08/07 04:56,2015/08/22 12:24,2015/08/07 04:56,2015/08/22 12:24,,1.2/dind/Dockerfile,821.0,1.2/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R11,L11,https://github.com/docker-library/docker/commit/f1341e1e9a099073463b1e8192c45435ce3e6760#diff-0a81599082e294f0b3efd0c19071855f1c2c427c61f6eb9367b2e5020e3b17b6R11,https://github.com/docker-library/docker/commit/10835a2d936bb711d451de63b27c780a9f9a84e3#diff-0a81599082e294f0b3efd0c19071855f1c2c427c61f6eb9367b2e5020e3b17b6L11
-544,"docker-library
+494,"docker-library
 docker",https://github.com/docker-library/docker,f1341e1e9a099073463b1e8192c45435ce3e6760,10835a2d936bb711d451de63b27c780a9f9a84e3,1.5/dind/Dockerfile,1.5/dind/Dockerfile,# TODO aufs-tools,2015/08/07 04:56,2015/08/22 12:24,2015/08/07 04:56,2015/08/22 12:24,,1.5/dind/Dockerfile,821.0,1.5/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R11,L11,https://github.com/docker-library/docker/commit/f1341e1e9a099073463b1e8192c45435ce3e6760#diff-d9738be90fd5b1cd3787ed0fd9d66c6b2d7d981904e687f4f74f8e67c5da47a9R11,https://github.com/docker-library/docker/commit/10835a2d936bb711d451de63b27c780a9f9a84e3#diff-d9738be90fd5b1cd3787ed0fd9d66c6b2d7d981904e687f4f74f8e67c5da47a9L11
-545,"docker-library
+495,"docker-library
 docker",https://github.com/docker-library/docker,f1341e1e9a099073463b1e8192c45435ce3e6760,10835a2d936bb711d451de63b27c780a9f9a84e3,1.1/dind/Dockerfile,1.1/dind/Dockerfile,# TODO aufs-tools,2015/08/07 04:56,2015/08/22 12:24,2015/08/07 04:56,2015/08/22 12:24,,1.1/dind/Dockerfile,821.0,1.1/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R11,L11,https://github.com/docker-library/docker/commit/f1341e1e9a099073463b1e8192c45435ce3e6760#diff-1a9a321709bc506af9b5888038e0efc665c5064212679179fcf843a4a5b94151R11,https://github.com/docker-library/docker/commit/10835a2d936bb711d451de63b27c780a9f9a84e3#diff-1a9a321709bc506af9b5888038e0efc665c5064212679179fcf843a4a5b94151L11
-546,"docker-library
+496,"docker-library
 docker",https://github.com/docker-library/docker,f1341e1e9a099073463b1e8192c45435ce3e6760,10835a2d936bb711d451de63b27c780a9f9a84e3,1.3/dind/Dockerfile,1.3/dind/Dockerfile,# TODO aufs-tools,2015/08/07 04:56,2015/08/22 12:24,2015/08/07 04:56,2015/08/22 12:24,,1.3/dind/Dockerfile,821.0,1.3/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R11,L11,https://github.com/docker-library/docker/commit/f1341e1e9a099073463b1e8192c45435ce3e6760#diff-d9d97d18bf1fe7f9d1b2c0aeafc790b05a37982dd10a37d8c2d273def8e01881R11,https://github.com/docker-library/docker/commit/10835a2d936bb711d451de63b27c780a9f9a84e3#diff-d9d97d18bf1fe7f9d1b2c0aeafc790b05a37982dd10a37d8c2d273def8e01881L11
-547,"docker-library
+497,"docker-library
 docker",https://github.com/docker-library/docker,f1341e1e9a099073463b1e8192c45435ce3e6760,10835a2d936bb711d451de63b27c780a9f9a84e3,1.0/dind/Dockerfile,1.0/dind/Dockerfile,# TODO aufs-tools,2015/08/07 04:56,2015/08/22 12:24,2015/08/07 04:56,2015/08/22 12:24,,1.0/dind/Dockerfile,821.0,1.0/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R11,L11,https://github.com/docker-library/docker/commit/f1341e1e9a099073463b1e8192c45435ce3e6760#diff-9352fe0d2f1a479db67653b48a9bd34d369ac9138a8469ebb60c32cdb404a96fR11,https://github.com/docker-library/docker/commit/10835a2d936bb711d451de63b27c780a9f9a84e3#diff-9352fe0d2f1a479db67653b48a9bd34d369ac9138a8469ebb60c32cdb404a96fL11
-548,"docker-library
+498,"docker-library
 docker",https://github.com/docker-library/docker,f1341e1e9a099073463b1e8192c45435ce3e6760,10835a2d936bb711d451de63b27c780a9f9a84e3,1.4/dind/Dockerfile,1.4/dind/Dockerfile,# TODO aufs-tools,2015/08/07 04:56,2015/08/22 12:24,2015/08/07 04:56,2015/08/22 12:24,,1.4/dind/Dockerfile,821.0,1.4/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R11,L11,https://github.com/docker-library/docker/commit/f1341e1e9a099073463b1e8192c45435ce3e6760#diff-1299db36fde751ce779c083534f6e83fda969ad2da52009a85badc868191d5f8R11,https://github.com/docker-library/docker/commit/10835a2d936bb711d451de63b27c780a9f9a84e3#diff-1299db36fde751ce779c083534f6e83fda969ad2da52009a85badc868191d5f8L11
-549,"docker-library
+499,"docker-library
 docker",https://github.com/docker-library/docker,e7e2e3119360567641d334f1d274952236632357,8390fd856922deec4ca7bf0004e6e8e81f60c9f2,17.06-rc/Dockerfile,17.06/Dockerfile,# TODO ENV DOCKER_SHA256,2017/05/31 01:53,2017/06/08 08:31,2017/05/31 01:53,2017/11/08 23:45,,17.06-rc/Dockerfile,517.0,17.06-rc/Dockerfile,0 days 00:00:00.000000000,"8 days, 6:38:00",R8,R8,https://github.com/docker-library/docker/commit/e7e2e3119360567641d334f1d274952236632357#diff-b61af8bd4f9cb155a06922e47136400eeb9392ed06c45e17915555cde404a721R8,https://github.com/docker-library/docker/commit/8390fd856922deec4ca7bf0004e6e8e81f60c9f2#diff-b61af8bd4f9cb155a06922e47136400eeb9392ed06c45e17915555cde404a721R8
-550,"docker-library
+500,"docker-library
 docker",https://github.com/docker-library/docker,8390fd856922deec4ca7bf0004e6e8e81f60c9f2,fc032db99e903fd80be9b32ab99361650624d4cd,17.06-rc/Dockerfile,17.06/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/06/08 08:31,2017/11/08 23:45,2017/05/31 01:53,2017/11/08 23:45,,17.06-rc/Dockerfile,504.0,17.06/Dockerfile,8 days 06:38:00.000000000,ファイル削除,R9,L14,https://github.com/docker-library/docker/commit/8390fd856922deec4ca7bf0004e6e8e81f60c9f2#diff-b61af8bd4f9cb155a06922e47136400eeb9392ed06c45e17915555cde404a721R9,https://github.com/docker-library/docker/commit/fc032db99e903fd80be9b32ab99361650624d4cd#diff-2af30628f708ea177c818288ba2704ebe0e572c26e6061f19014d4f894917110L14
-551,"docker-library
+501,"docker-library
 docker",https://github.com/docker-library/docker,454a0ff9e99d4fde7112b25d64d25f940ab28a99,fc032db99e903fd80be9b32ab99361650624d4cd,17.06/Dockerfile,17.06/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2017/10/12 06:31,2017/11/08 23:45,2017/05/31 01:53,2017/11/08 23:45,,17.06/Dockerfile,417.0,17.06/Dockerfile,134 days 04:38:00.000000000,ファイル削除,R6,L6,https://github.com/docker-library/docker/commit/454a0ff9e99d4fde7112b25d64d25f940ab28a99#diff-2af30628f708ea177c818288ba2704ebe0e572c26e6061f19014d4f894917110R6,https://github.com/docker-library/docker/commit/fc032db99e903fd80be9b32ab99361650624d4cd#diff-2af30628f708ea177c818288ba2704ebe0e572c26e6061f19014d4f894917110L6
-552,"docker-library
+502,"docker-library
 docker",https://github.com/docker-library/docker,27e5adeb0597e445e3b9df951f03eaf89131184b,487a0ba15be708af420c13e9f0d787c89d8be372,18.09-rc/dind/Dockerfile,18.09-rc/dind/Dockerfile,# TODO aufs-tools,2018/12/05 06:56,2019/09/05 13:23,2018/12/05 06:56,2019/09/05 13:23,,18.09-rc/dind/Dockerfile,170.0,18.09-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R22,L24,https://github.com/docker-library/docker/commit/27e5adeb0597e445e3b9df951f03eaf89131184b#diff-b6b639e76349ab0a6274b503ef9cd580c9a44b87a2e2b49389df82028a06cb36R22,https://github.com/docker-library/docker/commit/487a0ba15be708af420c13e9f0d787c89d8be372#diff-b6b639e76349ab0a6274b503ef9cd580c9a44b87a2e2b49389df82028a06cb36L24
-553,"docker-library
+503,"docker-library
 docker",https://github.com/docker-library/docker,27e5adeb0597e445e3b9df951f03eaf89131184b,487a0ba15be708af420c13e9f0d787c89d8be372,18.09-rc/dind/Dockerfile,18.09-rc/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2018/12/05 06:56,2019/09/05 13:23,2018/12/05 06:56,2019/09/05 13:23,,18.09-rc/dind/Dockerfile,170.0,18.09-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R31,L33,https://github.com/docker-library/docker/commit/27e5adeb0597e445e3b9df951f03eaf89131184b#diff-b6b639e76349ab0a6274b503ef9cd580c9a44b87a2e2b49389df82028a06cb36R31,https://github.com/docker-library/docker/commit/487a0ba15be708af420c13e9f0d787c89d8be372#diff-b6b639e76349ab0a6274b503ef9cd580c9a44b87a2e2b49389df82028a06cb36L33
-554,"docker-library
+504,"docker-library
 docker",https://github.com/docker-library/docker,2aa6d388f205fc20ad22402bfed4ece715c7cb48,b1141312eeb02c7d9fb0815f7cfaf6827d434007,17.09/windows/windowsservercore-ltsc2016/Dockerfile,17.09/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/11/23 08:09,2017/12/09 03:26,2017/11/23 08:09,2017/12/09 03:26,,17.09/windows/windowsservercore-ltsc2016/Dockerfile,334.0,17.09/windows/windowsservercore-ltsc2016/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/2aa6d388f205fc20ad22402bfed4ece715c7cb48#diff-03ca68337fa539ac589a8922ffd5acdd99e2754759b119e8c7f97264ae3900b2R14,https://github.com/docker-library/docker/commit/b1141312eeb02c7d9fb0815f7cfaf6827d434007#diff-03ca68337fa539ac589a8922ffd5acdd99e2754759b119e8c7f97264ae3900b2L14
-555,"docker-library
+505,"docker-library
 docker",https://github.com/docker-library/docker,5a196cae40e2a0ab5050cf6d79b697e032352b24,8390fd856922deec4ca7bf0004e6e8e81f60c9f2,17.05/Dockerfile,17.05/Dockerfile,# TODO ENV DOCKER_SHA256,2017/05/11 13:11,2017/06/08 08:31,2016/03/31 06:43,2017/06/29 10:31,,17.05/Dockerfile,524.0,17.05/Dockerfile,406 days 06:28:00.000000000,"27 days, 19:20:00",R8,R8,https://github.com/docker-library/docker/commit/5a196cae40e2a0ab5050cf6d79b697e032352b24#diff-49b1ebd7bceef1dc5540beefd95d35c2788ac11d0cc334b96523bc18a5b0e20eR8,https://github.com/docker-library/docker/commit/8390fd856922deec4ca7bf0004e6e8e81f60c9f2#diff-49b1ebd7bceef1dc5540beefd95d35c2788ac11d0cc334b96523bc18a5b0e20eR8
-556,"docker-library
+506,"docker-library
 docker",https://github.com/docker-library/docker,8390fd856922deec4ca7bf0004e6e8e81f60c9f2,daa7feb87044d35b9676778fe46130f141c807d1,17.05/Dockerfile,17.05/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/06/08 08:31,2017/06/29 10:31,2016/03/31 06:43,2017/06/29 10:31,,17.05/Dockerfile,504.0,17.05/Dockerfile,434 days 01:48:00.000000000,ファイル削除,R9,L8,https://github.com/docker-library/docker/commit/8390fd856922deec4ca7bf0004e6e8e81f60c9f2#diff-49b1ebd7bceef1dc5540beefd95d35c2788ac11d0cc334b96523bc18a5b0e20eR9,https://github.com/docker-library/docker/commit/daa7feb87044d35b9676778fe46130f141c807d1#diff-49b1ebd7bceef1dc5540beefd95d35c2788ac11d0cc334b96523bc18a5b0e20eL8
-557,"docker-library
+507,"docker-library
 docker",https://github.com/docker-library/docker,5a196cae40e2a0ab5050cf6d79b697e032352b24,8390fd856922deec4ca7bf0004e6e8e81f60c9f2,17.03/Dockerfile,17.07/Dockerfile,# TODO ENV DOCKER_SHA256,2017/05/11 13:11,2017/06/08 08:31,2016/06/17 03:03,2017/10/19 01:49,,17.03/Dockerfile,524.0,17.03/Dockerfile,328 days 10:08:00.000000000,"27 days, 19:20:00",R8,R8,https://github.com/docker-library/docker/commit/5a196cae40e2a0ab5050cf6d79b697e032352b24#diff-07c8a4149ec4ecc45d1e2f1507b3537f7fa721d939ce5d8da82779f7ec192490R8,https://github.com/docker-library/docker/commit/8390fd856922deec4ca7bf0004e6e8e81f60c9f2#diff-07c8a4149ec4ecc45d1e2f1507b3537f7fa721d939ce5d8da82779f7ec192490R8
-558,"docker-library
+508,"docker-library
 docker",https://github.com/docker-library/docker,8390fd856922deec4ca7bf0004e6e8e81f60c9f2,62a456489acfe7443d426cd502ccf22130d1ccf9,17.03/Dockerfile,17.07/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/06/08 08:31,2017/10/19 01:49,2016/06/17 03:03,2017/10/19 01:49,,17.03/Dockerfile,504.0,17.07/Dockerfile,356 days 05:28:00.000000000,ファイル削除,R9,L14,https://github.com/docker-library/docker/commit/8390fd856922deec4ca7bf0004e6e8e81f60c9f2#diff-07c8a4149ec4ecc45d1e2f1507b3537f7fa721d939ce5d8da82779f7ec192490R9,https://github.com/docker-library/docker/commit/62a456489acfe7443d426cd502ccf22130d1ccf9#diff-1dbf11bc3b387bb710844556d1f54904a2fd3f67455580d0641e06fc20a14585L14
-559,"docker-library
+509,"docker-library
 docker",https://github.com/docker-library/docker,454a0ff9e99d4fde7112b25d64d25f940ab28a99,62a456489acfe7443d426cd502ccf22130d1ccf9,17.07/Dockerfile,17.07/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2017/10/12 06:31,2017/10/19 01:49,2016/06/17 03:03,2017/10/19 01:49,,17.07/Dockerfile,417.0,17.07/Dockerfile,482 days 03:28:00.000000000,ファイル削除,R6,L6,https://github.com/docker-library/docker/commit/454a0ff9e99d4fde7112b25d64d25f940ab28a99#diff-1dbf11bc3b387bb710844556d1f54904a2fd3f67455580d0641e06fc20a14585R6,https://github.com/docker-library/docker/commit/62a456489acfe7443d426cd502ccf22130d1ccf9#diff-1dbf11bc3b387bb710844556d1f54904a2fd3f67455580d0641e06fc20a14585L6
-560,"docker-library
+510,"docker-library
 docker",https://github.com/docker-library/docker,4d1f83ee6e25a5c2bb1c8a04de0643b1a964ba5e,a7fc73eef011c47cc2518149bc77a4b9bc7f9f41,1.12-rc/dind/Dockerfile,1.12-rc/dind/Dockerfile,# TODO aufs-tools,2016/06/17 03:03,2016/10/12 08:54,2016/06/17 03:03,2016/10/12 08:54,,1.12-rc/dind/Dockerfile,680.0,1.12-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R12,L12,https://github.com/docker-library/docker/commit/4d1f83ee6e25a5c2bb1c8a04de0643b1a964ba5e#diff-3df536ca86076affddafa1cc56e2924e55c3a92099686163a5d1e32664f60412R12,https://github.com/docker-library/docker/commit/a7fc73eef011c47cc2518149bc77a4b9bc7f9f41#diff-3df536ca86076affddafa1cc56e2924e55c3a92099686163a5d1e32664f60412L12
-561,"docker-library
+511,"docker-library
 docker",https://github.com/docker-library/docker,f60aacc67bcba2d5b45c28665742a60b99d24466,b33b5bffb560d4e4148506860d7c6b393315e339,17.06-rc/Dockerfile,17.06-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/07/15 04:39,2017/09/06 08:56,2017/07/15 04:39,2017/09/06 08:56,,17.06-rc/Dockerfile,471.0,17.06-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R8,L8,https://github.com/docker-library/docker/commit/f60aacc67bcba2d5b45c28665742a60b99d24466#diff-b61af8bd4f9cb155a06922e47136400eeb9392ed06c45e17915555cde404a721R8,https://github.com/docker-library/docker/commit/b33b5bffb560d4e4148506860d7c6b393315e339#diff-b61af8bd4f9cb155a06922e47136400eeb9392ed06c45e17915555cde404a721L8
-562,"docker-library
+512,"docker-library
 docker",https://github.com/docker-library/docker,e7e2e3119360567641d334f1d274952236632357,b33b5bffb560d4e4148506860d7c6b393315e339,17.06-rc/dind/Dockerfile,17.06-rc/dind/Dockerfile,# TODO aufs-tools,2017/05/31 01:53,2017/09/06 08:56,2017/05/31 01:53,2017/09/06 08:56,,17.06-rc/dind/Dockerfile,517.0,17.06-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R12,L12,https://github.com/docker-library/docker/commit/e7e2e3119360567641d334f1d274952236632357#diff-d9c23ce22a63ad06f6424b36477c26c66a242ef99e6f69aa93af281a813f6a0aR12,https://github.com/docker-library/docker/commit/b33b5bffb560d4e4148506860d7c6b393315e339#diff-d9c23ce22a63ad06f6424b36477c26c66a242ef99e6f69aa93af281a813f6a0aL12
-563,"docker-library
+513,"docker-library
 docker",https://github.com/docker-library/docker,20e81e7474e54f9edbb33c931e4731ef6c5b8335,e33e7226872e53dfa88bee09f153704a66fc103d,1.9-rc/dind/Dockerfile,1.9-rc/dind/Dockerfile,# TODO aufs-tools,2015/10/14 23:05,2015/11/21 04:15,2015/10/14 23:05,2015/11/21 04:15,,1.9-rc/dind/Dockerfile,758.0,1.9-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R11,L11,https://github.com/docker-library/docker/commit/20e81e7474e54f9edbb33c931e4731ef6c5b8335#diff-3584467a8847a9954a66eaa5d7d09a18ee6fabc445d09bd7640767c389a06767R11,https://github.com/docker-library/docker/commit/e33e7226872e53dfa88bee09f153704a66fc103d#diff-3584467a8847a9954a66eaa5d7d09a18ee6fabc445d09bd7640767c389a06767L11
-564,"docker-library
+514,"docker-library
 docker",https://github.com/docker-library/docker,98ffef81ebfa7601a9ed2f0bf56d78f426bf253c,,19.03-rc/dind/Dockerfile,19.03-rc/dind/Dockerfile,# TODO aufs-tools,2019/04/06 08:09,,2019/04/06 08:09,,,19.03-rc/dind/Dockerfile,137.0,,0 days 00:00:00.000000000,削除されていません,R22,,https://github.com/docker-library/docker/commit/98ffef81ebfa7601a9ed2f0bf56d78f426bf253c#diff-5f11371f70304a97129b711f693337aa308fad78441a73cc1677c936e989a5a9R22,
-565,"docker-library
+515,"docker-library
 docker",https://github.com/docker-library/docker,98ffef81ebfa7601a9ed2f0bf56d78f426bf253c,,19.03-rc/dind/Dockerfile,19.03-rc/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2019/04/06 08:09,,2019/04/06 08:09,,,19.03-rc/dind/Dockerfile,137.0,,0 days 00:00:00.000000000,削除されていません,R31,,https://github.com/docker-library/docker/commit/98ffef81ebfa7601a9ed2f0bf56d78f426bf253c#diff-5f11371f70304a97129b711f693337aa308fad78441a73cc1677c936e989a5a9R31,
-566,"docker-library
+516,"docker-library
 docker",https://github.com/docker-library/docker,4975dca2dd357705c5613045348402ab664ccdf0,,19.03/dind/Dockerfile,19.03/dind/Dockerfile,# TODO aufs-tools,2019/07/23 05:18,,2019/07/23 05:18,,,19.03/dind/Dockerfile,96.0,,0 days 00:00:00.000000000,削除されていません,R23,,https://github.com/docker-library/docker/commit/4975dca2dd357705c5613045348402ab664ccdf0#diff-119cb95b6220df7fcd664ffd6001b0885f1bb07febb27a0ad81a078a5e558316R23,
-567,"docker-library
+517,"docker-library
 docker",https://github.com/docker-library/docker,4975dca2dd357705c5613045348402ab664ccdf0,,19.03/dind/Dockerfile,19.03/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2019/07/23 05:18,,2019/07/23 05:18,,,19.03/dind/Dockerfile,96.0,,0 days 00:00:00.000000000,削除されていません,R32,,https://github.com/docker-library/docker/commit/4975dca2dd357705c5613045348402ab664ccdf0#diff-119cb95b6220df7fcd664ffd6001b0885f1bb07febb27a0ad81a078a5e558316R32,
-568,"docker-library
+518,"docker-library
 docker",https://github.com/docker-library/docker,5d58870994d0ba33a5228af06876fe2026752924,cf3d3343f291146f9b79ccafa725a9bb28257ea0,18.03-rc/Dockerfile,18.05-rc/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018/02/23 03:05,2018/05/11 01:18,2018/02/23 03:05,2018/05/11 01:18,,18.03-rc/Dockerfile,277.0,18.05-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R6,L6,https://github.com/docker-library/docker/commit/5d58870994d0ba33a5228af06876fe2026752924#diff-d0e3508fb8d9fef890a966913dcbe8d6ac682e0eebd0f9f70dabdadc417d4baaR6,https://github.com/docker-library/docker/commit/cf3d3343f291146f9b79ccafa725a9bb28257ea0#diff-c6314e8e0ca52d2475319744c6fe51b83430fde28fcc40847bb1eee967cd5d31L6
-569,"docker-library
+519,"docker-library
 docker",https://github.com/docker-library/docker,5d58870994d0ba33a5228af06876fe2026752924,cf3d3343f291146f9b79ccafa725a9bb28257ea0,18.03-rc/Dockerfile,18.05-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2018/02/23 03:05,2018/05/11 01:18,2018/02/23 03:05,2018/05/11 01:18,,18.03-rc/Dockerfile,277.0,18.05-rc/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/5d58870994d0ba33a5228af06876fe2026752924#diff-d0e3508fb8d9fef890a966913dcbe8d6ac682e0eebd0f9f70dabdadc417d4baaR14,https://github.com/docker-library/docker/commit/cf3d3343f291146f9b79ccafa725a9bb28257ea0#diff-c6314e8e0ca52d2475319744c6fe51b83430fde28fcc40847bb1eee967cd5d31L14
-570,"docker-library
+520,"docker-library
 docker",https://github.com/docker-library/docker,8de8842b2fffc6bb43609c133b54207ffb7b4ce2,d31c2d38a7ef9b58c34d35d64f168f9d5cd6a696,18.01-rc/Dockerfile,18.06/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2018/01/05 04:48,2019/06/15 06:03,2018/01/05 04:48,2019/06/15 06:03,,18.01-rc/Dockerfile,304.0,18.06/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/8de8842b2fffc6bb43609c133b54207ffb7b4ce2#diff-f0e2d4094cd60b4cdd0683e7297e5450c08112737b2a736082a8e91a5a69080bR14,https://github.com/docker-library/docker/commit/d31c2d38a7ef9b58c34d35d64f168f9d5cd6a696#diff-44013c595322a83530db809a4621dfb55db05ffb6a855911679f4e1b4eaff473L14
-571,"docker-library
+521,"docker-library
 docker",https://github.com/docker-library/docker,8de8842b2fffc6bb43609c133b54207ffb7b4ce2,d31c2d38a7ef9b58c34d35d64f168f9d5cd6a696,18.01-rc/Dockerfile,18.06/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018/01/05 04:48,2019/06/15 06:03,2018/01/05 04:48,2019/06/15 06:03,,18.01-rc/Dockerfile,304.0,18.06/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R6,L6,https://github.com/docker-library/docker/commit/8de8842b2fffc6bb43609c133b54207ffb7b4ce2#diff-f0e2d4094cd60b4cdd0683e7297e5450c08112737b2a736082a8e91a5a69080bR6,https://github.com/docker-library/docker/commit/d31c2d38a7ef9b58c34d35d64f168f9d5cd6a696#diff-44013c595322a83530db809a4621dfb55db05ffb6a855911679f4e1b4eaff473L6
-572,"docker-library
+522,"docker-library
 docker",https://github.com/docker-library/docker,ce8784112e81f724c96dae8272dd7367d712f3e9,157869f94ea90e2acb4d0f77045d99079ead821c,17.09-rc/Dockerfile,17.09/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/09/08 01:31,2018/02/09 02:29,2017/09/08 01:31,2018/02/09 02:29,,17.09-rc/Dockerfile,440.0,17.09/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R8,L14,https://github.com/docker-library/docker/commit/ce8784112e81f724c96dae8272dd7367d712f3e9#diff-7ede9f6ed64d3b8e5a9121c200a633b8ca1704bff7811df0cabee344bf3d6e0aR8,https://github.com/docker-library/docker/commit/157869f94ea90e2acb4d0f77045d99079ead821c#diff-18430795b15f6e9b866d1678c15628fb1cdc477e404260f3878a0ee5103373d7L14
-573,"docker-library
+523,"docker-library
 docker",https://github.com/docker-library/docker,454a0ff9e99d4fde7112b25d64d25f940ab28a99,157869f94ea90e2acb4d0f77045d99079ead821c,17.09/Dockerfile,17.09/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2017/10/12 06:31,2018/02/09 02:29,2017/09/08 01:31,2018/02/09 02:29,,17.09/Dockerfile,417.0,17.09/Dockerfile,34 days 05:00:00.000000000,ファイル削除,R6,L6,https://github.com/docker-library/docker/commit/454a0ff9e99d4fde7112b25d64d25f940ab28a99#diff-18430795b15f6e9b866d1678c15628fb1cdc477e404260f3878a0ee5103373d7R6,https://github.com/docker-library/docker/commit/157869f94ea90e2acb4d0f77045d99079ead821c#diff-18430795b15f6e9b866d1678c15628fb1cdc477e404260f3878a0ee5103373d7L6
-574,"docker-library
+524,"docker-library
 docker",https://github.com/docker-library/docker,8ada62f762b30d09fd54664710c0ef3b64038f07,cf3d3343f291146f9b79ccafa725a9bb28257ea0,17.10-rc/Dockerfile,17.12/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/10/06 01:38,2018/05/11 01:18,2017/10/06 01:38,2018/05/11 01:18,,17.10-rc/Dockerfile,421.0,17.12/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R8,L14,https://github.com/docker-library/docker/commit/8ada62f762b30d09fd54664710c0ef3b64038f07#diff-790c395add987f05a2ace2619c1ac8761f2b3f351d3f50ab568ab380706638c7R8,https://github.com/docker-library/docker/commit/cf3d3343f291146f9b79ccafa725a9bb28257ea0#diff-3e90b3228d4b7e3ddd2ab731adcec3339f2e19f8094c6859e7e1590c7df13ac4L14
-575,"docker-library
+525,"docker-library
 docker",https://github.com/docker-library/docker,454a0ff9e99d4fde7112b25d64d25f940ab28a99,cf3d3343f291146f9b79ccafa725a9bb28257ea0,17.10-rc/Dockerfile,17.12/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2017/10/12 06:31,2018/05/11 01:18,2017/10/06 01:38,2018/05/11 01:18,,17.10-rc/Dockerfile,417.0,17.12/Dockerfile,6 days 04:53:00.000000000,ファイル削除,R6,L6,https://github.com/docker-library/docker/commit/454a0ff9e99d4fde7112b25d64d25f940ab28a99#diff-790c395add987f05a2ace2619c1ac8761f2b3f351d3f50ab568ab380706638c7R6,https://github.com/docker-library/docker/commit/cf3d3343f291146f9b79ccafa725a9bb28257ea0#diff-3e90b3228d4b7e3ddd2ab731adcec3339f2e19f8094c6859e7e1590c7df13ac4L6
-576,"docker-library
+526,"docker-library
 docker",https://github.com/docker-library/docker,2c75eb72ab98b95256be008aa93efdec289d96e8,8390fd856922deec4ca7bf0004e6e8e81f60c9f2,17.03-rc/Dockerfile,17.03-rc/Dockerfile,# TODO ENV DOCKER_SHA256,2017/05/31 03:18,2017/06/08 08:31,2017/02/23 06:49,2017/06/29 10:31,,17.03-rc/Dockerfile,511.0,17.03-rc/Dockerfile,96 days 20:29:00.000000000,"8 days, 5:13:00",R8,R8,https://github.com/docker-library/docker/commit/2c75eb72ab98b95256be008aa93efdec289d96e8#diff-0d673b553af8f4e9437c5c781321cda4b74e4cbe98b4ea6646048cbdf78b45e5R8,https://github.com/docker-library/docker/commit/8390fd856922deec4ca7bf0004e6e8e81f60c9f2#diff-0d673b553af8f4e9437c5c781321cda4b74e4cbe98b4ea6646048cbdf78b45e5R8
-577,"docker-library
+527,"docker-library
 docker",https://github.com/docker-library/docker,8390fd856922deec4ca7bf0004e6e8e81f60c9f2,daa7feb87044d35b9676778fe46130f141c807d1,17.03-rc/Dockerfile,17.03-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/06/08 08:31,2017/06/29 10:31,2017/02/23 06:49,2017/06/29 10:31,,17.03-rc/Dockerfile,504.0,17.03-rc/Dockerfile,105 days 01:42:00.000000000,ファイル削除,R9,L8,https://github.com/docker-library/docker/commit/8390fd856922deec4ca7bf0004e6e8e81f60c9f2#diff-0d673b553af8f4e9437c5c781321cda4b74e4cbe98b4ea6646048cbdf78b45e5R9,https://github.com/docker-library/docker/commit/daa7feb87044d35b9676778fe46130f141c807d1#diff-0d673b553af8f4e9437c5c781321cda4b74e4cbe98b4ea6646048cbdf78b45e5L8
-578,"docker-library
+528,"docker-library
 docker",https://github.com/docker-library/docker,06717e6f2add8226068bec54abb23e646dea90e0,daa7feb87044d35b9676778fe46130f141c807d1,17.03-rc/dind/Dockerfile,17.03-rc/dind/Dockerfile,# TODO aufs-tools,2017/02/23 06:49,2017/06/29 10:31,2017/02/23 06:49,2017/06/29 10:31,,17.03-rc/dind/Dockerfile,589.0,17.03-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R12,L12,https://github.com/docker-library/docker/commit/06717e6f2add8226068bec54abb23e646dea90e0#diff-dfa38d313a5acfc05b2ace4d14aa978abfb5d8a14dff360cae6326577419a7c0R12,https://github.com/docker-library/docker/commit/daa7feb87044d35b9676778fe46130f141c807d1#diff-dfa38d313a5acfc05b2ace4d14aa978abfb5d8a14dff360cae6326577419a7c0L12
-579,"docker-library
+529,"docker-library
 docker",https://github.com/docker-library/docker,f522868d85d70569fb3e90bd913efa1c3394a264,17ecaa0f10ab0882e808239ef8d7ee930c06eaf0,17.09-rc/windows/windowsservercore-1709/Dockerfile,17.09-rc/windows/windowsservercore-1709/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/12/03 23:02,2017/12/05 09:35,2017/12/03 23:02,2017/12/05 09:35,,17.09-rc/windows/windowsservercore-1709/Dockerfile,327.0,17.09-rc/windows/windowsservercore-1709/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/f522868d85d70569fb3e90bd913efa1c3394a264#diff-eef6d0b2c58aa21cea4b7397aa415da9d1f19d0fd99e5954f5ae90d7bd22c5caR14,https://github.com/docker-library/docker/commit/17ecaa0f10ab0882e808239ef8d7ee930c06eaf0#diff-eef6d0b2c58aa21cea4b7397aa415da9d1f19d0fd99e5954f5ae90d7bd22c5caL14
-580,"docker-library
+530,"docker-library
 docker",https://github.com/docker-library/docker,f522868d85d70569fb3e90bd913efa1c3394a264,17ecaa0f10ab0882e808239ef8d7ee930c06eaf0,17.09-rc/windows/windowsservercore-ltsc2016/Dockerfile,17.09-rc/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/12/03 23:02,2017/12/05 09:35,2017/12/03 23:02,2017/12/05 09:35,,17.09-rc/windows/windowsservercore-ltsc2016/Dockerfile,327.0,17.09-rc/windows/windowsservercore-ltsc2016/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/f522868d85d70569fb3e90bd913efa1c3394a264#diff-212b2e8a0105dd6b3f2cfae717a6434b25d8de6d65bdb5abe97ee88e6822a1fcR14,https://github.com/docker-library/docker/commit/17ecaa0f10ab0882e808239ef8d7ee930c06eaf0#diff-212b2e8a0105dd6b3f2cfae717a6434b25d8de6d65bdb5abe97ee88e6822a1fcL14
-581,"docker-library
+531,"docker-library
 docker",https://github.com/docker-library/docker,ce8784112e81f724c96dae8272dd7367d712f3e9,5f83f231f9fc12a9a3cd214376c567de664daa2f,17.09-rc/dind/Dockerfile,17.12-rc/dind/Dockerfile,# TODO aufs-tools,2017/09/08 01:31,2018/03/01 02:44,2017/09/08 01:31,2018/03/01 02:44,,17.09-rc/dind/Dockerfile,440.0,17.12-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R12,L20,https://github.com/docker-library/docker/commit/ce8784112e81f724c96dae8272dd7367d712f3e9#diff-a4b741b5b88c865ec081b9cbc66926f9330b02fd934223cc7a63fe6c745a18c0R12,https://github.com/docker-library/docker/commit/5f83f231f9fc12a9a3cd214376c567de664daa2f#diff-938601ba4cea185f58b74eb9ee5b76ee49ec2397ee999de8936e36f51f0aec72L20
-582,"docker-library
+532,"docker-library
 docker",https://github.com/docker-library/docker,045fbbc0ac44b1db42ef8b499f2bef1db8dcfe61,4782798943949422d73ebc94407d277424afa58b,18.04-rc/Dockerfile,18.05/Dockerfile,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf",2018/04/04 02:45,2018/07/20 05:53,2018/04/04 02:45,2018/07/20 05:53,,18.04-rc/Dockerfile,262.0,18.05/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R6,L6,https://github.com/docker-library/docker/commit/045fbbc0ac44b1db42ef8b499f2bef1db8dcfe61#diff-897073e24740a6d2c956a78f84b2dd51ab1e45bd831a39f5c42b0552684eedbeR6,https://github.com/docker-library/docker/commit/4782798943949422d73ebc94407d277424afa58b#diff-8c495e4f646af3f77c3e12f3b5147c9675f114409658d408860570e8b0641a31L6
-583,"docker-library
+533,"docker-library
 docker",https://github.com/docker-library/docker,045fbbc0ac44b1db42ef8b499f2bef1db8dcfe61,4782798943949422d73ebc94407d277424afa58b,18.04-rc/Dockerfile,18.05/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2018/04/04 02:45,2018/07/20 05:53,2018/04/04 02:45,2018/07/20 05:53,,18.04-rc/Dockerfile,262.0,18.05/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R14,L14,https://github.com/docker-library/docker/commit/045fbbc0ac44b1db42ef8b499f2bef1db8dcfe61#diff-897073e24740a6d2c956a78f84b2dd51ab1e45bd831a39f5c42b0552684eedbeR14,https://github.com/docker-library/docker/commit/4782798943949422d73ebc94407d277424afa58b#diff-8c495e4f646af3f77c3e12f3b5147c9675f114409658d408860570e8b0641a31L14
-584,"docker-library
+534,"docker-library
 docker",https://github.com/docker-library/docker,b4404c1aadf1a09b5216b27fb35499bdcfd4d77a,866c3fbd87e8eeed524fdf19ba2d63288ad49cd2,1.11-rc/dind/Dockerfile,1.11-rc/dind/Dockerfile,# TODO aufs-tools,2016/03/31 06:43,2016/04/14 05:33,2016/03/31 06:43,2016/04/14 05:33,,1.11-rc/dind/Dockerfile,704.0,1.11-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R10,L12,https://github.com/docker-library/docker/commit/b4404c1aadf1a09b5216b27fb35499bdcfd4d77a#diff-7a43f8bd50cf25484ffc6d6355fba00559e4a77eb00d67848768d5317a4d2907R10,https://github.com/docker-library/docker/commit/866c3fbd87e8eeed524fdf19ba2d63288ad49cd2#diff-7a43f8bd50cf25484ffc6d6355fba00559e4a77eb00d67848768d5317a4d2907L12
-585,"docker-library
+535,"docker-library
 docker",https://github.com/docker-library/docker,eb714a73e7e3f87705f468c3c6e9f4e316136bf5,7f4839af5d789c9e8ab4fea4518f4271a55d1fb6,1.12/experimental/dind/Dockerfile,1.12/experimental/dind/Dockerfile,# TODO aufs-tools,2016/08/23 04:06,2017/03/03 05:45,2016/08/23 04:06,2017/03/03 05:45,,1.12/experimental/dind/Dockerfile,657.0,1.12/experimental/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R12,L12,https://github.com/docker-library/docker/commit/eb714a73e7e3f87705f468c3c6e9f4e316136bf5#diff-e65a4e2e0f35db9ae6a8eda1693d1b78aa735279dd2d8a2b1c05680583f65276R12,https://github.com/docker-library/docker/commit/7f4839af5d789c9e8ab4fea4518f4271a55d1fb6#diff-e65a4e2e0f35db9ae6a8eda1693d1b78aa735279dd2d8a2b1c05680583f65276L12
-586,"docker-library
+536,"docker-library
 docker",https://github.com/docker-library/docker,a98e0c42a96497670c36f4b2dcad2bcc81f18f35,10835a2d936bb711d451de63b27c780a9f9a84e3,1.6/dind/Dockerfile,1.6/dind/Dockerfile,# TODO aufs-tools,2015/08/07 04:55,2015/08/22 12:24,2015/08/07 04:55,2015/08/22 12:24,,1.6/dind/Dockerfile,839.0,1.6/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R11,L11,https://github.com/docker-library/docker/commit/a98e0c42a96497670c36f4b2dcad2bcc81f18f35#diff-1699e1975787c629fec59e200c0f205e8588f86e712715ed60f0142ad02c7a3cR11,https://github.com/docker-library/docker/commit/10835a2d936bb711d451de63b27c780a9f9a84e3#diff-1699e1975787c629fec59e200c0f205e8588f86e712715ed60f0142ad02c7a3cL11
-587,"docker-library
+537,"docker-library
 docker",https://github.com/docker-library/docker,56215ac49d9947e317154fad823410df1201089b,204d4a14dc52583985ce4c3ceb446a161fa9ed71,17.05-rc/dind/Dockerfile,17.05-rc/dind/Dockerfile,# TODO aufs-tools,2017/04/14 02:58,2017/05/06 05:28,2017/04/14 02:58,2017/05/06 05:28,,17.05-rc/dind/Dockerfile,548.0,17.05-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R12,L12,https://github.com/docker-library/docker/commit/56215ac49d9947e317154fad823410df1201089b#diff-0517eea6b73045ccebdfe17519c4bf1ae1ee005b1f343512d28b7448cbdbd3c2R12,https://github.com/docker-library/docker/commit/204d4a14dc52583985ce4c3ceb446a161fa9ed71#diff-0517eea6b73045ccebdfe17519c4bf1ae1ee005b1f343512d28b7448cbdbd3c2L12
-588,"docker-library
+538,"docker-library
 docker",https://github.com/docker-library/docker,dba6c6279614ac0a7e520f0b7f7c027250488a4f,a7fc73eef011c47cc2518149bc77a4b9bc7f9f41,1.12-rc/experimental/dind/Dockerfile,1.12-rc/experimental/dind/Dockerfile,# TODO aufs-tools,2016/09/29 05:18,2016/10/12 08:54,2016/09/29 05:18,2016/10/12 08:54,,1.12-rc/experimental/dind/Dockerfile,648.0,1.12-rc/experimental/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R12,L12,https://github.com/docker-library/docker/commit/dba6c6279614ac0a7e520f0b7f7c027250488a4f#diff-fb71c6b56882f708710cde86bef7873d5357d8b91f478d2cc9ea36194ac36ca5R12,https://github.com/docker-library/docker/commit/a7fc73eef011c47cc2518149bc77a4b9bc7f9f41#diff-fb71c6b56882f708710cde86bef7873d5357d8b91f478d2cc9ea36194ac36ca5L12
-589,"docker-library
+539,"docker-library
 docker",https://github.com/docker-library/docker,8de8842b2fffc6bb43609c133b54207ffb7b4ce2,157869f94ea90e2acb4d0f77045d99079ead821c,18.01-rc/dind/Dockerfile,18.01/dind/Dockerfile,# TODO aufs-tools,2018/01/05 04:48,2018/02/09 02:29,2018/01/05 04:48,2018/02/09 02:29,,18.01-rc/dind/Dockerfile,304.0,18.01/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R20,L20,https://github.com/docker-library/docker/commit/8de8842b2fffc6bb43609c133b54207ffb7b4ce2#diff-968e6a66cb073d0abd3c33b44c3511e9254afae7305963f66c13333daaaf8704R20,https://github.com/docker-library/docker/commit/157869f94ea90e2acb4d0f77045d99079ead821c#diff-db42552e0ee62aaabdc5cbb23d4ec1dafe9051c4a55449a46c0207405efd2bfdL20
-590,"docker-library
+540,"docker-library
 docker",https://github.com/docker-library/docker,5c4db83ebdc26e4303fc3a6adf916367d440eea2,bb15fc25bbd4f51a880cf02f91eab447b1083b75,1.8-rc/dind/Dockerfile,1.8-rc/dind/Dockerfile,# TODO aufs-tools,2015/09/04 06:10,2015/09/11 04:56,2015/09/04 06:10,2015/09/11 04:56,,1.8-rc/dind/Dockerfile,774.0,1.8-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R11,L11,https://github.com/docker-library/docker/commit/5c4db83ebdc26e4303fc3a6adf916367d440eea2#diff-ef990a57daf9f8dac3513fd67d4a12be382e382f8d1c6b50156589456265b2acR11,https://github.com/docker-library/docker/commit/bb15fc25bbd4f51a880cf02f91eab447b1083b75#diff-ef990a57daf9f8dac3513fd67d4a12be382e382f8d1c6b50156589456265b2acL11
-591,"docker-library
+541,"docker-library
 docker",https://github.com/docker-library/docker,8ada62f762b30d09fd54664710c0ef3b64038f07,62a456489acfe7443d426cd502ccf22130d1ccf9,17.10-rc/dind/Dockerfile,17.10-rc/dind/Dockerfile,# TODO aufs-tools,2017/10/06 01:38,2017/10/19 01:49,2017/10/06 01:38,2017/10/19 01:49,,17.10-rc/dind/Dockerfile,421.0,17.10-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R12,L12,https://github.com/docker-library/docker/commit/8ada62f762b30d09fd54664710c0ef3b64038f07#diff-36f5826da5efeed33f6eaf2bc8cd4e66334d0fbf0df9051cdae106aa7a4ed8a1R12,https://github.com/docker-library/docker/commit/62a456489acfe7443d426cd502ccf22130d1ccf9#diff-36f5826da5efeed33f6eaf2bc8cd4e66334d0fbf0df9051cdae106aa7a4ed8a1L12
-592,"docker-library
+542,"docker-library
 docker",https://github.com/docker-library/docker,e9c09260bfaea5199c6c053a83fc46564aa14990,a91872c478a6e8644a390d4129f2ea5a65d926ef,17.04-rc/dind/Dockerfile,17.04-rc/dind/Dockerfile,# TODO aufs-tools,2017/03/23 03:11,2017/04/07 01:34,2017/03/23 03:11,2017/04/07 01:34,,17.04-rc/dind/Dockerfile,565.0,17.04-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R12,L12,https://github.com/docker-library/docker/commit/e9c09260bfaea5199c6c053a83fc46564aa14990#diff-c4df22ae7647ef36ae786db3f7978b238f218cccc88a969c170647371553b9cdR12,https://github.com/docker-library/docker/commit/a91872c478a6e8644a390d4129f2ea5a65d926ef#diff-c4df22ae7647ef36ae786db3f7978b238f218cccc88a969c170647371553b9cdL12
-593,"docker-library
+543,"docker-library
 docker",https://github.com/docker-library/docker,945f73423dd843ee587567712b6657d5780307da,8d8a46bbe4c018a262df473d844d548689787d6e,1.10-rc/dind/Dockerfile,1.10-rc/dind/Dockerfile,# TODO aufs-tools,2016/01/16 06:50,2016/02/23 09:28,2016/01/16 06:50,2016/02/23 09:28,,1.10-rc/dind/Dockerfile,724.0,1.10-rc/dind/Dockerfile,0 days 00:00:00.000000000,ファイル削除,R10,L10,https://github.com/docker-library/docker/commit/945f73423dd843ee587567712b6657d5780307da#diff-a0c5e47fcbd338f46ae91742ae79664a2927f13681a180b9736a8cacc54836b2R10,https://github.com/docker-library/docker/commit/8d8a46bbe4c018a262df473d844d548689787d6e#diff-a0c5e47fcbd338f46ae91742ae79664a2927f13681a180b9736a8cacc54836b2L10
-594,"hashicorp
+544,"hashicorp
 vault",https://github.com/hashicorp/vault,e6ec457488a5469e66a344720c4d237c4156d3e6,,scripts/docker/Dockerfile,scripts/docker/Dockerfile,"# By default you'll get a single-node development server that stores everything
 # in RAM and bootstraps itself. Don't use this configuration for production.",2020/07/21 03:11,,2020/07/21 03:11,,,scripts/docker/Dockerfile,40.0,,0 days 00:00:00.000000000,削除されていません,R62,,https://github.com/hashicorp/vault/commit/e6ec457488a5469e66a344720c4d237c4156d3e6#diff-94963ca8e27994042fe27476c04b7e6fc496cc470bc24179587449b46905a60aR62,

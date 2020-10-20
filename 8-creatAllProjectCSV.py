@@ -18,6 +18,9 @@ def getTargetCSV():
         if csvfile == ".DS_Store":
             print("CSV file Error: .DS_Store")
             continue
+        elif csvfile == "docker_docker.csv":
+            print("docker/docker is same to moby")
+            continue
 
         targetCsvfiles.append(csvfile)
     
