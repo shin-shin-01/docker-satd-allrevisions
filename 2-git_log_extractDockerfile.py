@@ -17,6 +17,9 @@ def isTargetRepository(repository):
 
     if repository == ".DS_Store":
         pass
+    elif repository == "docker_docker":
+        print("This is same to moby")
+        pass
     elif f'{repository}.txt' in outputs:
         print("Already Exists!")
     else:
