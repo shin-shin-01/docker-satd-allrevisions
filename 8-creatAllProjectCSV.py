@@ -180,7 +180,7 @@ def get_targetComment_line(txtGitdiff, comment, plus_minus):
             count += 1
             if (diffrow[1:] == "#") or (diffrow[1:] == ""):
                 continue
-            elif (diffrow[1:] in comment):
+            elif (diffrow[1:] in comment.splitlines()):
                 return f"{LR}{count}"
         else:
             count += 1
@@ -197,7 +197,7 @@ def get_targetComment_line(txtGitdiff, comment, plus_minus):
         elif not start:
             continue
 
-        if diffrow[1:] != "#" and diffrow[1:] != "" and (diffrow[1:] in comment):
+        if diffrow[1:] != "#" and diffrow[1:] != "" and (diffrow[1:] in comment.splitlines()):
             count += 1
             targetCommentflg = True
             if diffCommentflg:
