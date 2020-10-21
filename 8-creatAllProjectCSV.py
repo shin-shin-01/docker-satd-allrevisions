@@ -41,26 +41,6 @@ def ReadCSV_addGitPath(csvfile):
     return df
 
 
-def modifyColumnName():
-    Columns = [
-        'project',
-        'gitPath',
-        'CommitID',
-        'Deleted CommitID',
-        'Dockerfile',
-        'LatestDockerfile',
-        'Comment',
-        'Date',
-        'DeletedComment Date',
-        'FirstCommit Date',
-        'Deleted Date',
-        'isSATD'
-        ]
-
-    df = pd.DataFrame(columns=Columns)
-    return df
-
-
 def convertDateTime(df):
     for col in df.columns:
         if not 'Date' in col:
@@ -240,25 +220,44 @@ def get_targetComment_line(txtGitdiff, comment, plus_minus):
 
     error = error.append({"type": plus_minus, "comment": comment, "diff": txtGitdiff}, ignore_index=True)
     return "Error"
+
+def modifyColumnName(df):
+    cols = [
+        'project',
+        'gitPath',
+        'CommitID',
+        'Deleted CommitID',
+        'LatestDockerfile',
+        'Comment',
+        'CommitDate',
+        'DeleteComment',
+        '(File) FirstCommit',
+        '(File) Deleted',
+        'firstCommitからコメント追加までの日数',
+        'コメント追加からコメント削除までの日数',
+        '追加時ファイル',
+        '削除時ファイル'
+        ]
+    
+    return result[cols]
         
 
 if __name__ == "__main__":
     csvfiles = getTargetCSV()
-    result = modifyColumnName()
     error = pd.DataFrame(columns=["type", "comment", "diff"])
 
     for csvfile in csvfiles:
         df = ReadCSV_addGitPath(csvfile)
-        result = pd.concat([result, df], ignore_index=True)
+        try:
+            result = pd.concat([result, df], ignore_index=True)
+        except NameError:
+            result = df.copy(deep=True)
 
     result = convertDateTime(result)
     result = renameColumns(result)
     result = addDateCalculatedInfo(result)
     result = addDiff_withLine(result)
 
+    result = modifyColumnName(result)
     result.to_csv(f'{PATH_OF_ALLPROJECT_CSV}/result.csv')
     error.to_csv(f'{PATH_OF_ALLPROJECT_CSV}/errorcomment.csv')
-
-
-
-
