@@ -19,7 +19,8 @@ def getTargetDataFrame(repository):
     df["logIndex"] = df.index
     df = df. dropna(subset=['Dockerfile'])
     df = df[["CommitID", "Date", "Dockerfile", "Status", "logIndex"]]
-    df["Date"] = pd.to_datetime(df["Date"])
+    # 時刻変換最初でまとめて実装しないといけない
+    df["Date"] = pd.to_datetime(df["Date"], utc=True)
     df = df.sort_values("Date")
     return df
 
@@ -36,7 +37,7 @@ def getCommentDeleteDate(repository, renameList, latestCommitDate, latestCommitI
     for filename in renameList.splitlines():
         df = df[df["Dockerfile"].apply(lambda file: filename == file)]
         # LatestCommit日(SATDが含まれる最終コミット日) よりあとのコミット情報を取得する。 
-        df = df[ (df["logIndex"] < latestLogIndex) & (df["CommitID"] != latestCommitID) & (df["Date"] >= latestCommitDate) ]
+        df = df[ ((df["logIndex"] < latestLogIndex) & (df["CommitID"] != latestCommitID) & (df["Date"] >= latestCommitDate)) | (df["Date"] > latestCommitDate) ]
 
         if len(df) > 0: # 存在していたらその時点で renamelist 終了
             break

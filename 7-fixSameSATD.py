@@ -76,7 +76,7 @@ def removeSameSATDofSameFile(csvfile):
                 deleted_date = tmp_date.head(1).iloc[0, :]["Date"]
                 commit_id = tmp_date.head(1).iloc[0, :]["CommitID"]
                 filename = tmp_date.head(1).iloc[0, :]["Dockerfile"]
-            elif tmp_date.head(1).iloc[0, :]["Date"] <= deleted_date:
+            elif tmp_date.head(1).iloc[0, :]["Date"] < deleted_date:
                 deleted_date = tmp_date.head(1).iloc[0, :]["Date"]
                 commit_id = tmp_date.head(1).iloc[0, :]["CommitID"]
                 filename = tmp_date.head(1).iloc[0, :]["Dockerfile"]     
