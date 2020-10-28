@@ -1,12 +1,5 @@
 ,Comment
-2,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
-# http://erlang.org/pipermail/erlang-questions/2019-January/097067.html"
-17,# TODO verification
-18,# TODO RABBITMQ_DATA_DIR
-19,"# TODO CMD [""rabbitmq-server""]"
-20,"# hack in ""ENABLE_PATH_CHECK"" disabling to suppress:
-#   warning: Insecure world writable dir"
-98,"# VERSION:        0.4
+149,"# VERSION:        0.4
 # DOCKER-VERSION  0.6.6
 # AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
 # DESCRIPTION:    Testing docker PRs and commits on top of master using
@@ -21,7 +14,7 @@
 #       [branch]  (default: 'master')
 # TO_BUILD:       docker build -t test_docker .
 # TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]"
-102,"# VERSION:        1.6
+146,"# VERSION:        1.6
 # DOCKER-VERSION  0.6.6
 # AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
 # DESCRIPTION:    Build docker nightly release using Docker in Docker.
@@ -34,65 +27,35 @@
 #         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
 # TO_BUILD:       docker build -t dockerbuilder .
 # TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh"
-103,# TODO replace FPM with some very minimal debhelper stuff
-107,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#"
-163,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)"
-181,## All of this needed because of missing 8.11.x tag.  Once we update to 8.15+ we can resume using Dockerfile.old or remove hack and use FROM node:8-slim
-182,## Start Hack
-183,## End Hack
-188,"# TODO gcc: error: unrecognized command line option '-marm'
-#	android/arm \"
-197,"# TODO find a simple hacky way to verify Tomcat Native is working properly
-# (the way we use in 7+ doesn't work here because we have no ""configtest"")"
-205,"# TODO there's an odd bug on Oracle Linux where installing ""cpp"" (which gets pulled in as a dependency of ""gcc"") and then marking it as automatically-installed will result in the ""filesystem"" package being removed during ""yum autoremove"" (which then fails), so we set it as manually-installed to compensate"
-230,"#Copy Zray docker plugin
-#TODO: Integrate Zray docker plugin into Zend Server"
-234,"# TODO:
-# - version as a variable (both php and ZS)"
-238,# TODO:
-256,"#These settings are needed so that we can run as a different user than 1001 after server warmup
-# TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it"
-257,"# These settings are needed so that we can run as a different user than 1001 after server warmup
-# TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it"
-278,# TODO rebuild other cffi modules here too? (other _*_build.py files)
-288,"# By default you'll get a single-node development server that stores everything
-# in RAM and bootstraps itself. Don't use this configuration for production."
-307,"# https://github.com/docker-library/postgres/issues/484 (clang-6.0 required, only available in stretch-backports)
-# TODO remove this once we hit buster+"
-319,"# TODO for some reason, libgo + i386 fails on https://github.com/gcc-mirror/gcc/blob/gcc-7_1_0-release/libgo/runtime/proc.c#L154
-# ""error unknown case for SETCONTEXT_CLOBBERS_TLS"""
-334,# TODO verify signature
+354,# TODO add a very lightweight browser for opening help and/or registration
 339,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
 #ONBUILD ADD Gemfile /apps/rails/Gemfile
 #ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
 #ONBUILD RUN bundle install --deployment
 #ONBUILD ADD . /apps/rails"
-340,# TODO aufs-tools
-347, # TODO inbox-api or inbox-start
-354,# TODO add a very lightweight browser for opening help and/or registration
-357,"# much of this was gleaned from https://github.com/lxc/lxc/blob/lxc-0.8.0/templates/lxc-ubuntu.in
+358,"# much of this was gleaned from https://github.com/lxc/lxc/blob/lxc-0.8.0/templates/lxc-ubuntu.in
 # and then heavily modified and hacked like crazy"
-376,# TODO some sort of download verification here
-377,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")"
-408,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
-#RUN cpanm Digest::SHA Module::Signature
-# TODO find a way to make --verify work with backpan as well :'(
-#ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify"
+154,# TODO replace FPM with some very minimal debhelper stuff
+241,"# TODO:
+# - version as a variable (both php and ZS)"
+188,"# TODO gcc: error: unrecognized command line option '-marm'
+#	android/arm \"
+238,# TODO:
+463,# TODO aufs-tools
+347, # TODO inbox-api or inbox-start
+197,"# TODO find a simple hacky way to verify Tomcat Native is working properly
+# (the way we use in 7+ doesn't work here because we have no ""configtest"")"
+290,"# By default you'll get a single-node development server that stores everything
+# in RAM and bootstraps itself. Don't use this configuration for production."
+387,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")"
+50,"# hack in ""ENABLE_PATH_CHECK"" disabling to suppress:
+#   warning: Insecure world writable dir"
+527,"# TODO ENV DOCKER_SHA256
+# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
+# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)"
+330,"# TODO for some reason, libgo + i386 fails on https://github.com/gcc-mirror/gcc/blob/gcc-7_1_0-release/libgo/runtime/proc.c#L154
+# ""error unknown case for SETCONTEXT_CLOBBERS_TLS"""
+410,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
 409,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
@@ -117,18 +80,55 @@
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #"
-410,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
 411,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them."
-448,# TODO signature? checksum?
-453,"# Default to UTF-8 file.encoding
-#ENV LANG C.UTF-8
-# TODO oraclelinux doesn't have C.UTF-8 by default??"
-455,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+501,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf"
-456,"# TODO ENV DOCKER_SHA256
-# https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
-# (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)"
-460,# https://github.com/docker/docker/tree/master/hack/dind
+334,# TODO verify signature
+376,# TODO some sort of download verification here
+486,# https://github.com/docker/docker/tree/master/hack/dind
+157,"# This file describes the standard way to build Docker, using docker
+#
+# Usage:
+#
+# # Assemble the full dev environment. This is slow the first time.
+# docker build -t docker .
+#
+# # Mount your source in an interactive container for quick testing:
+# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
+#
+# # Run the test suite:
+# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
+#
+# Note: AppArmor used to mess with privileged mode, but this is no longer
+# the case. Therefore, you don't have to disable it anymore.
+#"
+230,"#Copy Zray docker plugin
+#TODO: Integrate Zray docker plugin into Zend Server"
+308,"# https://github.com/docker-library/postgres/issues/484 (clang-6.0 required, only available in stretch-backports)
+# TODO remove this once we hit buster+"
+454,"# Default to UTF-8 file.encoding
+#ENV LANG C.UTF-8
+# TODO oraclelinux doesn't have C.UTF-8 by default??"
+9,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
+# http://erlang.org/pipermail/erlang-questions/2019-January/097067.html"
+18,# TODO RABBITMQ_DATA_DIR
+19,"# TODO CMD [""rabbitmq-server""]"
+17,# TODO verification
+183,## End Hack
+182,## Start Hack
+181,## All of this needed because of missing 8.11.x tag.  Once we update to 8.15+ we can resume using Dockerfile.old or remove hack and use FROM node:8-slim
+278,# TODO rebuild other cffi modules here too? (other _*_build.py files)
+408,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+#RUN cpanm Digest::SHA Module::Signature
+# TODO find a way to make --verify work with backpan as well :'(
+#ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify"
+449,# TODO signature? checksum?
+256,"#These settings are needed so that we can run as a different user than 1001 after server warmup
+# TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it"
+257,"# These settings are needed so that we can run as a different user than 1001 after server warmup
+# TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it"
+210,"# TODO there's an odd bug on Oracle Linux where installing ""cpp"" (which gets pulled in as a dependency of ""gcc"") and then marking it as automatically-installed will result in the ""filesystem"" package being removed during ""yum autoremove"" (which then fails), so we set it as manually-installed to compensate"
+173,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)"
