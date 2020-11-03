@@ -9,7 +9,7 @@ rm 2-error-gitlogs.txt
 touch 2-error-gitlogs.txt
 
 # 3
-rm 3-pastfiles/*
+rm -rf 3-pastfiles/*
 rm 3-error-filenotExists.txt
 
 touch 3-error-filenotExists.txt
@@ -19,9 +19,6 @@ rm 4-rowComments/*
 
 # 5
 rm 5-satdComments/*
-
-rm satd-keywords.txt
-touch satd-keywords.txt
 
 # 6
 rm 6-satdCommentsAddInfo/*
