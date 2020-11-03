@@ -2552,557 +2552,585 @@
 2138,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/3.2/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
 2139,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/3.2/Dockerfile,# delete a few installed bits for smaller image size
 2140,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/3.2/Dockerfile,#p' --recursive /usr/local \
-2141,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2142,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2143,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
-2144,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2145,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2146,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2141,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/Dockerfile.template,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2142,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/Dockerfile.template,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2143,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/Dockerfile.template,"# https://ftp.gnu.org/gnu/bash/bash-{{ env.version | rtrimstr(""-rc"") }}-patches/?C=M;O=D"
+2144,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/Dockerfile.template,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2145,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/Dockerfile.template,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2146,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/Dockerfile.template,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2147,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/Dockerfile.template,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2147,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2148,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,# delete a few installed bits for smaller image size
-2149,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,#p' --recursive /usr/local \
-2150,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
-2151,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2152,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2153,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.2-patches/?C=M;O=D
-2154,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2155,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2156,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2148,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/Dockerfile.template,"# in https://ftp.gnu.org/gnu/bash/bash-4.0-patches/bash40-037, ""configure.in"" is patched, resulting in https://git.savannah.gnu.org/cgit/bash.git/tree/Makefile.in?h=bash-4.0#n705 trying to rebuild ""configure"" via ""autoconf""
+# however, bash40-037 is only relevant on Darwin / OS X, so we can safely use ""touch configure"" to fool ""make"" into thinking ""configure"" is up-to-date instead"
+2149,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/Dockerfile.template,# parallel jobs workaround borrowed from Alpine :)
+2150,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/Dockerfile.template,# delete a few installed bits for smaller image size
+2151,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/Dockerfile.template,#p' --recursive /usr/local \
+2152,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/Dockerfile.template,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
+2153,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2154,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2155,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
+2156,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2157,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2158,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2157,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2158,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,# delete a few installed bits for smaller image size
-2159,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2160,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2161,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.2-patches/?C=M;O=D
-2162,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2163,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2164,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2159,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2160,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,# delete a few installed bits for smaller image size
+2161,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,#p' --recursive /usr/local \
+2162,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/3.0/Dockerfile,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
+2163,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2164,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2165,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.2-patches/?C=M;O=D
+2166,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2167,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2168,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2165,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,# delete a few installed bits for smaller image size
-2166,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,#p' --recursive /usr/local \
-2167,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2168,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2169,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.0-patches/?C=M;O=D
-2170,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2171,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2172,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2169,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2170,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/3.2/Dockerfile,# delete a few installed bits for smaller image size
+2171,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2172,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2173,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.2-patches/?C=M;O=D
+2174,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2175,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2176,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2173,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,# delete a few installed bits for smaller image size
-2174,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2175,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2176,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
-2177,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2178,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2177,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,# delete a few installed bits for smaller image size
+2178,7792a8798d34f3cf6b44a3e9f10437bb7980e765,/4.2/Dockerfile,#p' --recursive /usr/local \
+2179,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2180,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2181,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.0-patches/?C=M;O=D
+2182,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2183,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2184,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2179,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2180,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,# delete a few installed bits for smaller image size
-2181,40212a55315b65fb8768782bc8a658fcf2e9d277,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2182,40212a55315b65fb8768782bc8a658fcf2e9d277,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2183,40212a55315b65fb8768782bc8a658fcf2e9d277,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2185,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.0/Dockerfile,# delete a few installed bits for smaller image size
+2186,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2187,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2188,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
+2189,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2190,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2184,40212a55315b65fb8768782bc8a658fcf2e9d277,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2185,40212a55315b65fb8768782bc8a658fcf2e9d277,/devel/Dockerfile,#		/usr/local/share/locale \
-2186,40212a55315b65fb8768782bc8a658fcf2e9d277,/devel/Dockerfile,#p' --recursive /usr/local \
-2187,4813d8692c050fab37ce67f205977b11c4eea42c,/4.4/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2188,4813d8692c050fab37ce67f205977b11c4eea42c,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2189,4813d8692c050fab37ce67f205977b11c4eea42c,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
-2190,4813d8692c050fab37ce67f205977b11c4eea42c,/4.4/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2191,4813d8692c050fab37ce67f205977b11c4eea42c,/4.4/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2191,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2192,f9be0e9789a3852ff28b16e3f739df1bb2130377,/3.1/Dockerfile,# delete a few installed bits for smaller image size
+2193,40212a55315b65fb8768782bc8a658fcf2e9d277,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2194,40212a55315b65fb8768782bc8a658fcf2e9d277,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2195,40212a55315b65fb8768782bc8a658fcf2e9d277,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2192,4813d8692c050fab37ce67f205977b11c4eea42c,/4.4/Dockerfile,# delete a few installed bits for smaller image size
-2193,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,"#
+2196,40212a55315b65fb8768782bc8a658fcf2e9d277,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2197,40212a55315b65fb8768782bc8a658fcf2e9d277,/devel/Dockerfile,#		/usr/local/share/locale \
+2198,40212a55315b65fb8768782bc8a658fcf2e9d277,/devel/Dockerfile,#p' --recursive /usr/local \
+2199,4813d8692c050fab37ce67f205977b11c4eea42c,/4.4/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2200,4813d8692c050fab37ce67f205977b11c4eea42c,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2201,4813d8692c050fab37ce67f205977b11c4eea42c,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
+2202,4813d8692c050fab37ce67f205977b11c4eea42c,/4.4/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2203,4813d8692c050fab37ce67f205977b11c4eea42c,/4.4/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+#   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
+2204,4813d8692c050fab37ce67f205977b11c4eea42c,/4.4/Dockerfile,# delete a few installed bits for smaller image size
+2205,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #"
-2194,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2195,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-5.0-patches/?C=M;O=D
-2196,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2197,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2198,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2206,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2207,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-5.0-patches/?C=M;O=D
+2208,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2209,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2210,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2199,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,# delete a few installed bits for smaller image size
-2200,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,#p' --recursive /usr/local \
-2201,f9be0e9789a3852ff28b16e3f739df1bb2130377,/4.3/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2202,f9be0e9789a3852ff28b16e3f739df1bb2130377,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2203,f9be0e9789a3852ff28b16e3f739df1bb2130377,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D
-2204,f9be0e9789a3852ff28b16e3f739df1bb2130377,/4.3/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2205,f9be0e9789a3852ff28b16e3f739df1bb2130377,/4.3/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2211,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,# delete a few installed bits for smaller image size
+2212,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.0/Dockerfile,#p' --recursive /usr/local \
+2213,f9be0e9789a3852ff28b16e3f739df1bb2130377,/4.3/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2214,f9be0e9789a3852ff28b16e3f739df1bb2130377,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2215,f9be0e9789a3852ff28b16e3f739df1bb2130377,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D
+2216,f9be0e9789a3852ff28b16e3f739df1bb2130377,/4.3/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2217,f9be0e9789a3852ff28b16e3f739df1bb2130377,/4.3/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2206,f9be0e9789a3852ff28b16e3f739df1bb2130377,/4.3/Dockerfile,# delete a few installed bits for smaller image size
-2207,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2208,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2209,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
-2210,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2211,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2212,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2218,f9be0e9789a3852ff28b16e3f739df1bb2130377,/4.3/Dockerfile,# delete a few installed bits for smaller image size
+2219,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2220,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2221,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
+2222,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2223,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2224,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2213,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,# delete a few installed bits for smaller image size
-2214,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,#p' --recursive /usr/local \
-2215,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2216,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2217,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.2-patches/?C=M;O=D
-2218,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2219,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2225,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,# delete a few installed bits for smaller image size
+2226,3ad7a25584c0a4d48b0f02ee7be260c3f0319bb2,/4.4/Dockerfile,#p' --recursive /usr/local \
+2227,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2228,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2229,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.2-patches/?C=M;O=D
+2230,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2231,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2220,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2221,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,# delete a few installed bits for smaller image size
-2222,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/4.3/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2223,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2224,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D
-2225,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/4.3/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2226,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/4.3/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2232,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2233,4813d8692c050fab37ce67f205977b11c4eea42c,/3.2/Dockerfile,# delete a few installed bits for smaller image size
+2234,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/4.3/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2235,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2236,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D
+2237,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/4.3/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2238,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/4.3/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2227,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/4.3/Dockerfile,# delete a few installed bits for smaller image size
-2228,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,"#
+2239,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/4.3/Dockerfile,# delete a few installed bits for smaller image size
+2240,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #"
-2229,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2230,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
-2231,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2232,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2233,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2234,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2241,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2242,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
+2243,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2244,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2245,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2246,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2235,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2236,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,# delete a few installed bits for smaller image size
-2237,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,#p' --recursive /usr/local \
-2238,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2239,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2240,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
-2241,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2242,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,"# temporarily apply Alpine's patch to fix process substitution hanging in 4.4
+2247,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2248,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,# delete a few installed bits for smaller image size
+2249,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/3.1/Dockerfile,#p' --recursive /usr/local \
+2250,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2251,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2252,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
+2253,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2254,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,"# temporarily apply Alpine's patch to fix process substitution hanging in 4.4
 # see https://github.com/tianon/docker-bash/issues/4
 # and https://lists.gnu.org/archive/html/bug-bash/2017-12/msg00025.html
 # and https://github.com/alpinelinux/aports/commit/3239e62fb1c7968e923016358345a4dcc7e2f87d"
-2243,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2244,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2255,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2256,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2245,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,# delete a few installed bits for smaller image size
-2246,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,#p' --recursive /usr/local \
-2247,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,"#
+2257,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,# delete a few installed bits for smaller image size
+2258,fba9ecf51cac8e334263a377fe0c5c0e4de74265,/5.0/Dockerfile,#p' --recursive /usr/local \
+2259,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #"
-2248,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2249,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D
-2250,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2251,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2252,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2253,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2260,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2261,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D
+2262,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2263,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2264,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2265,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2254,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,# delete a few installed bits for smaller image size
-2255,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,#p' --recursive /usr/local \
-2256,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2257,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2258,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-5.0-patches/?C=M;O=D
-2259,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2260,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2266,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,# delete a few installed bits for smaller image size
+2267,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/4.3/Dockerfile,#p' --recursive /usr/local \
+2268,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2269,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2270,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-5.0-patches/?C=M;O=D
+2271,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2272,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2261,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,# delete a few installed bits for smaller image size
-2262,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,#p' --recursive /usr/local \
-2263,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2264,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2265,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.0-patches/?C=M;O=D
-2266,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2267,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2273,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,# delete a few installed bits for smaller image size
+2274,ec764fa68f8ab725332bec6e18eda174afe1cd53,/5.0/Dockerfile,#p' --recursive /usr/local \
+2275,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2276,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2277,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.0-patches/?C=M;O=D
+2278,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2279,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2268,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2269,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,# delete a few installed bits for smaller image size
-2270,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2271,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2272,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
-2273,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2274,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2280,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2281,4813d8692c050fab37ce67f205977b11c4eea42c,/4.0/Dockerfile,# delete a few installed bits for smaller image size
+2282,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2283,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2284,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
+2285,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2286,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2275,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2276,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,# delete a few installed bits for smaller image size
-2277,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2278,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2279,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
-2280,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2281,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2282,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2287,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2288,bdf5b9d720c272a05a84b6357dc278d35fc9d453,/3.1/Dockerfile,# delete a few installed bits for smaller image size
+2289,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2290,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2291,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
+2292,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2293,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2294,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2283,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,# delete a few installed bits for smaller image size
-2284,e8084dff964ec6f49c5205cd4f48e613f540be7a,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2285,e8084dff964ec6f49c5205cd4f48e613f540be7a,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2286,e8084dff964ec6f49c5205cd4f48e613f540be7a,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2295,1cbb5cf49b4c53bd5a986abf7a1afeb9a80eac1e,/4.4/Dockerfile,# delete a few installed bits for smaller image size
+2296,e8084dff964ec6f49c5205cd4f48e613f540be7a,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2297,e8084dff964ec6f49c5205cd4f48e613f540be7a,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2298,e8084dff964ec6f49c5205cd4f48e613f540be7a,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2287,e8084dff964ec6f49c5205cd4f48e613f540be7a,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2288,e8084dff964ec6f49c5205cd4f48e613f540be7a,/devel/Dockerfile,#		/usr/local/share/locale \
-2289,e8084dff964ec6f49c5205cd4f48e613f540be7a,/devel/Dockerfile,#p' --recursive /usr/local \
-2290,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2291,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2292,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.2-patches/?C=M;O=D
-2293,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2294,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2295,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2299,e8084dff964ec6f49c5205cd4f48e613f540be7a,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2300,e8084dff964ec6f49c5205cd4f48e613f540be7a,/devel/Dockerfile,#		/usr/local/share/locale \
+2301,e8084dff964ec6f49c5205cd4f48e613f540be7a,/devel/Dockerfile,#p' --recursive /usr/local \
+2302,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2303,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2304,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.2-patches/?C=M;O=D
+2305,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2306,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2307,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2296,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,# delete a few installed bits for smaller image size
-2297,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,#p' --recursive /usr/local \
-2298,dfb58fdfa2b8af7a5d3b832dc875a8660f154fe3,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2299,dfb58fdfa2b8af7a5d3b832dc875a8660f154fe3,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2300,dfb58fdfa2b8af7a5d3b832dc875a8660f154fe3,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2308,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,# delete a few installed bits for smaller image size
+2309,38a2a9828a6916afcb05663fd5db950afaf4c17d,/4.2/Dockerfile,#p' --recursive /usr/local \
+2310,dfb58fdfa2b8af7a5d3b832dc875a8660f154fe3,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2311,dfb58fdfa2b8af7a5d3b832dc875a8660f154fe3,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2312,dfb58fdfa2b8af7a5d3b832dc875a8660f154fe3,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2301,dfb58fdfa2b8af7a5d3b832dc875a8660f154fe3,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2302,dfb58fdfa2b8af7a5d3b832dc875a8660f154fe3,/devel/Dockerfile,#		/usr/local/share/locale \
-2303,dfb58fdfa2b8af7a5d3b832dc875a8660f154fe3,/devel/Dockerfile,#p' --recursive /usr/local \
-2304,c998fcb1716a4f9fe32ec7aaf089a581d1f82e9d,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2305,c998fcb1716a4f9fe32ec7aaf089a581d1f82e9d,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2306,c998fcb1716a4f9fe32ec7aaf089a581d1f82e9d,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2313,dfb58fdfa2b8af7a5d3b832dc875a8660f154fe3,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2314,dfb58fdfa2b8af7a5d3b832dc875a8660f154fe3,/devel/Dockerfile,#		/usr/local/share/locale \
+2315,dfb58fdfa2b8af7a5d3b832dc875a8660f154fe3,/devel/Dockerfile,#p' --recursive /usr/local \
+2316,c998fcb1716a4f9fe32ec7aaf089a581d1f82e9d,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2317,c998fcb1716a4f9fe32ec7aaf089a581d1f82e9d,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2318,c998fcb1716a4f9fe32ec7aaf089a581d1f82e9d,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2307,c998fcb1716a4f9fe32ec7aaf089a581d1f82e9d,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2308,c998fcb1716a4f9fe32ec7aaf089a581d1f82e9d,/devel/Dockerfile,#		/usr/local/share/locale \
-2309,c998fcb1716a4f9fe32ec7aaf089a581d1f82e9d,/devel/Dockerfile,#p' --recursive /usr/local \
-2310,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2311,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2312,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
-2313,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2314,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2315,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2319,c998fcb1716a4f9fe32ec7aaf089a581d1f82e9d,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2320,c998fcb1716a4f9fe32ec7aaf089a581d1f82e9d,/devel/Dockerfile,#		/usr/local/share/locale \
+2321,c998fcb1716a4f9fe32ec7aaf089a581d1f82e9d,/devel/Dockerfile,#p' --recursive /usr/local \
+2322,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2323,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2324,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
+2325,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2326,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2327,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2316,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2317,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,# delete a few installed bits for smaller image size
-2318,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,#p' --recursive /usr/local \
-2319,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
-2320,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2321,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2322,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
-2323,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2324,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2325,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2328,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2329,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,# delete a few installed bits for smaller image size
+2330,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,#p' --recursive /usr/local \
+2331,38a2a9828a6916afcb05663fd5db950afaf4c17d,/3.0/Dockerfile,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
+2332,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2333,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2334,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
+2335,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2336,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2337,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2326,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,# delete a few installed bits for smaller image size
-2327,2da92db158abf8f64852ac6bb67ee70bc9ba3387,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2328,2da92db158abf8f64852ac6bb67ee70bc9ba3387,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2329,2da92db158abf8f64852ac6bb67ee70bc9ba3387,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2338,a4c649c11bcd28ca806860ff8b55ee423eb94a0d,/4.4/Dockerfile,# delete a few installed bits for smaller image size
+2339,2da92db158abf8f64852ac6bb67ee70bc9ba3387,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2340,2da92db158abf8f64852ac6bb67ee70bc9ba3387,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2341,2da92db158abf8f64852ac6bb67ee70bc9ba3387,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2330,2da92db158abf8f64852ac6bb67ee70bc9ba3387,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2331,2da92db158abf8f64852ac6bb67ee70bc9ba3387,/devel/Dockerfile,#		/usr/local/share/locale \
-2332,2da92db158abf8f64852ac6bb67ee70bc9ba3387,/devel/Dockerfile,#p' --recursive /usr/local \
-2333,9aa0b472a192d5cf9b35958d3f07b2459efbe357,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2334,9aa0b472a192d5cf9b35958d3f07b2459efbe357,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2335,9aa0b472a192d5cf9b35958d3f07b2459efbe357,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2342,2da92db158abf8f64852ac6bb67ee70bc9ba3387,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2343,2da92db158abf8f64852ac6bb67ee70bc9ba3387,/devel/Dockerfile,#		/usr/local/share/locale \
+2344,2da92db158abf8f64852ac6bb67ee70bc9ba3387,/devel/Dockerfile,#p' --recursive /usr/local \
+2345,9aa0b472a192d5cf9b35958d3f07b2459efbe357,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2346,9aa0b472a192d5cf9b35958d3f07b2459efbe357,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2347,9aa0b472a192d5cf9b35958d3f07b2459efbe357,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2336,9aa0b472a192d5cf9b35958d3f07b2459efbe357,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2337,9aa0b472a192d5cf9b35958d3f07b2459efbe357,/devel/Dockerfile,#		/usr/local/share/locale \
-2338,9aa0b472a192d5cf9b35958d3f07b2459efbe357,/devel/Dockerfile,#p' --recursive /usr/local \
-2339,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2340,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2341,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.2-patches/?C=M;O=D
-2342,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2343,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2344,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2348,9aa0b472a192d5cf9b35958d3f07b2459efbe357,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2349,9aa0b472a192d5cf9b35958d3f07b2459efbe357,/devel/Dockerfile,#		/usr/local/share/locale \
+2350,9aa0b472a192d5cf9b35958d3f07b2459efbe357,/devel/Dockerfile,#p' --recursive /usr/local \
+2351,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2352,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2353,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.2-patches/?C=M;O=D
+2354,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2355,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2356,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2345,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2346,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,# delete a few installed bits for smaller image size
-2347,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,#p' --recursive /usr/local \
-2348,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2349,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2350,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.0-patches/?C=M;O=D
-2351,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2352,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2353,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2357,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2358,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,# delete a few installed bits for smaller image size
+2359,246ce07202932c5385c76122c5a4ca2dd1328b08,/3.2/Dockerfile,#p' --recursive /usr/local \
+2360,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2361,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2362,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.0-patches/?C=M;O=D
+2363,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2364,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2365,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2354,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2355,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,# delete a few installed bits for smaller image size
-2356,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,#p' --recursive /usr/local \
-2357,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2358,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2359,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
-2360,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2361,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2366,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2367,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,# delete a few installed bits for smaller image size
+2368,246ce07202932c5385c76122c5a4ca2dd1328b08,/4.0/Dockerfile,#p' --recursive /usr/local \
+2369,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2370,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2371,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
+2372,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2373,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2362,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2363,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,# delete a few installed bits for smaller image size
-2364,ebe992ca8d43a43e490c679e10e49a2b8d180984,/4.3/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2365,ebe992ca8d43a43e490c679e10e49a2b8d180984,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2366,ebe992ca8d43a43e490c679e10e49a2b8d180984,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D
-2367,ebe992ca8d43a43e490c679e10e49a2b8d180984,/4.3/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2368,ebe992ca8d43a43e490c679e10e49a2b8d180984,/4.3/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2374,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2375,ebe992ca8d43a43e490c679e10e49a2b8d180984,/3.1/Dockerfile,# delete a few installed bits for smaller image size
+2376,ebe992ca8d43a43e490c679e10e49a2b8d180984,/4.3/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2377,ebe992ca8d43a43e490c679e10e49a2b8d180984,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2378,ebe992ca8d43a43e490c679e10e49a2b8d180984,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D
+2379,ebe992ca8d43a43e490c679e10e49a2b8d180984,/4.3/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2380,ebe992ca8d43a43e490c679e10e49a2b8d180984,/4.3/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2369,ebe992ca8d43a43e490c679e10e49a2b8d180984,/4.3/Dockerfile,# delete a few installed bits for smaller image size
-2370,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2371,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2372,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-5.0-patches/?C=M;O=D
-2373,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2374,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2381,ebe992ca8d43a43e490c679e10e49a2b8d180984,/4.3/Dockerfile,# delete a few installed bits for smaller image size
+2382,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2383,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2384,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-5.0-patches/?C=M;O=D
+2385,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2386,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2375,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,# delete a few installed bits for smaller image size
-2376,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,#		/usr/local/share/locale \
-2377,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,#p' --recursive /usr/local \
-2378,447ef73c253b237d32e93428b5cb821b9a611a4b,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2379,447ef73c253b237d32e93428b5cb821b9a611a4b,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2380,447ef73c253b237d32e93428b5cb821b9a611a4b,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2387,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,# delete a few installed bits for smaller image size
+2388,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,#		/usr/local/share/locale \
+2389,b8b5f6e00e8bb60586183a6788000302c68f04fb,/5.1-rc/Dockerfile,#p' --recursive /usr/local \
+2390,447ef73c253b237d32e93428b5cb821b9a611a4b,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2391,447ef73c253b237d32e93428b5cb821b9a611a4b,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2392,447ef73c253b237d32e93428b5cb821b9a611a4b,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2381,447ef73c253b237d32e93428b5cb821b9a611a4b,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2382,447ef73c253b237d32e93428b5cb821b9a611a4b,/devel/Dockerfile,#		/usr/local/share/locale \
-2383,447ef73c253b237d32e93428b5cb821b9a611a4b,/devel/Dockerfile,#p' --recursive /usr/local \
-2384,8be5bcf95b5bb432f2387cea502bf0b138aee0f2,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2385,8be5bcf95b5bb432f2387cea502bf0b138aee0f2,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2386,8be5bcf95b5bb432f2387cea502bf0b138aee0f2,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2393,447ef73c253b237d32e93428b5cb821b9a611a4b,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2394,447ef73c253b237d32e93428b5cb821b9a611a4b,/devel/Dockerfile,#		/usr/local/share/locale \
+2395,447ef73c253b237d32e93428b5cb821b9a611a4b,/devel/Dockerfile,#p' --recursive /usr/local \
+2396,8be5bcf95b5bb432f2387cea502bf0b138aee0f2,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2397,8be5bcf95b5bb432f2387cea502bf0b138aee0f2,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2398,8be5bcf95b5bb432f2387cea502bf0b138aee0f2,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2387,8be5bcf95b5bb432f2387cea502bf0b138aee0f2,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2388,8be5bcf95b5bb432f2387cea502bf0b138aee0f2,/devel/Dockerfile,#		/usr/local/share/locale \
-2389,8be5bcf95b5bb432f2387cea502bf0b138aee0f2,/devel/Dockerfile,#p' --recursive /usr/local \
-2390,83d0cbdaaa563e4650cc99db33b4c88be4c21b29,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2391,83d0cbdaaa563e4650cc99db33b4c88be4c21b29,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2392,83d0cbdaaa563e4650cc99db33b4c88be4c21b29,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2399,8be5bcf95b5bb432f2387cea502bf0b138aee0f2,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2400,8be5bcf95b5bb432f2387cea502bf0b138aee0f2,/devel/Dockerfile,#		/usr/local/share/locale \
+2401,8be5bcf95b5bb432f2387cea502bf0b138aee0f2,/devel/Dockerfile,#p' --recursive /usr/local \
+2402,83d0cbdaaa563e4650cc99db33b4c88be4c21b29,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2403,83d0cbdaaa563e4650cc99db33b4c88be4c21b29,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2404,83d0cbdaaa563e4650cc99db33b4c88be4c21b29,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2393,83d0cbdaaa563e4650cc99db33b4c88be4c21b29,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2394,83d0cbdaaa563e4650cc99db33b4c88be4c21b29,/devel/Dockerfile,#		/usr/local/share/locale \
-2395,83d0cbdaaa563e4650cc99db33b4c88be4c21b29,/devel/Dockerfile,#p' --recursive /usr/local \
-2396,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2397,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2398,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.0-patches/?C=M;O=D
-2399,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2400,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2401,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2405,83d0cbdaaa563e4650cc99db33b4c88be4c21b29,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2406,83d0cbdaaa563e4650cc99db33b4c88be4c21b29,/devel/Dockerfile,#		/usr/local/share/locale \
+2407,83d0cbdaaa563e4650cc99db33b4c88be4c21b29,/devel/Dockerfile,#p' --recursive /usr/local \
+2408,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2409,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2410,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.0-patches/?C=M;O=D
+2411,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2412,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2413,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2402,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2403,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,# delete a few installed bits for smaller image size
-2404,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,#p' --recursive /usr/local \
-2405,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2406,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2407,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.2-patches/?C=M;O=D
-2408,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2409,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2410,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2414,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2415,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,# delete a few installed bits for smaller image size
+2416,3682e16bca63b20ab51745afa30156e2740fc5c6,/4.0/Dockerfile,#p' --recursive /usr/local \
+2417,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2418,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2419,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.2-patches/?C=M;O=D
+2420,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2421,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2422,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2411,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2412,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,# delete a few installed bits for smaller image size
-2413,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,#p' --recursive /usr/local \
-2414,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2415,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2416,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.2-patches/?C=M;O=D
-2417,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2418,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2419,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2423,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2424,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,# delete a few installed bits for smaller image size
+2425,3682e16bca63b20ab51745afa30156e2740fc5c6,/3.2/Dockerfile,#p' --recursive /usr/local \
+2426,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2427,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2428,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.2-patches/?C=M;O=D
+2429,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2430,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2431,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2420,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2421,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,# delete a few installed bits for smaller image size
-2422,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,#p' --recursive /usr/local \
-2423,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2424,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2425,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
-2426,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2427,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,"# temporarily apply Alpine's patch to fix process substitution hanging in 4.4
+2432,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2433,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,# delete a few installed bits for smaller image size
+2434,a4642024da1b528b2631bfa31d6997f89dbc054a,/3.2/Dockerfile,#p' --recursive /usr/local \
+2435,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2436,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2437,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
+2438,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2439,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,"# temporarily apply Alpine's patch to fix process substitution hanging in 4.4
 # see https://github.com/tianon/docker-bash/issues/4
 # and https://lists.gnu.org/archive/html/bug-bash/2017-12/msg00025.html
 # and https://github.com/alpinelinux/aports/commit/3239e62fb1c7968e923016358345a4dcc7e2f87d"
-2428,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2429,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2440,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2441,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2430,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,# delete a few installed bits for smaller image size
-2431,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,#p' --recursive /usr/local \
-2432,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2433,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2434,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.0-patches/?C=M;O=D
-2435,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2436,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2437,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2442,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,# delete a few installed bits for smaller image size
+2443,e3d8ed88f2a827ea0a88b55dfdd37f65cb7631db,/4.4/Dockerfile,#p' --recursive /usr/local \
+2444,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2445,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2446,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.0-patches/?C=M;O=D
+2447,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2448,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2449,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2438,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2439,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,# delete a few installed bits for smaller image size
-2440,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,#p' --recursive /usr/local \
-2441,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,"#
+2450,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2451,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,# delete a few installed bits for smaller image size
+2452,a4642024da1b528b2631bfa31d6997f89dbc054a,/4.0/Dockerfile,#p' --recursive /usr/local \
+2453,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #"
-2442,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2443,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
-2444,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2445,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2446,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2447,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2454,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2455,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
+2456,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2457,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2458,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2459,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2448,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,# delete a few installed bits for smaller image size
-2449,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,#p' --recursive /usr/local \
-2450,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,"#
+2460,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,# delete a few installed bits for smaller image size
+2461,ffa5831d49ac931291bed43cb642235a6df93ee3,/4.4/Dockerfile,#p' --recursive /usr/local \
+2462,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,"#
 # NOTE: THIS DOCKERFILE IS GENERATED VIA ""apply-templates.sh""
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #"
-2451,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2452,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2453,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2454,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2463,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2464,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2465,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2466,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2455,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,# delete a few installed bits for smaller image size
-2456,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,#p' --recursive /usr/local \
-2457,507d7d41cadc0cb879dcb319c11c163cfb8df1f8,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2458,507d7d41cadc0cb879dcb319c11c163cfb8df1f8,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2459,507d7d41cadc0cb879dcb319c11c163cfb8df1f8,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2467,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,# delete a few installed bits for smaller image size
+2468,7d80c7cc5d829b6be9e04b6b2cba98a228fb67db,/5.1-rc/Dockerfile,#p' --recursive /usr/local \
+2469,507d7d41cadc0cb879dcb319c11c163cfb8df1f8,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2470,507d7d41cadc0cb879dcb319c11c163cfb8df1f8,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2471,507d7d41cadc0cb879dcb319c11c163cfb8df1f8,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2460,507d7d41cadc0cb879dcb319c11c163cfb8df1f8,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2461,507d7d41cadc0cb879dcb319c11c163cfb8df1f8,/devel/Dockerfile,#		/usr/local/share/locale \
-2462,507d7d41cadc0cb879dcb319c11c163cfb8df1f8,/devel/Dockerfile,#p' --recursive /usr/local \
-2463,79fe6ecb6592c920ceda3f7857270b6bf05a1211,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2464,79fe6ecb6592c920ceda3f7857270b6bf05a1211,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2465,79fe6ecb6592c920ceda3f7857270b6bf05a1211,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2472,507d7d41cadc0cb879dcb319c11c163cfb8df1f8,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2473,507d7d41cadc0cb879dcb319c11c163cfb8df1f8,/devel/Dockerfile,#		/usr/local/share/locale \
+2474,507d7d41cadc0cb879dcb319c11c163cfb8df1f8,/devel/Dockerfile,#p' --recursive /usr/local \
+2475,79fe6ecb6592c920ceda3f7857270b6bf05a1211,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2476,79fe6ecb6592c920ceda3f7857270b6bf05a1211,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2477,79fe6ecb6592c920ceda3f7857270b6bf05a1211,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2466,79fe6ecb6592c920ceda3f7857270b6bf05a1211,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2467,79fe6ecb6592c920ceda3f7857270b6bf05a1211,/devel/Dockerfile,#		/usr/local/share/locale \
-2468,79fe6ecb6592c920ceda3f7857270b6bf05a1211,/devel/Dockerfile,#p' --recursive /usr/local \
-2469,83b9507cb4aa1f36d4f10fcc348260220bac4f7c,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2470,83b9507cb4aa1f36d4f10fcc348260220bac4f7c,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2471,83b9507cb4aa1f36d4f10fcc348260220bac4f7c,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2478,79fe6ecb6592c920ceda3f7857270b6bf05a1211,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2479,79fe6ecb6592c920ceda3f7857270b6bf05a1211,/devel/Dockerfile,#		/usr/local/share/locale \
+2480,79fe6ecb6592c920ceda3f7857270b6bf05a1211,/devel/Dockerfile,#p' --recursive /usr/local \
+2481,83b9507cb4aa1f36d4f10fcc348260220bac4f7c,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2482,83b9507cb4aa1f36d4f10fcc348260220bac4f7c,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2483,83b9507cb4aa1f36d4f10fcc348260220bac4f7c,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2472,83b9507cb4aa1f36d4f10fcc348260220bac4f7c,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2473,83b9507cb4aa1f36d4f10fcc348260220bac4f7c,/devel/Dockerfile,#		/usr/local/share/locale \
-2474,83b9507cb4aa1f36d4f10fcc348260220bac4f7c,/devel/Dockerfile,#p' --recursive /usr/local \
-2475,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2476,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2477,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
-2478,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2479,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,"# temporarily apply Alpine's patch to fix process substitution hanging in 4.4
+2484,83b9507cb4aa1f36d4f10fcc348260220bac4f7c,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2485,83b9507cb4aa1f36d4f10fcc348260220bac4f7c,/devel/Dockerfile,#		/usr/local/share/locale \
+2486,83b9507cb4aa1f36d4f10fcc348260220bac4f7c,/devel/Dockerfile,#p' --recursive /usr/local \
+2487,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2488,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2489,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.4-patches/?C=M;O=D
+2490,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2491,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,"# temporarily apply Alpine's patch to fix process substitution hanging in 4.4
 # see https://github.com/tianon/docker-bash/issues/4
 # and https://lists.gnu.org/archive/html/bug-bash/2017-12/msg00025.html
 # and https://github.com/alpinelinux/aports/commit/3239e62fb1c7968e923016358345a4dcc7e2f87d"
-2480,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2481,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2492,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2493,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2482,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,# delete a few installed bits for smaller image size
-2483,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,#p' --recursive /usr/local \
-2484,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2485,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2486,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
-2487,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2488,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2494,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,# delete a few installed bits for smaller image size
+2495,35aa5f46fa4ed3019f571e0000d305aea685436c,/5.0/Dockerfile,#p' --recursive /usr/local \
+2496,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2497,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2498,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
+2499,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2500,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2489,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2490,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,# delete a few installed bits for smaller image size
-2491,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
-2492,436bf216840844a3838bedaf1664d9c14b16784d,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2493,436bf216840844a3838bedaf1664d9c14b16784d,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2494,436bf216840844a3838bedaf1664d9c14b16784d,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2501,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2502,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,# delete a few installed bits for smaller image size
+2503,0fb93762d52d5f73ea53557706f19a255ef990d1,/3.0/Dockerfile,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
+2504,436bf216840844a3838bedaf1664d9c14b16784d,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2505,436bf216840844a3838bedaf1664d9c14b16784d,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2506,436bf216840844a3838bedaf1664d9c14b16784d,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2495,436bf216840844a3838bedaf1664d9c14b16784d,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2496,436bf216840844a3838bedaf1664d9c14b16784d,/devel/Dockerfile,#		/usr/local/share/locale \
-2497,436bf216840844a3838bedaf1664d9c14b16784d,/devel/Dockerfile,#p' --recursive /usr/local \
-2498,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2499,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2500,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.1-patches/?C=M;O=D
-2501,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2502,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2503,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2507,436bf216840844a3838bedaf1664d9c14b16784d,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2508,436bf216840844a3838bedaf1664d9c14b16784d,/devel/Dockerfile,#		/usr/local/share/locale \
+2509,436bf216840844a3838bedaf1664d9c14b16784d,/devel/Dockerfile,#p' --recursive /usr/local \
+2510,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2511,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2512,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.1-patches/?C=M;O=D
+2513,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2514,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2515,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2504,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,# delete a few installed bits for smaller image size
-2505,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2506,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2507,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.2-patches/?C=M;O=D
-2508,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2509,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2510,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2516,75358344e900aa56e64722b2241a6bcd39ca67ee,/4.1/Dockerfile,# delete a few installed bits for smaller image size
+2517,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2518,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2519,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.2-patches/?C=M;O=D
+2520,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2521,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2522,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2511,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,# delete a few installed bits for smaller image size
-2512,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,#p' --recursive /usr/local \
-2513,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2514,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2515,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
-2516,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2517,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2518,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2523,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,# delete a few installed bits for smaller image size
+2524,4e6dad8a313d110f1cb7e938652c371983e23521,/4.2/Dockerfile,#p' --recursive /usr/local \
+2525,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2526,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2527,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
+2528,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2529,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2530,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2519,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2520,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,# delete a few installed bits for smaller image size
-2521,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,#p' --recursive /usr/local \
-2522,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
-2523,5ca7dcc2ef6daf72ac16816117222aec39a18589,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2524,5ca7dcc2ef6daf72ac16816117222aec39a18589,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2525,5ca7dcc2ef6daf72ac16816117222aec39a18589,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2531,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2532,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,# delete a few installed bits for smaller image size
+2533,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,#p' --recursive /usr/local \
+2534,4e6dad8a313d110f1cb7e938652c371983e23521,/3.0/Dockerfile,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
+2535,5ca7dcc2ef6daf72ac16816117222aec39a18589,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2536,5ca7dcc2ef6daf72ac16816117222aec39a18589,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2537,5ca7dcc2ef6daf72ac16816117222aec39a18589,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2526,5ca7dcc2ef6daf72ac16816117222aec39a18589,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2527,5ca7dcc2ef6daf72ac16816117222aec39a18589,/devel/Dockerfile,#		/usr/local/share/locale \
-2528,5ca7dcc2ef6daf72ac16816117222aec39a18589,/devel/Dockerfile,#p' --recursive /usr/local \
-2529,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2530,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2531,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
-2532,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2533,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2534,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2538,5ca7dcc2ef6daf72ac16816117222aec39a18589,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2539,5ca7dcc2ef6daf72ac16816117222aec39a18589,/devel/Dockerfile,#		/usr/local/share/locale \
+2540,5ca7dcc2ef6daf72ac16816117222aec39a18589,/devel/Dockerfile,#p' --recursive /usr/local \
+2541,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2542,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2543,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
+2544,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2545,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2546,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2535,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2536,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,# delete a few installed bits for smaller image size
-2537,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,#p' --recursive /usr/local \
-2538,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2539,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2540,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D
-2541,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2542,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2543,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2547,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2548,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,# delete a few installed bits for smaller image size
+2549,2d420e498d46e7241dd16e3185c8696a1f8eef36,/3.1/Dockerfile,#p' --recursive /usr/local \
+2550,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2551,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2552,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D
+2553,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2554,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2555,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2544,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,# delete a few installed bits for smaller image size
-2545,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,#p' --recursive /usr/local \
-2546,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2547,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2548,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
-2549,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2550,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2551,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2556,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,# delete a few installed bits for smaller image size
+2557,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/4.3/Dockerfile,#p' --recursive /usr/local \
+2558,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2559,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2560,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
+2561,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2562,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2563,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2552,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2553,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,# delete a few installed bits for smaller image size
-2554,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,#p' --recursive /usr/local \
-2555,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
-2556,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2557,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2558,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
-2559,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2560,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2561,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2564,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2565,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,# delete a few installed bits for smaller image size
+2566,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,#p' --recursive /usr/local \
+2567,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/3.0/Dockerfile,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
+2568,ffa5831d49ac931291bed43cb642235a6df93ee3,/Dockerfile.template,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2569,ffa5831d49ac931291bed43cb642235a6df93ee3,/Dockerfile.template,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2570,ffa5831d49ac931291bed43cb642235a6df93ee3,/Dockerfile.template,"# https://ftp.gnu.org/gnu/bash/bash-{{ env.version | rtrimstr(""-rc"") }}-patches/?C=M;O=D"
+2571,ffa5831d49ac931291bed43cb642235a6df93ee3,/Dockerfile.template,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2572,ffa5831d49ac931291bed43cb642235a6df93ee3,/Dockerfile.template,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2573,ffa5831d49ac931291bed43cb642235a6df93ee3,/Dockerfile.template,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2574,ffa5831d49ac931291bed43cb642235a6df93ee3,/Dockerfile.template,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2562,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2563,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,# delete a few installed bits for smaller image size
-2564,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,#p' --recursive /usr/local \
-2565,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
-2566,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2567,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2568,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.2-patches/?C=M;O=D
-2569,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2570,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2571,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2575,ffa5831d49ac931291bed43cb642235a6df93ee3,/Dockerfile.template,"# in https://ftp.gnu.org/gnu/bash/bash-4.0-patches/bash40-037, ""configure.in"" is patched, resulting in https://git.savannah.gnu.org/cgit/bash.git/tree/Makefile.in?h=bash-4.0#n705 trying to rebuild ""configure"" via ""autoconf""
+# however, bash40-037 is only relevant on Darwin / OS X, so we can safely use ""touch configure"" to fool ""make"" into thinking ""configure"" is up-to-date instead"
+2576,ffa5831d49ac931291bed43cb642235a6df93ee3,/Dockerfile.template,# parallel jobs workaround borrowed from Alpine :)
+2577,ffa5831d49ac931291bed43cb642235a6df93ee3,/Dockerfile.template,# delete a few installed bits for smaller image size
+2578,ffa5831d49ac931291bed43cb642235a6df93ee3,/Dockerfile.template,#p' --recursive /usr/local \
+2579,ffa5831d49ac931291bed43cb642235a6df93ee3,/Dockerfile.template,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
+2580,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2581,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2582,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
+2583,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2584,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2585,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2572,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,# delete a few installed bits for smaller image size
-2573,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,#p' --recursive /usr/local \
-2574,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2575,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2576,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.2-patches/?C=M;O=D
-2577,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2578,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2579,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2586,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2587,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,# delete a few installed bits for smaller image size
+2588,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,#p' --recursive /usr/local \
+2589,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/3.0/Dockerfile,"# for some reason, 3.0.xx manifests as 3.00.xx (hence the extra ""0"" added in the following check)"
+2590,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2591,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2592,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.2-patches/?C=M;O=D
+2593,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2594,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2595,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2580,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,# delete a few installed bits for smaller image size
-2581,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,#p' --recursive /usr/local \
-2582,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2583,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2584,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
-2585,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2586,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2587,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2596,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,# delete a few installed bits for smaller image size
+2597,f55ec52c6bb3a9a1b942a775f848002826b58b8a,/4.2/Dockerfile,#p' --recursive /usr/local \
+2598,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2599,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2600,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.2-patches/?C=M;O=D
+2601,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2602,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2603,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2588,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
-2589,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,# delete a few installed bits for smaller image size
-2590,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,#p' --recursive /usr/local \
-2591,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
-2592,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
-2593,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D
-2594,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2595,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
-2596,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2604,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,# delete a few installed bits for smaller image size
+2605,8b2e7308f6bacbbe929241174b8b205f40cfdd2f,/4.2/Dockerfile,#p' --recursive /usr/local \
+2606,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2607,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2608,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-3.1-patches/?C=M;O=D
+2609,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2610,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2611,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2597,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,# delete a few installed bits for smaller image size
-2598,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,#p' --recursive /usr/local \
-2599,01d85237afa89a613d177f2ef2fe643ffc418485,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
-2600,01d85237afa89a613d177f2ef2fe643ffc418485,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
-2601,01d85237afa89a613d177f2ef2fe643ffc418485,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+2612,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,# parallel jobs workaround borrowed from Alpine :)
+2613,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,# delete a few installed bits for smaller image size
+2614,9bee3aa767f9ecbe455c92c8b98bdbf4ab0a5db0,/3.1/Dockerfile,#p' --recursive /usr/local \
+2615,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,"# gpg: key 64EA74AB: public key ""Chet Ramey <chet@cwru.edu>"" imported"
+2616,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/?C=M;O=D
+2617,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,# https://ftp.gnu.org/gnu/bash/bash-4.3-patches/?C=M;O=D
+2618,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2619,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,"# update ""config.guess"" and ""config.sub"" to get more aggressively inclusive architecture support"
+2620,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
 #   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
-2602,01d85237afa89a613d177f2ef2fe643ffc418485,/devel/Dockerfile,# delete a few installed bits for smaller image size
-2603,01d85237afa89a613d177f2ef2fe643ffc418485,/devel/Dockerfile,#		/usr/local/share/locale \
-2604,01d85237afa89a613d177f2ef2fe643ffc418485,/devel/Dockerfile,#p' --recursive /usr/local \
+2621,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,# delete a few installed bits for smaller image size
+2622,2d420e498d46e7241dd16e3185c8696a1f8eef36,/4.3/Dockerfile,#p' --recursive /usr/local \
+2623,01d85237afa89a613d177f2ef2fe643ffc418485,/devel/Dockerfile,# https://git.savannah.gnu.org/cgit/bash.git/commit/?h=devel
+2624,01d85237afa89a613d177f2ef2fe643ffc418485,/devel/Dockerfile,"# prefixed with ""_"" since ""$BASH..."" have meaning in Bash parlance"
+2625,01d85237afa89a613d177f2ef2fe643ffc418485,/devel/Dockerfile,"# musl does not implement brk/sbrk (they simply return -ENOMEM)
+#   bash: xmalloc: locale.c:81: cannot allocate 18 bytes (0 bytes allocated)"
+2626,01d85237afa89a613d177f2ef2fe643ffc418485,/devel/Dockerfile,# delete a few installed bits for smaller image size
+2627,01d85237afa89a613d177f2ef2fe643ffc418485,/devel/Dockerfile,#		/usr/local/share/locale \
+2628,01d85237afa89a613d177f2ef2fe643ffc418485,/devel/Dockerfile,#p' --recursive /usr/local \

@@ -1,6 +1,6 @@
 ,Comment
-99,#### FIXME. Temporarily install docker with proper apparmor handling
-62,"# This file describes the standard way to build Docker, using docker
+148,#### FIXME. Temporarily install docker with proper apparmor handling
+117,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -24,10 +24,10 @@
 #  -e GPG_PASSPHRASE=gloubiboulga \
 #  docker hack/release.sh
 #"
-351,# TODO see note above about redis
-350,# TODO use links to get a redis server/database instead (since that's where configuration actually goes)
-148,#### FIXME. Temporarily install docker and dind with proper apparmor handling
-100,"# VERSION:        1.5
+374,# TODO see note above about redis
+373,# TODO use links to get a redis server/database instead (since that's where configuration actually goes)
+102,#### FIXME. Temporarily install docker and dind with proper apparmor handling
+105,"# VERSION:        1.5
 # DOCKER-VERSION  0.6.4
 # AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
 # DESCRIPTION:    Build docker nightly release using Docker in Docker.
@@ -40,7 +40,7 @@
 #         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
 # TO_BUILD:       docker build -t dockerbuilder .
 # TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh"
-149,"# VERSION:        0.4
+103,"# VERSION:        0.4
 # DOCKER-VERSION  0.6.6
 # AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
 # DESCRIPTION:    Testing docker PRs and commits on top of master using
@@ -55,7 +55,7 @@
 #       [branch]  (default: 'master')
 # TO_BUILD:       docker build -t test_docker .
 # TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]"
-146,"# VERSION:        1.6
+151,"# VERSION:        1.6
 # DOCKER-VERSION  0.6.6
 # AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
 # DESCRIPTION:    Build docker nightly release using Docker in Docker.
@@ -68,24 +68,24 @@
 #         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
 # TO_BUILD:       docker build -t dockerbuilder .
 # TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh"
-114,# TODO add linux/386 and linux/arm
-65,# TODO replace FPM with some very minimal debhelper stuff
-150,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released
-354,# TODO add a very lightweight browser for opening help and/or registration
-338,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
+119,# TODO add linux/386 and linux/arm
+120,# TODO replace FPM with some very minimal debhelper stuff
+98,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released
+377,# TODO add a very lightweight browser for opening help and/or registration
+361,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
 #ONBUILD ADD Gemfile /apps/rails/Gemfile
 #ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
 #ONBUILD RUN cd /apps/rails && bundle install --deployment
 #ONBUILD ADD . /apps/rails
 #ONBUILD RUN chown -R www-data:www-data /apps/rails"
-339,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
+362,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
 #ONBUILD ADD Gemfile /apps/rails/Gemfile
 #ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
 #ONBUILD RUN bundle install --deployment
 #ONBUILD ADD . /apps/rails"
-358,"# much of this was gleaned from https://github.com/lxc/lxc/blob/lxc-0.8.0/templates/lxc-ubuntu.in
+383,"# much of this was gleaned from https://github.com/lxc/lxc/blob/lxc-0.8.0/templates/lxc-ubuntu.in
 # and then heavily modified and hacked like crazy"
-67,"# This file describes the standard way to build Docker, using docker
+122,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -109,45 +109,45 @@
 # Note: Apparmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #"
-245,## haskell package versions; can be overriden via context hacks
-162,# TODO verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
-356,# TODO move this down when COPY adheres to USER (and remove chown)
-241,"# TODO:
+261,## haskell package versions; can be overriden via context hacks
+167,# TODO verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
+379,# TODO move this down when COPY adheres to USER (and remove chown)
+257,"# TODO:
 # - version as a variable (both php and ZS)"
-177,# TODO pin specific commit
-188,"# TODO gcc: error: unrecognized command line option '-marm'
+187,# TODO pin specific commit
+199,"# TODO gcc: error: unrecognized command line option '-marm'
 #	android/arm \"
-118,"# TODO when https://jenkins.dockerproject.com/job/Windows/ is green, add windows back to the list above
+123,"# TODO when https://jenkins.dockerproject.com/job/Windows/ is green, add windows back to the list above
 #	windows/amd64 windows/386"
-237,# TODO:
-14,"# get logs to stdout (thanks to http://www.superpumpup.com/docker-rabbitmq-stdout for inspiration)
+253,# TODO:
+16,"# get logs to stdout (thanks to http://www.superpumpup.com/docker-rabbitmq-stdout for inspiration)
 # TODO figure out what we'd need to do to add ""(sasl_)?"" to this sed and have it work (""{""init terminating in do_boot"",{rabbit,failure_during_boot,{error,{cannot_log_to_tty,sasl_report_tty_h,not_installed}}}}"")"
-252,# TODO find a way to make --mirror-only / SSL work with backpan too :(
-94,# TODO: don't do this - look at merging the yml file in build.sh
-151,# TODO: need the full repo source to get the git version info
-69,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
-253,"# TODO find a way to make --verify work with backpan as well :'(
+268,# TODO find a way to make --mirror-only / SSL work with backpan too :(
+99,# TODO: don't do this - look at merging the yml file in build.sh
+156,# TODO: need the full repo source to get the git version info
+124,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
+269,"# TODO find a way to make --verify work with backpan as well :'(
 #ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify"
-248,"## install additional libs typically needed by hackage packages
+263,"## install additional libs typically needed by hackage packages
 #RUN apt-get update && \
 #    apt-get install ${OPTS_APT} zlib1g-dev libtinfo-dev"
-285,# TODO use this MD5
-463,# TODO aufs-tools
-187,"# This is a hack (see libcompose#32) - will be removed when libcompose will be fixed
+303,# TODO use this MD5
+500,# TODO aufs-tools
+198,"# This is a hack (see libcompose#32) - will be removed when libcompose will be fixed
 # (i.e go get able)"
-311,# TODO: Switch to debian sid
-120,"# install seccomp
+331,# TODO: Switch to debian sid
+75,"# install seccomp
 # TODO: switch to libseccomp-dev since dockerinit is gone"
-347, # TODO inbox-api or inbox-start
-121,"# !!! TEMPORARY HACK !!!
+370, # TODO inbox-api or inbox-start
+126,"# !!! TEMPORARY HACK !!!
 # Because of https://github.com/golang/go/issues/15286 we have to revert to Go 1.5.3 for windows/amd64 in master
 # To change which version of Go to compile with, simply prepend PATH with /usr/local/go1.5.3/bin
 # and set GOROOT to /usr/local/go1.5.3"
-254,# TODO figure out what's going on here and what it'll settle to for 5.0 GA
-226,"# http://tomcat.10.x6.nabble.com/VOTE-Release-Apache-Tomcat-8-0-32-tp5046007p5048274.html (ie, HACK HACK HACK)"
-197,"# TODO find a simple hacky way to verify Tomcat Native is working properly
+270,# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+243,"# http://tomcat.10.x6.nabble.com/VOTE-Release-Apache-Tomcat-8-0-32-tp5046007p5048274.html (ie, HACK HACK HACK)"
+210,"# TODO find a simple hacky way to verify Tomcat Native is working properly
 # (the way we use in 7+ doesn't work here because we have no ""configtest"")"
-122,"# This file describes the standard way to build Docker, using docker
+127,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -171,55 +171,55 @@
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #"
-290,"# By default you'll get a single-node development server that stores everything
+309,"# By default you'll get a single-node development server that stores everything
 # in RAM and bootstraps itself. Don't use this configuration for production."
-369,"# HACK, replacing shell with bash for later docker build commands"
-387,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")"
-317,"# By default you'll get an insecure single-node development server that stores
+393,"# HACK, replacing shell with bash for later docker build commands"
+402,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")"
+337,"# By default you'll get an insecure single-node development server that stores
 # everything in RAM, exposes a web UI and HTTP endpoints, and bootstraps itself.
 # Don't use this configuration for production."
-50,"# hack in ""ENABLE_PATH_CHECK"" disabling to suppress:
+59,"# hack in ""ENABLE_PATH_CHECK"" disabling to suppress:
 #   warning: Insecure world writable dir"
-195,# TODO consider removing the *-dev deps and only keeping the necessary lib* packages
-255,"  ## hack to avoid RStudio-bug in detecting build-dependencies         
+202,# TODO consider removing the *-dev deps and only keeping the necessary lib* packages
+271,"  ## hack to avoid RStudio-bug in detecting build-dependencies         
   # && ln -s&& ln -s ln -s /usr/local/bin/R /usr/bin/R \
   # && ln -s&& ln -s ln -s /usr/local/lib/R /usr/lib/R"
-527,"# TODO ENV DOCKER_SHA256
+534,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)"
-313,"    # Extensions
+333,"    # Extensions
     # TODO: make submodules shallow clones?"
-330,"# TODO for some reason, libgo + i386 fails on https://github.com/gcc-mirror/gcc/blob/gcc-7_1_0-release/libgo/runtime/proc.c#L154
+338,# TODO get enough builders to test and verify arm32v5 O:)
+339,"# TODO for some reason, libgo + i386 fails on https://github.com/gcc-mirror/gcc/blob/gcc-7_1_0-release/libgo/runtime/proc.c#L154
 # ""error unknown case for SETCONTEXT_CLOBBERS_TLS"""
-328,# TODO get enough builders to test and verify arm32v5 O:)
-325,"# TODO make[2]: *** No rule to make target '/usr/src/gcc/gcc/sync-builtinsndef', needed by 'tree-ssa-loop-prefetch.o'.  Stop.
+349,"# TODO make[2]: *** No rule to make target '/usr/src/gcc/gcc/sync-builtinsndef', needed by 'tree-ssa-loop-prefetch.o'.  Stop.
 # (which the builds takes _forever_ to get to)"
-410,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
-411,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy
+437,"# Install tomlv, vndr, runc, containerd, tini, docker-proxy
 # Please edit hack/dockerfile/install-binaries.sh to update them."
-131,# Options for hack/validate/gometalinter
-501,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
+436,"# See also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
+136,# Options for hack/validate/gometalinter
+537,"# set up nsswitch.conf for Go's ""netgo"" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
 # - https://github.com/golang/go/blob/go1.9.1/src/net/conf.go#L194-L275
 # - docker run --rm debian:stretch grep '^hosts:' /etc/nsswitch.conf"
-178,    # TODO: the distribution given by apache is not gzipped correctly - unzip correctly when fixed
-334,# TODO verify signature
-376,# TODO some sort of download verification here
-132,"# TODO: when issue #35963 fixed, we can upgrade the busybox to multi-arch"
-231,"#Copy Zray docker plugin
+188,    # TODO: the distribution given by apache is not gzipped correctly - unzip correctly when fixed
+357,# TODO verify signature
+403,# TODO some sort of download verification here
+137,"# TODO: when issue #35963 fixed, we can upgrade the busybox to multi-arch"
+247,"#Copy Zray docker plugin
 #TODO: Integrate Zray docker plugin into Zend Server"
-134,"# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
+139,"# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
 # Please edit hack/dockerfile/install/<name>.installer to update them."
-136,"# TODO: Some of this is only really needed for testing, it would be nice to split this up"
-137,"# TODO: This is for the docker-py tests, which shouldn't really be needed for
+141,"# TODO: Some of this is only really needed for testing, it would be nice to split this up"
+140,"# Just a little hack so we don't have to install these deps twice, once for runc and once for dockerd"
+142,"# TODO: This is for the docker-py tests, which shouldn't really be needed for
 # this image, but currently CI is expecting to run this image. This should be
 # split out into a separate image, including all the `python-*` deps installed
 # above."
-85,"# Just a little hack so we don't have to install these deps twice, once for runc and once for dockerd"
-88,"# FIXME(vdemeester) this is kept for other script depending on it to not fail right away
+143,"# FIXME(vdemeester) this is kept for other script depending on it to not fail right away
 # Remove this once the other scripts uses something else to detect the version"
-486,# https://github.com/docker/docker/tree/master/hack/dind
-89,"# # Make a dockerd binary.
+524,# https://github.com/docker/docker/tree/master/hack/dind
+94,"# # Make a dockerd binary.
 # # hack/make.sh binary
 #
 # # Install dockerd to /usr/local/bin
@@ -234,7 +234,7 @@
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #"
-157,"# This file describes the standard way to build Docker, using docker
+162,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -250,67 +250,67 @@
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #"
-249,"# TODO https://github.com/memcached/memcached/issues/382 ""t/chunked-extstore.t is flaky on arm32v6"""
-159,# TODO The way we set the version could easily be simplified not to depend on hack/...
-161,"# docker-init - TODO move this out, last time we bumped was 2016!"
-158,#COPY hack/dockerfile/binaries-commits /
-160,"# docker-proxy
+266,"# TODO https://github.com/memcached/memcached/issues/382 ""t/chunked-extstore.t is flaky on arm32v6"""
+166,"# docker-init - TODO move this out, last time we bumped was 2016!"
+163,#COPY hack/dockerfile/binaries-commits /
+164,# TODO The way we set the version could easily be simplified not to depend on hack/...
+165,"# docker-proxy
 # TODO if libnetwork folds into the docker tree this can be combined above"
-308,"# https://github.com/docker-library/postgres/issues/484 (clang-6.0 required, only available in stretch-backports)
+324,"# https://github.com/docker-library/postgres/issues/484 (clang-6.0 required, only available in stretch-backports)
 # TODO remove this once we hit buster+"
-454,"# Default to UTF-8 file.encoding
+488,"# Default to UTF-8 file.encoding
 #ENV LANG C.UTF-8
 # TODO oraclelinux doesn't have C.UTF-8 by default??"
-273,"# TODO: Once bootstrapped, use 'crux:latest'"
-355,"# TODO verify sha256 values! (add "".sha256"" to the end of this URL)"
-348,# TODO find some way to include ccextractor (currently buster-only)
+289,"# TODO: Once bootstrapped, use 'crux:latest'"
+378,"# TODO verify sha256 values! (add "".sha256"" to the end of this URL)"
+371,# TODO find some way to include ccextractor (currently buster-only)
 8,"# TODO
 # Install RabbitMQ
 # Ensure RabbitMQ starts & rabbitmqctl works correctly"
-9,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
-# http://erlang.org/pipermail/erlang-questions/2019-January/097067.html"
 11,"# Add RabbitMQ to PATH, send all logs to TTY
 # TODO @tianon is sbin a problem? Notice that I'm installing generic-unix, not the Debian package"
 12,"# TODO @tianon why is this necessary?
 # RUN ln -sf ""/usr/lib/rabbitmq/lib/rabbitmq_server-$RABBITMQ_VERSION/plugins"" /plugins"
+9,"# TODO add PGP checking when the feature will be added to Erlang/OTP's build system
+# http://erlang.org/pipermail/erlang-questions/2019-January/097067.html"
 13,"# Delete all src dirs to keep the final image size down, they add an extra 19MB
 # TODO @dumbbell could this be done better, in the build/install phases?"
-184,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed"
-18,# TODO RABBITMQ_DATA_DIR
-19,"# TODO CMD [""rabbitmq-server""]"
-17,# TODO verification
-183,## End Hack
-182,## Start Hack
-181,## All of this needed because of missing 8.11.x tag.  Once we update to 8.15+ we can resume using Dockerfile.old or remove hack and use FROM node:8-slim
-365,"# FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
+194,"# FIXME(chris-crone): virtualenv 16.3.0 breaks build, force 16.2.0 until fixed"
+19,# TODO verification
+20,# TODO RABBITMQ_DATA_DIR
+21,"# TODO CMD [""rabbitmq-server""]"
+191,## All of this needed because of missing 8.11.x tag.  Once we update to 8.15+ we can resume using Dockerfile.old or remove hack and use FROM node:8-slim
+192,## Start Hack
+193,## End Hack
+389,"# FIXME Remove this once rosdep detects ROS 2 packages https://github.com/ros-infrastructure/rosdep/issues/660
 # ignore installed rosdep keys"
-276,# TODO rebuild other cffi modules here too? (other _*_build.py files)
-272,# fixme: needs to check out a tag on the next 1.14 release
-363,# TODO pin a version
-364,# TODO pin versions
-408,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
+292,# TODO rebuild other cffi modules here too? (other _*_build.py files)
+288,# fixme: needs to check out a tag on the next 1.14 release
+387,# TODO pin a version
+388,# TODO pin versions
+434,"# TODO find a way to make --mirror-only / SSL work with backpan too :(
 #RUN cpanm Digest::SHA Module::Signature
 # TODO find a way to make --verify work with backpan as well :'(
 #ENV PERL_CPANM_OPT $PERL_CPANM_OPT --verify"
-412,# TODO signature? checksum?
-444,# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7)
-417,"# TODO strip ""demo"" and ""man"" folders?"
-256,"#These settings are needed so that we can run as a different user than 1001 after server warmup
+458,"# TODO strip ""demo"" and ""man"" folders?"
+438,# TODO signature? checksum?
+447,# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7)
+276,"# These settings are needed so that we can run as a different user than 1001 after server warmup
 # TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it"
-257,"# These settings are needed so that we can run as a different user than 1001 after server warmup
+272,"#These settings are needed so that we can run as a different user than 1001 after server warmup
 # TODO: Eventually convert this to OPENJ9_JAVA_OPTIONS once the Liberty server script honors it"
-368,"# FIXME This is a workaround for pytest not found causing builds to fail
+392,"# FIXME This is a workaround for pytest not found causing builds to fail
 # Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722"
-367,"# FIXME Remove this once ament_export_interfaces respects COLCON_CURRENT_PREFIX https://github.com/ament/ament_cmake/issues/173
+391,"# FIXME Remove this once ament_export_interfaces respects COLCON_CURRENT_PREFIX https://github.com/ament/ament_cmake/issues/173
 #Workaround hard coded paths in nightly tarball setup scripts"
-207,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
+227,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?"
+214,"# TODO should we leave these installed, or remove them too?"
+215,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
 # TODO find a better/cleaner way to generically interact with the yumdb for the purposes of marking things as automatically/manually installed"
-217,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?"
-221,"# TODO should we leave these installed, or remove them too?"
-315,"	# Extensions
+335,"	# Extensions
 	# TODO: make submodules shallow clones?"
-209,"# TODO there's an odd bug on Oracle Linux where installing ""cpp"" (which gets pulled in as a dependency of ""gcc"") and then marking it as automatically-installed will result in the ""filesystem"" package being removed during ""yum autoremove"" (which then fails), so we set it as manually-installed to compensate"
-185,"# Todo: remove build dependencies
+234,"# TODO there's an odd bug on Oracle Linux where installing ""cpp"" (which gets pulled in as a dependency of ""gcc"") and then marking it as automatically-installed will result in the ""filesystem"" package being removed during ""yum autoremove"" (which then fails), so we set it as manually-installed to compensate"
+196,"# Todo: remove build dependencies
 #	runDeps=""$( \
 #		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems \
 #		| tr ',' '\n' \
@@ -319,32 +319,32 @@
 #	)""; \
 #	apk add --virtual .redmine-rundeps $runDeps; \
 #	apk del .build-deps"
-281,# TODO switch to buster once https://github.com/docker-library/php/issues/865 is resolved in a clean way (either in the PHP image or in PHP itself)
-173,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)"
-429,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
+305,# TODO switch to buster once https://github.com/docker-library/php/issues/865 is resolved in a clean way (either in the PHP image or in PHP itself)
+182,"# TODO https://github.com/antirez/redis/pull/3494 (deduplicate ""redis-server"" copies)"
+457,"# TODO find a good link for users to verify this key is right (https://mail.openjdk.java.net/pipermail/jdk-updates-dev/2019-April/000951.html is one of the only mentions of it I can find); perhaps a note added to https://adoptopenjdk.net/upstream.html would make sense?
 # no-self-sigs-only: https://salsa.debian.org/debian/gnupg2/commit/c93ca04a53569916308b369c8b218dad5ae8fe07"
-90,"# Install go-swagger for validating swagger.yaml
+145,"# Install go-swagger for validating swagger.yaml
 # This is https://github.com/kolyshkin/go-swagger/tree/golang-1.13-fix
 # TODO: move to under moby/ or fix upstream go-swagger to work for us."
-91,"# TODO: This is here because hack/make.sh binary copies these extras binaries
+146,"# TODO: This is here because hack/make.sh binary copies these extras binaries
 # from $PATH into the bundles dir.
 # It would be nice to handle this in a different way."
-370,"# FIXME renaming manifest.xml is a workaround for rosdep misbehaving when both
+394,"# FIXME renaming manifest.xml is a workaround for rosdep misbehaving when both
 # manifest.xml and package.xml are present
 # install dependencies"
-344,"# TODO add ""nbtscan"" when we get to Alpine 3.12 (if it makes it out of edge)
+367,"# TODO add ""nbtscan"" when we get to Alpine 3.12 (if it makes it out of edge)
 # https://pkgs.alpinelinux.org/packages?name=nbtscan&branch=edge&arch=x86_64"
-92,"# Switch to use iptables instead of nftables (to match the CI hosts)
+97,"# Switch to use iptables instead of nftables (to match the CI hosts)
 # TODO use some kind of runtime auto-detection instead if/when nftables is supported (https://github.com/moby/moby/issues/26824)"
-372,# TODO: alter filename after v2 release (version will be taken out of name)
-335,# TODO .asc / .sha256sum
-353,"#RUN set -eux; \
+396,# TODO: alter filename after v2 release (version will be taken out of name)
+358,# TODO .asc / .sha256sum
+376,"#RUN set -eux; \
 #	wget -O /usr/local/bin/dind ""https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind""; \
 #	chmod +x /usr/local/bin/dind"
-352,"# https://github.com/docker/docker/tree/master/hack/dind
+375,"# https://github.com/docker/docker/tree/master/hack/dind
 #ENV DIND_COMMIT 130b0bc6032cc675d064e1cc62626cacc9c07a57"
-346,"# TODO figure out what ookla means by their bare ""arm"" arch"
-345,"# TODO verify that ookla's ""armhf"" really is armv6"
-165,"# TODO https://github.com/redis/redis/pull/3494 (deduplicate ""redis-server"" copies)"
-362,"# TODO set ""TARGET"" appropriately based on ""apk --print-arch"" to avoid ""uname -m"" detection"
-349,"# TODO copy/steal ""browser.sh"" stuff from slack"
+368,"# TODO verify that ookla's ""armhf"" really is armv6"
+369,"# TODO figure out what ookla means by their bare ""arm"" arch"
+172,"# TODO https://github.com/redis/redis/pull/3494 (deduplicate ""redis-server"" copies)"
+386,"# TODO set ""TARGET"" appropriately based on ""apk --print-arch"" to avoid ""uname -m"" detection"
+372,"# TODO copy/steal ""browser.sh"" stuff from slack"
