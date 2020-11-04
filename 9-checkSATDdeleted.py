@@ -1,4 +1,4 @@
-from setting import PATH_OF_ALLPROJECT_CSV, PATH_OF_GITCLONE
+from setting import PATH_OF_ALLPROJECT_CSV, PATH_OF_GITCLONE, PATH_OF_ALLPROJECT_CSV_UPDATE
 from tqdm import tqdm
 import os
 import re
@@ -64,7 +64,7 @@ def judge_comment_change(df):
         
 
 
-    df.to_csv('test.csv')
+    df.to_csv(f'{PATH_OF_ALLPROJECT_CSV_UPDATE}/result.csv')
 
 
 

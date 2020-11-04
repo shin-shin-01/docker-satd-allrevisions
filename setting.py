@@ -37,3 +37,7 @@ PATH_OF_UNIQUE_SATD_INFO = "./7-satdCommnetsUNIQUE"
 # 8 create csv all project with other Info
 PATH_OF_UNIQUE_SATD_INFO = "./7-satdCommnetsUNIQUE"
 PATH_OF_ALLPROJECT_CSV = "./8-allprojectCSV"
+
+# 8 create csv all project with other Info
+PATH_OF_ALLPROJECT_CSV = "./8-allprojectCSV"
+PATH_OF_ALLPROJECT_CSV_UPDATE = "./9-allprojectCSV"
