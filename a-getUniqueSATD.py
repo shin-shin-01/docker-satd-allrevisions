@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import re
 
-from setting import PATH_OF_ALLPROJECT_CSV
+from setting import PATH_OF_ALLPROJECT_CSV_UPDATE
 
 
 
@@ -34,8 +34,7 @@ def get_azuma_count(df):
     print("東さんのデータに合わせた整形→行数 : ", len(df[["project", "Comment"]].drop_duplicates()))
 
 if __name__ == "__main__":
-    # df = pd.read_csv(f'{PATH_OF_ALLPROJECT_CSV}/result.csv', index_col=0)
-    df = pd.read_csv(f'test.csv', index_col=0)
+    df = pd.read_csv(f'{PATH_OF_ALLPROJECT_CSV_UPDATE}/result.csv', index_col=0)
     get_unique_satd_toCSV(df)
     get_unique_satd_with_deleteInfo_toCSV(df)
     get_azuma_count(df)
