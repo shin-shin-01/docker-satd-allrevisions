@@ -3,92 +3,10 @@
 docker-ce",https://github.com/docker/docker-ce,736b960e2df15e35aca9abec3ef6a9bc64ead7b3,5e4f4153669d1dbd07f53a9267d5d8677c107b51,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,#### FIXME. Temporarily install docker with proper apparmor handling,2013/10/11 10:29,2013/11/02 05:55,2013/10/11 10:29,2014/03/11 05:20,0 days 00:00:00.000000000,"21 days, 19:26:00",https://github.com/docker/docker-ce/commit/736b960e2df15e35aca9abec3ef6a9bc64ead7b3#diff-3a9df4f644d888a7f84918b1a8e506fa398a292e1a588e21ed6944568c31986fR26,https://github.com/docker/docker-ce/commit/5e4f4153669d1dbd07f53a9267d5d8677c107b51#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45L26,,
 104,"moby
 moby",https://github.com/moby/moby,6e3068700fb32299cf733acd74785e29609b1974,31638ab2ad2a5380d447780f05f7aa078c9421f5,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,#### FIXME. Temporarily install docker with proper apparmor handling,2013/10/11 10:29,2013/11/02 05:55,2013/10/11 10:29,2014/03/11 05:20,0 days 00:00:00.000000000,"21 days, 19:26:00",https://github.com/moby/moby/commit/6e3068700fb32299cf733acd74785e29609b1974#diff-4467e3db1b818ea16aec663fe4216732c13cf768b8fe85574a0bbc1390daf6d5R26,https://github.com/moby/moby/commit/31638ab2ad2a5380d447780f05f7aa078c9421f5#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418L26,,
-117,"docker
-docker-ce",https://github.com/docker/docker-ce,4d40f8afe3d3f7cdeee3f6ce2f4f8e725107508a,6863c4fe21e39c125f3a429e001c724bc37341b0,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -lxc-conf=lxc.aa_profile=unconfined -i -t docker bash
-#
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker hack/make.sh test
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#",2013/09/07 11:58,2013/11/07 05:03,2013/07/09 13:30,,"59 days, 22:28:00","60 days, 17:05:00",https://github.com/docker/docker-ce/commit/8846d6c44348681e2964d46b103d645e3fd6b8dc#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185R15,https://github.com/docker/docker-ce/commit/6863c4fe21e39c125f3a429e001c724bc37341b0#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185L7,,
-67,"moby
-moby",https://github.com/moby/moby,fa806f26aff927eb0d98b41e79786ae98987da5b,6d420407caf533f89b60d78c54e0ddc2d307e942,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -lxc-conf=lxc.aa_profile=unconfined -i -t docker bash
-#
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker hack/make.sh test
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#",2013/09/07 11:58,2013/11/07 05:03,2013/07/09 13:30,,"59 days, 22:28:00","60 days, 17:05:00",https://github.com/moby/moby/commit/ee7d9b0bdec40d02ba5ef25f557cca9444a19669#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R15,https://github.com/moby/moby/commit/6d420407caf533f89b60d78c54e0ddc2d307e942#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L7,,
 374,"tianon
 dockerfiles",https://github.com/tianon/dockerfiles,a5d820803f01e2582d45be1b00a2808ede979951,a9323cfaaa5f50ad3c2ab16fb96f98d2e8a237eb,xen-orchestra/Dockerfile,# TODO see note above about redis,2013/11/02 14:34,2014/06/17 08:38,2013/11/02 14:34,,0 days 00:00:00.000000000,"226 days, 18:04:00",https://github.com/tianon/dockerfiles/commit/a5d820803f01e2582d45be1b00a2808ede979951#diff-a5e1353d38c06f94505567e04562484f8d4ebba72f2904624e551fe8a98fe89bR21,https://github.com/tianon/dockerfiles/commit/a9323cfaaa5f50ad3c2ab16fb96f98d2e8a237eb#diff-a5e1353d38c06f94505567e04562484f8d4ebba72f2904624e551fe8a98fe89bL20,,
 373,"tianon
 dockerfiles",https://github.com/tianon/dockerfiles,a5d820803f01e2582d45be1b00a2808ede979951,a9323cfaaa5f50ad3c2ab16fb96f98d2e8a237eb,xen-orchestra/Dockerfile,# TODO use links to get a redis server/database instead (since that's where configuration actually goes),2013/11/02 14:34,2014/06/17 08:38,2013/11/02 14:34,,0 days 00:00:00.000000000,"226 days, 18:04:00",https://github.com/tianon/dockerfiles/commit/a5d820803f01e2582d45be1b00a2808ede979951#diff-a5e1353d38c06f94505567e04562484f8d4ebba72f2904624e551fe8a98fe89bR18,https://github.com/tianon/dockerfiles/commit/a9323cfaaa5f50ad3c2ab16fb96f98d2e8a237eb#diff-a5e1353d38c06f94505567e04562484f8d4ebba72f2904624e551fe8a98fe89bL17,,
-102,"moby
-moby",https://github.com/moby/moby,efb4c800a7c8167cf2202466a720c0fad7001a5d,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,hack/infrastructure/docker-ci/docker-test/Dockerfile,#### FIXME. Temporarily install docker and dind with proper apparmor handling,2013/11/07 12:13,2013/11/07 13:05,2013/10/19 14:33,2014/03/11 05:20,18 days 21:40:00.000000000,0:52:00,https://github.com/moby/moby/commit/efb4c800a7c8167cf2202466a720c0fad7001a5d#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83R20,https://github.com/moby/moby/commit/249f76bebdb3c24ae0a59e3be7ae73fd1d88c065#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83L20,,
-153,"docker
-docker-ce",https://github.com/docker/docker-ce,837c6b480c6859db6bf3f3fb044b070afb3f336d,ba4e682cde6ad56a7fe88c5e61c976e1db93338b,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,#### FIXME. Temporarily install docker and dind with proper apparmor handling,2013/11/07 12:13,2013/11/07 13:05,2013/10/19 14:33,2014/03/11 05:20,18 days 21:40:00.000000000,0:52:00,https://github.com/docker/docker-ce/commit/837c6b480c6859db6bf3f3fb044b070afb3f336d#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdR20,https://github.com/docker/docker-ce/commit/ba4e682cde6ad56a7fe88c5e61c976e1db93338b#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdL20,,
-105,"moby
-moby",https://github.com/moby/moby,17172276366fc3114ae52eb6c83aafbec004d5f3,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.5
-# DOCKER-VERSION  0.6.4
-# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
-# DESCRIPTION:    Build docker nightly release using Docker in Docker.
-# REFERENCES:     This code reuses the excellent implementation of docker in docker
-#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
-# COMMENTS:
-#   release_credentials.json is a base64 json encoded file containing:
-#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
-#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
-#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
-# TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh",2013/11/07 12:13,2013/11/07 13:05,2013/10/11 10:29,2014/03/11 05:20,27 days 01:44:00.000000000,0:52:00,https://github.com/moby/moby/commit/17172276366fc3114ae52eb6c83aafbec004d5f3#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418R1,https://github.com/moby/moby/commit/249f76bebdb3c24ae0a59e3be7ae73fd1d88c065#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418L1,,
-150,"docker
-docker-ce",https://github.com/docker/docker-ce,aac90cd92e4389ce099b59cb7313755538ca4d48,ba4e682cde6ad56a7fe88c5e61c976e1db93338b,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.5
-# DOCKER-VERSION  0.6.4
-# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
-# DESCRIPTION:    Build docker nightly release using Docker in Docker.
-# REFERENCES:     This code reuses the excellent implementation of docker in docker
-#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
-# COMMENTS:
-#   release_credentials.json is a base64 json encoded file containing:
-#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
-#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
-#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
-# TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh",2013/11/07 12:13,2013/11/07 13:05,2013/10/11 10:29,2014/03/11 05:20,27 days 01:44:00.000000000,0:52:00,https://github.com/docker/docker-ce/commit/aac90cd92e4389ce099b59cb7313755538ca4d48#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45R1,https://github.com/docker/docker-ce/commit/ba4e682cde6ad56a7fe88c5e61c976e1db93338b#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45L1,,
 119,"docker
 docker-ce",https://github.com/docker/docker-ce,a7fc58e1eb11c1f9c94348203647b59eff438fdf,df82456ed97e08ffa192c1f821acd9315295e7da,components/engine/Dockerfile,# TODO add linux/386 and linux/arm,2013/12/20 03:33,2014/02/01 04:48,2013/07/09 13:30,,163 days 14:03:00.000000000,"43 days, 1:15:00",https://github.com/docker/docker-ce/commit/a7fc58e1eb11c1f9c94348203647b59eff438fdf#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185R46,https://github.com/docker/docker-ce/commit/df82456ed97e08ffa192c1f821acd9315295e7da#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185L72,,
 69,"moby
@@ -108,56 +26,6 @@ dockerfiles",https://github.com/tianon/dockerfiles,2e37f527a42e05e8b9e62a84ec343
 #ONBUILD RUN cd /apps/rails && bundle install --deployment
 #ONBUILD ADD . /apps/rails
 #ONBUILD RUN chown -R www-data:www-data /apps/rails",2014/03/29 08:19,2014/10/22 01:38,2014/03/29 08:19,2019/09/14 06:33,0 days 00:00:00.000000000,"206 days, 17:19:00",https://github.com/tianon/dockerfiles/commit/2e37f527a42e05e8b9e62a84ec34355edae69e47#diff-98c94b1ec125d65ca2943f740887117d94ebbea737c02c27448e8522e1da346cR24,https://github.com/tianon/dockerfiles/commit/d6d435479900274e105bdfdf2792c26c989f05f6#diff-98c94b1ec125d65ca2943f740887117d94ebbea737c02c27448e8522e1da346cL24,,
-122,"docker
-docker-ce",https://github.com/docker/docker-ce,5e4f4153669d1dbd07f53a9267d5d8677c107b51,a0933c7d27b0559510dd97c75bc54edcd14f6130,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: Apparmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2013/11/02 05:55,2016/08/17 06:18,2013/07/09 13:30,,"115 days, 16:25:00","1019 days, 0:23:00",https://github.com/docker/docker-ce/commit/6ae4c9014c47cc292e642bb85211b74fcf01af7a#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185R9,https://github.com/docker/docker-ce/commit/a0933c7d27b0559510dd97c75bc54edcd14f6130#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185Error,,
-72,"moby
-moby",https://github.com/moby/moby,31638ab2ad2a5380d447780f05f7aa078c9421f5,37302bbb3f4889e9de2a95d5ea018acdab9e4447,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: Apparmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2013/11/02 05:55,2016/08/17 06:18,2013/07/09 13:30,,"115 days, 16:25:00","1019 days, 0:23:00",https://github.com/moby/moby/commit/b3ee9ac74e171e00f14027e39278013629e681b8#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R9,https://github.com/moby/moby/commit/37302bbb3f4889e9de2a95d5ea018acdab9e4447#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557Error,,
 261,"haskell
 docker-haskell",https://github.com/haskell/docker-haskell,2a2584ea8edb91065217e3f2a8d99e64e991445b,b2c8b20740764315551415596e9b6115e3859380,7.8/Dockerfile,## haskell package versions; can be overriden via context hacks,2014/07/27 07:55,2014/09/29 04:01,2014/05/29 12:51,,58 days 19:04:00.000000000,"63 days, 20:06:00",https://github.com/haskell/docker-haskell/commit/2a2584ea8edb91065217e3f2a8d99e64e991445b#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R41,https://github.com/haskell/docker-haskell/commit/b2c8b20740764315551415596e9b6115e3859380#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L27,,
 167,"nodejs
@@ -192,7 +60,7 @@ docker-ce",https://github.com/docker/docker-ce,c071c815d3338d8357acfbdfeb95122cb
 74,"moby
 moby",https://github.com/moby/moby,09b4c2585284d1125d4d299a7d58b36c1d0baf17,1ecd8ed5186a161c1c43ae7c99b1c81b97188619,Dockerfile,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)",2015/03/10 10:02,2017/04/11 05:05,2013/07/09 13:30,,608 days 20:32:00.000000000,"762 days, 19:03:00",https://github.com/moby/moby/commit/09b4c2585284d1125d4d299a7d58b36c1d0baf17#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R149,https://github.com/moby/moby/commit/1ecd8ed5186a161c1c43ae7c99b1c81b97188619#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L242,,
 263,"haskell
-docker-haskell",https://github.com/haskell/docker-haskell,ced15f9e787dde6d7559819896bf322ef9a9fa17,a5ddcdd90f4db30246c6996516bba4367975e81a,7.8/Dockerfile,"## install additional libs typically needed by hackage packages
+docker-haskell",https://github.com/haskell/docker-haskell,3d147020c8d2beb5a52cb3b9ef89712f9e2c1939,a5ddcdd90f4db30246c6996516bba4367975e81a,7.8/Dockerfile,"## install additional libs typically needed by hackage packages
 #RUN apt-get update && \
 #    apt-get install ${OPTS_APT} zlib1g-dev libtinfo-dev",2014/10/07 10:15,2015/03/31 06:11,2014/05/29 12:51,,"130 days, 21:24:00","174 days, 19:56:00",https://github.com/haskell/docker-haskell/commit/3d147020c8d2beb5a52cb3b9ef89712f9e2c1939#diff-0dca2087f52433bae04e2ec78a1e11c92c66dc0058a8a690fce635067fe43ab7R22,https://github.com/haskell/docker-haskell/commit/a5ddcdd90f4db30246c6996516bba4367975e81a#diff-0dca2087f52433bae04e2ec78a1e11c92c66dc0058a8a690fce635067fe43ab7L21,https://github.com/haskell/docker-haskell/commit/ced15f9e787dde6d7559819896bf322ef9a9fa17#diff-0dca2087f52433bae04e2ec78a1e11c92c66dc0058a8a690fce635067fe43ab7R53,## install additional libs typically needed by hackage packages
 264,"haskell
@@ -236,56 +104,6 @@ tomcat",https://github.com/docker-library/tomcat,ec75141e3cb6276b07d66c16042152e
 tomcat",https://github.com/docker-library/tomcat,ec75141e3cb6276b07d66c16042152e2d4de119c,d08341e2ed934abd7ff1baa0c26d6eac4f45f73a,8.5/jdk8/openjdk-slim-buster/Dockerfile,"# http://tomcat.10.x6.nabble.com/VOTE-Release-Apache-Tomcat-8-0-32-tp5046007p5048274.html (ie, HACK HACK HACK)",2016/04/23 08:52,2016/05/17 09:11,2016/04/02 01:43,,21 days 07:09:00.000000000,"24 days, 0:19:00",https://github.com/docker-library/tomcat/commit/ec75141e3cb6276b07d66c16042152e2d4de119c#diff-3f6869de99b6a965d8080d4986bb26d3f227bf32ab9c0b0312f9947ca77eacd9R60,https://github.com/docker-library/tomcat/commit/d08341e2ed934abd7ff1baa0c26d6eac4f45f73a#diff-3f6869de99b6a965d8080d4986bb26d3f227bf32ab9c0b0312f9947ca77eacd9L60,,
 245,"docker-library
 tomcat",https://github.com/docker-library/tomcat,ec75141e3cb6276b07d66c16042152e2d4de119c,d08341e2ed934abd7ff1baa0c26d6eac4f45f73a,8.5/jdk11/openjdk-slim-buster/Dockerfile,"# http://tomcat.10.x6.nabble.com/VOTE-Release-Apache-Tomcat-8-0-32-tp5046007p5048274.html (ie, HACK HACK HACK)",2016/04/23 08:52,2016/05/17 09:11,2014/10/23 08:32,,548 days 00:20:00.000000000,"24 days, 0:19:00",https://github.com/docker-library/tomcat/commit/ec75141e3cb6276b07d66c16042152e2d4de119c#diff-04b883ecde4119ea54b2e630e8e085d99e0a1f0377cada8a4d1f0266442181fcR60,https://github.com/docker-library/tomcat/commit/d08341e2ed934abd7ff1baa0c26d6eac4f45f73a#diff-04b883ecde4119ea54b2e630e8e085d99e0a1f0377cada8a4d1f0266442181fcL60,,
-127,"docker
-docker-ce",https://github.com/docker/docker-ce,dc5e6798a10239fe6fc1ad788095ee9668247889,8a093adb5cceabb305117fc020841db4bfec435e,components/engine/Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2016/07/04 23:43,2017/05/10 00:20,2013/07/09 13:30,,1091 days 10:13:00.000000000,"309 days, 0:37:00",https://github.com/docker/docker-ce/commit/dc5e6798a10239fe6fc1ad788095ee9668247889#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185R12,https://github.com/docker/docker-ce/commit/8a093adb5cceabb305117fc020841db4bfec435e#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185L12,,
-77,"moby
-moby",https://github.com/moby/moby,11280665b45d0ac9920d17abaf6a7328f2bc77d9,a762ceace4e8c1c7ce4fb582789af9d8074be3e1,Dockerfile,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#",2016/07/04 23:43,2017/05/10 00:20,2013/07/09 13:30,,1091 days 10:13:00.000000000,"309 days, 0:37:00",https://github.com/moby/moby/commit/11280665b45d0ac9920d17abaf6a7328f2bc77d9#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R12,https://github.com/moby/moby/commit/a762ceace4e8c1c7ce4fb582789af9d8074be3e1#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L12,,
 393,"osrf
 docker_images",https://github.com/osrf/docker_images,f780a6cc3b381b6ac6fbb998766233b27f66f175,b2bf197ae5bcbb8805f7d568b5f936f7d7294300,sros/kinetic/Dockerfile,"# HACK, replacing shell with bash for later docker build commands",2016/08/12 02:31,2018/01/04 08:43,2016/08/12 02:31,,0 days 00:00:00.000000000,"510 days, 6:12:00",https://github.com/osrf/docker_images/commit/f780a6cc3b381b6ac6fbb998766233b27f66f175#diff-b01ddf3884abfe13d85edb0481b8c41951af56f6b1890a3bfeece9deb8b5652fR63,https://github.com/osrf/docker_images/commit/b2bf197ae5bcbb8805f7d568b5f936f7d7294300#diff-b01ddf3884abfe13d85edb0481b8c41951af56f6b1890a3bfeece9deb8b5652fL68,,
 202,"docker-library
@@ -307,7 +125,7 @@ wordpress",https://github.com/docker-library/wordpress,f56ccb5de179757eeb043ef5f
 203,"docker-library
 wordpress",https://github.com/docker-library/wordpress,f56ccb5de179757eeb043ef5fedea6c3cf4e3bf2,bac437242c43cd716d2273b14443d3541a7af84e,php7.4/apache/Dockerfile,# TODO consider removing the *-dev deps and only keeping the necessary lib* packages,2017/01/05 09:59,2018/01/02 03:03,2017/01/05 09:59,2019/12/02 18:52,0 days 00:00:00.000000000,"361 days, 17:04:00",https://github.com/docker-library/wordpress/commit/f56ccb5de179757eeb043ef5fedea6c3cf4e3bf2#diff-0b539af73b9a8968effe55d68d60bfed6708ca9ee2bc68c27e841c8f3619d518R15,https://github.com/docker-library/wordpress/commit/bac437242c43cd716d2273b14443d3541a7af84e#diff-0b539af73b9a8968effe55d68d60bfed6708ca9ee2bc68c27e841c8f3619d518L15,,
 333,"wikimedia
-mediawiki-docker",https://github.com/wikimedia/mediawiki-docker,8b6397888af7e165e1e1494c6be823a151b616c2,b48d43686790d3497fec7a7607d640f9b8c43d67,1.31/apache/Dockerfile,"    # Extensions
+mediawiki-docker",https://github.com/wikimedia/mediawiki-docker,4b8cc73503e4fadd6f2b01eba840fa787a0d0ee3,b48d43686790d3497fec7a7607d640f9b8c43d67,1.31/apache/Dockerfile,"    # Extensions
     # TODO: make submodules shallow clones?",2015/12/19 10:41,2017/08/05 02:00,2015/08/13 14:16,,"127 days, 20:25:00","594 days, 15:19:00",https://github.com/wikimedia/mediawiki-docker/commit/4b8cc73503e4fadd6f2b01eba840fa787a0d0ee3#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R43,https://github.com/wikimedia/mediawiki-docker/commit/b48d43686790d3497fec7a7607d640f9b8c43d67#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L43,https://github.com/wikimedia/mediawiki-docker/commit/8b6397888af7e165e1e1494c6be823a151b616c2#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R46,"    # VisualEditor
     # TODO: make submodules shallow clones?"
 338,"docker-library
@@ -350,10 +168,10 @@ docker-ce",https://github.com/docker/docker-ce,c6bfcea4c884c56b4860c83eb65b39a0f
 87,"moby
 moby",https://github.com/moby/moby,eaae7750efbc80314c5e028c4d43d3cd9e104edd,e3102d5055995a43b090dbc29342a1846a39edae,Dockerfile,"# TODO: when issue #35963 fixed, we can upgrade the busybox to multi-arch",2018/01/11 14:14,2018/02/15 17:49,2013/07/09 13:30,,1647 days 00:44:00.000000000,"35 days, 3:35:00",https://github.com/moby/moby/commit/eaae7750efbc80314c5e028c4d43d3cd9e104edd#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R170,https://github.com/moby/moby/commit/e3102d5055995a43b090dbc29342a1846a39edae#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L183,,
 139,"docker
-docker-ce",https://github.com/docker/docker-ce,75e7ddadb0fc7a072bf1f95a336ee7b4bcb40e7f,e4ccd4c846b6e85d2543ad6649dff52d3e303c70,components/engine/Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
+docker-ce",https://github.com/docker/docker-ce,f11213a80093591f2a3ac7ed0bb5a03312ffb533,e4ccd4c846b6e85d2543ad6649dff52d3e303c70,components/engine/Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
 # Please edit hack/dockerfile/install/<name>.installer to update them.",2016/09/24 01:21,2018/02/26 17:10,2013/07/09 13:30,,"1172 days, 11:51:00","520 days, 15:49:00",https://github.com/docker/docker-ce/commit/f11213a80093591f2a3ac7ed0bb5a03312ffb533#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185R190,https://github.com/docker/docker-ce/commit/e4ccd4c846b6e85d2543ad6649dff52d3e303c70#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185L190,,
 89,"moby
-moby",https://github.com/moby/moby,1b41125ad9f1a3881b71bd044d76fd285170addb,d539038d9712daa44254412c6fcc6d78a14da691,Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
+moby",https://github.com/moby/moby,b529d1b0936b90ae14d584c73f7332919f8d76b7,d539038d9712daa44254412c6fcc6d78a14da691,Dockerfile,"# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
 # Please edit hack/dockerfile/install/<name>.installer to update them.",2016/09/24 01:21,2018/02/26 17:10,2013/07/09 13:30,,"1172 days, 11:51:00","520 days, 15:49:00",https://github.com/moby/moby/commit/b529d1b0936b90ae14d584c73f7332919f8d76b7#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R190,https://github.com/moby/moby/commit/d539038d9712daa44254412c6fcc6d78a14da691#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L190,,
 140,"docker
 docker-ce",https://github.com/docker/docker-ce,e4ccd4c846b6e85d2543ad6649dff52d3e303c70,ccd4b60a2c22ed5a376c71076278479e541773d9,components/engine/Dockerfile,"# Just a little hack so we don't have to install these deps twice, once for runc and once for dockerd",2018/02/26 17:10,2019/04/18 03:11,2013/07/09 13:30,,1693 days 03:40:00.000000000,"415 days, 10:01:00",https://github.com/docker/docker-ce/commit/e4ccd4c846b6e85d2543ad6649dff52d3e303c70#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185R138,https://github.com/docker/docker-ce/commit/ccd4b60a2c22ed5a376c71076278479e541773d9#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185L97,,
@@ -376,7 +194,7 @@ docker-ce",https://github.com/docker/docker-ce,6150221be34e401da3514cab1e8ccb6ea
 moby",https://github.com/moby/moby,572cb664621ca08e912a006c5c9cf2fb568ce757,10fd0516b9f9f04d0f0e2c0755e704303f1a487f,Dockerfile,"# FIXME(vdemeester) this is kept for other script depending on it to not fail right away
 # Remove this once the other scripts uses something else to detect the version",2018/02/28 17:04,2018/09/07 07:24,2013/07/09 13:30,,1695 days 03:34:00.000000000,"190 days, 14:20:00",https://github.com/moby/moby/commit/572cb664621ca08e912a006c5c9cf2fb568ce757#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R36,https://github.com/moby/moby/commit/10fd0516b9f9f04d0f0e2c0755e704303f1a487f#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L28,,
 94,"moby
-moby",https://github.com/moby/moby,5a076d7589d7a30cc0a1e45eff6674a2c8fa1cb0,82c56755ea9e6c0ce197fbdfd41d0c5d1724b50c,Dockerfile,"# # Make a dockerd binary.
+moby",https://github.com/moby/moby,80bc8b4766cc808186af91930152d78afb22aef8,82c56755ea9e6c0ce197fbdfd41d0c5d1724b50c,Dockerfile,"# # Make a dockerd binary.
 # # hack/make.sh binary
 #
 # # Install dockerd to /usr/local/bin
@@ -390,7 +208,7 @@ moby",https://github.com/moby/moby,5a076d7589d7a30cc0a1e45eff6674a2c8fa1cb0,82c5
 #
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#",2017/05/06 03:33,2019/10/04 06:07,2013/07/09 13:30,,"1396 days, 14:03:00","881 days, 2:34:00",https://github.com/moby/moby/commit/80bc8b4766cc808186af91930152d78afb22aef8#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R23,https://github.com/moby/moby/commit/82c56755ea9e6c0ce197fbdfd41d0c5d1724b50c#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L11,https://github.com/moby/moby/commit/ba49e8c49830b69c833edff3c393716da20f897a#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R11,"# # Make a dockerd binary.
+#",2018/02/14 20:08,2019/10/04 06:07,2013/07/09 13:30,,"1681 days, 6:38:00","596 days, 9:59:00",https://github.com/moby/moby/commit/80bc8b4766cc808186af91930152d78afb22aef8#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R23,https://github.com/moby/moby/commit/82c56755ea9e6c0ce197fbdfd41d0c5d1724b50c#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L11,https://github.com/moby/moby/commit/ba49e8c49830b69c833edff3c393716da20f897a#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R11,"# # Make a dockerd binary.
 # # hack/make.sh binary
 #
 # # Install dockerd to /usr/local/bin
@@ -414,7 +232,7 @@ moby",https://github.com/moby/moby,5a076d7589d7a30cc0a1e45eff6674a2c8fa1cb0,82c5
 # the case. Therefore, you don't have to disable it anymore.
 #"
 144,"docker
-docker-ce",https://github.com/docker/docker-ce,391556ba38c94b792431ee57d6c0bf7dc4d6ea4a,dd52c68ae4d8dbcbb34a4ba7983eb160dbfe37fc,components/engine/Dockerfile,"# # Make a dockerd binary.
+docker-ce",https://github.com/docker/docker-ce,7a1680b13a4d40f402fb54bfef604e8539c37662,dd52c68ae4d8dbcbb34a4ba7983eb160dbfe37fc,components/engine/Dockerfile,"# # Make a dockerd binary.
 # # hack/make.sh binary
 #
 # # Install dockerd to /usr/local/bin
@@ -428,7 +246,7 @@ docker-ce",https://github.com/docker/docker-ce,391556ba38c94b792431ee57d6c0bf7dc
 #
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#",2017/05/06 03:33,2019/10/04 06:07,2013/07/09 13:30,,"1396 days, 14:03:00","881 days, 2:34:00",https://github.com/docker/docker-ce/commit/7a1680b13a4d40f402fb54bfef604e8539c37662#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185R23,https://github.com/docker/docker-ce/commit/dd52c68ae4d8dbcbb34a4ba7983eb160dbfe37fc#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185L11,https://github.com/docker/docker-ce/commit/1d51022fe81c77d3b394b80996310fa5e6812c1e#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185R11,"# # Make a dockerd binary.
+#",2018/02/14 20:08,2019/10/04 06:07,2013/07/09 13:30,,"1681 days, 6:38:00","596 days, 9:59:00",https://github.com/docker/docker-ce/commit/7a1680b13a4d40f402fb54bfef604e8539c37662#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185R23,https://github.com/docker/docker-ce/commit/dd52c68ae4d8dbcbb34a4ba7983eb160dbfe37fc#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185L11,https://github.com/docker/docker-ce/commit/1d51022fe81c77d3b394b80996310fa5e6812c1e#diff-a3e40a36d8a31c3425a6c7002b217d41d51782bd42bddb2471e89c082fdd4185R11,"# # Make a dockerd binary.
 # # hack/make.sh binary
 #
 # # Install dockerd to /usr/local/bin
@@ -466,7 +284,7 @@ openjdk",https://github.com/docker-library/openjdk,db97c023c9f036d5e4df5fd9d1e5d
 #ENV LANG C.UTF-8
 # TODO oraclelinux doesn't have C.UTF-8 by default??",2019/01/02 17:24,2019/05/25 06:29,2019/01/02 17:24,2020/03/18 06:09,0 days 00:00:00.000000000,"142 days, 13:05:00",https://github.com/docker-library/openjdk/commit/db97c023c9f036d5e4df5fd9d1e5d21bdbabccce#diff-31ff710c1916600c32be9f16861da4912146febe4f3f07449443e7253bf11d57R14,https://github.com/docker-library/openjdk/commit/554ff38a160f896ddd7f0fdca1cd34817e253a56#diff-31ff710c1916600c32be9f16861da4912146febe4f3f07449443e7253bf11d57L15,,
 8,"docker-library
-rabbitmq",https://github.com/docker-library/rabbitmq,1d70488e3336bd3f92226133b5077c48f5702c4b,f1e3be6aecba6db3cea294215d838c79b937943f,3.7/ubuntu/Dockerfile,"# TODO
+rabbitmq",https://github.com/docker-library/rabbitmq,57831db8b9aaaaeb781f9ad8ea771940297bd6cc,f1e3be6aecba6db3cea294215d838c79b937943f,3.7/ubuntu/Dockerfile,"# TODO
 # Install RabbitMQ
 # Ensure RabbitMQ starts & rabbitmqctl works correctly",2019/01/15 18:45,2019/01/15 18:47,2019/01/15 18:45,2020/08/19 02:24,0:00:00,0:02:00,https://github.com/docker-library/rabbitmq/commit/57831db8b9aaaaeb781f9ad8ea771940297bd6cc#diff-e90d9a64a8b09c90ed599e23aebcbbed0782a15f1f291a1ae637c110a35f0007R136,https://github.com/docker-library/rabbitmq/commit/f1e3be6aecba6db3cea294215d838c79b937943f#diff-e90d9a64a8b09c90ed599e23aebcbbed0782a15f1f291a1ae637c110a35f0007L136,https://github.com/docker-library/rabbitmq/commit/1d70488e3336bd3f92226133b5077c48f5702c4b#diff-e90d9a64a8b09c90ed599e23aebcbbed0782a15f1f291a1ae637c110a35f0007R122,"# TODO
 # Start with new FROM
@@ -480,7 +298,7 @@ rabbitmq",https://github.com/docker-library/rabbitmq,21c07a969ba2bef48658cd05dac
 rabbitmq",https://github.com/docker-library/rabbitmq,21c07a969ba2bef48658cd05daca2d913d6549ce,c9da62615be192ec875ad35072a193007ce63cbc,3.7/ubuntu/Dockerfile,"# TODO @tianon why is this necessary?
 # RUN ln -sf ""/usr/lib/rabbitmq/lib/rabbitmq_server-$RABBITMQ_VERSION/plugins"" /plugins",2019/01/15 18:47,2019/01/15 19:12,2019/01/15 18:45,2020/08/19 02:24,0 days 00:02:00.000000000,0:25:00,https://github.com/docker-library/rabbitmq/commit/21c07a969ba2bef48658cd05daca2d913d6549ce#diff-e90d9a64a8b09c90ed599e23aebcbbed0782a15f1f291a1ae637c110a35f0007R215,https://github.com/docker-library/rabbitmq/commit/c9da62615be192ec875ad35072a193007ce63cbc#diff-e90d9a64a8b09c90ed599e23aebcbbed0782a15f1f291a1ae637c110a35f0007L215,,
 13,"docker-library
-rabbitmq",https://github.com/docker-library/rabbitmq,f1e3be6aecba6db3cea294215d838c79b937943f,5bfde9806e24cfd84437197d5d171caef2adcae3,3.7/ubuntu/Dockerfile,"# Delete all src dirs to keep the final image size down, they add an extra 19MB
+rabbitmq",https://github.com/docker-library/rabbitmq,2f0a2a96fef956df0c6f30986cef7fdf79294599,5bfde9806e24cfd84437197d5d171caef2adcae3,3.7/ubuntu/Dockerfile,"# Delete all src dirs to keep the final image size down, they add an extra 19MB
 # TODO @dumbbell could this be done better, in the build/install phases?",2019/01/15 18:47,2019/01/25 07:45,2019/01/15 18:45,2020/08/19 02:24,0:02:00,"9 days, 12:58:00",https://github.com/docker-library/rabbitmq/commit/2f0a2a96fef956df0c6f30986cef7fdf79294599#diff-e90d9a64a8b09c90ed599e23aebcbbed0782a15f1f291a1ae637c110a35f0007R150,https://github.com/docker-library/rabbitmq/commit/5bfde9806e24cfd84437197d5d171caef2adcae3#diff-e90d9a64a8b09c90ed599e23aebcbbed0782a15f1f291a1ae637c110a35f0007L157,https://github.com/docker-library/rabbitmq/commit/f1e3be6aecba6db3cea294215d838c79b937943f#diff-e90d9a64a8b09c90ed599e23aebcbbed0782a15f1f291a1ae637c110a35f0007R149,"# Delete all src dirs to keep the final image size down, they add an extra 19MB
 # TODO Could this be done better?"
 288,"nginxinc
@@ -588,7 +406,7 @@ drupal",https://github.com/docker-library/drupal,b05d762e4fa8ff852649ed6673c5653
 300,"docker-library
 drupal",https://github.com/docker-library/drupal,b05d762e4fa8ff852649ed6673c5653d9bb18401,71ffa1cde017936514d24d64127fb78956ea5c1b,8.9/apache-buster/Dockerfile,# TODO switch to buster once https://github.com/docker-library/php/issues/865 is resolved in a clean way (either in the PHP image or in PHP itself),2019/07/20 05:49,2020/07/17 08:48,2017/02/02 13:15,,897 days 16:34:00.000000000,"363 days, 2:59:00",https://github.com/docker-library/drupal/commit/b05d762e4fa8ff852649ed6673c5653d9bb18401#diff-2573b3fac5f223a85eafa0716a893b844503af7892ba012b23a328d1c9f82bbeR3,https://github.com/docker-library/drupal/commit/71ffa1cde017936514d24d64127fb78956ea5c1b#diff-7f71ea2da6476d45c3f22b0226f7ebd15384f0ad9a0edaceac81b13c4bd7115bL3,,
 396,"caddyserver
-caddy-docker",https://github.com/caddyserver/caddy-docker,dbdd5294d5172438253ed6b5793b26e26ef30eb5,b665b72798e3e26c9483d3df80af3515e1c0c016,2.0/alpine/Dockerfile,# TODO: alter filename after v2 release (version will be taken out of name),2020/03/11 10:38,2020/04/14 11:56,2019/10/19 05:34,2020/06/30 03:37,"144 days, 5:04:00","34 days, 1:18:00",https://github.com/caddyserver/caddy-docker/commit/e57e714a75e86e3ba872b0d3885056155f25a237#diff-86bf175f2e6e05c2f1307ec16481ae84c75506c1261e550fa8212e380d25eadbR21,https://github.com/caddyserver/caddy-docker/commit/b665b72798e3e26c9483d3df80af3515e1c0c016#diff-86bf175f2e6e05c2f1307ec16481ae84c75506c1261e550fa8212e380d25eadbL21,https://github.com/caddyserver/caddy-docker/commit/dbdd5294d5172438253ed6b5793b26e26ef30eb5#diff-86bf175f2e6e05c2f1307ec16481ae84c75506c1261e550fa8212e380d25eadbR21,# TODO: alter filename after v2 relese (version will be taken out of name)
+caddy-docker",https://github.com/caddyserver/caddy-docker,e57e714a75e86e3ba872b0d3885056155f25a237,b665b72798e3e26c9483d3df80af3515e1c0c016,2.0/alpine/Dockerfile,# TODO: alter filename after v2 release (version will be taken out of name),2020/03/11 10:38,2020/04/14 11:56,2019/10/19 05:34,2020/06/30 03:37,"144 days, 5:04:00","34 days, 1:18:00",https://github.com/caddyserver/caddy-docker/commit/e57e714a75e86e3ba872b0d3885056155f25a237#diff-86bf175f2e6e05c2f1307ec16481ae84c75506c1261e550fa8212e380d25eadbR21,https://github.com/caddyserver/caddy-docker/commit/b665b72798e3e26c9483d3df80af3515e1c0c016#diff-86bf175f2e6e05c2f1307ec16481ae84c75506c1261e550fa8212e380d25eadbL21,https://github.com/caddyserver/caddy-docker/commit/dbdd5294d5172438253ed6b5793b26e26ef30eb5#diff-86bf175f2e6e05c2f1307ec16481ae84c75506c1261e550fa8212e380d25eadbR21,# TODO: alter filename after v2 relese (version will be taken out of name)
 368,"tianon
 dockerfiles",https://github.com/tianon/dockerfiles,16243eae94d9f611d158fb2dc03a0393630c47cc,52ad7a1e45f4f92477692d5f2982af599fdc5f7e,speedtest/Dockerfile,"# TODO verify that ookla's ""armhf"" really is armv6",2020/04/30 08:18,2020/09/15 01:31,2014/07/12 10:24,,2118 days 21:54:00.000000000,"137 days, 17:13:00",https://github.com/tianon/dockerfiles/commit/16243eae94d9f611d158fb2dc03a0393630c47cc#diff-f5bbe00c150815fc7c10fe34662fb8ce6e67f3dde475237ca84e7a81bee57ad3R10,https://github.com/tianon/dockerfiles/commit/52ad7a1e45f4f92477692d5f2982af599fdc5f7e#diff-f5bbe00c150815fc7c10fe34662fb8ce6e67f3dde475237ca84e7a81bee57ad3L10,,
 369,"tianon

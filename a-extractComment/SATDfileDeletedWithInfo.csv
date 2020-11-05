@@ -1,6 +1,6 @@
 ,project,gitPath,CommitID,Deleted CommitID,LatestDockerfile,Comment,CommitDate,DeleteComment,(File) FirstCommit,(File) Deleted,firstCommitからコメント追加までの日数,コメント追加からコメント削除までの日数,追加時ファイル,削除時ファイル,(origin)追加時ファイル,(origin)SATD
 103,"moby
-moby",https://github.com/moby/moby,95f3f77fc417bbc55f03e869136deec27e26bc51,bb43761940848650c1eab3c097d826892bd5b140,hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.4
+moby",https://github.com/moby/moby,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,bb43761940848650c1eab3c097d826892bd5b140,hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.4
 # DOCKER-VERSION  0.6.6
 # AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
 # DESCRIPTION:    Testing docker PRs and commits on top of master using
@@ -14,23 +14,9 @@ moby",https://github.com/moby/moby,95f3f77fc417bbc55f03e869136deec27e26bc51,bb43
 #       [repo]    (default: 'http://github.com/dotcloud/docker')
 #       [branch]  (default: 'master')
 # TO_BUILD:       docker build -t test_docker .
-# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]",2013/10/19 14:33,2014/03/11 05:20,2013/10/19 14:33,2014/03/11 05:20,0:00:00,ファイル削除,https://github.com/moby/moby/commit/249f76bebdb3c24ae0a59e3be7ae73fd1d88c065#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83R1,https://github.com/moby/moby/commit/bb43761940848650c1eab3c097d826892bd5b140#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83L1,https://github.com/moby/moby/commit/95f3f77fc417bbc55f03e869136deec27e26bc51#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83R1,"# VERSION:        0.3
-# DOCKER-VERSION  0.6.3
-# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
-# DESCRIPTION:    Testing docker PRs and commits on top of master using
-# REFERENCES:     This code reuses the excellent implementation of
-#                 Docker in Docker made by Jerome Petazzoni.
-#                 https://github.com/jpetazzo/dind
-# COMMENTS:
-#   This Dockerfile adapts /Dockerfile to enable docker PRs and commits testing
-#   Optional arguments:
-#       [commit]  (default: 'HEAD')
-#       [repo]    (default: 'http://github.com/dotcloud/docker')
-#       [branch]  (default: 'master')
-# TO_BUILD:       docker build -t test_docker .
-# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]"
+# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]",2013/11/07 12:13,2014/03/11 05:20,2013/10/19 14:33,2014/03/11 05:20,"18 days, 21:40:00",ファイル削除,https://github.com/moby/moby/commit/249f76bebdb3c24ae0a59e3be7ae73fd1d88c065#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83R1,https://github.com/moby/moby/commit/bb43761940848650c1eab3c097d826892bd5b140#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83L1,https://github.com/moby/moby/commit/efb4c800a7c8167cf2202466a720c0fad7001a5d#diff-267b7ba8730ae66cdebb4e371b73197ea6f9bd7f3db1dbcaa8df33bcd3da5c83R20,#### FIXME. Temporarily install docker and dind with proper apparmor handling
 151,"docker
-docker-ce",https://github.com/docker/docker-ce,7a7c9f0f1d41534dd4afd66f7d8fa56e38ed94e1,66069773bceabb9e8aaa1f6ac7bd84ab221eca94,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.6
+docker-ce",https://github.com/docker/docker-ce,ba4e682cde6ad56a7fe88c5e61c976e1db93338b,66069773bceabb9e8aaa1f6ac7bd84ab221eca94,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.6
 # DOCKER-VERSION  0.6.6
 # AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
 # DESCRIPTION:    Build docker nightly release using Docker in Docker.
@@ -42,39 +28,49 @@ docker-ce",https://github.com/docker/docker-ce,7a7c9f0f1d41534dd4afd66f7d8fa56e3
 #         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
 #         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
 # TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh",2013/11/07 12:13,2014/03/11 05:20,2013/10/11 10:29,2014/03/11 05:20,"27 days, 1:44:00",ファイル削除,https://github.com/docker/docker-ce/commit/ba4e682cde6ad56a7fe88c5e61c976e1db93338b#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45R1,https://github.com/docker/docker-ce/commit/66069773bceabb9e8aaa1f6ac7bd84ab221eca94#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45L1,https://github.com/docker/docker-ce/commit/7a7c9f0f1d41534dd4afd66f7d8fa56e38ed94e1#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45R25,#### FIXME. Temporarily install docker and dind with proper apparmor handling
-107,"moby
-moby",https://github.com/moby/moby,0cbeda73910d6d1d3336da93c5f94df0bdd5fa44,bb43761940848650c1eab3c097d826892bd5b140,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.6
-# DOCKER-VERSION  0.6.6
-# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
-# DESCRIPTION:    Build docker nightly release using Docker in Docker.
-# REFERENCES:     This code reuses the excellent implementation of docker in docker
-#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
-# COMMENTS:
-#   release_credentials.json is a base64 json encoded file containing:
-#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
-#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
-#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
-# TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh",2013/11/07 12:13,2014/03/11 05:20,2013/10/11 10:29,2014/03/11 05:20,"27 days, 1:44:00",ファイル削除,https://github.com/moby/moby/commit/249f76bebdb3c24ae0a59e3be7ae73fd1d88c065#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418R1,https://github.com/moby/moby/commit/bb43761940848650c1eab3c097d826892bd5b140#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418L1,https://github.com/moby/moby/commit/0cbeda73910d6d1d3336da93c5f94df0bdd5fa44#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418R25,#### FIXME. Temporarily install docker and dind with proper apparmor handling
-154,"docker
-docker-ce",https://github.com/docker/docker-ce,8802449935b4e4d4be8e279e99348a99c4e13bc0,66069773bceabb9e8aaa1f6ac7bd84ab221eca94,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.4
-# DOCKER-VERSION  0.6.6
-# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
-# DESCRIPTION:    Testing docker PRs and commits on top of master using
-# REFERENCES:     This code reuses the excellent implementation of
-#                 Docker in Docker made by Jerome Petazzoni.
-#                 https://github.com/jpetazzo/dind
-# COMMENTS:
-#   This Dockerfile adapts /Dockerfile to enable docker PRs and commits testing
-#   Optional arguments:
-#       [commit]  (default: 'HEAD')
-#       [repo]    (default: 'http://github.com/dotcloud/docker')
-#       [branch]  (default: 'master')
-# TO_BUILD:       docker build -t test_docker .
-# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]",2013/10/19 14:33,2014/03/11 05:20,2013/10/19 14:33,2014/03/11 05:20,0:00:00,ファイル削除,https://github.com/docker/docker-ce/commit/ba4e682cde6ad56a7fe88c5e61c976e1db93338b#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdR1,https://github.com/docker/docker-ce/commit/66069773bceabb9e8aaa1f6ac7bd84ab221eca94#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdL1,https://github.com/docker/docker-ce/commit/8802449935b4e4d4be8e279e99348a99c4e13bc0#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdR1,"# VERSION:        0.3
-# DOCKER-VERSION  0.6.3
+# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh",2013/11/07 12:13,2014/03/11 05:20,2013/10/11 10:29,2014/03/11 05:20,"27 days, 1:44:00",ファイル削除,https://github.com/docker/docker-ce/commit/ba4e682cde6ad56a7fe88c5e61c976e1db93338b#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45R1,https://github.com/docker/docker-ce/commit/66069773bceabb9e8aaa1f6ac7bd84ab221eca94#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45L1,https://github.com/docker/docker-ce/commit/aac90cd92e4389ce099b59cb7313755538ca4d48#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45R1,"# VERSION:        1.5
+# DOCKER-VERSION  0.6.4
 # AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
+# DESCRIPTION:    Build docker nightly release using Docker in Docker.
+# REFERENCES:     This code reuses the excellent implementation of docker in docker
+#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
+# COMMENTS:
+#   release_credentials.json is a base64 json encoded file containing:
+#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
+#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
+#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
+# TO_BUILD:       docker build -t dockerbuilder .
+# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh"
+107,"moby
+moby",https://github.com/moby/moby,249f76bebdb3c24ae0a59e3be7ae73fd1d88c065,bb43761940848650c1eab3c097d826892bd5b140,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.6
+# DOCKER-VERSION  0.6.6
+# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
+# DESCRIPTION:    Build docker nightly release using Docker in Docker.
+# REFERENCES:     This code reuses the excellent implementation of docker in docker
+#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
+# COMMENTS:
+#   release_credentials.json is a base64 json encoded file containing:
+#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
+#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
+#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
+# TO_BUILD:       docker build -t dockerbuilder .
+# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh",2013/11/07 12:13,2014/03/11 05:20,2013/10/11 10:29,2014/03/11 05:20,"27 days, 1:44:00",ファイル削除,https://github.com/moby/moby/commit/249f76bebdb3c24ae0a59e3be7ae73fd1d88c065#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418R1,https://github.com/moby/moby/commit/bb43761940848650c1eab3c097d826892bd5b140#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418L1,https://github.com/moby/moby/commit/17172276366fc3114ae52eb6c83aafbec004d5f3#diff-622802fcaf6b80ac41515339a5a4cab097a4d47cd0fe42755758dfe6876b0418R1,"# VERSION:        1.5
+# DOCKER-VERSION  0.6.4
+# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
+# DESCRIPTION:    Build docker nightly release using Docker in Docker.
+# REFERENCES:     This code reuses the excellent implementation of docker in docker
+#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
+# COMMENTS:
+#   release_credentials.json is a base64 json encoded file containing:
+#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
+#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
+#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
+# TO_BUILD:       docker build -t dockerbuilder .
+# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh"
+154,"docker
+docker-ce",https://github.com/docker/docker-ce,ba4e682cde6ad56a7fe88c5e61c976e1db93338b,66069773bceabb9e8aaa1f6ac7bd84ab221eca94,components/engine/hack/infrastructure/docker-ci/docker-test/Dockerfile,"# VERSION:        0.4
+# DOCKER-VERSION  0.6.6
+# AUTHOR:         Daniel Mizyrycki <daniel@docker.com>
 # DESCRIPTION:    Testing docker PRs and commits on top of master using
 # REFERENCES:     This code reuses the excellent implementation of
 #                 Docker in Docker made by Jerome Petazzoni.
@@ -86,7 +82,7 @@ docker-ce",https://github.com/docker/docker-ce,8802449935b4e4d4be8e279e99348a99c
 #       [repo]    (default: 'http://github.com/dotcloud/docker')
 #       [branch]  (default: 'master')
 # TO_BUILD:       docker build -t test_docker .
-# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]"
+# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]",2013/11/07 12:13,2014/03/11 05:20,2013/10/19 14:33,2014/03/11 05:20,"18 days, 21:40:00",ファイル削除,https://github.com/docker/docker-ce/commit/ba4e682cde6ad56a7fe88c5e61c976e1db93338b#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdR1,https://github.com/docker/docker-ce/commit/66069773bceabb9e8aaa1f6ac7bd84ab221eca94#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdL1,https://github.com/docker/docker-ce/commit/837c6b480c6859db6bf3f3fb044b070afb3f336d#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdR20,#### FIXME. Temporarily install docker and dind with proper apparmor handling
 377,"tianon
 dockerfiles",https://github.com/tianon/dockerfiles,4651c8e65b80e0acc3d2f7df2de980ee28a03c7a,13ddc43d57fb5cfa49eba6358ffa2ef131de38ec,familysearch-indexing/Dockerfile,# TODO add a very lightweight browser for opening help and/or registration,2014/02/23 15:47,2019/08/02 14:48,2014/02/23 15:47,2019/08/02 14:48,0 days 00:00:00.000000000,ファイル削除,https://github.com/tianon/dockerfiles/commit/4651c8e65b80e0acc3d2f7df2de980ee28a03c7a#diff-d24b8bbc1c63a3eee12d97bd34705061a2e48324aa9198b7ac52cd970e61b14bR14,https://github.com/tianon/dockerfiles/commit/13ddc43d57fb5cfa49eba6358ffa2ef131de38ec#diff-d24b8bbc1c63a3eee12d97bd34705061a2e48324aa9198b7ac52cd970e61b14bL19,,
 362,"tianon
@@ -176,7 +172,7 @@ tomcat",https://github.com/docker-library/tomcat,ec75141e3cb6276b07d66c16042152e
 554,"docker-library
 docker",https://github.com/docker-library/docker,4d1f83ee6e25a5c2bb1c8a04de0643b1a964ba5e,a7fc73eef011c47cc2518149bc77a4b9bc7f9f41,1.12-rc/dind/Dockerfile,# TODO aufs-tools,2016/06/17 03:03,2016/10/12 08:54,2016/06/17 03:03,2016/10/12 08:54,0 days 00:00:00.000000000,ファイル削除,https://github.com/docker-library/docker/commit/4d1f83ee6e25a5c2bb1c8a04de0643b1a964ba5e#diff-3df536ca86076affddafa1cc56e2924e55c3a92099686163a5d1e32664f60412R12,https://github.com/docker-library/docker/commit/a7fc73eef011c47cc2518149bc77a4b9bc7f9f41#diff-3df536ca86076affddafa1cc56e2924e55c3a92099686163a5d1e32664f60412L12,,
 309,"hashicorp
-docker-vault",https://github.com/hashicorp/docker-vault,b95f1b3f7b1df5652ca7e226bc8ede55520cc89f,6e237e86fe245488d54a448b49eaf63d9a4faa71,0.6/Dockerfile,"# By default you'll get a single-node development server that stores everything
+docker-vault",https://github.com/hashicorp/docker-vault,38c20af56a8d3d340a2392dd5ad11cdd51760bc4,6e237e86fe245488d54a448b49eaf63d9a4faa71,0.6/Dockerfile,"# By default you'll get a single-node development server that stores everything
 # in RAM and bootstraps itself. Don't use this configuration for production.",2016/01/30 04:18,2017/10/06 01:40,2016/01/30 04:18,2017/10/06 01:40,0:00:00,ファイル削除,https://github.com/hashicorp/docker-vault/commit/38c20af56a8d3d340a2392dd5ad11cdd51760bc4#diff-04ffe72f8df9e999c460cf0455e331b41d4d037410611bf01ee1934a8cb9ae70R58,https://github.com/hashicorp/docker-vault/commit/6e237e86fe245488d54a448b49eaf63d9a4faa71#diff-04ffe72f8df9e999c460cf0455e331b41d4d037410611bf01ee1934a8cb9ae70L63,https://github.com/hashicorp/docker-vault/commit/b95f1b3f7b1df5652ca7e226bc8ede55520cc89f#diff-04ffe72f8df9e999c460cf0455e331b41d4d037410611bf01ee1934a8cb9ae70R62,"# By default you'll get a single-node development server that stores everything
 # in RAM, exposes a web UI, and bootstraps itself. Don't use this configuration
 # for production."
@@ -267,19 +263,19 @@ docker",https://github.com/docker-library/docker,e7e2e3119360567641d334f1d274952
 docker-vault",https://github.com/hashicorp/docker-vault,70ec3a24d5f8bc77291f5367ef487303f9716d33,6e237e86fe245488d54a448b49eaf63d9a4faa71,0.7.3/Dockerfile,"# By default you'll get a single-node development server that stores everything
 # in RAM and bootstraps itself. Don't use this configuration for production.",2017/06/08 05:15,2017/10/06 01:40,2017/06/08 05:15,2017/10/06 01:40,0 days 00:00:00.000000000,ファイル削除,https://github.com/hashicorp/docker-vault/commit/70ec3a24d5f8bc77291f5367ef487303f9716d33#diff-777b8fcd7ae6825a1cc8b9ffe73f6201292494ee209d16fbcbb98e8f56c55c8eR69,https://github.com/hashicorp/docker-vault/commit/6e237e86fe245488d54a448b49eaf63d9a4faa71#diff-777b8fcd7ae6825a1cc8b9ffe73f6201292494ee209d16fbcbb98e8f56c55c8eL69,,
 534,"docker-library
-docker",https://github.com/docker-library/docker,e7e2e3119360567641d334f1d274952236632357,fc032db99e903fd80be9b32ab99361650624d4cd,17.06/Dockerfile,"# TODO ENV DOCKER_SHA256
+docker",https://github.com/docker-library/docker,8390fd856922deec4ca7bf0004e6e8e81f60c9f2,fc032db99e903fd80be9b32ab99361650624d4cd,17.06/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/05/31 01:53,2017/11/08 23:45,2017/05/31 01:53,2017/11/08 23:45,0:00:00,ファイル削除,https://github.com/docker-library/docker/commit/8390fd856922deec4ca7bf0004e6e8e81f60c9f2#diff-b61af8bd4f9cb155a06922e47136400eeb9392ed06c45e17915555cde404a721R9,https://github.com/docker-library/docker/commit/fc032db99e903fd80be9b32ab99361650624d4cd#diff-2af30628f708ea177c818288ba2704ebe0e572c26e6061f19014d4f894917110L14,https://github.com/docker-library/docker/commit/e7e2e3119360567641d334f1d274952236632357#diff-b61af8bd4f9cb155a06922e47136400eeb9392ed06c45e17915555cde404a721R8,# TODO ENV DOCKER_SHA256
 550,"docker-library
-docker",https://github.com/docker-library/docker,5a196cae40e2a0ab5050cf6d79b697e032352b24,daa7feb87044d35b9676778fe46130f141c807d1,17.05/Dockerfile,"# TODO ENV DOCKER_SHA256
+docker",https://github.com/docker-library/docker,8390fd856922deec4ca7bf0004e6e8e81f60c9f2,daa7feb87044d35b9676778fe46130f141c807d1,17.05/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/05/11 13:11,2017/06/29 10:31,2016/03/31 06:43,2017/06/29 10:31,"406 days, 6:28:00",ファイル削除,https://github.com/docker-library/docker/commit/8390fd856922deec4ca7bf0004e6e8e81f60c9f2#diff-49b1ebd7bceef1dc5540beefd95d35c2788ac11d0cc334b96523bc18a5b0e20eR9,https://github.com/docker-library/docker/commit/daa7feb87044d35b9676778fe46130f141c807d1#diff-49b1ebd7bceef1dc5540beefd95d35c2788ac11d0cc334b96523bc18a5b0e20eL8,https://github.com/docker-library/docker/commit/5a196cae40e2a0ab5050cf6d79b697e032352b24#diff-49b1ebd7bceef1dc5540beefd95d35c2788ac11d0cc334b96523bc18a5b0e20eR8,# TODO ENV DOCKER_SHA256
 552,"docker-library
-docker",https://github.com/docker-library/docker,5a196cae40e2a0ab5050cf6d79b697e032352b24,62a456489acfe7443d426cd502ccf22130d1ccf9,17.07/Dockerfile,"# TODO ENV DOCKER_SHA256
+docker",https://github.com/docker-library/docker,8390fd856922deec4ca7bf0004e6e8e81f60c9f2,62a456489acfe7443d426cd502ccf22130d1ccf9,17.07/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/05/11 13:11,2017/10/19 01:49,2016/06/17 03:03,2017/10/19 01:49,"328 days, 10:08:00",ファイル削除,https://github.com/docker-library/docker/commit/8390fd856922deec4ca7bf0004e6e8e81f60c9f2#diff-07c8a4149ec4ecc45d1e2f1507b3537f7fa721d939ce5d8da82779f7ec192490R9,https://github.com/docker-library/docker/commit/62a456489acfe7443d426cd502ccf22130d1ccf9#diff-1dbf11bc3b387bb710844556d1f54904a2fd3f67455580d0641e06fc20a14585L14,https://github.com/docker-library/docker/commit/5a196cae40e2a0ab5050cf6d79b697e032352b24#diff-07c8a4149ec4ecc45d1e2f1507b3537f7fa721d939ce5d8da82779f7ec192490R8,# TODO ENV DOCKER_SHA256
 567,"docker-library
-docker",https://github.com/docker-library/docker,2c75eb72ab98b95256be008aa93efdec289d96e8,daa7feb87044d35b9676778fe46130f141c807d1,17.03-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
+docker",https://github.com/docker-library/docker,8390fd856922deec4ca7bf0004e6e8e81f60c9f2,daa7feb87044d35b9676778fe46130f141c807d1,17.03-rc/Dockerfile,"# TODO ENV DOCKER_SHA256
 # https://github.com/docker/docker-ce/blob/5b073ee2cf564edee5adca05eee574142f7627bb/components/packaging/static/hash_files !!
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)",2017/05/31 03:18,2017/06/29 10:31,2017/02/23 06:49,2017/06/29 10:31,"96 days, 20:29:00",ファイル削除,https://github.com/docker-library/docker/commit/8390fd856922deec4ca7bf0004e6e8e81f60c9f2#diff-0d673b553af8f4e9437c5c781321cda4b74e4cbe98b4ea6646048cbdf78b45e5R9,https://github.com/docker-library/docker/commit/daa7feb87044d35b9676778fe46130f141c807d1#diff-0d673b553af8f4e9437c5c781321cda4b74e4cbe98b4ea6646048cbdf78b45e5L8,https://github.com/docker-library/docker/commit/2c75eb72ab98b95256be008aa93efdec289d96e8#diff-0d673b553af8f4e9437c5c781321cda4b74e4cbe98b4ea6646048cbdf78b45e5R8,# TODO ENV DOCKER_SHA256
 348,"docker-library
@@ -525,7 +521,7 @@ docker",https://github.com/docker-library/docker,bc5d62520258cacb230485ee96754f9
 495,"docker-library
 docker",https://github.com/docker-library/docker,bc5d62520258cacb230485ee96754f9f9aa117c4,d31c2d38a7ef9b58c34d35d64f168f9d5cd6a696,18.06/dind/Dockerfile,# https://github.com/docker/docker/tree/master/hack/dind,2018/05/09 03:15,2019/06/15 06:03,2018/01/26 02:44,2019/06/15 06:03,103 days 00:31:00.000000000,ファイル削除,https://github.com/docker-library/docker/commit/bc5d62520258cacb230485ee96754f9f9aa117c4#diff-e6469a8c2a8537104ff04a05c246affcc045af5a6f53da00bd49b807a7221072R31,https://github.com/docker-library/docker/commit/d31c2d38a7ef9b58c34d35d64f168f9d5cd6a696#diff-4772a83b0c98165100083e6d61680bc5d01ce991502266291c21d8834e6b16f4L31,,
 162,"docker
-docker-ce",https://github.com/docker/docker-ce,68301c38288c1554119f272cd8e44b6342965cac,78419943dda676e1819ea8cded1b00d733038858,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+docker-ce",https://github.com/docker/docker-ce,7a1680b13a4d40f402fb54bfef604e8539c37662,78419943dda676e1819ea8cded1b00d733038858,components/engine/builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -540,32 +536,9 @@ docker-ce",https://github.com/docker/docker-ce,68301c38288c1554119f272cd8e44b634
 #
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#",2014/08/28 10:52,2018/06/05 02:09,2014/08/28 10:52,2018/06/05 02:09,0:00:00,ファイル削除,https://github.com/docker/docker-ce/commit/7a1680b13a4d40f402fb54bfef604e8539c37662#diff-46ebdb2a4ce6935b24c7d542b8e171a52f04243bfa87a6d74ba8217a6b26d591R14,https://github.com/docker/docker-ce/commit/78419943dda676e1819ea8cded1b00d733038858#diff-46ebdb2a4ce6935b24c7d542b8e171a52f04243bfa87a6d74ba8217a6b26d591L1,https://github.com/docker/docker-ce/commit/94ae8f10c7281c0b5bd8f0945ac9ce250dbd55db#diff-46ebdb2a4ce6935b24c7d542b8e171a52f04243bfa87a6d74ba8217a6b26d591R12,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#"
+#",2018/05/19 03:28,2018/06/05 02:09,2014/08/28 10:52,2018/06/05 02:09,1359 days 16:36:00.000000000,ファイル削除,https://github.com/docker/docker-ce/commit/7a1680b13a4d40f402fb54bfef604e8539c37662#diff-46ebdb2a4ce6935b24c7d542b8e171a52f04243bfa87a6d74ba8217a6b26d591R14,https://github.com/docker/docker-ce/commit/78419943dda676e1819ea8cded1b00d733038858#diff-46ebdb2a4ce6935b24c7d542b8e171a52f04243bfa87a6d74ba8217a6b26d591L1,,
 112,"moby
-moby",https://github.com/moby/moby,22c46af4b358cf3ec4f7af47c701064c00cf7de4,e466f999aa9d2add9ccaca655f8d53c3112c121d,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
+moby",https://github.com/moby/moby,80bc8b4766cc808186af91930152d78afb22aef8,e466f999aa9d2add9ccaca655f8d53c3112c121d,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
 #
@@ -580,30 +553,7 @@ moby",https://github.com/moby/moby,22c46af4b358cf3ec4f7af47c701064c00cf7de4,e466
 #
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#",2014/08/28 10:52,2018/06/04 21:53,2014/08/28 10:52,2018/06/04 21:53,0:00:00,ファイル削除,https://github.com/moby/moby/commit/80bc8b4766cc808186af91930152d78afb22aef8#diff-000c02e222e8f71dcf0651b869a13e331769f3b741627b42a362a09431d13f02R14,https://github.com/moby/moby/commit/e466f999aa9d2add9ccaca655f8d53c3112c121d#diff-000c02e222e8f71dcf0651b869a13e331769f3b741627b42a362a09431d13f02L1,https://github.com/moby/moby/commit/b6eed3dca2e57705cb75895cad0b5337c79686d9#diff-000c02e222e8f71dcf0651b869a13e331769f3b741627b42a362a09431d13f02R12,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#"
+#",2018/05/19 03:28,2018/06/04 21:53,2014/08/28 10:52,2018/06/04 21:53,1359 days 16:36:00.000000000,ファイル削除,https://github.com/moby/moby/commit/80bc8b4766cc808186af91930152d78afb22aef8#diff-000c02e222e8f71dcf0651b869a13e331769f3b741627b42a362a09431d13f02R14,https://github.com/moby/moby/commit/e466f999aa9d2add9ccaca655f8d53c3112c121d#diff-000c02e222e8f71dcf0651b869a13e331769f3b741627b42a362a09431d13f02L1,,
 424,"docker-library
 mongo",https://github.com/docker-library/mongo,d7084920a1d3db7f50fc352c1c879845e36e48a6,281c91f0148cf73d6ee3d64c94aa5d51c9b0b4be,4.0-rc/windows/windowsservercore-ltsc2016/Dockerfile,"# TODO docker-entrypoint.ps1 ? (for ""docker run <image> --flag --flag --flag"")",2018/05/23 00:18,2018/06/28 02:12,2018/05/23 00:18,2018/06/28 02:12,0 days 00:00:00.000000000,ファイル削除,https://github.com/docker-library/mongo/commit/d7084920a1d3db7f50fc352c1c879845e36e48a6#diff-24190adc7221f0d1de249dacbac8a9e0ec2c86547834251b437a2c24176a3a62R45,https://github.com/docker-library/mongo/commit/281c91f0148cf73d6ee3d64c94aa5d51c9b0b4be#diff-24190adc7221f0d1de249dacbac8a9e0ec2c86547834251b437a2c24176a3a62L45,,
 425,"docker-library
@@ -703,10 +653,10 @@ rabbitmq",https://github.com/docker-library/rabbitmq,820e85707b885356d3697fa89cf
 191,"RocketChat
 Docker.Official.Image",https://github.com/RocketChat/Docker.Official.Image,8160b5da4c8c8594fb9e7739119e6b359a49ac5c,9d6297118afd4a6b494b1b82cb4dc7f58e83e45d,Dockerfile,## All of this needed because of missing 8.11.x tag.  Once we update to 8.15+ we can resume using Dockerfile.old or remove hack and use FROM node:8-slim,2019/03/01 06:59,2020/03/05 22:09,2015/07/10 18:04,2020/03/05 22:09,1329 days 12:55:00.000000000,ファイル削除,https://github.com/RocketChat/Docker.Official.Image/commit/8160b5da4c8c8594fb9e7739119e6b359a49ac5c#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R3,https://github.com/RocketChat/Docker.Official.Image/commit/9d6297118afd4a6b494b1b82cb4dc7f58e83e45d#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L3,,
 192,"RocketChat
-Docker.Official.Image",https://github.com/RocketChat/Docker.Official.Image,ebede7cd81c55fe98d0b9295cada55732b2be785,9d6297118afd4a6b494b1b82cb4dc7f58e83e45d,Dockerfile,## Start Hack,2019/02/28 06:41,2020/03/05 22:09,2015/07/10 18:04,2020/03/05 22:09,"1328 days, 12:37:00",ファイル削除,https://github.com/RocketChat/Docker.Official.Image/commit/8160b5da4c8c8594fb9e7739119e6b359a49ac5c#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R1,https://github.com/RocketChat/Docker.Official.Image/commit/9d6297118afd4a6b494b1b82cb4dc7f58e83e45d#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L1,https://github.com/RocketChat/Docker.Official.Image/commit/ebede7cd81c55fe98d0b9295cada55732b2be785#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R3,"## Start Hack
+Docker.Official.Image",https://github.com/RocketChat/Docker.Official.Image,8160b5da4c8c8594fb9e7739119e6b359a49ac5c,9d6297118afd4a6b494b1b82cb4dc7f58e83e45d,Dockerfile,## Start Hack,2019/02/28 06:41,2020/03/05 22:09,2015/07/10 18:04,2020/03/05 22:09,"1328 days, 12:37:00",ファイル削除,https://github.com/RocketChat/Docker.Official.Image/commit/8160b5da4c8c8594fb9e7739119e6b359a49ac5c#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R1,https://github.com/RocketChat/Docker.Official.Image/commit/9d6297118afd4a6b494b1b82cb4dc7f58e83e45d#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L1,https://github.com/RocketChat/Docker.Official.Image/commit/ebede7cd81c55fe98d0b9295cada55732b2be785#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R3,"## Start Hack
 ## All of this needed because of missing 8.11.x tag.  Once we update to 8.15 we can resume using Dockerfile.old or remove hack and use FROM node:8.15-slim"
 193,"RocketChat
-Docker.Official.Image",https://github.com/RocketChat/Docker.Official.Image,ebede7cd81c55fe98d0b9295cada55732b2be785,9d6297118afd4a6b494b1b82cb4dc7f58e83e45d,Dockerfile,## End Hack,2019/02/28 06:41,2020/03/05 22:09,2015/07/10 18:04,2020/03/05 22:09,"1328 days, 12:37:00",ファイル削除,https://github.com/RocketChat/Docker.Official.Image/commit/8160b5da4c8c8594fb9e7739119e6b359a49ac5c#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R20,https://github.com/RocketChat/Docker.Official.Image/commit/9d6297118afd4a6b494b1b82cb4dc7f58e83e45d#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L20,https://github.com/RocketChat/Docker.Official.Image/commit/ebede7cd81c55fe98d0b9295cada55732b2be785#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R38, ## End Hack
+Docker.Official.Image",https://github.com/RocketChat/Docker.Official.Image,8160b5da4c8c8594fb9e7739119e6b359a49ac5c,9d6297118afd4a6b494b1b82cb4dc7f58e83e45d,Dockerfile,## End Hack,2019/02/28 06:41,2020/03/05 22:09,2015/07/10 18:04,2020/03/05 22:09,"1328 days, 12:37:00",ファイル削除,https://github.com/RocketChat/Docker.Official.Image/commit/8160b5da4c8c8594fb9e7739119e6b359a49ac5c#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R20,https://github.com/RocketChat/Docker.Official.Image/commit/9d6297118afd4a6b494b1b82cb4dc7f58e83e45d#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557L20,https://github.com/RocketChat/Docker.Official.Image/commit/ebede7cd81c55fe98d0b9295cada55732b2be785#diff-dd2c0eb6ea5cfc6c4bd4eac30934e2d5746747af48fef6da689e85b752f39557R38, ## End Hack
 297,"docker-library
 pypy",https://github.com/docker-library/pypy,d54416e2be73520a490eb0dd2819d8a2b4df3652,da8a5ed73dab8d82a7e5b58d7714436168c25911,3.5/Dockerfile,# TODO rebuild other cffi modules here too? (other _*_build.py files),2019/03/28 07:11,2019/10/15 07:34,2014/12/17 08:36,2019/10/15 07:34,1561 days 22:35:00.000000000,ファイル削除,https://github.com/docker-library/pypy/commit/d54416e2be73520a490eb0dd2819d8a2b4df3652#diff-780b41b9e862a081931e6ed1e128570a91189cc26a99c48ba5e6d239cd2e360cR46,https://github.com/docker-library/pypy/commit/da8a5ed73dab8d82a7e5b58d7714436168c25911#diff-780b41b9e862a081931e6ed1e128570a91189cc26a99c48ba5e6d239cd2e360cL47,,
 295,"docker-library

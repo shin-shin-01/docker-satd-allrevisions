@@ -21,7 +21,24 @@ def judge_comment_change(df):
         # 2. 最新Dockerfileが一致
         # 3. コメントの追加ID と 削除IDが一致
         # 4. Fileのコミット日が同じ
-        mask = (df["project"]==target["project"]) & (df["LatestDockerfile"]==target["LatestDockerfile"]) & (df["CommitID"]==target["Deleted CommitID"]) & (df["(File) FirstCommit"]==target["(File) FirstCommit"])
+
+        # 使用方法は無視する
+        if "# Usage:" in target["Comment"]:
+            df.drop(index=idx, inplace=True)
+            continue
+    
+        # エラーが発生したので処理
+        # 内容：同じ内容のコミットが２回行われており、それぞれ異なるコミットIDだった。
+        ## 上で弾いているので重複している処理
+        if target["Deleted CommitID"] == "6863c4fe21e39c125f3a429e001c724bc37341b0":
+            mask = (df["project"]==target["project"]) & (df["LatestDockerfile"]==target["LatestDockerfile"]) & (df["CommitID"]=="5e4f4153669d1dbd07f53a9267d5d8677c107b51") & (df["(File) FirstCommit"]==target["(File) FirstCommit"])
+        elif target["Deleted CommitID"] == "6d420407caf533f89b60d78c54e0ddc2d307e942":
+            mask = (df["project"]==target["project"]) & (df["LatestDockerfile"]==target["LatestDockerfile"]) & (df["CommitID"]=="31638ab2ad2a5380d447780f05f7aa078c9421f5") & (df["(File) FirstCommit"]==target["(File) FirstCommit"])
+        else:
+            mask = (df["project"]==target["project"]) & (df["LatestDockerfile"]==target["LatestDockerfile"]) & (df["CommitID"]==target["Deleted CommitID"]) & (df["(File) FirstCommit"]==target["(File) FirstCommit"])
+
+
+
         masked_df = df[mask]
 
         if len(masked_df) == 0:
@@ -90,7 +107,6 @@ cols = [
 
 def combine_comment(origin, after):
 
-    after['CommitID'] = origin['CommitID']
     after['CommitDate'] = origin['CommitDate']
 
     after['firstCommitからコメント追加までの日数'] = (datetime.strptime(after['CommitDate'], '%Y/%m/%d %H:%M') - datetime.strptime(after['(File) FirstCommit'], '%Y/%m/%d %H:%M'))

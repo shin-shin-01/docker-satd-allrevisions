@@ -1,45 +1,7 @@
 ,Comment
 148,#### FIXME. Temporarily install docker with proper apparmor handling
-117,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-# # Apparmor messes with privileged mode: disable it
-# /etc/init.d/apparmor stop ; /etc/init.d/apparmor teardown
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/dotcloud/docker -privileged -lxc-conf=lxc.aa_profile=unconfined -i -t docker bash
-#
-#
-# # Run the test suite:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined docker hack/make.sh test
-#
-# # Publish a release:
-# docker run -privileged -lxc-conf=lxc.aa_profile=unconfined \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#"
 374,# TODO see note above about redis
 373,# TODO use links to get a redis server/database instead (since that's where configuration actually goes)
-102,#### FIXME. Temporarily install docker and dind with proper apparmor handling
-105,"# VERSION:        1.5
-# DOCKER-VERSION  0.6.4
-# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
-# DESCRIPTION:    Build docker nightly release using Docker in Docker.
-# REFERENCES:     This code reuses the excellent implementation of docker in docker
-#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
-# COMMENTS:
-#   release_credentials.json is a base64 json encoded file containing:
-#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
-#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
-#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
-# TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh"
 119,# TODO add linux/386 and linux/arm
 120,# TODO replace FPM with some very minimal debhelper stuff
 98,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released
@@ -49,30 +11,6 @@
 #ONBUILD RUN cd /apps/rails && bundle install --deployment
 #ONBUILD ADD . /apps/rails
 #ONBUILD RUN chown -R www-data:www-data /apps/rails"
-122,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: Apparmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#"
 261,## haskell package versions; can be overriden via context hacks
 167,# TODO verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
 379,# TODO move this down when COPY adheres to USER (and remove chown)
@@ -100,30 +38,6 @@
 # and set GOROOT to /usr/local/go1.5.3"
 270,# TODO figure out what's going on here and what it'll settle to for 5.0 GA
 243,"# http://tomcat.10.x6.nabble.com/VOTE-Release-Apache-Tomcat-8-0-32-tp5046007p5048274.html (ie, HACK HACK HACK)"
-127,"# This file describes the standard way to build Docker, using docker
-#
-# Usage:
-#
-# # Assemble the full dev environment. This is slow the first time.
-# docker build -t docker .
-#
-# # Mount your source in an interactive container for quick testing:
-# docker run -v `pwd`:/go/src/github.com/docker/docker --privileged -i -t docker bash
-#
-# # Run the test suite:
-# docker run --privileged docker hack/make.sh test-unit test-integration-cli test-docker-py
-#
-# # Publish a release:
-# docker run --privileged \
-#  -e AWS_S3_BUCKET=baz \
-#  -e AWS_ACCESS_KEY=foo \
-#  -e AWS_SECRET_KEY=bar \
-#  -e GPG_PASSPHRASE=gloubiboulga \
-#  docker hack/release.sh
-#
-# Note: AppArmor used to mess with privileged mode, but this is no longer
-# the case. Therefore, you don't have to disable it anymore.
-#"
 393,"# HACK, replacing shell with bash for later docker build commands"
 202,# TODO consider removing the *-dev deps and only keeping the necessary lib* packages
 271,"  ## hack to avoid RStudio-bug in detecting build-dependencies         
