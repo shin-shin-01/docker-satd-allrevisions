@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import re
 
-from setting import PATH_OF_ALLPROJECT_CSV, PATH_OF_COMMENTFILE, PATH_OF_PASTFILE, PATH_OF_SATD_COMMENTFILE
+from setting import PATH_OF_ALLPROJECT_CSV_UPDATE, PATH_OF_COMMENTFILE, PATH_OF_PASTFILE, PATH_OF_SATD_COMMENTFILE
 
 
 def countAllModifiedRevisionOfDockerfile():
@@ -59,7 +59,7 @@ def countSATDbeforeRevisionMerge():
 
 
 def countUniqueSATD():
-    df = pd.read_csv(f'{PATH_OF_ALLPROJECT_CSV}/result.csv', index_col=0)
+    df = pd.read_csv(f'{PATH_OF_ALLPROJECT_CSV_UPDATE}/result.csv', index_col=0)
     
     SATD = df["Comment"]
     print(f"SATD from 8-result.csv (全プロジェクト全リビジョンでのSATD検出(Fileが異なる物は異なるものとしてカウント -> file ごとにコメントマージ)) \n→{len(SATD)}")
@@ -70,7 +70,7 @@ def countUniqueSATD():
 
 
 def countDeletedSATD():
-    df = pd.read_csv(f'{PATH_OF_ALLPROJECT_CSV}/result.csv', index_col=0)
+    df = pd.read_csv(f'{PATH_OF_ALLPROJECT_CSV_UPDATE}/result.csv', index_col=0)
     tmp = df[df["コメント追加からコメント削除までの日数"] != "削除されていません"]
     uniqueSATD = tmp["Comment"].unique()
     print(f"削除されたユニークSATD (ファイル削除・コメント削除) \n→{len(uniqueSATD)}")
