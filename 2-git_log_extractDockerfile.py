@@ -119,7 +119,7 @@ def RevisionsHaveDocker(repository, txtGitFileStatus):
         elif txt[:11] == "CommitDate:":
             tmp["Date"] = txt[12:]
 
-        elif ("Dockerfile" == txt[-10:]) or ("dockerfile" == txt[-10:]) or (not (re.search('.*Dockerfile.*template.*', txt[1:].strip()) is None)):
+        elif ("Dockerfile" == txt[-10:]) or ("dockerfile" == txt[-10:]):
             # masterの変更のみ取得
             if (merge_from != "no-merge") and (merge_from.startswith(merge[1])):
                 continue
