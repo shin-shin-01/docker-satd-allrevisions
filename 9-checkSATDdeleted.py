@@ -80,7 +80,7 @@ def judge_comment_change(df):
                 print("例外:", e.args)
         
 
-
+    df = df.sort_values('Comment')
     df.to_csv(f'{PATH_OF_ALLPROJECT_CSV_UPDATE}/result.csv')
 
 
