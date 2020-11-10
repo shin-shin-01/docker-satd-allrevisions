@@ -11,6 +11,11 @@ import hashlib
 必要になった情報はここでまとめていきます
 """
 
+# docker/docker-ce と moby/moby が一致しているため削除
+def delete_moby_moby(df):
+    df = df[df["project"] != "moby\nmoby"]
+    return df
+
 def getTargetCSV():
     csvfiles = os.listdir(PATH_OF_UNIQUE_SATD_INFO)
     targetCsvfiles = []
@@ -260,5 +265,7 @@ if __name__ == "__main__":
     result = addDiff_withLine(result)
 
     result = modifyColumnName(result)
+    result = delete_moby_moby(result)
+
     result.to_csv(f'{PATH_OF_ALLPROJECT_CSV}/result.csv')
     error.to_csv(f'{PATH_OF_ALLPROJECT_CSV}/errorcomment.csv')
