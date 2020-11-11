@@ -1,66 +1,15 @@
 ,Comment
-148,#### FIXME. Temporarily install docker with proper apparmor handling
-374,# TODO see note above about redis
-373,# TODO use links to get a redis server/database instead (since that's where configuration actually goes)
-119,# TODO add linux/386 and linux/arm
-120,# TODO replace FPM with some very minimal debhelper stuff
-98,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released
-361,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
-#ONBUILD ADD Gemfile /apps/rails/Gemfile
-#ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
-#ONBUILD RUN cd /apps/rails && bundle install --deployment
-#ONBUILD ADD . /apps/rails
-#ONBUILD RUN chown -R www-data:www-data /apps/rails"
-261,## haskell package versions; can be overriden via context hacks
-167,# TODO verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
-379,# TODO move this down when COPY adheres to USER (and remove chown)
-187,# TODO pin specific commit
-123,"# TODO when https://jenkins.dockerproject.com/job/Windows/ is green, add windows back to the list above
-#	windows/amd64 windows/386"
-253,# TODO:
-16,"# get logs to stdout (thanks to http://www.superpumpup.com/docker-rabbitmq-stdout for inspiration)
-# TODO figure out what we'd need to do to add ""(sasl_)?"" to this sed and have it work (""{""init terminating in do_boot"",{rabbit,failure_during_boot,{error,{cannot_log_to_tty,sasl_report_tty_h,not_installed}}}}"")"
-99,# TODO: don't do this - look at merging the yml file in build.sh
-156,# TODO: need the full repo source to get the git version info
-124,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
-263,"## install additional libs typically needed by hackage packages
-#RUN apt-get update && \
-#    apt-get install ${OPTS_APT} zlib1g-dev libtinfo-dev"
-303,# TODO use this MD5
-198,"# This is a hack (see libcompose#32) - will be removed when libcompose will be fixed
-# (i.e go get able)"
-331,# TODO: Switch to debian sid
-75,"# install seccomp
-# TODO: switch to libseccomp-dev since dockerinit is gone"
-126,"# !!! TEMPORARY HACK !!!
+313,"    # Extensions
+    # TODO: make submodules shallow clones?"
+178,    # TODO: the distribution given by apache is not gzipped correctly - unzip correctly when fixed
+255,"  ## hack to avoid RStudio-bug in detecting build-dependencies         
+  # && ln -s&& ln -s ln -s /usr/local/bin/R /usr/bin/R \
+  # && ln -s&& ln -s ln -s /usr/local/lib/R /usr/lib/R"
+121,"# !!! TEMPORARY HACK !!!
 # Because of https://github.com/golang/go/issues/15286 we have to revert to Go 1.5.3 for windows/amd64 in master
 # To change which version of Go to compile with, simply prepend PATH with /usr/local/go1.5.3/bin
 # and set GOROOT to /usr/local/go1.5.3"
-270,# TODO figure out what's going on here and what it'll settle to for 5.0 GA
-243,"# http://tomcat.10.x6.nabble.com/VOTE-Release-Apache-Tomcat-8-0-32-tp5046007p5048274.html (ie, HACK HACK HACK)"
-393,"# HACK, replacing shell with bash for later docker build commands"
-202,# TODO consider removing the *-dev deps and only keeping the necessary lib* packages
-271,"  ## hack to avoid RStudio-bug in detecting build-dependencies         
-  # && ln -s&& ln -s ln -s /usr/local/bin/R /usr/bin/R \
-  # && ln -s&& ln -s ln -s /usr/local/lib/R /usr/lib/R"
-333,"    # Extensions
-    # TODO: make submodules shallow clones?"
-338,# TODO get enough builders to test and verify arm32v5 O:)
-349,"# TODO make[2]: *** No rule to make target '/usr/src/gcc/gcc/sync-builtinsndef', needed by 'tree-ssa-loop-prefetch.o'.  Stop.
-# (which the builds takes _forever_ to get to)"
-136,# Options for hack/validate/gometalinter
-188,    # TODO: the distribution given by apache is not gzipped correctly - unzip correctly when fixed
-137,"# TODO: when issue #35963 fixed, we can upgrade the busybox to multi-arch"
-139,"# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
-# Please edit hack/dockerfile/install/<name>.installer to update them."
-140,"# Just a little hack so we don't have to install these deps twice, once for runc and once for dockerd"
-142,"# TODO: This is for the docker-py tests, which shouldn't really be needed for
-# this image, but currently CI is expecting to run this image. This should be
-# split out into a separate image, including all the `python-*` deps installed
-# above."
-143,"# FIXME(vdemeester) this is kept for other script depending on it to not fail right away
-# Remove this once the other scripts uses something else to detect the version"
-94,"# # Make a dockerd binary.
+139,"# # Make a dockerd binary.
 # # hack/make.sh binary
 #
 # # Install dockerd to /usr/local/bin
@@ -75,28 +24,70 @@
 # Note: AppArmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
 #"
-488,"# Default to UTF-8 file.encoding
+11,"# Add RabbitMQ to PATH, send all logs to TTY
+# TODO @tianon is sbin a problem? Notice that I'm installing generic-unix, not the Debian package"
+452,"# Default to UTF-8 file.encoding
 #ENV LANG C.UTF-8
 # TODO oraclelinux doesn't have C.UTF-8 by default??"
-371,# TODO find some way to include ccextractor (currently buster-only)
+13,"# Delete all src dirs to keep the final image size down, they add an extra 19MB
+# TODO @dumbbell could this be done better, in the build/install phases?"
+366,"# FIXME This is a workaround for pytest not found causing builds to fail
+# Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722"
+138,"# FIXME(vdemeester) this is kept for other script depending on it to not fail right away
+# Remove this once the other scripts uses something else to detect the version"
+369,"# HACK, replacing shell with bash for later docker build commands"
+134,"# Install tomlv, vndr, runc, containerd, tini, proxy dockercli
+# Please edit hack/dockerfile/install/<name>.installer to update them."
+135,"# Just a little hack so we don't have to install these deps twice, once for runc and once for dockerd"
+131,# Options for hack/validate/gometalinter
 8,"# TODO
 # Install RabbitMQ
 # Ensure RabbitMQ starts & rabbitmqctl works correctly"
-11,"# Add RabbitMQ to PATH, send all logs to TTY
-# TODO @tianon is sbin a problem? Notice that I'm installing generic-unix, not the Debian package"
 12,"# TODO @tianon why is this necessary?
 # RUN ln -sf ""/usr/lib/rabbitmq/lib/rabbitmq_server-$RABBITMQ_VERSION/plugins"" /plugins"
-13,"# Delete all src dirs to keep the final image size down, they add an extra 19MB
-# TODO @dumbbell could this be done better, in the build/install phases?"
-288,# fixme: needs to check out a tag on the next 1.14 release
-447,# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7)
-392,"# FIXME This is a workaround for pytest not found causing builds to fail
-# Following RUN statements tests for regression of https://github.com/ros2/ros2/issues/722"
-227,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?"
-214,"# TODO should we leave these installed, or remove them too?"
-215,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
-# TODO find a better/cleaner way to generically interact with the yumdb for the purposes of marking things as automatically/manually installed"
-196,"# Todo: remove build dependencies
+114,# TODO add linux/386 and linux/arm
+189,# TODO consider removing the *-dev deps and only keeping the necessary lib* packages
+346,"# TODO figure out what ookla means by their bare ""arm"" arch"
+254,# TODO figure out what's going on here and what it'll settle to for 5.0 GA
+444,# TODO filter out arm64 for openjdk:8 (https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/tag/jdk8u212-b04 vs https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/tag/jdk-11.0.3%2B7)
+338,"# TODO find a clean way to do this here in such a way that gems like rmagick can install cleanly without first installing libmagickcore-dev
+#ONBUILD ADD Gemfile /apps/rails/Gemfile
+#ONBUILD ADD Gemfile.lock /apps/rails/Gemfile.lock
+#ONBUILD RUN cd /apps/rails && bundle install --deployment
+#ONBUILD ADD . /apps/rails
+#ONBUILD RUN chown -R www-data:www-data /apps/rails"
+348,# TODO find some way to include ccextractor (currently buster-only)
+326,# TODO get enough builders to test and verify arm32v5 O:)
+206,"# TODO handle ""$nativeBuildDeps"" in a similarly generic way?"
+318,"# TODO make[2]: *** No rule to make target '/usr/src/gcc/gcc/sync-builtinsndef', needed by 'tree-ssa-loop-prefetch.o'.  Stop.
+# (which the builds takes _forever_ to get to)"
+356,# TODO move this down when COPY adheres to USER (and remove chown)
+177,# TODO pin specific commit
+115,# TODO replace FPM with some very minimal debhelper stuff
+351,# TODO see note above about redis
+362,"# TODO set ""TARGET"" appropriately based on ""apk --print-arch"" to avoid ""uname -m"" detection"
+213,"# TODO should we leave these installed, or remove them too?"
+282,# TODO switch to buster once https://github.com/docker-library/php/issues/865 is resolved in a clean way (either in the PHP image or in PHP itself)
+150,# TODO switch to http://packages.ubuntu.com/trusty/python-sphinxcontrib-httpdomain once trusty is released
+350,# TODO use links to get a redis server/database instead (since that's where configuration actually goes)
+285,# TODO use this MD5
+162,# TODO verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
+345,"# TODO verify that ookla's ""armhf"" really is armv6"
+118,"# TODO when https://jenkins.dockerproject.com/job/Windows/ is green, add windows back to the list above
+#	windows/amd64 windows/386"
+240,# TODO:
+311,# TODO: Switch to debian sid
+137,"# TODO: This is for the docker-py tests, which shouldn't really be needed for
+# this image, but currently CI is expecting to run this image. This should be
+# split out into a separate image, including all the `python-*` deps installed
+# above."
+372,# TODO: alter filename after v2 release (version will be taken out of name)
+152,# TODO: don't do this - look at merging the yml file in build.sh
+151,# TODO: need the full repo source to get the git version info
+132,"# TODO: when issue #35963 fixed, we can upgrade the busybox to multi-arch"
+187,"# This is a hack (see libcompose#32) - will be removed when libcompose will be fixed
+# (i.e go get able)"
+185,"# Todo: remove build dependencies
 #	runDeps=""$( \
 #		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/bundle/gems \
 #		| tr ',' '\n' \
@@ -105,8 +96,17 @@
 #	)""; \
 #	apk add --virtual .redmine-rundeps $runDeps; \
 #	apk del .build-deps"
-305,# TODO switch to buster once https://github.com/docker-library/php/issues/865 is resolved in a clean way (either in the PHP image or in PHP itself)
-396,# TODO: alter filename after v2 release (version will be taken out of name)
-368,"# TODO verify that ookla's ""armhf"" really is armv6"
-369,"# TODO figure out what ookla means by their bare ""arm"" arch"
-386,"# TODO set ""TARGET"" appropriately based on ""apk --print-arch"" to avoid ""uname -m"" detection"
+272,# fixme: needs to check out a tag on the next 1.14 release
+14,"# get logs to stdout (thanks to http://www.superpumpup.com/docker-rabbitmq-stdout for inspiration)
+# TODO figure out what we'd need to do to add ""(sasl_)?"" to this sed and have it work (""{""init terminating in do_boot"",{rabbit,failure_during_boot,{error,{cannot_log_to_tty,sasl_report_tty_h,not_installed}}}}"")"
+228,"# http://tomcat.10.x6.nabble.com/VOTE-Release-Apache-Tomcat-8-0-32-tp5046007p5048274.html (ie, HACK HACK HACK)"
+207,"# http://yum.baseurl.org/wiki/YumDB.html (updating ""reason"" to ""user"" for tomcat-native build dependencies)
+# TODO find a better/cleaner way to generically interact with the yumdb for the purposes of marking things as automatically/manually installed"
+120,"# install seccomp
+# TODO: switch to libseccomp-dev since dockerinit is gone"
+119,"# see also ""hack/make/.ensure-frozen-images"" (which needs to be updated any time this list is)"
+245,## haskell package versions; can be overriden via context hacks
+248,"## install additional libs typically needed by hackage packages
+#RUN apt-get update && \
+#    apt-get install ${OPTS_APT} zlib1g-dev libtinfo-dev"
+143,#### FIXME. Temporarily install docker with proper apparmor handling
