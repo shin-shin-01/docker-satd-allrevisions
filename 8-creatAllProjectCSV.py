@@ -233,6 +233,8 @@ def modifyColumnName(df):
         'gitPath',
         'CommitID',
         'Deleted CommitID',
+        'Author',
+        'Delete Author',
         'LatestDockerfile',
         'Comment',
         'CommitDate',

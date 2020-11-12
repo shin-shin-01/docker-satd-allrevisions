@@ -18,7 +18,8 @@ def getTargetDataFrame(repository):
     df = pd.read_csv(f"./{PATH_OF_GITLOGCSV}/{repository}.csv", index_col=0)
     df["logIndex"] = df.index
     df = df. dropna(subset=['Dockerfile'])
-    df = df[["CommitID", "Date", "Dockerfile", "Status", "logIndex"]]
+    df = df[["CommitID", "Author", "Date", "Dockerfile", "Status", "logIndex"]]
+    df["Author"] = df["Author"].apply(lambda a: a.lstrip())
     # 時刻変換最初でまとめて実装しないといけない
     df["Date"] = pd.to_datetime(df["Date"], utc=True)
     df = df.sort_values("Date")
@@ -43,13 +44,13 @@ def getCommentDeleteDate(repository, renameList, latestCommitDate, latestCommitI
             break
 
     if len(df) == 0: # 存在していなかったら削除されていない
-        return np.nan, np.nan, np.nan
+        return np.nan, np.nan, np.nan, np.nan
 
     # 削除に関しては 最後を残して全て削除
     delete_index = df[df["Status"] == "D"].index.tolist()
     df.drop(index=delete_index[:-1], inplace=True)
 
-    return df.head(1).iloc[0, :]["Date"], df.head(1).iloc[0, :]["CommitID"], filename
+    return df.head(1).iloc[0, :]["Date"], df.head(1).iloc[0, :]["CommitID"], df.head(1).iloc[0, :]["Author"], filename
 
 
 if __name__ == "__main__":

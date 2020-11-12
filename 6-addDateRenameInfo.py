@@ -47,6 +47,15 @@ def addCommitDate(df, gitlog):
     df = pd.merge(df, gitlog, on=["CommitID"])
     return df
 
+# コミットIDとコミット者の紐付け
+def addCommiter(df, gitlog):
+    gitlog = gitlog[["CommitID", "Author"]]
+    gitlog["logIndex"] = gitlog.index
+    gitlog["Author"] =  gitlog["Author"].apply(lambda a: a.lstrip())
+    gitlog = gitlog.drop_duplicates(["CommitID", "Author"]) # 重複削除
+    df = pd.merge(df, gitlog, on=["CommitID"])
+    return df
+
 
 def modifyInformation(df, gitlog):
     """
@@ -160,6 +169,7 @@ if __name__ == "__main__":
             continue
 
         df = addCommitDate(df, gitlog)
+        df = addCommiter(df, gitlog)
         
         if len(df) != length:
             errorlog = f"[Error] Merged commit Date:  {csvfile} :最終的な出力結果数が変わっています。{length} -> {len(df)}"
@@ -172,5 +182,5 @@ if __name__ == "__main__":
             print(errorlog)
             writeError(errorlog)
 
-        df = df.reindex(columns=['CommitID', 'Dockerfile', 'LatestDockerfile', 'Comment', 'Date', 'FirstCommit Date', 'Deleted Date', 'RenameList', "logIndex"])
+        df = df.reindex(columns=['CommitID', 'Author', 'Dockerfile', 'LatestDockerfile', 'Comment', 'Date', 'FirstCommit Date', 'Deleted Date', 'RenameList', "logIndex"])
         df.to_csv(f'{PATH_OF_SATD_COMMENTFILE_ADDINFO}/{csvfile}')

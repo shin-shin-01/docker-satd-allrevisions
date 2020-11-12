@@ -108,6 +108,7 @@ cols = [
 def combine_comment(origin, after):
 
     after['CommitDate'] = origin['CommitDate']
+    after["Author"] = origin["Author"]
 
     after['firstCommitからコメント追加までの日数'] = (datetime.strptime(after['CommitDate'], '%Y/%m/%d %H:%M') - datetime.strptime(after['(File) FirstCommit'], '%Y/%m/%d %H:%M'))
 
