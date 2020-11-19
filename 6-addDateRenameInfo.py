@@ -49,11 +49,10 @@ def addCommitDate(df, gitlog):
 
 # コミットIDとコミット者の紐付け
 def addCommiter(df, gitlog):
-    gitlog = gitlog[["CommitID", "Author"]]
+    gitlog = gitlog[["Author"]]
     gitlog["logIndex"] = gitlog.index
     gitlog["Author"] =  gitlog["Author"].apply(lambda a: a.lstrip())
-    gitlog = gitlog.drop_duplicates(["CommitID", "Author"]) # 重複削除
-    df = pd.merge(df, gitlog, on=["CommitID"])
+    df = pd.merge(df, gitlog, on=["logIndex"])
     return df
 
 
