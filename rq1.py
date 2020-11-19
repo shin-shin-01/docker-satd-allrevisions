@@ -15,9 +15,7 @@ if __name__ == "__main__":
     deleted_df = pd.read_csv(f'a-extractComment/SATDDeletedWithInfo.csv', index_col=0)
     file_deleted_df = pd.read_csv(f'a-extractComment/SATDfileDeletedWithInfo.csv', index_col=0)
 
-    print('ファイルごと削除されたSATDは ここでは無視している。')
-
-    all_uniqueSATD = result_df[result_df["コメント追加からコメント削除までの日数"].apply(lambda delete: False if delete == "ファイル削除" else True)]["Comment"].unique()
+    all_uniqueSATD = result_df["Comment"].unique()
     print(f"全てのユニークSATD \n →  {len(all_uniqueSATD)}")
 
     tmp = result_df[result_df["コメント追加からコメント削除までの日数"].apply(lambda delete: False if delete in ["削除されていません", "ファイル削除"] else True)]
@@ -25,7 +23,7 @@ if __name__ == "__main__":
     print(f"削除されたユニークSATD (コメント削除) \n →  {len(deleted_uniqueSATD)}")
 
     print(f"削除されたユニークSATD率 \n →  {len(deleted_uniqueSATD)/len(all_uniqueSATD) *100}")
-    print(f"削除されたSATD率 \n →  {len(deleted_df)/(len(deleted_df)+len(not_deleted_df)) *100}")
+    # print(f"削除されたSATD率 \n →  {len(deleted_df)/(len(deleted_df)+len(not_deleted_df)) *100}")
 
     print('-'*10)
 
@@ -42,13 +40,12 @@ if __name__ == "__main__":
         # 各プロジェクトごとの ファイルごと削除されたSATD(ユニーク) の件数
         unique_file_deleted_satd = len( file_deleted_df[ file_deleted_df["project"] == project ]["Comment"].unique() )
 
-        if (unique_not_deleted_satd + unique_deleted_satd) == 0:
+        all_unique_satd = unique_not_deleted_satd + unique_deleted_satd + unique_file_deleted_satd
+
+        if all_unique_satd == 0:
             continue
 
-        percentage = ( unique_deleted_satd / (unique_not_deleted_satd + unique_deleted_satd) ) * 100
-
-        # if percentage == 0:
-        #     print(unique_not_deleted_satd, unique_file_deleted_satd)
+        percentage = ( unique_deleted_satd / all_unique_satd ) * 100
 
         percentages.append(percentage)
     
@@ -68,13 +65,12 @@ if __name__ == "__main__":
         # 各プロジェクトごとの ファイルごと削除されたSATD の件数
         unique_file_deleted_satd = len( file_deleted_df[ file_deleted_df["project"] == project ]["Comment"] )
 
-        if (unique_not_deleted_satd + unique_deleted_satd) == 0:
+        all_unique_satd = unique_not_deleted_satd + unique_deleted_satd + unique_file_deleted_satd
+
+        if all_unique_satd == 0:
             continue
 
-        percentage = ( unique_deleted_satd / (unique_not_deleted_satd + unique_deleted_satd) ) * 100
-
-        # if percentage == 0:
-        #     print(unique_not_deleted_satd, unique_file_deleted_satd)
+        percentage = ( unique_deleted_satd / all_unique_satd ) * 100
 
         percentages.append(percentage)
     
