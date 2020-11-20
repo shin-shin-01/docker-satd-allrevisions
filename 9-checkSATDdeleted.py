@@ -117,7 +117,7 @@ def combine_comment(origin, after):
     else:
         after['コメント追加からコメント削除までの日数'] = datetime.strptime(after['DeleteComment'], '%Y/%m/%d %H:%M') - datetime.strptime(after['CommitDate'], '%Y/%m/%d %H:%M')
 
-    if str(origin["(origin)SATD"]) == "nan":
+    if str(after["(origin)SATD"]) == "nan":
         after["(origin)SATD"] = origin["Comment"]
         after["(origin)追加時ファイル"] = origin["追加時ファイル"]
 

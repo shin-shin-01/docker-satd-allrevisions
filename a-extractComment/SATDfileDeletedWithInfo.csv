@@ -446,7 +446,21 @@ docker-ce",https://github.com/docker/docker-ce,ba4e682cde6ad56a7fe88c5e61c976e1d
 #       [repo]    (default: 'http://github.com/dotcloud/docker')
 #       [branch]  (default: 'master')
 # TO_BUILD:       docker build -t test_docker .
-# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]",2013/11/07 12:13,2014/03/11 05:20,2013/10/19 14:33,2014/03/11 05:20,"18 days, 21:40:00",ファイル削除,https://github.com/docker/docker-ce/commit/ba4e682cde6ad56a7fe88c5e61c976e1db93338b#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdR1,https://github.com/docker/docker-ce/commit/66069773bceabb9e8aaa1f6ac7bd84ab221eca94#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdL1,https://github.com/docker/docker-ce/commit/837c6b480c6859db6bf3f3fb044b070afb3f336d#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdR20,#### FIXME. Temporarily install docker and dind with proper apparmor handling
+# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]",2013/11/07 12:13,2014/03/11 05:20,2013/10/19 14:33,2014/03/11 05:20,"18 days, 21:40:00",ファイル削除,https://github.com/docker/docker-ce/commit/ba4e682cde6ad56a7fe88c5e61c976e1db93338b#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdR1,https://github.com/docker/docker-ce/commit/66069773bceabb9e8aaa1f6ac7bd84ab221eca94#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdL1,https://github.com/docker/docker-ce/commit/8802449935b4e4d4be8e279e99348a99c4e13bc0#diff-7247f799c45ce209235e5d3aeb8bc5563ad89f4f90ed14ae429524bc0cb6c9cdR1,"# VERSION:        0.3
+# DOCKER-VERSION  0.6.3
+# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
+# DESCRIPTION:    Testing docker PRs and commits on top of master using
+# REFERENCES:     This code reuses the excellent implementation of
+#                 Docker in Docker made by Jerome Petazzoni.
+#                 https://github.com/jpetazzo/dind
+# COMMENTS:
+#   This Dockerfile adapts /Dockerfile to enable docker PRs and commits testing
+#   Optional arguments:
+#       [commit]  (default: 'HEAD')
+#       [repo]    (default: 'http://github.com/dotcloud/docker')
+#       [branch]  (default: 'master')
+# TO_BUILD:       docker build -t test_docker .
+# TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]"
 146,"docker
 docker-ce",https://github.com/docker/docker-ce,ba4e682cde6ad56a7fe88c5e61c976e1db93338b,66069773bceabb9e8aaa1f6ac7bd84ab221eca94,Daniel Mizyrycki <mzdaniel@glidelink.net>,Guillaume J. Charmes <guillaume@charmes.net>,components/engine/hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.6
 # DOCKER-VERSION  0.6.6
@@ -460,19 +474,7 @@ docker-ce",https://github.com/docker/docker-ce,ba4e682cde6ad56a7fe88c5e61c976e1d
 #         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
 #         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
 # TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh",2013/11/07 12:13,2014/03/11 05:20,2013/10/11 10:29,2014/03/11 05:20,"27 days, 1:44:00",ファイル削除,https://github.com/docker/docker-ce/commit/ba4e682cde6ad56a7fe88c5e61c976e1db93338b#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45R1,https://github.com/docker/docker-ce/commit/66069773bceabb9e8aaa1f6ac7bd84ab221eca94#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45L1,https://github.com/docker/docker-ce/commit/aac90cd92e4389ce099b59cb7313755538ca4d48#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45R1,"# VERSION:        1.5
-# DOCKER-VERSION  0.6.4
-# AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
-# DESCRIPTION:    Build docker nightly release using Docker in Docker.
-# REFERENCES:     This code reuses the excellent implementation of docker in docker
-#                 made by Jerome Petazzoni.  https://github.com/jpetazzo/dind
-# COMMENTS:
-#   release_credentials.json is a base64 json encoded file containing:
-#       { ""AWS_ACCESS_KEY"": ""Test_docker_AWS_S3_bucket_id"",
-#         ""AWS_SECRET_KEY"": ""Test_docker_AWS_S3_bucket_key"",
-#         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
-# TO_BUILD:       docker build -t dockerbuilder .
-# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh"
+# TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh",2013/11/07 12:13,2014/03/11 05:20,2013/10/11 10:29,2014/03/11 05:20,"27 days, 1:44:00",ファイル削除,https://github.com/docker/docker-ce/commit/ba4e682cde6ad56a7fe88c5e61c976e1db93338b#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45R1,https://github.com/docker/docker-ce/commit/66069773bceabb9e8aaa1f6ac7bd84ab221eca94#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45L1,https://github.com/docker/docker-ce/commit/7a7c9f0f1d41534dd4afd66f7d8fa56e38ed94e1#diff-9b262e6d752e1b0212e6d6dba160967794c01f5ae9d09318e83a9dadd49cdd45R25,#### FIXME. Temporarily install docker and dind with proper apparmor handling
 56,"docker-library
 ruby",https://github.com/docker-library/ruby,6959194971f4f84e9bef2976ae6b8a469fa58dae,6ad601794e06ec986cdebc7365c53ca7b05f9e32,Fumiaki MATSUSHIMA <mtsmfm@gmail.com>,Tianon Gravi <admwiggin@gmail.com>,2.5-rc/alpine3.6/Dockerfile,"# hack in ""ENABLE_PATH_CHECK"" disabling to suppress:
 #   warning: Insecure world writable dir",2017/10/24 13:33,2017/12/09 08:30,2017/10/24 13:33,2017/12/09 08:30,0 days 00:00:00.000000000,ファイル削除,https://github.com/docker-library/ruby/commit/6959194971f4f84e9bef2976ae6b8a469fa58dae#diff-7df800e1f7b0436499aac808ae3e43ea94e2f26f338dfc2a9e55d18c6792a6c7R58,https://github.com/docker-library/ruby/commit/6ad601794e06ec986cdebc7365c53ca7b05f9e32#diff-7df800e1f7b0436499aac808ae3e43ea94e2f26f338dfc2a9e55d18c6792a6c7L58,,
