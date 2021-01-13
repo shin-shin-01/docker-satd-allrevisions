@@ -48,7 +48,7 @@ def countSATDbeforeRevisionMerge():
     countSATD = 0 
     csvfiles = os.listdir(f'{PATH_OF_SATD_COMMENTFILE}')
     for csvfile in csvfiles:
-        if csvfiles == ".DS_Store":
+        if csvfile == ".DS_Store":
             continue
         df = pd.read_csv(f'{PATH_OF_SATD_COMMENTFILE}/{csvfile}', index_col=0)
         countSATD += len(df)
