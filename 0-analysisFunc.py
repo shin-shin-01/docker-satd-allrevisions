@@ -53,7 +53,7 @@ def countSATDbeforeRevisionMerge():
         df = pd.read_csv(f'{PATH_OF_SATD_COMMENTFILE}/{csvfile}', index_col=0)
         countSATD += len(df)
 
-    print(f"UniqueComments from 5-SATDComments (全プロジェクト全リビジョンでのSATD検出)   \n→{countSATD}")
+    print(f"Comments from 5-SATDComments (全プロジェクト全リビジョンでのSATD検出)   \n→{countSATD}")
 
 
 
