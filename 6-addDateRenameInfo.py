@@ -87,13 +87,17 @@ def modifyInformation(df, gitlog):
 
         """ rename / delete [条件]
         1. ファイル名が一致している
-        2. コミット日が 処理日より前
+        2. コミット日が rename/delete コミット日より前
         3. まだ削除されていない
         """
+        # RenameList -> そのファイルが将来どう変更されるか？のリスト [現在のファイル名 + ... rename]
         if row["Status"] == "R":
             new_filename = row["filename"].split()[1]
-            df.loc[(df["LatestDockerfile"] == before_filename) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "LatestDockerfile"] = new_filename
-            df.loc[(df["LatestDockerfile"] == before_filename) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "RenameList"] += f"\n{new_filename}"
+            # 最新ファイルネームがどんどん新しく変更されている → renameリストに 将来の名前をどんどん追加している (最も古いファイルはすべての変更名を含む)
+            renamed_logs_idx = df[(df["LatestDockerfile"] == before_filename) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan")].index
+            for idx in renamed_logs_idx:
+                df.loc[idx, "LatestDockerfile"] = new_filename
+                df.loc[idx, "RenameList"] += f'\n{new_filename}'
         elif row["Status"] == "D":
             df.loc[(df["LatestDockerfile"] == before_filename) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "Deleted Date"] = row["Date"]
 
