@@ -83,7 +83,7 @@ def modifyInformation(df, gitlog):
 
     for idx, row in rename_delete_df.iterrows():
         # rename のときは 変更前名称をとる
-        targetfile = row["filename"].split()[0]
+        before_filename = row["filename"].split()[0]
 
         """ rename / delete [条件]
         1. ファイル名が一致している
@@ -92,13 +92,19 @@ def modifyInformation(df, gitlog):
         """
         if row["Status"] == "R":
             new_filename = row["filename"].split()[1]
-            df.loc[(df["LatestDockerfile"] == targetfile) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "LatestDockerfile"] = new_filename
-            df.loc[(df["LatestDockerfile"] == targetfile) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "RenameList"] += f"\n{new_filename}"
+            df.loc[(df["LatestDockerfile"] == before_filename) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "LatestDockerfile"] = new_filename
+            df.loc[(df["LatestDockerfile"] == before_filename) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "RenameList"] += f"\n{new_filename}"
         elif row["Status"] == "D":
-            df.loc[(df["LatestDockerfile"] == targetfile) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "Deleted Date"] = row["Date"]
+            df.loc[(df["LatestDockerfile"] == before_filename) & (df["Date"] <= row["Date"]) & (str(df["Deleted Date"]) != "nan"), "Deleted Date"] = row["Date"]
 
+        """ add
+        最初に追加された時間を追加するために LatestDockerfile で名前を判断する
+        → dockerfile名を rename後の LatestDockerfile で統一する作業をしている
+        """
         if row["Status"] == "R":
             renamefiles = row["filename"].split()
+            before_name = renamefiles[0]
+            after_name = renamefiles[1]
             """ ここでちょっとエラーがでる
              rename されたファイルは rename された時刻より前に存在しているはずなのに
              rename されたあとに add されているファイルが存在している。
@@ -107,7 +113,7 @@ def modifyInformation(df, gitlog):
              ファイルが削除されたあとに異なる同名ファイルが作成されていたら、
              新しいはずのファイルも同様に rename してしまうから。
             """
-            added_df.loc[(added_df["filename"] == renamefiles[0]) & (added_df["Date"] <= row["Date"]), "filename"] = renamefiles[1]
+            added_df.loc[(added_df["filename"] == before_name) & (added_df["Date"] <= row["Date"]), "filename"] = after_name
 
             # 全ファイル変更
             # added_df.loc[ added_df["filename"] == renamefiles[0], "filename"] = renamefiles[1]
