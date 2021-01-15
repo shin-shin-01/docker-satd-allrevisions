@@ -370,7 +370,8 @@
 #       [branch]  (default: 'master')
 # TO_BUILD:       docker build -t test_docker .
 # TO_RUN:         docker run -privileged test_docker hack/dind test_docker.sh [commit] [repo] [branch]",2013-11-07 04:05:26+00:00,2013-10-18 22:33:16-07:00,2014-03-10 13:20:49-07:00,hack/infrastructure/docker-ci/docker-test/Dockerfile,3795,2014-03-10 20:20:49+00:00,bb43761940848650c1eab3c097d826892bd5b140,Guillaume J. Charmes <guillaume.charmes@docker.com>,hack/infrastructure/docker-ci/docker-test/Dockerfile
-1210,6e3068700fb32299cf733acd74785e29609b1974,Daniel Mizyrycki <daniel.mizyrycki@dotcloud.com>,testing/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,#### FIXME. Temporarily install docker with proper apparmor handling,2013-10-11 01:29:10+00:00,2013-10-10 18:29:10-07:00,2014-03-10 13:20:49-07:00,testing/nightlyrelease/Dockerfile,3872,2013-11-01 20:55:19+00:00,31638ab2ad2a5380d447780f05f7aa078c9421f5,Jérôme Petazzoni <jerome.petazzoni@docker.com>,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile
+1210,6e3068700fb32299cf733acd74785e29609b1974,Daniel Mizyrycki <daniel.mizyrycki@dotcloud.com>,testing/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,#### FIXME. Temporarily install docker with proper apparmor handling,2013-10-11 01:29:10+00:00,2013-10-10 18:29:10-07:00,2014-03-10 13:20:49-07:00,"testing/nightlyrelease/Dockerfile
+hack/infrastructure/docker-ci/nightlyrelease/Dockerfile",3872,2013-11-01 20:55:19+00:00,31638ab2ad2a5380d447780f05f7aa078c9421f5,Jérôme Petazzoni <jerome.petazzoni@docker.com>,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile
 918,17172276366fc3114ae52eb6c83aafbec004d5f3,Daniel Mizyrycki <daniel.mizyrycki@dotcloud.com>,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,"# VERSION:        1.5
 # DOCKER-VERSION  0.6.4
 # AUTHOR:         Daniel Mizyrycki <daniel@dotcloud.com>
@@ -398,7 +399,8 @@
 #         ""GPG_PASSPHRASE"": ""Test_docker_GPG_passphrase_signature"" }
 # TO_BUILD:       docker build -t dockerbuilder .
 # TO_RELEASE:     docker run -i -t -privileged -e AWS_S3_BUCKET=""test.docker.io"" dockerbuilder hack/dind dockerbuild.sh",2013-11-07 04:05:26+00:00,2013-10-10 18:29:10-07:00,2014-03-10 13:20:49-07:00,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile,3795,2014-03-10 20:20:49+00:00,bb43761940848650c1eab3c097d826892bd5b140,Guillaume J. Charmes <guillaume.charmes@docker.com>,hack/infrastructure/docker-ci/nightlyrelease/Dockerfile
-2193,22c46af4b358cf3ec4f7af47c701064c00cf7de4,Erik Hollensbe <github@hollensbe.org>,builder/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,# TODO replace FPM with some very minimal debhelper stuff,2014-08-28 01:52:29+00:00,2014-08-27 18:52:29-07:00,2018-06-04 14:53:22+02:00,builder/parser/testfiles/docker/Dockerfile,3292,2018-06-04 12:53:22+00:00,e466f999aa9d2add9ccaca655f8d53c3112c121d,Vincent Demeester <vincent.demeester@docker.com>,builder/dockerfile/parser/testfiles/docker/Dockerfile
+2193,22c46af4b358cf3ec4f7af47c701064c00cf7de4,Erik Hollensbe <github@hollensbe.org>,builder/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,# TODO replace FPM with some very minimal debhelper stuff,2014-08-28 01:52:29+00:00,2014-08-27 18:52:29-07:00,2018-06-04 14:53:22+02:00,"builder/parser/testfiles/docker/Dockerfile
+builder/dockerfile/parser/testfiles/docker/Dockerfile",3292,2018-06-04 12:53:22+00:00,e466f999aa9d2add9ccaca655f8d53c3112c121d,Vincent Demeester <vincent.demeester@docker.com>,builder/dockerfile/parser/testfiles/docker/Dockerfile
 2192,22c46af4b358cf3ec4f7af47c701064c00cf7de4,Erik Hollensbe <github@hollensbe.org>,builder/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
@@ -422,7 +424,8 @@
 #
 # Note: Apparmor used to mess with privileged mode, but this is no longer
 # the case. Therefore, you don't have to disable it anymore.
-#",2014-08-28 01:52:29+00:00,2014-08-27 18:52:29-07:00,2018-06-04 14:53:22+02:00,builder/parser/testfiles/docker/Dockerfile,3292,2016-07-04 14:43:53+00:00,11280665b45d0ac9920d17abaf6a7328f2bc77d9,Shev Yan <yandong_8212@163.com>,builder/dockerfile/parser/testfiles/docker/Dockerfile
+#",2014-08-28 01:52:29+00:00,2014-08-27 18:52:29-07:00,2018-06-04 14:53:22+02:00,"builder/parser/testfiles/docker/Dockerfile
+builder/dockerfile/parser/testfiles/docker/Dockerfile",3292,2016-07-04 14:43:53+00:00,11280665b45d0ac9920d17abaf6a7328f2bc77d9,Shev Yan <yandong_8212@163.com>,builder/dockerfile/parser/testfiles/docker/Dockerfile
 437,11280665b45d0ac9920d17abaf6a7328f2bc77d9,Shev Yan <yandong_8212@163.com>,builder/dockerfile/parser/testfiles/docker/Dockerfile,builder/dockerfile/parser/testfiles/docker/Dockerfile,"# This file describes the standard way to build Docker, using docker
 #
 # Usage:
