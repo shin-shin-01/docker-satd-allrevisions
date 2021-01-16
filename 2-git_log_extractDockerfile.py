@@ -69,12 +69,22 @@ outputCSV
 > Status
 """
 
-def appendToResult(result, tmp, status, dockerfile):
+def appendToResult(result, tmp, status, dockerfile, merge_from):
     result["CommitID"].append(tmp["CommitID"])
     result["Author"].append(tmp["Author"])
     result["Date"].append(tmp["Date"])
     result["Dockerfile"].append(dockerfile)
     result["Status"].append(status)
+
+    """
+    コミット者を特定するときに
+    githubのページからコミット履歴を確認したところ 'マージコミット'は含まれていない
+    コミット者リストを出す上で 'マージは除外する必要があるため情報を追加'
+    """
+    if merge_from == "no-merge":
+        result["Merged?"].append(False)
+    else:
+        result["Merged?"].append(True)
 
     return result
 
@@ -94,7 +104,7 @@ def saveRevisonFileToShow(revisionFileList, repository):
 
 
 def RevisionsHaveDocker(repository, txtGitFileStatus):
-    result = { "CommitID":[], "Author":[], "Date":[], "Dockerfile":[], "Status":[] }
+    result = { "CommitID":[], "Author":[], "Date":[], "Dockerfile":[], "Status":[], "Merged?":[]}
     tmp = { "CommitID":"", "Author":"", "Date":"" }
     merge = [None, None]
     merge_from = "no-merge"
@@ -128,13 +138,13 @@ def RevisionsHaveDocker(repository, txtGitFileStatus):
                 if txt[0] == "R":
                     status = f"{txt[0]}"
                     dockerfile = f"{txt.split()[1]}  {txt.split()[2]}"
-                    result = appendToResult(result, tmp, status, dockerfile)
+                    result = appendToResult(result, tmp, status, dockerfile, merge_from)
                     # いつ削除されたかを明確にするため、R100 でも取得する
                     revisionFileList = appendRevisionFile(revisionFileList, tmp["CommitID"], txt.split()[2])
                 else:
                     status = f"{txt[0]}"
                     dockerfile = f"{txt.split()[1]}"
-                    result = appendToResult(result, tmp, status, dockerfile)
+                    result = appendToResult(result, tmp, status, dockerfile, merge_from)
                     if txt[0] != "D":
                         revisionFileList = appendRevisionFile(revisionFileList, tmp["CommitID"], txt.split()[1])
 
