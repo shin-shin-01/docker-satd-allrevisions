@@ -125,7 +125,10 @@ def RevisionsHaveDocker(repository, txtGitFileStatus):
 
         elif txt[:7] == "Author:":
             tmp["Author"] = txt[8:]
-
+        elif txt[:7] == "Commit:":
+            # Author と Commiter が異なる場合があり，コミット人数を把握するために複数人を記載するようにした
+            if tmp["Author"] != txt[8:]:
+                tmp["Author"] += f"\n{txt[8:]}"
         elif txt[:11] == "CommitDate:":
             tmp["Date"] = txt[12:]
 
